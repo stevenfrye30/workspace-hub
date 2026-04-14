@@ -7,8 +7,9 @@
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
-    --bg:#faf8f5; --fg:#2c2c2c; --muted:#8a7a6a;
-    --border:#d8d3cc; --chrome:#eeebe5; --active:#7a5c3a; --tint:#f5f2ed;
+    --bg:#f7ead8; --fg:#3b2a1f; --muted:#9c7b5f;
+    --border:#e3caa9; --chrome:#efd9b8; --active:#a8542a; --tint:#fbe8cd;
+    --card:#fff7e8;
   }
   body { font-family: Georgia, serif; background: var(--bg); color: var(--fg);
          line-height: 1.55; min-height: 100vh; }
@@ -21,7 +22,7 @@
        margin: 36px 0 14px; }
   .grid { display: grid; gap: 14px;
           grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
-  .card { display: block; background: white; border: 1px solid var(--border);
+  .card { display: block; background: var(--card); border: 1px solid var(--border);
           padding: 18px 20px; text-decoration: none; color: inherit;
           transition: border-color 0.15s, transform 0.15s; }
   .card:hover { border-color: var(--active); transform: translateY(-1px); }
@@ -60,6 +61,14 @@
 
   <h2>Languages &amp; Scripts</h2>
   <div class="grid">
+    <a class="card" href="digital-symbols/">
+      <div class="t">Unicode Explorer</div>
+      <div class="d">Every script in the Unicode standard, browsable by language and era.</div>
+    </a>
+    <a class="card" href="ipa/">
+      <div class="t">IPA Rhymer</div>
+      <div class="d">International Phonetic Alphabet based rhyming tool.</div>
+    </a>
     <a class="card" href="arabic/">
       <div class="t">Arabic</div>
       <div class="d">Dictionary, learn &amp; study tools for Arabic.</div>
@@ -67,14 +76,6 @@
     <a class="card" href="telugu/">
       <div class="t">Telugu</div>
       <div class="d">Practice and study dashboard for Telugu script.</div>
-    </a>
-    <a class="card" href="ipa/">
-      <div class="t">IPA Rhymer</div>
-      <div class="d">International Phonetic Alphabet based rhyming tool.</div>
-    </a>
-    <a class="card" href="digital-symbols/">
-      <div class="t">Unicode Explorer</div>
-      <div class="d">Every script in the Unicode standard, browsable by language and era.</div>
     </a>
   </div>
 
@@ -84,13 +85,13 @@
       <div class="t">Cosmos</div>
       <div class="d">Scale-by-scale tour of the universe.</div>
     </a>
-    <a class="card" href="math/">
-      <div class="t">Math Reference</div>
-      <div class="d">Formulas, proofs, and visualizations.</div>
-    </a>
     <a class="card" href="nutrilens/">
       <div class="t">NutriLens</div>
       <div class="d">USDA food nutrition lookup, offline-ready.</div>
+    </a>
+    <a class="card" href="math/">
+      <div class="t">Math Reference</div>
+      <div class="d">Formulas, proofs, and visualizations.</div>
     </a>
   </div>
 
