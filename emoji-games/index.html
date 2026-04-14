@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>EmojiGames 🎮</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    background: radial-gradient(ellipse at top, #1a1230 0%, #0a0815 60%, #050308 100%);
+    color: #e5e7eb; min-height: 100vh; padding: 32px 24px 80px;
+  }
+  header { max-width: 1200px; margin: 0 auto 24px; display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+  header .title { flex: 1; min-width: 240px; }
+  header h1 {
+    font-size: 2.2rem; font-weight: 700; letter-spacing: -0.5px;
+    background: linear-gradient(90deg, #fbbf24, #ec4899, #8b5cf6);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  header p { color: #9ca3af; font-size: 0.95rem; margin-top: 4px; }
+  .back-btn {
+    background: #1f1830; border: 1px solid #3a2f55; color: #d1d5db;
+    padding: 8px 14px; border-radius: 8px; font-size: 0.85rem;
+    text-decoration: none; transition: all 0.15s; cursor: pointer;
+  }
+  .back-btn:hover { background: #2a2245; border-color: #6d4ed8; color: #fff; }
+
+  .controls { max-width: 1200px; margin: 14px auto 18px; display: flex; flex-wrap: wrap; gap: 10px; }
+  #search {
+    flex: 1; min-width: 240px; max-width: 420px;
+    background: #1a1530; border: 1px solid #2e2547; color: #e5e7eb;
+    padding: 10px 14px; border-radius: 8px; font-size: 0.95rem; outline: none;
+    transition: border 0.15s;
+  }
+  #search:focus { border-color: #8b5cf6; }
+  .tags { max-width: 1200px; margin: 0 auto 18px; display: flex; flex-wrap: wrap; gap: 6px; }
+  .tag {
+    background: #1a1530; border: 1px solid #2e2547; color: #9ca3af;
+    padding: 4px 12px; border-radius: 999px; font-size: 0.78rem; cursor: pointer;
+    transition: all 0.12s;
+  }
+  .tag:hover { border-color: #8b5cf6; color: #e5e7eb; }
+  .tag.active { background: #8b5cf6; border-color: #8b5cf6; color: #fff; }
+
+  .grid {
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 18px;
+  }
+  .card {
+    background: linear-gradient(160deg, #1f1735 0%, #15102a 100%);
+    border: 1px solid #2e2547; border-radius: 16px; padding: 20px;
+    display: flex; flex-direction: column; gap: 10px;
+    transition: transform 0.15s, border-color 0.15s, box-shadow 0.2s;
+    cursor: pointer; position: relative; overflow: hidden;
+    text-decoration: none; color: inherit;
+  }
+  .card::before {
+    content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: var(--accent, #8b5cf6);
+  }
+  .card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent, #8b5cf6);
+    box-shadow: 0 10px 30px rgba(139, 92, 246, 0.25);
+  }
+  .card.coming-soon { opacity: 0.55; cursor: not-allowed; }
+  .card.coming-soon:hover { transform: none; box-shadow: none; }
+  .card-emoji {
+    font-size: 3rem; line-height: 1; align-self: center;
+    filter: drop-shadow(0 4px 12px rgba(139, 92, 246, 0.4));
+  }
+  .card-name { font-size: 1.15rem; font-weight: 600; color: #fff; text-align: center; }
+  .card-desc { font-size: 0.82rem; color: #9ca3af; line-height: 1.45; text-align: center; min-height: 36px; }
+  .card-tags { display: flex; flex-wrap: wrap; gap: 4px; justify-content: center; }
+  .card-tag { background: #2a2245; color: #c4b5fd; padding: 2px 8px; border-radius: 999px; font-size: 0.68rem; }
+  .badge {
+    position: absolute; top: 10px; right: 10px;
+    background: #2a2245; color: #c4b5fd; font-size: 0.65rem;
+    padding: 3px 8px; border-radius: 999px; text-transform: uppercase; letter-spacing: 0.05em;
+  }
+  .empty { text-align: center; color: #6b7280; padding: 60px; grid-column: 1 / -1; }
+  footer { max-width: 1200px; margin: 50px auto 0; color: #4b5563; font-size: 0.78rem; text-align: center; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="title">
+    <h1>🎮 EmojiGames</h1>
+    <p>A playground of bite-sized emoji-themed mini games</p>
+  </div>
+  <a href="../../Launcher/index.html" class="back-btn">← Back to Workspace</a>
+</header>
+
+<div class="controls">
+  <input id="search" type="search" placeholder="Search games...">
+</div>
+
+<div class="tags" id="tags"></div>
+
+<div class="grid" id="grid"></div>
+
+<footer>
+  Drop new games into <code style="background:#1a1530;padding:2px 6px;border-radius:4px;">projects/EmojiGames/games/</code> and add an entry to <code style="background:#1a1530;padding:2px 6px;border-radius:4px;">games.js</code>
+</footer>
+
+<script src="games.js"></script>
+<script>
+  const grid = document.getElementById('grid');
+  const tagsEl = document.getElementById('tags');
+  const search = document.getElementById('search');
+  let activeTag = null;
+
+  const allTags = [...new Set(GAMES.flatMap(g => g.tags || []))].sort();
+
+  function renderTags() {
+    tagsEl.innerHTML = '';
+    const allBtn = document.createElement('span');
+    allBtn.className = 'tag' + (activeTag === null ? ' active' : '');
+    allBtn.textContent = 'All';
+    allBtn.onclick = () => { activeTag = null; render(); };
+    tagsEl.appendChild(allBtn);
+    allTags.forEach(t => {
+      const el = document.createElement('span');
+      el.className = 'tag' + (activeTag === t ? ' active' : '');
+      el.textContent = t;
+      el.onclick = () => { activeTag = activeTag === t ? null : t; render(); };
+      tagsEl.appendChild(el);
+    });
+  }
+
+  function render() {
+    renderTags();
+    const q = search.value.trim().toLowerCase();
+    const filtered = GAMES.filter(g => {
+      if (activeTag && !(g.tags || []).includes(activeTag)) return false;
+      if (!q) return true;
+      return (g.name + ' ' + g.desc).toLowerCase().includes(q);
+    });
+    grid.innerHTML = '';
+    if (!filtered.length) {
+      grid.innerHTML = '<div class="empty">No games match.</div>';
+      return;
+    }
+    filtered.forEach(g => {
+      const card = document.createElement(g.path ? 'a' : 'div');
+      card.className = 'card' + (g.path ? '' : ' coming-soon');
+      if (g.path) card.href = g.path;
+      if (g.color) card.style.setProperty('--accent', g.color);
+      card.innerHTML = `
+        ${!g.path ? '<span class="badge">Coming soon</span>' : ''}
+        <div class="card-emoji">${g.emoji}</div>
+        <div class="card-name">${g.name}</div>
+        <div class="card-desc">${g.desc}</div>
+        <div class="card-tags">${(g.tags || []).map(t => `<span class="card-tag">${t}</span>`).join('')}</div>
+      `;
+      grid.appendChild(card);
+    });
+  }
+
+  search.addEventListener('input', render);
+  render();
+</script>
+
+</body>
+</html>

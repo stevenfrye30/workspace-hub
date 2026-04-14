@@ -1,0 +1,3921 @@
+source,lang_code,lang_name,script_code,script_name,status_or_qid
+wikidata,oge,Old Georgian,,Georgian scripts,Q34834
+wikidata,cat,Catalan,,Catalan alphabet,Q7026
+wikidata,ulf,Afra,Latn,Latin script,Q4477735
+wikidata,nxq,Naxi,Latn,Latin script,Q2478711
+wikidata,ava,Avar,Cyrl,Cyrillic script,Q29561
+wikidata,mad,Madurese,Java,Javanese script,Q36213
+wikidata,hul,Hula,Latn,Latin script,Q6382179
+wikidata,lat,Latin,,Latin alphabet,Q397
+wikidata,oge,Old Georgian,Geok,Khutsuri,Q34834
+wikidata,cor,Cornish,Latn,Latin script,Q25289
+wikidata,nbf,Naxi,Latn,Latin script,Q2478711
+wikidata,akl,Aklanon,Latn,Latin script,Q8773
+wikidata,bew,Betawi,Arab,Arabic script,Q33014
+wikidata,bea,Danezaa,Latn,Latin script,Q20826
+wikidata,drs,Gedeo,Ethi,Geʽez script,Q56622
+wikidata,zum,Kumzari,Arab,Arabic script,Q36158
+wikidata,nap,Neapolitan,,Latin alphabet,Q33845
+wikidata,ext,Extremaduran,Latn,Latin script,Q30007
+wikidata,orm,Oromo,Ethi,Geʽez script,Q33864
+wikidata,bew,Betawi,Latn,Latin script,Q33014
+wikidata,nap,Neapolitan,Latn,Latin script,Q33845
+wikidata,fab,Annobonese Creole,Latn,Latin script,Q34992
+wikidata,lac,Lacandon,Latn,Latin script,Q35766
+wikidata,mad,Madurese,Latn,Latin script,Q36213
+wikidata,cim,Cimbrian,Latn,Latin script,Q37053
+wikidata,cri,Forro Creole,Latn,Latin script,Q36536
+wikidata,saf,Safaliba,Latn,Latin script,Q36432
+wikidata,cat,Catalan,,Catalan Braille,Q7026
+wikidata,rus,Russian,Cyrl,Cyrillic script,Q7737
+wikidata,akk,Akkadian,Xsux,cuneiform,Q35518
+wikidata,orm,Oromo,Latn,Latin script,Q33864
+wikidata,ava,Avar,,Avar alphabet,Q29561
+wikidata,sme,Northern Sami,Latn,Latin script,Q33947
+wikidata,bh,Bihari,Deva,Devanagari,Q135305
+wikidata,srd,Sardinian,Latn,Latin script,Q33976
+wikidata,snd,Sindhi,,Sindhi Perso-Arabic script,Q33997
+wikidata,wol,Wolof,Latn,Latin script,Q34257
+wikidata,pus,Pashto,,Arabic alphabet,Q58680
+wikidata,oji,Ojibwe,,Great Lakes Algonquian syllabary,Q33875
+wikidata,oji,Ojibwe,Latn,Latin script,Q33875
+wikidata,kom,Komi,Cyrl,Cyrillic script,Q36126
+wikidata,lin,Lingala,Latn,Latin script,Q36217
+wikidata,oji,Ojibwe,Cans,Canadian Aboriginal syllabics,Q33875
+wikidata,sot,Sesotho,Latn,Latin script,Q34340
+wikidata,wol,Wolof,Gara,Garay,Q34257
+wikidata,nde,Northern Ndebele,Latn,Latin script,Q35613
+wikidata,nbl,Southern Ndebele,Latn,Latin script,Q36785
+wikidata,ibo,Igbo,,,Q33578
+wikidata,ssw,Swazi,Latn,Latin script,Q34014
+wikidata,twi,Twi,Latn,Latin script,Q36850
+wikidata,sag,Sango,Latn,Latin script,Q33954
+wikidata,vol,Volapük,Latn,Latin script,Q36986
+wikidata,kau,Kanuri,,Arabic alphabet,Q36094
+wikidata,kin,Kinyarwanda,Latn,Latin script,Q33573
+wikidata,kua,Kwanyama,Latn,Latin script,Q1405077
+wikidata,snd,Sindhi,,Devanagari Sindhi,Q33997
+wikidata,grn,Guarani,,Guarani Braille,Q35876
+wikidata,ton,Tongan,Latn,Latin script,Q34094
+wikidata,snd,Sindhi,Khoj,Khojki,Q33997
+wikidata,mah,Marshallese,Latn,Latin script,Q36280
+wikidata,tsn,Tswana,Latn,Latin script,Q34137
+wikidata,ibo,Igbo,,Igbo Braille,Q33578
+wikidata,run,Kirundi,Latn,Latin script,Q33583
+wikidata,sme,Northern Sami,,Northern Sami orthography,Q33947
+wikidata,yor,Yoruba,,,Q34311
+wikidata,kom,Komi,,Molodtsov alphabet,Q36126
+wikidata,smo,Samoan,Latn,Latin script,Q34011
+wikidata,wln,Walloon,Latn,Latin script,Q34219
+wikidata,wol,Wolof,,Wolofal script,Q34257
+wikidata,snd,Sindhi,Gujr,Gujarati,Q33997
+wikidata,grn,Guarani,,Guarani alphabet,Q35876
+wikidata,kan,Kannada,Knda,Kannada script,Q33673
+wikidata,snd,Sindhi,Sind,Khudabadi,Q33997
+wikidata,pus,Pashto,Arab,Arabic script,Q58680
+wikidata,ibo,Igbo,,,Q33578
+wikidata,tso,Tsonga,Latn,Latin script,Q34327
+wikidata,kom,Komi,Perm,Old Permic alphabet,Q36126
+wikidata,kau,Kanuri,Latn,Latin script,Q36094
+wikidata,tgl,Tagalog,,Filipino alphabet,Q34057
+wikidata,yor,Yoruba,,Yoruba Braille,Q34311
+wikidata,oji,Ojibwe,,Ojibwe writing system,Q33875
+wikidata,sme,Northern Sami,,Northern Sami Braille,Q33947
+wikidata,haz,Hazaragi,,Persian alphabet,Q33398
+wikidata,vid,Vidunda,Latn,Latin script,Q7928151
+wikidata,non,Old Norse,,Younger Futhark,Q35505
+wikidata,zen,Zenaga,,Berber Arabic alphabet,Q37005
+wikidata,gon,Gondi,Telu,Telugu,Q1775361
+wikidata,tet,Tetum,,Tetum alphabet,Q34125
+wikidata,san,Sanskrit,Shrd,Sharada,Q11059
+wikidata,san,Sanskrit,Nand,Nandinagari,Q11059
+wikidata,san,Sanskrit,,Nāgarī,Q11059
+wikidata,deu,German,,German alphabet,Q188
+wikidata,san,Sanskrit,Deva,Devanagari,Q11059
+wikidata,mdr,Mandar,Bugi,Lontara,Q35995
+wikidata,nep,Nepali,Deva,Devanagari,Q33823
+wikidata,san,Sanskrit,,Vatteluttu,Q11059
+wikidata,noe,Nimadi,Deva,Devanagari,Q3502294
+wikidata,mvs,Massep,Latn,Latin script,Q3502895
+wikidata,gon,Gondi,Deva,Devanagari,Q1775361
+wikidata,iba,Iban,,Dunging script,Q33424
+wikidata,zun,,Latn,Latin script,Q10188
+wikidata,gor,Gorontalo,Latn,Latin script,Q2501174
+wikidata,loa,Loloda,Latn,Latin script,Q11732388
+wikidata,bhp,Bima,Latn,Latin script,Q2796873
+wikidata,non,Old Norse,Runr,runic script,Q35505
+wikidata,nds,Low German,Latn,Latin script,Q25433
+wikidata,sus,Susu,,Arabic alphabet,Q33990
+wikidata,gil,Gilbertese,Latn,Latin script,Q30898
+wikidata,iba,Iban,Latn,Latin script,Q33424
+wikidata,jac,Jakaltek,Latn,Latin script,Q33393
+wikidata,cic,Chickasaw,Latn,Latin script,Q33192
+wikidata,sus,Susu,Latn,Latin script,Q33990
+wikidata,mar,Marathi,Deva,Devanagari,Q1571
+wikidata,tet,Tetum,Latn,Latin script,Q34125
+wikidata,ddo,Tsez,Cyrl,Cyrillic script,Q34033
+wikidata,kek,Q’eqchi’,Latn,Latin script,Q35536
+wikidata,ank,Goemai,Latn,Latin script,Q35272
+wikidata,mas,Maasai,Latn,Latin script,Q35787
+wikidata,non,Old Norse,Latn,Latin script,Q35505
+wikidata,kur,Kurdish,,Arabic alphabet,Q36368
+wikidata,eng,English,,Unified English Braille,Q1860
+wikidata,sci,Sri Lankan Creole Malay,Sinh,Sinhala script,Q1089151
+wikidata,deu,German,,German Braille,Q188
+wikidata,ell,Modern Greek,Grek,Greek alphabet,Q36510
+wikidata,trr,Taushiro,Latn,Latin script,Q1957508
+wikidata,cre,Cree,Latn,Latin script,Q33390
+wikidata,san,Sanskrit,Sidd,Siddhaṃ,Q11059
+wikidata,cre,Cree,Cans,Canadian Aboriginal syllabics,Q33390
+wikidata,pot,Potawatomi,Latn,Latin script,Q56749
+wikidata,kle,Kulung,Deva,Devanagari,Q6443304
+wikidata,sci,Sri Lankan Creole Malay,Taml,Tamil script,Q1089151
+wikidata,gon,Gondi,Gonm,Masaram Gondi,Q1775361
+wikidata,mar,Marathi,Modi,Modi,Q1571
+wikidata,gon,Gondi,Gong,Gunjala Gondi,Q1775361
+wikidata,sci,Sri Lankan Creole Malay,,New Rumi Spelling,Q1089151
+wikidata,sdc,Sassarese,Latn,Latin script,Q845441
+wikidata,iii,Nuosu,Yiii,Yi script,Q34235
+wikidata,coa,Cocos Malay,Latn,Latin script,Q3441699
+wikidata,kur,Kurdish,Cyrl,Cyrillic script,Q36368
+wikidata,kur,Kurdish,Latn,Latin script,Q36368
+wikidata,san,Sanskrit,Knda,Kannada script,Q11059
+wikidata,eng,English,,English alphabet,Q1860
+wikidata,eng,English,,English Braille,Q1860
+wikidata,spi,Saponi,Latn,Latin script,Q3915418
+wikidata,fly,Tsotsitaal,Latn,Latin script,Q1472421
+wikidata,som,Somali,,Wadaad's writing,Q13275
+wikidata,cos,Corsican,Latn,Latin script,Q33111
+wikidata,jut,Jutlandic,Latn,Latin script,Q1340322
+wikidata,sin,Sinhala,Sinh,Sinhala script,Q13267
+wikidata,dyo,Jola-Fonyi,Latn,Latin script,Q3507832
+wikidata,rom,Romani,Deva,Devanagari,Q13201
+wikidata,rom,Romani,Cyrl,Cyrillic script,Q13201
+wikidata,rom,Romani,Latn,Latin script,Q13201
+wikidata,rei,Reli,Telu,Telugu,Q7310982
+wikidata,apc,Levantine Arabic,,Arabic alphabet,Q56593
+wikidata,awa,Awadhi,Deva,Devanagari,Q29579
+wikidata,ugo,Gong,Thai,Thai script,Q3448919
+wikidata,aat,Arvanitic,Grek,Greek alphabet,Q29347
+wikidata,aat,Arvanitic,Latn,Latin script,Q29347
+wikidata,gaa,Ga,Latn,Latin script,Q33287
+wikidata,lun,Lunda,Latn,Latin script,Q33607
+wikidata,fvr,Fur,Latn,Latin script,Q33364
+wikidata,bax,Bamum,Latn,Latin script,Q35280
+wikidata,bra,Braj Bhasha,Deva,Devanagari,Q35243
+wikidata,pap,Papiamento,Latn,Latin script,Q33856
+wikidata,rap,Rapa Nui,Latn,Latin script,Q36746
+wikidata,maz,Mazahua,Latn,Latin script,Q36228
+wikidata,pal,Middle Persian,Avst,Avestan,Q32063
+wikidata,bax,Bamum,Bamu,Bamum script,Q35280
+wikidata,som,Somali,Latn,Latin script,Q13275
+wikidata,pal,Middle Persian,Phli,Inscriptional Pahlavi,Q32063
+wikidata,mus,Muscogee,Latn,Latin script,Q523014
+wikidata,cjy,Jin,Hani,Chinese characters,Q56479
+wikidata,lui,Luiseño,Latn,Latin script,Q56236
+wikidata,apc,Levantine Arabic,Latn,Latin script,Q56593
+wikidata,bis,Bislama,Latn,Latin script,Q35452
+wikidata,bra,Braj Bhasha,,Urdu orthography,Q35243
+wikidata,mus,Muscogee,,Muscogee alphabet,Q523014
+wikidata,pal,Middle Persian,Mani,Manichaean,Q32063
+wikidata,lub,Luba-Katanga,Latn,Latin script,Q36157
+wikidata,luz,Southern Luri,,Arabic alphabet,Q12952748
+wikidata,apc,Levantine Arabic,Hebr,Hebrew alphabet,Q56593
+wikidata,som,Somali,Osma,Osmanya,Q13275
+wikidata,gaa,Ga,,Ga Braille,Q33287
+wikidata,amh,,Ethi,Geʽez script,Q28244
+wikidata,zha,Zhuang,Latn,Latin script,Q13216
+wikidata,zha,Zhuang,,Sawndip,Q13216
+wikidata,ina,,Latn,Latin script,Q35934
+wikidata,chu,Church Slavonic,Glag,Glagolitic,Q33251
+wikidata,ben,,,Bangla alphabet,Q9610
+wikidata,bod,Tibetan,Tibt,Tibetan alphabet,Q34271
+wikidata,ile,Interlingue,Latn,Latin script,Q35850
+wikidata,mri,Māori,,Māori writing system,Q36451
+wikidata,hau,Hausa,Latn,Latin script,Q56475
+wikidata,iku,Inuktitut,Latn,Latin script,Q29921
+wikidata,che,Chechen,Cyrl,Cyrillic script,Q33350
+wikidata,che,Chechen,Latn,Latin script,Q33350
+wikidata,lim,,Latn,Latin script,Q102172
+wikidata,iku,Inuktitut,Cans,Canadian Aboriginal syllabics,Q29921
+wikidata,asm,Assamese,,Assamese alphabet,Q29401
+wikidata,sun,Sundanese,Latn,Latin script,Q34002
+wikidata,kon,Kongo,Latn,Latin script,Q33702
+wikidata,oss,Iron dialect,,Ossetian Cyrillic alphabet,Q2585922
+wikidata,chu,Church Slavonic,Cyrs,Early Cyrillic alphabet,Q33251
+wikidata,chu,Church Slavonic,Cyrl,Cyrillic script,Q33251
+wikidata,chu,Church Slavonic,Latn,Latin script,Q33251
+wikidata,pan,Punjabi,,Shahmukhi,Q58635
+wikidata,hau,Hausa,,Arabic alphabet,Q56475
+wikidata,zul,,Latn,Latin script,Q10179
+wikidata,hbs,,,Gaj's Latin alphabet,Q9301
+wikidata,hbs,,,Serbian Cyrillic alphabet,Q9301
+wikidata,bak,Bashkir,Cyrl,Cyrillic script,Q13389
+wikidata,iku,Inuktitut,,Eskimo alphabet,Q29921
+wikidata,aar,Afar,Ethi,Geʽez script,Q27811
+wikidata,che,Chechen,Arab,Arabic script,Q33350
+wikidata,sun,Sundanese,Sund,Sundanese script,Q34002
+wikidata,aka,Akan,Latn,Latin script,Q28026
+wikidata,mal,Malayalam,,Arabi Malayalam script,Q36236
+wikidata,afr,Afrikaans,Latn,Latin script,Q14196
+wikidata,bak,Bashkir,,Yañalif,Q13389
+wikidata,uig,Uyghur,Cyrl,Cyrillic script,Q13263
+wikidata,uig,Uyghur,Latn,Latin script,Q13263
+wikidata,pan,Punjabi,Guru,Gurmukhi,Q58635
+wikidata,pan,Punjabi,,Urdu orthography,Q58635
+wikidata,che,Chechen,,Chechen writing,Q33350
+wikidata,nau,Nauruan,Latn,Latin script,Q13307
+wikidata,cym,,Latn,Latin script,Q9309
+wikidata,ara,Arabic,,Arabic alphabet,Q13955
+wikidata,ara,Arabic,,Arabic Braille,Q13955
+wikidata,ipk,Iñupiaq,Latn,Latin script,Q27183
+wikidata,tir,Tigrinya,Ethi,Geʽez script,Q34124
+wikidata,bod,Tibetan,,Tibetan Braille,Q34271
+wikidata,sna,Shona,Latn,Latin script,Q34004
+wikidata,hau,Hausa,,Hausa Braille,Q56475
+wikidata,ipk,Iñupiaq,,Iñupiaq Braille,Q27183
+wikidata,ben,,,Bengali Braille,Q9610
+wikidata,ara,Arabic,Arab,Arabic script,Q13955
+wikidata,ina,,,Interlingua alphabet,Q35934
+wikidata,mal,Malayalam,Mlym,Malayalam script,Q36236
+wikidata,bak,Bashkir,Arab,Arabic script,Q13389
+wikidata,tah,Tahitian,Latn,Latin script,Q34128
+wikidata,aar,Afar,Latn,Latin script,Q27811
+wikidata,hmo,Hiri Motu,Latn,Latin script,Q33617
+wikidata,mri,Māori,,Māori Braille,Q36451
+wikidata,ory,Odia,Orya,Odia,Q33810
+wikidata,uig,Uyghur,Arab,Arabic script,Q13263
+wikidata,pli,Pali,Brah,Brahmi,Q36727
+wikidata,aka,Akan,,Akan Braille,Q28026
+wikidata,kik,Gikuyu,Latn,Latin script,Q33587
+wikidata,ndo,Ndonga,Latn,Latin script,Q33900
+wikidata,cha,Chamorro,Latn,Latin script,Q33262
+wikidata,oss,Iron dialect,Cyrl,Cyrillic script,Q2585922
+wikidata,iku,Inuktitut,,Inuktitut syllabics,Q29921
+wikidata,ven,Venda,Latn,Latin script,Q32704
+wikidata,ido,Ido,Latn,Latin script,Q35224
+wikidata,dbp,Ɗuwai,Latn,Latin script,Q56301
+wikidata,anm,Namfau,Mtei,Meetei Mayek,Q56235
+wikidata,buh,Younuo,Latn,Latin script,Q56299
+wikidata,gpn,Tayap,Latn,Latin script,Q56237
+wikidata,ykg,Tundra Yukaghir,Cyrl,Cyrillic script,Q56319
+wikidata,byh,Bhujel,Deva,Devanagari,Q56317
+wikidata,gmo,Gamo-Gofa-Dawro,Ethi,Geʽez script,Q56323
+wikidata,bta,Bata,Latn,Latin script,Q56254
+wikidata,bde,Bade,Latn,Latin script,Q56239
+wikidata,anm,Namfau,Latn,Latin script,Q56235
+wikidata,gmo,Gamo-Gofa-Dawro,Latn,Latin script,Q56323
+wikidata,fin,Finnish,,Scandinavian Braille,Q1412
+wikidata,kor,Korean,,Hanja,Q9176
+wikidata,tel,Telugu,Telu,Telugu,Q8097
+wikidata,vie,Vietnamese,,Vietnamese alphabet,Q9199
+wikidata,est,Estonian,,Estonian Braille,Q9072
+wikidata,vie,Vietnamese,,chữ Nôm,Q9199
+wikidata,bel,Belarusian,,Belarusian Cyrillic alphabet,Q9091
+wikidata,srp,,,Gaj's Latin alphabet,Q9299
+wikidata,srp,,,Serbian Cyrillic alphabet,Q9299
+wikidata,vie,Vietnamese,,Vietnamese Braille,Q9199
+wikidata,fas,Persian,,Persian alphabet,Q9168
+wikidata,yid,Yiddish,Hebr,Hebrew alphabet,Q8641
+wikidata,hun,Hungarian,,,Q9067
+wikidata,fra,French,,French Braille,Q150
+wikidata,aze,,,Azerbaijani Braille,Q9292
+wikidata,kat,Georgian,,Georgian scripts,Q8108
+wikidata,urd,Urdu,,Urdu orthography,Q1617
+wikidata,yid,Yiddish,,,Q8641
+wikidata,epo,Esperanto,,Esperanto alphabet,Q143
+wikidata,bul,Bulgarian,,Bulgarian alphabet,Q7918
+wikidata,ita,Italian,,Italian Braille,Q652
+wikidata,vie,Vietnamese,Latn,Latin script,Q9199
+wikidata,uzb,,Cyrl,Cyrillic script,Q9264
+wikidata,uzb,,Latn,Latin script,Q9264
+wikidata,tam,Tamil,Taml,Tamil script,Q5885
+wikidata,isl,Icelandic,,Icelandic alphabet,Q294
+wikidata,tam,Tamil,Arab,Arabic script,Q5885
+wikidata,ron,Romanian,Latn,Latin script,Q7913
+wikidata,nor,Norwegian,Latn,Latin script,Q9043
+wikidata,por,Portuguese,Latn,Latin script,Q5146
+wikidata,por,Portuguese,,Portuguese alphabet,Q5146
+wikidata,est,Estonian,Latn,Latin script,Q9072
+wikidata,gle,Irish,Latn,Latin script,Q9142
+wikidata,gle,Irish,,Irish Braille,Q9142
+wikidata,heb,,Hebr,Hebrew alphabet,Q9288
+wikidata,arg,Aragonese,Latn,Latin script,Q8765
+wikidata,fin,Finnish,Latn,Latin script,Q1412
+wikidata,swa,Swahili,,Swahili Ajami,Q7838
+wikidata,guj,Gujarati,Gujr,Gujarati,Q5137
+wikidata,swa,Swahili,Latn,Latin script,Q7838
+wikidata,hin,Hindi,Deva,Devanagari,Q1568
+wikidata,mya,Burmese,,Burmese alphabet,Q9228
+wikidata,swe,Swedish,,Swedish alphabet,Q9027
+wikidata,jpn,Japanese,,kanji,Q5287
+wikidata,fra,French,,French alphabet,Q150
+wikidata,abk,Abkhaz,Cyrl,Cyrillic script,Q5111
+wikidata,bul,Bulgarian,Cyrl,Cyrillic script,Q7918
+wikidata,eus,Basque,,Basque alphabet,Q8752
+wikidata,isl,Icelandic,,Icelandic Braille,Q294
+wikidata,mya,Burmese,Mymr,Mon–Burmese script,Q9228
+wikidata,hun,Hungarian,,Hungarian Braille,Q9067
+wikidata,eus,Basque,Latn,Latin script,Q8752
+wikidata,kir,,Cyrl,Cyrillic script,Q9255
+wikidata,aze,,,Persian alphabet,Q9292
+wikidata,kaz,,,Arabic alphabet,Q9252
+wikidata,ita,Italian,,Italian alphabet,Q652
+wikidata,isl,Icelandic,Latn,Latin script,Q294
+wikidata,uzb,,,Arabic alphabet,Q9264
+wikidata,hbs,,Cyrl,Cyrillic script,Q9301
+wikidata,hbs,,Latn,Latin script,Q9301
+wikidata,nld,Dutch,,Dutch alphabet,Q7411
+wikidata,swe,Swedish,Latn,Latin script,Q9027
+wikidata,slk,Slovak,Latn,Latin script,Q9058
+wikidata,aym,Aymara,Latn,Latin script,Q4627
+wikidata,jpn,Japanese,Hrkt,kana,Q5287
+wikidata,tam,Tamil,,Koleluttu,Q5885
+wikidata,kat,Georgian,,Georgian Braille,Q8108
+wikidata,tam,Tamil,,Vatteluttu,Q5885
+wikidata,bul,Bulgarian,,Bulgarian Braille,Q7918
+wikidata,nld,Dutch,,Dutch six-dot Braille,Q7411
+wikidata,kir,,,Arabic alphabet,Q9255
+wikidata,spa,Spanish,Latn,Latin script,Q1321
+wikidata,ind,Indonesian,Latn,Latin script,Q9240
+wikidata,jpn,Japanese,Kana,katakana,Q5287
+wikidata,khm,Khmer,Khmr,,Q9205
+wikidata,kat,Georgian,,Asomtavruli,Q8108
+wikidata,hun,Hungarian,Hung,Old Hungarian,Q9067
+wikidata,dan,Danish,Latn,Latin script,Q9035
+wikidata,kaz,,,Kazakh Braille,Q9252
+wikidata,aze,,,Arabic alphabet,Q9292
+wikidata,aze,,Cyrl,Cyrillic script,Q9292
+wikidata,aze,,Latn,Latin script,Q9292
+wikidata,kor,Korean,Hang,Hangul,Q9176
+wikidata,kat,Georgian,,Mkhedruli,Q8108
+wikidata,kat,Georgian,,Nuskhuri,Q8108
+wikidata,fas,Persian,Arab,Arabic script,Q9168
+wikidata,nld,Dutch,,Dutch eight-dot Braille,Q7411
+wikidata,epo,Esperanto,,Esperanto Braille,Q143
+wikidata,kaz,,Cyrl,Cyrillic script,Q9252
+wikidata,kaz,,Latn,Latin script,Q9252
+wikidata,lao,Lao,Laoo,Lao,Q9211
+wikidata,jpn,Japanese,Hira,hiragana,Q5287
+wikidata,gle,Irish,Latg,Gaelic type,Q9142
+wikidata,pal,Middle Persian,,Pahlavi scripts,Q32063
+wikidata,bos,,,Gaj's Latin alphabet,Q9303
+wikidata,vic,Virgin Islands Creole,Latn,Latin script,Q7933935
+wikidata,ogn,Ogan,,Ogan,Q12473456
+wikidata,apc,North Levantine Arabic,,Arabic alphabet,Q22809485
+wikidata,sis,Siuslaw,Latn,Latin script,Q2315424
+wikidata,bis,Bislama,,Avoiuli,Q35452
+wikidata,ces,Czech,,Czech alphabet,Q9056
+wikidata,tgk,,Cyrl,Cyrillic script,Q9260
+wikidata,tgk,,Latn,Latin script,Q9260
+wikidata,bre,Breton,,Breton alphabet,Q12107
+wikidata,ltz,Luxembourgish,,Luxembourgish alphabet,Q9051
+wikidata,tat,Tatar,Cyrl,Cyrillic script,Q25285
+wikidata,tuk,,,Russian Braille,Q9267
+wikidata,tha,Thai,,romanization of Thai,Q9217
+wikidata,zho,Chinese,Hans,simplified Chinese characters,Q7850
+wikidata,lug,Luganda,Latn,Latin script,Q33368
+wikidata,fij,Fijian,Latn,Latin script,Q33295
+wikidata,zho,Chinese,Hani,Chinese characters,Q7850
+wikidata,mlg,Malagasy,,Sorabe alphabet,Q7930
+wikidata,msa,Malay,,Malay alphabet,Q9237
+wikidata,tha,Thai,Thai,Thai script,Q9217
+wikidata,hye,Armenian,Armn,Armenian alphabet,Q8785
+wikidata,her,Herero,Latn,Latin script,Q33315
+wikidata,ful,Fula,Adlm,Adlam,Q33454
+wikidata,kal,Greenlandic,,Scandinavian Braille,Q25355
+wikidata,zho,Chinese,Hant,traditional Chinese characters,Q7850
+wikidata,bam,Bambara,Latn,Latin script,Q33243
+wikidata,roh,Romansh,Latn,Latin script,Q13199
+wikidata,ewe,Ewe,Latn,Latin script,Q30005
+wikidata,chv,Chuvash,Cyrl,Cyrillic script,Q33348
+wikidata,mlg,Malagasy,Latn,Latin script,Q7930
+wikidata,nav,Navajo,,Navajo Braille,Q13310
+wikidata,tgk,,,Tajik Cyrillic alphabet,Q9260
+wikidata,hat,Haitian Creole,Latn,Latin script,Q33491
+wikidata,bam,Bambara,Nkoo,,Q33243
+wikidata,jav,Javanese,,Formal Javanese Spelling,Q33549
+wikidata,jav,Javanese,Java,Javanese script,Q33549
+wikidata,dzo,Dzongkha,Tibt,Tibetan alphabet,Q33081
+wikidata,mon,,Cyrl,Cyrillic script,Q9246
+wikidata,mon,,Mong,,Q9246
+wikidata,glg,,Latn,Latin script,Q9307
+wikidata,bam,Bambara,,Masaba,Q33243
+wikidata,fij,Fijian,Deva,Devanagari,Q33295
+wikidata,nob,Bokmål,,Dano-Norwegian alphabet,Q25167
+wikidata,que,Quechua,Latn,Latin script,Q5218
+wikidata,tur,Turkish,,Turkish alphabet,Q256
+wikidata,ukr,Ukrainian,Cyrl,Cyrillic script,Q8798
+wikidata,ave,Avestan,Gujr,Gujarati,Q29572
+wikidata,ful,Fula,Latn,Latin script,Q33454
+wikidata,fry,West Frisian,Latn,Latin script,Q27175
+wikidata,jav,Javanese,,Pegon alphabet,Q33549
+wikidata,tuk,,,Turkmen alphabet,Q9267
+wikidata,lit,Lithuanian,,Lithuanian alphabet,Q9083
+wikidata,kal,Greenlandic,,Greenlandic alphabet,Q25355
+wikidata,tgk,,Hebr,Hebrew alphabet,Q9260
+wikidata,div,Maldivian,Diak,Dhives Akuru,Q32656
+wikidata,mlt,Maltese,,Maltese Braille,Q9166
+wikidata,nav,Navajo,Latn,Latin script,Q13310
+wikidata,mlt,Maltese,,Maltese alphabet,Q9166
+wikidata,oci,Occitan,,,Q14185
+wikidata,lav,Latvian,,Latvian alphabet,Q9078
+wikidata,ful,Fula,,Ajami script,Q33454
+wikidata,sqi,Albanian,,Albanian alphabet,Q8748
+wikidata,hrv,Croatian,,Gaj's Latin alphabet,Q6654
+wikidata,jav,Javanese,Latn,Latin script,Q33549
+wikidata,tuk,,,Perso-Arabic script,Q9267
+wikidata,slv,Slovene,Latn,Latin script,Q9063
+wikidata,glv,Manx,Latn,Latin script,Q12175
+wikidata,msa,Malay,,Jawi,Q9237
+wikidata,ces,Czech,,Czech Braille,Q9056
+wikidata,mkd,,Cyrl,Cyrillic script,Q9296
+wikidata,kas,Kashmiri,,Persian alphabet,Q33552
+wikidata,lit,Lithuanian,,Lithuanian Braille,Q9083
+wikidata,ltz,Luxembourgish,,Luxembourgish Braille,Q9051
+wikidata,tuk,,Cyrl,Cyrillic script,Q9267
+wikidata,tuk,,Latn,Latin script,Q9267
+wikidata,bam,Bambara,,Ajami script,Q33243
+wikidata,oci,Occitan,,Norme bonnaudienne,Q14185
+wikidata,nno,Nynorsk,Latn,Latin script,Q25164
+wikidata,lav,Latvian,,Latvian Braille,Q9078
+wikidata,pol,Polish,Latn,Latin script,Q809
+wikidata,ewe,Ewe,,Ewe Braille,Q30005
+wikidata,mkd,,,Macedonian alphabet,Q9296
+wikidata,msa,Malay,Latn,Latin script,Q9237
+wikidata,kal,Greenlandic,,Kleinschmidt orthography,Q25355
+wikidata,xho,Xhosa,Latn,Latin script,Q13218
+wikidata,gla,,,Gaelic alphabet,Q9314
+wikidata,div,Maldivian,Thaa,Thaana,Q32656
+wikidata,ave,Avestan,Avst,Avestan,Q29572
+wikidata,chv,Chuvash,,Chuvash alphabet,Q33348
+wikidata,oci,Occitan,,classical norm of Occitan,Q14185
+wikidata,oci,Occitan,Latn,Latin script,Q14185
+wikidata,fao,Faroese,Latn,Latin script,Q25258
+wikidata,tgk,,,Persian alphabet,Q9260
+wikidata,gla,,Latn,Latin script,Q9314
+wikidata,nob,Bokmål,Latn,Latin script,Q25167
+wikidata,jav,Javanese,Kawi,,Q33549
+wikidata,nya,Chewa,Latn,Latin script,Q33273
+wikidata,ksd,Tolai,Latn,Latin script,Q35870
+wikidata,bkm,Kom,Latn,Latin script,Q1656595
+wikidata,xon,Konkomba,,Konkomba Braille,Q35674
+wikidata,xon,Konkomba,Latn,Latin script,Q35674
+wikidata,shi,Tashelhit,Latn,Latin script,Q34152
+wikidata,maf,Mafa,Latn,Latin script,Q35819
+wikidata,kum,Kumyk,Cyrl,Cyrillic script,Q36209
+wikidata,kum,Kumyk,Latn,Latin script,Q36209
+wikidata,ilo,Ilocano,Latn,Latin script,Q35936
+wikidata,bss,Kose,Latn,Latin script,Q34806
+wikidata,jge,Judaeo-Georgian,,,Q35737
+wikidata,eka,Ekajuk,Latn,Latin script,Q35250
+wikidata,bsq,Bassa,Latn,Latin script,Q34949
+wikidata,pre,Principense,Latn,Latin script,Q36520
+wikidata,xhu,Hurrian,Ugar,Ugaritic alphabet,Q35740
+wikidata,jbn,Nafusi,Latn,Latin script,Q36151
+wikidata,kbd,Kabardian,,Kabardian script,Q33522
+wikidata,kum,Kumyk,,Kumyk alphabet,Q36209
+wikidata,hus,Teenek,Latn,Latin script,Q35573
+wikidata,ses,Koyraboro Senni,Latn,Latin script,Q35655
+wikidata,ilo,Ilocano,Tglg,Baybayin,Q35936
+wikidata,ett,Etruscan,,Etruscan alphabet,Q35726
+wikidata,hmd,A-Hmao,Plrd,Miao,Q1108934
+wikidata,ike,Eastern Canadian Inuktitut,Latn,Latin script,Q4126517
+wikidata,ilo,Ilocano,,Philippine Braille,Q35936
+wikidata,piv,Vaeakau-Taumako,Latn,Latin script,Q2976736
+wikidata,brd,Baram,Deva,Devanagari,Q56804
+wikidata,hmd,A-Hmao,Latn,Latin script,Q1108934
+wikidata,ren,Rengao,Latn,Latin script,Q6583692
+wikidata,byn,Blin,Latn,Latin script,Q56491
+wikidata,bnn,Bunun,Latn,Latin script,Q56505
+wikidata,bwr,Bura,Latn,Latin script,Q56552
+wikidata,kfc,Konda,Telu,Telugu,Q35679
+wikidata,shi,Tashelhit,,Neo-Tifinagh,Q34152
+wikidata,gnc,Guanche,Tfng,Tifinagh,Q35762
+wikidata,ksw,S'gaw Karen,,S'gaw Karen Script,Q56410
+wikidata,kdr,Karaim,Hebr,Hebrew alphabet,Q33725
+wikidata,dhm,Zemba,Latn,Latin script,Q1845148
+wikidata,rsk,Pannonian Rusyn,Cyrl,Cyrillic script,Q35660
+wikidata,xhu,Hurrian,,Hurrian cuneiform,Q35740
+wikidata,ike,Eastern Canadian Inuktitut,Cans,Canadian Aboriginal syllabics,Q4126517
+wikidata,gek,Youm,Latn,Latin script,Q3441277
+wikidata,xhu,Hurrian,Hluw,Anatolian Hieroglyphs,Q35740
+wikidata,gez,Ge'ez,Ethi,Geʽez script,Q35667
+wikidata,bro,Brokkat,Tibt,Tibetan alphabet,Q56605
+wikidata,erg,Erromanga,Latn,Latin script,Q426254
+wikidata,hwc,Hawaiian Pidgin,Latn,Latin script,Q35602
+wikidata,laj,Lango,Latn,Latin script,Q35670
+wikidata,kzr,Karang,Latn,Latin script,Q35681
+wikidata,fng,Fanagalo,Latn,Latin script,Q35727
+wikidata,kkj,Kako,Latn,Latin script,Q35755
+wikidata,gnc,Guanche,Latn,Latin script,Q35762
+wikidata,kpg,Kapingamarangi,Latn,Latin script,Q35771
+wikidata,piu,Pintupi,Latn,Latin script,Q2591175
+wikidata,lhu,Lahu,Latn,Latin script,Q35780
+wikidata,liq,Libido,Ethi,Geʽez script,Q35691
+wikidata,bdr,West Coast Bajau,Latn,Latin script,Q2880037
+wikidata,,Kituba,Latn,Latin script,Q35746
+wikidata,kpe,Kpelle,Latn,Latin script,Q35673
+wikidata,lag,Rangi,Latn,Latin script,Q584983
+wikidata,dug,Kiduruma,Latn,Latin script,Q35614
+wikidata,bsq,Bassa,Bass,Bassa Vah,Q34949
+wikidata,xhu,Hurrian,Xsux,cuneiform,Q35740
+wikidata,dlk,Dahalik,Ethi,Geʽez script,Q32260
+wikidata,gat,Kenati,Latn,Latin script,Q4219330
+wikidata,ksb,Shambala,Latn,Latin script,Q3788739
+wikidata,jbn,Nafusi,Tfng,Tifinagh,Q36151
+wikidata,ken,Kenyang,Latn,Latin script,Q35650
+wikidata,kdr,Karaim,,,Q33725
+wikidata,ktb,Kambaata,Ethi,Geʽez script,Q35664
+wikidata,bgt,Bughotu,Latn,Latin script,Q2927723
+wikidata,mer,Meru,Latn,Latin script,Q13313
+wikidata,ijn,Kalabari,Latn,Latin script,Q35697
+wikidata,kbd,Kabardian,Arab,Arabic script,Q33522
+wikidata,shi,Tashelhit,Arab,Arabic script,Q34152
+wikidata,kum,Kumyk,Arab,Arabic script,Q36209
+wikidata,anu,Anuak,Ethi,Geʽez script,Q56677
+wikidata,byn,Blin,Ethi,Geʽez script,Q56491
+wikidata,kus,Kusaal,Latn,Latin script,Q35708
+wikidata,kfy,Kumaoni,Deva,Devanagari,Q33529
+wikidata,khn,Khandeshi,Deva,Devanagari,Q33726
+wikidata,kbd,Kabardian,Cyrl,Cyrillic script,Q33522
+wikidata,kbd,Kabardian,Latn,Latin script,Q33522
+wikidata,kdr,Karaim,Cyrl,Cyrillic script,Q33725
+wikidata,kdr,Karaim,Latn,Latin script,Q33725
+wikidata,kfz,Koromfe,Latn,Latin script,Q35701
+wikidata,ksf,Bafia,Latn,Latin script,Q34930
+wikidata,vot,Votic,Latn,Latin script,Q32858
+wikidata,grb,Grebo,Latn,Latin script,Q35257
+wikidata,fon,Fon,Latn,Latin script,Q33291
+wikidata,pag,Pangasinan,,Filipino alphabet,Q33879
+wikidata,arz,Egyptian Arabic,,Arabic chat alphabet,Q29919
+wikidata,ang,Old English,,futhark,Q42365
+wikidata,ang,Old English,Latn,Latin script,Q42365
+wikidata,ang,Old English,,futhorc,Q42365
+wikidata,yol,Yola,Latn,Latin script,Q56395
+wikidata,tun,Tunica,Latn,Latin script,Q56619
+wikidata,ari,Arikara,Latn,Latin script,Q56539
+wikidata,kaa,Karakalpak,Cyrl,Cyrillic script,Q33541
+wikidata,kaa,Karakalpak,Latn,Latin script,Q33541
+wikidata,,Mandaic,Mand,Mandaic,Q33500
+wikidata,sip,Sikkimese Bhutia,Tibt,Tibetan alphabet,Q35285
+wikidata,kru,Kurukh,Tols,Tolong Siki,Q33492
+wikidata,alt,Southern Altai,Cyrl,Cyrillic script,Q1991779
+wikidata,kca,Khanty,,,Q33563
+wikidata,nag,Nagamese Creole,,Bangla alphabet,Q3503454
+wikidata,kam,Kamba,Latn,Latin script,Q2574767
+wikidata,kfb,Kolava,Deva,Devanagari,Q33479
+wikidata,gej,Gen,Latn,Latin script,Q33450
+wikidata,lkt,Lakota,Latn,Latin script,Q33537
+wikidata,kca,Khanty,Cyrl,Cyrillic script,Q33563
+wikidata,kho,Khotanese,Brah,Brahmi,Q130224860
+wikidata,kru,Kurukh,Deva,Devanagari,Q33492
+wikidata,var,Huarijio,Latn,Latin script,Q10974017
+wikidata,kho,Khotanese,Khar,Kharoṣṭhī,Q130224860
+wikidata,mam,Mam,Latn,Latin script,Q33467
+wikidata,tul,Tula,Latn,Latin script,Q3914907
+wikidata,krl,Karelian,Latn,Latin script,Q33557
+wikidata,cul,Culina,Latn,Latin script,Q2475442
+wikidata,zag,Zaghawa,Berf,Beria Erfe,Q37007
+wikidata,xld,Lydian,Lydi,Lydian,Q36095
+wikidata,muz,Mursi,Ethi,Geʽez script,Q36013
+wikidata,kol,Kol,Latn,Latin script,Q4227542
+wikidata,aju,Judeo-Moroccan,,,Q56595
+wikidata,arz,Egyptian Arabic,Arab,Arabic script,Q29919
+wikidata,meu,Motu,Latn,Latin script,Q33516
+wikidata,kap,Bezhta,Cyrl,Cyrillic script,Q33054
+wikidata,kut,Kutenai,Latn,Latin script,Q33434
+wikidata,bum,Bulu,Latn,Latin script,Q35028
+wikidata,ami,Amis,Latn,Latin script,Q35132
+wikidata,bah,Bahamian Creole,Latn,Latin script,Q2669229
+wikidata,gan,Gan Chinese,Hani,Chinese characters,Q33475
+wikidata,bin,Edo,Latn,Latin script,Q35375
+wikidata,kun,Kunama,Latn,Latin script,Q36041
+wikidata,gur,Farefare,Latn,Latin script,Q35331
+wikidata,nut,Nung,Latn,Latin script,Q72695
+wikidata,guz,Gusii,Latn,Latin script,Q33603
+wikidata,tab,Tabasaran,Cyrl,Cyrillic script,Q34079
+wikidata,pag,Pangasinan,Latn,Latin script,Q33879
+wikidata,mop,Mopan Maya,Latn,Latin script,Q36183
+wikidata,ani,Andi,Cyrl,Cyrillic script,Q34849
+wikidata,kab,Kabyle,Latn,Latin script,Q35853
+wikidata,alt,Southern Altai,,Altai alphabet,Q1991779
+wikidata,zag,Zaghawa,Latn,Latin script,Q37007
+wikidata,moh,Mohawk,Latn,Latin script,Q13339
+wikidata,,,Latn,Latin script,Q116187618
+wikidata,xmf,Mingrelian,,Georgian scripts,Q13359
+wikidata,hsb,Upper Sorbian,,Upper Sorbian alphabet,Q13248
+wikidata,mzn,Mazanderani,,Persian alphabet,Q13356
+wikidata,haw,Hawaiian,,Hawaiian alphabet,Q33569
+wikidata,xmf,Mingrelian,,Asomtavruli,Q13359
+wikidata,xmf,Mingrelian,,Mkhedruli,Q13359
+wikidata,xmf,Mingrelian,,Nuskhuri,Q13359
+wikidata,anp,Angika,,Aṅga-lipi,Q28378
+wikidata,mnw,Mon,,Old Mon script,Q13349
+wikidata,ady,Adyghe,,Adyghe alphabet,Q27776
+wikidata,hsb,Upper Sorbian,Latn,Latin script,Q13248
+wikidata,ady,Adyghe,Arab,Arabic script,Q27776
+wikidata,sco,Scots,Latn,Latin script,Q14549
+wikidata,frp,Arpitan language,Latn,Latin script,Q15087
+wikidata,ing,Deg Xinag,Latn,Latin script,Q27782
+wikidata,yue,Yue Chinese,,written Cantonese,Q7033959
+wikidata,haa,Hän,Latn,Latin script,Q28272
+wikidata,haw,Hawaiian,,Hawaiian Braille,Q33569
+wikidata,geh,Hutterite German,Latn,Latin script,Q33385
+wikidata,yah,Yazgulyam,Cyrl,Cyrillic script,Q34186
+wikidata,yah,Yazgulyam,Latn,Latin script,Q34186
+wikidata,ket,Ket,Cyrl,Cyrillic script,Q33485
+wikidata,pst,Central Pashto,,Arabic alphabet,Q5061628
+wikidata,stq,Saterland Frisian,Latn,Latin script,Q27154
+wikidata,anp,Angika,Deva,Devanagari,Q28378
+wikidata,lus,Mizo,Latn,Latin script,Q36147
+wikidata,ace,Acehnese,Latn,Latin script,Q27683
+wikidata,nii,Nii,Latn,Latin script,Q35237
+wikidata,ady,Adyghe,Cyrl,Cyrillic script,Q27776
+wikidata,rar,Cook Islands Maori,Latn,Latin script,Q36745
+wikidata,tum,Tumbuka,Latn,Latin script,Q34138
+wikidata,abr,Bono,Latn,Latin script,Q34831
+wikidata,bud,Ntcham,,Ntcham Braille,Q36266
+wikidata,nrb,Nara,Latn,Latin script,Q36179
+wikidata,ach,Acholi,Latn,Latin script,Q34926
+wikidata,mrv,Mangareva,Latn,Latin script,Q36237
+wikidata,yue,Yue Chinese,,Simplified Chinese,Q7033959
+wikidata,kee,Eastern Keres,Latn,Latin script,Q15649021
+wikidata,yue,Yue Chinese,,Cantonese Braille,Q7033959
+wikidata,,Isoba,Latn,Latin script,Q108054237
+wikidata,seh,Chibarwe,Latn,Latin script,Q2964008
+wikidata,cop,Coptic,Copt,Coptic script,Q36155
+wikidata,,Urgesal,Latn,Latin script,Q63449899
+wikidata,mzb,Mozabite,Tfng,Tifinagh,Q36149
+wikidata,pam,Kapampangan,Latn,Latin script,Q36121
+wikidata,lld,Ladin,Latn,Latin script,Q36202
+wikidata,yue,Yue Chinese,,Traditional Chinese,Q7033959
+wikidata,sao,Sause,Latn,Latin script,Q4409155
+wikidata,agi,Agariya,Deva,Devanagari,Q663586
+wikidata,kpy,Koryak,,Kolyak alphabet,Q36199
+wikidata,ymm,Maay-Maay language,Latn,Latin script,Q36221
+wikidata,mos,Mooré,Latn,Latin script,Q36096
+wikidata,,Mirad,Latn,Latin script,Q112796022
+wikidata,,Mini,Latn,Latin script,Q108470470
+wikidata,,Egyptien de tradition,Egyp,Egyptian hieroglyphs,Q123735278
+wikidata,,,Latn,Latin script,Q104183529
+wikidata,,,,emoji script,Q116187618
+wikidata,,Egyptien de tradition,Egyh,Egyptian hieratic,Q123735278
+wikidata,,Egyptien de tradition,,Cursive hieroglyphs,Q123735278
+wikidata,,Jitasama,Latn,Latin script,Q122397475
+wikidata,kpy,Koryak,Cyrl,Cyrillic script,Q36199
+wikidata,,Tuki Tiki,,Titi Pula,Q124498693
+wikidata,,Pan-Kel,Latn,Latin script,Q19724279
+wikidata,,,Latn,Latin script,Q100388561
+wikidata,mzb,Mozabite,Latn,Latin script,Q36149
+wikidata,num,Niuafo'ou,Latn,Latin script,Q36173
+wikidata,jgo,Ngomba,Latn,Latin script,Q36287
+wikidata,,Wede,Latn,Latin script,Q118431221
+wikidata,,Kursenieki,Latn,Latin script,Q36223
+wikidata,nzi,Nzema,Latn,Latin script,Q36337
+wikidata,tay,Atayal,Latn,Latin script,Q715766
+wikidata,oak,Noakhailla,Deva,Devanagari,Q107548681
+wikidata,oak,Noakhailla,Latn,Latin script,Q107548681
+wikidata,lam,Lamba,Latn,Latin script,Q36098
+wikidata,,S'nôke,Latn,Latin script,Q56839142
+wikidata,,Langugu,Latn,Latin script,Q56843032
+wikidata,mzb,Mozabite,,Arabic alphabet,Q36149
+wikidata,zuh,Tokano,Latn,Latin script,Q7813481
+wikidata,ace,Acehnese,,Jawoë,Q27683
+wikidata,,Tuki Tiki,Latn,Latin script,Q124498693
+wikidata,oak,Noakhailla,Beng,Bangla–Assamese script,Q107548681
+wikidata,,Gurgle,,,Q123185855
+wikidata,mzn,Mazanderani,Arab,Arabic script,Q13356
+wikidata,tsg,Tausug,,Jawi,Q34142
+wikidata,hit,Hittite,,,Q35668
+wikidata,koi,Komi-Permyak,,Molodtsov alphabet,Q56318
+wikidata,bzb,Andio,Latn,Latin script,Q4754487
+wikidata,ugh,Kubachi,Cyrl,Cyrillic script,Q2445129
+wikidata,srq,Sirionó,Latn,Latin script,Q3027953
+wikidata,ain,Ainu,,Ainu orthography,Q27969
+wikidata,loz,Lozi,,Zambian Braille,Q33628
+wikidata,yom,Kiyombe,Latn,Latin script,Q10961975
+wikidata,oco,Old Cornish,Latn,Latin script,Q48304520
+wikidata,loy,Lowa,Tibt,Tibetan alphabet,Q12952744
+wikidata,got,Gothic,Goth,Gothic script,Q35722
+wikidata,pes,Iranian Persian,,Persian alphabet,Q3513637
+wikidata,rys,Yaeyama,Jpan,Japanese writing system,Q34203
+wikidata,mve,Marwari,Arab,Arabic script,Q67093214
+wikidata,har,Harari,Ethi,Geʽez script,Q33626
+wikidata,dun,Deyah,Latn,Latin script,Q2784033
+wikidata,sog,Sogdian,Sogd,Sogdian,Q205979
+wikidata,mik,Mikasuki,Latn,Latin script,Q13316
+wikidata,min,Minangkabau,Latn,Latin script,Q13324
+wikidata,key,Kupia,Telu,Telugu,Q6445354
+wikidata,rcf,Réunion Creole,Latn,Latin script,Q13198
+wikidata,har,Harari,,Arabic alphabet,Q33626
+wikidata,got,Gothic,Runr,runic script,Q35722
+wikidata,ale,Aleut,Latn,Latin script,Q27210
+wikidata,cal,Carolinian,Latn,Latin script,Q28427
+wikidata,ain,Ainu,Latn,Latin script,Q27969
+wikidata,bar,Bavarian,Latn,Latin script,Q29540
+wikidata,sel,Selkup,Cyrl,Cyrillic script,Q34008
+wikidata,goh,Old High German,Latn,Latin script,Q35218
+wikidata,niu,Niuean,Latn,Latin script,Q33790
+wikidata,fil,Filipino,Latn,Latin script,Q33298
+wikidata,loz,Lozi,Latn,Latin script,Q33628
+wikidata,bhb,Bhili,Deva,Devanagari,Q33229
+wikidata,yao,Yao,Latn,Latin script,Q36902
+wikidata,bor,Bororo,Latn,Latin script,Q32986
+wikidata,sjw,Shawnee,Latn,Latin script,Q2669206
+wikidata,chk,Chuukese,Latn,Latin script,Q33161
+wikidata,tsg,Tausug,Latn,Latin script,Q34142
+wikidata,lez,Lezgian,Cyrl,Cyrillic script,Q31746
+wikidata,gay,Gayo,Latn,Latin script,Q33286
+wikidata,sam,Samaritan Aramaic,Samr,Samaritan alphabet,Q56612
+wikidata,sjd,Kildin Sami,Cyrl,Cyrillic script,Q33656
+wikidata,kos,Kosraean,Latn,Latin script,Q33464
+wikidata,sda,Toraja-Sa’dan,Latn,Latin script,Q36673
+wikidata,toi,Tonga,Latn,Latin script,Q34101
+wikidata,wls,Wallisian,Latn,Latin script,Q36979
+wikidata,nga,Ngbaka Gbaya,Latn,Latin script,Q36022
+wikidata,poh,Poqomchi',Latn,Latin script,Q36414
+wikidata,pug,Puguli,Latn,Latin script,Q36375
+wikidata,shu,Shuwa,Arab,Arabic script,Q56497
+wikidata,ito,,Latn,Latin script,Q950585
+wikidata,sog,Sogdian,Syrc,Syriac alphabet,Q205979
+wikidata,hop,Hopi,Latn,Latin script,Q56421
+wikidata,koi,Komi-Permyak,Cyrl,Cyrillic script,Q56318
+wikidata,ynn,Yana,Latn,Latin script,Q56419
+wikidata,aro,,Latn,Latin script,Q958414
+wikidata,shu,Shuwa,Latn,Latin script,Q56497
+wikidata,sog,Sogdian,Mani,Manichaean,Q205979
+wikidata,tri,Tiriyó,Latn,Latin script,Q56885
+wikidata,car,Carib,Latn,Latin script,Q56611
+wikidata,xli,Liburnian,,,Q35835
+wikidata,bal,Balochi,,Balochi Roman Orthography,Q33049
+wikidata,bal,Balochi,,Balochi Standard Orthography,Q33049
+wikidata,bal,Balochi,,Old Balochi Orthography,Q33049
+wikidata,hid,Hidatsa,Latn,Latin script,Q3135234
+wikidata,hit,Hittite,Xsux,cuneiform,Q35668
+wikidata,bal,Balochi,,Balochi Cyrillic Alphabet,Q33049
+wikidata,ved,Vedda,Sinh,Sinhala script,Q2567934
+wikidata,loy,Lowa,Deva,Devanagari,Q12952744
+wikidata,min,Minangkabau,,Jawi,Q13324
+wikidata,pis,Pijin,Latn,Latin script,Q36699
+wikidata,,Old Javanese,Java,Javanese script,Q49340
+wikidata,rge,Romano-Greek,Latn,Latin script,Q3915435
+wikidata,zrp,Zarphatic,,,Q36994
+wikidata,ckb,Sorani,,Kurdish alphabets,Q36811
+wikidata,jrb,Judeo-Arabic,,,Q37733
+wikidata,ckb,Sorani,,Kurdish Arabic alphabet,Q36811
+wikidata,elx,Elamite,,Elamite cuneiform,Q35470
+wikidata,bfi,British Sign Language,,Stokoe notation,Q33000
+wikidata,ase,American Sign Language,,Stokoe notation,Q14759
+wikidata,khb,Tai Lü,Thai,Thai script,Q36948
+wikidata,ckb,Sorani,Arab,Arabic script,Q36811
+wikidata,tem,Temne,Latn,Latin script,Q36613
+wikidata,jrb,Judeo-Arabic,Hebr,Hebrew alphabet,Q37733
+wikidata,vgt,Flemish Sign Language,,Dutch alphabet,Q2107617
+wikidata,gsg,German Sign Language,,HamNoSys,Q33282
+wikidata,,Toaq,Latn,Latin script,Q125985179
+wikidata,,gua\spi,Latn,Latin script,Q125992784
+wikidata,,Shidinn language,Hani,Chinese characters,Q126075362
+wikidata,urh,Urhobo,,Urhobo alphabet,Q36663
+wikidata,,Shidinn language,Latn,Latin script,Q126075362
+wikidata,cro,Crow,Latn,Latin script,Q1207611
+wikidata,ase,American Sign Language,,,Q14759
+wikidata,mfs,Mexican Sign Language,Sgnw,SignWriting,Q3915511
+wikidata,ljp,Lampung Api,,Lampung,Q49215
+wikidata,yee,Yimas,Latn,Latin script,Q36954
+wikidata,hif,Fiji Hindi,Deva,Devanagari,Q46728
+wikidata,pnt,Pontic Greek,Cyrl,Cyrillic script,Q36748
+wikidata,pnt,Pontic Greek,Grek,Greek alphabet,Q36748
+wikidata,pnt,Pontic Greek,Latn,Latin script,Q36748
+wikidata,,Myska,Latn,Latin script,Q135442113
+wikidata,khb,Tai Lü,Lana,Tai Tham,Q36948
+wikidata,mcm,Kristang,Latn,Latin script,Q2669169
+wikidata,gsg,German Sign Language,Sgnw,SignWriting,Q33282
+wikidata,otk,Old Turkic,Orkh,Old Turkic,Q34988
+wikidata,lcm,Tungag,Latn,Latin script,Q3542085
+wikidata,smp,Samaritan Hebrew,Samr,Samaritan alphabet,Q56502
+wikidata,pkc,Baekje,Hani,Chinese characters,Q4841264
+wikidata,kaw,Kawi,Kawi,,Q49341
+wikidata,bpy,Bishnupriya Manipuri,Beng,Bangla–Assamese script,Q37059
+wikidata,mey,Hassaniya Arabic,,Arabic alphabet,Q56231
+wikidata,tuq,Teda,Latn,Latin script,Q36639
+wikidata,toj,Tojolab'al,Latn,Latin script,Q36762
+wikidata,,Tarahumara,Latn,Latin script,Q36807
+wikidata,,Tlapanec,Latn,Latin script,Q36868
+wikidata,ckb,Sorani,,Arabic alphabet,Q36811
+wikidata,,Gallo,Latn,Latin script,Q37300
+wikidata,xsd,Sidetic,Sidt,Sidetic,Q36659
+wikidata,tzo,Tzotzil,Latn,Latin script,Q36809
+wikidata,,Canadian English,Latn,Latin script,Q44676
+wikidata,apd,Sudanese Arabic,,Arabic alphabet,Q56573
+wikidata,xve,Venetic,Latn,Latin script,Q36871
+wikidata,wss,Wasa,,Latin,Q36914
+wikidata,ybb,Yemba,Latn,Latin script,Q36917
+wikidata,tzj,Tz’utujil,Latn,Latin script,Q36941
+wikidata,,,Latn,Latin script,Q136530569
+wikidata,chm,,Cyrl,Cyrillic script,Q973685
+wikidata,ziw,Zigula,Latn,Latin script,Q37010
+wikidata,zom,Zo,Latn,Latin script,Q37011
+wikidata,ljp,Lampung Api,Latn,Latin script,Q49215
+wikidata,bfi,British Sign Language,Sgnw,SignWriting,Q33000
+wikidata,khb,Tai Lü,Laoo,Lao,Q36948
+wikidata,khb,Tai Lü,Tale,Tai Le,Q36948
+wikidata,phn,Phoenician,Phnx,Phoenician script,Q36734
+wikidata,scx,Sicel,Grek,Greek alphabet,Q36667
+wikidata,ttc,Tektitek,Latn,Latin script,Q36686
+wikidata,sth,Shelta,Latn,Latin script,Q36705
+wikidata,udi,Udi,Cyrl,Cyrillic script,Q36867
+wikidata,udi,Udi,Latn,Latin script,Q36867
+wikidata,pln,Palenquero,Latn,Latin script,Q36665
+wikidata,vgt,Flemish Sign Language,Sgnw,SignWriting,Q2107617
+wikidata,wal,Wolayttattuwa,Latn,Latin script,Q36943
+wikidata,dol,Doso,Latn,Latin script,Q4167202
+wikidata,,Atlamak,Latn,Latin script,Q137380057
+wikidata,chm,,,Mari alphabet,Q973685
+wikidata,ase,American Sign Language,Sgnw,SignWriting,Q14759
+wikidata,elx,Elamite,Xsux,cuneiform,Q35470
+wikidata,cky,Cakfem-Mushere,Latn,Latin script,Q3441199
+wikidata,sjt,Ter Sami,Cyrl,Cyrillic script,Q36656
+wikidata,nio,Nganasan,Cyrl,Cyrillic script,Q36743
+wikidata,khb,Tai Lü,Talu,New Tai Lue,Q36948
+wikidata,,,Latn,Latin script,Q137802533
+wikidata,,,Latn,Latin script,Q137824481
+wikidata,xhd,,Sarb,Old South Arabian script,Q1032453
+wikidata,mkf,Miya,Latn,Latin script,Q43328
+wikidata,swc,Congo Swahili,Latn,Latin script,Q10961696
+wikidata,adx,Amdo Tibetan,Tibt,Tibetan alphabet,Q56509
+wikidata,gnn,,Latn,Latin script,Q10510745
+wikidata,bzs,Brazilian Sign Language,Sgnw,SignWriting,Q3436689
+wikidata,gum,Guambiano,Latn,Latin script,Q2744745
+wikidata,uli,Ulithian,Latn,Latin script,Q36842
+wikidata,,,Latn,Latin script,Q138447905
+wikidata,tdd,Tai Nüa,Lana,Tai Tham,Q36556
+wikidata,bjn,Banjar,,Pegon alphabet,Q33151
+wikidata,knc,Central Kanuri,,Ajami script,Q15637215
+wikidata,ceb,Cebuano,,Filipino alphabet,Q33239
+wikidata,kdh,Tem,,Tem Braille,Q36531
+wikidata,egl,,Latn,Latin script,Q1057898
+wikidata,hyw,Western Armenian,Armn,Armenian alphabet,Q180945
+wikidata,vep,Veps,,Veps writing,Q32747
+wikidata,tcy,Tulu,Mlym,Malayalam script,Q34251
+wikidata,knc,Central Kanuri,Arab,Arabic script,Q15637215
+wikidata,olo,Livvi-Karelian,Latn,Latin script,Q36584
+wikidata,fia,Nobiin,Latn,Latin script,Q36503
+wikidata,bho,Bhojpuri,Kthi,Kaithi,Q33268
+wikidata,glk,Gilaki,Arab,Arabic script,Q33657
+wikidata,tly,Talysh,Arab,Arabic script,Q34318
+wikidata,bst,Basketo,Ethi,Geʽez script,Q56531
+wikidata,tda,Gadal,Arab,Arabic script,Q36570
+wikidata,sei,Seri,Latn,Latin script,Q36583
+wikidata,ceb,Cebuano,,Philippine Braille,Q33239
+wikidata,knc,Central Kanuri,Latn,Latin script,Q15637215
+wikidata,szl,Silesian,Latn,Latin script,Q30319
+wikidata,bho,Bhojpuri,Deva,Devanagari,Q33268
+wikidata,com,Comanche,Latn,Latin script,Q32972
+wikidata,vec,Venetian,Latn,Latin script,Q32724
+wikidata,vep,Veps,Latn,Latin script,Q32747
+wikidata,lmo,Lombard,Latn,Latin script,Q33754
+wikidata,scn,Sicilian,Latn,Latin script,Q33973
+wikidata,pcd,Picard,Latn,Latin script,Q34024
+wikidata,cch,Atsam,Latn,Latin script,Q34794
+wikidata,csb,Kashubian,Latn,Latin script,Q33690
+wikidata,tly,Talysh,Cyrl,Cyrillic script,Q34318
+wikidata,tly,Talysh,Latn,Latin script,Q34318
+wikidata,cdo,Eastern Min,Hani,Chinese characters,Q36455
+wikidata,lzh,Classical Chinese,Hani,Chinese characters,Q37041
+wikidata,tda,Gadal,Latn,Latin script,Q36570
+wikidata,grc,Ancient Greek,Grek,Greek alphabet,Q35497
+wikidata,lij,Ligurian,Latn,Latin script,Q36106
+wikidata,ltg,Latgalian,Latn,Latin script,Q36212
+wikidata,cdo,Eastern Min,Latn,Latin script,Q36455
+wikidata,gpe,Ghanaian Pidgin English,Latn,Latin script,Q5555465
+wikidata,avk,Kotava,Latn,Latin script,Q1377116
+wikidata,ary,Moroccan Arabic,Arab,Arabic script,Q56426
+wikidata,ssy,Saho,Ethi,Geʽez script,Q36353
+wikidata,tcy,Tulu,Knda,Kannada script,Q34251
+wikidata,niv,Nivkh,,Nivkh alphabet,Q36464
+wikidata,tdd,Tai Nüa,Tale,Tai Le,Q36556
+wikidata,plq,Palaic,Xsux,cuneiform,Q36582
+wikidata,kcg,Tyap,,Akai script,Q3912765
+wikidata,shk,Shilluk,Latn,Latin script,Q36486
+wikidata,zea,Zeelandic,Latn,Latin script,Q237409
+wikidata,oui,Old Uyghur,Brah,Brahmi,Q428299
+wikidata,vls,,Latn,Latin script,Q100103
+wikidata,mhr,Meadow Mari,,Mari alphabet,Q3906614
+wikidata,dty,Doteli,Deva,Devanagari,Q18415595
+wikidata,bbc,Toba Batak,Batk,Batak script,Q33017
+wikidata,tcy,Tulu,Tutg,Tigalari,Q34251
+wikidata,ssy,Saho,Latn,Latin script,Q36353
+wikidata,puw,Puluwatese,Latn,Latin script,Q36397
+wikidata,niv,Nivkh,Cyrl,Cyrillic script,Q36464
+wikidata,twq,Tasawaq,Latn,Latin script,Q36564
+wikidata,bjn,Banjar,,Latin alphabet,Q33151
+wikidata,,East Low German,Latn,Latin script,Q36443
+wikidata,ary,Moroccan Arabic,,Arabic alphabet,Q56426
+wikidata,oui,Old Uyghur,Orkh,Old Turkic,Q428299
+wikidata,gsw,Alemannic,Latn,Latin script,Q131339
+wikidata,tda,Gadal,,Latin alphabet,Q36570
+wikidata,mnp,Northern Min,Hani,Chinese characters,Q36457
+wikidata,kkw,Kukuya,Latn,Latin script,Q36560
+wikidata,mnp,Northern Min,Latn,Latin script,Q36457
+wikidata,fia,Nobiin,Copt,Coptic script,Q36503
+wikidata,pif,Pingelapese,Latn,Latin script,Q36421
+wikidata,kcn,Nubi,,Arabic alphabet,Q36388
+wikidata,ssy,Saho,,Latin alphabet,Q36353
+wikidata,oui,Old Uyghur,Ougr,Old Uyghur alphabet,Q428299
+wikidata,azb,South Azerbaijani,,Arabic alphabet,Q3449805
+wikidata,mhr,Meadow Mari,Cyrl,Cyrillic script,Q3906614
+wikidata,pnb,Western Punjabi,,Shahmukhi,Q1389492
+wikidata,kcg,Tyap,Latn,Latin script,Q3912765
+wikidata,oui,Old Uyghur,Tibt,Tibetan alphabet,Q428299
+wikidata,grc,Ancient Greek,Linb,Linear B,Q35497
+wikidata,poc,Poqomam,Latn,Latin script,Q36416
+wikidata,tda,Gadal,Tfng,Tifinagh,Q36570
+wikidata,asa,Pare,Latn,Latin script,Q36403
+wikidata,fia,Nobiin,Arab,Arabic script,Q36503
+wikidata,mak,Makassar,,Jawi,Q33643
+wikidata,mni,Meitei,,Bangla alphabet,Q33868
+wikidata,xmr,Meroitic,,Meroitic script,Q13366
+wikidata,der,Deori,,Bangla alphabet,Q56478
+wikidata,mni,Meitei,Beng,Bangla–Assamese script,Q33868
+wikidata,blu,Miao,Latn,Latin script,Q33813
+wikidata,lud,Ludic,,Karelian alphabets,Q33918
+wikidata,gld,Nanai,,Nanai alphabet,Q13303
+wikidata,dsb,Lower Sorbian,,Lower Sorbian alphabet,Q13286
+wikidata,lud,Ludic,Latn,Latin script,Q33918
+wikidata,stv,Selti,Ethi,Geʽez script,Q33880
+wikidata,din,Dinka,Latn,Latin script,Q56466
+wikidata,kfr,Kutchi language,Gujr,Gujarati,Q56487
+wikidata,mni,Meitei,Mtei,Meetei Mayek,Q33868
+wikidata,dak,Dakota,Latn,Latin script,Q530384
+wikidata,pcm,Nigerian Pidgin,Latn,Latin script,Q33655
+wikidata,nso,Northern Sotho,Latn,Latin script,Q33890
+wikidata,xal,Kalmyk,Cyrl,Cyrillic script,Q33634
+wikidata,krj,Karay-a,,Filipino alphabet,Q33720
+wikidata,krc,Karachay-Balkar,Cyrl,Cyrillic script,Q33714
+wikidata,krc,Karachay-Balkar,Latn,Latin script,Q33714
+wikidata,lhm,Lhomi,Deva,Devanagari,Q14240916
+wikidata,kvr,Kerinci,,Ulu scripts,Q3195442
+wikidata,bol,Bole,Latn,Latin script,Q3436680
+wikidata,sxu,Upper Saxon,Latn,Latin script,Q699284
+wikidata,mrw,Maranao,Latn,Latin script,Q33800
+wikidata,khq,Koyra Chiini,Latn,Latin script,Q33600
+wikidata,nus,Nuer,Latn,Latin script,Q33675
+wikidata,mdh,Maguindanao,Latn,Latin script,Q33717
+wikidata,xog,Soga,Latn,Latin script,Q33784
+wikidata,nyo,Nyoro,Latn,Latin script,Q33794
+wikidata,oaa,Orok,Cyrl,Cyrillic script,Q33928
+wikidata,msb,Masbateño,Latn,Latin script,Q33948
+wikidata,mak,Makassar,Bugi,Lontara,Q33643
+wikidata,mwl,Mirandese,,Mirandes alphabet,Q13330
+wikidata,mnr,Mono,Latn,Latin script,Q33591
+wikidata,gld,Nanai,Cyrl,Cyrillic script,Q13303
+wikidata,mak,Makassar,Maka,Makasar script,Q33643
+wikidata,,Seto,Latn,Latin script,Q34017
+wikidata,smw,Sumbawa,Latn,Latin script,Q3182585
+wikidata,shh,Shoshoni,Latn,Latin script,Q33811
+wikidata,mfe,Mauritian Creole,Latn,Latin script,Q33661
+wikidata,jct,Krymchak,Cyrl,Cyrillic script,Q33723
+wikidata,kvr,Kerinci,Latn,Latin script,Q3195442
+wikidata,crs,Seychellois Creole,Latn,Latin script,Q34015
+wikidata,naq,Khoekhoe,Latn,Latin script,Q13301
+wikidata,crg,Michif,Latn,Latin script,Q13315
+wikidata,mak,Makassar,Latn,Latin script,Q33643
+wikidata,neg,Negidal,Cyrl,Cyrillic script,Q33676
+wikidata,mgh,Makhuwa-Meetto,Latn,Latin script,Q33604
+wikidata,itl,Itelmen,,,Q33624
+wikidata,itl,Itelmen,Cyrl,Cyrillic script,Q33624
+wikidata,als,Tosk,Latn,Latin script,Q180937
+wikidata,kbr,Kafa,Ethi,Geʽez script,Q35481
+wikidata,sad,Sandawe,Latn,Latin script,Q34016
+wikidata,par,Timbisha,Latn,Latin script,Q33926
+wikidata,skr,Saraiki,,Saraiki Shahmukhi,Q33902
+wikidata,kfr,Kutchi language,,Perso-Arabic script,Q56487
+wikidata,mwl,Mirandese,Latn,Latin script,Q13330
+wikidata,dsb,Lower Sorbian,Latn,Latin script,Q13286
+wikidata,den,Slavey,Latn,Latin script,Q13272
+wikidata,blu,Miao,Hmng,Pahawh Hmong,Q33813
+wikidata,lep,Lepcha,Lepc,Lepcha,Q35990
+wikidata,blu,Miao,Plrd,Miao,Q33813
+wikidata,kbr,Kafa,Latn,Latin script,Q35481
+wikidata,muh,Mündü,Latn,Latin script,Q35981
+wikidata,ksh,Kölsch,Latn,Latin script,Q4624
+wikidata,kbp,Kabiye,,Kabiye Braille,Q35475
+wikidata,dga,Dagaare,,Dagaare Braille,Q35159
+wikidata,nup,Nupe,,Ajami script,Q36720
+wikidata,bnv,Bonerif,Latn,Latin script,Q4941733
+wikidata,xal,Oirat,,Clear Script,Q56959
+wikidata,btm,Mandailing Batak,Batk,Batak script,Q2891049
+wikidata,jbo,Lojban,,Lojban alphabet,Q36350
+wikidata,olo,Livvi-Karelian,,Karelian alphabets,Q36584
+wikidata,zza,,,Zazaki alphabet,Q10199
+wikidata,udm,Udmurt,,Udmurt alphabets,Q13238
+wikidata,lbe,Lak,,Lak script,Q36206
+wikidata,shn,Shan,,Shan,Q56482
+wikidata,udm,Udmurt,Cyrl,Cyrillic script,Q13238
+wikidata,vro,South Estonian,Latn,Latin script,Q13295
+wikidata,cps,Capisnon,Latn,Latin script,Q2937525
+wikidata,nqo,N’Ko,Nkoo,,Q18546266
+wikidata,zza,,Latn,Latin script,Q10199
+wikidata,gcr,Guianan Creole,Latn,Latin script,Q1363072
+wikidata,pfl,Palatinate German,Latn,Latin script,Q23014
+wikidata,rup,Aromanian,Latn,Latin script,Q29316
+wikidata,sgs,Samogitian,Latn,Latin script,Q213434
+wikidata,myv,Erzya,Cyrl,Cyrillic script,Q29952
+wikidata,vro,Võro,Latn,Latin script,Q32762
+wikidata,inh,Ingush,Cyrl,Cyrillic script,Q33509
+wikidata,srn,Sranan Tongo,Latn,Latin script,Q33989
+wikidata,tpi,Tok Pisin,Latn,Latin script,Q34159
+wikidata,kbp,Kabiye,Latn,Latin script,Q35475
+wikidata,jbo,Lojban,Latn,Latin script,Q36350
+wikidata,dga,Dagaare,Latn,Latin script,Q35159
+wikidata,nup,Nupe,Latn,Latin script,Q36720
+wikidata,chr,Cherokee,Cher,Cherokee syllabary,Q33388
+wikidata,chr,Cherokee,Latn,Latin script,Q33388
+wikidata,xsr,Sherpa,Tibt,Tibetan alphabet,Q36612
+wikidata,guw,Gun,Latn,Latin script,Q3111668
+wikidata,chy,Cheyenne,Latn,Latin script,Q33265
+wikidata,igl,Igala,Latn,Latin script,Q35513
+wikidata,kge,Komering,Latn,Latin script,Q49224
+wikidata,gng,Ngangam,Latn,Latin script,Q35888
+wikidata,atj,Atikamekw,Latn,Latin script,Q56590
+wikidata,xal,Oirat,Cyrl,Cyrillic script,Q56959
+wikidata,zgh,Standard Moroccan Tamazight,,Neo-Tifinagh,Q7598268
+wikidata,kht,Khamti,,Burmese alphabet,Q3915502
+wikidata,tlh,,,Okrand notation,Q10134
+wikidata,zza,,,Arabic alphabet,Q10199
+wikidata,dtp,Kadazandusun,Latn,Latin script,Q5317225
+wikidata,tlh,,Piqd,pIqaD,Q10134
+wikidata,trv,Seediq,Latn,Latin script,Q716686
+wikidata,sox,Swo,Latn,Latin script,Q36604
+wikidata,szy,,Latn,Latin script,Q718269
+wikidata,blk,Pa'O,Mymr,Mon–Burmese script,Q7121294
+wikidata,cht,Cholón,Latn,Latin script,Q2591243
+wikidata,pwn,Paiwan,Latn,Latin script,Q715755
+wikidata,lfn,Lingua Franca Nova,Cyrl,Cyrillic script,Q146803
+wikidata,lfn,Lingua Franca Nova,Latn,Latin script,Q146803
+wikidata,uga,Ugaritic,Ugar,Ugaritic alphabet,Q36928
+wikidata,kht,Khamti,,Khamti script,Q3915502
+wikidata,kge,Komering,,Komering script,Q49224
+wikidata,xsr,Sherpa,Deva,Devanagari,Q36612
+wikidata,sur,Mwaghavul,Latn,Latin script,Q3440486
+wikidata,hil,Hiligaynon,,Filipino alphabet,Q35978
+wikidata,sat,Santali,,Bangla alphabet,Q33965
+wikidata,sah,Yakut,,Sakha scripts,Q34299
+wikidata,syl,Sylheti,Sylo,Sylheti,Q2044560
+wikidata,bcl,Central Bikol,,Abakada alphabet,Q33284
+wikidata,mfa,Kelantan-Pattani Malay,Thai,Thai script,Q1199751
+wikidata,sas,Sasak,Latn,Latin script,Q1294047
+wikidata,hii,Hinduri,Deva,Devanagari,Q5766763
+wikidata,hii,Hinduri,Takr,Takri,Q5766763
+wikidata,tro,Tarao,,Bangla alphabet,Q3515603
+wikidata,sou,Southern Thai,Thai,Thai script,Q56508
+wikidata,syl,Sylheti,Deva,Devanagari,Q2044560
+wikidata,syl,Sylheti,Latn,Latin script,Q2044560
+wikidata,sat,Santali,Olck,Ol Chiki,Q33965
+wikidata,mfa,Kelantan-Pattani Malay,Arab,Arabic script,Q1199751
+wikidata,ktv,Eastern Katu,,Vietnamese alphabet,Q13018490
+wikidata,tok,Toki Pona,,Sitelen Pona,Q36846
+wikidata,tok,Toki Pona,,Sitelen Sitelen,Q36846
+wikidata,arb,Standard Arabic,Arab,Arabic script,Q122602987
+wikidata,see,Seneca,Latn,Latin script,Q1185133
+wikidata,kok,Konkani,Mlym,Malayalam script,Q34239
+wikidata,hac,Gorani,,Arabic alphabet,Q33733
+wikidata,uum,Urum,Cyrl,Cyrillic script,Q13257
+wikidata,uum,Urum,Grek,Greek alphabet,Q13257
+wikidata,mfa,Kelantan-Pattani Malay,Latn,Latin script,Q1199751
+wikidata,zap,Zapotec,Latn,Latin script,Q13214
+wikidata,sms,Skolt Sami,Latn,Latin script,Q13271
+wikidata,tad,Tause,Latn,Latin script,Q2356440
+wikidata,kok,Konkani,Arab,Arabic script,Q34239
+wikidata,aoc,Pemon,Latn,Latin script,Q10729616
+wikidata,pms,Piedmontese,Latn,Latin script,Q15085
+wikidata,thz,Air Tamajeq,Tfng,Tifinagh,Q56388
+wikidata,mai,Maithili,Kthi,Kaithi,Q36109
+wikidata,gwi,Gwich’in,Latn,Latin script,Q21057
+wikidata,syl,Sylheti,Beng,Bangla–Assamese script,Q2044560
+wikidata,kok,Konkani,Deva,Devanagari,Q34239
+wikidata,yap,Yapese,Latn,Latin script,Q34029
+wikidata,rob,Tae’,Latn,Latin script,Q12473476
+wikidata,kok,Konkani,Latn,Latin script,Q34239
+wikidata,con,Cofán,Latn,Latin script,Q2669254
+wikidata,mag,Magahi,Deva,Devanagari,Q33728
+wikidata,luy,Luhya,Latn,Latin script,Q35893
+wikidata,sah,Yakut,Cyrl,Cyrillic script,Q34299
+wikidata,sat,Santali,Deva,Devanagari,Q33965
+wikidata,liv,Livonian,Latn,Latin script,Q33698
+wikidata,sat,Santali,Latn,Latin script,Q33965
+wikidata,eve,Even,Cyrl,Cyrillic script,Q29960
+wikidata,ckt,Chukchi,Cyrl,Cyrillic script,Q33170
+wikidata,mai,Maithili,Deva,Devanagari,Q36109
+wikidata,new,Newar,Deva,Devanagari,Q33979
+wikidata,sat,Santali,Orya,Odia,Q33965
+wikidata,was,Washo,Latn,Latin script,Q34198
+wikidata,kok,Konkani,Knda,Kannada script,Q34239
+wikidata,lad,Judaeo-Spanish,Cyrl,Cyrillic script,Q36196
+wikidata,lad,Judaeo-Spanish,Latn,Latin script,Q36196
+wikidata,tok,Toki Pona,Latn,Latin script,Q36846
+wikidata,kim,Tofa,Cyrl,Cyrillic script,Q36848
+wikidata,mai,Maithili,Tirh,Tirhuta,Q36109
+wikidata,lad,Judaeo-Spanish,,,Q36196
+wikidata,sly,Selayar,Latn,Latin script,Q7447520
+wikidata,ngo,Ngoni,Latn,Latin script,Q7022547
+wikidata,peg,Pengo,Orya,Odia,Q56758
+wikidata,new,Newar,Ranj,Ranjana,Q33979
+wikidata,sat,Santali,Beng,Bangla–Assamese script,Q33965
+wikidata,kuu,Upper Kuskokwim,Latn,Latin script,Q28062
+wikidata,xpr,Parthian,,Pahlavi scripts,Q25953
+wikidata,xpr,Parthian,,Inscriptional Parthian,Q25953
+wikidata,kaj,Jju,Latn,Latin script,Q35401
+wikidata,fit,Meänkieli,,Finnish alphabet,Q13357
+wikidata,cjp,Cabécar,Latn,Latin script,Q27878
+wikidata,bik,Bikol,,Philippine Braille,Q35455
+wikidata,ynk,Naukan Yupik,,Eskimo alphabet,Q27963
+wikidata,bzd,Bribri,,Brirbi orthography,Q28400
+wikidata,hnn,Hanunó'o,Hano,Hanunó'o,Q35435
+wikidata,kbl,Kanembu,Latn,Latin script,Q35521
+wikidata,itz,Itza’,Latn,Latin script,Q35537
+wikidata,wes,Cameroon Pidgin,Latn,Latin script,Q35541
+wikidata,kjb,Q’anjob’al,Latn,Latin script,Q35551
+wikidata,kkz,Kaska,Latn,Latin script,Q20823
+wikidata,ktw,Cahto,Latn,Latin script,Q20831
+wikidata,wlk,Wailaki,Latn,Latin script,Q20832
+wikidata,ecy,Eteocypriot,Cpmn,Cypro-Minoan,Q35309
+wikidata,ecy,Eteocypriot,Cprt,Cypriot syllabary,Q35309
+wikidata,,Tharu,Deva,Devanagari,Q34035
+wikidata,mod,Mobilian Jargon,Latn,Latin script,Q13333
+wikidata,mwv,Mentawai,Latn,Latin script,Q13365
+wikidata,,Sorbian,Latn,Latin script,Q25442
+wikidata,,Inuinnaqtun,Latn,Latin script,Q28070
+wikidata,,Altai,Cyrl,Cyrillic script,Q28176
+wikidata,aht,Ahtna,Latn,Latin script,Q21058
+wikidata,ldm,Landoma,,Arabic alphabet,Q35568
+wikidata,dgr,Dogrib,Latn,Latin script,Q20979
+wikidata,mvb,Mattole,Latn,Latin script,Q20824
+wikidata,eya,Eyak,Latn,Latin script,Q27480
+wikidata,alq,Algonquin,Latn,Latin script,Q28092
+wikidata,chp,Chipewyan,Latn,Latin script,Q27692
+wikidata,hup,Hupa,Latn,Latin script,Q28058
+wikidata,ess,Central Siberian Yupik,Cyrl,Cyrillic script,Q27993
+wikidata,ess,Central Siberian Yupik,Latn,Latin script,Q27993
+wikidata,stw,Satawalese,Latn,Latin script,Q28477
+wikidata,tfn,Dena'ina,Latn,Latin script,Q27785
+wikidata,agj,Argobba,Ethi,Geʽez script,Q29292
+wikidata,moe,Innu-aimun,Latn,Latin script,Q13351
+wikidata,ebu,Embu,Latn,Latin script,Q35318
+wikidata,ixl,Ixil,Latn,Latin script,Q35528
+wikidata,bik,Bikol,Latn,Latin script,Q35455
+wikidata,xsm,Kasem,Latn,Latin script,Q35552
+wikidata,ldm,Landoma,Latn,Latin script,Q35568
+wikidata,ynk,Naukan Yupik,Cyrl,Cyrillic script,Q27963
+wikidata,pdc,Pennsylvania German,Latn,Latin script,Q22711
+wikidata,,Aramaic,Armi,Aramaic alphabet,Q28602
+wikidata,tfn,Dena'ina,,Latin alphabet,Q27785
+wikidata,amj,Amdang,Latn,Latin script,Q28335
+wikidata,pon,Pohnpeian,Latn,Latin script,Q28422
+wikidata,njo,Ao,Latn,Latin script,Q28433
+wikidata,hoi,Holikachuk,Latn,Latin script,Q28508
+wikidata,xpr,Parthian,Armi,Aramaic alphabet,Q25953
+wikidata,alq,Algonquin,Cans,Canadian Aboriginal syllabics,Q28092
+wikidata,chp,Chipewyan,Cans,Canadian Aboriginal syllabics,Q27692
+wikidata,xpr,Parthian,Mani,Manichaean,Q25953
+wikidata,fit,Meänkieli,Latn,Latin script,Q13357
+wikidata,hur,Halkomelem,Latn,Latin script,Q35388
+wikidata,mrr,Maria,Deva,Devanagari,Q27602
+wikidata,woe,Woleaian,Latn,Latin script,Q34037
+wikidata,efi,Efik,Latn,Latin script,Q35377
+wikidata,wuu,Wu Chinese,Hani,Chinese characters,Q34290
+wikidata,ota,Ottoman Turkish,,Ottoman Turkish alphabet,Q36730
+wikidata,pov,Guinea-Bissau Creole,Latn,Latin script,Q33339
+wikidata,jun,Juang,Latn,Latin script,Q33362
+wikidata,mwr,Marwari,Arab,Arabic script,Q56312
+wikidata,hai,Haida,Latn,Latin script,Q33303
+wikidata,etu,Ekoi,Latn,Latin script,Q35296
+wikidata,ist,Istriot,Latn,Latin script,Q35845
+wikidata,maw,Mampruli,Latn,Latin script,Q35804
+wikidata,del,Delaware,Latn,Latin script,Q2665761
+wikidata,mlw,Moloko,Latn,Latin script,Q1965222
+wikidata,mwr,Marwari,Deva,Devanagari,Q56312
+wikidata,mye,Myene,Latn,Latin script,Q35832
+wikidata,sjn,Sindarin,Latn,Latin script,Q56437
+wikidata,slq,Salchuq,Latn,Latin script,Q56752
+wikidata,lik,Lika,Latn,Latin script,Q1530394
+wikidata,nzb,Njebi,Latn,Latin script,Q35923
+wikidata,mde,Maba,Arab,Arabic script,Q35860
+wikidata,mll,Malua Bay,Latn,Latin script,Q6744946
+wikidata,sjn,Sindarin,Cirt,Cirth,Q56437
+wikidata,,Devarin,Sara,Sarati,Q12346461
+wikidata,xhc,Hunnic,,Xiongnu script,Q35959
+wikidata,mde,Maba,Latn,Latin script,Q35860
+wikidata,sdr,Oraon Sadri,Deva,Devanagari,Q12953860
+wikidata,lol,Mongo,Latn,Latin script,Q112893
+wikidata,mhn,Mòcheno,Latn,Latin script,Q268130
+wikidata,shr,Shi,Tfng,Tifinagh,Q3481999
+wikidata,,Khuzdûl,Cirt,Cirth,Q7462260
+wikidata,rug,Roviana,Latn,Latin script,Q3445546
+wikidata,xls,Lusitanian,Latn,Latin script,Q35960
+wikidata,lms,Limousin,Latn,Latin script,Q427614
+wikidata,xcr,Carian,Cari,Carian alphabets,Q35929
+wikidata,slq,Salchuq,,Arabic alphabet,Q56752
+wikidata,,Chinantecan,Latn,Latin script,Q35828
+wikidata,,Aegean Macedonian,Cyrl,Cyrillic script,Q35952
+wikidata,,Aegean Macedonian,Grek,Greek alphabet,Q35952
+wikidata,,Aegean Macedonian,Latn,Latin script,Q35952
+wikidata,acx,Omani Arabic,,Arabic alphabet,Q56630
+wikidata,mll,Malua Bay,,Latin alphabet,Q6744946
+wikidata,,Elyundi,,constructed writing system,Q4531566
+wikidata,,Brajabuli,,Bangla alphabet,Q4955986
+wikidata,,Hymmnos,Latn,Latin script,Q11330223
+wikidata,osa,Osage,Latn,Latin script,Q2600085
+wikidata,ins,Indian Sign Language,Sgnw,SignWriting,Q113754817
+wikidata,mrj,Hill Mari,,,Q1776032
+wikidata,xlc,Lycian,Lyci,Lycian,Q35969
+wikidata,shr,Shi,Latn,Latin script,Q3481999
+wikidata,tll,Tetela,Latn,Latin script,Q2613465
+wikidata,,Pandunia,Latn,Latin script,Q11886596
+wikidata,,Khuzdûl,Latn,Latin script,Q7462260
+wikidata,men,Mende,Latn,Latin script,Q1478672
+wikidata,sjn,Sindarin,Teng,Tengwar,Q56437
+wikidata,nkr,Nukuoro,Latn,Latin script,Q2635961
+wikidata,,Adelic,Latn,Latin script,Q12344627
+wikidata,,Adinjo,Latn,Latin script,Q12344631
+wikidata,,Aulingese,Latn,Latin script,Q12345417
+wikidata,,Balta,Latn,Latin script,Q12345483
+wikidata,mrj,Hill Mari,Cyrl,Cyrillic script,Q1776032
+wikidata,nog,Nogai,,Perso-Arabic script,Q33871
+wikidata,men,Mende,Mend,,Q1478672
+wikidata,dnw,Lani,Latn,Latin script,Q7987774
+wikidata,sbl,Botolan,Latn,Latin script,Q4095195
+wikidata,bez,Bena,Latn,Latin script,Q2502949
+wikidata,raj,Rajasthani,Deva,Devanagari,Q13196
+wikidata,,Nordien,Latn,Latin script,Q3942880
+wikidata,nqm,Ndom,Latn,Latin script,Q6983791
+wikidata,ota,Ottoman Turkish,Arab,Arabic script,Q36730
+wikidata,nog,Nogai,Cyrl,Cyrillic script,Q33871
+wikidata,nog,Nogai,Latn,Latin script,Q33871
+wikidata,osa,Osage,Osge,Osage,Q2600085
+wikidata,rmy,Vlax Romani,Cyrl,Cyrillic script,Q2669199
+wikidata,rmy,Vlax Romani,Latn,Latin script,Q2669199
+wikidata,smk,Bolinao,Latn,Latin script,Q2669235
+wikidata,mnc,Manchu,,Manchu alphabet,Q33638
+wikidata,cnr,Montenegrin,,,Q8821
+wikidata,cnr,Montenegrin,,,Q8821
+wikidata,shy,Shawiya,,Berber Latin alphabet,Q33274
+wikidata,bua,Buryat,,Vagindra,Q33120
+wikidata,kai,Karai-karai,Latn,Latin script,Q3438770
+wikidata,syw,Kagate,Deva,Devanagari,Q12952538
+wikidata,aoi,Anindilyakwa,Latn,Latin script,Q2714654
+wikidata,aot,A'Tong,Beng,Bangla–Assamese script,Q5646
+wikidata,onw,Old Nubian,Copt,Coptic script,Q2268
+wikidata,kxl,Nepali Kurux,Deva,Devanagari,Q3200624
+wikidata,guc,Wayuu,Latn,Latin script,Q891085
+wikidata,shy,Shawiya,Tfng,Tifinagh,Q33274
+wikidata,tmh,Tuareg,Tfng,Tifinagh,Q34065
+wikidata,bug,Bugis,Bugi,Lontara,Q33190
+wikidata,mnc,Manchu,Mong,,Q33638
+wikidata,auc,Waorani,Latn,Latin script,Q758570
+wikidata,shy,Shawiya,,Arabic alphabet,Q33274
+wikidata,tmh,Tuareg,,Arabic alphabet,Q34065
+wikidata,bua,Buryat,Mong,,Q33120
+wikidata,acw,Hijazi Arabic,,Arabic alphabet,Q56608
+wikidata,,Alsatian,Latn,Latin script,Q8786
+wikidata,cmn,Mandarin,Hani,Chinese characters,Q9192
+wikidata,mdf,Moksha,Cyrl,Cyrillic script,Q13343
+wikidata,gom,Goan Konkani,Mlym,Malayalam script,Q5575236
+wikidata,teo,Teso,Latn,Latin script,Q29474
+wikidata,tmh,Tuareg,Latn,Latin script,Q34065
+wikidata,bug,Bugis,Latn,Latin script,Q33190
+wikidata,sia,Akkala Sami,Cyrl,Cyrillic script,Q35241
+wikidata,gag,Gagauz,Cyrl,Cyrillic script,Q33457
+wikidata,gag,Gagauz,Grek,Greek alphabet,Q33457
+wikidata,gag,Gagauz,Latn,Latin script,Q33457
+wikidata,ada,Dangme,Latn,Latin script,Q35141
+wikidata,bua,Buryat,Cyrl,Cyrillic script,Q33120
+wikidata,bua,Buryat,Latn,Latin script,Q33120
+wikidata,auv,Auvergnat,Latn,Latin script,Q35359
+wikidata,uby,Ubykh,Cyrl,Cyrillic script,Q36931
+wikidata,uby,Ubykh,Latn,Latin script,Q36931
+wikidata,ann,Obolo,Latn,Latin script,Q36614
+wikidata,kjg,Khmu,Laoo,Lao,Q33335
+wikidata,gom,Goan Konkani,Deva,Devanagari,Q5575236
+wikidata,gom,Goan Konkani,Latn,Latin script,Q5575236
+wikidata,gom,Goan Konkani,Knda,Kannada script,Q5575236
+wikidata,yag,Yaghan,Latn,Latin script,Q531826
+wikidata,cgg,Kiga,Latn,Latin script,Q3270727
+wikidata,heb,Modern Hebrew,Hebr,Hebrew alphabet,Q8141
+wikidata,aot,A'Tong,Latn,Latin script,Q5646
+wikidata,kei,Kei,Latn,Latin script,Q2410352
+wikidata,kmz,Khorasani Turkic,,Persian alphabet,Q35373
+wikidata,blt,Tai Dam,Tavt,Tai Viet,Q56407
+wikidata,nrn,Norn,,Younger Futhark,Q36708
+wikidata,ryu,Okinawan,,Okinawan scripts,Q34233
+wikidata,aeb,Tunisian Arabic,,Arabic chat alphabet,Q56240
+wikidata,bns,Bundeli,Deva,Devanagari,Q56399
+wikidata,trg,Lishán Didán,,,Q56473
+wikidata,ttt,Tat,,Tat alphabet,Q56489
+wikidata,app,Apma,,Avoiuli,Q2669188
+wikidata,cpx,Pu-Xian Min,,Hinghwa Romanized,Q56583
+wikidata,tts,Isan,Thai,Thai script,Q33417
+wikidata,jdt,Judeo-Tat,Cyrl,Cyrillic script,Q56495
+wikidata,jdt,Judeo-Tat,Latn,Latin script,Q56495
+wikidata,czo,Min Zhong,Hani,Chinese characters,Q56435
+wikidata,lki,Laki,Arab,Arabic script,Q56483
+wikidata,pdt,Plautdietsch,Latn,Latin script,Q1751432
+wikidata,ojs,Oji-Cree,Cans,Canadian Aboriginal syllabics,Q56494
+wikidata,cpx,Pu-Xian Min,Hans,simplified Chinese characters,Q56583
+wikidata,mog,Mongondow,Latn,Latin script,Q3058458
+wikidata,tlc,Misantla Totonac,Latn,Latin script,Q56460
+wikidata,lki,Laki,Latn,Latin script,Q56483
+wikidata,ryu,Okinawan,Jpan,Japanese writing system,Q34233
+wikidata,ocm,,Brah,Brahmi,Q105197086
+wikidata,suk,Sukuma,Latn,Latin script,Q2638144
+wikidata,amg,Amurdag,Latn,Latin script,Q3360016
+wikidata,cpx,Pu-Xian Min,Hant,traditional Chinese characters,Q56583
+wikidata,zmj,,Latn,Latin script,Q10577274
+wikidata,zmd,,Latn,Latin script,Q10577273
+wikidata,zmm,,Latn,Latin script,Q10577424
+wikidata,afb,Gulf Arabic,,Arabic alphabet,Q56385
+wikidata,arq,Algerian Arabic,,Arabic alphabet,Q56499
+wikidata,ayl,Libyan Arabic,,Arabic alphabet,Q56503
+wikidata,adf,Dhofari Arabic,,Arabic alphabet,Q56565
+wikidata,crh,Crimean Tatar,Latn,Latin script,Q33357
+wikidata,nmt,Namonuito,Latn,Latin script,Q12908815
+wikidata,zkt,,Kitl,Khitan large script,Q1064482
+wikidata,agq,Aghem,Latn,Latin script,Q34737
+wikidata,peo,Old Persian,Xpeo,Old Persian cuneiform,Q35225
+wikidata,brx,Bodo,Deva,Devanagari,Q33223
+wikidata,bem,Bemba,Latn,Latin script,Q33052
+wikidata,pau,Palauan,Latn,Latin script,Q33776
+wikidata,slr,Salar,Latn,Latin script,Q33963
+wikidata,osx,Old Saxon,Latn,Latin script,Q35219
+wikidata,dlm,Dalmatian,Latn,Latin script,Q35527
+wikidata,nrn,Norn,Latn,Latin script,Q36708
+wikidata,ttt,Tat,Cyrl,Cyrillic script,Q56489
+wikidata,ttt,Tat,Latn,Latin script,Q56489
+wikidata,aig,Antiguan and Barbudan Creole,Latn,Latin script,Q3244184
+wikidata,arn,Mapudungun,Latn,Latin script,Q33730
+wikidata,aum,Asu,Latn,Latin script,Q34798
+wikidata,app,Apma,Latn,Latin script,Q2669188
+wikidata,anc,Ngas,Latn,Latin script,Q35999
+wikidata,jje,Jejuan,,Old Hangul,Q129648
+wikidata,rml,Baltic Romani,Cyrl,Cyrillic script,Q513736
+wikidata,rml,Baltic Romani,Latn,Latin script,Q513736
+wikidata,aeb,Tunisian Arabic,Arab,Arabic script,Q56240
+wikidata,arq,Algerian Arabic,Arab,Arabic script,Q56499
+wikidata,yim,Yimkhiungrü,Latn,Latin script,Q56348
+wikidata,kii,Kitsai,Latn,Latin script,Q56627
+wikidata,zkt,,Kits,Khitan small script,Q1064482
+wikidata,arp,Arapaho,Latn,Latin script,Q56417
+wikidata,wym,Wymysorys,Latn,Latin script,Q56485
+wikidata,aeb,Tunisian Arabic,Latn,Latin script,Q56240
+wikidata,alc,Kawésqar,Latn,Latin script,Q56544
+wikidata,txg,Tangut,Tang,Tangut script,Q2727930
+wikidata,sjo,Xibe,,Xibe alphabet,Q13223
+wikidata,blt,Tai Dam,Laoo,Lao,Q56407
+wikidata,ttt,Tat,Hebr,Hebrew alphabet,Q56489
+wikidata,juc,Jurchen,Jurc,Jurchen,Q56731
+wikidata,bhh,Bukharian,,,Q56469
+wikidata,czk,Knaanic,,,Q56384
+wikidata,acf,Saint Lucian Creole,Latn,Latin script,Q3006285
+wikidata,,Zravel,Latn,Latin script,Q12357005
+wikidata,,Ithkuil,,,Q35846
+wikidata,,Solresol,,,Q36764
+wikidata,,Lydnevi,Cyrl,Cyrillic script,Q148870
+wikidata,,Lydnevi,Latn,Latin script,Q148870
+wikidata,,Na'vi,Latn,Latin script,Q316939
+wikidata,rmv,Romanova,Latn,Latin script,Q1298715
+wikidata,afh,Afrihili,Latn,Latin script,Q384707
+wikidata,nov,,Latn,Latin script,Q36738
+wikidata,zbl,Blissymbols,Blis,Blissymbols,Q609817
+wikidata,,Sambahsa,Latn,Latin script,Q659644
+wikidata,,Black Speech,Latn,Latin script,Q686210
+wikidata,,Palawa kani,Latn,Latin script,Q863112
+wikidata,,,Latn,Latin script,Q951403
+wikidata,,Glosa,Latn,Latin script,Q1138529
+wikidata,,Folkspraak,Latn,Latin script,Q1154733
+wikidata,,Proto-Esperanto,Latn,Latin script,Q1201104
+wikidata,,Spokil,Latn,Latin script,Q1335509
+wikidata,,Ro,Latn,Latin script,Q1650556
+wikidata,,Tutonish,Latn,Latin script,Q1776007
+wikidata,,Pasilingua,Latn,Latin script,Q1786116
+wikidata,,Ithkuil,Latn,Latin script,Q35846
+wikidata,,Latino sine flexione,Latn,Latin script,Q35938
+wikidata,,Solresol,Latn,Latin script,Q36764
+wikidata,,Slovio,Cyrl,Cyrillic script,Q36819
+wikidata,,Slovio,Latn,Latin script,Q36819
+wikidata,,Atlango,Latn,Latin script,Q2259384
+wikidata,,Adjuvilo,Latn,Latin script,Q2273571
+wikidata,,Universalglot,Latn,Latin script,Q2518616
+wikidata,tzl,,Latn,Latin script,Q1063911
+wikidata,,Black Speech,Teng,Tengwar,Q686210
+wikidata,,Bolak,Latn,Latin script,Q2909283
+wikidata,esy,Eskayan,,Eskayan,Q867086
+wikidata,dmf,Medefaidrin,Medf,Medefaidrin alphabet,Q1519764
+wikidata,neu,Neo,Latn,Latin script,Q606917
+wikidata,zba,Balaibalan,,Ottoman Turkish alphabet,Q1353495
+wikidata,,Afshar dialect,,Persian alphabet,Q34832
+wikidata,srr,Serer,Latn,Latin script,Q36284
+wikidata,fat,Fante,Latn,Latin script,Q35570
+wikidata,rut,Rutulian,Cyrl,Cyrillic script,Q36757
+wikidata,xrr,Raetic,,Etruscan alphabet,Q36689
+wikidata,evn,Evenki,,,Q30004
+wikidata,srb,Sora,Sora,Sorang Sompeng,Q13284
+wikidata,sva,Svan,,Georgian scripts,Q34067
+wikidata,xrr,Raetic,,,Q36689
+wikidata,tru,Turoyo,Latn,Latin script,Q34040
+wikidata,xnq,,Latn,Latin script,Q105198599
+wikidata,tan,Tangale,Latn,Latin script,Q529921
+wikidata,bji,Burji,Ethi,Geʽez script,Q34999
+wikidata,ldn,Láadan,Latn,Latin script,Q35757
+wikidata,cjs,Shor,,Shor alphabet,Q34139
+wikidata,tru,Turoyo,Syrc,Syriac alphabet,Q34040
+wikidata,cjs,Shor,Cyrl,Cyrillic script,Q34139
+wikidata,yrl,Nheengatu,Latn,Latin script,Q34333
+wikidata,bff,Bofi,Latn,Latin script,Q34914
+wikidata,acr,Achi,Latn,Latin script,Q34774
+wikidata,knj,Akateko,Latn,Latin script,Q34923
+wikidata,aoa,Angolar,Latn,Latin script,Q34994
+wikidata,bgj,Bangolan,Latn,Latin script,Q34862
+wikidata,ter,Terêna,Latn,Latin script,Q3314742
+wikidata,aho,Ahom,Ahom,Ahom,Q34778
+wikidata,wbl,Wakhi,,Arabic alphabet,Q34208
+wikidata,,Leonese,Latn,Latin script,Q34108
+wikidata,,Arcaicam Esperantom,Latn,Latin script,Q34917
+wikidata,,Lingwa de Planeta,Latn,Latin script,Q35783
+wikidata,srb,Sora,Telu,Telugu,Q13284
+wikidata,rif,Tarifit,Latn,Latin script,Q34174
+wikidata,thm,Thavung,Latn,Latin script,Q34780
+wikidata,ban,Balinese,Bali,Balinese,Q33070
+wikidata,bfd,Fut,Latn,Latin script,Q34888
+wikidata,bmi,Bagirmi,Latn,Latin script,Q34903
+wikidata,xag,Caucasian Albanian,Aghb,Caucasian Albanian script,Q34931
+wikidata,awn,Awngi,Ethi,Geʽez script,Q34934
+wikidata,evn,Evenki,Mong,,Q30004
+wikidata,swg,Swabian,Latn,Latin script,Q327274
+wikidata,sva,Svan,Cyrl,Cyrillic script,Q34067
+wikidata,sva,Svan,Latn,Latin script,Q34067
+wikidata,war,Waray,Latn,Latin script,Q34279
+wikidata,lua,Luba-Kasai,Latn,Latin script,Q34173
+wikidata,srb,Sora,Latn,Latin script,Q13284
+wikidata,wry,Merwari,Deva,Devanagari,Q11732445
+wikidata,war,Waray,Tglg,Baybayin,Q34279
+wikidata,srb,Sora,Orya,Odia,Q13284
+wikidata,srr,Serer,Arab,Arabic script,Q36284
+wikidata,xan,Xamtanga,Ethi,Geʽez script,Q56527
+wikidata,ast,Asturian,Latn,Latin script,Q29507
+wikidata,mjg,Monguor,Latn,Latin script,Q34214
+wikidata,evn,Evenki,Cyrl,Cyrillic script,Q30004
+wikidata,evn,Evenki,Latn,Latin script,Q30004
+wikidata,smn,Inari Sami,Latn,Latin script,Q33462
+wikidata,wbl,Wakhi,Cyrl,Cyrillic script,Q34208
+wikidata,wbl,Wakhi,Latn,Latin script,Q34208
+wikidata,ban,Balinese,Latn,Latin script,Q33070
+wikidata,yoi,Yonaguni,,kanji,Q34243
+wikidata,aii,Assyrian Neo-Aramaic,Syrc,Syriac alphabet,Q29440
+wikidata,tht,Tahltan,Latn,Latin script,Q30125
+wikidata,xht,Hattic,Xsux,cuneiform,Q31107
+wikidata,cmn,Putonghua,Hans,simplified Chinese characters,Q24841726
+wikidata,rue,Rusyn,,Rusyn alphabet,Q26245
+wikidata,gbz,Zoroastrian Dari,Arab,Arabic script,Q32389
+wikidata,dyu,Dioula,Latn,Latin script,Q32706
+wikidata,txr,Tartessian,,Southwest Paleohispanic script,Q36795
+wikidata,,Luminar English,,English alphabet,Q114591062
+wikidata,yoi,Yonaguni,Kana,katakana,Q34243
+wikidata,cay,Cayuga,Latn,Latin script,Q32967
+wikidata,jvn,Surinamese Javanese,Java,Javanese script,Q11732256
+wikidata,kkk,Kokota,Latn,Latin script,Q3198399
+wikidata,,Standard Taiwanese Mandarin,,Traditional Chinese,Q262828
+wikidata,avl,Bedawi Arabic,,Arabic alphabet,Q56714
+wikidata,,Sioux,Latn,Latin script,Q13268
+wikidata,,Enets,Cyrl,Cyrillic script,Q29942
+wikidata,,Valencian,Latn,Latin script,Q32641
+wikidata,tap,Tabwa,Latn,Latin script,Q7673650
+wikidata,mui,Musi,Latn,Latin script,Q615660
+wikidata,yoi,Yonaguni,Hrkt,kana,Q34243
+wikidata,ulm,Ulumanda’,Latn,Latin script,Q3501892
+wikidata,naa,Namla,Latn,Latin script,Q3508760
+wikidata,ulc,Ulch,Cyrl,Cyrillic script,Q13239
+wikidata,dlg,Dolgan,Cyrl,Cyrillic script,Q32878
+wikidata,sov,Sonsorolese,Latn,Latin script,Q13281
+wikidata,oko,Old Korean,,Hanja,Q715364
+wikidata,mui,Musi,Rjng,Rejang script,Q615660
+wikidata,ttq,Tahoua,Tfng,Tifinagh,Q56390
+wikidata,jvn,Surinamese Javanese,Latn,Latin script,Q11732256
+wikidata,zpg,Guevea Zapotec,Latn,Latin script,Q13459953
+wikidata,frr,North Frisian,Latn,Latin script,Q28224
+wikidata,rue,Rusyn,Cyrl,Cyrillic script,Q26245
+wikidata,,Standard Indonesian,Latn,Latin script,Q110620923
+wikidata,och,Old Chinese,Hani,Chinese characters,Q35137
+wikidata,fur,Friulian,Latn,Latin script,Q33441
+wikidata,cap,Chipaya,Latn,Latin script,Q35235
+wikidata,tdn,Tondano,Latn,Latin script,Q3531514
+wikidata,puq,Puquina,Latn,Latin script,Q1207739
+wikidata,dag,Dagbanli,Latn,Latin script,Q32238
+wikidata,yoi,Yonaguni,Hira,hiragana,Q34243
+wikidata,dop,Lukpa,Latn,Latin script,Q3258739
+wikidata,hbo,Biblical Hebrew,Samr,Samaritan alphabet,Q1982248
+wikidata,soa,Thai Song,Tavt,Tai Viet,Q7709159
+wikidata,ata,Pele-Ata,Latn,Latin script,Q56511
+wikidata,rki,Rakhine,,Burmese alphabet,Q3450749
+wikidata,hbo,Biblical Hebrew,Phnx,Phoenician script,Q1982248
+wikidata,hbo,Biblical Hebrew,Hebr,Hebrew alphabet,Q1982248
+wikidata,sli,Silesian German,Latn,Latin script,Q152965
+wikidata,sli,Silesian German,,German alphabet,Q152965
+wikidata,nez,Nez Perce,Latn,Latin script,Q3339226
+wikidata,leh,Lenje,Latn,Latin script,Q6522666
+wikidata,ppl,Nawat,Latn,Latin script,Q1186896
+wikidata,pro,Old Occitan,Latn,Latin script,Q2779185
+wikidata,tzm,Central Atlas Tamazight,Tfng,Tifinagh,Q49741
+wikidata,txn,West Tarangan,Latn,Latin script,Q3515594
+wikidata,dep,Pidgin Delaware,,Dutch orthography,Q1183938
+wikidata,dep,Pidgin Delaware,,,Q1183938
+wikidata,hbo,Biblical Hebrew,,Paleo-Hebrew alphabet,Q1982248
+wikidata,,Bru,Thai,Thai script,Q35106
+wikidata,bbj,Ghomala',Latn,Latin script,Q35271
+wikidata,hak,Hakka Chinese,,Pe̍h-ōe-jī,Q33375
+wikidata,,Moba,,Moba Braille,Q36010
+wikidata,tyv,Tuvan,,Tuvan alphabet,Q34119
+wikidata,tyv,Tuvan,Cyrl,Cyrillic script,Q34119
+wikidata,tyv,Tuvan,Latn,Latin script,Q34119
+wikidata,bcq,Bench,Latn,Latin script,Q35108
+wikidata,cia,Cia-Cia,Hang,Hangul,Q35284
+wikidata,chf,Chontal Maya,Latn,Latin script,Q35175
+wikidata,cia,Cia-Cia,Latn,Latin script,Q35284
+wikidata,hak,Hakka Chinese,Hani,Chinese characters,Q33375
+wikidata,agx,Aghul,Cyrl,Cyrillic script,Q36498
+wikidata,kde,Makonde,Latn,Latin script,Q35172
+wikidata,,Bru,Laoo,Lao,Q35106
+wikidata,hui,Huli,Latn,Latin script,Q3125121
+wikidata,dhi,Dhimal,Deva,Devanagari,Q35229
+wikidata,nia,Nias,Latn,Latin script,Q2407831
+wikidata,ctu,Ch’ol,Latn,Latin script,Q35179
+wikidata,nij,Ngaju,Latn,Latin script,Q2992872
+wikidata,mgo,Meta',Latn,Latin script,Q36054
+wikidata,agu,Awakatek,Latn,Latin script,Q35091
+wikidata,cak,Kaqchikel,Latn,Latin script,Q35115
+wikidata,quy,Ayacucho Quechua,Latn,Latin script,Q35145
+wikidata,mzw,Deg,Latn,Latin script,Q35183
+wikidata,cnq,Chung,Latn,Latin script,Q35194
+wikidata,xno,Anglo-Norman,Latn,Latin script,Q35214
+wikidata,dzg,Dazaga-kara,Latn,Latin script,Q35244
+wikidata,kjj,Khinalug,Cyrl,Cyrillic script,Q35278
+wikidata,kjj,Khinalug,Latn,Latin script,Q35278
+wikidata,tbz,Tammari,Latn,Latin script,Q35186
+wikidata,byv,Medumba,Latn,Latin script,Q36019
+wikidata,mzv,Manza,Latn,Latin script,Q36038
+wikidata,aoz,Uab Meto,Latn,Latin script,Q3441962
+wikidata,,Bai,Latn,Latin script,Q35103
+wikidata,,Bru,Latn,Latin script,Q35106
+wikidata,orv,Old East Slavic,Glag,Glagolitic,Q35228
+wikidata,baa,Babatana,Latn,Latin script,Q2877785
+wikidata,lng,Lombardic,Runr,runic script,Q35972
+wikidata,xmk,Ancient Macedonian,Grek,Greek alphabet,Q35974
+wikidata,chn,Chinook Jargon,Dupl,Duployan shorthand,Q35173
+wikidata,cac,Chuj,Latn,Latin script,Q35233
+wikidata,bsc,Bassari,Latn,Latin script,Q35098
+wikidata,chn,Chinook Jargon,Latn,Latin script,Q35173
+wikidata,fro,Old French,Latn,Latin script,Q35222
+wikidata,pcc,Bouyei,Latn,Latin script,Q35100
+wikidata,ofs,Old Frisian,Latn,Latin script,Q35133
+wikidata,,Duxile,Latn,Latin script,Q12346663
+wikidata,,Fergiartic,Latn,Latin script,Q12347816
+wikidata,,Guosa,Latn,Latin script,Q12348386
+wikidata,,Langue nouvelle,Latn,Latin script,Q12351409
+wikidata,,Latinesce,Latn,Latin script,Q12351419
+wikidata,,Logli,Latn,Latin script,Q12351851
+wikidata,,Spelin,Latn,Latin script,Q12355297
+wikidata,,Tokcir,Latn,Latin script,Q12356003
+wikidata,,Viva,Latn,Latin script,Q12356577
+wikidata,,Semilatin,Latn,Latin script,Q12356732
+wikidata,dum,Middle Dutch,Latn,Latin script,Q178806
+wikidata,orv,Old East Slavic,Cyrl,Cyrillic script,Q35228
+wikidata,bcq,Bench,Ethi,Geʽez script,Q35108
+wikidata,brc,Berbice Creole Dutch,Latn,Latin script,Q35215
+wikidata,caa,Ch’orti’,Latn,Latin script,Q35177
+wikidata,caq,Car,Latn,Latin script,Q35156
+wikidata,nyn,Runyankole,Latn,Latin script,Q13207
+wikidata,,Dalecarlian,,Dalecarlian runes,Q33046
+wikidata,,Dalecarlian,,Dalecarlian alphabet,Q33046
+wikidata,nan,Southern Min,,Pe̍h-ōe-jī,Q36495
+wikidata,bjf,Barzani Jewish Neo-Aramaic,,,Q33234
+wikidata,hoc,Ho,Telu,Telugu,Q33270
+wikidata,dru,Rukai,Latn,Latin script,Q49232
+wikidata,wti,Berta,Latn,Latin script,Q33178
+wikidata,ctg,Chittagonian,,Bangla alphabet,Q33173
+wikidata,jpr,Judeo-Persian,Hebr,Hebrew alphabet,Q33367
+wikidata,xco,Khwarezmian,Sogd,Sogdian,Q33138
+wikidata,xco,Khwarezmian,,Pahlavi scripts,Q33138
+wikidata,hoh,Hobyót,,unwritten language,Q33299
+wikidata,bej,Beja,Latn,Latin script,Q33025
+wikidata,cyo,Cuyonon,Latn,Latin script,Q33153
+wikidata,hoc,Ho,Deva,Devanagari,Q33270
+wikidata,hoc,Ho,Latn,Latin script,Q33270
+wikidata,kac,Jingpo,Latn,Latin script,Q33332
+wikidata,clm,Klallam,Latn,Latin script,Q33404
+wikidata,hoc,Ho,Orya,Odia,Q33270
+wikidata,nan,Southern Min,,Taiwanese Taigi Romanization System,Q36495
+wikidata,tzm,Central Atlas Tamazight,,Arabic alphabet,Q49741
+wikidata,,Banyumasan,Latn,Latin script,Q33219
+wikidata,xco,Khwarezmian,Armi,Aramaic alphabet,Q33138
+wikidata,hoc,Ho,Beng,Bangla–Assamese script,Q33270
+wikidata,clw,Chulym,Cyrl,Cyrillic script,Q33125
+wikidata,bfq,Badaga,Taml,Tamil script,Q33205
+wikidata,bej,Beja,,Arabic alphabet,Q33025
+wikidata,xco,Khwarezmian,,Arabic alphabet,Q33138
+wikidata,dar,Dargwa,Arab,Arabic script,Q32332
+wikidata,hoc,Ho,Wara,Warang Citi,Q33270
+wikidata,dar,Dargwa,Cyrl,Cyrillic script,Q32332
+wikidata,dar,Dargwa,Latn,Latin script,Q32332
+wikidata,jam,Jamaican Patois,,Cassidy/JLU orthography,Q35939
+wikidata,bas,Basaa,Latn,Latin script,Q33093
+wikidata,fan,Fang,Latn,Latin script,Q33484
+wikidata,nan,Southern Min,Hani,Chinese characters,Q36495
+wikidata,jam,Jamaican Patois,Latn,Latin script,Q35939
+wikidata,jpr,Judeo-Persian,,,Q33367
+wikidata,huy,Hulaulá,,,Q33426
+wikidata,tzm,Central Atlas Tamazight,Latn,Latin script,Q49741
+wikidata,yai,Yaghnobi,,Yaghnobi Cyrillic alphabet,Q34247
+wikidata,yai,Yaghnobi,,Yaghnobi Latin alphabet,Q34247
+wikidata,gct,Colonia Tovar,Latn,Latin script,Q1138351
+wikidata,odt,Old Dutch,Latn,Latin script,Q443089
+wikidata,ems,Alutiiq,,Eskimo alphabet,Q27992
+wikidata,,Emilian–Romagnol,Latn,Latin script,Q242648
+wikidata,,Standard High German,Latn,Latin script,Q279350
+wikidata,,Austrian German,Latn,Latin script,Q306626
+wikidata,,Champenois,Latn,Latin script,Q430018
+wikidata,,New High German,Latn,Latin script,Q454476
+wikidata,,East Frisian,Latn,Latin script,Q494355
+wikidata,,Burgundian,Latn,Latin script,Q508332
+wikidata,,Franc-Comtois,Latn,Latin script,Q510561
+wikidata,igs,Interglossa,Latn,Latin script,Q2314240
+wikidata,frm,Middle French,Latn,Latin script,Q1473289
+wikidata,cja,Cham,Cham,,Q241146
+wikidata,hsn,Xiang Chinese,Hani,Chinese characters,Q13220
+wikidata,,New High German,,German alphabet,Q454476
+wikidata,vmf,Main-Franconian,Latn,Latin script,Q497345
+wikidata,kji,Zabana,Latn,Latin script,Q379130
+wikidata,gbi,Galela,Latn,Latin script,Q3094570
+wikidata,ems,Alutiiq,Latn,Latin script,Q27992
+wikidata,hne,Chhattisgarhi,Deva,Devanagari,Q33158
+wikidata,gba,Gbaya,Latn,Latin script,Q3099986
+wikidata,fmp,Fe'fe',Latn,Latin script,Q35276
+wikidata,gsc,Gascon,Latn,Latin script,Q35735
+wikidata,wep,Westphalian,Latn,Latin script,Q505655
+wikidata,dob,,Latn,Latin script,Q952133
+wikidata,caw,Kallawaya,Latn,Latin script,Q266417
+wikidata,flr,Fuliiru,Latn,Latin script,Q7166821
+wikidata,odt,Old Dutch,Runr,runic script,Q443089
+wikidata,xbc,Bactrian,Grek,Greek alphabet,Q756651
+wikidata,,Podlachian,Cyrl,Cyrillic script,Q164854
+wikidata,,Podlachian,Latn,Latin script,Q164854
+wikidata,,Greenlandic Norse,Runr,runic script,Q855236
+wikidata,zkg,Goguryeo,,,Q706327
+wikidata,,Western Lombard,Latn,Latin script,Q689203
+wikidata,bck,Bunuba,Latn,Latin script,Q580923
+wikidata,nsk,Naskapi,Cans,Canadian Aboriginal syllabics,Q1704302
+wikidata,,Banat Bulgarian,Latn,Latin script,Q785474
+wikidata,,Belter Creole,Latn,Latin script,Q108055510
+wikidata,xib,Iberian,,Iberian scripts,Q855215
+wikidata,,Standard Danish,Latn,Latin script,Q837073
+wikidata,myu,Munduruku,Latn,Latin script,Q746723
+wikidata,cmn,Standard Chinese,Hani,Chinese characters,Q727694
+wikidata,osp,Old Spanish,,aljamiado,Q1088025
+wikidata,xbc,Bactrian,Mani,Manichaean,Q756651
+wikidata,pks,Pakistan Sign Language,Sgnw,SignWriting,Q22964057
+wikidata,,Mamluk-Kipchak,Arab,Arabic script,Q4279942
+wikidata,mgr,Mambwe-Lungu,Latn,Latin script,Q626210
+wikidata,muk,Mugom,Tibt,Tibetan alphabet,Q6932210
+wikidata,,Greenlandic Norse,,Younger Futhark,Q855236
+wikidata,,Greenlandic Norse,,medieval runes,Q855236
+wikidata,fun,Fulniô,Latn,Latin script,Q774441
+wikidata,,West Polesian,Cyrl,Cyrillic script,Q36952
+wikidata,pml,Sabir,Latn,Latin script,Q636479
+wikidata,ots,Central Otomi,Latn,Latin script,Q7413841
+wikidata,lif,Limbu,Limb,,Q56477
+wikidata,,Pomak,Latn,Latin script,Q2666760
+wikidata,kla,Klamath-Modoc,Latn,Latin script,Q2669248
+wikidata,pgd,Gandhari,Khar,Kharoṣṭhī,Q3124623
+wikidata,svm,Slavomolisano,Latn,Latin script,Q36254
+wikidata,,Dakhanī,Arab,Arabic script,Q669431
+wikidata,osp,Old Spanish,Latn,Latin script,Q1088025
+wikidata,kfa,Kodava,Knda,Kannada script,Q33531
+wikidata,cmn,Standard Chinese,,Standard Chinese Braille,Q727694
+wikidata,fip,Fipa,Latn,Latin script,Q667747
+wikidata,lif,Limbu,Deva,Devanagari,Q56477
+wikidata,cmn,Standard Chinese,,Two-Cell Chinese Braille,Q727694
+wikidata,mdy,Maale,Ethi,Geʽez script,Q795327
+wikidata,kdc,Kutu,Latn,Latin script,Q6448634
+wikidata,cmn,Standard Chinese,,Taiwanese Braille,Q727694
+wikidata,ovd,Övdalian,Latn,Latin script,Q254950
+wikidata,gmy,Mycenaean Greek,Linb,Linear B,Q668366
+wikidata,frc,Cajun French,Latn,Latin script,Q880301
+wikidata,cwe,Kwere,Latn,Latin script,Q779632
+wikidata,ksy,Kharia Thar,,Bangla alphabet,Q6400661
+wikidata,ulk,Meriam,Latn,Latin script,Q788174
+wikidata,,Magar,,,Q56550
+wikidata,cla,Ron,Latn,Latin script,Q3440432
+wikidata,ats,Gros Ventre,Latn,Latin script,Q56628
+wikidata,csw,Swampy Cree,Cans,Canadian Aboriginal syllabics,Q56696
+wikidata,,Austrian romance language,Latn,Latin script,Q168819
+wikidata,,Abenaki,Latn,Latin script,Q197936
+wikidata,oua,Wargli,Tfng,Tifinagh,Q56586
+wikidata,yhd,Judeo-Iraqi Arabic,,,Q56599
+wikidata,cng,Northern Qiang,Latn,Latin script,Q56559
+wikidata,ccc,Chamicuro,Latn,Latin script,Q2155119
+wikidata,jdt,Judeo-Tat,,Tat alphabet,Q56495
+wikidata,mpe,Majang,Ethi,Geʽez script,Q56724
+wikidata,sjs,Sanhaja de Srair,,Berber Arabic alphabet,Q56744
+wikidata,ahk,Akha,Latn,Latin script,Q56643
+wikidata,kna,Kanakuru,Latn,Latin script,Q56811
+wikidata,dsh,Daasanach,Latn,Latin script,Q56637
+wikidata,bwe,Bwe Karen,,Burmese alphabet,Q56994
+wikidata,dbd,Dadiya,Latn,Latin script,Q3914436
+wikidata,gha,Ghadamès,Tfng,Tifinagh,Q56747
+wikidata,chx,Chantyal,Deva,Devanagari,Q4926344
+wikidata,tse,Tunisian Sign Language,Sgnw,SignWriting,Q7853191
+wikidata,xug,Kunigami,,Okinawan scripts,Q56558
+wikidata,hni,Hani,Latn,Latin script,Q56516
+wikidata,vaj,Sekele,Latn,Latin script,Q56528
+wikidata,omi,Omi,Latn,Latin script,Q56795
+wikidata,yux,Southern Yukaghir,Cyrl,Cyrillic script,Q56545
+wikidata,oua,Wargli,Latn,Latin script,Q56586
+wikidata,ybh,Yakkha,Deva,Devanagari,Q56666
+wikidata,xom,Komo,Latn,Latin script,Q56681
+wikidata,ixc,Ixcatec,Latn,Latin script,Q56706
+wikidata,tkm,Takelma,Latn,Latin script,Q56710
+wikidata,tqu,Touo,Latn,Latin script,Q56750
+wikidata,tpw,Tupi,Latn,Latin script,Q56944
+wikidata,lpo,Lipo,Plrd,Miao,Q56921
+wikidata,fkv,Kven,Latn,Latin script,Q165795
+wikidata,atb,Zaiwa,Lisu,Fraser script,Q56594
+wikidata,cmg,Classical Mongolian,Mong,,Q5128303
+wikidata,khg,Khams Tibetan,Tibt,Tibetan alphabet,Q56601
+wikidata,anz,Anêm,Latn,Latin script,Q56512
+wikidata,,Angevin,Latn,Latin script,Q56782
+wikidata,sjs,Sanhaja de Srair,Latn,Latin script,Q56744
+wikidata,saq,Samburu,Latn,Latin script,Q56536
+wikidata,gha,Ghadamès,Latn,Latin script,Q56747
+wikidata,kio,Kiowa,Latn,Latin script,Q56631
+wikidata,cho,Choctaw,Latn,Latin script,Q32979
+wikidata,alw,Alaba-K’abeena,Ethi,Geʽez script,Q56652
+wikidata,atb,Zaiwa,Latn,Latin script,Q56594
+wikidata,kto,Kuot,Latn,Latin script,Q56537
+wikidata,blz,Balantak,Latn,Latin script,Q4850053
+wikidata,csw,Swampy Cree,Latn,Latin script,Q56696
+wikidata,cad,Caddo,Latn,Latin script,Q56756
+wikidata,ayp,North Mesopotamian Arabic,,Arabic alphabet,Q56577
+wikidata,aec,Saʽidi Arabic,,Arabic alphabet,Q56592
+wikidata,ajt,Judeo-Tunisian Arabic,,Arabic alphabet,Q56597
+wikidata,jye,Judeo-Yemeni Arabic,,,Q56596
+wikidata,aln,Gheg,Latn,Latin script,Q181037
+wikidata,jdt,Judeo-Tat,,,Q56495
+wikidata,frs,East Frisian Low Saxon,Latn,Latin script,Q149208
+wikidata,byo,Piyo,Plrd,Miao,Q56848
+wikidata,cng,Northern Qiang,,Rma script,Q56559
+wikidata,kgr,Abun,Latn,Latin script,Q56657
+wikidata,cmg,Classical Mongolian,Soyo,Soyombo,Q5128303
+wikidata,,,Khar,Kharoṣṭhī,Q104854379
+wikidata,,Standard Kazakh,,Arabic alphabet,Q12572985
+wikidata,sua,Sulka,Latn,Latin script,Q7636341
+wikidata,,Dobhashi,,Bangla alphabet,Q85757233
+wikidata,,Sona,Latn,Latin script,Q550048
+wikidata,,,Brah,Brahmi,Q104854379
+wikidata,,Sant Bhasha,Guru,Gurmukhi,Q7419081
+wikidata,txj,Tarjumo,,Ajami script,Q24906088
+wikidata,sqr,,,Arabic alphabet,Q1069489
+wikidata,srl,Isirawa,Latn,Latin script,Q4203802
+wikidata,,Unish,Latn,Latin script,Q1310822
+wikidata,scl,Shina,,Arabic alphabet,Q1353320
+wikidata,,Slavonic-Serbian,Cyrl,Cyrillic script,Q1639124
+wikidata,,Slavonic-Serbian,Latn,Latin script,Q1639124
+wikidata,sid,Sidamo,Ethi,Geʽez script,Q33786
+wikidata,swi,Sui,Shui,Sui,Q3112388
+wikidata,scz,Shetlandic,Latn,Latin script,Q3069598
+wikidata,,kanbun,Hrkt,kana,Q7901319
+wikidata,,Law French,Latn,Latin script,Q2044323
+wikidata,,Neolatino,Latn,Latin script,Q11007196
+wikidata,qgb,Globasa,Latn,Latin script,Q66311273
+wikidata,saz,Sourashtra,Deva,Devanagari,Q13292
+wikidata,sma,Southern Sami,Latn,Latin script,Q13293
+wikidata,,Idiom Neutral,Latn,Latin script,Q35847
+wikidata,,kanbun,,kanji,Q7901319
+wikidata,,,Guru,Gurmukhi,Q9332749
+wikidata,sbp,Sangu,Latn,Latin script,Q7418149
+wikidata,,Intero,Latn,Latin script,Q20477696
+wikidata,axm,Middle Armenian,Armn,Armenian alphabet,Q4438498
+wikidata,sid,Sidamo,Latn,Latin script,Q33786
+wikidata,sga,Old Irish,Latn,Latin script,Q35308
+wikidata,snk,Soninke,Latn,Latin script,Q36660
+wikidata,,Ortatürk,,Common Turkic alphabet,Q25555756
+wikidata,,Dobhashi,Arab,Arabic script,Q85757233
+wikidata,xmn,Manichaean Middle Persian,Mani,Manichaean,Q65455886
+wikidata,,Jalpi Türk,Latn,Latin script,Q25680810
+wikidata,,Eŭlalia,Latn,Latin script,Q12347568
+wikidata,,Kentung,Latn,Latin script,Q12350638
+wikidata,,Nov Latin,Latn,Latin script,Q12353283
+wikidata,,Romanal,Latn,Latin script,Q12354627
+wikidata,spv,Sambalpuri,Orya,Odia,Q6433240
+wikidata,saz,Sourashtra,Saur,Saurashtra,Q13292
+wikidata,sdt,Shuadit,,,Q56472
+wikidata,,Standard Kazakh,Cyrl,Cyrillic script,Q12572985
+wikidata,,Standard Kazakh,Latn,Latin script,Q12572985
+wikidata,,Dobhashi,Sylo,Sylheti,Q85757233
+wikidata,isv,Interslavic,Cyrl,Cyrillic script,Q148971
+wikidata,isv,Interslavic,Latn,Latin script,Q148971
+wikidata,sbv,Sabine,,Latin alphabet,Q3832965
+wikidata,,Classical Arabic,,Arabic alphabet,Q1654327
+wikidata,pip,Pero,Latn,Latin script,Q2411063
+wikidata,xlp,Lepontic,,Etruscan alphabet,Q35993
+wikidata,kkv,Kangeanic,,Pegon alphabet,Q2071325
+wikidata,kkv,Kangeanic,Java,Javanese script,Q2071325
+wikidata,alh,Alawa,Latn,Latin script,Q2147917
+wikidata,cfa,Dijim-Bwilim,Latn,Latin script,Q3438350
+wikidata,,Mundolinco,Latn,Latin script,Q851355
+wikidata,urk,Urak Lawoi’,Thai,Thai script,Q2031144
+wikidata,end,Ende,Latn,Latin script,Q2067656
+wikidata,huc,ǂ’Amkoe,Latn,Latin script,Q2053913
+wikidata,end,Ende,,Lota,Q2067656
+wikidata,sui,Suki,Latn,Latin script,Q2089984
+wikidata,,Modern English,Latn,Latin script,Q1649537
+wikidata,kkv,Kangeanic,Latn,Latin script,Q2071325
+wikidata,ecr,Eteocretan,Grek,Greek alphabet,Q35461
+wikidata,,Neoslavonic,Cyrl,Cyrillic script,Q10984756
+wikidata,,Neoslavonic,Grek,Greek alphabet,Q10984756
+wikidata,,Neoslavonic,Latn,Latin script,Q10984756
+wikidata,rgn,Romagnol,,Latin alphabet,Q1641543
+wikidata,itr,Iteri,Latn,Latin script,Q2083185
+wikidata,wmb,Wambaya,Latn,Latin script,Q2083197
+wikidata,,Loglan,Latn,Latin script,Q36352
+wikidata,msc,Sankaran Maninka,Latn,Latin script,Q11155812
+wikidata,lou,Louisiana Creole,Latn,Latin script,Q1185127
+wikidata,,Armenian-Qypchak,Armn,Armenian alphabet,Q2027503
+wikidata,bdp,Bende,Latn,Latin script,Q8836490
+wikidata,uzs,,Arab,Arabic script,Q1066787
+wikidata,wgu,Wirangu,Latn,Latin script,Q2092286
+wikidata,kkv,Kangeanic,,Mbojo script,Q2071325
+wikidata,,D'ni,,D'ni,Q12346342
+wikidata,zkz,,Orkh,Old Turkic,Q1067986
+wikidata,rgn,Romagnol,Latn,Latin script,Q1641543
+wikidata,rtm,Rotuman,Latn,Latin script,Q36754
+wikidata,opm,,Latn,Latin script,Q1068097
+wikidata,dua,Duala,Latn,Latin script,Q33013
+wikidata,,Anglido,Latn,Latin script,Q12345095
+wikidata,,Arkian,Latn,Latin script,Q12345285
+wikidata,,Czirehlat,Latn,Latin script,Q12346335
+wikidata,,Daisilingo,Grek,Greek alphabet,Q12346354
+wikidata,,Daisilingo,Latn,Latin script,Q12346354
+wikidata,,,Latn,Latin script,Q12346417
+wikidata,,Deviasew,Latn,Latin script,Q12346464
+wikidata,,Dunamy,Latn,Latin script,Q12346650
+wikidata,,Excelsior,Latn,Latin script,Q12346861
+wikidata,,JiVoqu,Latn,Latin script,Q12349852
+wikidata,uzs,,,Persian alphabet,Q1066787
+wikidata,xpi,Pictish,Ogam,Ogham,Q856383
+wikidata,,Ygyde,Latn,Latin script,Q3572263
+wikidata,tyr,Tai Daeng,Laoo,Lao,Q3915207
+wikidata,dnj,Dan,Latn,Latin script,Q1158971
+wikidata,lzz,Laz,Latn,Latin script,Q1160372
+wikidata,chb,Chibcha,,Muisca numerals,Q2356431
+wikidata,tyr,Tai Daeng,Tavt,Tai Viet,Q3915207
+wikidata,ttt,Muslim Tat,,Azerbaijani Latin alphabet,Q123964178
+wikidata,bgx,Balkan Gagauz,Cyrl,Cyrillic script,Q2360396
+wikidata,bgx,Balkan Gagauz,Latn,Latin script,Q2360396
+wikidata,mkj,Mokilese,Latn,Latin script,Q2335528
+wikidata,xaa,Andalusi Arabic,,Arabic alphabet,Q1137945
+wikidata,,Balbuta,Latn,Latin script,Q131450729
+wikidata,dng,Dungan,Cyrl,Cyrillic script,Q33050
+wikidata,,Panroman,Latn,Latin script,Q11012503
+wikidata,koo,Konjo,Latn,Latin script,Q2361829
+wikidata,,Komi-Yazva,,Molodtsov alphabet,Q2365210
+wikidata,,Mondial language,Latn,Latin script,Q36115
+wikidata,,Komi-Yazva,Cyrl,Cyrillic script,Q2365210
+wikidata,hvn,Hawu,Latn,Latin script,Q2319877
+wikidata,itk,Judæo-Italian,,,Q1145414
+wikidata,mhy,Ma'anyan,Latn,Latin script,Q2328761
+wikidata,cks,Tayo,Latn,Latin script,Q1133089
+wikidata,wno,Wano,Latn,Latin script,Q3566166
+wikidata,,,Latn,Latin script,Q12344900
+wikidata,,Amaubo,Latn,Latin script,Q12344929
+wikidata,,Apolema,Latn,Latin script,Q12345237
+wikidata,,Detbap,Latn,Latin script,Q12346456
+wikidata,,Draqa,Latn,Latin script,Q12346632
+wikidata,,Edilo,Latn,Latin script,Q12346775
+wikidata,,Gumosopo,Latn,Latin script,Q12348383
+wikidata,,Hallon,Latn,Latin script,Q12348694
+wikidata,,Ibran,Latn,Latin script,Q12349104
+wikidata,,Inrilan,Latn,Latin script,Q12349281
+wikidata,,Latinvlo,Latn,Latin script,Q12351424
+wikidata,,Liguna,Latn,Latin script,Q12351558
+wikidata,,Lindiga,Latn,Latin script,Q12351572
+wikidata,,Mondal,Latn,Latin script,Q12352791
+wikidata,,Novum,Latn,Latin script,Q12353317
+wikidata,,Pakuni,Latn,Latin script,Q12353580
+wikidata,,Perio,Latn,Latin script,Q12353735
+wikidata,,Pluranto,Latn,Latin script,Q12353885
+wikidata,,Romana,Latn,Latin script,Q12354626
+wikidata,,Romaneso,Latn,Latin script,Q12354629
+wikidata,,Ronnes,Latn,Latin script,Q12354655
+wikidata,,Salveto,Latn,Latin script,Q12354832
+wikidata,,Senelhian,Latn,Latin script,Q12355052
+wikidata,,Shotali,Latn,Latin script,Q12355105
+wikidata,,Sim Mir,Latn,Latin script,Q12355138
+wikidata,,Simpekso,Latn,Latin script,Q12355162
+wikidata,,Simpenga,Latn,Latin script,Q12355163
+wikidata,,Streyka,Latn,Latin script,Q12355377
+wikidata,,Suma,Latn,Latin script,Q12355434
+wikidata,,Talcas,Latn,Latin script,Q12355743
+wikidata,,Tinico,Latn,Latin script,Q12355979
+wikidata,,Tokana,Latn,Latin script,Q12356004
+wikidata,,Tominian,Latn,Latin script,Q12356017
+wikidata,,Topong,Latn,Latin script,Q12356031
+wikidata,,Unilingue,Latn,Latin script,Q12356252
+wikidata,,Unispiko,Latn,Latin script,Q12356256
+wikidata,,Universala,Latn,Latin script,Q12356260
+wikidata,,Veltlang,Latn,Latin script,Q12356731
+wikidata,,Xoqolat,Latn,Latin script,Q12356819
+wikidata,,Zegzolt,Latn,Latin script,Q12356876
+wikidata,paq,Parya,Cyrl,Cyrillic script,Q1135134
+wikidata,ttt,Muslim Tat,Cyrl,Cyrillic script,Q123964178
+wikidata,,Simple English,Latn,Latin script,Q21480034
+wikidata,,Kosmos,Latn,Latin script,Q3725582
+wikidata,lzz,Laz,,Georgian scripts,Q1160372
+wikidata,rmu,Tavringer Romani,Latn,Latin script,Q27808413
+wikidata,chb,Chibcha,Latn,Latin script,Q2356431
+wikidata,enq,Enga,Latn,Latin script,Q1143040
+wikidata,itk,Judæo-Italian,Latn,Latin script,Q1145414
+wikidata,mnk,Mandinka,Latn,Latin script,Q33678
+wikidata,lmn,Lambadi,Telu,Telugu,Q33474
+wikidata,kls,Kalasha,,Kalasha Roman orthography,Q33416
+wikidata,kls,Kalasha,,Kalasha Urdu-based orthography,Q33416
+wikidata,bgc,Haryanvi,,Urdu orthography,Q33410
+wikidata,,Eastern Japanese,Kana,katakana,Q11527182
+wikidata,oac,Oroch,Cyrl,Cyrillic script,Q33650
+wikidata,,Novoslovnica,Cyrl,Cyrillic script,Q23090819
+wikidata,,Novoslovnica,Latn,Latin script,Q23090819
+wikidata,,Hokkaido dialects,Kana,katakana,Q3139212
+wikidata,kjh,Khakas,,Khakas alphabet,Q33575
+wikidata,,Tsushima dialect,Kana,katakana,Q3541681
+wikidata,bgc,Haryanvi,Deva,Devanagari,Q33410
+wikidata,lmn,Lambadi,Deva,Devanagari,Q33474
+wikidata,izh,Ingrian,Latn,Latin script,Q33559
+wikidata,kfq,Korku,Deva,Devanagari,Q33715
+wikidata,,Nagoya dialect,Hrkt,kana,Q3043385
+wikidata,lmn,Lambadi,Knda,Kannada script,Q33474
+wikidata,,Hachijō dialects,Hira,hiragana,Q5637049
+wikidata,,Tōhoku dialect,Hrkt,kana,Q3547069
+wikidata,,Okinawan Japanese,,kanji,Q841213
+wikidata,,Kansai dialect,,kanji,Q1191393
+wikidata,,Nagoya dialect,,kanji,Q3043385
+wikidata,,Hokkaido dialects,,kanji,Q3139212
+wikidata,,Tsushima dialect,,kanji,Q3541681
+wikidata,,Tōhoku dialect,,kanji,Q3547069
+wikidata,,Hachijō dialects,,kanji,Q5637049
+wikidata,,Kantō dialect,,kanji,Q6365634
+wikidata,syc,Syriac,Syrc,Syriac alphabet,Q33538
+wikidata,,Kantō dialect,Hira,hiragana,Q6365634
+wikidata,mnk,Mandinka,,Arabic alphabet,Q33678
+wikidata,,Eastern Japanese,,kanji,Q11527182
+wikidata,mup,Malvi,Deva,Devanagari,Q33413
+wikidata,gbm,Garhwali,Deva,Devanagari,Q33459
+wikidata,syc,Syriac,Syre,Estrangela,Q33538
+wikidata,,Eastern Japanese,Hira,hiragana,Q11527182
+wikidata,,Ruski Jezik,Cyrl,Cyrillic script,Q25538531
+wikidata,,Ruski Jezik,Latn,Latin script,Q25538531
+wikidata,mnk,Mandinka,Nkoo,,Q33678
+wikidata,,Hachijō dialects,Kana,katakana,Q5637049
+wikidata,,Hokkaido dialects,Hira,hiragana,Q3139212
+wikidata,,Okinawan Japanese,Hrkt,kana,Q841213
+wikidata,,Tsushima dialect,Hira,hiragana,Q3541681
+wikidata,,Kantō dialect,Kana,katakana,Q6365634
+wikidata,,Kansai dialect,Hrkt,kana,Q1191393
+wikidata,kha,Khasi,Latn,Latin script,Q33584
+wikidata,nlv,Orizaba Nahuatl,Latn,Latin script,Q3086050
+wikidata,kfp,Korwa,Deva,Devanagari,Q6432786
+wikidata,esu,Central Alaskan Yup'ik,,Yugtun script,Q21117
+wikidata,nym,Nyamwezi,Latn,Latin script,Q4121131
+wikidata,gga,Gao,Latn,Latin script,Q3095228
+wikidata,ewo,Ewondo,Latn,Latin script,Q35459
+wikidata,haq,Ha,Latn,Latin script,Q3105505
+wikidata,cjk,Chokwe,Latn,Latin script,Q2422065
+wikidata,lml,Raga,,Avoiuli,Q3063193
+wikidata,pgl,Primitive Irish,Ogam,Ogham,Q3320030
+wikidata,hlb,Halbi,Deva,Devanagari,Q3695692
+wikidata,hlb,Halbi,Orya,Odia,Q3695692
+wikidata,pfa,Pááfang,Latn,Latin script,Q3063517
+wikidata,rej,Rejang,Latn,Latin script,Q3056339
+wikidata,,Dunianto,Latn,Latin script,Q135912113
+wikidata,abq,Abaza,Cyrl,Cyrillic script,Q27567
+wikidata,ntm,Nateni,Latn,Latin script,Q3070731
+wikidata,acm,Iraqi Arabic,,Arabic alphabet,Q56232
+wikidata,esu,Central Alaskan Yup'ik,Latn,Latin script,Q21117
+wikidata,hlu,Hieroglyphic Luwian,Hluw,Anatolian Hieroglyphs,Q3507479
+wikidata,jax,Jambi Malay,Latn,Latin script,Q3915769
+wikidata,mmd,Maonan,Latn,Latin script,Q3092293
+wikidata,,Nao,Latn,Latin script,Q60677054
+wikidata,duq,Dusun Malang,Latn,Latin script,Q3041711
+wikidata,wmw,Mwani,Latn,Latin script,Q3042206
+wikidata,lml,Raga,Latn,Latin script,Q3063193
+wikidata,,Minyeva,Latn,Latin script,Q12352714
+wikidata,aau,Abau,Latn,Latin script,Q3073568
+wikidata,ngr,Nanggu,Latn,Latin script,Q3063524
+wikidata,frk,Frankish,Runr,runic script,Q10860505
+wikidata,tig,Tigre,Ethi,Geʽez script,Q34129
+wikidata,aae,Arbëresh,Latn,Latin script,Q1075302
+wikidata,wmw,Mwani,,Arabic alphabet,Q3042206
+wikidata,gya,Northwest Gbaya,Latn,Latin script,Q36594
+wikidata,frk,Frankish,Latn,Latin script,Q10860505
+wikidata,ono,Onondaga,Latn,Latin script,Q1077450
+wikidata,nse,Nsenga,Latn,Latin script,Q3081996
+wikidata,frk,Frankish,,Elder Futhark,Q10860505
+wikidata,bla,Blackfoot,,Blackfoot syllabics,Q33060
+wikidata,ccp,Chakma,,Bangla alphabet,Q32952
+wikidata,bft,Balti,Arab,Arabic script,Q33086
+wikidata,ccp,Chakma,Latn,Latin script,Q32952
+wikidata,,Comorian,,Arabic alphabet,Q33077
+wikidata,,Ripuarian,Latn,Latin script,Q32145
+wikidata,,Comorian,Latn,Latin script,Q33077
+wikidata,,Bartangi,Cyrl,Cyrillic script,Q33256
+wikidata,bsg,Bashkardi,,Arabic alphabet,Q33030
+wikidata,peh,Bonan,Tibt,Tibetan alphabet,Q32983
+wikidata,bft,Balti,Tibt,Tibetan alphabet,Q33086
+wikidata,tli,Tlingit,Latn,Latin script,Q27792
+wikidata,bla,Blackfoot,Latn,Latin script,Q33060
+wikidata,ysr,Sirenik,Cyrl,Cyrillic script,Q28156
+wikidata,alr,Alyutor,Cyrl,Cyrillic script,Q28213
+wikidata,dgo,Dogri,,Dogri Devanagari orthography,Q32730
+wikidata,brh,Brahui,,Perso-Arabic script,Q33202
+wikidata,brh,Brahui,,Brolikva,Q33202
+wikidata,ccp,Chakma,Cakm,,Q32952
+wikidata,,Zhgon language,Cyrl,Cyrillic script,Q134105481
+wikidata,thv,Tamahaq,Tfng,Tifinagh,Q56703
+wikidata,,Prekmurje Slovene,Latn,Latin script,Q129431
+wikidata,,Low Saxon,Latn,Latin script,Q168446
+wikidata,nod,Northern Thai,Thai,Thai script,Q565110
+wikidata,kxm,Northern Khmer,Thai,Thai script,Q3502234
+wikidata,,Lorrain,Latn,Latin script,Q671198
+wikidata,,Pig Latin,Latn,Latin script,Q751065
+wikidata,ssn,Waata,Latn,Latin script,Q3501553
+wikidata,,Fenya,Cyrl,Cyrillic script,Q796182
+wikidata,myw,Muyuw,Latn,Latin script,Q3502878
+wikidata,auh,Aushi,Latn,Latin script,Q2872082
+wikidata,gaq,Gataq,Orya,Odia,Q3501920
+wikidata,,Inga,Latn,Latin script,Q27993615
+wikidata,blp,Blablanga,Latn,Latin script,Q2905245
+wikidata,pnh,Penrhyn,Latn,Latin script,Q3130301
+wikidata,nod,Northern Thai,Lana,Tai Tham,Q565110
+wikidata,sea,Semai,Latn,Latin script,Q3135426
+wikidata,pci,Duruwa,Deva,Devanagari,Q56753
+wikidata,tob,Toba Qom,Latn,Latin script,Q3113756
+wikidata,,Hindko,,Shahmukhi,Q382273
+wikidata,bsk,Burushaski,,Urdu orthography,Q216286
+wikidata,sck,Nagpuri,Deva,Devanagari,Q765922
+wikidata,prs,Dari,,Persian alphabet,Q178440
+wikidata,dhd,Dhundari,Deva,Devanagari,Q633359
+wikidata,sck,Nagpuri,Orya,Odia,Q765922
+wikidata,tsd,Tsakonian,Grek,Greek alphabet,Q220607
+wikidata,hrx,Hunsrik,Latn,Latin script,Q304049
+wikidata,mhs,Buru,Latn,Latin script,Q2928650
+wikidata,,,Cyrl,Cyrillic script,Q16698640
+wikidata,,,Latn,Latin script,Q16698640
+wikidata,bsk,Burushaski,Arab,Arabic script,Q216286
+wikidata,tmc,Tumak,Latn,Latin script,Q3121045
+wikidata,sck,Nagpuri,Beng,Bangla–Assamese script,Q765922
+wikidata,xsy,Saisiyat,Latn,Latin script,Q716695
+wikidata,bsk,Burushaski,Latn,Latin script,Q216286
+wikidata,gml,Middle Low German,Latn,Latin script,Q505674
+wikidata,fuc,Pulaar,,Fula alphabets,Q1420205
+wikidata,yec,Yenish,Latn,Latin script,Q1365342
+wikidata,coz,Chocho,Latn,Latin script,Q2964262
+wikidata,trp,Kokborok,,Bangla alphabet,Q35947
+wikidata,qya,Quenya,Sara,Sarati,Q56383
+wikidata,esq,Esselen,Latn,Latin script,Q1294243
+wikidata,sdh,Southern Kurdish,Arab,Arabic script,Q1496597
+wikidata,,Beary,Knda,Kannada script,Q1089116
+wikidata,pjt,Pitjantjatjara,Latn,Latin script,Q2982063
+wikidata,nce,Yalë,Latn,Latin script,Q2992915
+wikidata,tpu,Tampuan,Khmr,,Q3514882
+wikidata,,medieval Latin,Latn,Latin script,Q1163234
+wikidata,,Hiberno-Latin,Latn,Latin script,Q1215876
+wikidata,,Gutnish,Latn,Latin script,Q1256646
+wikidata,qya,Quenya,Latn,Latin script,Q56383
+wikidata,,Swiss High German,Latn,Latin script,Q1366643
+wikidata,,Early New High German,Latn,Latin script,Q1472199
+wikidata,,Hinglish,Latn,Latin script,Q1499115
+wikidata,gwd,Gawwada,Ethi,Geʽez script,Q3032135
+wikidata,miq,Miskito,Latn,Latin script,Q1516803
+wikidata,xsa,,Sarb,Old South Arabian script,Q1070391
+wikidata,qya,Quenya,Cirt,Cirth,Q56383
+wikidata,sdh,Southern Kurdish,,Arabic alphabet,Q1496597
+wikidata,,Hiberno-Latin,,insular script,Q1215876
+wikidata,,Karenic,,Burmese alphabet,Q1364815
+wikidata,lbc,Lakkja,Hani,Chinese characters,Q3027879
+wikidata,xok,Xokleng,Latn,Latin script,Q3027930
+wikidata,pld,Polari,Latn,Latin script,Q1359130
+wikidata,wya,Wyandot,Latn,Latin script,Q1185119
+wikidata,hnm,,Hani,Chinese characters,Q934541
+wikidata,lic,,Latn,Latin script,Q934738
+wikidata,tvl,Tuvaluan,Latn,Latin script,Q34055
+wikidata,trp,Kokborok,Latn,Latin script,Q35947
+wikidata,sbv,,,Latin alphabet,Q65455885
+wikidata,tgk,Standard Tajik,Cyrl,Cyrillic script,Q135649099
+wikidata,,Beary,Mlym,Malayalam script,Q1089116
+wikidata,xae,,Latn,Latin script,Q930579
+wikidata,qya,Quenya,Teng,Tengwar,Q56383
+wikidata,mrn,Cheke Holo,Latn,Latin script,Q2962165
+wikidata,dgl,Dongolawi,Copt,Coptic script,Q55218915
+wikidata,,Cantonese,,written Cantonese,Q9186
+wikidata,,Cantonese,,Cantonese Braille,Q9186
+wikidata,aiw,Aari,Ethi,Geʽez script,Q7495
+wikidata,aiw,Aari,Latn,Latin script,Q7495
+wikidata,,Cantonese,Hani,Chinese characters,Q9186
+wikidata,,American English,Latn,Latin script,Q7976
+wikidata,,Greek,Grek,Greek alphabet,Q9129
+wikidata,,Australian English,,English alphabet,Q44679
+wikidata,,Australian English,,Unified English Braille,Q44679
+wikidata,vai,Vai,Vaii,Vai syllabary,Q36939
+wikidata,dje,Zarma,,Ajami script,Q36990
+wikidata,txo,Toto,,Bangla alphabet,Q36709
+wikidata,pih,Pitkern,Latn,Latin script,Q36554
+wikidata,mtm,Mator,Latn,Latin script,Q36453
+wikidata,yrk,Nenets,,Nenets alphabet,Q36452
+wikidata,tkr,Tsakhur,,Tsakhur alphabet,Q36853
+wikidata,sju,Ume Sami,Latn,Latin script,Q56415
+wikidata,txo,Toto,Toto,,Q36709
+wikidata,,Pashayi,,Arabic alphabet,Q36670
+wikidata,yrk,Nenets,Cyrl,Cyrillic script,Q36452
+wikidata,quc,K’iche’,Latn,Latin script,Q36494
+wikidata,,Vulgar Latin,Latn,Latin script,Q37560
+wikidata,,Australian English,Latn,Latin script,Q44679
+wikidata,tkr,Tsakhur,Cyrl,Cyrillic script,Q36853
+wikidata,,Jèrriais,Latn,Latin script,Q56430
+wikidata,,Guernésiais,Latn,Latin script,Q56428
+wikidata,dje,Zarma,Latn,Latin script,Q36990
+wikidata,umb,Umbundu,Latn,Latin script,Q36983
+wikidata,pmt,Tuamotuan,Latn,Latin script,Q36763
+wikidata,acy,Cypriot Arabic,,Arabic alphabet,Q56416
+wikidata,tsj,Tshangla,Tibt,Tibetan alphabet,Q36840
+wikidata,smj,Lule Sami,Latn,Latin script,Q56322
+wikidata,,Hindustani,,Urdu orthography,Q11051
+wikidata,ute,Colorado River Numic,Latn,Latin script,Q13260
+wikidata,ude,Udege,,Udege writing systems,Q13235
+wikidata,,Hindustani,Deva,Devanagari,Q11051
+wikidata,roo,Rotokas,Latn,Latin script,Q13203
+wikidata,ude,Udege,Cyrl,Cyrillic script,Q13235
+wikidata,uln,Unserdeutsch,Latn,Latin script,Q13244
+wikidata,qxq,Qashqai,,Arabic alphabet,Q13192
+wikidata,mic,Mi'kmaq,Latn,Latin script,Q13321
+wikidata,yua,Yucatec Maya,Latn,Latin script,Q13354
+wikidata,gbj,Gutob,Orya,Odia,Q3347070
+wikidata,lgn,Opuo,Latn,Latin script,Q3354339
+wikidata,muv,Muthuvan,Taml,Tamil script,Q3327420
+wikidata,kxc,Konso,Ethi,Geʽez script,Q56624
+wikidata,pao,Northern Paiute,Latn,Latin script,Q3360656
+wikidata,wtm,Mewati,Deva,Devanagari,Q2605943
+wikidata,kky,Guugu Yimithirr,Latn,Latin script,Q56543
+wikidata,ayn,Sanʽani Arabic,,Arabic alphabet,Q56578
+wikidata,dav,Taita,Latn,Latin script,Q2387274
+wikidata,abv,Bahrani Arabic,,Arabic alphabet,Q56576
+wikidata,acq,Taʽizzi-Adeni Arabic,,Arabic alphabet,Q56579
+wikidata,ars,Najdi Arabic,,Arabic alphabet,Q56574
+wikidata,muv,Muthuvan,Mlym,Malayalam script,Q3327420
+wikidata,bsa,Abinomn,Latn,Latin script,Q56648
+wikidata,ars,Najdi Arabic,Arab,Arabic script,Q56574
+wikidata,bgp,Eastern Balochi,Arab,Arabic script,Q12952252
+wikidata,bgp,Eastern Balochi,Latn,Latin script,Q12952252
+wikidata,,Nigerian Arabic,,Arabic alphabet,Q1217976
+wikidata,,Lebanese Arabic,,Arabic alphabet,Q1516642
+wikidata,,Yemeni Arabic,,Arabic alphabet,Q1686766
+wikidata,,Old Church Slavonic,Glag,Glagolitic,Q35499
+wikidata,,Demotic Egyptian,Egyd,Egyptian Demotic,Q36765
+wikidata,khw,,,Khowar alphabet,Q938216
+wikidata,xbo,Bulgar,,Bulgar runes,Q36880
+wikidata,,Old Church Slavonic,Cyrs,Early Cyrillic alphabet,Q35499
+wikidata,,Forest Nenets,Cyrl,Cyrillic script,Q1295107
+wikidata,,Crimean Gothic,Runr,runic script,Q36211
+wikidata,,Jersey Dutch,Latn,Latin script,Q1687911
+wikidata,,Arrernte,Latn,Latin script,Q1767941
+wikidata,,Forest Nenets,,Nenets alphabet,Q1295107
+wikidata,,Slovincian,Latn,Latin script,Q36822
+wikidata,,Sillan,,Hanja,Q4419262
+wikidata,,Soyot,,Soyot alphabet,Q4426878
+wikidata,xbo,Bulgar,Grek,Greek alphabet,Q36880
+wikidata,wbp,Warlpiri,Latn,Latin script,Q1639998
+wikidata,khw,,,Arabic alphabet,Q938216
+wikidata,lvk,Lavukaleve,Latn,Latin script,Q770547
+wikidata,prg,Old Prussian,Latn,Latin script,Q35501
+wikidata,xbo,Bulgar,,Arabic alphabet,Q36880
+wikidata,,Kassite,Xsux,cuneiform,Q35612
+wikidata,khw,,Arab,Arabic script,Q938216
+wikidata,gmh,Middle High German,Latn,Latin script,Q837985
+wikidata,zau,Zangskari,Tibt,Tibetan alphabet,Q771203
+wikidata,bzj,Belizean Creole,Latn,Latin script,Q1363055
+wikidata,,Ossetian,,Ossetian Cyrillic alphabet,Q33968
+wikidata,uki,Kui,Orya,Odia,Q33919
+wikidata,swb,Maore,,Maore Ajami,Q34075
+wikidata,swb,Maore,,Maore Latin,Q34075
+wikidata,nrf,Norman,,French alphabet,Q33850
+wikidata,tog,Tonga,Latn,Latin script,Q3847648
+wikidata,tsr,Akei,Latn,Latin script,Q2828964
+wikidata,gwt,Gawar-Bati,,Persian alphabet,Q33894
+wikidata,kpv,Komi-Zyryan,,Molodtsov alphabet,Q34114
+wikidata,mns,Mansi,,Mansi alphabet,Q33759
+wikidata,sgh,Shughni,Cyrl,Cyrillic script,Q34053
+wikidata,sgh,Shughni,Latn,Latin script,Q34053
+wikidata,mns,Mansi,Cyrl,Cyrillic script,Q33759
+wikidata,ibb,Ibibio,Latn,Latin script,Q33792
+wikidata,vmw,Makhuwa,Latn,Latin script,Q33882
+wikidata,nmg,Kwasio,Latn,Latin script,Q34098
+wikidata,tkl,Tokelauan,Latn,Latin script,Q34097
+wikidata,kpv,Komi-Zyryan,Cyrl,Cyrillic script,Q34114
+wikidata,sgh,Shughni,,Shughni writing system,Q34053
+wikidata,pgn,Paelignian,Ital,Old Italic,Q3832958
+wikidata,,Marquesan,Latn,Latin script,Q33781
+wikidata,,Norfuk,Latn,Latin script,Q33797
+wikidata,,Ossetian,Cyrl,Cyrillic script,Q33968
+wikidata,srm,Saramaccan,Latn,Latin script,Q33779
+wikidata,mev,Mano,Latn,Latin script,Q3913286
+wikidata,yki,Yoke,Latn,Latin script,Q3832977
+wikidata,ktz,Juǀʼhoansi,Latn,Latin script,Q1192295
+wikidata,sgh,Shughni,,Arabic alphabet,Q34053
+wikidata,zkv,Krevinian,Latn,Latin script,Q6436902
+wikidata,kea,Cape Verdean Creole,Latn,Latin script,Q35963
+wikidata,,Ruthenian,,Belarusian Arabic alphabet,Q13211
+wikidata,,Tocharian,,Tocharian alphabet,Q37029
+wikidata,,Burgundian,Goth,Gothic script,Q47625
+wikidata,xvn,Vandalic,Goth,Gothic script,Q36835
+wikidata,tiv,Tiv,Latn,Latin script,Q34131
+wikidata,egy,Egyptian,Copt,Coptic script,Q50868
+wikidata,osc,Oscan,,Oscan alphabet,Q36653
+wikidata,xfa,Faliscan,,Etruscan alphabet,Q35669
+wikidata,xum,Umbrian,,Etruscan alphabet,Q36957
+wikidata,osc,Oscan,Ital,Old Italic,Q36653
+wikidata,egy,Egyptian,Egyp,Egyptian hieroglyphs,Q50868
+wikidata,xpg,Phrygian,,Phrygian alphabet,Q36751
+wikidata,egy,Egyptian,Egyd,Egyptian Demotic,Q50868
+wikidata,xce,Celtiberian,,Iberian scripts,Q37012
+wikidata,,Old Icelandic,Runr,runic script,Q34909
+wikidata,egy,Egyptian,Egyh,Egyptian hieratic,Q50868
+wikidata,xfa,Faliscan,,Faliscan alphabet,Q35669
+wikidata,,Nabataean Aramaic,Nbat,Nabataean script,Q36178
+wikidata,zkh,Khorezmian Turkic,Ougr,Old Uyghur alphabet,Q25502
+wikidata,xum,Umbrian,Ital,Old Italic,Q36957
+wikidata,xfa,Faliscan,Latn,Latin script,Q35669
+wikidata,mga,Middle Irish,Latn,Latin script,Q36116
+wikidata,kyu,Western Kayah,Kali,Kayah Li,Q12952596
+wikidata,,Ruthenian,Cyrl,Cyrillic script,Q13211
+wikidata,,Ruthenian,Latn,Latin script,Q13211
+wikidata,,Gaulish,Latn,Latin script,Q29977
+wikidata,xpg,Phrygian,Grek,Greek alphabet,Q36751
+wikidata,,Old Icelandic,Latn,Latin script,Q34909
+wikidata,kvq,Geba Karen,,Burmese alphabet,Q12952581
+wikidata,kyu,Western Kayah,,Burmese alphabet,Q12952596
+wikidata,obm,Moabite,Phnx,Phoenician script,Q36385
+wikidata,xum,Umbrian,Latn,Latin script,Q36957
+wikidata,xce,Celtiberian,Latn,Latin script,Q37012
+wikidata,kri,Krio,Latn,Latin script,Q35744
+wikidata,zkh,Khorezmian Turkic,,Arabic alphabet,Q25502
+wikidata,sux,Sumerian,Xsux,cuneiform,Q36790
+wikidata,kvq,Geba Karen,Latn,Latin script,Q12952581
+wikidata,kyu,Western Kayah,Latn,Latin script,Q12952596
+wikidata,loe,Saluan,Latn,Latin script,Q12953867
+wikidata,mua,Moundang,Latn,Latin script,Q36032
+wikidata,grt,Garo,,,Q36137
+wikidata,kmr,Kurmanji,Arab,Arabic script,Q36163
+wikidata,bkc,Baka,Latn,Latin script,Q34905
+wikidata,aqc,Archi,Cyrl,Cyrillic script,Q34915
+wikidata,zne,Zande,Latn,Latin script,Q35015
+wikidata,ajg,Adja,Latn,Latin script,Q35035
+wikidata,bci,Baoulé,Latn,Latin script,Q35107
+wikidata,kmb,Kimbundu,Latn,Latin script,Q35891
+wikidata,kmr,Kurmanji,Cyrl,Cyrillic script,Q36163
+wikidata,kmr,Kurmanji,Latn,Latin script,Q36163
+wikidata,xle,Lemnian,Grek,Greek alphabet,Q36203
+wikidata,,Asturleonese,Latn,Latin script,Q35390
+wikidata,rmt,Domari,,Arabic alphabet,Q35394
+wikidata,lbj,Ladakhi,Tibt,Tibetan alphabet,Q35833
+wikidata,auz,Uzbeki Arabic,,Arabic alphabet,Q3399507
+wikidata,guk,Gumuz,Ethi,Geʽez script,Q2396970
+wikidata,kyw,Kudmali,Deva,Devanagari,Q6446173
+wikidata,sba,Ngambay,Latn,Latin script,Q2372207
+wikidata,kyw,Kudmali,Orya,Odia,Q6446173
+wikidata,,Tujia,Lisu,Fraser script,Q2512084
+wikidata,,Karagozlu,,Arabic alphabet,Q12028082
+wikidata,ium,Iu Mien,Hani,Chinese characters,Q2498808
+wikidata,ium,Iu Mien,Latn,Latin script,Q2498808
+wikidata,kyw,Kudmali,Chis,Chisoi,Q6446173
+wikidata,duw,Dusun Witu,Latn,Latin script,Q2381310
+wikidata,xvs,Vestinian,Latn,Latin script,Q2576407
+wikidata,mym,Me'en,Latn,Latin script,Q3408516
+wikidata,aue,ǂKxʼauǁʼein,Latn,Latin script,Q2478745
+wikidata,guk,Gumuz,Latn,Latin script,Q2396970
+wikidata,rng,Ronga,Latn,Latin script,Q2520717
+wikidata,log,Logoti,Latn,Latin script,Q2613477
+wikidata,kyw,Kudmali,,Bangla alphabet,Q6446173
+wikidata,lrc,Northern Luri,Arab,Arabic script,Q19933293
+wikidata,luo,Dholuo,,Arabic alphabet,Q5414796
+wikidata,mlv,Mwotlap,Latn,Latin script,Q2475538
+wikidata,icr,San Andrés–Providencia Creole,Latn,Latin script,Q2044587
+wikidata,crm,Moose Cree,Cans,Canadian Aboriginal syllabics,Q3446671
+wikidata,cdh,Chambeali,,Chamba Takri,Q12953424
+wikidata,xzh,Zhang-Zhung,Marc,Marchen,Q3437292
+wikidata,zhn,Nong Zhuang,Latn,Latin script,Q7049385
+wikidata,nph,Phom,Latn,Latin script,Q7187109
+wikidata,isu,Isu,Latn,Latin script,Q6089423
+wikidata,ruf,Luguru,Latn,Latin script,Q3437661
+wikidata,nys,Noongar,Latn,Latin script,Q7049771
+wikidata,rah,Rabha,,Assamese alphabet,Q7278686
+wikidata,bfz,Mahasu Pahari,Deva,Devanagari,Q6733460
+wikidata,bfz,Mahasu Pahari,Takr,Takri,Q6733460
+wikidata,ood,O'odham,Latn,Latin script,Q2393095
+wikidata,,Romî,Latn,Latin script,Q7040750
+wikidata,lmf,South Lembata,Latn,Latin script,Q7567815
+wikidata,kbq,Kamano,Latn,Latin script,Q11732272
+wikidata,kcz,Konongo,Latn,Latin script,Q11732345
+wikidata,nka,Nkoya,Latn,Latin script,Q7042633
+wikidata,srx,Sirmauri,Deva,Devanagari,Q7530505
+wikidata,cni,Asháninka,Latn,Latin script,Q3437230
+wikidata,luo,Dholuo,Latn,Latin script,Q5414796
+wikidata,emy,Classic Maya,Maya,Mayan hieroglyphs,Q301355
+wikidata,pgg,Pangwali,Deva,Devanagari,Q13600429
+wikidata,xcy,Cayuse,Latn,Latin script,Q2472016
+wikidata,cdh,Chambeali,Deva,Devanagari,Q12953424
+wikidata,goe,Gongduk,Tibt,Tibetan alphabet,Q2669221
+wikidata,mjl,Mandeali,Deva,Devanagari,Q6747931
+wikidata,mym,Me'en,Ethi,Geʽez script,Q3408516
+wikidata,lmt,Lematang,Latn,Latin script,Q12952722
+wikidata,bfw,Bonda,Orya,Odia,Q2567942
+wikidata,,Russenorsk,Latn,Latin script,Q505125
+wikidata,nwc,Classical Newari,Newa,Prachalit Nepal,Q5128301
+wikidata,lnc,,Latn,Latin script,Q942602
+wikidata,nwc,Classical Newari,Brah,Brahmi,Q5128301
+wikidata,pmf,Pamona,Latn,Latin script,Q3513320
+wikidata,,Namibian Black German,Latn,Latin script,Q35759
+wikidata,,Solombala-English,,Russian alphabet,Q7558525
+wikidata,prv,Provençal,,Occitan alphabet,Q241243
+wikidata,,Queensland Kanaka English,Latn,Latin script,Q7270960
+wikidata,,Broken Oghibbeway,Latn,Latin script,Q20710801
+wikidata,nwc,Classical Newari,,Nepalese script,Q5128301
+wikidata,nwc,Classical Newari,,Kutila inscription of Bareilly,Q5128301
+wikidata,nwc,Classical Newari,Deva,Devanagari,Q5128301
+wikidata,nwc,Classical Newari,,Bhujimol,Q5128301
+wikidata,ycr,Yilan Creole Japanese,Latn,Latin script,Q10955036
+wikidata,ptu,Bambam,Latn,Latin script,Q4853321
+wikidata,prv,Provençal,Latn,Latin script,Q241243
+wikidata,,Yokohama Pidgin Japanese,Latn,Latin script,Q8054636
+wikidata,nwc,Classical Newari,,Litumol script,Q5128301
+wikidata,nwc,Classical Newari,Ranj,Ranjana,Q5128301
+wikidata,ngp,Ngulu,Latn,Latin script,Q7193332
+wikidata,sgw,Sebat Bet Gurage,Ethi,Geʽez script,Q2707343
+wikidata,moa,Mwan,Latn,Latin script,Q3320111
+wikidata,atv,Northern Altai,Cyrl,Cyrillic script,Q2640863
+wikidata,bgn,Western Balochi,,Balochi Roman Orthography,Q12645561
+wikidata,bgn,Western Balochi,,Balochi Standard Orthography,Q12645561
+wikidata,bgn,Western Balochi,,Old Balochi Orthography,Q12645561
+wikidata,bxm,Mongolia Buriat,Mong,,Q12637238
+wikidata,nmf,Tangkhul,Latn,Latin script,Q7682992
+wikidata,gni,Guniyandi,Latn,Latin script,Q2669219
+wikidata,,Tunumiisut,Latn,Latin script,Q15665389
+wikidata,xto,Tocharian A,Brah,Brahmi,Q2827041
+wikidata,dso,Desia,Orya,Odia,Q12629755
+wikidata,,Kalaallisut,,Greenlandic alphabet,Q15665351
+wikidata,,Kalaallisut,,Scandinavian Braille,Q15665351
+wikidata,bxm,Mongolia Buriat,Cyrl,Cyrillic script,Q12637238
+wikidata,bxm,Mongolia Buriat,Latn,Latin script,Q12637238
+wikidata,,Kalaallisut,,Kleinschmidt orthography,Q15665351
+wikidata,cnx,Middle Cornish,Latn,Latin script,Q12642603
+wikidata,ntk,Ikoma,Latn,Latin script,Q5996114
+wikidata,osi,Osing,Latn,Latin script,Q2701322
+wikidata,kjz,Bumthang,Tibt,Tibetan alphabet,Q2786408
+wikidata,kgp,Kaingang,Latn,Latin script,Q2665734
+wikidata,abx,Abaknon,Latn,Latin script,Q2820163
+wikidata,mpx,Misima,Latn,Latin script,Q6875666
+wikidata,dyy,Djabugay,Latn,Latin script,Q2591320
+wikidata,,Medieval Hebrew,Hebr,Hebrew alphabet,Q2712572
+wikidata,xsb,Sambal,Latn,Latin script,Q2592378
+wikidata,aji,Ajië,Latn,Latin script,Q2828867
+wikidata,mql,Mbelime,Latn,Latin script,Q4286473
+wikidata,pgg,Pangwali,Takr,Takri,Q13600429
+wikidata,mtr,Mewari,Deva,Devanagari,Q2992857
+wikidata,msl,Molof,Latn,Latin script,Q4300950
+wikidata,hmn,Hmong,Hmnp,Nyiakeng Puachue Hmong,Q3307894
+wikidata,unr,Mundari,Beng,Bangla–Assamese script,Q3327828
+wikidata,gju,Gujari,Deva,Devanagari,Q3241731
+wikidata,rhg,Rohingya,Latn,Latin script,Q3241177
+wikidata,zdj,Ngazidja Comorian,Latn,Latin script,Q3114653
+wikidata,gju,Gujari,Takr,Takri,Q3241731
+wikidata,gju,Gujari,,Perso-Arabic script,Q3241731
+wikidata,unr,Mundari,Nagm,,Q3327828
+wikidata,gju,Gujari,,Laṇḍā scripts,Q3241731
+wikidata,aut,Austral,Latn,Latin script,Q2669261
+wikidata,hmn,Hmong,Hmng,Pahawh Hmong,Q3307894
+wikidata,rhg,Rohingya,Rohg,Hanifi Rohingya,Q3241177
+wikidata,okm,Middle Korean,Hang,Hangul,Q715339
+wikidata,,written Chinese language,Hani,Chinese characters,Q3110592
+wikidata,moc,Mocoví,Latn,Latin script,Q3027906
+wikidata,hmn,Hmong,Latn,Latin script,Q3307894
+wikidata,okm,Middle Korean,,Hanja,Q715339
+wikidata,pqm,Malecite-Passamaquoddy,Latn,Latin script,Q3183144
+wikidata,nto,Ntomba,Latn,Latin script,Q11130292
+wikidata,unr,Mundari,Deva,Devanagari,Q3327828
+wikidata,unr,Mundari,Latn,Latin script,Q3327828
+wikidata,emb,Embaloh,Latn,Latin script,Q5369424
+wikidata,unr,Mundari,Orya,Odia,Q3327828
+wikidata,zdj,Ngazidja Comorian,,Arabic alphabet,Q3114653
+wikidata,kxv,Kuvi,Orya,Odia,Q3200721
+wikidata,rhg,Rohingya,,Arabic alphabet,Q3241177
+wikidata,omc,Mochica,Latn,Latin script,Q1951641
+wikidata,ayh,Hadhrami Arabic,,Arabic alphabet,Q3510366
+wikidata,omn,Minoan,,,Q1669994
+wikidata,,Late Egyptian,Egyp,Egyptian hieroglyphs,Q1852329
+wikidata,,Old Polish,Latn,Latin script,Q149838
+wikidata,btv,Bateri,Deva,Devanagari,Q3812564
+wikidata,,Late Egyptian,Egyh,Egyptian hieratic,Q1852329
+wikidata,,Bermudian English,Latn,Latin script,Q4892725
+wikidata,,Philistine,Cpmn,Cypro-Minoan,Q2230924
+wikidata,mxe,Mele-Fila,Latn,Latin script,Q3305008
+wikidata,cnh,Hakha–Chin,Latn,Latin script,Q3250286
+wikidata,mfb,Bangka,Latn,Latin script,Q3258818
+wikidata,lch,Lucazi,Latn,Latin script,Q3265143
+wikidata,bha,Bhariati,Deva,Devanagari,Q4901287
+wikidata,swv,Shekhawati,Deva,Devanagari,Q3915429
+wikidata,,Auregnais,Latn,Latin script,Q2085566
+wikidata,nnh,Ngiemboon,Latn,Latin script,Q36286
+wikidata,,Old Egyptian,,Cursive hieroglyphs,Q447117
+wikidata,,Middle Egyptian,,Cursive hieroglyphs,Q657330
+wikidata,,Philistine,,Proto-Canaanite alphabet,Q2230924
+wikidata,lrl,Achomi,Latn,Latin script,Q4699526
+wikidata,,Luri,,Persian alphabet,Q4701277
+wikidata,fuf,Pular,Arab,Arabic script,Q3915357
+wikidata,mqy,Manggarai,Latn,Latin script,Q3285748
+wikidata,fuf,Pular,Latn,Latin script,Q3915357
+wikidata,rmc,Carpathian Romani,Latn,Latin script,Q5045611
+wikidata,fuf,Pular,Adlm,Adlam,Q3915357
+wikidata,,Philistine,Phnx,Phoenician script,Q2230924
+wikidata,gyn,Guyanese Creole,Latn,Latin script,Q3305477
+wikidata,,Old Egyptian,Egyp,Egyptian hieroglyphs,Q447117
+wikidata,,Shandong dialect,Hani,Chinese characters,Q3285432
+wikidata,,Oroshori,Cyrl,Cyrillic script,Q3356620
+wikidata,,Oroshori,Latn,Latin script,Q3356620
+wikidata,,Middle Egyptian,Egyp,Egyptian hieroglyphs,Q657330
+wikidata,,Old Egyptian,Egyh,Egyptian hieratic,Q447117
+wikidata,,Middle Egyptian,Egyh,Egyptian hieratic,Q657330
+wikidata,lrl,Achomi,,Persian alphabet,Q4699526
+wikidata,mrl,Mortlockese,Latn,Latin script,Q3324598
+wikidata,omn,Minoan,Lina,Linear A,Q1669994
+wikidata,arw,Arawak,Latn,Latin script,Q2655664
+wikidata,kuh,Kushi,Latn,Latin script,Q3438747
+wikidata,,Syrian Arabic,,Arabic alphabet,Q2143071
+wikidata,ldi,Laari,Latn,Latin script,Q3217917
+wikidata,phl,Palula,,Urdu orthography,Q2449549
+wikidata,bgq,Bagri,,Urdu orthography,Q2426319
+wikidata,rmi,Lomavren,Armn,Armenian alphabet,Q2495696
+wikidata,nhn,Central Nahuatl,Latn,Latin script,Q6047309
+wikidata,akz,Alabama,Latn,Latin script,Q1815020
+wikidata,nbh,Ngamo,Latn,Latin script,Q3438705
+wikidata,mro,Mru,Mroo,Mru script,Q1951521
+wikidata,tyz,Tày,Latn,Latin script,Q2511476
+wikidata,gvr,Gurung,Deva,Devanagari,Q2392342
+wikidata,yox,Yoron,,Okinawan scripts,Q2424943
+wikidata,tyz,Tày,,Chữ Nôm Tày,Q2511476
+wikidata,mro,Mru,Latn,Latin script,Q1951521
+wikidata,hmk,Ye-Maek,Hani,Chinese characters,Q8050724
+wikidata,gvr,Gurung,Gukh,Khema script,Q2392342
+wikidata,bgq,Bagri,Deva,Devanagari,Q2426319
+wikidata,dkk,Dakka,Latn,Latin script,Q5209962
+wikidata,tvx,Taivoan,Latn,Latin script,Q1975271
+wikidata,kli,Kalumpang,Latn,Latin script,Q13561407
+wikidata,,Khufi,Cyrl,Cyrillic script,Q2562249
+wikidata,,Rushani,Cyrl,Cyrillic script,Q2597566
+wikidata,,Rushani,Latn,Latin script,Q2597566
+wikidata,txb,Tocharian B,Brah,Brahmi,Q3199353
+wikidata,sbm,Sagara,Latn,Latin script,Q11732610
+wikidata,knk,Kuranko,Latn,Latin script,Q3198896
+wikidata,xnr,Kangri,Deva,Devanagari,Q2331560
+wikidata,wji,Warji,Latn,Latin script,Q3440381
+wikidata,piy,Piya,Latn,Latin script,Q3440492
+wikidata,zrn,Zirenkel,Latn,Latin script,Q3441365
+wikidata,xhe,Khetrani,,Arabic alphabet,Q2614111
+wikidata,ykh,Khamnigan Mongol,Cyrl,Cyrillic script,Q3196052
+wikidata,swh,Kiswahili,Latn,Latin script,Q3197533
+wikidata,bfy,Bagheli,Deva,Devanagari,Q2356364
+wikidata,rmo,Serbisk,Latn,Latin script,Q1793299
+wikidata,trw,Torwali,,Perso-Arabic script,Q2665246
+wikidata,xqa,Karakhanid,Ougr,Old Uyghur alphabet,Q4494885
+wikidata,xqa,Karakhanid,,Arabic alphabet,Q4494885
+wikidata,yli,Angguruk Yali,Latn,Latin script,Q3514481
+wikidata,,Franco-Italian,Latn,Latin script,Q54879035
+wikidata,djd,Jaminjung,Latn,Latin script,Q6147825
+wikidata,,,Latn,Latin script,Q97165320
+wikidata,jns,Jaunsari,Deva,Devanagari,Q6164857
+wikidata,,Itsari,Cyrl,Cyrillic script,Q4407582
+wikidata,,Standard Zhuang,Latn,Latin script,Q4439353
+wikidata,,Tver Karelian,Latn,Latin script,Q4453270
+wikidata,pei,Chichimeca Jonaz,Latn,Latin script,Q3915427
+wikidata,wmo,Wom,Latn,Latin script,Q8030620
+wikidata,kbo,Keliko,Latn,Latin script,Q11275553
+wikidata,tbk,Calamian Tagbanwa,Tagb,,Q3915487
+wikidata,nuo,Nguồn,Latn,Latin script,Q3915785
+wikidata,zsm,Standard Malay,Latn,Latin script,Q123474569
+wikidata,kdn,Kunda,Latn,Latin script,Q4121130
+wikidata,kdn,Kunda,,Latin alphabet,Q4121130
+wikidata,lpe,Lepki,Latn,Latin script,Q4259152
+wikidata,zsm,Standard Malay,,Jawi,Q123474569
+wikidata,olt,Old Lithuanian,Latn,Latin script,Q17417801
+wikidata,mli,Malimpung,Latn,Latin script,Q12473435
+wikidata,obr,Old Burmese,,Burmese alphabet,Q17006600
+wikidata,,Tver Karelian,,Karelian alphabets,Q4453270
+wikidata,bsj,Bangwinji,Latn,Latin script,Q3446631
+wikidata,mnz,Migani,Latn,Latin script,Q6899857
+wikidata,rmh,Murkim,Latn,Latin script,Q4308074
+wikidata,mrh,Mara,Latn,Latin script,Q4175893
+wikidata,nuo,Nguồn,,Vietnamese alphabet,Q3915785
+wikidata,hre,Hrê,Latn,Latin script,Q3915794
+wikidata,hre,Hrê,,knotted record,Q3915794
+wikidata,lrt,Larantuka Malay,Latn,Latin script,Q6488691
+wikidata,ttv,Titan,Latn,Latin script,Q3445811
+wikidata,awo,Awak,Latn,Latin script,Q3446643
+wikidata,szw,Sawai,Latn,Latin script,Q3447258
+wikidata,,Palawano,Tagb,,Q4342401
+wikidata,xcl,Classical Armenian,Armn,Armenian alphabet,Q181074
+wikidata,,Eastern Old Japanese,,man'yōgana,Q65247957
+wikidata,,Mingo,Latn,Latin script,Q4294063
+wikidata,,Palawano,Latn,Latin script,Q4342401
+wikidata,zaj,Zaramo,Latn,Latin script,Q8066599
+wikidata,,Saka,Khar,Kharoṣṭhī,Q6583551
+wikidata,cbk,Chavacano,,Spanish alphabet,Q33281
+wikidata,xtq,Tumshuqese,Brah,Brahmi,Q65455890
+wikidata,,Saka,Brah,Brahmi,Q6583551
+wikidata,xdm,Edomite,Phnx,Phoenician script,Q2363529
+wikidata,xdm,Edomite,Armi,Aramaic alphabet,Q2363529
+wikidata,,Dingal,Deva,Devanagari,Q5278158
+wikidata,tbt,Tembo (Kitembo),Latn,Latin script,Q13123561
+wikidata,,,,Paleohispanic scripts,Q97352667
+wikidata,,Niya Prakit,Khar,Kharoṣṭhī,Q11991601
+wikidata,bpu,Bongu,Latn,Latin script,Q4941930
+wikidata,xaq,Aquitanian,Latn,Latin script,Q500522
+wikidata,,,Latn,Latin script,Q97352667
+wikidata,xpu,Punic,Phnx,Phoenician script,Q535958
+wikidata,yav,Yangben,Latn,Latin script,Q12953315
+wikidata,,Chirag,Cyrl,Cyrillic script,Q5101803
+wikidata,bwc,Bwile,Latn,Latin script,Q3447440
+wikidata,,Central Tibetan,Tibt,Tibetan alphabet,Q5061915
+wikidata,,Rumsen,Latn,Latin script,Q3453188
+wikidata,bvr,Burarra,Latn,Latin script,Q4998124
+wikidata,nwo,Nauo,Latn,Latin script,Q6981305
+wikidata,vun,Vunjo,Latn,Latin script,Q12953261
+wikidata,ptt,Enrekang,Latn,Latin script,Q12953520
+wikidata,qug,Chimborazo Highland Quichua,Latn,Latin script,Q12953845
+wikidata,,Old Azeri,,Arabic alphabet,Q434697
+wikidata,,Turki,,Arabic alphabet,Q1763658
+wikidata,,Old Tatar,,Arabic alphabet,Q2093002
+wikidata,,Judaeo-Portuguese,,,Q56982
+wikidata,,Old Novgorodian,Cyrl,Cyrillic script,Q162013
+wikidata,,,Latn,Latin script,Q18275323
+wikidata,,Middle Polish,Latn,Latin script,Q402878
+wikidata,,Old Gutnish,Runr,runic script,Q1133488
+wikidata,qwh,Huaylas Quechua,Latn,Latin script,Q6094343
+wikidata,,,Latn,Latin script,Q1072111
+wikidata,,Old Gutnish,Latn,Latin script,Q1133488
+wikidata,,,,Portuguese alphabet,Q1072111
+wikidata,,Judaeo-Portuguese,Latn,Latin script,Q56982
+wikidata,,Voynichese,,Voynich,Q6164898
+wikidata,qwh,Huaylas Quechua,,,Q6094343
+wikidata,,,Latn,Latin script,Q13048655
+wikidata,rrm,Moriori,Latn,Latin script,Q2741879
+wikidata,,Paeonian,Grek,Greek alphabet,Q2705672
+wikidata,mip,Apasco-Apoala Mixtec,Latn,Latin script,Q13583505
+wikidata,wja,Waja,Latn,Latin script,Q3914415
+wikidata,kcq,Kamo,Latn,Latin script,Q3914879
+wikidata,mqx,Mamuju,Latn,Latin script,Q6746004
+wikidata,wmm,Maiwa,Latn,Latin script,Q6737226
+wikidata,ymk,Makwe,Latn,Latin script,Q6740513
+wikidata,mqj,Mamasa,Latn,Latin script,Q6745452
+wikidata,jpa,,,,Q948909
+wikidata,thk,Tharaka,Latn,Latin script,Q15407179
+wikidata,,Teleut,Cyrl,Cyrillic script,Q4454131
+wikidata,,Old Yue,Hani,Chinese characters,Q4536509
+wikidata,,Khotan dialect,,Arabic alphabet,Q4500298
+wikidata,diu,Gciriku,Latn,Latin script,Q3780954
+wikidata,,Ait Seghrouchen Berber,Latn,Latin script,Q4699269
+wikidata,taq,Tamasheq,Tfng,Tifinagh,Q4670066
+wikidata,tft,Ternate,Arab,Arabic script,Q3518492
+wikidata,enm,Middle English,Latn,Latin script,Q36395
+wikidata,,Gathic,Avst,Avestan,Q135913439
+wikidata,ktl,Koroshi,,Perso-Arabic script,Q3775265
+wikidata,tft,Ternate,Latn,Latin script,Q3518492
+wikidata,uhn,Amung,,Latin alphabet,Q4748974
+wikidata,,,Latn,Latin script,Q126689027
+wikidata,osn,Old Sundanese,,Buda script,Q56197074
+wikidata,taq,Tamasheq,Latn,Latin script,Q4670066
+wikidata,atq,Aralle-Tabulahan,Latn,Latin script,Q4783889
+wikidata,,Old Komi,Cyrl,Cyrillic script,Q86679962
+wikidata,kjp,Eastern Pwo,Leke,Leke,Q5330390
+wikidata,osn,Old Sundanese,,Old Sundanese script,Q56197074
+wikidata,,Banjar Hulu,,Latin alphabet,Q65325240
+wikidata,kjp,Eastern Pwo,,Burmese,Q5330390
+wikidata,kjp,Eastern Pwo,,Mon,Q5330390
+wikidata,,Balhae,,Balhae script,Q8013959
+wikidata,nmq,Nambya,Latn,Latin script,Q3553981
+wikidata,,Ancient Russian,Cyrl,Cyrillic script,Q114309485
+wikidata,wgi,Wahgi,Latn,Latin script,Q3565122
+wikidata,yky,Yakoma,Latn,Latin script,Q3571364
+wikidata,,Ait Seghrouchen Berber,Tfng,Tifinagh,Q4699269
+wikidata,kne,Kankanaey,Latn,Latin script,Q18753329
+wikidata,,Balhae,Hani,Chinese characters,Q8013959
+wikidata,,Coast Tsimshian,Latn,Latin script,Q3541581
+wikidata,,Singapore English,Latn,Latin script,Q3610939
+wikidata,kjp,Eastern Pwo,Thai,Thai script,Q5330390
+wikidata,uhn,Amung,Latn,Latin script,Q4748974
+wikidata,,Old Komi,Perm,Old Permic alphabet,Q86679962
+wikidata,,Lebanese Syriac,Syrc,Syriac alphabet,Q123858117
+wikidata,,Banjar Hulu,,Pegon alphabet,Q65325240
+wikidata,,Cabil,Latn,Latin script,Q57982755
+wikidata,,Inuvialuktun,,Eskimo alphabet,Q27990
+wikidata,pkh,Pangkhu,Deva,Devanagari,Q7130962
+wikidata,,Old Czech,Latn,Latin script,Q16315466
+wikidata,pgn,,Ital,Old Italic,Q65455883
+wikidata,kuj,Kuria,Latn,Latin script,Q6445968
+wikidata,osd,Digor Ossetian,,Ossetian Cyrillic alphabet,Q3027861
+wikidata,kqy,Koore,Ethi,Geʽez script,Q6430753
+wikidata,,Kwangwa,Latn,Latin script,Q6450184
+wikidata,saj,Sahu,Latn,Latin script,Q7399757
+wikidata,thq,Kochila Tharu,Deva,Devanagari,Q22083826
+wikidata,,Old Swedish,,Younger Futhark,Q2417210
+wikidata,,Gallaecian,,Celtiberian,Q3094789
+wikidata,,Old Swedish,Latn,Latin script,Q2417210
+wikidata,osd,Digor Ossetian,Cyrl,Cyrillic script,Q3027861
+wikidata,kqy,Koore,Latn,Latin script,Q6430753
+wikidata,,Ndyuka,Afak,Afaka,Q35037
+wikidata,,Llanito,Latn,Latin script,Q79388
+wikidata,,Surzhyk,Cyrl,Cyrillic script,Q430396
+wikidata,,,Latn,Latin script,Q939451
+wikidata,,Svorsk,Latn,Latin script,Q1852991
+wikidata,,Manglish,Latn,Latin script,Q2039185
+wikidata,,Ndyuka,Latn,Latin script,Q35037
+wikidata,,Scandoromani,Latn,Latin script,Q36641
+wikidata,,Spanglish,Latn,Latin script,Q56418
+wikidata,niy,Ngiti,Latn,Latin script,Q7022396
+wikidata,,Dunglish,Latn,Latin script,Q2431653
+wikidata,omy,Old Malay,Kawi,,Q31775823
+wikidata,omy,Old Malay,,Pallava,Q31775823
+wikidata,yej,Yevanic,,,Q34200
+wikidata,,Razi dialect,,Arabic alphabet,Q6410801
+wikidata,khk,Khalkha Mongolian,Cyrl,Cyrillic script,Q6399808
+wikidata,,Kongu Tamil,,Vatteluttu,Q6429269
+wikidata,knx,Kanayatn,Latn,Latin script,Q6388963
+wikidata,ngi,Ngizim,Latn,Latin script,Q3914924
+wikidata,mvp,Duri,Latn,Latin script,Q3915414
+wikidata,,Kongu Tamil,Taml,Tamil script,Q6429269
+wikidata,kuf,Katu,Laoo,Lao,Q6378400
+wikidata,khk,Khalkha Mongolian,Mong,,Q6399808
+wikidata,,Capraia dialect,Latn,Latin script,Q120965619
+wikidata,,New Persian,Guru,Gurmukhi,Q56356571
+wikidata,enh,Tundra Enets,Cyrl,Cyrillic script,Q25559411
+wikidata,,New Persian,Mani,Manichaean,Q56356571
+wikidata,,Qatari Arabic,,Arabic alphabet,Q21661337
+wikidata,,New Persian,Syrn,Eastern Syriac script,Q56356571
+wikidata,,Old Kerinci,,Ulu scripts,Q117273410
+wikidata,,American Norwegian,Latn,Latin script,Q113456590
+wikidata,gge,Guragone,Latn,Latin script,Q5619801
+wikidata,,New Persian,Cyrl,Cyrillic script,Q56356571
+wikidata,,New Persian,Latn,Latin script,Q56356571
+wikidata,,Nawayathi,,Urdu orthography,Q16888615
+wikidata,,Nawayathi,,Perso-Arabic script,Q16888615
+wikidata,,Proto-French,Latn,Latin script,Q136913444
+wikidata,,New Persian,Armn,Armenian alphabet,Q56356571
+wikidata,,New Persian,Hebr,Hebrew alphabet,Q56356571
+wikidata,ngu,Guerrero Nahuatl,Latn,Latin script,Q5614980
+wikidata,,New Persian,,Persian alphabet,Q56356571
+wikidata,,Old Balinese,Bali,Balinese,Q127179148
+wikidata,,Khamseh Arabic,,Arabic alphabet,Q134777703
+wikidata,chg,Chagatai,Latn,Latin script,Q36831
+wikidata,zlu,Zul,Latn,Latin script,Q28671271
+wikidata,pww,Northern Pwo,Thai,Thai script,Q7058885
+wikidata,,Sheikah,,Sheikah alphabet,Q116242478
+wikidata,chg,Chagatai,,Chagatai alphabet,Q36831
+wikidata,,Old Anatolian Turkish,,Ottoman Turkish alphabet,Q7083390
+wikidata,rwk,Rwa,Latn,Latin script,Q41432343
+wikidata,chg,Chagatai,,Arabic alphabet,Q36831
+wikidata,jbe,Judeo-Berber,,,Q35854
+wikidata,bqi,Bakhtiari,,Arabic alphabet,Q257829
+wikidata,pnc,Pannei,Latn,Latin script,Q7131391
+wikidata,bqi,Bakhtiari,Aran,Nastaʿlīq,Q257829
+wikidata,,Adûnaic,Latn,Latin script,Q1750889
+wikidata,,Gnommish,,,Q2040375
+wikidata,xng,Middle Mongolian,Mong,,Q2582455
+wikidata,,Galactic Basic,,Aurebesh,Q5736449
+wikidata,,Huttese,,,Q3787738
+wikidata,,Syldavian,Cyrl,Cyrillic script,Q2708019
+wikidata,,Syldavian,Latn,Latin script,Q2708019
+wikidata,xng,Middle Mongolian,Arab,Arabic script,Q2582455
+wikidata,eky,Eastern Kayah,Kali,Kayah Li,Q25559417
+wikidata,xng,Middle Mongolian,Hani,Chinese characters,Q2582455
+wikidata,,Ozay,Latn,Latin script,Q12353557
+wikidata,xng,Middle Mongolian,Phag,ʼPhags-pa,Q2582455
+wikidata,,Huttese,Latn,Latin script,Q3787738
+wikidata,xng,Middle Mongolian,Armn,Armenian alphabet,Q2582455
+wikidata,,Bordurian,Latn,Latin script,Q3845128
+wikidata,,Adûnaic,Teng,Tengwar,Q1750889
+wikidata,,Stieng,Khmr,,Q7616385
+wikidata,kjt,Phrae Pwo,Thai,Thai script,Q7187991
+wikidata,twh,Tai Dón,,,Q7675751
+wikidata,sfm,Small Flowery Miao,Plrd,Miao,Q7542773
+wikidata,sby,Soli,Latn,Latin script,Q7557754
+wikidata,phk,Tai Phake,,Burmese alphabet,Q7675798
+wikidata,lae,Pattani,Deva,Devanagari,Q7148323
+wikidata,,Middle Frisian,Latn,Latin script,Q6841428
+wikidata,tjl,Tai Laing,,Burmese alphabet,Q7675773
+wikidata,tln,Talondo’,Latn,Latin script,Q7680293
+wikidata,twh,Tai Dón,Tavt,Tai Viet,Q7675751
+wikidata,mdm,Mayogo,Latn,Latin script,Q6797580
+wikidata,sso,Sissano,Latn,Latin script,Q7530937
+wikidata,mxi,Andalusi Romance,,Arabic alphabet,Q317044
+wikidata,vav,Varli,Deva,Devanagari,Q7915983
+wikidata,vav,Varli,Gujr,Gujarati,Q7915983
+wikidata,yey,Yeyi,Latn,Latin script,Q8053347
+wikidata,mxi,Andalusi Romance,,,Q317044
+wikidata,mxi,Andalusi Romance,Latn,Latin script,Q317044
+wikidata,,medieval Aragonese,Latn,Latin script,Q8202951
+wikidata,,Rekhta,Aran,Nastaʿlīq,Q7310626
+wikidata,pyy,Pyen,Latn,Latin script,Q7262966
+wikidata,bgd,Rathwi Bareli,Deva,Devanagari,Q7295692
+wikidata,zts,Tilquiapan Zapotec,Latn,Latin script,Q7802959
+wikidata,,Mnong,Khmr,,Q6886053
+wikidata,lmj,Mingar,Latn,Latin script,Q6864697
+wikidata,,Mnong,Latn,Latin script,Q6886053
+wikidata,mmk,Mukha-Dora,Telu,Telugu,Q6933447
+wikidata,mnb,Muna,Latn,Latin script,Q6935584
+wikidata,nnp,Wancho,Wcho,Wancho script,Q7967085
+wikidata,wne,Tareeno,,Arabic alphabet,Q7967334
+wikidata,wiu,Wiru,Latn,Latin script,Q8027044
+wikidata,ygr,Yagaria,Latn,Latin script,Q8046690
+wikidata,,West Kilimanjaro,Latn,Latin script,Q7985624
+wikidata,nnp,Wancho,Deva,Devanagari,Q7967085
+wikidata,nnp,Wancho,Latn,Latin script,Q7967085
+wikidata,,Bildt language,Latn,Latin script,Q861302
+wikidata,,Maakeel,Latn,Latin script,Q12369351
+wikidata,,Balkar dialect,Cyrl,Cyrillic script,Q12533442
+wikidata,,Balkar dialect,Latn,Latin script,Q12533442
+wikidata,,,Latn,Latin script,Q10535532
+wikidata,,Archaic Greek,,archaic Greek alphabets,Q11732220
+wikidata,bdv,Bodo Parja,Orya,Odia,Q8845881
+wikidata,,Swiss German,Latn,Latin script,Q387066
+wikidata,xct,,Tibt,Tibetan alphabet,Q5128314
+wikidata,wae,Walser German,Latn,Latin script,Q680517
+wikidata,,Tuwat,Tfng,Tifinagh,Q7857160
+wikidata,ifk,Tuwali,Latn,Latin script,Q7857158
+wikidata,,Tuwat,Latn,Latin script,Q7857160
+wikidata,,Russian dialect of Odesa,Cyrl,Cyrillic script,Q4400869
+wikidata,,Uzbekistani Tajik,Latn,Latin script,Q135426341
+wikidata,,Banglish,,English alphabet,Q124638679
+wikidata,,Banglish,,Bangla alphabet,Q124638679
+wikidata,,Tajikistani Uzbek,Cyrl,Cyrillic script,Q135900447
+wikidata,,British English,Latn,Latin script,Q7979
+wikidata,,Russian dialect of Odesa,,Russian alphabet,Q4400869
+wikidata,,pseudo-Chinese,,kanji,Q24837195
+wikidata,,Torki,Guru,Gurmukhi,Q122802340
+wikidata,yud,Judeo-Tripolitanian Arabic,,,Q56598
+wikidata,ojp,Old Japanese,,kanji,Q5736700
+wikidata,ojp,Old Japanese,,man'yōgana,Q5736700
+wikidata,,Historical Chinese,Hani,Chinese characters,Q10913056
+wikidata,,Sangke,Latn,Latin script,Q24705501
+wikidata,,Hokkaido Ainu,,Ainu orthography,Q20968488
+wikidata,,Dadanitic,,Dadanitic script,Q21838040
+wikidata,,Hokkaido Ainu,Latn,Latin script,Q20968488
+wikidata,,Kwandi,Latn,Latin script,Q16564526
+wikidata,,Southern Paiute,Latn,Latin script,Q21655542
+wikidata,,Dobrujan Tatar,Latn,Latin script,Q12811566
+wikidata,,,Latn,Latin script,Q13142586
+wikidata,,,Latn,Latin script,Q13142938
+wikidata,,German Standard German,Latn,Latin script,Q258318
+wikidata,,South Tyrolean German,Latn,Latin script,Q135088538
+wikidata,,Wogoels,Latn,Latin script,Q13036424
+wikidata,,East Swabian,Latn,Latin script,Q4126560
+wikidata,,Early Middle Japanese,Hira,hiragana,Q182695
+wikidata,otb,Old Tibetan,Tibt,Tibetan alphabet,Q7085214
+wikidata,,Early Middle Japanese,,kanji,Q182695
+wikidata,,Late Middle Japanese,,kanji,Q1816184
+wikidata,,Kamarupi Prakrit,,Kamarupi,Q6356097
+wikidata,,Early Middle Japanese,Kana,katakana,Q182695
+wikidata,,Old Romanian,,Romanian Cyrillic alphabet,Q11732757
+wikidata,,Taiwanese Classical Chinese,Hani,Chinese characters,Q22101529
+wikidata,,Northern Selkup,,script of the Northern Selkup language,Q30304565
+wikidata,,Southern Selkup,,script of the Southern Selkup language,Q30304639
+wikidata,,Northern Selkup,Cyrl,Cyrillic script,Q30304565
+wikidata,,Southern Selkup,Cyrl,Cyrillic script,Q30304639
+wikidata,,Middle Burmese,Mymr,Mon–Burmese script,Q17006588
+wikidata,,Chiricahua,Latn,Latin script,Q30897168
+wikidata,,Okinoerabu written in hiragana,Hira,hiragana,Q137885573
+wikidata,,Indramayu Sundanese,Latn,Latin script,Q112744654
+wikidata,,Ajem-Turkic,,Persian alphabet,Q110812703
+wikidata,,Judæo-Urdu,,,Q112760813
+wikidata,,Spanish Visual Impairment,,Spanish alphabet,Q116744054
+wikidata,,Spanish Visual Impairment,,audio recording,Q116744054
+wikidata,,Imgarri dialect,,Maltese alphabet,Q123253529
+wikidata,,Northern Dargwa,Cyrl,Cyrillic script,Q113411077
+wikidata,,Judæo-Urdu,Hebr,Hebrew alphabet,Q112760813
+wikidata,,Surabaya Javanese,Latn,Latin script,Q109431506
+wikidata,,Nabataean Arabic,Nbat,Nabataean script,Q30130163
+wikidata,,Ciamis Sundanese,Sund,Sundanese script,Q110276967
+wikidata,,Ciamis Sundanese,Latn,Latin script,Q110276967
+wikidata,,Baasaari,Latn,Latin script,Q111285901
+wikidata,,,Latn,Latin script,Q107197943
+wikidata,,Cyrillic English,Cyrl,Cyrillic script,Q120794107
+wikidata,,Japanese written in Latin script,Latn,Latin script,Q53979348
+wikidata,,mixed kanji–kana orthography,Hrkt,kana,Q10997505
+wikidata,,Arabic Syrian of Raqqa,Arab,Arabic script,Q132444522
+wikidata,,written vernacular Chinese,Hani,Chinese characters,Q783605
+wikidata,,Edwas,Latn,Latin script,Q85758671
+wikidata,,Japanese written in hiragana,Hira,hiragana,Q53979341
+wikidata,,Japanese written in kana,Hira,hiragana,Q53979345
+wikidata,,Old Japanese written in hiragana,Hira,hiragana,Q54086472
+wikidata,,Catalan Caló,Latn,Latin script,Q117455974
+wikidata,,Central Asian Arabic,,Arabic alphabet,Q50948445
+wikidata,,Bongor Arabic,Latn,Latin script,Q126928420
+wikidata,,,Sylo,Sylheti,Q97356879
+wikidata,,Tajik language in Russia,,Tajik Cyrillic alphabet,Q135915682
+wikidata,,Simplified Chinese,Hans,simplified Chinese characters,Q13414913
+wikidata,,Proto-Norse,,Elder Futhark,Q1671294
+wikidata,,,Tglg,Baybayin,Q105710152
+wikidata,,mixed kanji–kana orthography,,kanji,Q10997505
+wikidata,,Japanese written in katakana,Kana,katakana,Q53979342
+wikidata,,Japanese written in kana,Kana,katakana,Q53979345
+wikidata,,Serbian in Cyrilic script,,Serbian Cyrillic alphabet,Q21161942
+wikidata,,Uyghur in Latin script,,,Q22338145
+wikidata,,Uyghur Arabic script,,Uyghur Arabic alphabet,Q22338135
+wikidata,,,Latn,Latin script,Q96756696
+wikidata,,Serbian in Latin script,Latn,Latin script,Q21161949
+wikidata,,Japanese written in kana,Hrkt,kana,Q53979345
+wikidata,,,,Arabic alphabet,Q107198008
+wikidata,,Northwestern Mari,,Mari alphabet,Q53493410
+wikidata,,Japanese written in kanji,,kanji,Q53979504
+wikidata,,Old Japanese written in kanji,,kanji,Q54086473
+wikidata,,,Latn,Latin script,Q12888876
+wikidata,,Northwestern Mari,,,Q53493410
+wikidata,,Northwestern Mari,Cyrl,Cyrillic script,Q53493410
+wikidata,,Tarama,,kanji,Q85805206
+wikidata,,,,Old Mon script,Q100271134
+wikidata,,Tarama,Hira,hiragana,Q85805206
+wikidata,,Pontianak Malay,Latn,Latin script,Q19747217
+wikidata,,Tarama,Kana,katakana,Q85805206
+wikidata,,,,Mon,Q100271134
+wikidata,,Orkhon Turkic,Orkh,Old Turkic,Q31295480
+wikidata,,Standard Dutch,,Dutch alphabet,Q36423
+wikidata,,Standard Dutch,,Dutch six-dot Braille,Q36423
+wikidata,,Modern Standard Arabic,Arab,Arabic script,Q56467
+wikidata,,Standard Dutch,,Dutch eight-dot Braille,Q36423
+wikidata,,Eastern Morocco Zenati,,Arabic alphabet,Q19894851
+wikidata,,Eastern Morocco Zenati,Tfng,Tifinagh,Q19894851
+wikidata,,Eastern Morocco Zenati,Latn,Latin script,Q19894851
+wikidata,,Malaysian Malay,Latn,Latin script,Q15065
+wikidata,,Malaysian Malay,,Jawi,Q15065
+wikidata,,Nahuatl,,Aztec script,Q13300
+wikidata,,,Latn,Latin script,Q98706664
+wikidata,,Pahlavi,Phlv,Book Pahlavi,Q120186224
+wikidata,,Middle Vietnamese,,Middle Vietnamese alphabet,Q117284173
+wikidata,,Middle Mon,,Mon alphabet,Q121337926
+wikidata,,Nanyang dialect,Hani,Chinese characters,Q10909237
+wikidata,,Old Dalecarlian,,Younger Futhark,Q134378808
+wikidata,,Old Dalecarlian,,medieval runes,Q134378808
+wikidata,,,,Filipino alphabet,Q137924901
+wikidata,,Nahuatl,Latn,Latin script,Q13300
+wikidata,,Middle Czech,Latn,Latin script,Q136452604
+wikidata,,,Tglg,Baybayin,Q137924901
+wikidata,,,Latn,Latin script,Q137586545
+wikidata,,Northern Uzbek language,Latn,Latin script,Q137604299
+wikidata,,Standard Algerian Berber,,Berber Latin alphabet,Q61053330
+wikidata,,Standard Persian,Cyrl,Cyrillic script,Q17993025
+wikidata,,Standard Madurese,Java,Javanese script,Q123378981
+wikidata,,Standard Kangeanic,Java,Javanese script,Q123379069
+wikidata,,Rhine Franconian,Latn,Latin script,Q707007
+wikidata,,Ecclesiastical Latin,Latn,Latin script,Q1247932
+wikidata,,Standard Madurese,,Pegon alphabet,Q123378981
+wikidata,,Standard Kangeanic,,Pegon alphabet,Q123379069
+wikidata,,Biblical Aramaic,Hebr,Hebrew alphabet,Q843235
+wikidata,,Tajik (Soviet) language,,,Q135424660
+wikidata,,Standard Walloon,,Walloon alphabet,Q3565518
+wikidata,,Pisanie,,Church Slavonic alphabet,Q12738111
+wikidata,,Standard Madurese,Latn,Latin script,Q123378981
+wikidata,,Standard Kangeanic,Latn,Latin script,Q123379069
+wikidata,,Standard Persian,,Persian alphabet,Q17993025
+wikidata,,Standard Minangkabau,Latn,Latin script,Q123475023
+wikidata,,Nynorn,Latn,Latin script,Q13194772
+wikidata,,Ariano Irpino dialect,Latn,Latin script,Q48804469
+wikidata,,,Latn,Latin script,Q4845166
+wikidata,,,Latn,Latin script,Q4895828
+wikidata,,Algherese,Latn,Latin script,Q585704
+wikidata,,Balearic,Latn,Latin script,Q804899
+wikidata,,Davaoeño Cebuano dialect,,Filipino alphabet,Q127930964
+wikidata,,,Latn,Latin script,Q6745460
+wikidata,,,Latn,Latin script,Q65204875
+wikidata,,Central Valencian,Latn,Latin script,Q2858334
+wikidata,,,Latn,Latin script,Q2941592
+wikidata,,Northwestern Catalan,Latn,Latin script,Q2941596
+wikidata,,Central Catalan,Latn,Latin script,Q2941602
+wikidata,,,Latn,Latin script,Q11912182
+wikidata,,Tarragonese,Latn,Latin script,Q11913256
+wikidata,,,Latn,Latin script,Q11950126
+wikidata,,Southern Valencian,Latn,Latin script,Q3138479
+wikidata,,Northern Catalan,Latn,Latin script,Q3175284
+wikidata,,Ribagorzan Catalan,Latn,Latin script,Q3332811
+wikidata,,,Latn,Latin script,Q3571369
+wikidata,,,Latn,Latin script,Q17633942
+wikidata,,Nissart,Latn,Latin script,Q1093676
+wikidata,,Vivaro-Alpine,Latn,Latin script,Q1649613
+wikidata,,,Latn,Latin script,Q10196
+wikidata,,Landese,Latn,Latin script,Q2429545
+wikidata,,,Latn,Latin script,Q133733557
+wikidata,,Oladiran,Latn,Latin script,Q131400767
+cldr,aa,Afar,Latn,Latin,primary
+cldr,ab,Abkhazian,Cyrl,Cyrillic,primary
+cldr,abq,,Cyrl,Cyrillic,primary
+cldr,abq,,Latn,Latin,secondary
+cldr,abr,,Latn,Latin,primary
+cldr,ace,Acehnese,Latn,Latin,primary
+cldr,ach,Acoli,Latn,Latin,primary
+cldr,ada,Adangme,Latn,Latin,primary
+cldr,ady,Adyghe,Cyrl,Cyrillic,primary
+cldr,ae,Avestan,Avst,Avestan,primary
+cldr,aeb,Tunisian Arabic,Arab,Arabic,primary
+cldr,af,Afrikaans,Latn,Latin,primary
+cldr,agq,Aghem,Latn,Latin,primary
+cldr,aii,,Cyrl,Cyrillic,primary
+cldr,aii,,Syrc,Syriac,secondary
+cldr,ain,Ainu,Kana,Katakana,secondary
+cldr,ain,Ainu,Latn,Latin,secondary
+cldr,ak,Akan,Latn,Latin,primary
+cldr,akk,Akkadian,Xsux,Sumero-Akkadian Cuneiform,primary
+cldr,akz,Alabama,Latn,Latin,primary
+cldr,ale,Aleut,Latn,Latin,primary
+cldr,aln,Gheg Albanian,Latn,Latin,primary
+cldr,alt,Southern Altai,Cyrl,Cyrillic,primary
+cldr,am,Amharic,Ethi,Ethiopic,primary
+cldr,amo,,Latn,Latin,primary
+cldr,an,Aragonese,Latn,Latin,primary
+cldr,ang,Old English,Latn,Latin,primary
+cldr,ann,Obolo,Latn,Latin,primary
+cldr,anp,Angika,Deva,Devanagari,primary
+cldr,aoz,,Latn,Latin,primary
+cldr,apc,,Arab,Arabic,primary
+cldr,apd,,Arab,Arabic,primary
+cldr,ar,Arabic,Arab,Arabic,primary
+cldr,ar,Arabic,Syrc,Syriac,secondary
+cldr,arc,Aramaic,Armi,Imperial Aramaic,secondary
+cldr,arc,Aramaic,Nbat,Nabataean,secondary
+cldr,arc,Aramaic,Palm,Palmyrene,secondary
+cldr,arn,Mapuche,Latn,Latin,primary
+cldr,aro,Araona,Latn,Latin,primary
+cldr,arp,Arapaho,Latn,Latin,primary
+cldr,arq,Algerian Arabic,Arab,Arabic,primary
+cldr,ars,Najdi Arabic,Arab,Arabic,primary
+cldr,arw,Arawak,Latn,Latin,primary
+cldr,ary,Moroccan Arabic,Arab,Arabic,primary
+cldr,arz,Egyptian Arabic,Arab,Arabic,primary
+cldr,as,Assamese,Beng,Bangla,primary
+cldr,asa,Asu,Latn,Latin,primary
+cldr,ast,Asturian,Latn,Latin,primary
+cldr,atj,Atikamekw,Latn,Latin,primary
+cldr,av,Avaric,Cyrl,Cyrillic,primary
+cldr,avk,Kotava,Latn,Latin,primary
+cldr,awa,Awadhi,Deva,Devanagari,primary
+cldr,ay,Aymara,Latn,Latin,primary
+cldr,az,Azerbaijani,Latn,Latin,primary
+cldr,az,Azerbaijani,Arab,Arabic,secondary
+cldr,az,Azerbaijani,Cyrl,Cyrillic,secondary
+cldr,ba,Bashkir,Cyrl,Cyrillic,primary
+cldr,bal,Baluchi,Arab,Arabic,primary
+cldr,bal,Baluchi,Latn,Latin,secondary
+cldr,ban,Balinese,Latn,Latin,primary
+cldr,ban,Balinese,Bali,Balinese,secondary
+cldr,bap,,Deva,Devanagari,primary
+cldr,bar,Bavarian,Latn,Latin,primary
+cldr,bas,Basaa,Latn,Latin,primary
+cldr,bax,Bamun,Bamu,Bamum,primary
+cldr,bbc,Batak Toba,Latn,Latin,primary
+cldr,bbc,Batak Toba,Batk,Batak,secondary
+cldr,bbj,Ghomala,Latn,Latin,primary
+cldr,bci,,Latn,Latin,primary
+cldr,be,Belarusian,Cyrl,Cyrillic,primary
+cldr,bej,Beja,Arab,Arabic,primary
+cldr,bem,Bemba,Latn,Latin,primary
+cldr,bew,Betawi,Latn,Latin,primary
+cldr,bez,Bena,Latn,Latin,primary
+cldr,bfd,Bafut,Latn,Latin,primary
+cldr,bfq,Badaga,Taml,Tamil,primary
+cldr,bft,,Arab,Arabic,primary
+cldr,bft,,Tibt,Tibetan,secondary
+cldr,bfy,,Deva,Devanagari,primary
+cldr,bg,Bulgarian,Cyrl,Cyrillic,primary
+cldr,bgc,Haryanvi,Deva,Devanagari,primary
+cldr,bgn,Western Balochi,Arab,Arabic,primary
+cldr,bgx,,Grek,Greek,primary
+cldr,bhb,,Deva,Devanagari,primary
+cldr,bhi,,Deva,Devanagari,primary
+cldr,bho,Bhojpuri,Deva,Devanagari,primary
+cldr,bi,Bislama,Latn,Latin,primary
+cldr,bik,Bikol,Latn,Latin,primary
+cldr,bin,Bini,Latn,Latin,primary
+cldr,bjj,,Deva,Devanagari,primary
+cldr,bjn,Banjar,Latn,Latin,primary
+cldr,bjt,,Latn,Latin,primary
+cldr,bkm,Kom,Latn,Latin,primary
+cldr,bku,,Latn,Latin,primary
+cldr,bku,,Buhd,Buhid,secondary
+cldr,bla,Siksiká,Latn,Latin,primary
+cldr,blo,Anii,Latn,Latin,primary
+cldr,blt,Tai Dam,Tavt,Tai Viet,primary
+cldr,bm,Bambara,Latn,Latin,primary
+cldr,bm,Bambara,Nkoo,N’Ko,primary
+cldr,bmq,,Latn,Latin,primary
+cldr,bn,Bangla,Beng,Bangla,primary
+cldr,bo,Tibetan,Tibt,Tibetan,primary
+cldr,bpy,Bishnupriya,Beng,Bangla,primary
+cldr,bqi,Bakhtiari,Arab,Arabic,primary
+cldr,bqv,,Latn,Latin,primary
+cldr,br,Breton,Latn,Latin,primary
+cldr,bra,Braj,Deva,Devanagari,primary
+cldr,brh,Brahui,Arab,Arabic,primary
+cldr,brh,Brahui,Latn,Latin,secondary
+cldr,brx,Bodo,Deva,Devanagari,primary
+cldr,bs,Bosnian,Latn,Latin,primary
+cldr,bs,Bosnian,Cyrl,Cyrillic,primary
+cldr,bsc,,Latn,Latin,primary
+cldr,bsq,,Latn,Latin,primary
+cldr,bsq,,Bass,Bassa Vah,secondary
+cldr,bss,Akoose,Latn,Latin,primary
+cldr,bto,,Latn,Latin,primary
+cldr,btv,,Deva,Devanagari,primary
+cldr,bua,Buriat,Cyrl,Cyrillic,primary
+cldr,buc,,Latn,Latin,primary
+cldr,bug,Buginese,Latn,Latin,primary
+cldr,bug,Buginese,Bugi,Buginese,secondary
+cldr,bum,Bulu,Latn,Latin,primary
+cldr,bvb,,Latn,Latin,primary
+cldr,byn,Blin,Ethi,Ethiopic,primary
+cldr,byv,Medumba,Latn,Latin,primary
+cldr,bze,,Latn,Latin,primary
+cldr,bzx,,Latn,Latin,primary
+cldr,ca,Catalan,Latn,Latin,primary
+cldr,cad,Caddo,Latn,Latin,primary
+cldr,car,Carib,Latn,Latin,primary
+cldr,cay,Cayuga,Latn,Latin,primary
+cldr,cch,Atsam,Latn,Latin,primary
+cldr,ccp,Chakma,Cakm,Chakma,primary
+cldr,ccp,Chakma,Beng,Bangla,primary
+cldr,ccr,,Latn,Latin,primary
+cldr,ce,Chechen,Cyrl,Cyrillic,primary
+cldr,ceb,Cebuano,Latn,Latin,primary
+cldr,cgg,Chiga,Latn,Latin,primary
+cldr,ch,Chamorro,Latn,Latin,primary
+cldr,chk,Chuukese,Latn,Latin,primary
+cldr,chm,Mari,Cyrl,Cyrillic,primary
+cldr,chn,Chinook Jargon,Latn,Latin,primary
+cldr,cho,Choctaw,Latn,Latin,primary
+cldr,chp,Chipewyan,Latn,Latin,primary
+cldr,chp,Chipewyan,Cans,Unified Canadian Aboriginal Syllabics,secondary
+cldr,chr,Cherokee,Cher,Cherokee,primary
+cldr,chy,Cheyenne,Latn,Latin,primary
+cldr,cic,Chickasaw,Latn,Latin,primary
+cldr,cja,,Arab,Arabic,primary
+cldr,cja,,Cham,Cham,secondary
+cldr,cjm,,Cham,Cham,primary
+cldr,cjm,,Arab,Arabic,secondary
+cldr,cjs,,Cyrl,Cyrillic,primary
+cldr,ckb,Central Kurdish,Arab,Arabic,primary
+cldr,ckt,,Cyrl,Cyrillic,primary
+cldr,clc,Chilcotin,Latn,Latin,primary
+cldr,co,Corsican,Latn,Latin,primary
+cldr,cop,Coptic,Copt,Coptic,secondary
+cldr,cop,Coptic,Arab,Arabic,secondary
+cldr,cop,Coptic,Grek,Greek,secondary
+cldr,cps,Capiznon,Latn,Latin,primary
+cldr,cr,Cree,Cans,Unified Canadian Aboriginal Syllabics,primary
+cldr,cr,Cree,Latn,Latin,primary
+cldr,crg,Michif,Latn,Latin,primary
+cldr,crh,Crimean Tatar,Cyrl,Cyrillic,primary
+cldr,crj,Southern East Cree,Cans,Unified Canadian Aboriginal Syllabics,primary
+cldr,crj,Southern East Cree,Latn,Latin,secondary
+cldr,crk,Plains Cree,Cans,Unified Canadian Aboriginal Syllabics,primary
+cldr,crl,Northern East Cree,Cans,Unified Canadian Aboriginal Syllabics,primary
+cldr,crl,Northern East Cree,Latn,Latin,secondary
+cldr,crm,Moose Cree,Cans,Unified Canadian Aboriginal Syllabics,primary
+cldr,crs,Seselwa Creole French,Latn,Latin,primary
+cldr,cs,Czech,Latn,Latin,primary
+cldr,csb,Kashubian,Latn,Latin,primary
+cldr,csw,Swampy Cree,Cans,Unified Canadian Aboriginal Syllabics,primary
+cldr,ctd,,Latn,Latin,primary
+cldr,cu,Church Slavic,Cyrl,Cyrillic,primary
+cldr,cv,Chuvash,Cyrl,Cyrillic,primary
+cldr,cy,Welsh,Latn,Latin,primary
+cldr,da,Danish,Latn,Latin,primary
+cldr,dak,Dakota,Latn,Latin,primary
+cldr,dar,Dargwa,Cyrl,Cyrillic,primary
+cldr,dav,Taita,Latn,Latin,primary
+cldr,dcc,,Arab,Arabic,primary
+cldr,de,German,Latn,Latin,primary
+cldr,de,German,Runr,Runic,secondary
+cldr,del,Delaware,Latn,Latin,primary
+cldr,den,Slave,Latn,Latin,primary
+cldr,den,Slave,Cans,Unified Canadian Aboriginal Syllabics,secondary
+cldr,dgr,Dogrib,Latn,Latin,primary
+cldr,din,Dinka,Latn,Latin,primary
+cldr,dje,Zarma,Latn,Latin,primary
+cldr,dng,,Cyrl,Cyrillic,primary
+cldr,dnj,,Latn,Latin,primary
+cldr,doi,Dogri,Deva,Devanagari,primary
+cldr,doi,Dogri,Arab,Arabic,secondary
+cldr,doi,Dogri,Takr,Takri,secondary
+cldr,dsb,Lower Sorbian,Latn,Latin,primary
+cldr,dtm,,Latn,Latin,primary
+cldr,dtp,Central Dusun,Latn,Latin,primary
+cldr,dty,,Deva,Devanagari,primary
+cldr,dua,Duala,Latn,Latin,primary
+cldr,dum,Middle Dutch,Latn,Latin,primary
+cldr,dv,Divehi,Thaa,Thaana,primary
+cldr,dyo,Jola-Fonyi,Latn,Latin,primary
+cldr,dyo,Jola-Fonyi,Arab,Arabic,secondary
+cldr,dyu,Dyula,Latn,Latin,primary
+cldr,dz,Dzongkha,Tibt,Tibetan,primary
+cldr,ebu,Embu,Latn,Latin,primary
+cldr,ecy,,Cprt,Cypriot,primary
+cldr,ee,Ewe,Latn,Latin,primary
+cldr,efi,Efik,Latn,Latin,primary
+cldr,egl,Emilian,Latn,Latin,primary
+cldr,egy,Ancient Egyptian,Egyp,Egyptian hieroglyphs,primary
+cldr,eka,Ekajuk,Latn,Latin,primary
+cldr,eky,,Kali,Kayah Li,primary
+cldr,el,Greek,Grek,Greek,primary
+cldr,en,English,Latn,Latin,primary
+cldr,en,English,Dsrt,Deseret,secondary
+cldr,en,English,Shaw,Shavian,secondary
+cldr,enm,Middle English,Latn,Latin,primary
+cldr,eo,Esperanto,Latn,Latin,primary
+cldr,es,Spanish,Latn,Latin,primary
+cldr,esg,,Gonm,Masaram Gondi,primary
+cldr,esg,,Deva,Devanagari,secondary
+cldr,esg,,Telu,Telugu,secondary
+cldr,esu,Central Yupik,Latn,Latin,primary
+cldr,et,Estonian,Latn,Latin,primary
+cldr,ett,,Ital,Old Italic,secondary
+cldr,ett,,Latn,Latin,secondary
+cldr,eu,Basque,Latn,Latin,primary
+cldr,evn,,Cyrl,Cyrillic,primary
+cldr,ewo,Ewondo,Latn,Latin,primary
+cldr,ext,Extremaduran,Latn,Latin,primary
+cldr,fa,Persian,Arab,Arabic,primary
+cldr,fan,Fang,Latn,Latin,primary
+cldr,ff,Fula,Latn,Latin,primary
+cldr,ff,Fula,Adlm,Adlam,secondary
+cldr,ffm,,Latn,Latin,primary
+cldr,fi,Finnish,Latn,Latin,primary
+cldr,fia,,Arab,Arabic,primary
+cldr,fil,Filipino,Latn,Latin,primary
+cldr,fil,Filipino,Tglg,Tagalog,secondary
+cldr,fit,Tornedalen Finnish,Latn,Latin,primary
+cldr,fj,Fijian,Latn,Latin,primary
+cldr,fo,Faroese,Latn,Latin,primary
+cldr,fon,Fon,Latn,Latin,primary
+cldr,fr,French,Latn,Latin,primary
+cldr,fr,French,Dupl,Duployan shorthand,secondary
+cldr,frc,Cajun French,Latn,Latin,primary
+cldr,frm,Middle French,Latn,Latin,primary
+cldr,fro,Old French,Latn,Latin,primary
+cldr,frp,Arpitan,Latn,Latin,primary
+cldr,frr,Northern Frisian,Latn,Latin,primary
+cldr,frs,Eastern Frisian,Latn,Latin,primary
+cldr,fud,,Latn,Latin,primary
+cldr,fuq,,Latn,Latin,primary
+cldr,fur,Friulian,Latn,Latin,primary
+cldr,fuv,,Latn,Latin,primary
+cldr,fvr,,Latn,Latin,primary
+cldr,fy,Western Frisian,Latn,Latin,primary
+cldr,ga,Irish,Latn,Latin,primary
+cldr,gaa,Ga,Latn,Latin,primary
+cldr,gag,Gagauz,Latn,Latin,primary
+cldr,gag,Gagauz,Cyrl,Cyrillic,secondary
+cldr,gan,Gan Chinese,Hans,Simplified,primary
+cldr,gay,Gayo,Latn,Latin,primary
+cldr,gba,Gbaya,Latn,Latin,primary
+cldr,gbm,,Deva,Devanagari,primary
+cldr,gbz,Zoroastrian Dari,Arab,Arabic,primary
+cldr,gcr,,Latn,Latin,primary
+cldr,gd,Scottish Gaelic,Latn,Latin,primary
+cldr,gez,Geez,Ethi,Ethiopic,primary
+cldr,gil,Gilbertese,Latn,Latin,primary
+cldr,gjk,,Arab,Arabic,primary
+cldr,gju,,Arab,Arabic,primary
+cldr,gl,Galician,Latn,Latin,primary
+cldr,gld,,Cyrl,Cyrillic,primary
+cldr,glk,Gilaki,Arab,Arabic,primary
+cldr,gmh,Middle High German,Latn,Latin,primary
+cldr,gmy,,Linb,Linear B,primary
+cldr,gn,Guarani,Latn,Latin,primary
+cldr,goh,Old High German,Latn,Latin,primary
+cldr,gon,Gondi,Deva,Devanagari,primary
+cldr,gon,Gondi,Gong,Gunjala Gondi,secondary
+cldr,gon,Gondi,Gonm,Masaram Gondi,secondary
+cldr,gon,Gondi,Orya,Odia,secondary
+cldr,gon,Gondi,Telu,Telugu,secondary
+cldr,gor,Gorontalo,Latn,Latin,primary
+cldr,gos,,Latn,Latin,primary
+cldr,got,Gothic,Goth,Gothic,primary
+cldr,grb,Grebo,Latn,Latin,primary
+cldr,grc,Ancient Greek,Grek,Greek,primary
+cldr,grr,,Arab,Arabic,primary
+cldr,grr,,Tfng,Tifinagh,secondary
+cldr,grt,,Beng,Bangla,primary
+cldr,gsw,Swiss German,Latn,Latin,primary
+cldr,gu,Gujarati,Gujr,Gujarati,primary
+cldr,gub,,Latn,Latin,primary
+cldr,guc,Wayuu,Latn,Latin,primary
+cldr,gur,Frafra,Latn,Latin,primary
+cldr,guz,Gusii,Latn,Latin,primary
+cldr,gv,Manx,Latn,Latin,primary
+cldr,gvr,,Deva,Devanagari,primary
+cldr,gwi,Gwichʼin,Latn,Latin,primary
+cldr,ha,Hausa,Latn,Latin,primary
+cldr,ha,Hausa,Arab,Arabic,primary
+cldr,hai,Haida,Latn,Latin,primary
+cldr,hak,Hakka Chinese,Hans,Simplified,primary
+cldr,hak,Hakka Chinese,Hant,Traditional,secondary
+cldr,haw,Hawaiian,Latn,Latin,primary
+cldr,haz,,Arab,Arabic,primary
+cldr,he,Hebrew,Hebr,Hebrew,primary
+cldr,hi,Hindi,Deva,Devanagari,primary
+cldr,hi,Hindi,Latn,Latin,secondary
+cldr,hi,Hindi,Mahj,Mahajani,secondary
+cldr,hif,Fiji Hindi,Deva,Devanagari,primary
+cldr,hif,Fiji Hindi,Latn,Latin,primary
+cldr,hil,Hiligaynon,Latn,Latin,primary
+cldr,hit,Hittite,Xsux,Sumero-Akkadian Cuneiform,primary
+cldr,hmd,,Plrd,Pollard Phonetic,primary
+cldr,hmn,Hmong,Latn,Latin,primary
+cldr,hmn,Hmong,Hmng,Pahawh Hmong,secondary
+cldr,hnd,,Arab,Arabic,primary
+cldr,hne,,Deva,Devanagari,primary
+cldr,hnj,Hmong Njua,Laoo,Lao,primary
+cldr,hnn,,Latn,Latin,primary
+cldr,hnn,,Hano,Hanunoo,secondary
+cldr,hno,,Arab,Arabic,primary
+cldr,ho,Hiri Motu,Latn,Latin,primary
+cldr,hoc,,Deva,Devanagari,primary
+cldr,hoc,,Wara,Varang Kshiti,secondary
+cldr,hoj,,Deva,Devanagari,primary
+cldr,hop,,Latn,Latin,primary
+cldr,hr,Croatian,Latn,Latin,primary
+cldr,hsb,Upper Sorbian,Latn,Latin,primary
+cldr,hsn,Xiang Chinese,Hans,Simplified,primary
+cldr,ht,Haitian Creole,Latn,Latin,primary
+cldr,hu,Hungarian,Latn,Latin,primary
+cldr,hup,Hupa,Latn,Latin,primary
+cldr,hur,Halkomelem,Latn,Latin,primary
+cldr,hy,Armenian,Armn,Armenian,primary
+cldr,hz,Herero,Latn,Latin,primary
+cldr,ia,Interlingua,Latn,Latin,primary
+cldr,iba,Iban,Latn,Latin,primary
+cldr,ibb,Ibibio,Latn,Latin,primary
+cldr,id,Indonesian,Latn,Latin,primary
+cldr,id,Indonesian,Arab,Arabic,secondary
+cldr,ie,Interlingue,Latn,Latin,primary
+cldr,ife,,Latn,Latin,primary
+cldr,ig,Igbo,Latn,Latin,primary
+cldr,ii,Sichuan Yi,Yiii,Yi,primary
+cldr,ii,Sichuan Yi,Latn,Latin,secondary
+cldr,ik,Inupiaq,Latn,Latin,primary
+cldr,ikt,Western Canadian Inuktitut,Latn,Latin,primary
+cldr,ilo,Iloko,Latn,Latin,primary
+cldr,inh,Ingush,Cyrl,Cyrillic,primary
+cldr,inh,Ingush,Arab,Arabic,secondary
+cldr,inh,Ingush,Latn,Latin,secondary
+cldr,io,Ido,Latn,Latin,primary
+cldr,is,Icelandic,Latn,Latin,primary
+cldr,isv,,Latn,Latin,primary
+cldr,isv,,Cyrl,Cyrillic,secondary
+cldr,it,Italian,Latn,Latin,primary
+cldr,iu,Inuktitut,Cans,Unified Canadian Aboriginal Syllabics,primary
+cldr,iu,Inuktitut,Latn,Latin,primary
+cldr,izh,Ingrian,Latn,Latin,primary
+cldr,ja,Japanese,Jpan,Japanese,primary
+cldr,jam,Jamaican Creole English,Latn,Latin,primary
+cldr,jbo,Lojban,Latn,Latin,primary
+cldr,jgo,Ngomba,Latn,Latin,primary
+cldr,jmc,Machame,Latn,Latin,primary
+cldr,jml,,Deva,Devanagari,primary
+cldr,jpr,Judeo-Persian,Hebr,Hebrew,primary
+cldr,jrb,Judeo-Arabic,Hebr,Hebrew,primary
+cldr,jut,Jutish,Latn,Latin,primary
+cldr,jv,Javanese,Latn,Latin,primary
+cldr,jv,Javanese,Java,Javanese,secondary
+cldr,ka,Georgian,Geor,Georgian,primary
+cldr,kaa,Kara-Kalpak,Cyrl,Cyrillic,primary
+cldr,kaa,Kara-Kalpak,Latn,Latin,primary
+cldr,kab,Kabyle,Latn,Latin,primary
+cldr,kac,Kachin,Latn,Latin,primary
+cldr,kaj,Jju,Latn,Latin,primary
+cldr,kam,Kamba,Latn,Latin,primary
+cldr,kao,,Latn,Latin,primary
+cldr,kaw,Kawi,Bali,Balinese,primary
+cldr,kaw,Kawi,Java,Javanese,secondary
+cldr,kaw,Kawi,Kawi,Kawi,secondary
+cldr,kbd,Kabardian,Cyrl,Cyrillic,primary
+cldr,kca,,Cyrl,Cyrillic,primary
+cldr,kcg,Tyap,Latn,Latin,primary
+cldr,kck,,Latn,Latin,primary
+cldr,kde,Makonde,Latn,Latin,primary
+cldr,kdt,,Thai,Thai,primary
+cldr,kea,Kabuverdianu,Latn,Latin,primary
+cldr,ken,Kenyang,Latn,Latin,primary
+cldr,kfo,Koro,Latn,Latin,primary
+cldr,kfr,,Deva,Devanagari,primary
+cldr,kfy,,Deva,Devanagari,primary
+cldr,kg,Kongo,Latn,Latin,primary
+cldr,kge,,Latn,Latin,primary
+cldr,kgp,Kaingang,Latn,Latin,primary
+cldr,kha,Khasi,Latn,Latin,primary
+cldr,kha,Khasi,Beng,Bangla,secondary
+cldr,khb,,Talu,New Tai Lue,primary
+cldr,khn,,Deva,Devanagari,primary
+cldr,khq,Koyra Chiini,Latn,Latin,primary
+cldr,kht,,Mymr,Myanmar,primary
+cldr,khw,Khowar,Arab,Arabic,primary
+cldr,ki,Kikuyu,Latn,Latin,primary
+cldr,kiu,Kirmanjki,Latn,Latin,primary
+cldr,kj,Kuanyama,Latn,Latin,primary
+cldr,kjg,,Laoo,Lao,primary
+cldr,kjg,,Latn,Latin,secondary
+cldr,kjh,,Cyrl,Cyrillic,primary
+cldr,kk,Kazakh,Cyrl,Cyrillic,primary
+cldr,kk,Kazakh,Arab,Arabic,primary
+cldr,kkj,Kako,Latn,Latin,primary
+cldr,kl,Kalaallisut,Latn,Latin,primary
+cldr,kln,Kalenjin,Latn,Latin,primary
+cldr,km,Khmer,Khmr,Khmer,primary
+cldr,kmb,Kimbundu,Latn,Latin,primary
+cldr,kn,Kannada,Knda,Kannada,primary
+cldr,knf,,Latn,Latin,primary
+cldr,knn,,Deva,Devanagari,primary
+cldr,ko,Korean,Kore,Korean,primary
+cldr,koi,Komi-Permyak,Cyrl,Cyrillic,primary
+cldr,kok,Konkani,Deva,Devanagari,primary
+cldr,kok,Konkani,Latn,Latin,primary
+cldr,kos,Kosraean,Latn,Latin,primary
+cldr,kpe,Kpelle,Latn,Latin,primary
+cldr,kpy,,Cyrl,Cyrillic,primary
+cldr,kr,Kanuri,Latn,Latin,primary
+cldr,krc,Karachay-Balkar,Cyrl,Cyrillic,primary
+cldr,kri,Krio,Latn,Latin,primary
+cldr,krj,Kinaray-a,Latn,Latin,primary
+cldr,krl,Karelian,Latn,Latin,primary
+cldr,kro,,Latn,Latin,primary
+cldr,kru,Kurukh,Deva,Devanagari,primary
+cldr,ks,Kashmiri,Arab,Arabic,primary
+cldr,ks,Kashmiri,Deva,Devanagari,primary
+cldr,ksb,Shambala,Latn,Latin,primary
+cldr,ksf,Bafia,Latn,Latin,primary
+cldr,ksh,Colognian,Latn,Latin,primary
+cldr,ku,Kurdish,Latn,Latin,primary
+cldr,ku,Kurdish,Arab,Arabic,secondary
+cldr,ku,Kurdish,Cyrl,Cyrillic,secondary
+cldr,kum,Kumyk,Cyrl,Cyrillic,primary
+cldr,kut,Kutenai,Latn,Latin,primary
+cldr,kv,Komi,Cyrl,Cyrillic,primary
+cldr,kv,Komi,Perm,Old Permic,secondary
+cldr,kvr,,Latn,Latin,primary
+cldr,kvx,,Arab,Arabic,primary
+cldr,kw,Cornish,Latn,Latin,primary
+cldr,kwk,Kwakʼwala,Latn,Latin,primary
+cldr,kxm,,Thai,Thai,primary
+cldr,kxp,,Arab,Arabic,primary
+cldr,kxv,Kuvi,Latn,Latin,primary
+cldr,kxv,Kuvi,Deva,Devanagari,secondary
+cldr,kxv,Kuvi,Orya,Odia,secondary
+cldr,kxv,Kuvi,Telu,Telugu,secondary
+cldr,ky,Kyrgyz,Cyrl,Cyrillic,primary
+cldr,ky,Kyrgyz,Arab,Arabic,primary
+cldr,ky,Kyrgyz,Latn,Latin,primary
+cldr,kyu,,Kali,Kayah Li,primary
+cldr,la,Latin,Latn,Latin,primary
+cldr,lab,,Lina,Linear A,primary
+cldr,lad,Ladino,Hebr,Hebrew,primary
+cldr,lag,Langi,Latn,Latin,primary
+cldr,lah,Western Panjabi,Arab,Arabic,primary
+cldr,laj,,Latn,Latin,primary
+cldr,lam,Lamba,Latn,Latin,primary
+cldr,lb,Luxembourgish,Latn,Latin,primary
+cldr,lbe,,Cyrl,Cyrillic,primary
+cldr,lbw,,Latn,Latin,primary
+cldr,lcp,,Thai,Thai,primary
+cldr,len,,Latn,Latin,primary
+cldr,lep,,Lepc,Lepcha,primary
+cldr,lez,Lezghian,Cyrl,Cyrillic,primary
+cldr,lez,Lezghian,Aghb,Caucasian Albanian,secondary
+cldr,lfn,Lingua Franca Nova,Latn,Latin,secondary
+cldr,lfn,Lingua Franca Nova,Cyrl,Cyrillic,secondary
+cldr,lg,Ganda,Latn,Latin,primary
+cldr,li,Limburgish,Latn,Latin,primary
+cldr,lif,,Deva,Devanagari,primary
+cldr,lif,,Limb,Limbu,primary
+cldr,lij,Ligurian,Latn,Latin,primary
+cldr,lil,Lillooet,Latn,Latin,primary
+cldr,lis,,Lisu,Fraser,primary
+cldr,liv,Livonian,Latn,Latin,primary
+cldr,ljp,,Latn,Latin,primary
+cldr,lki,,Arab,Arabic,primary
+cldr,lkt,Lakota,Latn,Latin,primary
+cldr,lld,,Latn,Latin,primary
+cldr,lmn,,Telu,Telugu,primary
+cldr,lmo,Lombard,Latn,Latin,primary
+cldr,ln,Lingala,Latn,Latin,primary
+cldr,lo,Lao,Laoo,Lao,primary
+cldr,lol,Mongo,Latn,Latin,primary
+cldr,loz,Lozi,Latn,Latin,primary
+cldr,lrc,Northern Luri,Arab,Arabic,primary
+cldr,lt,Lithuanian,Latn,Latin,primary
+cldr,ltg,Latgalian,Latn,Latin,primary
+cldr,lu,Luba-Katanga,Latn,Latin,primary
+cldr,lua,Luba-Lulua,Latn,Latin,primary
+cldr,lui,Luiseno,Latn,Latin,primary
+cldr,lun,Lunda,Latn,Latin,primary
+cldr,luo,Luo,Latn,Latin,primary
+cldr,lus,Mizo,Beng,Bangla,primary
+cldr,lut,,Latn,Latin,primary
+cldr,luy,Luyia,Latn,Latin,primary
+cldr,luz,,Arab,Arabic,primary
+cldr,lv,Latvian,Latn,Latin,primary
+cldr,lwl,,Thai,Thai,primary
+cldr,lzh,Literary Chinese,Hant,Traditional,primary
+cldr,lzz,Laz,Latn,Latin,primary
+cldr,lzz,Laz,Geor,Georgian,secondary
+cldr,mad,Madurese,Latn,Latin,primary
+cldr,maf,Mafa,Latn,Latin,primary
+cldr,mag,Magahi,Deva,Devanagari,primary
+cldr,mai,Maithili,Deva,Devanagari,primary
+cldr,mai,Maithili,Tirh,Tirhuta,secondary
+cldr,mak,Makasar,Latn,Latin,primary
+cldr,mak,Makasar,Bugi,Buginese,secondary
+cldr,man,Mandingo,Latn,Latin,primary
+cldr,man,Mandingo,Nkoo,N’Ko,primary
+cldr,mas,Masai,Latn,Latin,primary
+cldr,maz,,Latn,Latin,primary
+cldr,mdf,Moksha,Cyrl,Cyrillic,primary
+cldr,mdh,,Latn,Latin,primary
+cldr,mdr,Mandar,Latn,Latin,primary
+cldr,mdr,Mandar,Bugi,Buginese,secondary
+cldr,mdt,,Latn,Latin,primary
+cldr,men,Mende,Latn,Latin,primary
+cldr,men,Mende,Mend,Mende,secondary
+cldr,mer,Meru,Latn,Latin,primary
+cldr,mey,,Arab,Arabic,primary
+cldr,mey,,Latn,Latin,secondary
+cldr,mfa,,Arab,Arabic,primary
+cldr,mfe,Morisyen,Latn,Latin,primary
+cldr,mfv,,Latn,Latin,primary
+cldr,mg,Malagasy,Latn,Latin,primary
+cldr,mgh,Makhuwa-Meetto,Latn,Latin,primary
+cldr,mgo,Metaʼ,Latn,Latin,primary
+cldr,mgp,,Deva,Devanagari,primary
+cldr,mgy,,Latn,Latin,primary
+cldr,mh,Marshallese,Latn,Latin,primary
+cldr,mhn,,Latn,Latin,primary
+cldr,mi,Māori,Latn,Latin,primary
+cldr,mic,Mi'kmaw,Latn,Latin,primary
+cldr,min,Minangkabau,Latn,Latin,primary
+cldr,mk,Macedonian,Cyrl,Cyrillic,primary
+cldr,ml,Malayalam,Mlym,Malayalam,primary
+cldr,mls,,Latn,Latin,primary
+cldr,mn,Mongolian,Cyrl,Cyrillic,primary
+cldr,mn,Mongolian,Mong,Mongolian,secondary
+cldr,mn,Mongolian,Phag,Phags-pa,secondary
+cldr,mnc,Manchu,Mong,Mongolian,primary
+cldr,mni,Manipuri,Beng,Bangla,primary
+cldr,mni,Manipuri,Mtei,Meitei Mayek,secondary
+cldr,mns,,Cyrl,Cyrillic,primary
+cldr,mnw,,Mymr,Myanmar,primary
+cldr,moe,Innu-aimun,Latn,Latin,primary
+cldr,moh,Mohawk,Latn,Latin,primary
+cldr,mos,Mossi,Latn,Latin,primary
+cldr,mr,Marathi,Deva,Devanagari,primary
+cldr,mr,Marathi,Modi,Modi,secondary
+cldr,mrd,,Deva,Devanagari,primary
+cldr,mrh,,Latn,Latin,primary
+cldr,mrj,Western Mari,Cyrl,Cyrillic,primary
+cldr,mro,,Latn,Latin,primary
+cldr,mro,,Mroo,Mro,secondary
+cldr,ms,Malay,Latn,Latin,primary
+cldr,ms,Malay,Arab,Arabic,primary
+cldr,mt,Maltese,Latn,Latin,primary
+cldr,mtr,,Deva,Devanagari,primary
+cldr,mua,Mundang,Latn,Latin,primary
+cldr,mus,Muscogee,Latn,Latin,primary
+cldr,mvy,,Arab,Arabic,primary
+cldr,mwk,,Latn,Latin,primary
+cldr,mwl,Mirandese,Latn,Latin,primary
+cldr,mwr,Marwari,Deva,Devanagari,primary
+cldr,mwv,Mentawai,Latn,Latin,primary
+cldr,mww,,Latn,Latin,primary
+cldr,mww,,Hmnp,Nyiakeng Puachue Hmong,secondary
+cldr,mxc,,Latn,Latin,primary
+cldr,my,Burmese,Mymr,Myanmar,primary
+cldr,myv,Erzya,Cyrl,Cyrillic,primary
+cldr,myx,,Latn,Latin,primary
+cldr,myz,,Mand,Mandaean,primary
+cldr,mzb,,Arab,Arabic,primary
+cldr,mzb,,Latn,Latin,secondary
+cldr,mzn,Mazanderani,Arab,Arabic,primary
+cldr,na,Nauru,Latn,Latin,primary
+cldr,nan,Min Nan Chinese,Hans,Simplified,primary
+cldr,nan,Min Nan Chinese,Hant,Traditional,secondary
+cldr,nap,Neapolitan,Latn,Latin,primary
+cldr,naq,Nama,Latn,Latin,primary
+cldr,nb,Norwegian Bokmål,Latn,Latin,primary
+cldr,nch,,Latn,Latin,primary
+cldr,nd,North Ndebele,Latn,Latin,primary
+cldr,ndc,,Latn,Latin,primary
+cldr,nds,Low German,Latn,Latin,primary
+cldr,ne,Nepali,Deva,Devanagari,primary
+cldr,new,Newari,Deva,Devanagari,primary
+cldr,ng,Ndonga,Latn,Latin,primary
+cldr,ngl,,Latn,Latin,primary
+cldr,nhe,,Latn,Latin,primary
+cldr,nhw,,Latn,Latin,primary
+cldr,nia,Nias,Latn,Latin,primary
+cldr,nij,,Latn,Latin,primary
+cldr,niu,Niuean,Latn,Latin,primary
+cldr,njo,Ao Naga,Latn,Latin,primary
+cldr,nl,Dutch,Latn,Latin,primary
+cldr,nmg,Kwasio,Latn,Latin,primary
+cldr,nn,Norwegian Nynorsk,Latn,Latin,primary
+cldr,nnh,Ngiemboon,Latn,Latin,primary
+cldr,no,Norwegian,Latn,Latin,primary
+cldr,nod,,Lana,Lanna,primary
+cldr,noe,,Deva,Devanagari,primary
+cldr,nog,Nogai,Cyrl,Cyrillic,primary
+cldr,non,Old Norse,Runr,Runic,primary
+cldr,nov,Novial,Latn,Latin,primary
+cldr,nqo,N’Ko,Nkoo,N’Ko,primary
+cldr,nr,South Ndebele,Latn,Latin,primary
+cldr,nsk,,Cans,Unified Canadian Aboriginal Syllabics,primary
+cldr,nsk,,Latn,Latin,secondary
+cldr,nso,Northern Sotho,Latn,Latin,primary
+cldr,nus,Nuer,Latn,Latin,primary
+cldr,nv,Navajo,Latn,Latin,primary
+cldr,nxq,,Latn,Latin,primary
+cldr,ny,Nyanja,Latn,Latin,primary
+cldr,nym,Nyamwezi,Latn,Latin,primary
+cldr,nyn,Nyankole,Latn,Latin,primary
+cldr,nyo,Nyoro,Latn,Latin,primary
+cldr,nzi,Nzima,Latn,Latin,primary
+cldr,oc,Occitan,Latn,Latin,primary
+cldr,oj,Ojibwa,Cans,Unified Canadian Aboriginal Syllabics,primary
+cldr,oj,Ojibwa,Latn,Latin,secondary
+cldr,ojs,Oji-Cree,Cans,Unified Canadian Aboriginal Syllabics,primary
+cldr,ojw,Western Ojibwa,Latn,Latin,primary
+cldr,oka,Okanagan,Latn,Latin,primary
+cldr,om,Oromo,Latn,Latin,primary
+cldr,om,Oromo,Ethi,Ethiopic,secondary
+cldr,or,Odia,Orya,Odia,primary
+cldr,os,Ossetic,Cyrl,Cyrillic,primary
+cldr,osa,Osage,Osge,Osage,primary
+cldr,osa,Osage,Latn,Latin,secondary
+cldr,osc,,Ital,Old Italic,secondary
+cldr,osc,,Latn,Latin,secondary
+cldr,otk,,Orkh,Orkhon,primary
+cldr,pa,Punjabi,Guru,Gurmukhi,primary
+cldr,pa,Punjabi,Arab,Arabic,secondary
+cldr,pag,Pangasinan,Latn,Latin,primary
+cldr,pal,Pahlavi,Phli,Inscriptional Pahlavi,secondary
+cldr,pal,Pahlavi,Phlp,Psalter Pahlavi,secondary
+cldr,pam,Pampanga,Latn,Latin,primary
+cldr,pap,Papiamento,Latn,Latin,primary
+cldr,pau,Palauan,Latn,Latin,primary
+cldr,pcd,Picard,Latn,Latin,primary
+cldr,pcm,Nigerian Pidgin,Latn,Latin,primary
+cldr,pdc,Pennsylvania German,Latn,Latin,primary
+cldr,pdt,Plautdietsch,Latn,Latin,primary
+cldr,peo,Old Persian,Xpeo,Old Persian,primary
+cldr,pfl,Palatine German,Latn,Latin,primary
+cldr,phn,Phoenician,Phnx,Phoenician,primary
+cldr,pi,Pali,Latn,Latin,primary
+cldr,pi,Pali,Deva,Devanagari,secondary
+cldr,pi,Pali,Mymr,Myanmar,secondary
+cldr,pi,Pali,Sinh,Sinhala,secondary
+cldr,pi,Pali,Thai,Thai,secondary
+cldr,pis,Pijin,Latn,Latin,primary
+cldr,pko,,Latn,Latin,primary
+cldr,pl,Polish,Latn,Latin,primary
+cldr,pms,Piedmontese,Latn,Latin,primary
+cldr,pnt,Pontic,Grek,Greek,primary
+cldr,pnt,Pontic,Cyrl,Cyrillic,secondary
+cldr,pnt,Pontic,Latn,Latin,secondary
+cldr,pon,Pohnpeian,Latn,Latin,primary
+cldr,ppl,,Latn,Latin,primary
+cldr,pqm,Maliseet-Passamaquoddy,Latn,Latin,primary
+cldr,prd,,Arab,Arabic,primary
+cldr,prg,Prussian,Latn,Latin,primary
+cldr,pro,Old Provençal,Latn,Latin,primary
+cldr,ps,Pashto,Arab,Arabic,primary
+cldr,pt,Portuguese,Latn,Latin,primary
+cldr,puu,,Latn,Latin,primary
+cldr,qu,Quechua,Latn,Latin,primary
+cldr,quc,Kʼicheʼ,Latn,Latin,primary
+cldr,qug,Chimborazo Highland Quichua,Latn,Latin,primary
+cldr,raj,Rajasthani,Deva,Devanagari,primary
+cldr,rap,Rapanui,Latn,Latin,primary
+cldr,rar,Rarotongan,Latn,Latin,primary
+cldr,rcf,,Latn,Latin,primary
+cldr,rej,,Latn,Latin,primary
+cldr,rej,,Rjng,Rejang,secondary
+cldr,rgn,Romagnol,Latn,Latin,primary
+cldr,rhg,Rohingya,Rohg,Hanifi,primary
+cldr,rhg,Rohingya,Arab,Arabic,secondary
+cldr,rhg,Rohingya,Latn,Latin,secondary
+cldr,ria,,Latn,Latin,primary
+cldr,rif,Riffian,Latn,Latin,primary
+cldr,rif,Riffian,Tfng,Tifinagh,primary
+cldr,rjs,,Deva,Devanagari,primary
+cldr,rkt,,Beng,Bangla,primary
+cldr,rm,Romansh,Latn,Latin,primary
+cldr,rmf,,Latn,Latin,primary
+cldr,rmo,,Latn,Latin,primary
+cldr,rmt,,Arab,Arabic,primary
+cldr,rmu,,Latn,Latin,primary
+cldr,rn,Rundi,Latn,Latin,primary
+cldr,rng,,Latn,Latin,primary
+cldr,ro,Romanian,Latn,Latin,primary
+cldr,ro,Romanian,Cyrl,Cyrillic,secondary
+cldr,rob,,Latn,Latin,primary
+cldr,rof,Rombo,Latn,Latin,primary
+cldr,rom,Romany,Latn,Latin,primary
+cldr,rom,Romany,Cyrl,Cyrillic,secondary
+cldr,rtm,Rotuman,Latn,Latin,primary
+cldr,ru,Russian,Cyrl,Cyrillic,primary
+cldr,rue,Rusyn,Cyrl,Cyrillic,primary
+cldr,rug,Roviana,Latn,Latin,primary
+cldr,rup,Aromanian,Latn,Latin,primary
+cldr,rw,Kinyarwanda,Latn,Latin,primary
+cldr,rwk,Rwa,Latn,Latin,primary
+cldr,ryu,,Kana,Katakana,primary
+cldr,sa,Sanskrit,Deva,Devanagari,secondary
+cldr,sa,Sanskrit,Gran,Grantha,secondary
+cldr,sa,Sanskrit,Shrd,Sharada,secondary
+cldr,sa,Sanskrit,Sidd,Siddham,secondary
+cldr,sa,Sanskrit,Sinh,Sinhala,secondary
+cldr,sad,Sandawe,Latn,Latin,primary
+cldr,saf,,Latn,Latin,primary
+cldr,sah,Yakut,Cyrl,Cyrillic,primary
+cldr,sam,Samaritan Aramaic,Samr,Samaritan,secondary
+cldr,sam,Samaritan Aramaic,Hebr,Hebrew,secondary
+cldr,saq,Samburu,Latn,Latin,primary
+cldr,sas,Sasak,Latn,Latin,primary
+cldr,sat,Santali,Olck,Ol Chiki,primary
+cldr,sat,Santali,Beng,Bangla,secondary
+cldr,sat,Santali,Deva,Devanagari,secondary
+cldr,sat,Santali,Latn,Latin,secondary
+cldr,sat,Santali,Orya,Odia,secondary
+cldr,saz,Sourashtra,Saur,Sourashtra,primary
+cldr,sbp,Sangu,Latn,Latin,primary
+cldr,sc,Sardinian,Latn,Latin,primary
+cldr,sck,,Deva,Devanagari,primary
+cldr,scn,Sicilian,Latn,Latin,primary
+cldr,sco,Scots,Latn,Latin,primary
+cldr,scs,,Latn,Latin,primary
+cldr,sd,Sindhi,Arab,Arabic,primary
+cldr,sd,Sindhi,Deva,Devanagari,primary
+cldr,sd,Sindhi,Khoj,Khojki,secondary
+cldr,sd,Sindhi,Sind,Khudawadi,secondary
+cldr,sdc,Sassarese Sardinian,Latn,Latin,primary
+cldr,sdh,Southern Kurdish,Arab,Arabic,primary
+cldr,se,Northern Sami,Latn,Latin,primary
+cldr,se,Northern Sami,Cyrl,Cyrillic,secondary
+cldr,see,Seneca,Latn,Latin,primary
+cldr,sef,,Latn,Latin,primary
+cldr,seh,Sena,Latn,Latin,primary
+cldr,sei,Seri,Latn,Latin,primary
+cldr,sel,Selkup,Cyrl,Cyrillic,primary
+cldr,ses,Koyraboro Senni,Latn,Latin,primary
+cldr,sg,Sango,Latn,Latin,primary
+cldr,sga,Old Irish,Latn,Latin,primary
+cldr,sga,Old Irish,Ogam,Ogham,secondary
+cldr,sgs,Samogitian,Latn,Latin,primary
+cldr,shi,Tachelhit,Tfng,Tifinagh,primary
+cldr,shi,Tachelhit,Latn,Latin,primary
+cldr,shi,Tachelhit,Arab,Arabic,primary
+cldr,shn,Shan,Mymr,Myanmar,primary
+cldr,si,Sinhala,Sinh,Sinhala,primary
+cldr,sid,Sidamo,Latn,Latin,primary
+cldr,sk,Slovak,Latn,Latin,primary
+cldr,skr,,Arab,Arabic,primary
+cldr,sl,Slovenian,Latn,Latin,primary
+cldr,sli,Lower Silesian,Latn,Latin,primary
+cldr,sly,Selayar,Latn,Latin,primary
+cldr,sm,Samoan,Latn,Latin,primary
+cldr,sma,Southern Sami,Latn,Latin,primary
+cldr,smj,Lule Sami,Latn,Latin,primary
+cldr,smn,Inari Sami,Latn,Latin,primary
+cldr,smp,,Samr,Samaritan,primary
+cldr,sms,Skolt Sami,Latn,Latin,primary
+cldr,sn,Shona,Latn,Latin,primary
+cldr,snf,,Latn,Latin,primary
+cldr,snk,Soninke,Latn,Latin,primary
+cldr,so,Somali,Latn,Latin,primary
+cldr,so,Somali,Arab,Arabic,secondary
+cldr,so,Somali,Osma,Osmanya,secondary
+cldr,sou,,Thai,Thai,primary
+cldr,sq,Albanian,Latn,Latin,primary
+cldr,sq,Albanian,Elba,Elbasan,secondary
+cldr,sr,Serbian,Cyrl,Cyrillic,primary
+cldr,sr,Serbian,Latn,Latin,primary
+cldr,srb,,Latn,Latin,primary
+cldr,srb,,Sora,Sora Sompeng,secondary
+cldr,srn,Sranan Tongo,Latn,Latin,primary
+cldr,srr,Serer,Latn,Latin,primary
+cldr,srx,,Deva,Devanagari,primary
+cldr,ss,Swati,Latn,Latin,primary
+cldr,ssy,Saho,Latn,Latin,primary
+cldr,st,Southern Sotho,Latn,Latin,primary
+cldr,stq,Saterland Frisian,Latn,Latin,primary
+cldr,stu,,Lana,Lanna,primary
+cldr,stu,,Tale,Tai Le,secondary
+cldr,su,Sundanese,Latn,Latin,primary
+cldr,su,Sundanese,Sund,Sundanese,secondary
+cldr,suk,Sukuma,Latn,Latin,primary
+cldr,sus,Susu,Latn,Latin,primary
+cldr,sus,Susu,Arab,Arabic,secondary
+cldr,suz,,Deva,Devanagari,primary
+cldr,suz,,Sunu,Sunuwar,secondary
+cldr,sv,Swedish,Latn,Latin,primary
+cldr,sw,Swahili,Latn,Latin,primary
+cldr,swb,Comorian,Arab,Arabic,primary
+cldr,swb,Comorian,Latn,Latin,secondary
+cldr,swg,,Latn,Latin,primary
+cldr,swv,,Deva,Devanagari,primary
+cldr,sxn,,Latn,Latin,primary
+cldr,syi,,Latn,Latin,primary
+cldr,syl,,Beng,Bangla,primary
+cldr,syl,,Sylo,Syloti Nagri,secondary
+cldr,syr,Syriac,Syrc,Syriac,primary
+cldr,szl,Silesian,Latn,Latin,primary
+cldr,ta,Tamil,Taml,Tamil,primary
+cldr,tab,,Cyrl,Cyrillic,primary
+cldr,taj,,Deva,Devanagari,primary
+cldr,taj,,Tibt,Tibetan,secondary
+cldr,tbw,,Latn,Latin,primary
+cldr,tbw,,Tagb,Tagbanwa,secondary
+cldr,tcy,Tulu,Knda,Kannada,primary
+cldr,tdd,,Tale,Tai Le,primary
+cldr,tdg,,Deva,Devanagari,primary
+cldr,tdg,,Tibt,Tibetan,secondary
+cldr,tdh,,Deva,Devanagari,primary
+cldr,te,Telugu,Telu,Telugu,primary
+cldr,tem,Timne,Latn,Latin,primary
+cldr,teo,Teso,Latn,Latin,primary
+cldr,ter,Tereno,Latn,Latin,primary
+cldr,tet,Tetum,Latn,Latin,primary
+cldr,tg,Tajik,Cyrl,Cyrillic,primary
+cldr,tg,Tajik,Arab,Arabic,primary
+cldr,tg,Tajik,Latn,Latin,primary
+cldr,th,Thai,Thai,Thai,primary
+cldr,thl,,Deva,Devanagari,primary
+cldr,thq,,Deva,Devanagari,primary
+cldr,thr,,Deva,Devanagari,primary
+cldr,ti,Tigrinya,Ethi,Ethiopic,primary
+cldr,tig,Tigre,Ethi,Ethiopic,primary
+cldr,tiv,Tiv,Latn,Latin,primary
+cldr,tk,Turkmen,Latn,Latin,primary
+cldr,tk,Turkmen,Arab,Arabic,primary
+cldr,tk,Turkmen,Cyrl,Cyrillic,primary
+cldr,tkl,Tokelauan,Latn,Latin,primary
+cldr,tkr,Tsakhur,Latn,Latin,primary
+cldr,tkr,Tsakhur,Cyrl,Cyrillic,secondary
+cldr,tkt,,Deva,Devanagari,primary
+cldr,tli,Tlingit,Latn,Latin,primary
+cldr,tly,Talysh,Latn,Latin,primary
+cldr,tly,Talysh,Arab,Arabic,secondary
+cldr,tly,Talysh,Cyrl,Cyrillic,secondary
+cldr,tmh,Tamashek,Latn,Latin,primary
+cldr,tn,Tswana,Latn,Latin,primary
+cldr,tnr,,Latn,Latin,primary
+cldr,to,Tongan,Latn,Latin,primary
+cldr,tog,Nyasa Tonga,Latn,Latin,primary
+cldr,tok,Toki Pona,Latn,Latin,primary
+cldr,tpi,Tok Pisin,Latn,Latin,primary
+cldr,tr,Turkish,Latn,Latin,primary
+cldr,tr,Turkish,Arab,Arabic,secondary
+cldr,tru,Turoyo,Latn,Latin,primary
+cldr,tru,Turoyo,Syrc,Syriac,secondary
+cldr,trv,Taroko,Latn,Latin,primary
+cldr,trw,Torwali,Arab,Arabic,primary
+cldr,ts,Tsonga,Latn,Latin,primary
+cldr,tsd,Tsakonian,Grek,Greek,primary
+cldr,tsg,,Latn,Latin,primary
+cldr,tsi,Tsimshian,Latn,Latin,primary
+cldr,tsj,,Tibt,Tibetan,primary
+cldr,tt,Tatar,Cyrl,Cyrillic,primary
+cldr,ttj,,Latn,Latin,primary
+cldr,tts,,Thai,Thai,primary
+cldr,ttt,Muslim Tat,Latn,Latin,primary
+cldr,ttt,Muslim Tat,Arab,Arabic,secondary
+cldr,ttt,Muslim Tat,Cyrl,Cyrillic,secondary
+cldr,tum,Tumbuka,Latn,Latin,primary
+cldr,tvl,Tuvalu,Latn,Latin,primary
+cldr,twq,Tasawaq,Latn,Latin,primary
+cldr,ty,Tahitian,Latn,Latin,primary
+cldr,tyv,Tuvinian,Cyrl,Cyrillic,primary
+cldr,tzm,Central Atlas Tamazight,Latn,Latin,primary
+cldr,tzm,Central Atlas Tamazight,Tfng,Tifinagh,primary
+cldr,ude,,Cyrl,Cyrillic,primary
+cldr,udm,Udmurt,Cyrl,Cyrillic,primary
+cldr,udm,Udmurt,Latn,Latin,secondary
+cldr,ug,Uyghur,Arab,Arabic,primary
+cldr,ug,Uyghur,Cyrl,Cyrillic,primary
+cldr,ug,Uyghur,Latn,Latin,secondary
+cldr,uga,Ugaritic,Ugar,Ugaritic,primary
+cldr,uk,Ukrainian,Cyrl,Cyrillic,primary
+cldr,uli,,Latn,Latin,primary
+cldr,umb,Umbundu,Latn,Latin,primary
+cldr,unr,,Beng,Bangla,primary
+cldr,unr,,Deva,Devanagari,primary
+cldr,unx,,Beng,Bangla,primary
+cldr,unx,,Deva,Devanagari,primary
+cldr,ur,Urdu,Arab,Arabic,primary
+cldr,uz,Uzbek,Latn,Latin,primary
+cldr,uz,Uzbek,Cyrl,Cyrillic,primary
+cldr,uz,Uzbek,Arab,Arabic,primary
+cldr,vai,Vai,Vaii,Vai,primary
+cldr,vai,Vai,Latn,Latin,primary
+cldr,ve,Venda,Latn,Latin,primary
+cldr,vec,Venetian,Latn,Latin,primary
+cldr,vep,Veps,Latn,Latin,primary
+cldr,vi,Vietnamese,Latn,Latin,primary
+cldr,vi,Vietnamese,Hani,Han,secondary
+cldr,vic,,Latn,Latin,primary
+cldr,vls,West Flemish,Latn,Latin,primary
+cldr,vmf,Main-Franconian,Latn,Latin,primary
+cldr,vmw,Makhuwa,Latn,Latin,primary
+cldr,vo,Volapük,Latn,Latin,primary
+cldr,vot,Votic,Latn,Latin,primary
+cldr,vro,Võro,Latn,Latin,primary
+cldr,vun,Vunjo,Latn,Latin,primary
+cldr,wa,Walloon,Latn,Latin,primary
+cldr,wae,Walser,Latn,Latin,primary
+cldr,wal,Wolaytta,Ethi,Ethiopic,primary
+cldr,war,Waray,Latn,Latin,primary
+cldr,was,Washo,Latn,Latin,primary
+cldr,wbp,Warlpiri,Latn,Latin,primary
+cldr,wbq,,Telu,Telugu,primary
+cldr,wbr,,Deva,Devanagari,primary
+cldr,wls,,Latn,Latin,primary
+cldr,wni,,Arab,Arabic,primary
+cldr,wo,Wolof,Latn,Latin,primary
+cldr,wo,Wolof,Arab,Arabic,secondary
+cldr,wsg,,Telu,Telugu,primary
+cldr,wsg,,Deva,Devanagari,secondary
+cldr,wsg,,Gong,Gunjala Gondi,secondary
+cldr,wsg,,Gonm,Masaram Gondi,secondary
+cldr,wtm,,Deva,Devanagari,primary
+cldr,wuu,Wu Chinese,Hans,Simplified,primary
+cldr,xal,Kalmyk,Cyrl,Cyrillic,primary
+cldr,xav,,Latn,Latin,primary
+cldr,xcr,,Cari,Carian,primary
+cldr,xh,Xhosa,Latn,Latin,primary
+cldr,xlc,,Lyci,Lycian,primary
+cldr,xld,,Lydi,Lydian,primary
+cldr,xmf,Mingrelian,Geor,Georgian,primary
+cldr,xmn,,Mani,Manichaean,primary
+cldr,xmr,,Merc,Meroitic Cursive,primary
+cldr,xna,,Narb,Old North Arabian,primary
+cldr,xnr,Kangri,Deva,Devanagari,primary
+cldr,xog,Soga,Latn,Latin,primary
+cldr,xpr,,Prti,Inscriptional Parthian,primary
+cldr,xsa,,Sarb,Old South Arabian,primary
+cldr,xsr,,Deva,Devanagari,primary
+cldr,xum,,Latn,Latin,secondary
+cldr,xum,,Ital,Old Italic,secondary
+cldr,yao,Yao,Latn,Latin,primary
+cldr,yap,Yapese,Latn,Latin,primary
+cldr,yav,Yangben,Latn,Latin,primary
+cldr,ybb,Yemba,Latn,Latin,primary
+cldr,yi,Yiddish,Hebr,Hebrew,primary
+cldr,yo,Yoruba,Latn,Latin,primary
+cldr,yrk,,Cyrl,Cyrillic,primary
+cldr,yrl,Nheengatu,Latn,Latin,primary
+cldr,yua,,Latn,Latin,primary
+cldr,yue,Cantonese,Hant,Traditional,primary
+cldr,yue,Cantonese,Hans,Simplified,secondary
+cldr,za,Zhuang,Latn,Latin,primary
+cldr,za,Zhuang,Hans,Simplified,secondary
+cldr,zag,,Latn,Latin,primary
+cldr,zap,Zapotec,Latn,Latin,primary
+cldr,zdj,,Arab,Arabic,primary
+cldr,zea,Zeelandic,Latn,Latin,primary
+cldr,zen,Zenaga,Tfng,Tifinagh,primary
+cldr,zgh,Standard Moroccan Tamazight,Tfng,Tifinagh,primary
+cldr,zh,Chinese,Hans,Simplified,primary
+cldr,zh,Chinese,Hant,Traditional,secondary
+cldr,zh,Chinese,Bopo,Bopomofo,secondary
+cldr,zh,Chinese,Latn,Latin,secondary
+cldr,zh,Chinese,Phag,Phags-pa,secondary
+cldr,zmi,,Latn,Latin,primary
+cldr,zu,Zulu,Latn,Latin,primary
+cldr,zun,Zuni,Latn,Latin,primary
+cldr,zza,Zaza,Latn,Latin,primary

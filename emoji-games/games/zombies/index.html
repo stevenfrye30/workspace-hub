@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🧟 Emoji Zombie Survival</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/menu.css">
+</head>
+<body>
+
+<div id="stage">
+  <div class="topbar">
+    <a href="../../index.html" class="back-btn">←</a>
+    <div class="hp-bar"><div class="hp-fill" id="hpFill" style="width:100%"></div></div>
+    <div class="stat">❤️<strong id="hp">100</strong>/<span id="hpMax">100</span></div>
+    <div class="stat">💀<strong id="kills">0</strong></div>
+    <div class="stat">🌊<strong id="wave">0</strong></div>
+    <div class="stat">💰<strong id="cash">0</strong></div>
+    <div class="stat">Lv<strong id="level">1</strong></div>
+    <div class="xp-bar" id="xpBar" data-label="0/20 XP"><div class="xp-fill" id="xpFill" style="width:0%"></div></div>
+    <div class="stat"><strong id="gunName">🔫 Pistol</strong></div>
+    <div class="stat">📦<strong id="ammo">∞</strong></div>
+    <div class="gun-list" id="gunList"></div>
+    <button class="back-btn" id="pauseBtn" style="margin-left:auto">⏸</button>
+  </div>
+  <canvas id="canvas"></canvas>
+  <div class="crosshair" id="crosshair"></div>
+  <div class="blood-vignette" id="vignette"></div>
+
+  <div class="wave-banner" id="waveBanner">WAVE 1</div>
+  <div class="toast-list" id="toastList"></div>
+
+  <!-- Start / character select -->
+  <div class="overlay" id="startScreen">
+    <h2>🧟 EMOJI ZOMBIE SURVIVAL 🧟‍♀️</h2>
+    <div class="menu-stats">
+      💀 <strong id="skullBal">0</strong> &nbsp;·&nbsp;
+      🌊 Best Wave <strong id="bestWave">0</strong> &nbsp;·&nbsp;
+      Kills <strong id="totKills">0</strong>
+    </div>
+    <div class="menu-section">
+      <h3>PICK A SURVIVOR</h3>
+      <div class="pick-grid" id="charPick"></div>
+    </div>
+    <div class="menu-section">
+      <h3>PICK A MAP</h3>
+      <div class="pick-grid" id="mapPick"></div>
+    </div>
+    <div class="menu-section">
+      <h3>GAME MODE</h3>
+      <div class="pick-grid" id="modePick"></div>
+    </div>
+    <div class="controls-help">
+      <div><kbd>WASD</kbd> move</div>
+      <div><kbd>Mouse</kbd> aim</div>
+      <div><kbd>Click/Space</kbd> shoot</div>
+      <div><kbd>1–=,[,],;</kbd> switch guns</div>
+      <div><kbd>R</kbd> reload</div>
+      <div><kbd>Esc</kbd> pause</div>
+    </div>
+    <button class="start-btn" id="startBtn">START SURVIVING</button>
+  </div>
+
+  <!-- Game over -->
+  <div class="overlay hidden" id="gameOver">
+    <h2>💀 YOU DIED 💀</h2>
+    <p id="finalStats"></p>
+    <button class="start-btn" id="restartBtn">TRY AGAIN</button>
+  </div>
+
+  <!-- Level up -->
+  <div class="levelup-modal hidden" id="levelupModal">
+    <h3 id="levelupHead">Level Up!</h3>
+    <div class="perk-cards" id="perkCards"></div>
+    <div style="color:#9ca3af;font-size:0.82rem">Click a perk to add it permanently for this run</div>
+  </div>
+
+  <!-- Shop -->
+  <div class="levelup-modal hidden" id="shopModal">
+    <h3>🛒 WEAPON CACHE</h3>
+    <div class="shop-head">
+      <div>💰 <strong id="shopCash">$0</strong></div>
+      <div id="shopWaveNext">Next: Wave 1</div>
+    </div>
+    <div class="shop-items" id="shopItems"></div>
+    <button class="start-btn" id="shopReady">READY — START WAVE</button>
+  </div>
+
+  <!-- Pause -->
+  <div class="overlay hidden" id="pauseOverlay">
+    <h2>⏸ PAUSED</h2>
+    <div style="display:flex;flex-direction:column;gap:8px;font-size:0.9rem;color:#d1d5db">
+      <label style="cursor:pointer"><input type="checkbox" id="setShake" checked> Screen shake</label>
+    </div>
+    <button class="start-btn" id="pauseResume">RESUME</button>
+    <button class="start-btn secondary" id="pauseQuit">QUIT TO MENU</button>
+  </div>
+</div>
+
+<!-- Load order matters -->
+<script src="js/config/guns.js"></script>
+<script src="js/config/zombies.js"></script>
+<script src="js/config/perks.js"></script>
+<script src="js/config/maps.js"></script>
+<script src="js/config/characters.js"></script>
+<script src="js/systems/save.js"></script>
+<script src="js/systems/fx.js"></script>
+<script src="js/systems/input.js"></script>
+<script src="js/systems/ai.js"></script>
+<script src="js/systems/weapons.js"></script>
+<script src="js/systems/defenses.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>

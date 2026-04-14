@@ -1,0 +1,56 @@
+.menu-stats { color: #fca5a5; font-size: 0.95rem; }
+.menu-section { width: 100%; max-width: 900px; }
+.menu-section h3 {
+  font-size: 0.82rem; color: #9ca3af; letter-spacing: 0.15em;
+  text-transform: uppercase; margin-bottom: 10px; text-align: center;
+}
+.pick-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 10px; width: 100%;
+}
+.char-card, .map-card {
+  background: linear-gradient(160deg, #1f1735, #15102a);
+  border: 2px solid #3a2f55; border-radius: 12px; padding: 12px;
+  cursor: pointer; text-align: center; transition: transform 0.15s, border-color 0.15s;
+  display: flex; flex-direction: column; gap: 4px; align-items: center;
+}
+.char-card:hover, .map-card:hover { transform: translateY(-3px); border-color: #8b5cf6; }
+.char-card.selected, .map-card.selected { border-color: #fbbf24; box-shadow: 0 0 20px rgba(251,191,36,0.3); }
+.char-card.locked { opacity: 0.55; }
+.cc-emoji, .mc-emoji { font-size: 2.2rem; }
+.cc-name, .mc-name { font-weight: 700; color: #fff; }
+.cc-desc { font-size: 0.75rem; color: #c4b5fd; line-height: 1.35; }
+.mc-amb { font-size: 0.72rem; color: #9ca3af; font-style: italic; line-height: 1.3; }
+.cc-cost { font-size: 0.78rem; color: #fbbf24; margin-top: 4px; }
+
+/* Shop */
+.shop-head {
+  display: flex; gap: 24px; justify-content: center; align-items: center;
+  font-size: 0.95rem; color: #c4b5fd;
+}
+.shop-head strong { color: #fbbf24; }
+.shop-items {
+  width: min(640px, 94vw); max-height: 50vh; overflow-y: auto;
+  display: flex; flex-direction: column; gap: 8px; padding: 4px;
+}
+.shop-section-label {
+  font-size: 0.72rem; color: #9ca3af; letter-spacing: 0.15em;
+  text-transform: uppercase; padding: 8px 4px 2px;
+}
+.shop-item {
+  display: flex; align-items: center; gap: 12px; padding: 10px 14px;
+  background: #1a1530; border: 1px solid var(--rar, #2e2547); border-radius: 8px;
+}
+.shop-item.owned { opacity: 0.6; }
+.si-emoji { font-size: 1.8rem; width: 36px; text-align: center; }
+.si-info { flex: 1; min-width: 0; }
+.si-name { font-weight: 600; color: #fff; font-size: 0.95rem; }
+.si-tier { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; margin-left: 6px; }
+.si-stats { font-size: 0.72rem; color: #9ca3af; margin-top: 2px; }
+.si-buy {
+  background: #fbbf24; color: #000; border: none; padding: 6px 14px;
+  border-radius: 6px; font-weight: 700; cursor: pointer; font-size: 0.85rem;
+  min-width: 70px;
+}
+.si-buy:disabled { background: #333; color: #777; cursor: default; }
+.si-buy:hover:not(:disabled) { filter: brightness(1.1); }

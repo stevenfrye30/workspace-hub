@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Steven Frye — Workspace</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg:#faf8f5; --fg:#2c2c2c; --muted:#8a7a6a;
+    --border:#d8d3cc; --chrome:#eeebe5; --active:#7a5c3a; --tint:#f5f2ed;
+  }
+  body { font-family: Georgia, serif; background: var(--bg); color: var(--fg);
+         line-height: 1.55; min-height: 100vh; }
+  .page { max-width: 1080px; margin: 0 auto; padding: 56px 28px 100px; }
+  header { border-bottom: 1px solid var(--border); padding-bottom: 24px; margin-bottom: 36px; }
+  h1 { font-size: 32px; font-weight: 600; letter-spacing: 0.01em; margin-bottom: 8px; }
+  .subtitle { color: var(--muted); font-style: italic; font-size: 16px; }
+  h2 { font-size: 14px; font-weight: 600; text-transform: uppercase;
+       letter-spacing: 0.12em; color: var(--muted);
+       margin: 36px 0 14px; }
+  .grid { display: grid; gap: 14px;
+          grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+  .card { display: block; background: white; border: 1px solid var(--border);
+          padding: 18px 20px; text-decoration: none; color: inherit;
+          transition: border-color 0.15s, transform 0.15s; }
+  .card:hover { border-color: var(--active); transform: translateY(-1px); }
+  .card .t { font-size: 17px; font-weight: 600; color: var(--active);
+             margin-bottom: 4px; }
+  .card .d { font-size: 13px; color: var(--muted); line-height: 1.45; }
+  .card.featured { background: var(--tint); }
+  footer { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--border);
+           font-size: 13px; color: var(--muted); }
+  footer a { color: var(--active); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <h1>Workspace</h1>
+    <div class="subtitle">A collection of reading tools, language primers, and reference dashboards.</div>
+  </header>
+
+  <h2>Reading &amp; Scholarship</h2>
+  <div class="grid">
+    <a class="card featured" href="https://stevenfrye30.github.io/digital-archive/">
+      <div class="t">Digital Archive →</div>
+      <div class="d">1,100+ public-domain and Creative Commons texts, side-by-side translations, full-text search.</div>
+    </a>
+    <a class="card" href="philosophy/">
+      <div class="t">Philosophy</div>
+      <div class="d">Chronological map of philosophers and their works.</div>
+    </a>
+    <a class="card" href="timeline/">
+      <div class="t">Historical Timeline</div>
+      <div class="d">Interactive timeline of world events and eras.</div>
+    </a>
+  </div>
+
+  <h2>Languages &amp; Scripts</h2>
+  <div class="grid">
+    <a class="card" href="arabic/">
+      <div class="t">Arabic</div>
+      <div class="d">Dictionary, learn &amp; study tools for Arabic.</div>
+    </a>
+    <a class="card" href="telugu/">
+      <div class="t">Telugu</div>
+      <div class="d">Practice and study dashboard for Telugu script.</div>
+    </a>
+    <a class="card" href="ipa/">
+      <div class="t">IPA Rhymer</div>
+      <div class="d">International Phonetic Alphabet based rhyming tool.</div>
+    </a>
+    <a class="card" href="digital-symbols/">
+      <div class="t">Unicode Explorer</div>
+      <div class="d">Every script in the Unicode standard, browsable by language and era.</div>
+    </a>
+  </div>
+
+  <h2>Reference &amp; Science</h2>
+  <div class="grid">
+    <a class="card" href="cosmos/">
+      <div class="t">Cosmos</div>
+      <div class="d">Scale-by-scale tour of the universe.</div>
+    </a>
+    <a class="card" href="math/">
+      <div class="t">Math Reference</div>
+      <div class="d">Formulas, proofs, and visualizations.</div>
+    </a>
+    <a class="card" href="nutrilens/">
+      <div class="t">NutriLens</div>
+      <div class="d">USDA food nutrition lookup, offline-ready.</div>
+    </a>
+  </div>
+
+  <h2>Play</h2>
+  <div class="grid">
+    <a class="card" href="emoji-games/">
+      <div class="t">Emoji Games</div>
+      <div class="d">A small collection of emoji-based games.</div>
+    </a>
+    <a class="card" href="nuggets/">
+      <div class="t">Nuggets</div>
+      <div class="d">A pocket pile of curiosities.</div>
+    </a>
+  </div>
+
+  <footer>
+    Source code on <a href="https://github.com/stevenfrye30/workspace-hub">GitHub</a>.
+    Built entirely from public-domain and CC-licensed material where applicable.
+  </footer>
+</div>
+</body>
+</html>

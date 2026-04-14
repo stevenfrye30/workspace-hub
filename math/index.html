@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Math & Grapher</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { height: 100%; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; background: #0f1419; color: #e5e7eb; overflow: hidden; }
+  body { display: grid; grid-template-columns: 360px 1fr; }
+
+  /* Sidebar */
+  .side { border-right: 1px solid #2a313d; display: flex; flex-direction: column; min-height: 0; background: #141a22; }
+  .side header { padding: 14px 16px; border-bottom: 1px solid #2a313d; display: flex; align-items: center; gap: 10px; }
+  .side header h1 { font-size: 1rem; font-weight: 600; }
+  .side header .sub { color: #7a8089; font-size: 0.75rem; margin-left: auto; }
+  .tabs { display: flex; border-bottom: 1px solid #2a313d; background: #0f1419; }
+  .tab { flex: 1; padding: 10px; text-align: center; cursor: pointer; color: #8b93a0; font-size: 0.85rem; border-bottom: 2px solid transparent; }
+  .tab.active { color: #fff; border-bottom-color: #4b6bff; background: #141a22; }
+  .panel { flex: 1; overflow-y: auto; padding: 12px; display: none; }
+  .panel.active { display: block; }
+
+  /* Functions list */
+  .fn-row { background: #1a212b; border: 1px solid #2a313d; border-radius: 8px; padding: 8px; margin-bottom: 8px; }
+  .fn-head { display: flex; align-items: center; gap: 6px; }
+  .fn-color { width: 14px; height: 14px; border-radius: 50%; cursor: pointer; flex-shrink: 0; border: 2px solid transparent; }
+  .fn-color.off { opacity: 0.3; }
+  .fn-input { flex: 1; background: #0f1419; border: 1px solid #2a313d; color: #e5e7eb; padding: 6px 8px; border-radius: 6px; font-family: ui-monospace, "Cascadia Code", monospace; font-size: 0.88rem; outline: none; min-width: 0; }
+  .fn-input:focus { border-color: #4b6bff; }
+  .fn-input.err { border-color: #e94560; }
+  .fn-del { background: transparent; border: none; color: #555c68; cursor: pointer; font-size: 1rem; padding: 2px 6px; border-radius: 4px; }
+  .fn-del:hover { background: #272f3d; color: #fca5a5; }
+  .fn-err { font-size: 0.72rem; color: #fca5a5; margin-top: 4px; padding-left: 22px; }
+
+  .add-btn { width: 100%; background: #1a212b; border: 1px dashed #3a4353; color: #8b93a0; padding: 8px; border-radius: 8px; cursor: pointer; font-family: inherit; font-size: 0.85rem; margin-top: 4px; }
+  .add-btn:hover { border-color: #4b6bff; color: #e5e7eb; }
+
+  /* Sliders */
+  .slider-row { background: #1a212b; border: 1px solid #2a313d; border-radius: 8px; padding: 10px; margin-bottom: 8px; }
+  .slider-head { display: flex; align-items: center; gap: 8px; font-family: ui-monospace, monospace; font-size: 0.88rem; }
+  .slider-name { color: #fbbf24; font-weight: 600; width: 18px; }
+  .slider-val { color: #e5e7eb; margin-left: auto; font-size: 0.85rem; }
+  .slider-row input[type=range] { width: 100%; margin-top: 6px; accent-color: #4b6bff; }
+  .slider-bounds { display: flex; gap: 6px; margin-top: 6px; }
+  .slider-bounds input { flex: 1; background: #0f1419; border: 1px solid #2a313d; color: #8b93a0; padding: 3px 6px; border-radius: 4px; font-family: ui-monospace, monospace; font-size: 0.72rem; outline: none; }
+
+  /* Scratchpad */
+  .scratch-row { display: flex; gap: 6px; margin-bottom: 6px; }
+  .scratch-input { flex: 1; background: #1a212b; border: 1px solid #2a313d; color: #e5e7eb; padding: 8px 10px; border-radius: 6px; font-family: ui-monospace, monospace; font-size: 0.88rem; outline: none; }
+  .scratch-input:focus { border-color: #4b6bff; }
+  .scratch-result { padding: 8px 10px; font-family: ui-monospace, monospace; font-size: 0.85rem; color: #10b981; min-width: 80px; text-align: right; white-space: nowrap; }
+  .scratch-result.err { color: #fca5a5; }
+
+  .notes { width: 100%; background: #0f1419; border: 1px solid #2a313d; color: #e5e7eb; padding: 10px; border-radius: 8px; font-family: ui-monospace, monospace; font-size: 0.85rem; resize: vertical; min-height: 220px; outline: none; line-height: 1.5; }
+  .notes:focus { border-color: #4b6bff; }
+
+  .section-label { color: #7a8089; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; margin: 14px 0 6px; }
+  .section-label:first-child { margin-top: 0; }
+
+  .help { font-size: 0.75rem; color: #7a8089; line-height: 1.6; background: #0f1419; border: 1px solid #2a313d; border-radius: 6px; padding: 10px; }
+  .help code { background: #272f3d; color: #fbbf24; padding: 1px 5px; border-radius: 3px; font-size: 0.72rem; }
+
+  /* Keypad */
+  .keypad { display: grid; grid-template-columns: repeat(6, 1fr); gap: 4px; margin-bottom: 10px; }
+  .key { background: #1a212b; border: 1px solid #2a313d; color: #e5e7eb; padding: 8px 0; border-radius: 5px; cursor: pointer; font-family: ui-monospace, "Cascadia Code", monospace; font-size: 0.82rem; user-select: none; }
+  .key:hover { background: #272f3d; border-color: #4b6bff; }
+  .key:active { transform: translateY(1px); }
+  .key.fn { color: #60a5fa; }
+  .key.num { color: #fbbf24; }
+  .key.op { color: #f472b6; }
+  .key.wide { grid-column: span 2; }
+
+  /* Per-function tools */
+  .fn-tools { display: flex; gap: 4px; margin-top: 6px; padding-left: 22px; flex-wrap: wrap; }
+  .fn-tool { background: transparent; border: 1px solid #2a313d; color: #8b93a0; padding: 2px 7px; border-radius: 4px; cursor: pointer; font-size: 0.7rem; font-family: inherit; }
+  .fn-tool:hover { background: #272f3d; color: #e5e7eb; }
+  .fn-tool.active { background: rgba(75,107,255,0.18); color: #a5b4fc; border-color: #4b6bff; }
+
+  /* Examples modal */
+  .modal-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 50; display: none; align-items: center; justify-content: center; }
+  .modal-backdrop.show { display: flex; }
+  .modal { background: #141a22; border: 1px solid #2a313d; border-radius: 10px; padding: 20px; max-width: 640px; width: 92%; max-height: 82vh; overflow-y: auto; box-shadow: 0 20px 60px rgba(0,0,0,0.6); }
+  .modal h2 { font-size: 1.05rem; margin-bottom: 12px; color: #e5e7eb; }
+  .example-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .example-card { background: #1a212b; border: 1px solid #2a313d; border-radius: 6px; padding: 10px; cursor: pointer; }
+  .example-card:hover { border-color: #4b6bff; background: #1f2631; }
+  .example-card .name { font-weight: 600; color: #e5e7eb; font-size: 0.88rem; }
+  .example-card .expr { color: #fbbf24; font-family: ui-monospace, monospace; font-size: 0.74rem; margin-top: 4px; word-break: break-word; }
+  .example-card .note { color: #7a8089; font-size: 0.7rem; margin-top: 4px; }
+  .modal-close { background: #2a313d; border: none; color: #e5e7eb; padding: 7px 16px; border-radius: 5px; cursor: pointer; margin-top: 14px; font-family: inherit; font-size: 0.85rem; }
+  .modal-close:hover { background: #3a4353; }
+
+  /* Canvas */
+  .plot-wrap { position: relative; min-width: 0; }
+  canvas { display: block; width: 100%; height: 100%; cursor: grab; }
+  canvas:active { cursor: grabbing; }
+  .hud { position: absolute; top: 10px; right: 10px; background: rgba(15,20,25,0.85); border: 1px solid #2a313d; border-radius: 6px; padding: 6px 10px; font-family: ui-monospace, monospace; font-size: 0.75rem; color: #8b93a0; pointer-events: none; }
+  .toolbar { position: absolute; top: 10px; left: 10px; display: flex; gap: 4px; }
+  .tb-btn { background: rgba(15,20,25,0.85); border: 1px solid #2a313d; color: #e5e7eb; padding: 6px 10px; border-radius: 6px; cursor: pointer; font-family: inherit; font-size: 0.8rem; }
+  .tb-btn:hover { background: #1a212b; border-color: #4b6bff; }
+
+  /* Mobile */
+  @media (max-width: 760px) {
+    body { grid-template-columns: 1fr; grid-template-rows: auto 1fr; }
+    .side { max-height: 45vh; border-right: none; border-bottom: 1px solid #2a313d; }
+  }
+
+  /* Color picker popover */
+  .swatches { position: absolute; background: #1a212b; border: 1px solid #2a313d; border-radius: 8px; padding: 8px; display: none; grid-template-columns: repeat(5, 20px); gap: 6px; z-index: 20; box-shadow: 0 8px 24px rgba(0,0,0,0.5); }
+  .swatches.show { display: grid; }
+  .swatch { width: 20px; height: 20px; border-radius: 50%; cursor: pointer; border: 2px solid transparent; }
+  .swatch:hover { border-color: #fff; }
+
+  /* scrollbar */
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: #0f1419; }
+  ::-webkit-scrollbar-thumb { background: #2a313d; border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: #3a4353; }
+</style>
+</head>
+<body>
+
+<aside class="side">
+  <header>
+    <h1>📐 Math & Grapher</h1>
+    <span class="sub" id="fnCount">0 fns</span>
+  </header>
+  <div class="tabs">
+    <div class="tab active" data-tab="graph">Graph</div>
+    <div class="tab" data-tab="calc">Calc</div>
+    <div class="tab" data-tab="notes">Notes</div>
+    <div class="tab" data-tab="help">Help</div>
+  </div>
+
+  <div class="panel active" data-panel="graph">
+    <div class="section-label">Math keys — click to insert</div>
+    <div class="keypad" id="keypad">
+      <button class="key fn" data-ins="sin(">sin</button>
+      <button class="key fn" data-ins="cos(">cos</button>
+      <button class="key fn" data-ins="tan(">tan</button>
+      <button class="key fn" data-ins="ln(">ln</button>
+      <button class="key fn" data-ins="log(">log</button>
+      <button class="key fn" data-ins="exp(">exp</button>
+      <button class="key fn" data-ins="sqrt(">√</button>
+      <button class="key fn" data-ins="abs(">|x|</button>
+      <button class="key op" data-ins="^2">x²</button>
+      <button class="key op" data-ins="^3">x³</button>
+      <button class="key op" data-ins="^">xʸ</button>
+      <button class="key num" data-ins="pi">π</button>
+      <button class="key num" data-ins="e">e</button>
+      <button class="key op" data-ins="+">+</button>
+      <button class="key op" data-ins="-">−</button>
+      <button class="key op" data-ins="*">×</button>
+      <button class="key op" data-ins="/">÷</button>
+      <button class="key op" data-ins="(">(</button>
+      <button class="key op" data-ins=")">)</button>
+      <button class="key" data-ins="x">x</button>
+      <button class="key" data-ins="a">a</button>
+      <button class="key" data-ins="b">b</button>
+      <button class="key" data-ins="c">c</button>
+      <button class="key" data-act="bksp" title="Backspace">⌫</button>
+    </div>
+
+    <div class="section-label">Functions</div>
+    <div id="fnList"></div>
+    <button class="add-btn" id="addFn">+ Add function</button>
+    <button class="add-btn" id="openExamples">📚 Browse examples</button>
+
+    <div class="section-label">Sliders</div>
+    <div id="sliderList"></div>
+    <button class="add-btn" id="addSlider">+ Add slider (a, b, c, ...)</button>
+  </div>
+
+  <div class="panel" data-panel="calc">
+    <div class="section-label">Scratchpad — each line is evaluated</div>
+    <div id="scratchList"></div>
+    <button class="add-btn" id="addScratch">+ Add line</button>
+    <div class="section-label">Variables available: a, b, c, ... (sliders), plus ans (last result)</div>
+  </div>
+
+  <div class="panel" data-panel="notes">
+    <div class="section-label">Notes (saved locally)</div>
+    <textarea class="notes" id="notes" placeholder="Scratch work, derivations, reminders..."></textarea>
+  </div>
+
+  <div class="panel" data-panel="help">
+    <div class="help">
+      <b>Expression syntax</b><br>
+      Operators: <code>+ - * / ^ %</code><br>
+      Functions: <code>sin cos tan asin acos atan</code>, <code>sinh cosh tanh</code>, <code>log ln log2 exp sqrt cbrt abs sign floor ceil round min max</code><br>
+      Constants: <code>pi e</code>, <code>tau</code>, <code>inf</code><br>
+      Implicit multiply: <code>2x</code>, <code>3sin(x)</code>, <code>ax</code><br>
+      <br>
+      <b>Examples</b><br>
+      <code>sin(x)</code><br>
+      <code>a*x^2 + b*x + c</code> (add sliders a, b, c)<br>
+      <code>e^(-x^2/2)/sqrt(2pi)</code><br>
+      <code>abs(sin(x) * cos(2x))</code><br>
+      <br>
+      <b>Graph controls</b><br>
+      Scroll to zoom, drag to pan. <code>Home</code> resets view. Double-click resets too.<br>
+      <br>
+      <b>Scratchpad</b><br>
+      Each line is independent. Use <code>ans</code> for the previous line's result.
+    </div>
+  </div>
+</aside>
+
+<div class="plot-wrap">
+  <canvas id="plot"></canvas>
+  <div class="toolbar">
+    <button class="tb-btn" id="resetView" title="Reset view (Home)">⌂</button>
+    <button class="tb-btn" id="zoomIn" title="Zoom in">+</button>
+    <button class="tb-btn" id="zoomOut" title="Zoom out">−</button>
+    <button class="tb-btn" id="fitView" title="Fit to data (Y)">⊡</button>
+    <button class="tb-btn" id="trigView" title="Trig view (−2π..2π)">π</button>
+    <button class="tb-btn" id="toggleGrid" title="Toggle grid">▦</button>
+    <button class="tb-btn" id="toggleLabels" title="Toggle labels">#</button>
+    <button class="tb-btn" id="exportPNG" title="Export as PNG">📷</button>
+  </div>
+  <div class="hud" id="hud">x: 0, y: 0</div>
+</div>
+
+<div class="swatches" id="swatches"></div>
+
+<div class="modal-backdrop" id="exModal">
+  <div class="modal">
+    <h2>📚 Example functions — click to add</h2>
+    <div class="example-grid" id="exGrid"></div>
+    <button class="modal-close" id="exClose">Close</button>
+  </div>
+</div>
+
+<script>
+/* =============================================================
+   Expression parser (shunting-yard → compiled JS function)
+   ============================================================= */
+const FUNCS = {
+  sin: Math.sin, cos: Math.cos, tan: Math.tan,
+  asin: Math.asin, acos: Math.acos, atan: Math.atan, atan2: Math.atan2,
+  sinh: Math.sinh, cosh: Math.cosh, tanh: Math.tanh,
+  log: Math.log10, ln: Math.log, log2: Math.log2,
+  exp: Math.exp, sqrt: Math.sqrt, cbrt: Math.cbrt,
+  abs: Math.abs, sign: Math.sign,
+  floor: Math.floor, ceil: Math.ceil, round: Math.round,
+  min: Math.min, max: Math.max, pow: Math.pow,
+};
+const CONSTS = { pi: Math.PI, e: Math.E, tau: Math.PI*2, inf: Infinity };
+
+function tokenize(s) {
+  const tokens = [];
+  let i = 0;
+  const n = s.length;
+  while (i < n) {
+    const c = s[i];
+    if (c === ' ' || c === '\t') { i++; continue; }
+    if (/[0-9.]/.test(c)) {
+      let j = i;
+      while (j < n && /[0-9.]/.test(s[j])) j++;
+      // scientific notation
+      if (j < n && (s[j] === 'e' || s[j] === 'E') && /[0-9+\-]/.test(s[j+1]||'')) {
+        j++; if (s[j]==='+'||s[j]==='-') j++;
+        while (j < n && /[0-9]/.test(s[j])) j++;
+      }
+      tokens.push({ t: 'num', v: parseFloat(s.slice(i,j)) });
+      i = j;
+    } else if (/[a-zA-Z_]/.test(c)) {
+      let j = i;
+      while (j < n && /[a-zA-Z0-9_]/.test(s[j])) j++;
+      const name = s.slice(i, j);
+      if (j < n && s[j] === '(') tokens.push({ t: 'fn', v: name });
+      else tokens.push({ t: 'var', v: name });
+      i = j;
+    } else if ('+-*/^%(),'.includes(c)) {
+      tokens.push({ t: 'op', v: c });
+      i++;
+    } else {
+      throw new Error(`Unexpected '${c}' at ${i}`);
+    }
+  }
+  // Insert implicit multiplication
+  const out = [];
+  for (let k = 0; k < tokens.length; k++) {
+    const cur = tokens[k], prev = tokens[k-1];
+    if (prev) {
+      const prevEnd = prev.t === 'num' || prev.t === 'var' || (prev.t === 'op' && prev.v === ')');
+      const curStart = cur.t === 'num' || cur.t === 'var' || cur.t === 'fn' || (cur.t === 'op' && cur.v === '(');
+      if (prevEnd && curStart) out.push({ t: 'op', v: '*' });
+    }
+    out.push(cur);
+  }
+  return out;
+}
+
+const PREC = { '+':1, '-':1, '*':2, '/':2, '%':2, 'u-':4, 'u+':4, '^':3 };
+const RIGHT = { '^':true, 'u-':true, 'u+':true };
+
+function toRPN(tokens) {
+  const out = [], stack = [];
+  let prev = null;
+  for (const tok of tokens) {
+    if (tok.t === 'num' || tok.t === 'var') { out.push(tok); }
+    else if (tok.t === 'fn') { stack.push(tok); }
+    else if (tok.t === 'op') {
+      if (tok.v === '(') stack.push(tok);
+      else if (tok.v === ')') {
+        while (stack.length && !(stack[stack.length-1].t==='op' && stack[stack.length-1].v==='(')) out.push(stack.pop());
+        if (!stack.length) throw new Error('Mismatched )');
+        stack.pop();
+        if (stack.length && stack[stack.length-1].t === 'fn') out.push(stack.pop());
+      } else if (tok.v === ',') {
+        while (stack.length && !(stack[stack.length-1].t==='op' && stack[stack.length-1].v==='(')) out.push(stack.pop());
+      } else {
+        let op = tok.v;
+        // detect unary
+        const isUnary = !prev || (prev.t==='op' && prev.v!==')');
+        if (isUnary && (op === '-' || op === '+')) op = 'u'+op;
+        while (stack.length) {
+          const top = stack[stack.length-1];
+          if (top.t === 'fn') { out.push(stack.pop()); continue; }
+          if (top.t !== 'op' || top.v === '(') break;
+          const tp = PREC[top.v] || 0, cp = PREC[op] || 0;
+          if (tp > cp || (tp === cp && !RIGHT[op])) out.push(stack.pop());
+          else break;
+        }
+        stack.push({ t:'op', v: op });
+      }
+    }
+    prev = tok;
+  }
+  while (stack.length) {
+    const t = stack.pop();
+    if (t.t === 'op' && (t.v === '(' || t.v === ')')) throw new Error('Mismatched paren');
+    out.push(t);
+  }
+  return out;
+}
+
+function compile(expr) {
+  const rpn = toRPN(tokenize(expr));
+  // Returns a function(scope) => number
+  return function(scope) {
+    const st = [];
+    for (const t of rpn) {
+      if (t.t === 'num') st.push(t.v);
+      else if (t.t === 'var') {
+        if (scope && (t.v in scope)) st.push(scope[t.v]);
+        else if (t.v in CONSTS) st.push(CONSTS[t.v]);
+        else throw new Error(`Unknown name: ${t.v}`);
+      } else if (t.t === 'fn') {
+        const f = FUNCS[t.v];
+        if (!f) throw new Error(`Unknown function: ${t.v}`);
+        const nargs = f.length || 1;
+        // try to infer: use all pending until we hit the right count — simplest: use function.length
+        const args = [];
+        // We don't know exact arg count from RPN without parenthesizing — assume f.length or 2 for min/max
+        let argc = nargs;
+        if (t.v === 'min' || t.v === 'max') {
+          // eat all numbers up to prior marker — fallback to 2
+          argc = 2;
+        }
+        for (let k = 0; k < argc; k++) args.unshift(st.pop());
+        st.push(f(...args));
+      } else if (t.t === 'op') {
+        if (t.v === 'u-') st.push(-st.pop());
+        else if (t.v === 'u+') { /* noop */ }
+        else {
+          const b = st.pop(), a = st.pop();
+          switch (t.v) {
+            case '+': st.push(a+b); break;
+            case '-': st.push(a-b); break;
+            case '*': st.push(a*b); break;
+            case '/': st.push(a/b); break;
+            case '%': st.push(a%b); break;
+            case '^': st.push(Math.pow(a,b)); break;
+            default: throw new Error(`Bad op ${t.v}`);
+          }
+        }
+      }
+    }
+    if (st.length !== 1) throw new Error('Malformed expression');
+    return st[0];
+  };
+}
+
+/* =============================================================
+   Graph state
+   ============================================================= */
+const PALETTE = ['#4b6bff','#e94560','#10b981','#fbbf24','#a855f7','#06b6d4','#f97316','#ec4899','#84cc16','#f43f5e'];
+
+const state = {
+  fns: [],   // {id, expr, color, enabled, compiled, error, shade, showZeros, isDeriv, sourceExpr}
+  sliders: [], // {name, val, min, max, step}
+  view: { cx: 0, cy: 0, scale: 60 }, // pixels per unit
+  notes: '',
+  scratch: [], // {expr, result}
+  showGrid: true,
+  showLabels: true,
+};
+
+let nextFnId = 1;
+
+function saveState() {
+  try {
+    localStorage.setItem('mathgrapher', JSON.stringify({
+      fns: state.fns.map(f => ({ expr: f.expr, color: f.color, enabled: f.enabled, shade: !!f.shade, showZeros: !!f.showZeros, isDeriv: !!f.isDeriv, sourceExpr: f.sourceExpr || null })),
+      sliders: state.sliders,
+      view: state.view,
+      notes: state.notes,
+      scratch: state.scratch.map(s => ({ expr: s.expr })),
+      showGrid: state.showGrid,
+      showLabels: state.showLabels,
+    }));
+  } catch(e) {}
+}
+
+function loadState() {
+  try {
+    const s = JSON.parse(localStorage.getItem('mathgrapher') || 'null');
+    if (!s) return false;
+    if (s.view) state.view = s.view;
+    if (s.notes) state.notes = s.notes;
+    if (typeof s.showGrid === 'boolean') state.showGrid = s.showGrid;
+    if (typeof s.showLabels === 'boolean') state.showLabels = s.showLabels;
+    if (Array.isArray(s.sliders)) state.sliders = s.sliders;
+    if (Array.isArray(s.fns)) s.fns.forEach(f => {
+      if (f.isDeriv && f.sourceExpr) addDerivativeFrom(f.sourceExpr, f.color, f.enabled, f.shade, f.showZeros);
+      else addFn(f.expr, f.color, f.enabled, { shade: !!f.shade, showZeros: !!f.showZeros });
+    });
+    if (Array.isArray(s.scratch)) s.scratch.forEach(sc => state.scratch.push({ expr: sc.expr, result: null }));
+    return true;
+  } catch(e) { return false; }
+}
+
+/* =============================================================
+   Sidebar UI
+   ============================================================= */
+const fnList = document.getElementById('fnList');
+const sliderList = document.getElementById('sliderList');
+const scratchList = document.getElementById('scratchList');
+const fnCount = document.getElementById('fnCount');
+
+function addFn(expr = '', color = null, enabled = true, opts = {}) {
+  const id = nextFnId++;
+  if (!color) color = PALETTE[(state.fns.length) % PALETTE.length];
+  const f = { id, expr, color, enabled, compiled: null, error: null,
+              shade: !!opts.shade, showZeros: !!opts.showZeros,
+              isDeriv: false, sourceExpr: null };
+  state.fns.push(f);
+  compileFn(f);
+  renderFns();
+  draw();
+  saveState();
+  return f;
+}
+
+function addDerivativeFrom(sourceExpr, color = null, enabled = true, shade = false, showZeros = false) {
+  const id = nextFnId++;
+  if (!color) color = PALETTE[(state.fns.length) % PALETTE.length];
+  const f = { id, expr: `d/dx[${sourceExpr}]`, color, enabled,
+              compiled: null, error: null,
+              shade: !!shade, showZeros: !!showZeros,
+              isDeriv: true, sourceExpr };
+  try {
+    const src = compile(sourceExpr);
+    const h = 1e-5;
+    f.compiled = function(scope) {
+      const x0 = scope.x;
+      scope.x = x0 + h; const a = src(scope);
+      scope.x = x0 - h; const b = src(scope);
+      scope.x = x0;
+      return (a - b) / (2 * h);
+    };
+  } catch (e) { f.error = e.message; }
+  state.fns.push(f);
+  renderFns(); draw(); saveState();
+  return f;
+}
+
+function compileFn(f) {
+  f.error = null; f.compiled = null;
+  if (!f.expr.trim()) return;
+  try { f.compiled = compile(f.expr); }
+  catch(e) { f.error = e.message; }
+}
+
+function renderFns() {
+  fnList.innerHTML = '';
+  fnCount.textContent = `${state.fns.filter(f => f.enabled && f.compiled).length} fn${state.fns.length===1?'':'s'}`;
+  state.fns.forEach(f => {
+    const row = document.createElement('div');
+    row.className = 'fn-row';
+    row.innerHTML = `
+      <div class="fn-head">
+        <div class="fn-color ${f.enabled?'':'off'}" style="background:${f.color}" data-id="${f.id}" title="Click = color, Shift-click = toggle on/off"></div>
+        <input class="fn-input ${f.error?'err':''}" value="${escapeAttr(f.expr)}" placeholder="y = ..." data-id="${f.id}" spellcheck="false"${f.isDeriv ? ' readonly title="Numerical derivative — edit the source function instead"' : ''}>
+        <button class="fn-del" data-id="${f.id}" title="Remove">×</button>
+      </div>
+      ${f.error ? `<div class="fn-err">${escapeHtml(f.error)}</div>` : ''}
+      <div class="fn-tools">
+        ${f.isDeriv ? '' : `<button class="fn-tool" data-act="deriv" data-id="${f.id}" title="Add numerical derivative as new function">d/dx</button>`}
+        <button class="fn-tool ${f.shade?'active':''}" data-act="shade" data-id="${f.id}" title="Shade area under curve">∫ shade</button>
+        <button class="fn-tool ${f.showZeros?'active':''}" data-act="zeros" data-id="${f.id}" title="Mark zero crossings">0=</button>
+      </div>
+    `;
+    fnList.appendChild(row);
+  });
+}
+
+function escapeHtml(s){ return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+function escapeAttr(s){ return escapeHtml(s); }
+
+fnList.addEventListener('input', (e) => {
+  if (e.target.classList.contains('fn-input')) {
+    const id = +e.target.dataset.id;
+    const f = state.fns.find(f => f.id === id);
+    if (!f) return;
+    f.expr = e.target.value;
+    compileFn(f);
+    // update error state minimally without full re-render (keeps focus)
+    e.target.classList.toggle('err', !!f.error);
+    const row = e.target.closest('.fn-row');
+    let errEl = row.querySelector('.fn-err');
+    if (f.error) {
+      if (!errEl) { errEl = document.createElement('div'); errEl.className='fn-err'; row.appendChild(errEl); }
+      errEl.textContent = f.error;
+    } else if (errEl) errEl.remove();
+    fnCount.textContent = `${state.fns.filter(ff => ff.enabled && ff.compiled).length} fns`;
+    draw();
+    saveState();
+  }
+});
+
+fnList.addEventListener('click', (e) => {
+  if (e.target.classList.contains('fn-del')) {
+    const id = +e.target.dataset.id;
+    state.fns = state.fns.filter(f => f.id !== id);
+    renderFns(); draw(); saveState();
+  } else if (e.target.classList.contains('fn-color')) {
+    const id = +e.target.dataset.id;
+    const f = state.fns.find(f => f.id === id);
+    if (!f) return;
+    if (e.shiftKey) { f.enabled = !f.enabled; renderFns(); draw(); saveState(); return; }
+    openSwatches(e.target, f);
+  } else if (e.target.classList.contains('fn-tool')) {
+    const id = +e.target.dataset.id;
+    const f = state.fns.find(f => f.id === id);
+    if (!f) return;
+    const act = e.target.dataset.act;
+    if (act === 'deriv') {
+      if (!f.compiled || !f.expr.trim()) return;
+      addDerivativeFrom(f.expr);
+    } else if (act === 'shade') {
+      f.shade = !f.shade; renderFns(); draw(); saveState();
+    } else if (act === 'zeros') {
+      f.showZeros = !f.showZeros; renderFns(); draw(); saveState();
+    }
+  }
+});
+
+document.getElementById('addFn').addEventListener('click', () => addFn(''));
+
+// Swatches popover
+const swatches = document.getElementById('swatches');
+PALETTE.forEach(c => {
+  const s = document.createElement('div'); s.className='swatch'; s.style.background=c; s.dataset.color=c; swatches.appendChild(s);
+});
+let swatchTarget = null;
+function openSwatches(anchor, f) {
+  swatchTarget = f;
+  const r = anchor.getBoundingClientRect();
+  swatches.style.left = r.left + 'px';
+  swatches.style.top = (r.bottom + 4) + 'px';
+  swatches.classList.add('show');
+}
+swatches.addEventListener('click', (e) => {
+  if (e.target.classList.contains('swatch') && swatchTarget) {
+    swatchTarget.color = e.target.dataset.color;
+    swatchTarget.enabled = true;
+    swatches.classList.remove('show');
+    renderFns(); draw(); saveState();
+  }
+});
+document.addEventListener('click', (e) => {
+  if (!swatches.contains(e.target) && !e.target.classList.contains('fn-color')) swatches.classList.remove('show');
+});
+
+/* Sliders */
+function addSlider(name = null) {
+  if (!name) {
+    // pick next free single letter a,b,c...
+    const used = new Set(state.sliders.map(s => s.name));
+    for (const c of 'abcdefghijklmnopqrstuvw') if (!used.has(c)) { name = c; break; }
+    if (!name) name = 'k';
+  }
+  state.sliders.push({ name, val: 1, min: -10, max: 10, step: 0.01 });
+  renderSliders(); draw(); saveState();
+}
+
+function renderSliders() {
+  sliderList.innerHTML = '';
+  state.sliders.forEach((s, i) => {
+    const row = document.createElement('div');
+    row.className = 'slider-row';
+    row.innerHTML = `
+      <div class="slider-head">
+        <span class="slider-name">${s.name}</span>
+        <span class="slider-val" id="sv${i}">${formatNum(s.val)}</span>
+        <button class="fn-del" data-i="${i}" title="Remove">×</button>
+      </div>
+      <input type="range" min="${s.min}" max="${s.max}" step="${s.step}" value="${s.val}" data-i="${i}" data-k="val">
+      <div class="slider-bounds">
+        <input type="number" value="${s.min}" data-i="${i}" data-k="min" title="min">
+        <input type="number" value="${s.max}" data-i="${i}" data-k="max" title="max">
+        <input type="number" value="${s.step}" data-i="${i}" data-k="step" title="step">
+      </div>
+    `;
+    sliderList.appendChild(row);
+  });
+}
+
+sliderList.addEventListener('input', (e) => {
+  const i = +e.target.dataset.i, k = e.target.dataset.k;
+  if (i == null || !k) return;
+  const s = state.sliders[i]; if (!s) return;
+  const v = parseFloat(e.target.value);
+  if (!Number.isFinite(v)) return;
+  s[k] = v;
+  if (k === 'val') {
+    const svEl = document.getElementById('sv'+i);
+    if (svEl) svEl.textContent = formatNum(v);
+  } else if (k === 'min' || k === 'max' || k === 'step') {
+    const range = sliderList.querySelector(`input[type=range][data-i="${i}"]`);
+    if (range) { range.min = s.min; range.max = s.max; range.step = s.step; }
+  }
+  draw(); saveState(); updateScratchAll();
+});
+sliderList.addEventListener('click', (e) => {
+  if (e.target.classList.contains('fn-del')) {
+    const i = +e.target.dataset.i;
+    state.sliders.splice(i, 1);
+    renderSliders(); draw(); saveState(); updateScratchAll();
+  }
+});
+document.getElementById('addSlider').addEventListener('click', () => addSlider());
+
+/* Scratchpad */
+function renderScratch() {
+  scratchList.innerHTML = '';
+  state.scratch.forEach((s, i) => {
+    const row = document.createElement('div');
+    row.className = 'scratch-row';
+    row.innerHTML = `
+      <input class="scratch-input" placeholder="2 + 2, sin(pi/4)*a, ..." value="${escapeAttr(s.expr)}" data-i="${i}">
+      <div class="scratch-result" id="sr${i}"></div>
+      <button class="fn-del" data-i="${i}" title="Remove">×</button>
+    `;
+    scratchList.appendChild(row);
+    evalScratch(i);
+  });
+}
+
+function sliderScope() {
+  const sc = {};
+  state.sliders.forEach(s => { sc[s.name] = s.val; });
+  return sc;
+}
+
+function evalScratch(i) {
+  const s = state.scratch[i]; if (!s) return;
+  const el = document.getElementById('sr'+i); if (!el) return;
+  if (!s.expr.trim()) { el.textContent = ''; el.classList.remove('err'); s.result = null; return; }
+  try {
+    const scope = sliderScope();
+    if (i > 0 && state.scratch[i-1].result != null) scope.ans = state.scratch[i-1].result;
+    const fn = compile(s.expr);
+    const v = fn(scope);
+    s.result = v;
+    el.textContent = '= ' + formatNum(v);
+    el.classList.remove('err');
+  } catch(e) {
+    s.result = null;
+    el.textContent = '!';
+    el.classList.add('err');
+    el.title = e.message;
+  }
+}
+
+function updateScratchAll() { state.scratch.forEach((_, i) => evalScratch(i)); }
+
+scratchList.addEventListener('input', (e) => {
+  if (e.target.classList.contains('scratch-input')) {
+    const i = +e.target.dataset.i;
+    state.scratch[i].expr = e.target.value;
+    // re-eval this and anything below (because of ans)
+    for (let k = i; k < state.scratch.length; k++) evalScratch(k);
+    saveState();
+  }
+});
+scratchList.addEventListener('click', (e) => {
+  if (e.target.classList.contains('fn-del')) {
+    const i = +e.target.dataset.i;
+    state.scratch.splice(i, 1);
+    renderScratch(); saveState();
+  }
+});
+document.getElementById('addScratch').addEventListener('click', () => {
+  state.scratch.push({ expr: '', result: null });
+  renderScratch(); saveState();
+});
+
+/* Notes */
+const notesEl = document.getElementById('notes');
+notesEl.addEventListener('input', () => { state.notes = notesEl.value; saveState(); });
+
+/* Tabs */
+document.querySelectorAll('.tab').forEach(t => {
+  t.addEventListener('click', () => {
+    document.querySelectorAll('.tab').forEach(x => x.classList.remove('active'));
+    document.querySelectorAll('.panel').forEach(x => x.classList.remove('active'));
+    t.classList.add('active');
+    document.querySelector(`.panel[data-panel="${t.dataset.tab}"]`).classList.add('active');
+  });
+});
+
+/* =============================================================
+   Canvas rendering
+   ============================================================= */
+const canvas = document.getElementById('plot');
+const ctx = canvas.getContext('2d');
+const hud = document.getElementById('hud');
+let DPR = window.devicePixelRatio || 1;
+
+function resize() {
+  DPR = window.devicePixelRatio || 1;
+  const r = canvas.getBoundingClientRect();
+  canvas.width = Math.floor(r.width * DPR);
+  canvas.height = Math.floor(r.height * DPR);
+  draw();
+}
+window.addEventListener('resize', resize);
+
+function x2px(x) { return canvas.width/2 + (x - state.view.cx) * state.view.scale * DPR; }
+function y2py(y) { return canvas.height/2 - (y - state.view.cy) * state.view.scale * DPR; }
+function px2x(px) { return (px - canvas.width/2) / (state.view.scale * DPR) + state.view.cx; }
+function py2y(py) { return -(py - canvas.height/2) / (state.view.scale * DPR) + state.view.cy; }
+
+function niceStep(raw) {
+  // pick 1,2,5 * 10^n
+  const p = Math.pow(10, Math.floor(Math.log10(raw)));
+  const m = raw / p;
+  let s;
+  if (m < 1.5) s = 1;
+  else if (m < 3.5) s = 2;
+  else if (m < 7.5) s = 5;
+  else s = 10;
+  return s * p;
+}
+
+function formatNum(v) {
+  if (!Number.isFinite(v)) return String(v);
+  if (v === 0) return '0';
+  const a = Math.abs(v);
+  if (a >= 1e6 || a < 1e-4) return v.toExponential(3).replace(/\.?0+e/, 'e');
+  // choose decimals based on magnitude
+  const d = Math.max(0, 4 - Math.floor(Math.log10(a)));
+  return (+v.toFixed(Math.min(d, 8))).toString();
+}
+
+function draw() {
+  const w = canvas.width, h = canvas.height;
+  ctx.fillStyle = '#0f1419';
+  ctx.fillRect(0, 0, w, h);
+
+  // grid
+  const viewW = w / (state.view.scale * DPR);
+  const viewH = h / (state.view.scale * DPR);
+  const targetLines = Math.min(w, h) / (80 * DPR);
+  const stepX = niceStep(viewW / targetLines);
+  const stepY = niceStep(viewH / targetLines);
+
+  const x0 = state.view.cx - viewW/2, x1 = state.view.cx + viewW/2;
+  const y0 = state.view.cy - viewH/2, y1 = state.view.cy + viewH/2;
+
+  if (state.showGrid) {
+    // minor grid
+    ctx.strokeStyle = '#1a212b';
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    const minorX = stepX / 5, minorY = stepY / 5;
+    for (let x = Math.ceil(x0/minorX)*minorX; x <= x1; x += minorX) {
+      const px = x2px(x); ctx.moveTo(px, 0); ctx.lineTo(px, h);
+    }
+    for (let y = Math.ceil(y0/minorY)*minorY; y <= y1; y += minorY) {
+      const py = y2py(y); ctx.moveTo(0, py); ctx.lineTo(w, py);
+    }
+    ctx.stroke();
+
+    // major grid
+    ctx.strokeStyle = '#2a313d';
+    ctx.beginPath();
+    for (let x = Math.ceil(x0/stepX)*stepX; x <= x1; x += stepX) {
+      const px = x2px(x); ctx.moveTo(px, 0); ctx.lineTo(px, h);
+    }
+    for (let y = Math.ceil(y0/stepY)*stepY; y <= y1; y += stepY) {
+      const py = y2py(y); ctx.moveTo(0, py); ctx.lineTo(w, py);
+    }
+    ctx.stroke();
+  }
+
+  // axes
+  ctx.strokeStyle = '#5a6578';
+  ctx.lineWidth = 1.5 * DPR;
+  ctx.beginPath();
+  const ax = x2px(0), ay = y2py(0);
+  if (ax >= 0 && ax <= w) { ctx.moveTo(ax, 0); ctx.lineTo(ax, h); }
+  if (ay >= 0 && ay <= h) { ctx.moveTo(0, ay); ctx.lineTo(w, ay); }
+  ctx.stroke();
+
+  if (state.showLabels) {
+    ctx.fillStyle = '#7a8089';
+    ctx.font = `${11*DPR}px ui-monospace, monospace`;
+    ctx.textAlign = 'center'; ctx.textBaseline = 'top';
+    const labelY = Math.min(Math.max(y2py(0) + 4*DPR, 4*DPR), h - 14*DPR);
+    for (let x = Math.ceil(x0/stepX)*stepX; x <= x1; x += stepX) {
+      if (Math.abs(x) < stepX/10) continue;
+      ctx.fillText(formatNum(x), x2px(x), labelY);
+    }
+    ctx.textAlign = 'right'; ctx.textBaseline = 'middle';
+    const labelX = Math.min(Math.max(x2px(0) - 4*DPR, 30*DPR), w - 4*DPR);
+    for (let y = Math.ceil(y0/stepY)*stepY; y <= y1; y += stepY) {
+      if (Math.abs(y) < stepY/10) continue;
+      ctx.fillText(formatNum(y), labelX, y2py(y));
+    }
+    ctx.textAlign = 'right'; ctx.textBaseline = 'top';
+    ctx.fillText('0', Math.min(Math.max(x2px(0) - 4*DPR, 12*DPR), w - 4*DPR), Math.min(Math.max(y2py(0) + 4*DPR, 4*DPR), h - 14*DPR));
+  }
+
+  // functions — sample once per fn, then shade/stroke/zeros from the samples
+  const scope = sliderScope();
+  const zeroY = y2py(0);
+  for (const f of state.fns) {
+    if (!f.enabled || !f.compiled) continue;
+
+    // Collect pixel samples
+    const samples = new Array(w + 1);
+    for (let px = 0; px <= w; px += 1) {
+      scope.x = px2x(px);
+      let y;
+      try { y = f.compiled(scope); } catch(e) { y = NaN; }
+      samples[px] = Number.isFinite(y) ? y : NaN;
+    }
+
+    // Shade under curve (between curve and y=0)
+    if (f.shade) {
+      ctx.fillStyle = f.color + '33'; // ~20% alpha
+      let inSeg = false;
+      ctx.beginPath();
+      for (let px = 0; px <= w; px += 1) {
+        const y = samples[px];
+        if (!Number.isFinite(y)) {
+          if (inSeg) { ctx.lineTo(px - 1, zeroY); ctx.closePath(); ctx.fill(); ctx.beginPath(); inSeg = false; }
+          continue;
+        }
+        const py = y2py(y);
+        if (!inSeg) { ctx.moveTo(px, zeroY); ctx.lineTo(px, py); inSeg = true; }
+        else ctx.lineTo(px, py);
+      }
+      if (inSeg) { ctx.lineTo(w, zeroY); ctx.closePath(); ctx.fill(); }
+    }
+
+    // Stroke curve
+    ctx.strokeStyle = f.color;
+    ctx.lineWidth = 2 * DPR;
+    ctx.beginPath();
+    let prevValid = false, prevY = 0;
+    for (let px = 0; px <= w; px += 1) {
+      const y = samples[px];
+      if (!Number.isFinite(y)) { prevValid = false; continue; }
+      const py = y2py(y);
+      if (prevValid && Math.abs(py - prevY) > h * 2) {
+        ctx.stroke(); ctx.beginPath(); prevValid = false;
+      }
+      if (!prevValid) ctx.moveTo(px, py);
+      else ctx.lineTo(px, py);
+      prevValid = true; prevY = py;
+    }
+    ctx.stroke();
+
+    // Zero-crossing markers
+    if (f.showZeros) {
+      ctx.fillStyle = f.color;
+      ctx.strokeStyle = '#0f1419';
+      ctx.lineWidth = 1.5 * DPR;
+      for (let px = 1; px <= w; px += 1) {
+        const a = samples[px - 1], b = samples[px];
+        if (!Number.isFinite(a) || !Number.isFinite(b)) continue;
+        if (a === 0 || (a > 0) !== (b > 0)) {
+          // bisect refine in x-space
+          let xL = px2x(px - 1), xR = px2x(px);
+          let yL = a, yR = b;
+          for (let it = 0; it < 30 && Math.abs(xR - xL) > 1e-9; it++) {
+            const xM = (xL + xR) / 2;
+            scope.x = xM;
+            let yM; try { yM = f.compiled(scope); } catch(e){ yM = NaN; }
+            if (!Number.isFinite(yM)) break;
+            if ((yL > 0) === (yM > 0)) { xL = xM; yL = yM; }
+            else { xR = xM; yR = yM; }
+          }
+          const zx = x2px((xL + xR) / 2);
+          ctx.beginPath();
+          ctx.arc(zx, zeroY, 5 * DPR, 0, Math.PI * 2);
+          ctx.fill(); ctx.stroke();
+        }
+      }
+    }
+  }
+}
+
+/* =============================================================
+   Interaction
+   ============================================================= */
+let drag = null;
+canvas.addEventListener('mousedown', (e) => {
+  drag = { x: e.clientX, y: e.clientY, cx: state.view.cx, cy: state.view.cy };
+});
+window.addEventListener('mouseup', () => { drag = null; saveState(); });
+window.addEventListener('mousemove', (e) => {
+  if (drag) {
+    const dx = (e.clientX - drag.x) / state.view.scale;
+    const dy = (e.clientY - drag.y) / state.view.scale;
+    state.view.cx = drag.cx - dx;
+    state.view.cy = drag.cy + dy;
+    draw();
+  }
+  // HUD
+  const r = canvas.getBoundingClientRect();
+  const mx = (e.clientX - r.left) * DPR;
+  const my = (e.clientY - r.top) * DPR;
+  if (mx >= 0 && my >= 0 && mx <= canvas.width && my <= canvas.height) {
+    hud.textContent = `x: ${formatNum(px2x(mx))}, y: ${formatNum(py2y(my))}`;
+  }
+});
+
+canvas.addEventListener('wheel', (e) => {
+  e.preventDefault();
+  const r = canvas.getBoundingClientRect();
+  const mx = (e.clientX - r.left) * DPR;
+  const my = (e.clientY - r.top) * DPR;
+  const wx = px2x(mx), wy = py2y(my);
+  const k = Math.pow(1.0015, -e.deltaY);
+  state.view.scale = Math.max(0.5, Math.min(5000, state.view.scale * k));
+  // zoom toward cursor
+  state.view.cx = wx - (mx - canvas.width/2) / (state.view.scale * DPR);
+  state.view.cy = wy + (my - canvas.height/2) / (state.view.scale * DPR);
+  draw(); saveState();
+}, { passive: false });
+
+canvas.addEventListener('dblclick', () => { state.view = { cx: 0, cy: 0, scale: 60 }; draw(); saveState(); });
+
+// Touch support
+let touchState = null;
+canvas.addEventListener('touchstart', (e) => {
+  if (e.touches.length === 1) {
+    touchState = { type:'pan', x: e.touches[0].clientX, y: e.touches[0].clientY, cx: state.view.cx, cy: state.view.cy };
+  } else if (e.touches.length === 2) {
+    const [a,b] = e.touches;
+    touchState = { type:'pinch', d: Math.hypot(a.clientX-b.clientX, a.clientY-b.clientY), scale: state.view.scale };
+  }
+}, { passive: true });
+canvas.addEventListener('touchmove', (e) => {
+  if (!touchState) return;
+  e.preventDefault();
+  if (touchState.type === 'pan' && e.touches.length === 1) {
+    const dx = (e.touches[0].clientX - touchState.x) / state.view.scale;
+    const dy = (e.touches[0].clientY - touchState.y) / state.view.scale;
+    state.view.cx = touchState.cx - dx;
+    state.view.cy = touchState.cy + dy;
+    draw();
+  } else if (touchState.type === 'pinch' && e.touches.length === 2) {
+    const [a,b] = e.touches;
+    const d = Math.hypot(a.clientX-b.clientX, a.clientY-b.clientY);
+    state.view.scale = Math.max(0.5, Math.min(5000, touchState.scale * (d / touchState.d)));
+    draw();
+  }
+}, { passive: false });
+canvas.addEventListener('touchend', () => { touchState = null; saveState(); });
+
+document.getElementById('resetView').addEventListener('click', () => { state.view = { cx: 0, cy: 0, scale: 60 }; draw(); saveState(); });
+document.getElementById('zoomIn').addEventListener('click', () => { state.view.scale = Math.min(5000, state.view.scale * 1.4); draw(); saveState(); });
+document.getElementById('zoomOut').addEventListener('click', () => { state.view.scale = Math.max(0.5, state.view.scale / 1.4); draw(); saveState(); });
+
+window.addEventListener('keydown', (e) => {
+  if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+  if (e.key === 'Home') { state.view = { cx: 0, cy: 0, scale: 60 }; draw(); saveState(); }
+});
+
+/* =============================================================
+   Symbol keypad — insert into last-focused function/scratch input
+   ============================================================= */
+let lastFocused = null;
+document.addEventListener('focusin', (e) => {
+  if (e.target.classList && (e.target.classList.contains('fn-input') || e.target.classList.contains('scratch-input'))) {
+    lastFocused = e.target;
+  }
+});
+
+function insertAtCursor(text) {
+  let el = lastFocused;
+  if (!el || !document.body.contains(el)) {
+    // Fall back: create a new function and insert there
+    const f = addFn('');
+    renderFns();
+    el = fnList.querySelector(`.fn-input[data-id="${f.id}"]`);
+    if (!el) return;
+    lastFocused = el;
+  }
+  const start = el.selectionStart ?? el.value.length;
+  const end = el.selectionEnd ?? el.value.length;
+  el.value = el.value.slice(0, start) + text + el.value.slice(end);
+  const caret = start + text.length;
+  el.focus();
+  try { el.setSelectionRange(caret, caret); } catch(e){}
+  el.dispatchEvent(new Event('input', { bubbles: true }));
+}
+
+function backspaceAtCursor() {
+  const el = lastFocused; if (!el || !document.body.contains(el)) return;
+  const start = el.selectionStart ?? el.value.length;
+  const end = el.selectionEnd ?? el.value.length;
+  if (start !== end) {
+    el.value = el.value.slice(0, start) + el.value.slice(end);
+    try { el.setSelectionRange(start, start); } catch(e){}
+  } else if (start > 0) {
+    el.value = el.value.slice(0, start-1) + el.value.slice(end);
+    try { el.setSelectionRange(start-1, start-1); } catch(e){}
+  } else return;
+  el.focus();
+  el.dispatchEvent(new Event('input', { bubbles: true }));
+}
+
+document.getElementById('keypad').addEventListener('mousedown', (e) => {
+  // Prevent the button from stealing focus from the input
+  e.preventDefault();
+});
+document.getElementById('keypad').addEventListener('click', (e) => {
+  const b = e.target.closest('.key'); if (!b) return;
+  if (b.dataset.act === 'bksp') { backspaceAtCursor(); return; }
+  if (b.dataset.ins != null) insertAtCursor(b.dataset.ins);
+});
+
+/* =============================================================
+   Examples modal
+   ============================================================= */
+const EXAMPLES = [
+  { name: 'Parabola', exprs: ['x^2'], note: 'y = x²' },
+  { name: 'Cubic', exprs: ['x^3 - 3x'], note: 'turning points at ±1' },
+  { name: 'Sine wave', exprs: ['sin(x)'], note: 'period 2π' },
+  { name: 'Scaled sine', exprs: ['a*sin(b*x)'], sliders: ['a','b'], note: 'amp=a, freq=b' },
+  { name: 'Gaussian', exprs: ['exp(-x^2/2)/sqrt(2pi)'], note: 'standard normal' },
+  { name: 'Exp decay', exprs: ['exp(-x)'], note: 'e^(−x)' },
+  { name: 'Logistic / sigmoid', exprs: ['1/(1 + exp(-x))'], note: 'S-curve from 0 to 1' },
+  { name: 'Reciprocal', exprs: ['1/x'], note: 'hyperbola, asymptote at 0' },
+  { name: 'Tangent', exprs: ['tan(x)'], note: 'asymptotes every π' },
+  { name: 'Absolute value', exprs: ['abs(x)'], note: 'V-shape' },
+  { name: 'Quadratic (adjust)', exprs: ['a*x^2 + b*x + c'], sliders: ['a','b','c'], note: 'play with coefficients' },
+  { name: 'Damped oscillation', exprs: ['exp(-0.2x)*sin(2x)'], note: 'decaying wave' },
+  { name: 'Sin + Cos', exprs: ['sin(x)','cos(x)'], note: 'compare side by side' },
+  { name: 'Polynomial', exprs: ['x^4 - 5x^2 + 4'], note: 'quartic with 4 roots' },
+  { name: 'Heart curve', exprs: ['sqrt(1 - (abs(x)-1)^2)','-2*sqrt(1 - abs(x)/2)'], note: 'plot both for a heart' },
+  { name: 'Step-like', exprs: ['1/(1 + exp(-10x))'], note: 'sharp sigmoid ≈ step' },
+];
+
+function openExamples() {
+  const grid = document.getElementById('exGrid');
+  grid.innerHTML = '';
+  EXAMPLES.forEach((ex) => {
+    const card = document.createElement('div');
+    card.className = 'example-card';
+    card.innerHTML = `
+      <div class="name">${escapeHtml(ex.name)}</div>
+      <div class="expr">${escapeHtml(ex.exprs.join('  ,  '))}</div>
+      <div class="note">${escapeHtml(ex.note || '')}${ex.sliders ? ' · needs: ' + ex.sliders.join(', ') : ''}</div>
+    `;
+    card.addEventListener('click', () => {
+      ex.exprs.forEach(e => addFn(e));
+      if (ex.sliders) {
+        const used = new Set(state.sliders.map(s => s.name));
+        ex.sliders.forEach(n => { if (!used.has(n)) addSlider(n); });
+        renderSliders();
+      }
+      document.getElementById('exModal').classList.remove('show');
+    });
+    grid.appendChild(card);
+  });
+  document.getElementById('exModal').classList.add('show');
+}
+
+document.getElementById('openExamples').addEventListener('click', openExamples);
+document.getElementById('exClose').addEventListener('click', () => document.getElementById('exModal').classList.remove('show'));
+document.getElementById('exModal').addEventListener('click', (e) => {
+  if (e.target.id === 'exModal') document.getElementById('exModal').classList.remove('show');
+});
+
+/* =============================================================
+   Extra toolbar actions: fit, trig view, grid/labels, PNG
+   ============================================================= */
+function fitToData() {
+  const enabled = state.fns.filter(f => f.enabled && f.compiled);
+  if (!enabled.length) return;
+  const w = canvas.width, h = canvas.height;
+  const scope = sliderScope();
+  let ymin = Infinity, ymax = -Infinity;
+  for (let px = 0; px <= w; px += 2) {
+    const x = px2x(px); scope.x = x;
+    for (const f of enabled) {
+      try { const y = f.compiled(scope); if (Number.isFinite(y)) { if (y < ymin) ymin = y; if (y > ymax) ymax = y; } } catch(e){}
+    }
+  }
+  if (!Number.isFinite(ymin) || !Number.isFinite(ymax)) return;
+  if (ymax === ymin) { ymin -= 1; ymax += 1; }
+  const pad = (ymax - ymin) * 0.12;
+  const newCy = (ymin + ymax) / 2;
+  const newScale = (h / DPR) / ((ymax - ymin) + 2 * pad);
+  state.view.cy = newCy;
+  state.view.scale = Math.max(0.5, Math.min(5000, newScale));
+  draw(); saveState();
+}
+
+function trigView() {
+  state.view = { cx: 0, cy: 0, scale: Math.min(canvas.width, canvas.height) / DPR / (4 * Math.PI + 1) };
+  draw(); saveState();
+}
+
+function exportPNG() {
+  try {
+    const link = document.createElement('a');
+    link.download = 'graph.png';
+    link.href = canvas.toDataURL('image/png');
+    link.click();
+  } catch(e) { alert('PNG export failed: ' + e.message); }
+}
+
+document.getElementById('fitView').addEventListener('click', fitToData);
+document.getElementById('trigView').addEventListener('click', trigView);
+document.getElementById('toggleGrid').addEventListener('click', () => { state.showGrid = !state.showGrid; draw(); saveState(); });
+document.getElementById('toggleLabels').addEventListener('click', () => { state.showLabels = !state.showLabels; draw(); saveState(); });
+document.getElementById('exportPNG').addEventListener('click', exportPNG);
+
+/* =============================================================
+   Boot
+   ============================================================= */
+const loaded = loadState();
+if (!loaded) {
+  addFn('sin(x)');
+  addFn('x^2 - 4');
+  state.scratch.push({ expr: '2 + 2', result: null });
+  state.scratch.push({ expr: 'sin(pi/4)', result: null });
+}
+notesEl.value = state.notes;
+renderSliders();
+renderScratch();
+resize();
+</script>
+</body>
+</html>

@@ -1,0 +1,691 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Nuggets — Mine Cart</title>
+<style>
+  :root { --bg:#0e0a07; --ink:#f1e6cc; --gold:#e5c158; --gold-deep:#b8901f; --rust:#a04020; --line:#3a2e1f; }
+  * { box-sizing:border-box; }
+  html, body { margin:0; padding:0; height:100%; background:var(--bg); color:var(--ink); font-family:'Iowan Old Style', Georgia, serif; overflow:hidden; }
+  body { display:flex; flex-direction:column; align-items:center; justify-content:flex-start; padding:8px 8px 6px; gap:4px; height:100vh; }
+  h1 { margin:0; color:var(--gold); font-weight:normal; letter-spacing:5px; font-size:18px; font-variant:small-caps; text-shadow:0 1px 0 #000; }
+  h1::before { content:'⛏ '; opacity:0.85; }
+  .sub { color:#a89478; font-size:11px; letter-spacing:1px; font-style:italic; margin-bottom:2px; }
+  .stage-wrap { flex:1; min-height:0; min-width:0; display:flex; align-items:center; justify-content:center; width:100%; }
+  .stage { position:relative; height:100%; aspect-ratio: 12 / 7; max-width:100%; }
+  /* If width-bound: fall back to width:100% so aspect-ratio decides height */
+  @media (max-aspect-ratio: 12/7) {
+    .stage { height:auto; width:100%; }
+  }
+  canvas {
+    display:block; background:#1a140d; border:3px double rgba(229,193,88,0.4); border-radius:8px; box-shadow:0 12px 40px rgba(0,0,0,0.6);
+    width:100%; height:100%;
+  }
+  .hud { position:absolute; left:14px; right:14px; top:12px; display:flex; justify-content:space-between; align-items:center; pointer-events:none; font-size:14px; color:var(--ink); text-shadow:0 1px 2px #000, 0 0 6px rgba(0,0,0,0.8); letter-spacing:1px; }
+  .hud .lives { color:#ff6a6a; font-size:18px; }
+  .hud .score { color:var(--gold); font-weight:bold; }
+  .hud .gems  { color:#a4e8ff; }
+  .overlay { position:absolute; inset:0; display:none; align-items:center; justify-content:center; flex-direction:column; gap:18px; background:rgba(14,10,7,0.92); border-radius:8px; padding:30px; text-align:center; backdrop-filter:blur(3px); }
+  .overlay.show { display:flex; }
+  .overlay h2 { margin:0; color:var(--gold); font-weight:normal; letter-spacing:4px; font-variant:small-caps; font-size:32px; }
+  .overlay p { margin:0; color:var(--ink); line-height:1.7; max-width:400px; }
+  .overlay .stats { color:#a89478; font-size:14px; }
+  .overlay button { background:linear-gradient(180deg, var(--gold), var(--gold-deep)); border:1px solid var(--gold); color:var(--bg); padding:12px 30px; font-family:inherit; font-size:15px; letter-spacing:2px; text-transform:uppercase; border-radius:24px / 50%; cursor:pointer; font-weight:bold; transition:transform .15s ease, box-shadow .15s ease; }
+  .overlay button:hover { transform:translateY(-2px); box-shadow:0 6px 18px rgba(229,193,88,0.4); }
+  .controls { color:#a89478; font-size:11px; letter-spacing:0.5px; max-width:560px; text-align:center; line-height:1.4; padding:2px 0; }
+  .controls kbd { background:#241c12; border:1px solid #3a2e1f; padding:1px 7px; border-radius:3px; color:var(--gold); font-family:inherit; font-size:11px; }
+</style>
+</head>
+<body>
+<h1>Nuggets</h1>
+<div class="sub">A mine cart through the deep</div>
+
+<div class="stage-wrap">
+<div class="stage">
+  <canvas id="game" width="960" height="560"></canvas>
+  <div class="hud">
+    <div><span class="lives" id="lives">♥♥♥</span></div>
+    <div><span class="gems" id="gems">0/0</span> · LVL <span id="level">1</span> · <span class="score" id="score">0</span></div>
+  </div>
+  <div class="overlay show" id="overlay">
+    <h2 id="ovl-title">Nuggets</h2>
+    <p id="ovl-body">Drive your cart around the mine. Collect every gem to clear a level. Avoid rocks, spikes, and lava — and don't crash into walls.</p>
+    <p class="stats" id="ovl-stats"></p>
+    <button id="ovl-btn">Start</button>
+  </div>
+</div>
+</div>
+
+<div class="controls">
+  <kbd>←</kbd> <kbd>→</kbd> <kbd>↑</kbd> <kbd>↓</kbd> drive · <kbd>P</kbd> pause · <kbd>M</kbd> mute · <kbd>R</kbd> restart level
+</div>
+
+<script>
+// ============================================================================
+// NUGGETS — drive a mine cart around static levels, collect gems, dodge hazards
+// ============================================================================
+const cv  = document.getElementById('game');
+const ctx = cv.getContext('2d');
+const W = cv.width, H = cv.height;
+const TILE = 40;
+const COLS = W / TILE;          // 12
+const ROWS = H / TILE;          // 18
+
+const LIVES_EL = document.getElementById('lives');
+const SCORE_EL = document.getElementById('score');
+const LEVEL_EL = document.getElementById('level');
+const GEMS_EL  = document.getElementById('gems');
+const OVL      = document.getElementById('overlay');
+const OVL_TITLE= document.getElementById('ovl-title');
+const OVL_BODY = document.getElementById('ovl-body');
+const OVL_STATS= document.getElementById('ovl-stats');
+const OVL_BTN  = document.getElementById('ovl-btn');
+
+// ---------- Audio ----------
+const Audio = {
+  ctx:null, muted:false,
+  ensure(){ if(!this.ctx) this.ctx = new (window.AudioContext||window.webkitAudioContext)(); },
+  beep(freq,dur=0.08,type='square',vol=0.06){
+    if(this.muted) return;
+    try{
+      this.ensure();
+      const o=this.ctx.createOscillator(),g=this.ctx.createGain();
+      o.type=type; o.frequency.value=freq; g.gain.value=vol;
+      g.gain.exponentialRampToValueAtTime(0.0001,this.ctx.currentTime+dur);
+      o.connect(g).connect(this.ctx.destination);
+      o.start(); o.stop(this.ctx.currentTime+dur);
+    }catch(e){}
+  },
+  gem(){ this.beep(880,0.07,'triangle',0.08); setTimeout(()=>this.beep(1320,0.06,'triangle',0.06),50); },
+  big(){ this.beep(660,0.05,'triangle',0.09); setTimeout(()=>this.beep(990,0.05,'triangle',0.09),40); setTimeout(()=>this.beep(1320,0.08,'triangle',0.09),80); },
+  heart(){ this.beep(523,0.1,'sine',0.1); setTimeout(()=>this.beep(784,0.14,'sine',0.1),100); },
+  hit(){ this.beep(120,0.18,'sawtooth',0.12); setTimeout(()=>this.beep(80,0.22,'sawtooth',0.12),60); },
+  bump(){ this.beep(180,0.04,'square',0.05); },
+  level(){ [523,659,784,1047].forEach((f,i)=>setTimeout(()=>this.beep(f,0.1,'triangle',0.08),i*70)); },
+};
+
+// ---------- RNG (seeded for reproducible levels) ----------
+function mulberry32(seed){return function(){let t=seed+=0x6D2B79F5;t=Math.imul(t^t>>>15,t|1);t^=t+Math.imul(t^t>>>7,t|61);return((t^t>>>14)>>>0)/4294967296;};}
+
+// ---------- Level generation ----------
+// Cell-based: array indexed [row][col]. Cells: 0 empty/track, 1 wall (rock pile), 2 lava, 3 spike, 'g' gem, 'G' big gem, 'H' heart.
+function buildLevel(n) {
+  const rng = mulberry32(0x1A5C + n*1009);
+  const grid = Array.from({length:ROWS}, () => Array(COLS).fill(0));
+  // Outer walls
+  for (let c=0;c<COLS;c++){ grid[0][c]=1; grid[ROWS-1][c]=1; }
+  for (let r=0;r<ROWS;r++){ grid[r][0]=1; grid[r][COLS-1]=1; }
+  // Hazard counts scale with level (arena interior ≈ 22×12 = 264 cells)
+  const rocks  = Math.min(48, 10 + n*3);
+  const lava   = Math.min(22, 3 + Math.floor(n*1.4));
+  const spikes = Math.min(26, 3 + Math.floor(n*1.7));
+  const gems   = Math.min(36, 13 + Math.floor(n*1.8));
+  const bigGems= Math.min(6, Math.floor(n/2));
+  const hearts = (n>=2 && n%3===0) ? 1 : 0;
+
+  const startR = ROWS - 2, startC = Math.floor(COLS/2);
+  grid[startR][startC] = 0;
+  // Carve a small safe zone around start
+  for (let dr=-1;dr<=1;dr++) for (let dc=-1;dc<=1;dc++){
+    const r=startR+dr, c=startC+dc;
+    if (r>0 && r<ROWS-1 && c>0 && c<COLS-1) grid[r][c]=0;
+  }
+
+  function placeRandom(token, n, opts={}) {
+    const {minDistFromStart=2, allowAdjacent=true, footprint=[[0,0]]} = opts;
+    let tries = 0;
+    while (n > 0 && tries < 800) {
+      tries++;
+      const r = 1 + Math.floor(rng()*(ROWS-2));
+      const c = 1 + Math.floor(rng()*(COLS-2));
+      // Check footprint cells are empty and not the start
+      let ok = true;
+      for (const [dr,dc] of footprint) {
+        const rr=r+dr, cc=c+dc;
+        if (rr<=0||rr>=ROWS-1||cc<=0||cc>=COLS-1) { ok=false; break; }
+        if (grid[rr][cc] !== 0) { ok=false; break; }
+        const dist = Math.abs(rr-startR) + Math.abs(cc-startC);
+        if (dist < minDistFromStart) { ok=false; break; }
+      }
+      if (!ok) continue;
+      for (const [dr,dc] of footprint) grid[r+dr][c+dc] = token;
+      n--;
+    }
+  }
+
+  // Larger lava pools (2x1 or 2x2)
+  for (let i=0;i<lava;i++) {
+    const big = rng() < 0.35;
+    const fp = big ? [[0,0],[0,1],[1,0],[1,1]] : [[0,0],[0,1]];
+    placeRandom(2, 1, {minDistFromStart:4, footprint:fp});
+  }
+  // Spike strips (1x2 or 1x3)
+  for (let i=0;i<spikes;i++) {
+    const long = rng() < 0.4;
+    const horiz = rng() < 0.5;
+    let fp;
+    if (long) fp = horiz ? [[0,0],[0,1],[0,2]] : [[0,0],[1,0],[2,0]];
+    else      fp = horiz ? [[0,0],[0,1]]       : [[0,0],[1,0]];
+    placeRandom(3, 1, {minDistFromStart:3, footprint:fp});
+  }
+  // Rocks (scattered)
+  placeRandom(1, rocks, {minDistFromStart:2});
+  // Gems
+  placeRandom('g', gems, {minDistFromStart:1});
+  placeRandom('G', bigGems, {minDistFromStart:3});
+  if (hearts > 0) placeRandom('H', hearts, {minDistFromStart:5});
+
+  // Reachability: BFS from start; remove gems and hearts that aren't reachable
+  const reach = Array.from({length:ROWS}, () => Array(COLS).fill(false));
+  const queue = [[startR,startC]];
+  reach[startR][startC] = true;
+  while (queue.length) {
+    const [r,c] = queue.shift();
+    for (const [dr,dc] of [[-1,0],[1,0],[0,-1],[0,1]]) {
+      const rr=r+dr, cc=c+dc;
+      if (rr<=0||rr>=ROWS-1||cc<=0||cc>=COLS-1) continue;
+      if (reach[rr][cc]) continue;
+      const v = grid[rr][cc];
+      if (v === 1) continue;             // rock blocks
+      if (v === 2 || v === 3) continue;  // hazards block (you'd die)
+      reach[rr][cc] = true;
+      queue.push([rr,cc]);
+    }
+  }
+  // Convert unreachable pickups to empty so levels can still be cleared
+  let totalGems = 0, totalBig = 0;
+  for (let r=1;r<ROWS-1;r++) for (let c=1;c<COLS-1;c++) {
+    if (grid[r][c] === 'g' || grid[r][c] === 'G' || grid[r][c] === 'H') {
+      if (!reach[r][c]) grid[r][c] = 0;
+      else if (grid[r][c] === 'g') totalGems++;
+      else if (grid[r][c] === 'G') totalBig++;
+    }
+  }
+
+  return { grid, startR, startC, totalGems: totalGems + totalBig };
+}
+
+// ---------- State ----------
+const State = {
+  running:false, paused:false,
+  lives:3, maxLives:5, score:0, level:1,
+  gemsLeft:0, gemsTotal:0,
+  grid:null, startR:0, startC:0,
+  cart:{ x:0,y:0, vx:0,vy:0, dir:0 },   // dir: angle for facing
+  invuln:0, flashTimer:0, shakeTimer:0,
+  particles:[], floatText:[],
+  bestScore: +(localStorage.getItem('nuggets_best')||0),
+};
+
+const keys = {};
+addEventListener('keydown', e => {
+  if (['ArrowLeft','ArrowRight','ArrowUp','ArrowDown',' '].includes(e.key)) e.preventDefault();
+  keys[e.key] = true;
+  if (e.key==='p'||e.key==='P') togglePause();
+  if (e.key==='m'||e.key==='M') Audio.muted = !Audio.muted;
+  if (e.key==='r'||e.key==='R') { if (State.running) restartLevel(); }
+});
+addEventListener('keyup', e => { keys[e.key] = false; });
+
+OVL_BTN.addEventListener('click', () => {
+  Audio.ensure();
+  if (!State.running) { newGame(); }
+  else if (State.lives <= 0) { newGame(); }
+  else if (State.gemsLeft === 0) { State.level++; loadLevel(State.level); resume(); }
+  else if (State.paused) { resume(); }
+});
+
+function togglePause() {
+  if (!State.running || State.lives <= 0 || State.gemsLeft === 0) return;
+  State.paused = !State.paused;
+  if (State.paused) {
+    OVL_TITLE.textContent = 'Paused';
+    OVL_BODY.textContent = 'Catch your breath.';
+    OVL_STATS.textContent = '';
+    OVL_BTN.textContent = 'Resume';
+    OVL.classList.add('show');
+  } else {
+    OVL.classList.remove('show');
+  }
+}
+
+function resume() { State.paused = false; OVL.classList.remove('show'); }
+
+function newGame() {
+  State.lives = 3; State.score = 0; State.level = 1;
+  loadLevel(1);
+  State.running = true;
+  resume();
+}
+
+function loadLevel(n) {
+  const lvl = buildLevel(n);
+  State.grid = lvl.grid;
+  State.startR = lvl.startR;
+  State.startC = lvl.startC;
+  State.gemsTotal = lvl.totalGems;
+  State.gemsLeft = lvl.totalGems;
+  spawnCart();
+  State.particles.length = 0;
+  State.floatText.length = 0;
+  State.flashTimer = 0.5;
+  Audio.level();
+  updateHUD();
+}
+
+function spawnCart() {
+  State.cart.x = State.startC * TILE + TILE/2;
+  State.cart.y = State.startR * TILE + TILE/2;
+  State.cart.vx = 0; State.cart.vy = 0;
+  State.cart.dir = -Math.PI/2;
+  State.invuln = 1.4;
+}
+
+function restartLevel() {
+  loadLevel(State.level);
+  resume();
+}
+
+function gameOver() {
+  State.running = false;
+  if (State.score > State.bestScore) {
+    State.bestScore = State.score;
+    localStorage.setItem('nuggets_best', String(State.score));
+  }
+  OVL_TITLE.textContent = 'Cave-In';
+  OVL_BODY.textContent = 'Your cart is wrecked. The mine is dark. Try again?';
+  OVL_STATS.textContent = `Score ${State.score} · Reached level ${State.level} · Best ${State.bestScore}`;
+  OVL_BTN.textContent = 'New Run';
+  OVL.classList.add('show');
+}
+
+function levelClear() {
+  // Bonus for remaining lives
+  const lifeBonus = State.lives * 25;
+  State.score += 100 + lifeBonus;
+  Audio.level();
+  OVL_TITLE.textContent = `Level ${State.level} cleared`;
+  OVL_BODY.textContent = `Every nugget collected. +100 clear bonus, +${lifeBonus} for lives remaining.`;
+  OVL_STATS.textContent = `Score ${State.score} · Lives ${State.lives}`;
+  OVL_BTN.textContent = `Descend to Level ${State.level + 1} →`;
+  OVL.classList.add('show');
+  updateHUD();
+}
+
+function updateHUD() {
+  LIVES_EL.textContent = '♥'.repeat(Math.max(0,State.lives)) + '♡'.repeat(Math.max(0,State.maxLives-State.lives));
+  SCORE_EL.textContent = State.score;
+  LEVEL_EL.textContent = State.level;
+  GEMS_EL.textContent  = `${State.gemsTotal - State.gemsLeft}/${State.gemsTotal}`;
+}
+
+// ---------- Update ----------
+const CART_R = 14;            // collision radius
+const ACCEL = 1100;
+const MAX_SPD = 220;
+const FRICTION = 0.0001;     // pow-based, very strong
+
+function update(dt) {
+  if (!State.running || State.paused) return;
+  if (State.invuln > 0) State.invuln -= dt;
+  if (State.flashTimer > 0) State.flashTimer -= dt;
+  if (State.shakeTimer > 0) State.shakeTimer -= dt;
+
+  // Particles
+  for (const pt of State.particles) {
+    pt.x += pt.vx*dt; pt.y += pt.vy*dt; pt.vy += 600*dt; pt.life -= dt;
+  }
+  State.particles = State.particles.filter(p => p.life > 0);
+  // Floating texts
+  for (const f of State.floatText) { f.y -= 30*dt; f.life -= dt; }
+  State.floatText = State.floatText.filter(f => f.life > 0);
+
+  // Input → desired velocity (4-directional with diagonals allowed)
+  let ax = 0, ay = 0;
+  if (keys['ArrowLeft'])  ax -= 1;
+  if (keys['ArrowRight']) ax += 1;
+  if (keys['ArrowUp'])    ay -= 1;
+  if (keys['ArrowDown'])  ay += 1;
+  if (ax !== 0 || ay !== 0) {
+    const len = Math.hypot(ax, ay);
+    State.cart.vx += (ax/len) * ACCEL * dt;
+    State.cart.vy += (ay/len) * ACCEL * dt;
+    State.cart.dir = Math.atan2(ay, ax);
+  } else {
+    State.cart.vx *= Math.pow(FRICTION, dt);
+    State.cart.vy *= Math.pow(FRICTION, dt);
+  }
+  // Cap speed
+  const sp = Math.hypot(State.cart.vx, State.cart.vy);
+  if (sp > MAX_SPD) { State.cart.vx *= MAX_SPD/sp; State.cart.vy *= MAX_SPD/sp; }
+
+  // Move with axis-separated wall collision against rock tiles (1)
+  moveAxis('x', State.cart.vx * dt);
+  moveAxis('y', State.cart.vy * dt);
+
+  // Pickup & hazard checks
+  checkCellInteractions();
+}
+
+function moveAxis(axis, delta) {
+  if (delta === 0) return;
+  const c = State.cart;
+  if (axis === 'x') {
+    const nx = c.x + delta;
+    if (collidesAt(nx, c.y)) {
+      // Hit a rock or boundary — stop axis, lose a tiny speed, bump
+      if (Math.abs(c.vx) > 60) Audio.bump();
+      c.vx = 0;
+      // Snap to nearest non-colliding x
+      const step = Math.sign(delta) * 1;
+      let test = c.x;
+      while (!collidesAt(test + step, c.y) && Math.abs(test - c.x) < Math.abs(delta)+8) test += step;
+      c.x = test;
+    } else c.x = nx;
+  } else {
+    const ny = c.y + delta;
+    if (collidesAt(c.x, ny)) {
+      if (Math.abs(c.vy) > 60) Audio.bump();
+      c.vy = 0;
+      const step = Math.sign(delta) * 1;
+      let test = c.y;
+      while (!collidesAt(c.x, test + step) && Math.abs(test - c.y) < Math.abs(delta)+8) test += step;
+      c.y = test;
+    } else c.y = ny;
+  }
+}
+
+function collidesAt(x, y) {
+  // Only rocks (1) act as walls
+  const points = [
+    [x - CART_R + 2, y - CART_R + 2],
+    [x + CART_R - 2, y - CART_R + 2],
+    [x - CART_R + 2, y + CART_R - 2],
+    [x + CART_R - 2, y + CART_R - 2],
+  ];
+  for (const [px,py] of points) {
+    const c = Math.floor(px / TILE), r = Math.floor(py / TILE);
+    if (r<0||r>=ROWS||c<0||c>=COLS) return true;
+    if (State.grid[r][c] === 1) return true;
+  }
+  return false;
+}
+
+function checkCellInteractions() {
+  const c = Math.floor(State.cart.x / TILE);
+  const r = Math.floor(State.cart.y / TILE);
+  if (r<0||r>=ROWS||c<0||c>=COLS) return;
+  const cell = State.grid[r][c];
+  if (cell === 'g' || cell === 'G' || cell === 'H') {
+    State.grid[r][c] = 0;
+    const cx = c*TILE+TILE/2, cy = r*TILE+TILE/2;
+    if (cell === 'g') {
+      State.score += 10; State.gemsLeft -= 1;
+      Audio.gem(); burst(cx,cy,'#e5c158',8); floatText('+10', cx, cy, '#e5c158');
+    } else if (cell === 'G') {
+      State.score += 50; State.gemsLeft -= 1;
+      Audio.big(); burst(cx,cy,'#a4e8ff',14); floatText('+50', cx, cy, '#a4e8ff');
+    } else if (cell === 'H') {
+      if (State.lives < State.maxLives) { State.lives += 1; floatText('+1 LIFE', cx, cy, '#ff6a6a'); }
+      else { State.score += 100; floatText('+100', cx, cy, '#ff6a6a'); }
+      Audio.heart(); burst(cx,cy,'#ff6a6a',12);
+    }
+    updateHUD();
+    if (State.gemsLeft === 0) levelClear();
+  } else if ((cell === 2 || cell === 3) && State.invuln <= 0) {
+    hit(cell === 2 ? 'lava' : 'spike');
+  }
+}
+
+function hit(kind) {
+  State.lives -= 1;
+  Audio.hit();
+  State.flashTimer = 0.4;
+  State.shakeTimer = 0.45;
+  burst(State.cart.x, State.cart.y, kind==='lava'?'#ff5a2e':'#c0a070', 22);
+  updateHUD();
+  if (State.lives <= 0) { State.running = false; gameOver(); }
+  else { spawnCart(); }
+}
+
+function burst(x,y,color,n=10) {
+  for (let i=0;i<n;i++) {
+    const a = Math.random()*Math.PI*2, s = 80+Math.random()*180;
+    State.particles.push({ x,y, vx:Math.cos(a)*s, vy:Math.sin(a)*s-80, life:0.4+Math.random()*0.5, color, r:1.5+Math.random()*2 });
+  }
+}
+function floatText(text, x, y, color) {
+  State.floatText.push({ text, x, y, color, life:1.1 });
+}
+
+// ---------- Drawing ----------
+function draw() {
+  if (!State.grid) { ctx.fillStyle = '#1a140d'; ctx.fillRect(0,0,W,H); return; }
+  let sx=0, sy=0;
+  if (State.shakeTimer > 0) {
+    sx = (Math.random()-0.5)*8 * State.shakeTimer * 2;
+    sy = (Math.random()-0.5)*8 * State.shakeTimer * 2;
+  }
+  ctx.save(); ctx.translate(sx, sy);
+
+  // Floor (dirt with checker shading)
+  for (let r=0;r<ROWS;r++) for (let c=0;c<COLS;c++) {
+    ctx.fillStyle = ((r+c) & 1) ? '#1c1610' : '#1a140d';
+    ctx.fillRect(c*TILE, r*TILE, TILE, TILE);
+  }
+
+  // Tracks: faint horizontal & vertical rail crosshatch (purely decorative)
+  ctx.strokeStyle = 'rgba(138,112,80,0.18)';
+  ctx.lineWidth = 1;
+  for (let c=1;c<COLS;c++) { ctx.beginPath(); ctx.moveTo(c*TILE,0); ctx.lineTo(c*TILE,H); ctx.stroke(); }
+  for (let r=1;r<ROWS;r++) { ctx.beginPath(); ctx.moveTo(0,r*TILE); ctx.lineTo(W,r*TILE); ctx.stroke(); }
+
+  // Cells: walls / hazards / pickups
+  for (let r=0;r<ROWS;r++) for (let c=0;c<COLS;c++) {
+    const v = State.grid[r][c];
+    const x = c*TILE, y = r*TILE;
+    if (v === 1) drawRock(x, y);
+    else if (v === 2) drawLava(x, y);
+    else if (v === 3) drawSpike(x, y);
+    else if (v === 'g') drawGem(x+TILE/2, y+TILE/2, 11, '#e5c158', '#fff4c8');
+    else if (v === 'G') drawGem(x+TILE/2, y+TILE/2, 15, '#5ec5ff', '#cdf0ff');
+    else if (v === 'H') drawHeart(x+TILE/2, y+TILE/2, 13);
+  }
+
+  // Cart
+  drawCart();
+
+  // Particles
+  for (const pt of State.particles) {
+    ctx.globalAlpha = Math.max(0, pt.life);
+    ctx.fillStyle = pt.color;
+    ctx.fillRect(pt.x-pt.r, pt.y-pt.r, pt.r*2, pt.r*2);
+  }
+  ctx.globalAlpha = 1;
+
+  // Floating text
+  for (const f of State.floatText) {
+    ctx.globalAlpha = Math.min(1, f.life);
+    ctx.fillStyle = f.color;
+    ctx.font = 'bold 14px "Iowan Old Style", Georgia, serif';
+    ctx.textAlign = 'center';
+    ctx.fillText(f.text, f.x, f.y);
+    ctx.globalAlpha = 1;
+  }
+
+  // Level-up flash
+  if (State.flashTimer > 0) {
+    ctx.fillStyle = `rgba(229,193,88,${0.25*State.flashTimer})`;
+    ctx.fillRect(0,0,W,H);
+  }
+
+  ctx.restore();
+
+  // Vignette
+  const grd = ctx.createRadialGradient(W/2,H/2,W*0.3, W/2,H/2,W*0.7);
+  grd.addColorStop(0,'rgba(0,0,0,0)');
+  grd.addColorStop(1,'rgba(0,0,0,0.55)');
+  ctx.fillStyle = grd; ctx.fillRect(0,0,W,H);
+}
+
+function drawRock(x, y) {
+  // Tile-sized rock pile / wall
+  ctx.fillStyle = '#3a2d1f';
+  ctx.fillRect(x, y, TILE, TILE);
+  ctx.fillStyle = '#6e6258';
+  ctx.beginPath(); ctx.arc(x+TILE/2, y+TILE/2, TILE/2-3, 0, Math.PI*2); ctx.fill();
+  ctx.fillStyle = '#86796d';
+  ctx.beginPath(); ctx.arc(x+TILE/2-5, y+TILE/2-5, TILE/3, 0, Math.PI*2); ctx.fill();
+  ctx.fillStyle = '#3a3128';
+  ctx.beginPath(); ctx.arc(x+TILE/2+6, y+TILE/2+6, TILE/4, 0, Math.PI*2); ctx.fill();
+}
+
+function drawLava(x, y) {
+  const t = performance.now()*0.002;
+  const grd = ctx.createLinearGradient(0, y, 0, y+TILE);
+  grd.addColorStop(0,'#ffb04a'); grd.addColorStop(0.5,'#ff5a2e'); grd.addColorStop(1,'#a02010');
+  ctx.fillStyle = grd; ctx.fillRect(x, y, TILE, TILE);
+  // bubbles
+  ctx.fillStyle = '#ffe0a0';
+  for (let i=0;i<2;i++) {
+    const bx = x + 8 + ((i*22 + t*30)%(TILE-16));
+    const by = y + 10 + Math.sin(t + i*1.7)*5;
+    ctx.beginPath(); ctx.arc(bx, by, 2.5, 0, Math.PI*2); ctx.fill();
+  }
+  // glow border
+  ctx.strokeStyle = 'rgba(255,200,100,0.5)';
+  ctx.lineWidth = 2;
+  ctx.strokeRect(x+1, y+1, TILE-2, TILE-2);
+}
+
+function drawSpike(x, y) {
+  // base
+  ctx.fillStyle = '#2a1f15';
+  ctx.fillRect(x, y, TILE, TILE);
+  // 3 spikes pointing up
+  ctx.fillStyle = '#cdc0b3';
+  for (let i=0;i<3;i++) {
+    const sx = x + 6 + i*((TILE-12)/2);
+    ctx.beginPath();
+    ctx.moveTo(sx, y + TILE - 6);
+    ctx.lineTo(sx + 6, y + 6);
+    ctx.lineTo(sx + 12, y + TILE - 6);
+    ctx.closePath(); ctx.fill();
+  }
+  ctx.fillStyle = '#9a8d80';
+  for (let i=0;i<3;i++) {
+    const sx = x + 6 + i*((TILE-12)/2);
+    ctx.beginPath();
+    ctx.moveTo(sx + 6, y + 6);
+    ctx.lineTo(sx + 12, y + TILE - 6);
+    ctx.lineTo(sx + 8, y + TILE - 6);
+    ctx.closePath(); ctx.fill();
+  }
+}
+
+function drawGem(x, y, r, color, hl) {
+  const yo = Math.sin(performance.now()*0.004 + x*0.1)*1.5;
+  ctx.fillStyle = color;
+  ctx.beginPath();
+  ctx.moveTo(x, y - r + yo);
+  ctx.lineTo(x + r*0.85, y + yo);
+  ctx.lineTo(x, y + r + yo);
+  ctx.lineTo(x - r*0.85, y + yo);
+  ctx.closePath(); ctx.fill();
+  ctx.fillStyle = hl;
+  ctx.beginPath();
+  ctx.moveTo(x, y - r + yo);
+  ctx.lineTo(x + r*0.3, y - r*0.3 + yo);
+  ctx.lineTo(x - r*0.3, y - r*0.3 + yo);
+  ctx.closePath(); ctx.fill();
+  ctx.fillStyle = 'rgba(255,255,255,0.7)';
+  ctx.fillRect(x + r*0.3, y - r*0.5 + yo, 2, 2);
+}
+function drawHeart(x, y, r) {
+  const yo = Math.sin(performance.now()*0.005)*1.5;
+  ctx.fillStyle = '#ff4060';
+  ctx.beginPath();
+  ctx.moveTo(x, y - r*0.4 + yo);
+  ctx.bezierCurveTo(x + r*1.2, y - r*1.4 + yo, x + r*1.2, y + r*0.2 + yo, x, y + r + yo);
+  ctx.bezierCurveTo(x - r*1.2, y + r*0.2 + yo, x - r*1.2, y - r*1.4 + yo, x, y - r*0.4 + yo);
+  ctx.fill();
+  ctx.fillStyle = 'rgba(255,200,200,0.8)';
+  ctx.beginPath(); ctx.arc(x - r*0.4, y - r*0.4 + yo, r*0.18, 0, Math.PI*2); ctx.fill();
+}
+
+function drawCart() {
+  const c = State.cart;
+  const flicker = State.invuln > 0 && Math.floor(State.invuln*14) % 2 === 0;
+  ctx.save();
+  ctx.translate(c.x, c.y);
+  ctx.rotate(c.dir + Math.PI/2);  // dir 0 = right; we draw cart pointing up
+  ctx.globalAlpha = flicker ? 0.45 : 1;
+
+  const CW = 28, CH = 32;
+
+  // Wheels
+  ctx.fillStyle = '#1a1a1a';
+  ctx.beginPath(); ctx.arc(-CW/2 + 4, CH/2 - 2, 5, 0, Math.PI*2); ctx.fill();
+  ctx.beginPath(); ctx.arc( CW/2 - 4, CH/2 - 2, 5, 0, Math.PI*2); ctx.fill();
+  ctx.beginPath(); ctx.arc(-CW/2 + 4, -CH/2 + 4, 5, 0, Math.PI*2); ctx.fill();
+  ctx.beginPath(); ctx.arc( CW/2 - 4, -CH/2 + 4, 5, 0, Math.PI*2); ctx.fill();
+
+  // Body
+  ctx.fillStyle = '#7a4520';
+  ctx.fillRect(-CW/2, -CH/2 + 2, CW, CH - 6);
+  ctx.fillStyle = '#9a5a30';
+  ctx.fillRect(-CW/2, -CH/2 + 2, CW, 3);
+  ctx.fillStyle = '#5a2f15';
+  ctx.fillRect(-CW/2, CH/2 - 7, CW, 3);
+  // planks
+  ctx.fillStyle = 'rgba(0,0,0,0.3)';
+  ctx.fillRect(-CW/2 + 8, -CH/2 + 2, 1, CH - 6);
+  ctx.fillRect(-CW/2 + 18, -CH/2 + 2, 1, CH - 6);
+  // metal trim
+  ctx.strokeStyle = '#aa9070';
+  ctx.lineWidth = 2;
+  ctx.strokeRect(-CW/2, -CH/2 + 2, CW, CH - 6);
+
+  // Gold load
+  ctx.fillStyle = '#e5c158';
+  ctx.beginPath();
+  ctx.moveTo(0, -6);
+  ctx.lineTo(5, 0);
+  ctx.lineTo(0, 6);
+  ctx.lineTo(-5, 0);
+  ctx.closePath(); ctx.fill();
+
+  // Miner head at front
+  ctx.fillStyle = '#f0c898';
+  ctx.beginPath(); ctx.arc(0, -CH/2 - 1, 6, 0, Math.PI*2); ctx.fill();
+  ctx.fillStyle = '#e5c158';
+  ctx.beginPath(); ctx.arc(0, -CH/2 - 1, 7, Math.PI, 0); ctx.fill();
+  ctx.fillRect(-8, -CH/2 - 1, 16, 2);
+  // Headlamp glow forward
+  ctx.fillStyle = '#fff8c0';
+  ctx.fillRect(-2, -CH/2 - 4, 4, 3);
+  ctx.fillStyle = 'rgba(255,248,192,0.18)';
+  ctx.beginPath();
+  ctx.moveTo(0, -CH/2 - 4);
+  ctx.lineTo(-22, -CH/2 - 30);
+  ctx.lineTo( 22, -CH/2 - 30);
+  ctx.closePath(); ctx.fill();
+
+  ctx.globalAlpha = 1;
+  ctx.restore();
+}
+
+// ---------- Loop ----------
+let last = performance.now();
+function loop(now) {
+  const dt = Math.min(0.05, (now - last)/1000);
+  last = now;
+  update(dt);
+  draw();
+  requestAnimationFrame(loop);
+}
+updateHUD();
+requestAnimationFrame(loop);
+</script>
+</body>
+</html>

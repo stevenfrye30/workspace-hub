@@ -1,0 +1,11 @@
+# Source files we don't want to ship to Pages
+*.docx
+*.pptx
+*.xlsx
+*.bz2
+*.zip
+*_cache.json
+_probe.py
+.claude/
+.DS_Store
+Thumbs.db
