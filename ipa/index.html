@@ -184,10 +184,16 @@ body{background:var(--bg);color:var(--text);font-family:"Segoe UI",Arial,sans-se
 .sm-syllable[data-stress="2"]::before{content:"ˌ";position:absolute;top:-14px;left:4px;color:var(--gold);font-weight:700;font-size:13px;line-height:1;opacity:.7;font-family:var(--mono)}
 .sm-syllable[data-group]::after{content:"";position:absolute;left:3px;right:3px;bottom:-5px;height:3px;border-radius:2px;background:var(--sm-group)}
 .sm-syllable[data-group]:hover{background:color-mix(in srgb, var(--sm-group) 20%, transparent)}
+#sm-output[data-mode="multirhyme"] .sm-syllable[data-group]{background:color-mix(in srgb, var(--sm-group) 14%, transparent)}
+#sm-output[data-mode="multirhyme"] .sm-syllable[data-group]:hover{background:color-mix(in srgb, var(--sm-group) 28%, transparent)}
 .sm-line{display:block;margin-bottom:8px;position:relative;padding-left:32px}
 .sm-line:last-child{margin-bottom:0}
 .sm-line-play{position:absolute;left:0;top:28px;width:24px;height:24px;border-radius:50%;background:var(--surf2);border:1px solid var(--bdr);color:var(--gold);font-size:9px;cursor:pointer;padding:0;display:flex;align-items:center;justify-content:center;transition:border-color .15s,background .15s}
 .sm-line-play:hover{border-color:var(--gold);background:var(--surf)}
+.sm-line-meter{display:flex;align-items:baseline;gap:14px;padding:0 0 0 2px;margin-top:-2px;font-size:11px;color:var(--muted);flex-wrap:wrap}
+.sm-meter-glyphs{font-family:var(--mono);font-size:13px;color:var(--gold);letter-spacing:.18em;opacity:.85}
+.sm-meter-label{color:var(--muted);text-transform:uppercase;letter-spacing:.06em;font-weight:600;font-size:10px}
+.sm-meter-label.sm-meter-mixed{opacity:.6;font-style:italic;text-transform:none;letter-spacing:0}
 .sm-word-text.clickable,.sm-syllable.clickable,.sm-phon.clickable{cursor:pointer}
 .sm-word-text.clickable:hover{color:var(--gold)}
 .sm-syllable.clickable:hover:not([data-group]){background:var(--surf2)}
@@ -541,6 +547,7 @@ body{background:var(--bg);color:var(--text);font-family:"Segoe UI",Arial,sans-se
     <div id="sm-mode-picker" role="group" aria-label="Highlight mode">
       <span class="sm-mode-label">Highlight</span>
       <label><input type="radio" name="sm-mode" value="rhyme" checked>Rhyme</label>
+      <label><input type="radio" name="sm-mode" value="multirhyme">Multi-rhyme</label>
       <label><input type="radio" name="sm-mode" value="endrhyme">End-rhyme</label>
       <label><input type="radio" name="sm-mode" value="assonance">Assonance</label>
       <label><input type="radio" name="sm-mode" value="alliteration">Alliteration</label>
@@ -2114,8 +2121,148 @@ function smSylRhymeKey(syl) {
   return n ? n + smSylCoda(syl) : "";
 }
 
+const SM_FOOT_NAMES = {
+  "iambic":"iambic","trochaic":"trochaic","anapestic":"anapestic",
+  "dactylic":"dactylic","spondaic":"spondaic"
+};
+const SM_METER_NAMES = {
+  1:"monometer",2:"dimeter",3:"trimeter",4:"tetrameter",
+  5:"pentameter",6:"hexameter",7:"heptameter",8:"octameter"
+};
+
+function smAnalyzeMeter(stresses) {
+  if (stresses.length < 4) return null;
+  const binary = stresses.map(s => s > 0 ? 1 : 0);
+  const patterns = [
+    { name:"iambic",    foot:[0,1] },
+    { name:"trochaic",  foot:[1,0] },
+    { name:"anapestic", foot:[0,0,1] },
+    { name:"dactylic",  foot:[1,0,0] },
+    { name:"spondaic",  foot:[1,1] }
+  ];
+  let best = null;
+  for (const pat of patterns) {
+    let matches = 0;
+    for (let i = 0; i < binary.length; i++) {
+      if (binary[i] === pat.foot[i % pat.foot.length]) matches++;
+    }
+    const score = matches / binary.length;
+    if (!best || score > best.score) best = { ...pat, score };
+  }
+  const feet = Math.floor(binary.length / best.foot.length);
+  return {
+    binary,
+    pattern: best.name,
+    feet,
+    meter: SM_METER_NAMES[feet] || `${feet}-foot`,
+    confidence: best.score
+  };
+}
+
+function smRenderMeter(lineBox, wordsInLine, processed) {
+  const stresses = [];
+  for (const wIdx of wordsInLine) {
+    const wp = processed[wIdx];
+    if (!wp.known) continue;
+    for (const syl of wp.syllables) stresses.push(syl.stress);
+  }
+  const analysis = smAnalyzeMeter(stresses);
+  if (!analysis) return;
+  const foot = document.createElement("div");
+  foot.className = "sm-line-meter";
+  const glyphs = analysis.binary.map(b => b ? "ˉ" : "˘").join(" ");
+  const glyphSpan = document.createElement("span");
+  glyphSpan.className = "sm-meter-glyphs";
+  glyphSpan.textContent = glyphs;
+  foot.appendChild(glyphSpan);
+  if (analysis.confidence >= 0.7 && analysis.feet >= 2) {
+    const label = document.createElement("span");
+    label.className = "sm-meter-label";
+    label.textContent = `${analysis.pattern} ${analysis.meter}`;
+    label.title = `${Math.round(analysis.confidence*100)}% match to ${analysis.pattern} foot pattern · ${analysis.feet} feet`;
+    foot.appendChild(label);
+  } else if (analysis.feet >= 2) {
+    const label = document.createElement("span");
+    label.className = "sm-meter-label sm-meter-mixed";
+    label.textContent = `mixed · ${analysis.binary.length} syl`;
+    label.title = `No single foot pattern dominates (best: ${analysis.pattern} at ${Math.round(analysis.confidence*100)}%)`;
+    foot.appendChild(label);
+  }
+  lineBox.appendChild(foot);
+}
+
+function smFindMultiRhymes(flatSyls, maxLen, minLen) {
+  maxLen = maxLen || 4;
+  minLen = minLen || 2;
+  const used = new Set();
+  const chains = [];
+  for (let N = maxLen; N >= minLen; N--) {
+    const buckets = new Map();
+    for (let i = 0; i + N <= flatSyls.length; i++) {
+      const keys = [];
+      let ok = true;
+      for (let k = 0; k < N; k++) {
+        const key = flatSyls[i + k].key;
+        if (!key) { ok = false; break; }
+        keys.push(key);
+      }
+      if (!ok) continue;
+      const sig = keys.join("|");
+      if (!buckets.has(sig)) buckets.set(sig, []);
+      buckets.get(sig).push(i);
+    }
+    for (const [, positions] of buckets) {
+      const filtered = positions.filter(p => {
+        for (let k = 0; k < N; k++) if (used.has(p + k)) return false;
+        return true;
+      });
+      const accepted = [];
+      let lastEnd = -1;
+      for (const p of filtered) {
+        if (p > lastEnd) {
+          accepted.push(p);
+          lastEnd = p + N - 1;
+        }
+      }
+      if (accepted.length >= 2) {
+        for (const p of accepted) {
+          for (let k = 0; k < N; k++) used.add(p + k);
+        }
+        chains.push({ length: N, positions: accepted });
+      }
+    }
+  }
+  // Order chains: longer first, then by earliest start
+  chains.sort((a, b) => b.length - a.length || a.positions[0] - b.positions[0]);
+  return chains;
+}
+
 function smComputeGroups(processed, byLine, mode) {
   if (mode === "none") return () => null;
+
+  if (mode === "multirhyme") {
+    const flat = [];
+    for (let w = 0; w < processed.length; w++) {
+      const wp = processed[w];
+      if (!wp.known) continue;
+      wp.syllables.forEach((sy, s) => {
+        flat.push({ w, s, key: smSylRhymeKey(sy) });
+      });
+    }
+    const chains = smFindMultiRhymes(flat, 4, 2).slice(0, SM_GROUP_COLORS.length);
+    const byPos = new Map();
+    chains.forEach((ch, i) => {
+      const color = SM_GROUP_COLORS[i];
+      for (const p of ch.positions) {
+        for (let k = 0; k < ch.length; k++) {
+          const entry = flat[p + k];
+          byPos.set(entry.w + ":" + entry.s, color);
+        }
+      }
+    });
+    return (w, s) => byPos.get(w + ":" + s) || null;
+  }
+
   const entries = [];
   if (mode === "endrhyme") {
     for (const lineWords of byLine) {
@@ -2200,6 +2347,7 @@ function smVisualize() {
 
   const mode = document.querySelector('input[name="sm-mode"]:checked').value;
   const groupColor = smComputeGroups(processed, byLine, mode);
+  out.dataset.mode = mode;
 
   let missing = 0;
   for (const lineWords of byLine) {
@@ -2284,6 +2432,7 @@ function smVisualize() {
       wrap.appendChild(row);
       lineBox.appendChild(wrap);
     }
+    smRenderMeter(lineBox, lineWords, processed);
     out.appendChild(lineBox);
   }
 
