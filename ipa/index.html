@@ -107,6 +107,8 @@ body{background:var(--bg);color:var(--text);font-family:"Segoe UI",Arial,sans-se
 .ending-card:hover{border-color:var(--gold);background:var(--surf)}
 .ending-card:first-child{border-radius:0}
 .ending-card:last-child{border-radius:0 0 var(--radius) var(--radius)}
+.ending-card-empty{opacity:.35;cursor:not-allowed}
+.ending-card-empty:hover{border-color:var(--bdr);background:var(--surf2)}
 .ec-sym{font-size:18px;font-family:var(--mono);color:var(--blue)}
 .ec-ex{font-size:12px;color:var(--muted);margin-top:3px;line-height:1.4}
 
@@ -631,18 +633,37 @@ function switchTabDirect(name) {
 
     const grid = document.createElement("div");
     grid.className = "endings-grid";
+    const stripStress = s => s.replace(/[ˈˌ]/g, "");
     ENDINGS[fname].forEach(item => {
-      const card = document.createElement("div");
-      card.className = "ending-card";
-      card.innerHTML = `<div class="ec-sym">${item.end}</div>${item.ex ? `<div class="ec-ex">${item.ex}</div>` : ""}`;
-      card.title = "Search rhymes for this ending";
-      card.onclick = () => {
-        const match = Object.entries(D).find(([w,e]) => e[1][0]===item.end.replace(/[ˈˌ]/g,""));
-        if (match) {
-          switchTabDirect("rhyme");
-          doSearch(match[0]);
+      const cleanEnd = stripStress(item.end);
+      let matchWord = null, matchDepth = 0;
+      for (const [w, e] of Object.entries(D)) {
+        const rks = e[1];
+        for (let i = 0; i < rks.length; i++) {
+          if (stripStress(rks[i]) === cleanEnd) {
+            matchWord = w;
+            matchDepth = i + 1;
+            break;
+          }
         }
-      };
+        if (matchWord) break;
+      }
+
+      const card = document.createElement("div");
+      card.className = "ending-card" + (matchWord ? "" : " ending-card-empty");
+      card.innerHTML = `<div class="ec-sym">${item.end}</div>${item.ex ? `<div class="ec-ex">${item.ex}</div>` : ""}`;
+      card.title = matchWord
+        ? `Search rhymes for /${item.end}/ (depth ${matchDepth})`
+        : `No words found ending in /${item.end}/`;
+      if (matchWord) {
+        card.onclick = () => {
+          switchTabDirect("rhyme");
+          const pane = document.querySelector("#rf-panes .rf-pane") || createPane();
+          const depSel = pane.querySelector(".rhyme-depth");
+          depSel.value = String(matchDepth);
+          runSearch(pane, matchWord);
+        };
+      }
       grid.appendChild(card);
     });
     block.appendChild(grid);
