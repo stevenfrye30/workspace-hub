@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Arabic — Languages</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg:#1e2a3a; --fg:#e8ecf1; --muted:#8fa3ba;
+    --border:#32445c; --active:#d4a24c; --tint:#263447; --card:#243347;
+  }
+  body { font-family: Georgia, serif; background: var(--bg); color: var(--fg); line-height: 1.55; min-height: 100vh; }
+  .page { max-width: 900px; margin: 0 auto; padding: 48px 24px 100px; }
+  header { border-bottom: 1px solid var(--border); padding-bottom: 20px; margin-bottom: 28px; display: flex; align-items: baseline; gap: 18px; flex-wrap: wrap; }
+  h1 { font-size: 28px; font-weight: 600; letter-spacing: 0.01em; }
+  .subtitle { color: var(--muted); font-style: italic; font-size: 15px; flex: 1; min-width: 240px; }
+  .back { color: var(--active); text-decoration: none; font-size: 14px; }
+  .back:hover { text-decoration: underline; }
+  .grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+  .card { display: block; background: var(--card); border: 1px solid var(--border); padding: 18px 20px; text-decoration: none; color: inherit; transition: border-color 0.15s, transform 0.15s; }
+  .card:hover { border-color: var(--active); transform: translateY(-1px); }
+  .card .t { font-size: 17px; font-weight: 600; color: var(--active); margin-bottom: 4px; }
+  .card .d { font-size: 13px; color: var(--muted); line-height: 1.45; }
+</style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <div>
+      <h1>Arabic</h1>
+      <div class="subtitle">العربية — dictionary, learn, and study tools.</div>
+    </div>
+    <a class="back" href="../">← Languages</a>
+  </header>
+
+  <div class="grid">
+    <a class="card" href="learn.html">
+      <div class="t">Learn</div>
+      <div class="d">Alphabet, pronunciation, and structured lessons.</div>
+    </a>
+    <a class="card" href="study.html">
+      <div class="t">Study</div>
+      <div class="d">Vocabulary review and practice drills.</div>
+    </a>
+    <a class="card" href="dictionary.html">
+      <div class="t">Dictionary</div>
+      <div class="d">Word lookup with roots and translations.</div>
+    </a>
+  </div>
+</div>
+</body>
+</html>

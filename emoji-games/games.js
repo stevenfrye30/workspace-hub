@@ -10,6 +10,14 @@ const GAMES = [
     path: "games/zombies/index.html"
   },
   {
+    name: "Nuggets",
+    emoji: "⛏",
+    color: "#b8901f",
+    desc: "Mine-cart arcade game — dodge rocks, lava, and spikes; collect gems and hearts",
+    tags: ["arcade"],
+    path: "games/nuggets/index.html"
+  },
+  {
     name: "Emoji Match",
     emoji: "🍉",
     color: "#ec4899",

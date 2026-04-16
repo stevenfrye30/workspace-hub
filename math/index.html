@@ -110,6 +110,22 @@
   .swatch { width: 20px; height: 20px; border-radius: 50%; cursor: pointer; border: 2px solid transparent; }
   .swatch:hover { border-color: #fff; }
 
+  /* Symbols panel */
+  .sym-search { width: 100%; background: #0f1419; border: 1px solid #2a313d; color: #e5e7eb; padding: 7px 10px; border-radius: 6px; font-family: inherit; font-size: 0.85rem; outline: none; margin-bottom: 10px; }
+  .sym-search:focus { border-color: #4b6bff; }
+  .sym-groups { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 10px; }
+  .sym-group-btn { background: #1a212b; border: 1px solid #2a313d; color: #8b93a0; padding: 3px 9px; border-radius: 999px; font-size: 0.72rem; cursor: pointer; font-family: inherit; }
+  .sym-group-btn:hover { color: #e5e7eb; border-color: #4b6bff; }
+  .sym-group-btn.active { background: rgba(75,107,255,0.18); color: #a5b4fc; border-color: #4b6bff; }
+  .sym-section-label { color: #7a8089; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; margin: 10px 0 4px; }
+  .sym-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(32px, 1fr)); gap: 3px; margin-bottom: 4px; }
+  .sym-btn { background: #1a212b; border: 1px solid #2a313d; color: #e5e7eb; border-radius: 5px; cursor: pointer; font-family: "Segoe UI Symbol", "Apple Symbols", system-ui, serif; font-size: 1.05rem; padding: 6px 0; text-align: center; line-height: 1; position: relative; }
+  .sym-btn:hover { background: #272f3d; border-color: #4b6bff; }
+  .sym-btn.copied { background: #10b981; border-color: #10b981; color: #fff; }
+  .sym-empty { color: #7a8089; font-size: 0.8rem; text-align: center; padding: 20px 0; }
+  .sym-toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: #1a212b; border: 1px solid #4b6bff; color: #e5e7eb; padding: 8px 14px; border-radius: 6px; font-size: 0.82rem; z-index: 100; opacity: 0; transition: opacity 0.15s; pointer-events: none; }
+  .sym-toast.show { opacity: 1; }
+
   /* scrollbar */
   ::-webkit-scrollbar { width: 8px; }
   ::-webkit-scrollbar-track { background: #0f1419; }
@@ -127,6 +143,7 @@
   <div class="tabs">
     <div class="tab active" data-tab="graph">Graph</div>
     <div class="tab" data-tab="calc">Calc</div>
+    <div class="tab" data-tab="symbols">Symbols</div>
     <div class="tab" data-tab="notes">Notes</div>
     <div class="tab" data-tab="help">Help</div>
   </div>
@@ -175,6 +192,12 @@
     <div id="scratchList"></div>
     <button class="add-btn" id="addScratch">+ Add line</button>
     <div class="section-label">Variables available: a, b, c, ... (sliders), plus ans (last result)</div>
+  </div>
+
+  <div class="panel" data-panel="symbols">
+    <input class="sym-search" id="symSearch" placeholder="Search by name (e.g. integral, alpha)…" />
+    <div class="sym-groups" id="symGroups"></div>
+    <div id="symResults"></div>
   </div>
 
   <div class="panel" data-panel="notes">
@@ -230,6 +253,9 @@
   </div>
 </div>
 
+<div class="sym-toast" id="symToast"></div>
+
+<script src="math_symbols.js"></script>
 <script>
 /* =============================================================
    Expression parser (shunting-yard → compiled JS function)
@@ -1160,6 +1186,100 @@ notesEl.value = state.notes;
 renderSliders();
 renderScratch();
 resize();
+
+/* =============================================================
+   Symbols panel — browse & copy math symbols
+   ============================================================= */
+(function initSymbols() {
+  const data = window.MATH_SYMBOLS || [];
+  const searchEl = document.getElementById('symSearch');
+  const groupsEl = document.getElementById('symGroups');
+  const resultsEl = document.getElementById('symResults');
+  const toastEl = document.getElementById('symToast');
+  if (!searchEl || !groupsEl || !resultsEl) return;
+
+  const GROUP_ORDER = ['All','Greek','Operators','Arrows','Letterlike','Math Alphanumeric','Geometry','Super/Subscript'];
+  let activeGroup = 'All';
+  let query = '';
+
+  GROUP_ORDER.forEach(g => {
+    const b = document.createElement('button');
+    b.className = 'sym-group-btn' + (g === activeGroup ? ' active' : '');
+    b.textContent = g;
+    b.addEventListener('click', () => {
+      activeGroup = g;
+      groupsEl.querySelectorAll('.sym-group-btn').forEach(x => x.classList.toggle('active', x.textContent === g));
+      render();
+    });
+    groupsEl.appendChild(b);
+  });
+
+  function showToast(msg) {
+    toastEl.textContent = msg;
+    toastEl.classList.add('show');
+    clearTimeout(showToast._t);
+    showToast._t = setTimeout(() => toastEl.classList.remove('show'), 900);
+  }
+
+  function copy(ch, btn) {
+    navigator.clipboard?.writeText(ch).then(() => {
+      btn.classList.add('copied');
+      setTimeout(() => btn.classList.remove('copied'), 400);
+      showToast(`Copied ${ch}`);
+    }).catch(() => {
+      const ta = document.createElement('textarea');
+      ta.value = ch; document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); showToast(`Copied ${ch}`); } catch(e) {}
+      document.body.removeChild(ta);
+    });
+  }
+
+  function render() {
+    const q = query.trim().toLowerCase();
+    const filtered = data.filter(s => {
+      if (activeGroup !== 'All' && s.g !== activeGroup) return false;
+      if (!q) return true;
+      return s.name.toLowerCase().includes(q) || s.ch === q;
+    });
+
+    resultsEl.innerHTML = '';
+    if (!filtered.length) {
+      resultsEl.innerHTML = '<div class="sym-empty">No matches</div>';
+      return;
+    }
+
+    const byGroup = {};
+    filtered.forEach(s => { (byGroup[s.g] ||= []).push(s); });
+    const order = GROUP_ORDER.filter(g => g !== 'All' && byGroup[g]);
+
+    order.forEach(g => {
+      const label = document.createElement('div');
+      label.className = 'sym-section-label';
+      label.textContent = `${g} (${byGroup[g].length})`;
+      resultsEl.appendChild(label);
+      const grid = document.createElement('div');
+      grid.className = 'sym-grid';
+      byGroup[g].slice(0, 600).forEach(s => {
+        const b = document.createElement('button');
+        b.className = 'sym-btn';
+        b.textContent = s.ch;
+        b.title = `${s.name}  U+${s.cp.toString(16).toUpperCase().padStart(4,'0')}`;
+        b.addEventListener('click', () => copy(s.ch, b));
+        grid.appendChild(b);
+      });
+      resultsEl.appendChild(grid);
+      if (byGroup[g].length > 600) {
+        const more = document.createElement('div');
+        more.className = 'sym-empty';
+        more.textContent = `… ${byGroup[g].length - 600} more — narrow your search`;
+        resultsEl.appendChild(more);
+      }
+    });
+  }
+
+  searchEl.addEventListener('input', e => { query = e.target.value; render(); });
+  render();
+})();
 </script>
 </body>
 </html>

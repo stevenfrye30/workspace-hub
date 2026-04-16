@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>తెలుగు నేర్చుకోండి — Learn Telugu</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:      #0d0f17;
+  --surf:    #161926;
+  --surf2:   #1e2337;
+  --acc:     #f59e0b;
+  --acc2:    #38bdf8;
+  --acc3:    #a78bfa;
+  --text:    #e8eaf2;
+  --muted:   #7b859e;
+  --border:  #252a40;
+  --tel-font:'Noto Sans Telugu','Gautami','Potti Sreeramulu',sans-serif;
+  --ui-font: 'Inter',system-ui,sans-serif;
+  --r:       10px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--ui-font);min-height:100vh;line-height:1.5}
+.tel{font-family:var(--tel-font)}
+
+/* ── NAV ── */
+#nav{background:var(--surf);border-bottom:1px solid var(--border);display:flex;align-items:center;
+     position:sticky;top:0;z-index:100;padding:0 16px;overflow-x:auto;gap:0}
+#nav h1{font-family:var(--tel-font);font-size:18px;color:var(--acc);white-space:nowrap;
+        padding-right:16px;border-right:1px solid var(--border);margin-right:8px;flex-shrink:0}
+.tab-btn{background:none;border:none;color:var(--muted);font-family:var(--ui-font);font-size:13px;
+         font-weight:500;padding:13px 15px;cursor:pointer;border-bottom:2px solid transparent;
+         white-space:nowrap;transition:color .15s,border-color .15s}
+.tab-btn:hover{color:var(--text)}
+.tab-btn.active{color:var(--acc);border-bottom-color:var(--acc)}
+
+/* ── PANELS ── */
+.tab-panel{display:none;max-width:920px;margin:0 auto;padding:24px 18px}
+.tab-panel.active{display:block}
+h2{font-size:19px;font-weight:600;margin-bottom:14px}
+h3{font-size:12px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;
+   margin:22px 0 10px}
+
+/* ── COMPONENTS ── */
+.card{background:var(--surf);border:1px solid var(--border);border-radius:var(--r);padding:18px}
+.tip{background:#151d2e;border-left:3px solid var(--acc2);padding:11px 15px;border-radius:0 var(--r) var(--r) 0;
+     font-size:13px;color:var(--muted);margin-bottom:20px;line-height:1.65}
+.tip strong{color:var(--text)}
+
+/* ── PILLS ── */
+.pills{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:14px}
+.pill{background:var(--surf2);border:1px solid var(--border);border-radius:20px;padding:4px 13px;
+      font-size:12px;cursor:pointer;transition:.15s;color:var(--muted)}
+.pill:hover{border-color:var(--acc);color:var(--text)}
+.pill.active{background:var(--acc);color:#000;border-color:var(--acc);font-weight:600}
+
+/* ── SCRIPT TAB ── */
+.letter-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:8px}
+.lc{background:var(--surf2);border:1px solid var(--border);border-radius:8px;padding:10px 6px;
+    text-align:center;cursor:pointer;transition:border-color .15s,transform .1s}
+.lc:hover{border-color:var(--acc);transform:translateY(-1px)}
+.lc.active{border-color:var(--acc);background:#261e0d}
+.lc-char{font-family:var(--tel-font);font-size:54px;line-height:1.25;color:var(--text)}
+.lc-roman{font-size:14px;color:var(--acc);font-weight:600;margin-top:4px}
+.lc-ipa{font-size:13px;color:var(--muted);margin-top:2px}
+.lc-group{font-size:12px;color:var(--acc3);margin-top:2px}
+
+#letter-detail{display:none;border:1px solid var(--acc);border-radius:var(--r);padding:18px;margin-top:14px;
+               background:var(--surf)}
+#letter-detail.show{display:flex;gap:20px;flex-wrap:wrap;align-items:flex-start}
+#ld-big{font-family:var(--tel-font);font-size:100px;line-height:1;color:var(--acc);flex-shrink:0}
+#ld-info{flex:1;min-width:200px}
+#ld-name{font-size:22px;font-weight:700}
+#ld-sub{font-size:14px;color:var(--acc2);margin-top:4px}
+#ld-matra{font-size:13px;color:var(--acc3);margin-top:3px}
+#ld-desc{font-size:13px;color:var(--muted);margin-top:9px;line-height:1.65}
+#ld-ex{margin-top:10px;background:var(--surf2);border-radius:8px;padding:11px}
+#ld-ex-tel{font-family:var(--tel-font);font-size:38px;color:var(--text)}
+#ld-ex-tr{font-size:12px;color:var(--acc2);margin-top:2px}
+#ld-ex-en{font-size:12px;color:var(--muted)}
+.speak-btn{margin-top:10px;background:var(--acc);color:#000;border:none;border-radius:6px;
+           padding:6px 14px;font-size:12px;font-weight:700;cursor:pointer}
+.speak-btn:hover{opacity:.85}
+
+/* ── PHRASES TAB ── */
+.phrase-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:10px}
+.pc{background:var(--surf2);border:1px solid var(--border);border-radius:8px;
+    height:160px;cursor:pointer;perspective:700px}
+.pc-inner{width:100%;height:100%;transition:transform .4s;transform-style:preserve-3d;position:relative}
+.pc.flip .pc-inner{transform:rotateY(180deg)}
+.pc-front,.pc-back{position:absolute;inset:0;backface-visibility:hidden;padding:14px;
+                   display:flex;flex-direction:column;justify-content:center}
+.pc-back{transform:rotateY(180deg)}
+.pf-tel{font-family:var(--tel-font);font-size:36px;margin-bottom:5px}
+.pf-tr{font-size:11px;color:var(--acc2)}
+.pf-hint{font-size:10px;color:var(--muted);margin-top:4px}
+.pb-en{font-size:16px;font-weight:600;color:var(--acc)}
+.pb-note{font-size:11px;color:var(--muted);margin-top:5px}
+
+/* ── VOCAB TAB ── */
+.vtable{width:100%;border-collapse:collapse;font-size:13px}
+.vtable th{text-align:left;padding:8px 12px;color:var(--muted);border-bottom:1px solid var(--border);font-weight:500}
+.vtable td{padding:8px 12px;border-bottom:1px solid var(--border);vertical-align:middle}
+.vtable tbody tr:last-child td{border-bottom:none}
+.vtable tbody tr:hover td{background:var(--surf2)}
+.v-tel{font-family:var(--tel-font);font-size:34px}
+.vtag{background:var(--surf2);border:1px solid var(--border);border-radius:4px;
+      padding:1px 7px;font-size:10px;color:var(--muted)}
+
+/* ── NUMBERS TAB ── */
+.num-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:7px}
+.nc{background:var(--surf2);border:1px solid var(--border);border-radius:8px;padding:12px;text-align:center}
+.nc-n{font-size:26px;font-weight:700;color:var(--acc)}
+.nc-tel{font-family:var(--tel-font);font-size:32px;margin:3px 0}
+.nc-tr{font-size:11px;color:var(--acc2)}
+.nc-en{font-size:10px;color:var(--muted)}
+
+/* ── GRAMMAR TAB ── */
+.gram-rule{background:var(--surf2);border-radius:8px;padding:13px 15px;margin-bottom:9px;
+           font-size:13px;line-height:1.65;color:var(--muted)}
+.gram-rule strong{color:var(--text)}
+.gram-tel{font-family:var(--tel-font);font-size:32px;color:var(--acc);display:block;margin:5px 0 2px}
+.gram-tr{font-size:12px;color:var(--acc2)}
+
+/* ── QUIZ TAB ── */
+#quiz-wrap{max-width:540px;margin:0 auto}
+.qmode-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.qm-btn{background:var(--surf2);border:1px solid var(--border);border-radius:8px;
+        padding:7px 15px;font-size:13px;cursor:pointer;color:var(--muted);transition:.15s}
+.qm-btn:hover:not(.active){border-color:var(--acc);color:var(--text)}
+.qm-btn.active{background:var(--acc);color:#000;border-color:var(--acc);font-weight:600}
+
+#quiz-q{background:var(--surf);border:1px solid var(--border);border-radius:var(--r);
+        padding:30px;text-align:center;margin-bottom:16px;min-height:130px;
+        display:flex;flex-direction:column;justify-content:center;align-items:center;gap:8px}
+#qq-main{font-size:60px;font-family:var(--tel-font);color:var(--text);line-height:1.2}
+#qq-sub{font-size:13px;color:var(--muted)}
+.quiz-opts{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.qopt{background:var(--surf2);border:2px solid var(--border);border-radius:8px;padding:13px;
+      font-size:14px;cursor:pointer;transition:border-color .15s;text-align:center;
+      font-family:var(--tel-font)}
+.qopt:hover{border-color:var(--acc2)}
+.qopt.correct{border-color:#22c55e;background:#0c2218;color:#22c55e}
+.qopt.wrong{border-color:#ef4444;background:#220c0c;color:#ef4444}
+#quiz-next{display:block;width:100%;margin-top:12px;background:var(--acc);color:#000;border:none;
+           border-radius:8px;padding:12px;font-size:14px;font-weight:700;cursor:pointer;transition:opacity .15s}
+#quiz-next:hover{opacity:.85}
+#quiz-next:disabled{opacity:.3;cursor:default}
+#quiz-score{text-align:center;font-size:13px;color:var(--muted);margin-top:12px}
+#quiz-score span{color:var(--acc);font-weight:600}
+
+/* ── WRITING TAB ── */
+#writing-wrap{display:flex;flex-direction:column;gap:16px}
+.writing-info{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.wi-card{background:var(--surf2);border:1px solid var(--border);border-radius:8px;padding:14px}
+.wi-tel{font-family:var(--tel-font);font-size:62px;text-align:center;color:var(--text)}
+.wi-label{font-size:12px;color:var(--muted);text-align:center;margin-top:4px}
+#canvas-wrap{background:var(--surf);border:1px solid var(--border);border-radius:var(--r);
+             padding:14px;display:flex;flex-direction:column;gap:10px;align-items:center}
+#draw-canvas{border:1px solid var(--border);border-radius:8px;background:#fff;cursor:crosshair;
+             touch-action:none;display:block}
+.canvas-controls{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.cc-btn{background:var(--surf2);border:1px solid var(--border);border-radius:6px;
+        padding:6px 14px;font-size:12px;cursor:pointer;color:var(--muted);transition:.15s}
+.cc-btn:hover{border-color:var(--acc);color:var(--text)}
+.cc-btn.active{background:var(--acc);color:#000;border-color:var(--acc)}
+
+/* ── SPEAK BUTTONS ── */
+.spk{background:none;border:1px solid var(--border);border-radius:5px;padding:2px 7px;font-size:13px;
+     cursor:pointer;color:var(--muted);transition:.15s;line-height:1;margin-left:6px;vertical-align:middle}
+.spk:hover{border-color:var(--acc2);color:var(--text)}
+</style>
+</head>
+<body>
+
+<div id="nav">
+  <h1>తెలుగు</h1>
+  <button class="tab-btn active" data-tab="script">Script</button>
+  <button class="tab-btn" data-tab="phrases">Phrases</button>
+  <button class="tab-btn" data-tab="vocab">Vocabulary</button>
+  <button class="tab-btn" data-tab="numbers">Numbers</button>
+  <button class="tab-btn" data-tab="grammar">Grammar</button>
+  <button class="tab-btn" data-tab="writing">Writing</button>
+  <button class="tab-btn" data-tab="quiz">Quiz</button>
+</div>
+
+<!-- ══ SCRIPT ══ -->
+<div id="tab-script" class="tab-panel active">
+  <h2>తెలుగు లిపి — The Telugu Script</h2>
+  <div class="tip">Telugu is an <strong>abugida</strong>: every consonant carries an inherent <strong>/a/</strong> vowel. Attach a <strong>vowel sign (మాత్ర)</strong> to change it. Written <strong>left → right</strong>. Click any letter to explore it.</div>
+  <div class="pills" id="script-pills">
+    <span class="pill active" data-f="vowels">Vowels (అచ్చులు)</span>
+    <span class="pill" data-f="consonants">Consonants (హల్లులు)</span>
+    <span class="pill" data-f="all">All</span>
+  </div>
+  <div class="letter-grid" id="letter-grid"></div>
+  <div id="letter-detail">
+    <div id="ld-big"></div>
+    <div id="ld-info">
+      <div id="ld-name"></div>
+      <div id="ld-sub"></div>
+      <div id="ld-matra"></div>
+      <div id="ld-desc"></div>
+      <div id="ld-ex">
+        <div id="ld-ex-tel"></div>
+        <div id="ld-ex-tr"></div>
+        <div id="ld-ex-en"></div>
+      </div>
+      <button class="speak-btn" id="ld-speak">🔊 Hear it</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══ PHRASES ══ -->
+<div id="tab-phrases" class="tab-panel">
+  <h2>Common Phrases</h2>
+  <div class="tip">Tap a card to flip it and reveal the meaning. These are <strong>polite/formal</strong> forms, safe to use with anyone.</div>
+  <div class="pills" id="phrase-pills"></div>
+  <div class="phrase-grid" id="phrase-grid"></div>
+</div>
+
+<!-- ══ VOCAB ══ -->
+<div id="tab-vocab" class="tab-panel">
+  <h2>పదకోశం — Vocabulary</h2>
+  <div class="pills" id="vocab-pills"></div>
+  <div class="card" style="padding:0;overflow:hidden">
+    <table class="vtable">
+      <thead><tr><th>Telugu</th><th>Romanization</th><th>English</th><th>Category</th></tr></thead>
+      <tbody id="vocab-body"></tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ══ NUMBERS ══ -->
+<div id="tab-numbers" class="tab-panel">
+  <h2>సంఖ్యలు — Numbers</h2>
+  <div class="tip">Telugu has its own numeral symbols but Arabic numerals are used day-to-day. Learn these base words — compound numbers follow regular patterns (e.g. 21 = ఇరవై ఒకటి, "twenty one").</div>
+  <h3>Base Numbers</h3>
+  <div class="num-grid" id="ng-base"></div>
+  <h3>Tens & Large</h3>
+  <div class="num-grid" id="ng-tens"></div>
+  <h3>Ordinals</h3>
+  <div class="num-grid" id="ng-ord"></div>
+</div>
+
+<!-- ══ GRAMMAR ══ -->
+<div id="tab-grammar" class="tab-panel">
+  <h2>Grammar Essentials</h2>
+  <div class="tip"><strong>Word order: Subject → Object → Verb.</strong> "I rice eat" is correct Telugu. The verb always comes last.</div>
+
+  <h3>Pronouns</h3>
+  <div class="card" style="padding:0;overflow:hidden;margin-bottom:18px">
+    <table class="vtable"><thead><tr><th>English</th><th>Telugu</th><th>Romanization</th></tr></thead>
+    <tbody id="pronoun-body"></tbody></table>
+  </div>
+
+  <h3>Verb "to be/exist" — ఉండు (uṇḍu)</h3>
+  <div class="card" style="padding:0;overflow:hidden;margin-bottom:18px">
+    <table class="vtable"><thead><tr><th>Subject</th><th>Present Tense</th><th>Romanization</th></tr></thead>
+    <tbody id="tobe-body"></tbody></table>
+  </div>
+
+  <h3>Key Rules</h3>
+  <div id="gram-rules"></div>
+</div>
+
+<!-- ══ WRITING ══ -->
+<div id="tab-writing" class="tab-panel">
+  <h2>Writing Practice</h2>
+  <div class="tip">Pick a letter to practice, then trace it in the canvas below. Telugu strokes generally flow <strong>left to right</strong>, top to bottom.</div>
+  <div class="pills" id="writing-pills">
+    <span class="pill active" data-wf="vowels">Vowels</span>
+    <span class="pill" data-wf="consonants">Consonants</span>
+  </div>
+  <div class="writing-info" id="writing-grid"></div>
+  <div id="canvas-wrap" style="margin-top:16px">
+    <div style="font-family:var(--tel-font);font-size:72px;color:var(--acc);min-height:80px;text-align:center" id="practice-char">—</div>
+    <div style="font-size:12px;color:var(--muted);text-align:center" id="practice-label">Select a letter above to practice</div>
+    <canvas id="draw-canvas" width="480" height="240"></canvas>
+    <div class="canvas-controls">
+      <button class="cc-btn" id="clear-btn">Clear</button>
+      <button class="cc-btn active" id="pen-sm">Fine</button>
+      <button class="cc-btn" id="pen-md">Medium</button>
+      <button class="cc-btn" id="pen-lg">Thick</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══ QUIZ ══ -->
+<div id="tab-quiz" class="tab-panel">
+  <h2>Quiz</h2>
+  <div id="quiz-wrap">
+    <div class="qmode-row">
+      <button class="qm-btn active" data-m="tel2en">Telugu → English</button>
+      <button class="qm-btn" data-m="en2tel">English → Telugu</button>
+      <button class="qm-btn" data-m="script">Identify Letter</button>
+    </div>
+    <div id="quiz-q">
+      <div id="qq-main">—</div>
+      <div id="qq-sub">Press Start below</div>
+    </div>
+    <div class="quiz-opts" id="quiz-opts"></div>
+    <button id="quiz-next">Start Quiz</button>
+    <div id="quiz-score">Score: <span id="qs-c">0</span> / <span id="qs-t">0</span> &nbsp;·&nbsp; Streak: <span id="qs-s">0</span></div>
+  </div>
+</div>
+
+<script>
+/* ══════════════ DATA ══════════════ */
+
+const VOWELS = [
+  {char:'అ',name:'A',      roman:'a',   ipa:'/a/',   matra:'—',  desc:'Short "a" as in "cup". The inherent vowel of every consonant.',                ex:{tel:'అమ్మ',tr:'amma',en:'mother'}},
+  {char:'ఆ',name:'Aa',     roman:'ā',   ipa:'/aː/',  matra:'ా',  desc:'Long "a" as in "father". Hold it roughly twice as long as అ.',               ex:{tel:'ఆకాశం',tr:'ākāśam',en:'sky'}},
+  {char:'ఇ',name:'I',      roman:'i',   ipa:'/i/',   matra:'ి',  desc:'Short "i" as in "bit".',                                                       ex:{tel:'ఇల్లు',tr:'illu',en:'house'}},
+  {char:'ఈ',name:'Ii',     roman:'ī',   ipa:'/iː/',  matra:'ీ',  desc:'Long "ee" as in "see".',                                                       ex:{tel:'ఈత',tr:'īta',en:'swimming'}},
+  {char:'ఉ',name:'U',      roman:'u',   ipa:'/u/',   matra:'ు',  desc:'Short "u" as in "put".',                                                       ex:{tel:'ఉప్పు',tr:'uppu',en:'salt'}},
+  {char:'ఊ',name:'Uu',     roman:'ū',   ipa:'/uː/',  matra:'ూ',  desc:'Long "oo" as in "food".',                                                      ex:{tel:'ఊరు',tr:'ūru',en:'town'}},
+  {char:'ఋ',name:'Ru',     roman:'ṛ',   ipa:'/ru/',  matra:'ృ',  desc:'Vocalic R — "ri". Mainly in Sanskrit loanwords.',                              ex:{tel:'ఋతువు',tr:'ṛtuvu',en:'season'}},
+  {char:'ఎ',name:'E',      roman:'e',   ipa:'/e/',   matra:'ె',  desc:'Short "e" as in "pet".',                                                       ex:{tel:'ఎలుక',tr:'eluka',en:'mouse'}},
+  {char:'ఏ',name:'Ee',     roman:'ē',   ipa:'/eː/',  matra:'ే',  desc:'Long "e" as in "they".',                                                       ex:{tel:'ఏనుగు',tr:'ēnugu',en:'elephant'}},
+  {char:'ఐ',name:'Ai',     roman:'ai',  ipa:'/aj/',  matra:'ై',  desc:'Diphthong — "eye".',                                                           ex:{tel:'ఐదు',tr:'aidu',en:'five'}},
+  {char:'ఒ',name:'O',      roman:'o',   ipa:'/o/',   matra:'ొ',  desc:'Short "o" — shorter than English "go".',                                       ex:{tel:'ఒంట',tr:'oṃṭa',en:'body'}},
+  {char:'ఓ',name:'Oo',     roman:'ō',   ipa:'/oː/',  matra:'ో',  desc:'Long "o" as in "old".',                                                        ex:{tel:'ఓడ',tr:'ōḍa',en:'ship'}},
+  {char:'ఔ',name:'Au',     roman:'au',  ipa:'/aw/',  matra:'ౌ',  desc:'Diphthong — "out".',                                                           ex:{tel:'ఔషధం',tr:'auṣadham',en:'medicine'}},
+  {char:'అం',name:'Anusvara',roman:'aṃ',ipa:'/am/',  matra:'ం',  desc:'Nasal mark written above the letter — "um/am/ang" depending on the next consonant.',ex:{tel:'అంగడి',tr:'aṃgaḍi',en:'shop'}},
+  {char:'అః',name:'Visarga',roman:'aḥ', ipa:'/ah/',  matra:'ః',  desc:'Aspiration at end of syllable. Mostly in Sanskrit loanwords.',                ex:{tel:'దుఃఖం',tr:'duḥkham',en:'sorrow'}},
+];
+
+const CONSONANTS = [
+  {char:'క',name:'Ka', roman:'ka', ipa:'/ka/',  group:'Velar',    desc:'Like "k" in "kite".',                    ex:{tel:'కమలం',tr:'kamalam',en:'lotus'}},
+  {char:'ఖ',name:'Kha',roman:'kha',ipa:'/kʰa/', group:'Velar',    desc:'Aspirated K — "k" with a puff of air.',  ex:{tel:'ఖగం',tr:'khagam',en:'bird (poetic)'}},
+  {char:'గ',name:'Ga', roman:'ga', ipa:'/ɡa/',  group:'Velar',    desc:'Like "g" in "go".',                      ex:{tel:'గది',tr:'gadi',en:'room'}},
+  {char:'ఘ',name:'Gha',roman:'gha',ipa:'/ɡʱa/', group:'Velar',    desc:'Voiced aspirated G — breathy "g".',      ex:{tel:'ఘంట',tr:'ghaṃṭa',en:'bell/hour'}},
+  {char:'ఙ',name:'Nga',roman:'ṅa', ipa:'/ŋa/',  group:'Velar',    desc:'Nasal "ng" as in "sing". Rare alone.',   ex:{tel:'—',tr:'—',en:'nasal (rare)'}},
+  {char:'చ',name:'Ca', roman:'ca', ipa:'/tʃa/', group:'Palatal',  desc:'Like "ch" in "chair".',                  ex:{tel:'చేయి',tr:'cēyi',en:'hand'}},
+  {char:'ఛ',name:'Cha',roman:'cha',ipa:'/tʃʰa/',group:'Palatal',  desc:'Aspirated "ch" with a puff of air.',     ex:{tel:'ఛత్రం',tr:'chatram',en:'umbrella'}},
+  {char:'జ',name:'Ja', roman:'ja', ipa:'/dʒa/', group:'Palatal',  desc:'Like "j" in "jump".',                    ex:{tel:'జలం',tr:'jalam',en:'water'}},
+  {char:'ఝ',name:'Jha',roman:'jha',ipa:'/dʒʱa/',group:'Palatal',  desc:'Voiced aspirated J — rare in native words.',ex:{tel:'—',tr:'—',en:'(rare)'}},
+  {char:'ఞ',name:'Nya',roman:'ña', ipa:'/nja/', group:'Palatal',  desc:'Palatal nasal — "ny" in "canyon". Appears before జ/చ.',ex:{tel:'—',tr:'—',en:'palatal nasal'}},
+  {char:'ట',name:'Tta',roman:'ṭa', ipa:'/ʈa/',  group:'Retroflex',desc:'Retroflex T — curl tongue back. No English equivalent.',ex:{tel:'టపాలు',tr:'ṭapālu',en:'post/mail'}},
+  {char:'ఠ',name:'Ttha',roman:'ṭha',ipa:'/ʈʰa/',group:'Retroflex',desc:'Aspirated retroflex T.',                 ex:{tel:'ఠీవి',tr:'ṭhīvi',en:'majesty'}},
+  {char:'డ',name:'Dda',roman:'ḍa', ipa:'/ɖa/',  group:'Retroflex',desc:'Retroflex D — tongue curls back.',       ex:{tel:'డబ్బు',tr:'ḍabbu',en:'money'}},
+  {char:'ఢ',name:'Ddha',roman:'ḍha',ipa:'/ɖʱa/',group:'Retroflex',desc:'Voiced aspirated retroflex D.',          ex:{tel:'—',tr:'—',en:'(rare)'}},
+  {char:'ణ',name:'Nna',roman:'ṇa', ipa:'/ɳa/',  group:'Retroflex',desc:'Retroflex N — "n" with tongue curled back.',ex:{tel:'వాణి',tr:'vāṇi',en:'Saraswati/speech'}},
+  {char:'త',name:'Ta', roman:'ta', ipa:'/t̪a/',  group:'Dental',   desc:'Dental T — tongue touches upper teeth. Softer than English T.',ex:{tel:'తల',tr:'tala',en:'head'}},
+  {char:'థ',name:'Tha',roman:'tha',ipa:'/t̪ʰa/', group:'Dental',   desc:'Aspirated dental T.',                    ex:{tel:'థాలి',tr:'thāli',en:'plate'}},
+  {char:'ద',name:'Da', roman:'da', ipa:'/d̪a/',  group:'Dental',   desc:'Dental D — soft, tongue at teeth.',      ex:{tel:'దారి',tr:'dāri',en:'path/road'}},
+  {char:'ధ',name:'Dha',roman:'dha',ipa:'/d̪ʱa/', group:'Dental',   desc:'Voiced aspirated dental D.',             ex:{tel:'ధనం',tr:'dhanam',en:'wealth'}},
+  {char:'న',name:'Na', roman:'na', ipa:'/na/',   group:'Dental',   desc:'Like "n" in "name".',                    ex:{tel:'నది',tr:'nadi',en:'river'}},
+  {char:'ప',name:'Pa', roman:'pa', ipa:'/pa/',   group:'Labial',   desc:'Like "p" in "pot".',                     ex:{tel:'పాట',tr:'pāṭa',en:'song'}},
+  {char:'ఫ',name:'Pha',roman:'pha',ipa:'/pʰa/',  group:'Labial',   desc:'Aspirated P — bilabial, not labiodental.',ex:{tel:'ఫలం',tr:'phalam',en:'fruit'}},
+  {char:'బ',name:'Ba', roman:'ba', ipa:'/ba/',   group:'Labial',   desc:'Like "b" in "bat".',                     ex:{tel:'బంగారం',tr:'baṃgāram',en:'gold'}},
+  {char:'భ',name:'Bha',roman:'bha',ipa:'/bʱa/',  group:'Labial',   desc:'Voiced aspirated B — "bh" as in "Bhutan".',ex:{tel:'భాష',tr:'bhāṣa',en:'language'}},
+  {char:'మ',name:'Ma', roman:'ma', ipa:'/ma/',   group:'Labial',   desc:'Like "m" in "mother".',                  ex:{tel:'మనిషి',tr:'maniṣi',en:'person'}},
+  {char:'య',name:'Ya', roman:'ya', ipa:'/ja/',   group:'Semivowel',desc:'Like "y" in "yes".',                     ex:{tel:'యువకుడు',tr:'yuvakaḍu',en:'young man'}},
+  {char:'ర',name:'Ra', roman:'ra', ipa:'/ra/',   group:'Semivowel',desc:'Trilled R — like Spanish "pero".',       ex:{tel:'రాజు',tr:'rāju',en:'king'}},
+  {char:'ల',name:'La', roman:'la', ipa:'/la/',   group:'Semivowel',desc:'Like "l" in "lamp".',                    ex:{tel:'లక్ష్మి',tr:'lakṣmi',en:'Lakshmi'}},
+  {char:'వ',name:'Va', roman:'va', ipa:'/va/',   group:'Semivowel',desc:'Between "v" and "w" — lighter than English V.',ex:{tel:'వంట',tr:'vaṃṭa',en:'cooking'}},
+  {char:'శ',name:'Sha',roman:'śa', ipa:'/ʃa/',   group:'Sibilant', desc:'Palatal sibilant — "sh" as in "shoe".',  ex:{tel:'శాంతి',tr:'śānti',en:'peace'}},
+  {char:'ష',name:'Ssa',roman:'ṣa', ipa:'/ʂa/',   group:'Sibilant', desc:'Retroflex sibilant — "sh" with tongue curled back.',ex:{tel:'షడ్జం',tr:'ṣaḍjam',en:'first musical note'}},
+  {char:'స',name:'Sa', roman:'sa', ipa:'/sa/',   group:'Sibilant', desc:'Like "s" in "sun".',                     ex:{tel:'సూర్యుడు',tr:'sūryuḍu',en:'sun'}},
+  {char:'హ',name:'Ha', roman:'ha', ipa:'/ha/',   group:'Sibilant', desc:'Like "h" in "hat".',                     ex:{tel:'హృదయం',tr:'hṛdayam',en:'heart'}},
+  {char:'ళ',name:'Lla',roman:'ḷa', ipa:'/ɭa/',   group:'Retroflex',desc:'Retroflex L — unique to Dravidian. Tongue tip curls back. Found in the word "Telugu" itself!',ex:{tel:'తెలుగు',tr:'telugu',en:'Telugu'}},
+  {char:'క్ష',name:'Ksha',roman:'kṣa',ipa:'/kʂa/',group:'Compound',desc:'Compound: K + retroflex SH.',            ex:{tel:'క్షణం',tr:'kṣaṇam',en:'moment'}},
+];
+
+const ALL_LETTERS = [...VOWELS, ...CONSONANTS];
+
+const PHRASES = [
+  {tel:'నమస్కారం',    tr:'namaskāram',                   en:'Hello / Greetings',          note:'Respectful — works any time of day',cat:'greetings'},
+  {tel:'నమస్తే',      tr:'namaste',                       en:'Hello (informal)',            note:'Also used across India',              cat:'greetings'},
+  {tel:'శుభోదయం',    tr:'śubhodayam',                    en:'Good morning',               note:'Literally "auspicious morning"',       cat:'greetings'},
+  {tel:'శుభ సాయంత్రం',tr:'śubha sāyantram',              en:'Good evening',               note:'',                                     cat:'greetings'},
+  {tel:'శుభరాత్రి',  tr:'śubarātri',                     en:'Good night',                 note:'',                                     cat:'greetings'},
+  {tel:'మీరు ఎలా ఉన్నారు?',tr:'mīru elā unnāru?',        en:'How are you? (formal)',      note:'Use మీరు for elders/strangers',        cat:'greetings'},
+  {tel:'నేను బాగున్నాను',tr:'nēnu bāgunnānu',            en:'I am fine / well',           note:'',                                     cat:'greetings'},
+  {tel:'ధన్యవాదాలు', tr:'dhanyavādālu',                   en:'Thank you',                  note:'Formal thanks',                        cat:'polite'},
+  {tel:'సంతోషం',     tr:'santoṣam',                      en:"You're welcome / I'm happy", note:'Literally "happiness"',                cat:'polite'},
+  {tel:'క్షమించండి', tr:'kṣamincanḍi',                    en:'Sorry / Excuse me',          note:'Formal',                               cat:'polite'},
+  {tel:'దయచేసి',     tr:'dayacēsi',                       en:'Please',                     note:'Literally "with kindness"',            cat:'polite'},
+  {tel:'అవును',      tr:'avunu',                          en:'Yes',                         note:'',                                     cat:'basics'},
+  {tel:'కాదు',       tr:'kādu',                           en:'No / It is not',              note:'For identity negation',               cat:'basics'},
+  {tel:'లేదు',       tr:'lēdu',                           en:"No / There isn't",            note:'For existence negation',              cat:'basics'},
+  {tel:'సరే',        tr:'sarē',                           en:'OK / Alright',               note:'',                                     cat:'basics'},
+  {tel:'తెలుసు',     tr:'telusu',                         en:'I know / I understand',       note:'',                                     cat:'basics'},
+  {tel:'తెలియదు',    tr:'teliyadu',                       en:"I don't know",               note:'',                                     cat:'basics'},
+  {tel:'మీ పేరు ఏమిటి?',tr:'mī pēru ēmiṭi?',            en:'What is your name?',          note:'Formal',                               cat:'conversation'},
+  {tel:'నా పేరు …',  tr:'nā pēru …',                     en:'My name is …',               note:'Fill in your name',                    cat:'conversation'},
+  {tel:'మీరు ఎక్కడ నుండి?',tr:'mīru ekkaḍa nuṃḍi?',     en:'Where are you from?',        note:'',                                     cat:'conversation'},
+  {tel:'నాకు తెలుగు కొంచెం వస్తుంది',tr:'nāku telugu koṃcem vastuṃdi',en:'I know a little Telugu',note:'Great opener!',             cat:'conversation'},
+  {tel:'నెమ్మదిగా చెప్పండి',tr:'nemmadiga ceppaṃḍi',    en:'Please speak slowly',        note:'',                                     cat:'conversation'},
+  {tel:'అర్థం కాలేదు',tr:'artham kālēdu',                en:"I don't understand",         note:'',                                     cat:'conversation'},
+  {tel:'ఇది ఏమిటి?', tr:'idi ēmiṭi?',                    en:'What is this?',              note:'',                                     cat:'questions'},
+  {tel:'ఎంత?',       tr:'enta?',                          en:'How much?',                  note:'',                                     cat:'questions'},
+  {tel:'ఎక్కడ?',     tr:'ekkaḍa?',                        en:'Where?',                     note:'',                                     cat:'questions'},
+  {tel:'ఎప్పుడు?',   tr:'eppuḍu?',                        en:'When?',                      note:'',                                     cat:'questions'},
+  {tel:'నాకు నీళ్ళు కావాలి',tr:'nāku nīḷḷu kāvāli',    en:'I need water',               note:'',                                     cat:'needs'},
+  {tel:'నాకు ఆకలిగా ఉంది',tr:'nāku ākaligā uṃdi',       en:'I am hungry',                note:'Literally "hunger is to me"',          cat:'needs'},
+  {tel:'నాకు నచ్చింది',tr:'nāku naccindi',               en:'I like it',                   note:'',                                     cat:'feelings'},
+  {tel:'చాలా అందంగా ఉంది',tr:'cālā aṃdamgā uṃdi',       en:"It's very beautiful",        note:'',                                     cat:'feelings'},
+  {tel:'బాగా లేదు',  tr:'bāgā lēdu',                     en:"Not good / I'm unwell",      note:'',                                     cat:'feelings'},
+];
+
+const VOCAB = [
+  {tel:'అమ్మ',      tr:'amma',          en:'mother',            cat:'family'},
+  {tel:'నాన్న',     tr:'nānna',         en:'father',            cat:'family'},
+  {tel:'అన్న',      tr:'anna',          en:'elder brother',     cat:'family'},
+  {tel:'అక్క',      tr:'akka',          en:'elder sister',      cat:'family'},
+  {tel:'తమ్ముడు',   tr:'tammuḍu',       en:'younger brother',   cat:'family'},
+  {tel:'చెల్లి',    tr:'celli',         en:'younger sister',    cat:'family'},
+  {tel:'తాత',       tr:'tāta',          en:'grandfather',       cat:'family'},
+  {tel:'నానమ్మ',    tr:'nānamma',       en:'grandmother (pat.)',cat:'family'},
+  {tel:'పిల్లలు',   tr:'pillalu',       en:'children',          cat:'family'},
+  {tel:'తల',        tr:'tala',          en:'head',              cat:'body'},
+  {tel:'కళ్ళు',     tr:'kaḷḷu',         en:'eyes',              cat:'body'},
+  {tel:'చెవులు',    tr:'cevulu',        en:'ears',              cat:'body'},
+  {tel:'ముక్కు',    tr:'mukku',         en:'nose',              cat:'body'},
+  {tel:'నోరు',      tr:'nōru',          en:'mouth',             cat:'body'},
+  {tel:'చేయి',      tr:'cēyi',          en:'hand/arm',          cat:'body'},
+  {tel:'కాలు',      tr:'kālu',          en:'leg/foot',          cat:'body'},
+  {tel:'గుండె',     tr:'guṃḍe',         en:'heart',             cat:'body'},
+  {tel:'నొప్పి',    tr:'noppi',         en:'pain',              cat:'body'},
+  {tel:'అన్నం',     tr:'annam',         en:'rice (cooked)',      cat:'food'},
+  {tel:'నీళ్ళు',    tr:'nīḷḷu',         en:'water',             cat:'food'},
+  {tel:'పాలు',      tr:'pālu',          en:'milk',              cat:'food'},
+  {tel:'చాయ్',      tr:'cāy',           en:'tea',               cat:'food'},
+  {tel:'కాఫీ',      tr:'kāphī',         en:'coffee',            cat:'food'},
+  {tel:'చారు',      tr:'cāru',          en:'rasam (spiced broth)',cat:'food'},
+  {tel:'పప్పు',     tr:'pappu',         en:'lentils/dal',       cat:'food'},
+  {tel:'కూర',       tr:'kūra',          en:'vegetable curry',   cat:'food'},
+  {tel:'ఉప్పు',     tr:'uppu',          en:'salt',              cat:'food'},
+  {tel:'చక్కెర',    tr:'cakkera',       en:'sugar',             cat:'food'},
+  {tel:'మాంసం',     tr:'māmsam',        en:'meat',              cat:'food'},
+  {tel:'ఎరుపు',     tr:'erupu',         en:'red',               cat:'colors'},
+  {tel:'నీలం',      tr:'nīlam',         en:'blue',              cat:'colors'},
+  {tel:'ఆకుపచ్చ',   tr:'ākupacca',      en:'green',             cat:'colors'},
+  {tel:'పసుపు',     tr:'pasupu',        en:'yellow',            cat:'colors'},
+  {tel:'తెలుపు',    tr:'telupu',        en:'white',             cat:'colors'},
+  {tel:'నలుపు',     tr:'nalupu',        en:'black',             cat:'colors'},
+  {tel:'గులాబీ',    tr:'gulābī',        en:'pink',              cat:'colors'},
+  {tel:'ఇల్లు',     tr:'illu',          en:'house/home',        cat:'places'},
+  {tel:'పాఠశాల',    tr:'pāṭhaśāla',     en:'school',            cat:'places'},
+  {tel:'ఆసుపత్రి',  tr:'āsupattri',     en:'hospital',          cat:'places'},
+  {tel:'మార్కెట్',  tr:'mārkeṭ',        en:'market',            cat:'places'},
+  {tel:'నగరం',      tr:'nagaram',       en:'city',              cat:'places'},
+  {tel:'గ్రామం',    tr:'grāmam',        en:'village',           cat:'places'},
+  {tel:'సూర్యుడు',  tr:'sūryuḍu',       en:'sun',               cat:'nature'},
+  {tel:'చంద్రుడు',  tr:'caṃdruḍu',      en:'moon',              cat:'nature'},
+  {tel:'వాన',       tr:'vāna',          en:'rain',              cat:'nature'},
+  {tel:'నది',       tr:'nadi',          en:'river',             cat:'nature'},
+  {tel:'సముద్రం',   tr:'samudrm',       en:'sea/ocean',         cat:'nature'},
+  {tel:'చెట్టు',    tr:'ceṭṭu',         en:'tree',              cat:'nature'},
+  {tel:'పువ్వు',    tr:'puvvu',         en:'flower',            cat:'nature'},
+  {tel:'ఇప్పుడు',   tr:'ippuḍu',        en:'now',               cat:'time'},
+  {tel:'ఈ రోజు',    tr:'ī rōju',        en:'today',             cat:'time'},
+  {tel:'నిన్న',     tr:'ninna',         en:'yesterday',         cat:'time'},
+  {tel:'రేపు',      tr:'rēpu',          en:'tomorrow',          cat:'time'},
+  {tel:'ఉదయం',      tr:'udayam',        en:'morning',           cat:'time'},
+  {tel:'సాయంత్రం',  tr:'sāyantram',     en:'evening',           cat:'time'},
+  {tel:'రాత్రి',    tr:'rātri',         en:'night',             cat:'time'},
+  {tel:'గంట',       tr:'gaṃṭa',         en:'hour',              cat:'time'},
+];
+
+const NUMBERS = [
+  {n:0,  tel:'సున్న',    tr:'sunna',     en:'zero'},
+  {n:1,  tel:'ఒకటి',    tr:'okaṭi',     en:'one'},
+  {n:2,  tel:'రెండు',   tr:'reṃḍu',     en:'two'},
+  {n:3,  tel:'మూడు',    tr:'mūḍu',      en:'three'},
+  {n:4,  tel:'నాలుగు',  tr:'nālugu',    en:'four'},
+  {n:5,  tel:'అయిదు',   tr:'ayidu',     en:'five'},
+  {n:6,  tel:'ఆరు',     tr:'āru',       en:'six'},
+  {n:7,  tel:'ఏడు',     tr:'ēḍu',       en:'seven'},
+  {n:8,  tel:'ఎనిమిది', tr:'enimidi',   en:'eight'},
+  {n:9,  tel:'తొమ్మిది',tr:'tommidi',   en:'nine'},
+  {n:10, tel:'పది',     tr:'padi',      en:'ten'},
+  {n:11, tel:'పదకొండు', tr:'padakoṃḍu', en:'eleven'},
+  {n:12, tel:'పన్నెండు',tr:'panneṃḍu',  en:'twelve'},
+  {n:20, tel:'ఇరవై',    tr:'iravai',    en:'twenty'},
+  {n:30, tel:'ముప్పై',  tr:'muppai',    en:'thirty'},
+  {n:40, tel:'నలభై',    tr:'nalabhai',  en:'forty'},
+  {n:50, tel:'యాభై',    tr:'yābhai',    en:'fifty'},
+  {n:60, tel:'అరవై',    tr:'aravai',    en:'sixty'},
+  {n:70, tel:'డెబ్బై',  tr:'ḍebbai',    en:'seventy'},
+  {n:80, tel:'ఎనభై',    tr:'enabhai',   en:'eighty'},
+  {n:90, tel:'తొంభై',   tr:'toṃbhai',   en:'ninety'},
+  {n:100,tel:'నూరు',    tr:'nūru',      en:'hundred'},
+  {n:1000,tel:'వేయి',   tr:'vēyi',      en:'thousand'},
+];
+
+const ORDINALS = [
+  {n:1,tel:'మొదటి',  tr:'modaṭi',  en:'first'},
+  {n:2,tel:'రెండవ',  tr:'reṃḍava', en:'second'},
+  {n:3,tel:'మూడవ',   tr:'mūḍava',  en:'third'},
+  {n:4,tel:'నాలుగవ', tr:'nālugava',en:'fourth'},
+  {n:5,tel:'అయిదవ',  tr:'ayidava', en:'fifth'},
+  {n:6,tel:'ఆరవ',    tr:'ārava',   en:'sixth'},
+  {n:7,tel:'ఏడవ',    tr:'ēḍava',   en:'seventh'},
+  {n:8,tel:'ఎనిమిదవ',tr:'enimidava',en:'eighth'},
+  {n:9,tel:'తొమ్మిదవ',tr:'tommidava',en:'ninth'},
+  {n:10,tel:'పదవ',   tr:'padava',  en:'tenth'},
+];
+
+const PRONOUNS = [
+  {en:'I (informal)',      tel:'నేను',  tr:'nēnu'},
+  {en:'You (informal)',    tel:'నువ్వు', tr:'nuvvu'},
+  {en:'You (formal/pl)',   tel:'మీరు',  tr:'mīru'},
+  {en:'He',                tel:'అతను',  tr:'atanu'},
+  {en:'She',               tel:'ఆమె',   tr:'āme'},
+  {en:'It / This',         tel:'ఇది',   tr:'idi'},
+  {en:'We (excl.)',        tel:'మేము',  tr:'mēmu'},
+  {en:'We (incl.)',        tel:'మనం',   tr:'manam'},
+  {en:'They',              tel:'వారు',  tr:'vāru'},
+];
+
+const TOBE = [
+  {sub:'నేను (I)',              tel:'ఉన్నాను',          tr:'unnānu'},
+  {sub:'నువ్వు (you inf.)',     tel:'ఉన్నావు',          tr:'unnāvu'},
+  {sub:'మీరు (you formal)',     tel:'ఉన్నారు',          tr:'unnāru'},
+  {sub:'అతను (he)',             tel:'ఉన్నాడు',          tr:'unnāḍu'},
+  {sub:'ఆమె (she)',             tel:'ఉంది',             tr:'uṃdi'},
+  {sub:'ఇది (it)',              tel:'ఉంది',             tr:'uṃdi'},
+  {sub:'మేము (we)',             tel:'ఉన్నాము',          tr:'unnāmu'},
+  {sub:'వారు (they)',           tel:'ఉన్నారు',          tr:'unnāru'},
+];
+
+const GRAM_RULES = [
+  {title:'SOV Word Order',
+   body:'Telugu puts the <strong>verb last</strong>. Think of it as Subject → Object → Verb.',
+   tel:'నేను అన్నం తింటాను',tr:'nēnu annam tiṃṭānu',en:'I rice eat  (= I eat rice)'},
+  {title:'Postpositions, not Prepositions',
+   body:'Case markers and relational words come <strong>after</strong> the noun they modify.',
+   tel:'ఇంట్లో',tr:'iṃṭlō',en:'"in the house"  (iṃṭu=house, lō=in)'},
+  {title:'Gendered Verb Endings',
+   body:'Verbs agree with the subject\'s <strong>gender and honorific</strong>. Masculine (డు/-ḍu), Feminine/Neuter (ది/-di), Plural (రు/-ru).',
+   tel:'అతను వచ్చాడు  /  ఆమె వచ్చింది',tr:'atanu vaccāḍu  /  āme vaccindi',en:'He came  /  She came'},
+  {title:'Negation',
+   body:'<strong>కాదు (kādu)</strong> = "is not" (identity). <strong>లేదు (lēdu)</strong> = "is not / doesn\'t exist". For verbs, negate the infinitive with లేదు.',
+   tel:'ఇది పుస్తకం కాదు',tr:'idi pustakaṃ kādu',en:'This is not a book'},
+  {title:'Honorifics are Important',
+   body:'Telugu has strong respect levels. <strong>మీరు (mīru)</strong> for elders/strangers, <strong>నువ్వు (nuvvu)</strong> for close friends/younger people. Using the wrong one is rude.',
+   tel:'మీరు తింటారా?',tr:'mīru tiṃṭārā?',en:'Will you (formal) eat?'},
+  {title:'Double Consonants (Gemination)',
+   body:'Doubled consonants are <strong>phonemically distinct</strong> — they change meaning! Hold the consonant twice as long.',
+   tel:'అమ్మ  vs  అమ',tr:'amma  vs  ama',en:'mother  vs  poison'},
+  {title:'Questions',
+   body:'Add <strong>ఆ (-ā)?</strong> to turn a statement into a yes/no question. Question words (ఎంత, ఎక్కడ, ఎప్పుడు…) sit where the questioned element would be.',
+   tel:'నువ్వు వస్తావా?',tr:'nuvvu vastāvā?',en:'Are you coming?'},
+];
+
+/* ══════════════ INIT ══════════════ */
+
+// Pre-load voices (Chrome loads them async)
+let _voices = [];
+function loadVoices() { _voices = window.speechSynthesis ? window.speechSynthesis.getVoices() : []; }
+if (window.speechSynthesis) {
+  loadVoices();
+  window.speechSynthesis.addEventListener('voiceschanged', loadVoices);
+}
+
+function speak(text, lang, btn) {
+  if (!window.speechSynthesis) return;
+  if (btn) { btn.textContent = '⏳'; setTimeout(() => btn.textContent = '🔊', 2500); }
+  window.speechSynthesis.cancel();
+  setTimeout(() => {
+    const u = new SpeechSynthesisUtterance(text);
+    const langCode = lang.split('-')[0];
+    // find best matching voice; fall back to any voice if none found
+    const voice = _voices.find(v => v.lang === lang)
+               || _voices.find(v => v.lang.startsWith(langCode))
+               || _voices.find(v => v.default)
+               || _voices[0];
+    if (voice) u.voice = voice;
+    u.lang = lang;
+    u.rate = 0.85;
+    window.speechSynthesis.speak(u);
+  }, 150);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+
+  /* — Tab switching — */
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+    });
+  });
+
+  /* ═══ SCRIPT TAB ═══ */
+  let selectedLetter = null;
+  let scriptFilter = 'vowels';
+
+  function buildLetterGrid() {
+    const grid = document.getElementById('letter-grid');
+    grid.innerHTML = '';
+    const src = scriptFilter === 'vowels' ? VOWELS :
+                scriptFilter === 'consonants' ? CONSONANTS : ALL_LETTERS;
+    src.forEach(l => {
+      const c = document.createElement('div');
+      c.className = 'lc' + (l === selectedLetter ? ' active' : '');
+      c.innerHTML =
+        `<div class="lc-char">${l.char}</div>` +
+        `<div class="lc-roman">${l.roman}</div>` +
+        `<div class="lc-ipa">${l.ipa}</div>` +
+        (l.group ? `<div class="lc-group">${l.group}</div>` : '');
+      c.addEventListener('click', () => {
+        selectedLetter = l;
+        document.querySelectorAll('.lc').forEach(x => x.classList.remove('active'));
+        c.classList.add('active');
+        showDetail(l);
+      });
+      grid.appendChild(c);
+    });
+  }
+
+  function showDetail(l) {
+    const d = document.getElementById('letter-detail');
+    document.getElementById('ld-big').textContent = l.char;
+    document.getElementById('ld-name').textContent = l.name;
+    document.getElementById('ld-sub').textContent = `${l.roman}  ·  ${l.ipa}` + (l.group ? `  ·  ${l.group}` : '');
+    document.getElementById('ld-matra').textContent = l.matra && l.matra !== '—'
+      ? `Vowel sign: ${l.matra}` : '';
+    document.getElementById('ld-desc').textContent = l.desc;
+    const ex = l.ex;
+    document.getElementById('ld-ex-tel').textContent = ex.tel !== '—' ? ex.tel : '';
+    document.getElementById('ld-ex-tr').textContent  = ex.tr  !== '—' ? ex.tr  : '';
+    document.getElementById('ld-ex-en').textContent  = ex.en  !== '—' ? `"${ex.en}"` : '';
+    d.className = 'show';
+  }
+
+  document.getElementById('ld-speak').addEventListener('click', e => {
+    if (!selectedLetter) return;
+    speak(selectedLetter.char, 'te-IN', e.currentTarget);
+  });
+
+  document.querySelectorAll('#script-pills .pill').forEach(p => {
+    p.addEventListener('click', () => {
+      document.querySelectorAll('#script-pills .pill').forEach(x => x.classList.remove('active'));
+      p.classList.add('active');
+      scriptFilter = p.dataset.f;
+      selectedLetter = null;
+      document.getElementById('letter-detail').className = '';
+      buildLetterGrid();
+    });
+  });
+
+  buildLetterGrid();
+
+  /* ═══ PHRASES TAB ═══ */
+  const phraseCats = ['all', ...new Set(PHRASES.map(p => p.cat))];
+  let phraseFilter = 'all';
+  const pfEl = document.getElementById('phrase-pills');
+  phraseCats.forEach(cat => {
+    const p = document.createElement('span');
+    p.className = 'pill' + (cat === 'all' ? ' active' : '');
+    p.textContent = cat;
+    p.addEventListener('click', () => {
+      document.querySelectorAll('#phrase-pills .pill').forEach(x => x.classList.remove('active'));
+      p.classList.add('active');
+      phraseFilter = cat;
+      renderPhrases();
+    });
+    pfEl.appendChild(p);
+  });
+
+  function renderPhrases() {
+    const g = document.getElementById('phrase-grid');
+    g.innerHTML = '';
+    (phraseFilter === 'all' ? PHRASES : PHRASES.filter(p => p.cat === phraseFilter)).forEach(ph => {
+      const c = document.createElement('div');
+      c.className = 'pc';
+      c.innerHTML = `<div class="pc-inner">
+        <div class="pc-front">
+          <div class="pf-tel">${ph.tel}</div>
+          <div class="pf-tr">${ph.tr}</div>
+          <button class="spk">🔊</button>
+        </div>
+        <div class="pc-back">
+          <div class="pb-en">${ph.en}</div>
+          <div class="pb-note">${ph.note}</div>
+        </div>
+      </div>`;
+      c.querySelector('.spk').addEventListener('click', e => {
+        e.stopPropagation();
+        speak(ph.tel, 'te-IN', e.currentTarget);
+      });
+      c.addEventListener('click', () => c.classList.toggle('flip'));
+      g.appendChild(c);
+    });
+  }
+  renderPhrases();
+
+  /* ═══ VOCAB TAB ═══ */
+  const vocabCats = ['all', ...new Set(VOCAB.map(v => v.cat))];
+  let vocabFilter = 'all';
+  const vfEl = document.getElementById('vocab-pills');
+  vocabCats.forEach(cat => {
+    const p = document.createElement('span');
+    p.className = 'pill' + (cat === 'all' ? ' active' : '');
+    p.textContent = cat;
+    p.addEventListener('click', () => {
+      document.querySelectorAll('#vocab-pills .pill').forEach(x => x.classList.remove('active'));
+      p.classList.add('active');
+      vocabFilter = cat;
+      renderVocab();
+    });
+    vfEl.appendChild(p);
+  });
+
+  function renderVocab() {
+    const tb = document.getElementById('vocab-body');
+    tb.innerHTML = '';
+    (vocabFilter === 'all' ? VOCAB : VOCAB.filter(v => v.cat === vocabFilter)).forEach(v => {
+      const r = document.createElement('tr');
+      r.innerHTML = `<td><span class="v-tel">${v.tel}</span><button class="spk">🔊</button></td>
+        <td>${v.tr}</td><td>${v.en}</td>
+        <td><span class="vtag">${v.cat}</span></td>`;
+      r.querySelector('.spk').addEventListener('click', e => speak(v.tel, 'te-IN', e.currentTarget));
+      tb.appendChild(r);
+    });
+  }
+  renderVocab();
+
+  /* ═══ NUMBERS TAB ═══ */
+  function fillNumGrid(id, arr) {
+    const g = document.getElementById(id);
+    arr.forEach(d => {
+      const c = document.createElement('div');
+      c.className = 'nc';
+      c.innerHTML = `<div class="nc-n">${d.n}</div>
+        <div class="nc-tel">${d.tel}</div>
+        <div class="nc-tr">${d.tr}</div>
+        <div class="nc-en">${d.en}</div>
+        <button class="spk" style="margin:5px auto 0;display:block">🔊</button>`;
+      c.querySelector('.spk').addEventListener('click', e => speak(d.tel, 'te-IN', e.currentTarget));
+      g.appendChild(c);
+    });
+  }
+  fillNumGrid('ng-base', NUMBERS.filter(n => n.n <= 12));
+  fillNumGrid('ng-tens', NUMBERS.filter(n => n.n >= 20));
+  fillNumGrid('ng-ord', ORDINALS);
+
+  /* ═══ GRAMMAR TAB ═══ */
+  const pb = document.getElementById('pronoun-body');
+  PRONOUNS.forEach(p => {
+    pb.insertAdjacentHTML('beforeend',
+      `<tr><td>${p.en}</td><td style="font-family:var(--tel-font);font-size:26px">${p.tel}</td><td>${p.tr}</td></tr>`);
+  });
+  const tb2 = document.getElementById('tobe-body');
+  TOBE.forEach(t => {
+    tb2.insertAdjacentHTML('beforeend',
+      `<tr><td>${t.sub}</td><td style="font-family:var(--tel-font);font-size:26px">${t.tel}</td><td>${t.tr}</td></tr>`);
+  });
+  const gr = document.getElementById('gram-rules');
+  GRAM_RULES.forEach(r => {
+    const d = document.createElement('div');
+    d.className = 'gram-rule';
+    d.innerHTML = `<strong>${r.title}</strong><br>${r.body}
+      <span class="gram-tel">${r.tel}</span>
+      <span class="gram-tr">${r.tr} — "${r.en}"</span>`;
+    gr.appendChild(d);
+  });
+
+  /* ═══ WRITING TAB ═══ */
+  let writingFilter = 'vowels';
+  let practiceChar = null;
+
+  function renderWritingGrid() {
+    const g = document.getElementById('writing-grid');
+    g.innerHTML = '';
+    const src = writingFilter === 'vowels' ? VOWELS : CONSONANTS;
+    src.forEach(l => {
+      const c = document.createElement('div');
+      c.className = 'wi-card';
+      c.style.cursor = 'pointer';
+      c.innerHTML = `<div class="wi-tel">${l.char}</div>
+        <div class="wi-label">${l.roman}  ${l.ipa}</div>`;
+      c.addEventListener('click', () => {
+        practiceChar = l;
+        document.getElementById('practice-char').textContent = l.char;
+        document.getElementById('practice-label').textContent =
+          `${l.name} · ${l.roman} · ${l.ipa}`;
+        clearCanvas();
+      });
+      g.appendChild(c);
+    });
+  }
+
+  document.querySelectorAll('#writing-pills .pill').forEach(p => {
+    p.addEventListener('click', () => {
+      document.querySelectorAll('#writing-pills .pill').forEach(x => x.classList.remove('active'));
+      p.classList.add('active');
+      writingFilter = p.dataset.wf;
+      renderWritingGrid();
+    });
+  });
+  renderWritingGrid();
+
+  // Canvas drawing
+  const canvas = document.getElementById('draw-canvas');
+  const ctx = canvas.getContext('2d');
+  let drawing = false;
+  let penSize = 3;
+
+  // Resize canvas to fill wrapper width
+  function resizeCanvas() {
+    const w = Math.min(canvas.parentElement.clientWidth - 30, 600);
+    canvas.width = w;
+    canvas.height = Math.round(w * 0.45);
+    clearCanvas();
+  }
+  resizeCanvas();
+  window.addEventListener('resize', resizeCanvas);
+
+  function clearCanvas() {
+    ctx.fillStyle = '#ffffff';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    // ghost letter
+    if (practiceChar) {
+      ctx.font = `${canvas.height * 0.7}px Noto Sans Telugu, Gautami, sans-serif`;
+      ctx.fillStyle = 'rgba(200,200,200,0.35)';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText(practiceChar.char, canvas.width / 2, canvas.height / 2);
+    }
+    ctx.strokeStyle = '#111';
+    ctx.lineWidth = penSize;
+    ctx.lineCap = 'round';
+    ctx.lineJoin = 'round';
+  }
+
+  function getPos(e) {
+    const r = canvas.getBoundingClientRect();
+    const src = e.touches ? e.touches[0] : e;
+    return { x: src.clientX - r.left, y: src.clientY - r.top };
+  }
+
+  canvas.addEventListener('mousedown', e => { drawing = true; ctx.beginPath(); const p = getPos(e); ctx.moveTo(p.x, p.y); });
+  canvas.addEventListener('mousemove', e => { if (!drawing) return; const p = getPos(e); ctx.lineTo(p.x, p.y); ctx.stroke(); });
+  canvas.addEventListener('mouseup', () => drawing = false);
+  canvas.addEventListener('mouseleave', () => drawing = false);
+  canvas.addEventListener('touchstart', e => { e.preventDefault(); drawing = true; ctx.beginPath(); const p = getPos(e); ctx.moveTo(p.x, p.y); }, {passive:false});
+  canvas.addEventListener('touchmove', e => { e.preventDefault(); if (!drawing) return; const p = getPos(e); ctx.lineTo(p.x, p.y); ctx.stroke(); }, {passive:false});
+  canvas.addEventListener('touchend', () => drawing = false);
+
+  document.getElementById('clear-btn').addEventListener('click', clearCanvas);
+
+  [['pen-sm',3],['pen-md',7],['pen-lg',14]].forEach(([id, sz]) => {
+    document.getElementById(id).addEventListener('click', () => {
+      penSize = sz;
+      ctx.lineWidth = sz;
+      document.querySelectorAll('.cc-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    });
+  });
+
+  /* ═══ QUIZ TAB ═══ */
+  let quizMode = 'tel2en';
+  let quizPool = [];
+  let quizItem = null;
+  let quizAnswered = false;
+  let score = {c:0, t:0, s:0};
+
+  document.querySelectorAll('.qm-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.qm-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      quizMode = btn.dataset.m;
+      resetQuiz();
+    });
+  });
+
+  function buildPool() {
+    return [
+      ...VOCAB.map(v => ({tel:v.tel, en:v.en, tr:v.tr})),
+      ...PHRASES.filter(p => p.tel.length < 14 && !p.tel.includes('…'))
+                .map(p => ({tel:p.tel, en:p.en, tr:p.tr})),
+      ...NUMBERS.filter(n => n.n <= 100).map(n => ({tel:n.tel, en:n.en, tr:n.tr})),
+    ];
+  }
+
+  function resetQuiz() {
+    quizPool = buildPool();
+    score = {c:0, t:0, s:0};
+    updateScore();
+    document.getElementById('quiz-opts').innerHTML = '';
+    document.getElementById('quiz-next').disabled = false;
+    document.getElementById('quiz-next').textContent = 'Start Quiz';
+    document.getElementById('qq-main').textContent = '—';
+    document.getElementById('qq-main').style.fontFamily = '';
+    document.getElementById('qq-main').style.fontSize = '';
+    document.getElementById('qq-sub').textContent = 'Press Start below';
+    quizAnswered = false;
+  }
+
+  function nextQ() {
+    quizAnswered = false;
+    document.getElementById('quiz-next').disabled = true;
+    document.getElementById('quiz-next').textContent = 'Next →';
+    const optsEl = document.getElementById('quiz-opts');
+    optsEl.innerHTML = '';
+
+    if (quizMode === 'script') {
+      const pool = ALL_LETTERS.filter(l => l.ex.tel !== '—');
+      quizItem = pool[Math.floor(Math.random() * pool.length)];
+      const qm = document.getElementById('qq-main');
+      qm.style.fontFamily = 'var(--tel-font)';
+      qm.style.fontSize = '72px';
+      qm.textContent = quizItem.char;
+      document.getElementById('qq-sub').textContent = 'What is this letter?';
+
+      const wrongs = [];
+      while (wrongs.length < 3) {
+        const r = ALL_LETTERS[Math.floor(Math.random() * ALL_LETTERS.length)];
+        if (r !== quizItem && !wrongs.find(x => x.char === r.char)) wrongs.push(r);
+      }
+      [...wrongs, quizItem].sort(() => Math.random() - .5).forEach(opt => {
+        const b = document.createElement('button');
+        b.className = 'qopt';
+        b.style.fontFamily = 'var(--ui-font)';
+        b.textContent = `${opt.char}  ${opt.name} (${opt.roman})`;
+        b.dataset.correct = opt === quizItem ? '1' : '0';
+        b.addEventListener('click', () => handleAns(b, opt === quizItem));
+        optsEl.appendChild(b);
+      });
+
+    } else {
+      quizItem = quizPool[Math.floor(Math.random() * quizPool.length)];
+      const others = quizPool.filter(x => x.tel !== quizItem.tel);
+      const wrongs = [];
+      while (wrongs.length < 3) {
+        const r = others[Math.floor(Math.random() * others.length)];
+        if (!wrongs.find(x => x.tel === r.tel)) wrongs.push(r);
+      }
+
+      const qm = document.getElementById('qq-main');
+      if (quizMode === 'tel2en') {
+        qm.style.fontFamily = 'var(--tel-font)';
+        qm.style.fontSize = '60px';
+        qm.textContent = quizItem.tel;
+        document.getElementById('qq-sub').textContent = quizItem.tr;
+      } else {
+        qm.style.fontFamily = 'var(--ui-font)';
+        qm.style.fontSize = '34px';
+        qm.textContent = quizItem.en;
+        document.getElementById('qq-sub').textContent = 'Choose the Telugu:';
+      }
+
+      [...wrongs, quizItem].sort(() => Math.random() - .5).forEach(opt => {
+        const b = document.createElement('button');
+        b.className = 'qopt';
+        b.dataset.correct = opt === quizItem ? '1' : '0';
+        if (quizMode === 'tel2en') {
+          b.style.fontFamily = 'var(--ui-font)';
+          b.textContent = opt.en;
+        } else {
+          b.style.fontFamily = 'var(--tel-font)';
+          b.textContent = opt.tel;
+          b.title = opt.tr;
+        }
+        b.addEventListener('click', () => handleAns(b, opt === quizItem));
+        optsEl.appendChild(b);
+      });
+    }
+  }
+
+  function handleAns(btn, correct) {
+    if (quizAnswered) return;
+    quizAnswered = true;
+    score.t++;
+    if (correct) {
+      btn.classList.add('correct');
+      score.c++;
+      score.s++;
+    } else {
+      btn.classList.add('wrong');
+      score.s = 0;
+      document.querySelectorAll('.qopt[data-correct="1"]').forEach(b => b.classList.add('correct'));
+    }
+    updateScore();
+    document.getElementById('quiz-next').disabled = false;
+  }
+
+  function updateScore() {
+    document.getElementById('qs-c').textContent = score.c;
+    document.getElementById('qs-t').textContent = score.t;
+    document.getElementById('qs-s').textContent = score.s;
+  }
+
+  document.getElementById('quiz-next').addEventListener('click', nextQ);
+
+  resetQuiz();
+});
+</script>
+</body>
+</html>
