@@ -160,6 +160,67 @@ body{background:var(--bg);color:var(--text);font-family:"Segoe UI",Arial,sans-se
 .rhyme-highlight{background:rgba(232,200,64,.12)!important}
 .status-bar{color:var(--muted);font-size:11px;flex-shrink:0;padding:5px 24px;border-top:1px solid var(--bdr);background:var(--surf)}
 
+/* ════════════════════ BAR BUILDER ════════════════════ */
+#bb-toolbar{display:flex;align-items:flex-start;gap:12px;padding:14px 24px;border-bottom:1px solid var(--bdr);flex-shrink:0;flex-wrap:wrap;background:var(--surf)}
+#bb-input{flex:1 1 320px;min-height:70px;background:var(--surf2);border:1px solid var(--bdr);border-radius:var(--radius);color:var(--text);font-size:15px;padding:10px 14px;outline:none;resize:vertical;font-family:inherit;line-height:1.4}
+#bb-input:focus{border-color:var(--gold)}
+#bb-analyze{background:var(--gold);border:none;border-radius:var(--radius);color:#111;cursor:pointer;font-size:12px;font-weight:700;letter-spacing:.05em;padding:10px 20px;text-transform:uppercase;align-self:flex-start}
+#bb-analyze:hover{opacity:.85}
+#bb-legend{flex:0 0 100%;display:flex;flex-wrap:wrap;gap:10px;font-size:10px;color:var(--muted);letter-spacing:.03em;text-transform:uppercase}
+.sm-legend-item{display:inline-flex;align-items:center;gap:5px}
+.sm-swatch{display:inline-block;width:11px;height:11px;border-radius:3px}
+.sm-swatch-gradient{background:linear-gradient(90deg,#f7cf74,#b499d9)}
+#bb-output{flex:1;overflow-y:auto;padding:22px 24px}
+#bb-empty{color:var(--muted);font-style:italic;line-height:1.5;max-width:560px}
+.bb-line-row{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:20px;align-items:start;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid var(--bdr)}
+.bb-line-row:last-child{border-bottom:none}
+.bb-line-phonemes{min-width:0}
+.bb-suggest{font-size:11px}
+.bb-suggest-title{color:var(--gold);font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px}
+.bb-suggest-empty{color:var(--muted);font-style:italic;font-size:11px}
+.bb-suggest-item{display:flex;align-items:baseline;gap:8px;padding:4px 6px;border-radius:3px;cursor:pointer;transition:background .1s}
+.bb-suggest-item:hover{background:var(--surf2)}
+.bb-suggest-score{font-family:var(--mono);color:var(--gold);font-size:10px;width:36px;text-align:right;flex-shrink:0}
+.bb-suggest-word{font-weight:600;font-size:12px;flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bb-suggest-ipa{font-family:var(--mono);color:var(--blue);font-size:10px;opacity:.8;flex-shrink:0}
+/* shared phoneme visuals (mirror Sound Map) */
+.sm-line{display:block;margin-bottom:8px;position:relative}
+.sm-word{display:inline-block;margin:0 14px 14px 0;padding:7px 9px 9px;background:var(--surf);border:1px solid var(--bdr);border-radius:var(--radius);vertical-align:top;transition:opacity .18s,filter .18s,border-color .18s,box-shadow .18s}
+.sm-word-text{font-size:10px;font-weight:600;color:var(--muted);margin-bottom:5px;letter-spacing:.05em;text-transform:uppercase}
+.sm-word-text.unknown{color:#d98880;font-style:italic;text-transform:lowercase}
+.sm-phoneme-row{display:flex;gap:8px;align-items:flex-end;padding:16px 0 8px}
+.sm-syllable{position:relative;display:flex;gap:3px;align-items:flex-end;padding:3px;border-radius:5px}
+.sm-syllable[data-stress="1"]{background:rgba(212,162,76,.12);outline:1px solid rgba(212,162,76,.35)}
+.sm-syllable[data-stress="2"]{background:rgba(212,162,76,.05);outline:1px dashed rgba(212,162,76,.22)}
+.sm-syllable[data-stress="1"]::before{content:"ˈ";position:absolute;top:-14px;left:4px;color:var(--gold);font-weight:700;font-size:13px;line-height:1;font-family:var(--mono)}
+.sm-syllable[data-stress="2"]::before{content:"ˌ";position:absolute;top:-14px;left:4px;color:var(--gold);font-weight:700;font-size:13px;line-height:1;opacity:.7;font-family:var(--mono)}
+.sm-phon{display:inline-flex;align-items:center;justify-content:center;min-width:26px;padding:5px 7px;border-radius:4px;font-family:var(--mono);font-size:15px;color:#111;font-weight:700;position:relative;background:#999}
+.sm-phon[data-place="bilabial"]{background:#f5a5c9}
+.sm-phon[data-place="labiodental"]{background:#f5b58a}
+.sm-phon[data-place="dental"]{background:#f0d860}
+.sm-phon[data-place="alveolar"]{background:#9fdc9f}
+.sm-phon[data-place="postalveolar"]{background:#7cd0ce}
+.sm-phon[data-place="palatal"]{background:#9bbde0}
+.sm-phon[data-place="velar"]{background:#b9a0db}
+.sm-phon[data-place="glottal"]{background:#bbbbbb}
+.sm-phon[data-place="front-vowel"]{background:#f7cf74}
+.sm-phon[data-place="central-vowel"]{background:#d2c0a5}
+.sm-phon[data-place="back-vowel"]{background:#b499d9}
+.sm-phon[data-place="diphthong"]{background:linear-gradient(90deg,#f7cf74,#b499d9)}
+.sm-phon[data-voice="1"]{box-shadow:0 0 0 2px rgba(212,162,76,.4)}
+#bb-output.sm-proximity-active .sm-word{opacity:.3;filter:saturate(.5) brightness(.85)}
+#bb-output.sm-proximity-active .sm-word[data-prox="pivot"]{opacity:1;filter:none;border-color:var(--gold);box-shadow:0 0 0 2px rgba(212,162,76,.6)}
+#bb-output.sm-proximity-active .sm-word[data-prox="identical"]{opacity:1;filter:none;border-color:var(--gold)}
+#bb-output.sm-proximity-active .sm-word[data-prox="exact"]{opacity:1;filter:none;border-color:var(--gold);box-shadow:0 0 0 1px rgba(212,162,76,.55)}
+#bb-output.sm-proximity-active .sm-word[data-prox="rhyme"]{opacity:.92;border-color:rgba(212,162,76,.55)}
+#bb-output.sm-proximity-active .sm-word[data-prox="slant"]{opacity:.72;border-color:rgba(212,162,76,.25)}
+#bb-output.sm-proximity-active .sm-word[data-prox="family"]{opacity:.55}
+#bb-output.sm-proximity-active .sm-word[data-prox="far"]{opacity:.25}
+@media (max-width:720px){
+  .bb-line-row{grid-template-columns:1fr;gap:8px}
+  .bb-suggest{border-top:1px solid var(--bdr);padding-top:8px}
+}
+
 /* ════════════════════ RESPONSIVE ════════════════════ */
 @media(max-width:768px){
   #tab-nav{flex-wrap:wrap;gap:0;padding:0 8px}
@@ -323,6 +384,7 @@ body{background:var(--bg);color:var(--text);font-family:"Segoe UI",Arial,sans-se
   <span id="app-title">IPA Lab</span>
   <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="panel-rhyme" data-tab="rhyme" onclick="switchTab('rhyme',this)">Rhyme Finder</button>
   <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-endings" data-tab="endings" onclick="switchTab('endings',this)">Rap Endings</button>
+  <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-bar-builder" data-tab="bar-builder" onclick="switchTab('bar-builder',this)">Bar Builder</button>
   <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-bars" data-tab="bars" onclick="switchTab('bars',this)">Bar Sheet</button>
 </nav>
 
@@ -367,6 +429,31 @@ body{background:var(--bg);color:var(--text);font-family:"Segoe UI",Arial,sans-se
   <div class="endings-filter" id="fam-filters"></div>
   <div id="endings-content"></div>
 </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     TAB 3.5  ·  BAR BUILDER
+     ══════════════════════════════════════════════════════════ -->
+<div id="panel-bar-builder" class="tab-panel" role="tabpanel" aria-label="Bar Builder">
+  <div id="bb-toolbar">
+    <textarea id="bb-input" placeholder="type or paste bars, one per line…" rows="3" spellcheck="false"></textarea>
+    <button id="bb-analyze" type="button">Analyze</button>
+    <div id="bb-legend">
+      <span class="sm-legend-item"><span class="sm-swatch" style="background:#f5a5c9"></span>lips</span>
+      <span class="sm-legend-item"><span class="sm-swatch" style="background:#f5b58a"></span>teeth/lip</span>
+      <span class="sm-legend-item"><span class="sm-swatch" style="background:#f0d860"></span>tongue + teeth</span>
+      <span class="sm-legend-item"><span class="sm-swatch" style="background:#9fdc9f"></span>tongue-tip</span>
+      <span class="sm-legend-item"><span class="sm-swatch" style="background:#7cd0ce"></span>tongue-blade</span>
+      <span class="sm-legend-item"><span class="sm-swatch" style="background:#b9a0db"></span>back-of-tongue</span>
+      <span class="sm-legend-item"><span class="sm-swatch" style="background:#f7cf74"></span>front vowel</span>
+      <span class="sm-legend-item"><span class="sm-swatch" style="background:#b499d9"></span>back vowel</span>
+      <span class="sm-legend-item"><span class="sm-swatch sm-swatch-gradient"></span>diphthong</span>
+      <span class="sm-legend-item">hover a word to see near-rhymes in the bar</span>
+    </div>
+  </div>
+  <div id="bb-output">
+    <div id="bb-empty">Paste your bars above and click <b>Analyze</b>. Each line's end-word will get ranked near-rhyme suggestions from the dictionary.</div>
+  </div>
 </div>
 
 <!-- ══════════════════════════════════════════════════════════
@@ -460,6 +547,7 @@ body{background:var(--bg);color:var(--text);font-family:"Segoe UI",Arial,sans-se
      JAVASCRIPT
      ══════════════════════════════════════════════════════════ -->
 <script src="../data/cmudict.js"></script>
+<script src="../data/phonetics.js"></script>
 <script>
 document.getElementById("status-bar").textContent = Object.keys(D).length.toLocaleString() + " words loaded";
 
@@ -1812,6 +1900,171 @@ loadSheet();
 
 // Auto-save on any bar sheet change
 document.getElementById("panel-bars").addEventListener("input", saveSheet);
+
+// ══════════════════════════════════
+//  BAR BUILDER
+// ══════════════════════════════════
+function bbRenderWordBox(word, syllables, known) {
+  const wrap = document.createElement("div");
+  wrap.className = "sm-word";
+  wrap.dataset.word = word;
+  wrap.dataset.known = known ? "1" : "0";
+  const label = document.createElement("div");
+  label.className = "sm-word-text";
+  if (!known) {
+    label.classList.add("unknown");
+    label.textContent = word + " (?)";
+    wrap.appendChild(label);
+    return wrap;
+  }
+  label.textContent = word;
+  wrap.appendChild(label);
+  const row = document.createElement("div");
+  row.className = "sm-phoneme-row";
+  syllables.forEach(syl => {
+    const sylBox = document.createElement("div");
+    sylBox.className = "sm-syllable";
+    sylBox.dataset.stress = String(syl.stress);
+    for (const p of syl.phonemes) {
+      const feat = SM_FEATS[p];
+      const block = document.createElement("span");
+      block.className = "sm-phon";
+      block.textContent = p;
+      if (feat) {
+        block.dataset.place = feat.place;
+        block.dataset.voice = feat.voice ? "1" : "0";
+      }
+      block.title = smDescribe(p, feat);
+      sylBox.appendChild(block);
+    }
+    row.appendChild(sylBox);
+  });
+  wrap.appendChild(row);
+  return wrap;
+}
+
+function bbSuggestNearRhymes(word, limit) {
+  if (!D[word]) return [];
+  const candidates = [];
+  for (const w in D) {
+    if (w === word || w.length < 2) continue;
+    const d = smWordProximity(word, w);
+    if (d < 0.5) candidates.push({ word: w, dist: d });
+  }
+  candidates.sort((a, b) => a.dist - b.dist);
+  return candidates.slice(0, limit || 15);
+}
+
+function bbHighlightProximity(pivot, root) {
+  root.classList.add("sm-proximity-active");
+  root.querySelectorAll(".sm-word").forEach(el => {
+    const w = el.dataset.word;
+    if (w === pivot) { el.dataset.prox = "pivot"; return; }
+    if (el.dataset.known !== "1") { el.dataset.prox = "far"; return; }
+    const d = smWordProximity(pivot, w);
+    el.dataset.prox = smProximityBucket(d);
+    el.title = `distance: ${d.toFixed(2)} (${el.dataset.prox})`;
+  });
+}
+
+function bbClearProximity(root) {
+  root.classList.remove("sm-proximity-active");
+  root.querySelectorAll(".sm-word").forEach(el => {
+    delete el.dataset.prox;
+    el.removeAttribute("title");
+  });
+}
+
+function bbAnalyze() {
+  const raw = document.getElementById("bb-input").value;
+  const out = document.getElementById("bb-output");
+  out.innerHTML = "";
+
+  const lines = raw.split(/\r?\n/);
+  let anyLine = false;
+  for (const rawLine of lines) {
+    const tokens = rawLine.toLowerCase().split(/\s+/).map(t => t.replace(/[^a-z\-']/g,"")).filter(Boolean);
+    if (!tokens.length) continue;
+    anyLine = true;
+
+    const row = document.createElement("div");
+    row.className = "bb-line-row";
+
+    const phoneBox = document.createElement("div");
+    phoneBox.className = "bb-line-phonemes";
+    const lineEl = document.createElement("div");
+    lineEl.className = "sm-line";
+    let endWordKnown = null;
+    for (const w of tokens) {
+      const entry = D[w];
+      const known = !!entry;
+      const syllables = known ? smSyllabify(entry[0]) : [];
+      const wordEl = bbRenderWordBox(w, syllables, known);
+      wordEl.addEventListener("mouseenter", () => bbHighlightProximity(w, out));
+      wordEl.addEventListener("mouseleave", () => bbClearProximity(out));
+      lineEl.appendChild(wordEl);
+      if (known) endWordKnown = w;
+    }
+    phoneBox.appendChild(lineEl);
+    row.appendChild(phoneBox);
+
+    const sideBox = document.createElement("div");
+    sideBox.className = "bb-suggest";
+    const title = document.createElement("div");
+    title.className = "bb-suggest-title";
+    if (endWordKnown) {
+      title.textContent = `Near-rhymes for ${endWordKnown}`;
+      sideBox.appendChild(title);
+      const sugg = bbSuggestNearRhymes(endWordKnown, 15);
+      if (!sugg.length) {
+        const em = document.createElement("div");
+        em.className = "bb-suggest-empty";
+        em.textContent = "no near rhymes found";
+        sideBox.appendChild(em);
+      } else {
+        for (const s of sugg) {
+          const it = document.createElement("div");
+          it.className = "bb-suggest-item";
+          it.title = `distance ${s.dist.toFixed(2)} · ${smProximityBucket(s.dist)}`;
+          const sc = document.createElement("span");
+          sc.className = "bb-suggest-score";
+          sc.textContent = `${Math.round((1-s.dist)*100)}%`;
+          const wd = document.createElement("span");
+          wd.className = "bb-suggest-word";
+          wd.textContent = s.word;
+          const ipa = document.createElement("span");
+          ipa.className = "bb-suggest-ipa";
+          ipa.textContent = D[s.word][0];
+          it.appendChild(sc);
+          it.appendChild(wd);
+          it.appendChild(ipa);
+          sideBox.appendChild(it);
+        }
+      }
+    } else {
+      title.textContent = "Near-rhymes";
+      sideBox.appendChild(title);
+      const em = document.createElement("div");
+      em.className = "bb-suggest-empty";
+      em.textContent = "no dictionary word found in this line";
+      sideBox.appendChild(em);
+    }
+    row.appendChild(sideBox);
+    out.appendChild(row);
+  }
+
+  if (!anyLine) {
+    const em = document.createElement("div");
+    em.id = "bb-empty";
+    em.textContent = "Enter some bars above and click Analyze.";
+    out.appendChild(em);
+  }
+}
+
+document.getElementById("bb-analyze").addEventListener("click", bbAnalyze);
+document.getElementById("bb-input").addEventListener("keydown", e => {
+  if (e.key === "Enter" && (e.ctrlKey || e.metaKey)) { e.preventDefault(); bbAnalyze(); }
+});
 </script>
 </body>
 </html>
