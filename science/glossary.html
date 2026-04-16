@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Glossary — Science</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg:#1e2a3a; --fg:#e8ecf1; --muted:#8fa3ba;
+    --border:#32445c; --chrome:#2a3a4f; --active:#d4a24c; --tint:#263447;
+    --card:#243347;
+  }
+  body { font-family: Georgia, serif; background: var(--bg); color: var(--fg); line-height: 1.55; min-height: 100vh; }
+  .page { max-width: 1080px; margin: 0 auto; padding: 40px 24px 80px; }
+  .back { display: inline-block; margin-bottom: 18px; color: var(--active); text-decoration: none; font-size: 14px; }
+  .back:hover { text-decoration: underline; }
+  header.title-block { border-bottom: 1px solid var(--border); padding-bottom: 20px; margin-bottom: 24px; }
+  header.title-block h1 { font-size: 28px; font-weight: 600; }
+  header.title-block p { color: var(--muted); font-style: italic; margin-top: 6px; }
+
+  .controls { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 16px; align-items: center; }
+  input[type=search] { flex: 1; min-width: 240px; padding: 10px 14px; background: var(--card); border: 1px solid var(--border); color: var(--fg); font-family: inherit; font-size: 15px; }
+  input[type=search]:focus { outline: none; border-color: var(--active); }
+  .filter-chips { display: flex; gap: 6px; flex-wrap: wrap; }
+  .chip { padding: 6px 12px; background: var(--card); border: 1px solid var(--border); color: var(--muted); cursor: pointer; font-family: inherit; font-size: 13px; }
+  .chip:hover { border-color: var(--active); }
+  .chip.active { background: var(--active); color: #1e2a3a; border-color: var(--active); font-weight: 600; }
+
+  .results-meta { color: var(--muted); font-size: 13px; margin-bottom: 14px; font-family: ui-monospace, monospace; }
+
+  .entry-list { display: flex; flex-direction: column; gap: 8px; }
+  .entry { background: var(--card); border: 1px solid var(--border); padding: 14px 18px; }
+  .entry-head { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 4px; }
+  .entry-term { font-size: 17px; font-weight: 600; color: var(--active); }
+  .entry-file { font-size: 11px; color: var(--muted); font-family: ui-monospace, monospace; padding: 1px 6px; border: 1px solid var(--border); }
+  .entry-category { font-size: 11px; color: var(--muted); font-style: italic; }
+  .entry-def { font-size: 14.5px; line-height: 1.55; margin-top: 6px; }
+  .entry-detail { font-family: ui-monospace, monospace; font-size: 12.5px; color: var(--active); margin-top: 6px; padding-left: 12px; border-left: 2px solid var(--active); }
+  .entry-related { font-size: 12.5px; color: var(--muted); margin-top: 6px; }
+  .entry-related em { color: #a5b4fc; font-style: normal; cursor: pointer; text-decoration: underline dotted; }
+
+  mark { background: rgba(212,162,76,0.35); color: var(--fg); padding: 0 2px; }
+  .empty { text-align: center; color: var(--muted); padding: 40px; }
+  .loading { text-align: center; color: var(--muted); padding: 40px; }
+
+  .show-more { display: block; margin: 16px auto; padding: 10px 24px; background: var(--chrome); border: 1px solid var(--border); color: var(--fg); cursor: pointer; font-family: inherit; font-size: 14px; }
+  .show-more:hover { border-color: var(--active); }
+</style>
+</head>
+<body>
+<div class="page">
+  <a class="back" href="./">&larr; Science</a>
+  <header class="title-block">
+    <h1>Glossary</h1>
+    <p id="subtitle">Loading&hellip;</p>
+  </header>
+
+  <div class="controls">
+    <input type="search" id="searchInput" placeholder="Search term, definition, related…" autofocus>
+    <div class="filter-chips" id="fileChips"></div>
+  </div>
+  <div class="results-meta" id="resultsMeta"></div>
+  <div id="list" class="entry-list"><div class="loading">Loading entries&hellip;</div></div>
+</div>
+
+<script>
+(function() {
+  const list = document.getElementById('list');
+  const searchInput = document.getElementById('searchInput');
+  const fileChips = document.getElementById('fileChips');
+  const resultsMeta = document.getElementById('resultsMeta');
+  const subtitle = document.getElementById('subtitle');
+
+  let entries = [];
+  let activeFile = null;
+  let query = '';
+  let renderLimit = 50;
+
+  function esc(s) {
+    const d = document.createElement('div');
+    d.textContent = s == null ? '' : String(s);
+    return d.innerHTML;
+  }
+
+  function highlight(text, q) {
+    if (!q) return esc(text);
+    const escaped = esc(text);
+    const qEsc = q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    return escaped.replace(new RegExp('(' + qEsc + ')', 'gi'), '<mark>$1</mark>');
+  }
+
+  function matches(entry, q) {
+    if (!q) return true;
+    const lc = q.toLowerCase();
+    return (entry.term || '').toLowerCase().includes(lc)
+        || (entry.definition || '').toLowerCase().includes(lc)
+        || (entry.related || '').toLowerCase().includes(lc)
+        || (entry.category || '').toLowerCase().includes(lc);
+  }
+
+  function render() {
+    let filtered = entries;
+    if (activeFile) filtered = filtered.filter(e => e.file === activeFile);
+    if (query) filtered = filtered.filter(e => matches(e, query));
+
+    // Sort: term match first, then alpha by term
+    const lcq = query.toLowerCase();
+    filtered.sort((a, b) => {
+      if (lcq) {
+        const at = (a.term || '').toLowerCase().startsWith(lcq) ? 0 : 1;
+        const bt = (b.term || '').toLowerCase().startsWith(lcq) ? 0 : 1;
+        if (at !== bt) return at - bt;
+      }
+      return (a.term || '').localeCompare(b.term || '');
+    });
+
+    resultsMeta.textContent = filtered.length + ' of ' + entries.length + ' entries' + (query ? ' matching "' + query + '"' : '') + (activeFile ? ' in ' + activeFile : '');
+
+    if (!filtered.length) {
+      list.innerHTML = '<div class="empty">No matches.</div>';
+      return;
+    }
+
+    const toRender = filtered.slice(0, renderLimit);
+    let html = '';
+    for (const e of toRender) {
+      html += '<div class="entry">';
+      html += '<div class="entry-head">';
+      html += '<span class="entry-term">' + highlight(e.term || '', query) + '</span>';
+      if (e.file) html += '<span class="entry-file">' + esc(e.file) + '</span>';
+      if (e.category) html += '<span class="entry-category">' + esc(e.category) + '</span>';
+      html += '</div>';
+      if (e.definition) html += '<div class="entry-def">' + highlight(e.definition, query) + '</div>';
+      if (e.key_detail) html += '<div class="entry-detail">' + esc(e.key_detail) + '</div>';
+      if (e.related) html += '<div class="entry-related">Related: <em>' + esc(e.related) + '</em></div>';
+      html += '</div>';
+    }
+    if (filtered.length > renderLimit) {
+      html += '<button class="show-more" id="showMoreBtn">Show ' + Math.min(50, filtered.length - renderLimit) + ' more (of ' + (filtered.length - renderLimit) + ')</button>';
+    }
+    list.innerHTML = html;
+    const more = document.getElementById('showMoreBtn');
+    if (more) more.addEventListener('click', () => { renderLimit += 50; render(); });
+
+    // Clicking a related term searches for it
+    list.querySelectorAll('.entry-related em').forEach(el => {
+      el.addEventListener('click', () => {
+        const txt = el.textContent.split(',')[0].trim();
+        searchInput.value = txt;
+        query = txt;
+        renderLimit = 50;
+        render();
+      });
+    });
+  }
+
+  fetch('./data/glossary.json').then(r => r.json()).then(data => {
+    entries = data.entries || [];
+    const files = data.files || Array.from(new Set(entries.map(e => e.file)));
+    subtitle.textContent = entries.length + ' terms across ' + files.length + ' glossaries.';
+
+    // Build file chips
+    let chips = '<button class="chip active" data-file="">All</button>';
+    for (const f of files) {
+      const cleaned = f.replace(/\.md$/, '');
+      chips += '<button class="chip" data-file="' + esc(cleaned) + '">' + esc(cleaned) + '</button>';
+    }
+    fileChips.innerHTML = chips;
+    fileChips.querySelectorAll('.chip').forEach(btn => {
+      btn.addEventListener('click', () => {
+        fileChips.querySelectorAll('.chip').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        activeFile = btn.dataset.file || null;
+        renderLimit = 50;
+        render();
+      });
+    });
+
+    render();
+  }).catch(err => {
+    list.innerHTML = '<div class="empty">Failed to load: ' + esc(err.message) + '</div>';
+  });
+
+  let tid = 0;
+  searchInput.addEventListener('input', () => {
+    clearTimeout(tid);
+    tid = setTimeout(() => {
+      query = searchInput.value.trim();
+      renderLimit = 50;
+      render();
+    }, 150);
+  });
+  searchInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') { searchInput.value = ''; query = ''; render(); }
+  });
+})();
+</script>
+</body>
+</html>

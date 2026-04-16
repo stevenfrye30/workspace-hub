@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Science Tutoring Center</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg:#1e2a3a; --fg:#e8ecf1; --muted:#8fa3ba;
+    --border:#32445c; --chrome:#2a3a4f; --active:#d4a24c; --tint:#263447;
+    --card:#243347; --bridge:#d97706; --good:#4ade80; --bad:#f87171;
+  }
+  body { font-family: Georgia, serif; background: var(--bg); color: var(--fg); line-height: 1.55; min-height: 100vh; }
+  .page { max-width: 960px; margin: 0 auto; padding: 40px 24px 80px; }
+  .back { display: inline-block; margin-bottom: 18px; color: var(--active); text-decoration: none; font-size: 14px; }
+  .back:hover { text-decoration: underline; }
+  header.title-block { border-bottom: 1px solid var(--border); padding-bottom: 20px; margin-bottom: 28px; }
+  header.title-block h1 { font-size: 28px; font-weight: 600; display: flex; align-items: center; gap: 12px; }
+  header.title-block p { color: var(--muted); margin-top: 6px; font-style: italic; }
+
+  h2 { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); margin: 28px 0 12px; }
+
+  .pick-grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+  .pick-card { display: block; background: var(--card); border: 1px solid var(--border); padding: 14px 16px; text-decoration: none; color: inherit; transition: border-color 0.15s, transform 0.15s; cursor: pointer; }
+  .pick-card:hover { border-color: var(--active); transform: translateY(-1px); }
+  .pick-card.bridge { border-color: rgba(217,119,6,0.45); background: linear-gradient(180deg, rgba(217,119,6,0.08), var(--card)); }
+  .pick-card.bridge:hover { border-color: var(--bridge); }
+  .pick-card.disabled { opacity: 0.4; pointer-events: none; }
+  .pick-head { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
+  .pick-icon { font-size: 1.3rem; }
+  .pick-title { font-size: 16px; font-weight: 600; color: var(--active); }
+  .pick-kind { font-size: 10px; padding: 2px 7px; border-radius: 10px; text-transform: uppercase; letter-spacing: 0.06em; margin-left: auto; background: rgba(212,162,76,0.18); color: var(--active); font-family: system-ui, sans-serif; }
+  .pick-kind.bridge { background: rgba(217,119,6,0.22); color: #fbbf24; }
+  .pick-desc { font-size: 13px; color: var(--muted); line-height: 1.45; }
+  .pick-meta { font-size: 11px; color: var(--muted); margin-top: 8px; font-family: ui-monospace, monospace; }
+  .pick-none { font-size: 11px; color: #fca5a5; margin-top: 8px; }
+
+  /* Runner */
+  .runner-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; gap: 16px; flex-wrap: wrap; }
+  .mode-toggle { display: inline-flex; background: var(--card); border: 1px solid var(--border); }
+  .mode-btn { background: transparent; border: none; color: var(--muted); padding: 8px 16px; cursor: pointer; font-family: inherit; font-size: 14px; }
+  .mode-btn.active { background: var(--active); color: #1e2a3a; font-weight: 600; }
+  .progress { font-family: ui-monospace, monospace; color: var(--muted); font-size: 13px; }
+  .progress-bar { height: 3px; background: var(--border); margin: 6px 0 24px; }
+  .progress-bar-fill { height: 100%; background: var(--active); transition: width 0.3s; }
+
+  .card { background: var(--card); border: 1px solid var(--border); padding: 30px 28px; min-height: 340px; display: flex; flex-direction: column; justify-content: space-between; }
+  .card-term { font-size: 1.7rem; font-weight: 600; text-align: center; padding: 30px 20px; color: var(--active); }
+  .card-meta { text-align: center; color: var(--muted); font-size: 12px; font-family: ui-monospace, monospace; margin-top: 6px; }
+  .card-def { font-size: 1rem; line-height: 1.6; padding: 16px 8px; }
+  .card-related { margin-top: 14px; font-size: 13px; color: var(--muted); padding-top: 10px; border-top: 1px solid var(--border); }
+  .card-related em { color: #a5b4fc; font-style: normal; }
+
+  .hint { text-align: center; color: var(--muted); font-size: 13px; margin: 10px 0; }
+  .hint kbd { background: var(--chrome); padding: 1px 6px; border-radius: 3px; font-family: ui-monospace, monospace; font-size: 11px; border: 1px solid var(--border); }
+  .actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 14px; }
+  .action-btn { padding: 10px 22px; border: 1px solid var(--border); background: var(--chrome); color: var(--fg); cursor: pointer; font-family: inherit; font-size: 14px; }
+  .action-btn:hover { border-color: var(--active); }
+  .action-btn.primary { background: var(--active); border-color: var(--active); color: #1e2a3a; font-weight: 600; }
+  .action-btn.good { background: rgba(74,222,128,0.18); border-color: var(--good); color: #a7f3d0; }
+  .action-btn.bad { background: rgba(248,113,113,0.18); border-color: var(--bad); color: #fecaca; }
+
+  .choices { display: grid; gap: 10px; margin-top: 20px; }
+  .choice-btn { text-align: left; padding: 12px 14px; border: 1px solid var(--border); background: var(--chrome); color: var(--fg); cursor: pointer; font-family: inherit; font-size: 14px; line-height: 1.45; }
+  .choice-btn:hover:not(:disabled) { border-color: var(--active); }
+  .choice-btn.correct { background: rgba(74,222,128,0.22); border-color: var(--good); color: #a7f3d0; }
+  .choice-btn.wrong { background: rgba(248,113,113,0.22); border-color: var(--bad); color: #fecaca; }
+  .choice-btn:disabled { cursor: default; }
+  .choice-letter { display: inline-block; min-width: 22px; font-weight: 600; color: var(--active); margin-right: 8px; }
+
+  .final { text-align: center; padding: 40px 20px; }
+  .final-score { font-size: 3rem; font-weight: 700; margin: 14px 0; color: var(--active); }
+  .final-score.good { color: var(--good); }
+  .final-score.bad { color: var(--bad); }
+
+  .loading, .error { text-align: center; color: var(--muted); padding: 40px; }
+  .error { color: #fca5a5; }
+</style>
+</head>
+<body>
+<div class="page">
+  <a class="back" href="./">&larr; Science</a>
+  <div id="root"><div class="loading">Loading&hellip;</div></div>
+</div>
+
+<script>
+(function() {
+  const root = document.getElementById('root');
+  let clusters = [];
+  let entries = [];
+
+  function esc(s) {
+    const d = document.createElement('div');
+    d.textContent = s == null ? '' : String(s);
+    return d.innerHTML;
+  }
+
+  function getClusterIdFromUrl() {
+    const p = new URLSearchParams(location.search);
+    return p.get('cluster');
+  }
+
+  Promise.all([
+    fetch('./data/clusters.json').then(r => r.json()),
+    fetch('./data/glossary.json').then(r => r.json()),
+  ]).then(([clusterData, glossaryData]) => {
+    clusters = clusterData.clusters || [];
+    entries = glossaryData.entries || [];
+    const wantedId = getClusterIdFromUrl();
+    if (wantedId) {
+      const c = clusters.find(x => x.id === wantedId);
+      if (c) renderRunner(c);
+      else renderPicker('Topic not found: ' + wantedId);
+    } else {
+      renderPicker();
+    }
+  }).catch(err => {
+    root.innerHTML = '<div class="error">Failed to load data: ' + esc(err.message) + '</div>';
+  });
+
+  // ------- PICKER -------
+
+  function renderPicker(errMsg) {
+    const hubs = clusters.filter(c => c.kind === 'hub');
+    const bridges = clusters.filter(c => c.kind === 'bridge');
+
+    let html = '<header class="title-block"><h1><span>🎯</span>Tutoring Center</h1>';
+    html += '<p>Pick a topic to quiz yourself on. All content is drawn from the glossary.</p></header>';
+    if (errMsg) html += '<div class="error">' + esc(errMsg) + '</div>';
+
+    if (hubs.length) {
+      html += '<h2>Subject-Area Hubs</h2><div class="pick-grid">';
+      for (const c of hubs) {
+        const hasGloss = c.glossaries && c.glossaries.length > 0;
+        html += '<a class="pick-card' + (hasGloss ? '' : ' disabled') + '"' + (hasGloss ? ' href="?cluster=' + encodeURIComponent(c.id) + '"' : '') + '>';
+        html += '<div class="pick-head"><span class="pick-icon">' + esc(c.icon) + '</span>';
+        html += '<span class="pick-title">' + esc(c.label) + '</span>';
+        html += '<span class="pick-kind">hub</span></div>';
+        html += '<div class="pick-desc">' + esc(c.desc) + '</div>';
+        if (hasGloss) html += '<div class="pick-meta">Glossary: ' + esc(c.glossaries.join(', ')) + '</div>';
+        else html += '<div class="pick-none">No glossary entries for this cluster</div>';
+        html += '</a>';
+      }
+      html += '</div>';
+    }
+
+    if (bridges.length) {
+      html += '<h2>Bridge Concepts</h2><div class="pick-grid">';
+      for (const c of bridges) {
+        html += '<a class="pick-card bridge" href="?cluster=' + encodeURIComponent(c.id) + '">';
+        html += '<div class="pick-head"><span class="pick-icon">' + esc(c.icon) + '</span>';
+        html += '<span class="pick-title">' + esc(c.label) + '</span>';
+        html += '<span class="pick-kind bridge">bridge</span></div>';
+        html += '<div class="pick-desc">' + esc(c.desc) + '</div>';
+        html += '<div class="pick-meta">' + (c.anchor_terms ? c.anchor_terms.length : 0) + ' anchor terms</div>';
+        html += '</a>';
+      }
+      html += '</div>';
+    }
+    root.innerHTML = html;
+  }
+
+  // ------- RUNNER -------
+
+  function shuffle(arr) {
+    const a = arr.slice();
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }
+  function normalize(t) {
+    return String(t || '').toLowerCase().trim().replace(/\s*\([^)]*\)\s*$/, '').trim();
+  }
+
+  function filterEntriesForCluster(c) {
+    const targetGloss = new Set(c.glossaries || []);
+    const anchors = new Set((c.anchor_terms || []).map(t => t.toLowerCase().trim()));
+    let filtered = entries.filter(e => targetGloss.has(e.file));
+    if (c.kind === 'bridge' && anchors.size) {
+      const isAnchor = term => {
+        const n = normalize(term);
+        for (const a of anchors) if (n === a || n.includes(a) || a.includes(n)) return true;
+        return false;
+      };
+      const anchor = filtered.filter(e => isAnchor(e.term));
+      const related = new Set();
+      for (const e of anchor) {
+        (e.related || '').split(',').forEach(r => {
+          const n = normalize(r);
+          if (n) related.add(n);
+        });
+      }
+      const neighbors = filtered.filter(e => related.has(normalize(e.term)) && !isAnchor(e.term));
+      filtered = [...anchor, ...neighbors];
+    }
+    return filtered.filter(e => e.definition && e.definition.length > 10);
+  }
+
+  function renderRunner(cluster) {
+    const list = filterEntriesForCluster(cluster);
+
+    let html = '<header class="title-block">';
+    html += '<div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap"><h1 style="display:flex;align-items:center;gap:10px;flex:1;min-width:0"><span>' + esc(cluster.icon) + '</span>' + esc(cluster.label) + '</h1>';
+    html += '<a class="back" href="./" style="margin:0">All topics &rarr;</a></div>';
+    html += '<p>' + esc(cluster.desc) + '</p>';
+    html += '</header>';
+
+    if (!list.length) {
+      html += '<div class="error">No quizzable glossary entries found for this cluster.</div>';
+      root.innerHTML = html;
+      return;
+    }
+
+    html += '<div class="runner-head">';
+    html += '<div class="mode-toggle" id="modeToggle">';
+    html += '<button class="mode-btn active" data-mode="flash">Flashcards</button>';
+    html += '<button class="mode-btn" data-mode="mc">Multiple choice</button>';
+    html += '</div>';
+    html += '<div class="progress" id="progressText"></div>';
+    html += '</div>';
+    html += '<div class="progress-bar"><div class="progress-bar-fill" id="progressBar" style="width:0%"></div></div>';
+    html += '<div id="runner"></div>';
+    html += '<div class="hint" id="hint">Press <kbd>space</kbd> to flip &middot; <kbd>1</kbd>/<kbd>2</kbd> mark &middot; <kbd>→</kbd> next</div>';
+    root.innerHTML = html;
+
+    startSession(list);
+  }
+
+  function startSession(list) {
+    const runner = document.getElementById('runner');
+    const progressText = document.getElementById('progressText');
+    const progressBar = document.getElementById('progressBar');
+    const hint = document.getElementById('hint');
+    const modeBtns = document.querySelectorAll('.mode-btn');
+
+    let queue = shuffle(list);
+    let idx = 0;
+    let mode = 'flash';
+    let flipped = false;
+    let answered = false;
+    let stats = { got: 0, missed: 0 };
+
+    function render() {
+      if (idx >= queue.length) return renderFinal();
+      progressText.textContent = (idx + 1) + ' / ' + queue.length + '   (' + stats.got + ' ✓ / ' + stats.missed + ' ✗)';
+      progressBar.style.width = (idx / queue.length * 100) + '%';
+      hint.style.display = mode === 'flash' ? 'block' : 'none';
+      const e = queue[idx];
+      if (mode === 'flash') renderFlash(e);
+      else renderMC(e);
+    }
+
+    function renderFlash(e) {
+      let html = '<div class="card">';
+      html += '<div class="card-term">' + esc(e.term) + '</div>';
+      if (flipped) {
+        html += '<div class="card-def">' + esc(e.definition) + '</div>';
+        if (e.key_detail) html += '<div class="card-def" style="color:var(--active);font-family:ui-monospace,monospace;font-size:13px">' + esc(e.key_detail) + '</div>';
+        if (e.related) html += '<div class="card-related">Related: <em>' + esc(e.related) + '</em></div>';
+        html += '<div class="actions">';
+        html += '<button class="action-btn bad" data-act="missed">Review later</button>';
+        html += '<button class="action-btn good" data-act="got">Got it</button>';
+        html += '</div>';
+      } else {
+        html += '<div class="card-meta">' + esc(e.file) + (e.category ? ' &middot; ' + esc(e.category) : '') + '</div>';
+        html += '<div class="actions"><button class="action-btn primary" data-act="flip">Show answer</button></div>';
+      }
+      html += '</div>';
+      runner.innerHTML = html;
+      runner.querySelectorAll('[data-act]').forEach(b => b.addEventListener('click', () => handle(b.dataset.act)));
+    }
+
+    function renderMC(e) {
+      const others = list.filter(x => x !== e && x.definition && x.definition.length > 10);
+      const sameFile = shuffle(others.filter(x => x.file === e.file)).slice(0, 3);
+      let distractors = sameFile;
+      if (distractors.length < 3) {
+        distractors = distractors.concat(shuffle(others).filter(x => !sameFile.includes(x)).slice(0, 3 - distractors.length));
+      }
+      const choices = shuffle([e, ...distractors]);
+      let html = '<div class="card">';
+      html += '<div class="card-term">' + esc(e.term) + '</div>';
+      html += '<div class="card-meta">Pick the matching definition</div>';
+      html += '<div class="choices">';
+      choices.forEach((c, i) => {
+        const letter = String.fromCharCode(65 + i);
+        html += '<button class="choice-btn" data-correct="' + (c === e ? '1' : '0') + '"><span class="choice-letter">' + letter + '</span>' + esc(c.definition) + '</button>';
+      });
+      html += '</div></div>';
+      runner.innerHTML = html;
+      runner.querySelectorAll('.choice-btn').forEach(b => {
+        b.addEventListener('click', () => {
+          const correct = b.dataset.correct === '1';
+          runner.querySelectorAll('.choice-btn').forEach(btn => {
+            btn.disabled = true;
+            if (btn.dataset.correct === '1') btn.classList.add('correct');
+          });
+          if (!correct) b.classList.add('wrong');
+          if (correct) stats.got++; else stats.missed++;
+          answered = true;
+          const ad = document.createElement('div');
+          ad.className = 'actions';
+          ad.innerHTML = '<button class="action-btn primary" data-act="next">Next</button>';
+          runner.querySelector('.card').appendChild(ad);
+          ad.querySelector('[data-act]').addEventListener('click', () => handle('next'));
+          progressText.textContent = (idx + 1) + ' / ' + queue.length + '   (' + stats.got + ' ✓ / ' + stats.missed + ' ✗)';
+        });
+      });
+    }
+
+    function renderFinal() {
+      progressBar.style.width = '100%';
+      const total = stats.got + stats.missed;
+      const pct = total ? Math.round(stats.got / total * 100) : 0;
+      const band = pct >= 80 ? 'good' : pct >= 60 ? '' : 'bad';
+      let html = '<div class="card"><div class="final">';
+      html += '<h2 style="color:var(--fg);font-size:20px;letter-spacing:0;text-transform:none;font-family:Georgia,serif">Session complete</h2>';
+      html += '<div class="final-score ' + band + '">' + pct + '%</div>';
+      html += '<div class="card-meta">' + stats.got + ' correct &middot; ' + stats.missed + ' missed &middot; ' + queue.length + ' cards</div>';
+      html += '<div class="actions" style="margin-top:24px">';
+      html += '<button class="action-btn primary" data-act="restart">Restart</button>';
+      html += '<a href="./" class="action-btn">Pick another topic</a>';
+      html += '</div></div></div>';
+      runner.innerHTML = html;
+      runner.querySelector('[data-act="restart"]').addEventListener('click', () => handle('restart'));
+      progressText.textContent = 'Done';
+    }
+
+    function handle(act) {
+      if (act === 'flip') { flipped = true; render(); }
+      else if (act === 'got') { stats.got++; flipped = false; idx++; render(); }
+      else if (act === 'missed') { stats.missed++; flipped = false; idx++; render(); }
+      else if (act === 'next') { answered = false; idx++; render(); }
+      else if (act === 'restart') { queue = shuffle(list); idx = 0; flipped = false; answered = false; stats = { got: 0, missed: 0 }; render(); }
+    }
+
+    modeBtns.forEach(b => {
+      b.addEventListener('click', () => {
+        modeBtns.forEach(x => x.classList.remove('active'));
+        b.classList.add('active');
+        mode = b.dataset.mode;
+        flipped = false;
+        answered = false;
+        render();
+      });
+    });
+
+    document.addEventListener('keydown', (ev) => {
+      if (ev.key === ' ' && mode === 'flash' && !flipped) { ev.preventDefault(); handle('flip'); }
+      else if (ev.key === ' ' && mode === 'flash' && flipped) { ev.preventDefault(); handle('got'); }
+      else if (ev.key === '1' && mode === 'flash' && flipped) handle('missed');
+      else if (ev.key === '2' && mode === 'flash' && flipped) handle('got');
+      else if (ev.key === 'ArrowRight' && answered) handle('next');
+    });
+
+    render();
+  }
+})();
+</script>
+</body>
+</html>
