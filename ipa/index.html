@@ -176,7 +176,12 @@ body{background:var(--bg);color:var(--text);font-family:"Segoe UI",Arial,sans-se
 .sm-word{display:inline-block;margin:0 14px 14px 0;padding:7px 9px 9px;background:var(--surf);border:1px solid var(--bdr);border-radius:var(--radius);vertical-align:top}
 .sm-word-text{font-size:10px;font-weight:600;color:var(--muted);margin-bottom:5px;letter-spacing:.05em;text-transform:uppercase}
 .sm-word-text.unknown{color:#d98880;font-style:italic;text-transform:lowercase}
-.sm-phoneme-row{display:flex;gap:3px;align-items:flex-end}
+.sm-phoneme-row{display:flex;gap:8px;align-items:flex-end;padding-top:16px}
+.sm-syllable{position:relative;display:flex;gap:3px;align-items:flex-end;padding:3px;border-radius:5px;transition:background .15s}
+.sm-syllable[data-stress="1"]{background:rgba(212,162,76,.12);outline:1px solid rgba(212,162,76,.35)}
+.sm-syllable[data-stress="2"]{background:rgba(212,162,76,.05);outline:1px dashed rgba(212,162,76,.22)}
+.sm-syllable[data-stress="1"]::before{content:"ˈ";position:absolute;top:-14px;left:4px;color:var(--gold);font-weight:700;font-size:13px;line-height:1;font-family:var(--mono)}
+.sm-syllable[data-stress="2"]::before{content:"ˌ";position:absolute;top:-14px;left:4px;color:var(--gold);font-weight:700;font-size:13px;line-height:1;opacity:.7;font-family:var(--mono)}
 .sm-phon{display:inline-flex;align-items:center;justify-content:center;min-width:26px;padding:5px 7px;border-radius:4px;font-family:var(--mono);font-size:15px;color:#111;font-weight:700;position:relative;background:#999}
 .sm-phon[data-place="bilabial"]{background:#f5a5c9}
 .sm-phon[data-place="labiodental"]{background:#f5b58a}
@@ -1947,6 +1952,68 @@ function smParsePhonemes(ipa) {
   return out;
 }
 
+// Parse IPA string into syllables. Each syllable = {phonemes:[], stress:0|1|2}.
+// Stress: 0 = unstressed, 1 = primary (ˈ), 2 = secondary (ˌ).
+function smSyllabify(ipa) {
+  // 1) Tokenize, tracking stress marks that apply to the upcoming syllable.
+  const tokens = [];
+  let pending = 0;
+  let i = 0;
+  while (i < ipa.length) {
+    const c = ipa[i];
+    if (c === "ˈ") { pending = 1; i++; continue; }
+    if (c === "ˌ") { pending = pending || 2; i++; continue; }
+    if (c === "." || c === " ") { i++; continue; }
+    let matched = null;
+    for (const p of SM_PHONEMES) {
+      if (ipa.startsWith(p, i)) { matched = p; break; }
+    }
+    if (!matched) { matched = ipa[i]; }
+    tokens.push({ p: matched, stressMark: pending });
+    pending = 0;
+    i += matched.length;
+  }
+
+  // 2) Group into syllables by vowel nucleus, with onset-maximal-ish split.
+  const syls = [];
+  let cur = { phonemes: [], stress: 0, hasVowel: false };
+  let nextStress = 0;
+
+  for (const tok of tokens) {
+    if (tok.stressMark) nextStress = Math.max(nextStress, tok.stressMark);
+    const feat = SM_FEATS[tok.p];
+    const isVowel = feat && feat.type === "V";
+
+    if (isVowel && cur.hasVowel) {
+      // New syllable begins. Split intervocalic consonants.
+      let lastV = -1;
+      for (let k = cur.phonemes.length - 1; k >= 0; k--) {
+        const ff = SM_FEATS[cur.phonemes[k]];
+        if (ff && ff.type === "V") { lastV = k; break; }
+      }
+      const between = cur.phonemes.slice(lastV + 1);
+      // 0 → nothing moves. 1 → move to new onset. 2+ → first stays as coda, rest move.
+      const keep = between.length <= 1 ? 0 : 1;
+      const kept = between.slice(0, keep);
+      const moved = between.slice(keep);
+      cur.phonemes = cur.phonemes.slice(0, lastV + 1).concat(kept);
+      syls.push({ phonemes: cur.phonemes, stress: cur.stress });
+      cur = { phonemes: moved.concat([tok.p]), stress: nextStress, hasVowel: true };
+      nextStress = 0;
+    } else if (isVowel) {
+      cur.phonemes.push(tok.p);
+      cur.stress = Math.max(cur.stress, nextStress);
+      cur.hasVowel = true;
+      nextStress = 0;
+    } else {
+      cur.phonemes.push(tok.p);
+    }
+  }
+  if (cur.phonemes.length) syls.push({ phonemes: cur.phonemes, stress: cur.stress });
+  if (!syls.length) syls.push({ phonemes: [], stress: 0 });
+  return syls;
+}
+
 function smDescribe(p, feat) {
   if (!feat) return `/${p}/ — unknown`;
   if (feat.type === "V") {
@@ -1986,20 +2053,28 @@ function smVisualize() {
     wrap.appendChild(label);
     const row = document.createElement("div");
     row.className = "sm-phoneme-row";
-    const phs = smParsePhonemes(entry[0]);
-    for (const p of phs) {
-      const feat = SM_FEATS[p];
-      const block = document.createElement("span");
-      block.className = "sm-phon";
-      block.textContent = p;
-      if (feat) {
-        block.dataset.place = feat.place;
-        block.dataset.voice = feat.voice ? "1" : "0";
+    const syllables = smSyllabify(entry[0]);
+    syllables.forEach((syl, si) => {
+      const sylBox = document.createElement("div");
+      sylBox.className = "sm-syllable";
+      sylBox.dataset.stress = String(syl.stress);
+      if (syl.stress === 1) sylBox.title = "primary stress";
+      else if (syl.stress === 2) sylBox.title = "secondary stress";
+      else sylBox.title = "unstressed";
+      for (const p of syl.phonemes) {
+        const feat = SM_FEATS[p];
+        const block = document.createElement("span");
+        block.className = "sm-phon";
+        block.textContent = p;
+        if (feat) {
+          block.dataset.place = feat.place;
+          block.dataset.voice = feat.voice ? "1" : "0";
+        }
+        block.title = smDescribe(p, feat);
+        sylBox.appendChild(block);
       }
-      block.title = smDescribe(p, feat);
-      row.appendChild(block);
-    }
-    wrap.appendChild(row);
+      row.appendChild(sylBox);
+    });
     out.appendChild(wrap);
   }
   document.getElementById("status-bar").textContent =
