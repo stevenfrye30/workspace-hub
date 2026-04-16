@@ -558,6 +558,7 @@ function switchTab(name, btn) {
   document.getElementById("panel-"+name).classList.add("active");
   btn.classList.add("active");
   btn.setAttribute("aria-selected","true");
+  if (typeof rfSaveToHash === "function") rfSaveToHash();
 }
 
 // ══════════════════════════════════
@@ -772,15 +773,22 @@ document.getElementById("add-pane-btn").addEventListener("click", () => {
 
 // ── URL-hash state (shareable links) ────────────────────────────────────
 function rfSaveToHash() {
+  const activeBtn = document.querySelector(".tab-btn.active");
+  const activeTab = activeBtn ? activeBtn.dataset.tab : "rhyme";
   const panes = Array.from(document.querySelectorAll("#rf-panes .rf-pane"));
   const words = panes
     .map(p => p.querySelector(".word-input").value.trim())
     .filter(Boolean);
   const firstPane = panes[0];
   const d = firstPane ? firstPane.querySelector(".rhyme-depth").value : "1";
+  const bbEl = document.getElementById("bb-input");
+  const bb = bbEl ? bbEl.value.trim() : "";
+
   const p = new URLSearchParams();
+  if (activeTab && activeTab !== "rhyme") p.set("tab", activeTab);
   if (words.length) p.set("w", words.join(","));
   if (d !== "1") p.set("d", d);
+  if (bb) p.set("bb", bb);
   const str = p.toString();
   history.replaceState(null, "", str ? "#" + str : window.location.pathname);
 }
@@ -789,19 +797,29 @@ function rfLoadFromHash() {
   const p = new URLSearchParams(window.location.hash.slice(1));
   const w = p.get("w");
   const d = p.get("d") || "1";
-  if (!w) return;
-  const words = w.split(",").map(s => s.trim()).filter(Boolean);
-  // Clear existing panes then add one per word.
-  const container = document.getElementById("rf-panes");
-  container.innerHTML = "";
-  words.forEach(word => {
-    const pane = createPane();
-    const input = pane.querySelector(".word-input");
-    const depSel = pane.querySelector(".rhyme-depth");
-    input.value = word;
-    depSel.value = d;
-    runSearch(pane);
-  });
+  if (w) {
+    const words = w.split(",").map(s => s.trim()).filter(Boolean);
+    const container = document.getElementById("rf-panes");
+    container.innerHTML = "";
+    words.forEach(word => {
+      const pane = createPane();
+      const input = pane.querySelector(".word-input");
+      const depSel = pane.querySelector(".rhyme-depth");
+      input.value = word;
+      depSel.value = d;
+      runSearch(pane);
+    });
+  }
+  const bb = p.get("bb");
+  if (bb) {
+    document.getElementById("bb-input").value = bb;
+    bbAnalyze();
+  }
+  const tab = p.get("tab");
+  if (tab) {
+    const btn = document.querySelector(`.tab-btn[data-tab="${tab}"]`);
+    if (btn) btn.click();
+  }
 }
 
 // Start with one pane visible (unless the hash has state).
@@ -1944,15 +1962,7 @@ function bbRenderWordBox(word, syllables, known) {
 }
 
 function bbSuggestNearRhymes(word, limit) {
-  if (!D[word]) return [];
-  const candidates = [];
-  for (const w in D) {
-    if (w === word || w.length < 2) continue;
-    const d = smWordProximity(word, w);
-    if (d < 0.5) candidates.push({ word: w, dist: d });
-  }
-  candidates.sort((a, b) => a.dist - b.dist);
-  return candidates.slice(0, limit || 15);
+  return smNearRhymes(word, limit || 20);
 }
 
 function bbHighlightProximity(pivot, root) {
@@ -1962,8 +1972,9 @@ function bbHighlightProximity(pivot, root) {
     if (w === pivot) { el.dataset.prox = "pivot"; return; }
     if (el.dataset.known !== "1") { el.dataset.prox = "far"; return; }
     const d = smWordProximity(pivot, w);
-    el.dataset.prox = smProximityBucket(d);
-    el.title = `distance: ${d.toFixed(2)} (${el.dataset.prox})`;
+    const bucket = smProximityBucket(d);
+    el.dataset.prox = bucket;
+    el.title = bucket === "far" ? "" : `${bucket} rhyme with "${pivot}"`;
   });
 }
 
@@ -2025,7 +2036,7 @@ function bbAnalyze() {
         for (const s of sugg) {
           const it = document.createElement("div");
           it.className = "bb-suggest-item";
-          it.title = `distance ${s.dist.toFixed(2)} · ${smProximityBucket(s.dist)}`;
+          it.title = smProximityBucket(s.dist) + " rhyme";
           const sc = document.createElement("span");
           sc.className = "bb-suggest-score";
           sc.textContent = `${Math.round((1-s.dist)*100)}%`;
@@ -2061,9 +2072,16 @@ function bbAnalyze() {
   }
 }
 
-document.getElementById("bb-analyze").addEventListener("click", bbAnalyze);
+document.getElementById("bb-analyze").addEventListener("click", () => {
+  bbAnalyze();
+  if (typeof rfSaveToHash === "function") rfSaveToHash();
+});
 document.getElementById("bb-input").addEventListener("keydown", e => {
-  if (e.key === "Enter" && (e.ctrlKey || e.metaKey)) { e.preventDefault(); bbAnalyze(); }
+  if (e.key === "Enter" && (e.ctrlKey || e.metaKey)) {
+    e.preventDefault();
+    bbAnalyze();
+    if (typeof rfSaveToHash === "function") rfSaveToHash();
+  }
 });
 </script>
 </body>

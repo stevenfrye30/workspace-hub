@@ -590,8 +590,9 @@ function smHighlightProximity(pivotWord) {
       return;
     }
     const d = smWordProximity(pivotWord, w);
-    el.dataset.prox = smProximityBucket(d);
-    el.title = `distance: ${d.toFixed(2)} (${el.dataset.prox})`;
+    const bucket = smProximityBucket(d);
+    el.dataset.prox = bucket;
+    el.title = bucket === "far" ? "" : `${bucket} rhyme with "${pivotWord}"`;
   });
 }
 

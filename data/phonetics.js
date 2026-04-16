@@ -229,8 +229,8 @@ function smWordProximity(wA, wB) {
   const maxDepth = Math.min(rksA.length, rksB.length);
   for (let depth = maxDepth; depth >= 1; depth--) {
     if (rksA[depth-1] === rksB[depth-1]) {
-      // depth 4 -> 0.05 (essentially exact), depth 1 -> 0.45
-      return Math.max(0.05, 0.55 - depth * 0.13);
+      // depth 1 -> 0.32, depth 2 -> 0.22, depth 3 -> 0.12, depth 4 -> 0.05
+      return Math.max(0.05, 0.42 - depth * 0.10);
     }
   }
   // No exact rhyme. Compare last vowel nucleus for assonance / family match.
@@ -253,12 +253,53 @@ function smLastVowelOf(ipa) {
   return null;
 }
 
+// Lazy-built index: rhyme-key (last-syl) -> array of words sharing it.
+// Used by Bar Builder and any other near-rhyme lookup to avoid 135k-word
+// linear scans.
+let SM_RHYME_INDEX = null;
+function smRhymeIndex() {
+  if (SM_RHYME_INDEX) return SM_RHYME_INDEX;
+  const idx = new Map();
+  for (const w in D) {
+    const rks = D[w][1];
+    if (!rks || !rks.length) continue;
+    const key = rks[0];
+    if (!idx.has(key)) idx.set(key, []);
+    idx.get(key).push(w);
+  }
+  SM_RHYME_INDEX = idx;
+  return idx;
+}
+
+// Find near-rhymes to a target word: returns array of {word, dist} sorted by
+// distance ascending. Pulls candidates from the rhyme index (all words sharing
+// the target's 1-syl or deeper rhyme key) so it's fast and accurate.
+function smNearRhymes(target, limit) {
+  if (!D[target]) return [];
+  const idx = smRhymeIndex();
+  const seen = new Set();
+  const rks = D[target][1];
+  const candidates = [];
+  for (let depth = rks.length; depth >= 1; depth--) {
+    const key = rks[depth - 1];
+    const words = idx.get(key) || [];
+    for (const w of words) {
+      if (w === target || seen.has(w)) continue;
+      seen.add(w);
+      const d = smWordProximity(target, w);
+      candidates.push({ word: w, dist: d });
+    }
+  }
+  candidates.sort((a, b) => a.dist - b.dist);
+  return candidates.slice(0, limit || 20);
+}
+
 function smProximityBucket(d) {
-  if (d <= 0.05) return "identical";
-  if (d <= 0.22) return "exact";    // deep rhyme (2+ syl)
-  if (d <= 0.40) return "rhyme";    // single-syl rhyme
-  if (d <= 0.65) return "slant";    // same nucleus, different coda
-  if (d <= 0.85) return "family";   // same vowel family
+  if (d <= 0.08) return "identical";
+  if (d <= 0.25) return "exact";    // depth 2+ rhyme
+  if (d <= 0.42) return "rhyme";    // single-syl rhyme
+  if (d <= 0.62) return "slant";    // same nucleus, different coda
+  if (d <= 0.82) return "family";   // same vowel family
   return "far";
 }
 
