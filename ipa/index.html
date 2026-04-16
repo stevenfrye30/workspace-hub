@@ -184,8 +184,14 @@ body{background:var(--bg);color:var(--text);font-family:"Segoe UI",Arial,sans-se
 .sm-syllable[data-stress="2"]::before{content:"ˌ";position:absolute;top:-14px;left:4px;color:var(--gold);font-weight:700;font-size:13px;line-height:1;opacity:.7;font-family:var(--mono)}
 .sm-syllable[data-group]::after{content:"";position:absolute;left:3px;right:3px;bottom:-5px;height:3px;border-radius:2px;background:var(--sm-group)}
 .sm-syllable[data-group]:hover{background:color-mix(in srgb, var(--sm-group) 20%, transparent)}
-.sm-line{display:block;margin-bottom:8px}
+.sm-line{display:block;margin-bottom:8px;position:relative;padding-left:32px}
 .sm-line:last-child{margin-bottom:0}
+.sm-line-play{position:absolute;left:0;top:28px;width:24px;height:24px;border-radius:50%;background:var(--surf2);border:1px solid var(--bdr);color:var(--gold);font-size:9px;cursor:pointer;padding:0;display:flex;align-items:center;justify-content:center;transition:border-color .15s,background .15s}
+.sm-line-play:hover{border-color:var(--gold);background:var(--surf)}
+.sm-word-text.clickable,.sm-syllable.clickable,.sm-phon.clickable{cursor:pointer}
+.sm-word-text.clickable:hover{color:var(--gold)}
+.sm-syllable.clickable:hover:not([data-group]){background:var(--surf2)}
+.sm-phon.clickable:hover{filter:brightness(1.15);transform:translateY(-1px);transition:transform .08s,filter .08s}
 #sm-mode-picker{flex:0 0 100%;display:flex;flex-wrap:wrap;align-items:center;gap:12px;font-size:11px;color:var(--muted);letter-spacing:.04em;padding-top:4px}
 #sm-mode-picker label{display:inline-flex;align-items:center;gap:5px;cursor:pointer;text-transform:uppercase}
 #sm-mode-picker input[type="radio"]{accent-color:var(--gold);cursor:pointer;margin:0}
@@ -2045,6 +2051,35 @@ const SM_GROUP_COLORS = [
   "#16a085","#4aa3e0","#b47cd6","#e84393"
 ];
 
+// Example words used when the user clicks a phoneme — they hear a short
+// word that prominently features the sound.
+const SM_PHON_EXAMPLE = {
+  "p":"pat","b":"bat","t":"tap","d":"dad","k":"cat","g":"go",
+  "m":"man","n":"no","ŋ":"sing",
+  "f":"fan","v":"van","θ":"thin","ð":"this","s":"sun","z":"zoo",
+  "ʃ":"ship","ʒ":"measure","h":"hat",
+  "tʃ":"chip","dʒ":"jam",
+  "w":"we","j":"yes","l":"let","r":"run","ɹ":"run",
+  "i":"see","ɪ":"sit","e":"bay","ɛ":"bed","æ":"cat",
+  "ə":"sofa","ɜ":"bird","ʌ":"cup","ɝ":"bird","ɚ":"butter",
+  "ɑ":"father","ɔ":"thought","ɒ":"hot","o":"go","ʊ":"book","u":"food",
+  "eɪ":"day","aɪ":"my","aʊ":"how","oʊ":"go","ɔɪ":"boy",
+  "ɑr":"car","ɪr":"ear","ɛr":"air","ɔr":"or","ʊr":"tour"
+};
+
+function smSpeak(text, rate) {
+  if (!("speechSynthesis" in window)) return false;
+  const u = new SpeechSynthesisUtterance(text);
+  u.rate = rate || 1;
+  u.pitch = 1;
+  u.lang = "en-US";
+  speechSynthesis.cancel();
+  speechSynthesis.speak(u);
+  return true;
+}
+
+const SM_AUDIO = "speechSynthesis" in window;
+
 function smSylNucleus(syl) {
   for (const p of syl.phonemes) {
     const f = SM_FEATS[p];
@@ -2170,6 +2205,16 @@ function smVisualize() {
   for (const lineWords of byLine) {
     const lineBox = document.createElement("div");
     lineBox.className = "sm-line";
+    if (SM_AUDIO) {
+      const playLine = document.createElement("button");
+      playLine.type = "button";
+      playLine.className = "sm-line-play";
+      playLine.textContent = "▶";
+      const lineText = lineWords.map(i => processed[i].word).join(" ");
+      playLine.title = `Play this line`;
+      playLine.addEventListener("click", () => smSpeak(lineText, 0.95));
+      lineBox.appendChild(playLine);
+    }
     for (const wIdx of lineWords) {
       const wp = processed[wIdx];
       const wrap = document.createElement("div");
@@ -2185,6 +2230,11 @@ function smVisualize() {
         continue;
       }
       label.textContent = wp.word;
+      if (SM_AUDIO) {
+        label.classList.add("clickable");
+        label.title = `Click to hear "${wp.word}"`;
+        label.addEventListener("click", () => smSpeak(wp.word, 1));
+      }
       wrap.appendChild(label);
       const row = document.createElement("div");
       row.className = "sm-phoneme-row";
@@ -2192,7 +2242,15 @@ function smVisualize() {
         const sylBox = document.createElement("div");
         sylBox.className = "sm-syllable";
         sylBox.dataset.stress = String(syl.stress);
-        sylBox.title = syl.stress === 1 ? "primary stress" : syl.stress === 2 ? "secondary stress" : "unstressed";
+        const stressLabel = syl.stress === 1 ? "primary stress" : syl.stress === 2 ? "secondary stress" : "unstressed";
+        sylBox.title = SM_AUDIO ? `${stressLabel} · click to hear "${wp.word}" slowly` : stressLabel;
+        if (SM_AUDIO) {
+          sylBox.classList.add("clickable");
+          sylBox.addEventListener("click", e => {
+            if (e.target !== sylBox && e.target.classList.contains("sm-phon")) return;
+            smSpeak(wp.word, 0.55);
+          });
+        }
         const c = groupColor(wIdx, si);
         if (c) {
           sylBox.dataset.group = "1";
@@ -2207,7 +2265,18 @@ function smVisualize() {
             block.dataset.place = feat.place;
             block.dataset.voice = feat.voice ? "1" : "0";
           }
-          block.title = smDescribe(p, feat);
+          const example = SM_PHON_EXAMPLE[p];
+          block.title = SM_AUDIO && example
+            ? `${smDescribe(p, feat)} · click to hear "${example}"`
+            : smDescribe(p, feat);
+          if (SM_AUDIO) {
+            block.classList.add("clickable");
+            block.addEventListener("click", e => {
+              e.stopPropagation();
+              const ex = SM_PHON_EXAMPLE[p] || p;
+              smSpeak(ex, 0.8);
+            });
+          }
           sylBox.appendChild(block);
         }
         row.appendChild(sylBox);
