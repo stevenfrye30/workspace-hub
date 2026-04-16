@@ -51,11 +51,26 @@ body{background:var(--bg);color:var(--text);font-family:"Segoe UI",Arial,sans-se
 .syl-col{min-width:160px;flex-shrink:0}
 .syl-hdr{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);border-bottom:1px solid var(--bdr);padding-bottom:5px;margin-bottom:8px}
 .syl-hdr .cnt{color:var(--muted);font-weight:400;margin-left:5px}
-.rhyme-word{display:flex;flex-direction:column;margin-bottom:5px;cursor:pointer;border-radius:4px;padding:3px 5px;transition:background .1s}
+.rhyme-word{position:relative;display:flex;flex-direction:column;margin-bottom:5px;cursor:pointer;border-radius:4px;padding:3px 22px 3px 5px;transition:background .1s}
 .rhyme-word:hover{background:var(--surf2)}
 .rw-text{font-size:15px;font-weight:600}
 .rw-ipa{font-size:11px;color:var(--blue);font-family:var(--mono);opacity:.85}
+.rw-pin{position:absolute;top:3px;right:4px;background:none;border:none;color:var(--muted);font-size:13px;line-height:1;cursor:pointer;padding:0;opacity:0;transition:opacity .15s,color .15s}
+.rhyme-word:hover .rw-pin{opacity:.7}
+.rw-pin:hover{color:var(--gold);opacity:1}
+.rw-pin.pinned{opacity:1;color:var(--gold)}
 .rf-pane .no-results{color:var(--muted);font-style:italic;padding:18px 16px;display:none}
+#rf-pins{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:10px 20px;border-top:1px solid var(--bdr);background:var(--surf);flex-shrink:0;max-height:120px;overflow-y:auto}
+#rf-pins.hidden{display:none}
+.pin-label{color:var(--muted);font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-right:4px}
+.pin-chip{display:inline-flex;align-items:center;gap:6px;background:var(--surf2);border:1px solid var(--bdr);border-radius:var(--radius);padding:3px 3px 3px 10px;cursor:pointer;font-size:13px;transition:border-color .15s}
+.pin-chip:hover{border-color:var(--gold)}
+.pin-chip-text{font-weight:600}
+.pin-chip-ipa{color:var(--blue);font-family:var(--mono);font-size:11px}
+.pin-chip-x{background:none;border:none;color:var(--muted);font-size:16px;line-height:1;cursor:pointer;padding:0 6px;transition:color .15s}
+.pin-chip-x:hover{color:var(--text)}
+.pin-clear{background:none;border:1px solid var(--bdr);border-radius:var(--radius);color:var(--muted);padding:3px 10px;font-size:11px;cursor:pointer;margin-left:auto}
+.pin-clear:hover{color:var(--text);border-color:var(--gold)}
 
 /* ════════════════════ PHONETICS ════════════════════ */
 .ph-section{margin-bottom:32px}
@@ -320,6 +335,7 @@ body{background:var(--bg);color:var(--text);font-family:"Segoe UI",Arial,sans-se
     <span id="rf-hint">Type multiple words (e.g. <code>big fish swimming</code>) to open a pane per word.</span>
   </div>
   <div id="rf-panes"></div>
+  <div id="rf-pins" class="hidden" aria-label="Pinned words"></div>
   <template id="rf-pane-template">
     <div class="rf-pane">
       <div class="rf-pane-header">
@@ -463,6 +479,66 @@ function switchTab(name, btn) {
 // ══════════════════════════════════
 const SYL_LABELS = {1:"1 syllable",2:"2 syllables",3:"3 syllables",4:"4 syllables",5:"5+ syllables"};
 
+const pinned = new Map();
+
+function togglePin(word, ipa) {
+  if (pinned.has(word)) pinned.delete(word);
+  else pinned.set(word, ipa);
+  renderPins();
+  document.querySelectorAll(".rw-pin").forEach(b => {
+    b.classList.toggle("pinned", pinned.has(b.dataset.word));
+  });
+}
+
+function renderPins() {
+  const tray = document.getElementById("rf-pins");
+  tray.innerHTML = "";
+  if (pinned.size === 0) { tray.classList.add("hidden"); return; }
+  tray.classList.remove("hidden");
+  const label = document.createElement("span");
+  label.className = "pin-label";
+  label.textContent = `Pinned · ${pinned.size}`;
+  tray.appendChild(label);
+  pinned.forEach((ipa, w) => {
+    const chip = document.createElement("span");
+    chip.className = "pin-chip";
+    chip.title = "Click to search rhymes for this word";
+    const txt = document.createElement("span");
+    txt.className = "pin-chip-text";
+    txt.textContent = w;
+    const ipaEl = document.createElement("span");
+    ipaEl.className = "pin-chip-ipa";
+    ipaEl.textContent = ipa;
+    const rm = document.createElement("button");
+    rm.type = "button";
+    rm.className = "pin-chip-x";
+    rm.textContent = "×";
+    rm.title = "Remove pin";
+    rm.addEventListener("click", e => {
+      e.stopPropagation();
+      togglePin(w, ipa);
+    });
+    chip.addEventListener("click", () => {
+      const p = document.querySelector("#rf-panes .rf-pane") || createPane();
+      runSearch(p, w);
+    });
+    chip.appendChild(txt);
+    chip.appendChild(ipaEl);
+    chip.appendChild(rm);
+    tray.appendChild(chip);
+  });
+  const clearBtn = document.createElement("button");
+  clearBtn.type = "button";
+  clearBtn.className = "pin-clear";
+  clearBtn.textContent = "Clear all";
+  clearBtn.addEventListener("click", () => {
+    pinned.clear();
+    renderPins();
+    document.querySelectorAll(".rw-pin").forEach(b => b.classList.remove("pinned"));
+  });
+  tray.appendChild(clearBtn);
+}
+
 function runSearch(pane, forceWord) {
   const input   = pane.querySelector(".word-input");
   const qIpa    = pane.querySelector(".query-ipa");
@@ -524,8 +600,26 @@ function runSearch(pane, forceWord) {
     for (const [w, wipa] of words) {
       const d = document.createElement("div");
       d.className = "rhyme-word";
-      d.innerHTML = `<span class="rw-text">${w}</span><span class="rw-ipa">${wipa}</span>`;
-      d.onclick = () => runSearch(pane, w);
+      const txt = document.createElement("span");
+      txt.className = "rw-text";
+      txt.textContent = w;
+      const ipaEl = document.createElement("span");
+      ipaEl.className = "rw-ipa";
+      ipaEl.textContent = wipa;
+      const pin = document.createElement("button");
+      pin.type = "button";
+      pin.className = "rw-pin" + (pinned.has(w) ? " pinned" : "");
+      pin.textContent = "★";
+      pin.title = "Pin this word";
+      pin.dataset.word = w;
+      pin.addEventListener("click", e => {
+        e.stopPropagation();
+        togglePin(w, wipa);
+      });
+      d.appendChild(txt);
+      d.appendChild(ipaEl);
+      d.appendChild(pin);
+      d.addEventListener("click", () => runSearch(pane, w));
       col.appendChild(d);
     }
     cols.appendChild(col);
