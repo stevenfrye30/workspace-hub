@@ -9,3 +9,7 @@ _probe.py
 .claude/
 .DS_Store
 Thumbs.db
+
+# Python artifacts
+**/__pycache__/
+*.pyc
