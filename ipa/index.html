@@ -160,6 +160,48 @@ body{background:var(--bg);color:var(--text);font-family:"Segoe UI",Arial,sans-se
 .rhyme-highlight{background:rgba(232,200,64,.12)!important}
 .status-bar{color:var(--muted);font-size:11px;flex-shrink:0;padding:5px 24px;border-top:1px solid var(--bdr);background:var(--surf)}
 
+/* ════════════════════ SOUND MAP ════════════════════ */
+#sm-toolbar{display:flex;align-items:flex-start;gap:12px;padding:14px 24px;border-bottom:1px solid var(--bdr);flex-shrink:0;flex-wrap:wrap;background:var(--surf)}
+#sm-input{flex:1 1 320px;min-height:60px;background:var(--surf2);border:1px solid var(--bdr);border-radius:var(--radius);color:var(--text);font-size:15px;padding:10px 14px;outline:none;resize:vertical;font-family:inherit;line-height:1.4}
+#sm-input:focus{border-color:var(--gold)}
+#sm-visualize{background:var(--gold);border:none;border-radius:var(--radius);color:#111;cursor:pointer;font-size:12px;font-weight:700;letter-spacing:.05em;padding:10px 20px;text-transform:uppercase;transition:opacity .15s;align-self:flex-start}
+#sm-visualize:hover{opacity:.85}
+#sm-legend{flex:0 0 100%;display:flex;flex-wrap:wrap;gap:12px;font-size:10px;color:var(--muted);letter-spacing:.03em;text-transform:uppercase}
+.sm-legend-item{display:inline-flex;align-items:center;gap:5px}
+.sm-swatch{display:inline-block;width:11px;height:11px;border-radius:3px}
+.sm-swatch-gradient{background:linear-gradient(90deg,#f7cf74,#b499d9)}
+.sm-swatch-voice{background:#666;box-shadow:0 0 0 2px rgba(212,162,76,.55)}
+#sm-output{flex:1;overflow-y:auto;padding:22px 24px}
+#sm-empty{color:var(--muted);font-style:italic;line-height:1.5;max-width:560px}
+.sm-word{display:inline-block;margin:0 14px 14px 0;padding:7px 9px 9px;background:var(--surf);border:1px solid var(--bdr);border-radius:var(--radius);vertical-align:top}
+.sm-word-text{font-size:10px;font-weight:600;color:var(--muted);margin-bottom:5px;letter-spacing:.05em;text-transform:uppercase}
+.sm-word-text.unknown{color:#d98880;font-style:italic;text-transform:lowercase}
+.sm-phoneme-row{display:flex;gap:3px;align-items:flex-end}
+.sm-phon{display:inline-flex;align-items:center;justify-content:center;min-width:26px;padding:5px 7px;border-radius:4px;font-family:var(--mono);font-size:15px;color:#111;font-weight:700;position:relative;background:#999}
+.sm-phon[data-place="bilabial"]{background:#f5a5c9}
+.sm-phon[data-place="labiodental"]{background:#f5b58a}
+.sm-phon[data-place="dental"]{background:#f0d860}
+.sm-phon[data-place="alveolar"]{background:#9fdc9f}
+.sm-phon[data-place="postalveolar"]{background:#7cd0ce}
+.sm-phon[data-place="palatal"]{background:#9bbde0}
+.sm-phon[data-place="velar"]{background:#b9a0db}
+.sm-phon[data-place="glottal"]{background:#bbbbbb}
+.sm-phon[data-place="front-vowel"]{background:#f7cf74}
+.sm-phon[data-place="central-vowel"]{background:#d2c0a5}
+.sm-phon[data-place="back-vowel"]{background:#b499d9}
+.sm-phon[data-place="diphthong"]{background:linear-gradient(90deg,#f7cf74,#b499d9)}
+.sm-phon[data-voice="1"]{animation:sm-buzz 1.6s ease-in-out infinite;box-shadow:0 0 0 2px rgba(212,162,76,.4)}
+@keyframes sm-buzz{
+  0%,100%{box-shadow:0 0 0 2px rgba(212,162,76,.35)}
+  50%{box-shadow:0 0 0 4px rgba(212,162,76,.6)}
+}
+@media (max-width:640px){
+  #sm-input{flex:1 1 100%;font-size:14px}
+  #sm-visualize{flex:1 1 100%}
+  #sm-output{padding:16px 14px}
+  .sm-phon{min-width:22px;font-size:13px;padding:4px 5px}
+}
+
 /* ════════════════════ RESPONSIVE ════════════════════ */
 @media(max-width:768px){
   #tab-nav{flex-wrap:wrap;gap:0;padding:0 8px}
@@ -324,6 +366,7 @@ body{background:var(--bg);color:var(--text);font-family:"Segoe UI",Arial,sans-se
   <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="panel-rhyme" data-tab="rhyme" onclick="switchTab('rhyme',this)">Rhyme Finder</button>
   <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-endings" data-tab="endings" onclick="switchTab('endings',this)">Rap Endings</button>
   <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-bars" data-tab="bars" onclick="switchTab('bars',this)">Bar Sheet</button>
+  <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-sound" data-tab="sound" onclick="switchTab('sound',this)">Sound Map</button>
 </nav>
 
 <!-- ══════════════════════════════════════════════════════════
@@ -451,6 +494,33 @@ body{background:var(--bg);color:var(--text);font-family:"Segoe UI",Arial,sans-se
     <button class="freestyle-btn" id="fs-start-btn" onclick="toggleFreestyle()">START</button>
     <button class="freestyle-btn secondary" onclick="newFreestyleWord()">New Word</button>
     <button class="freestyle-btn secondary" onclick="closeFreestyle()">Exit</button>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     TAB 4  ·  SOUND MAP
+     ══════════════════════════════════════════════════════════ -->
+<div id="panel-sound" class="tab-panel" role="tabpanel" aria-label="Sound Map">
+  <div id="sm-toolbar">
+    <textarea id="sm-input" placeholder="paste a sentence or phrase…" rows="2" spellcheck="false"></textarea>
+    <button id="sm-visualize" type="button">Visualize</button>
+    <div id="sm-legend">
+      <span class="sm-legend-item"><span class="sm-swatch" style="background:#f5a5c9"></span>lips</span>
+      <span class="sm-legend-item"><span class="sm-swatch" style="background:#f5b58a"></span>teeth/lip</span>
+      <span class="sm-legend-item"><span class="sm-swatch" style="background:#f0d860"></span>tongue + teeth</span>
+      <span class="sm-legend-item"><span class="sm-swatch" style="background:#9fdc9f"></span>tongue-tip</span>
+      <span class="sm-legend-item"><span class="sm-swatch" style="background:#7cd0ce"></span>tongue-blade</span>
+      <span class="sm-legend-item"><span class="sm-swatch" style="background:#b9a0db"></span>back-of-tongue</span>
+      <span class="sm-legend-item"><span class="sm-swatch" style="background:#bbbbbb"></span>throat</span>
+      <span class="sm-legend-item"><span class="sm-swatch" style="background:#f7cf74"></span>front vowel</span>
+      <span class="sm-legend-item"><span class="sm-swatch" style="background:#d2c0a5"></span>central vowel</span>
+      <span class="sm-legend-item"><span class="sm-swatch" style="background:#b499d9"></span>back vowel</span>
+      <span class="sm-legend-item"><span class="sm-swatch sm-swatch-gradient"></span>diphthong</span>
+      <span class="sm-legend-item"><span class="sm-swatch sm-swatch-voice"></span>glow = voiced (cords buzzing)</span>
+    </div>
+  </div>
+  <div id="sm-output">
+    <div id="sm-empty">Paste a sentence above and click <b>Visualize</b>. Each phoneme is colored by where it's made in the mouth; the glow means your vocal cords buzz while producing it.</div>
   </div>
 </div>
 
@@ -1777,6 +1847,152 @@ loadSheet();
 
 // Auto-save on any bar sheet change
 document.getElementById("panel-bars").addEventListener("input", saveSheet);
+
+// ══════════════════════════════════
+//  SOUND MAP
+// ══════════════════════════════════
+const SM_PHONEMES = [
+  "tʃ","dʒ","eɪ","aɪ","aʊ","oʊ","ɔɪ","ɑr","ɪr","ɛr","ɔr","ʊr",
+  "p","b","t","d","k","g","m","n","ŋ","f","v","θ","ð","s","z","ʃ","ʒ","h",
+  "w","j","l","r","ɹ",
+  "i","ɪ","e","ɛ","æ","ə","ɜ","ʌ","ɑ","ɔ","ɒ","o","ʊ","u","ɝ","ɚ"
+].sort((a,b)=>b.length-a.length);
+
+const SM_FEATS = {
+  "p":{type:"C",place:"bilabial",manner:"stop",voice:0},
+  "b":{type:"C",place:"bilabial",manner:"stop",voice:1},
+  "t":{type:"C",place:"alveolar",manner:"stop",voice:0},
+  "d":{type:"C",place:"alveolar",manner:"stop",voice:1},
+  "k":{type:"C",place:"velar",manner:"stop",voice:0},
+  "g":{type:"C",place:"velar",manner:"stop",voice:1},
+  "m":{type:"C",place:"bilabial",manner:"nasal",voice:1},
+  "n":{type:"C",place:"alveolar",manner:"nasal",voice:1},
+  "ŋ":{type:"C",place:"velar",manner:"nasal",voice:1},
+  "f":{type:"C",place:"labiodental",manner:"fricative",voice:0},
+  "v":{type:"C",place:"labiodental",manner:"fricative",voice:1},
+  "θ":{type:"C",place:"dental",manner:"fricative",voice:0},
+  "ð":{type:"C",place:"dental",manner:"fricative",voice:1},
+  "s":{type:"C",place:"alveolar",manner:"fricative",voice:0},
+  "z":{type:"C",place:"alveolar",manner:"fricative",voice:1},
+  "ʃ":{type:"C",place:"postalveolar",manner:"fricative",voice:0},
+  "ʒ":{type:"C",place:"postalveolar",manner:"fricative",voice:1},
+  "h":{type:"C",place:"glottal",manner:"fricative",voice:0},
+  "tʃ":{type:"C",place:"postalveolar",manner:"affricate",voice:0},
+  "dʒ":{type:"C",place:"postalveolar",manner:"affricate",voice:1},
+  "w":{type:"C",place:"bilabial",manner:"approximant",voice:1},
+  "j":{type:"C",place:"palatal",manner:"approximant",voice:1},
+  "l":{type:"C",place:"alveolar",manner:"approximant",voice:1},
+  "r":{type:"C",place:"alveolar",manner:"approximant",voice:1},
+  "ɹ":{type:"C",place:"alveolar",manner:"approximant",voice:1},
+  "i":{type:"V",place:"front-vowel",voice:1},
+  "ɪ":{type:"V",place:"front-vowel",voice:1},
+  "e":{type:"V",place:"front-vowel",voice:1},
+  "ɛ":{type:"V",place:"front-vowel",voice:1},
+  "æ":{type:"V",place:"front-vowel",voice:1},
+  "ə":{type:"V",place:"central-vowel",voice:1},
+  "ɜ":{type:"V",place:"central-vowel",voice:1},
+  "ʌ":{type:"V",place:"central-vowel",voice:1},
+  "ɝ":{type:"V",place:"central-vowel",voice:1},
+  "ɚ":{type:"V",place:"central-vowel",voice:1},
+  "ɑ":{type:"V",place:"back-vowel",voice:1},
+  "ɔ":{type:"V",place:"back-vowel",voice:1},
+  "ɒ":{type:"V",place:"back-vowel",voice:1},
+  "o":{type:"V",place:"back-vowel",voice:1},
+  "ʊ":{type:"V",place:"back-vowel",voice:1},
+  "u":{type:"V",place:"back-vowel",voice:1},
+  "eɪ":{type:"V",place:"diphthong",voice:1},
+  "aɪ":{type:"V",place:"diphthong",voice:1},
+  "aʊ":{type:"V",place:"diphthong",voice:1},
+  "oʊ":{type:"V",place:"diphthong",voice:1},
+  "ɔɪ":{type:"V",place:"diphthong",voice:1},
+  "ɑr":{type:"V",place:"diphthong",voice:1},
+  "ɪr":{type:"V",place:"diphthong",voice:1},
+  "ɛr":{type:"V",place:"diphthong",voice:1},
+  "ɔr":{type:"V",place:"diphthong",voice:1},
+  "ʊr":{type:"V",place:"diphthong",voice:1}
+};
+
+function smParsePhonemes(ipa) {
+  ipa = ipa.replace(/[ˈˌ.]/g, "");
+  const out = [];
+  let i = 0;
+  while (i < ipa.length) {
+    let matched = false;
+    for (const p of SM_PHONEMES) {
+      if (ipa.startsWith(p, i)) { out.push(p); i += p.length; matched = true; break; }
+    }
+    if (!matched) { out.push(ipa[i]); i++; }
+  }
+  return out;
+}
+
+function smDescribe(p, feat) {
+  if (!feat) return `/${p}/ — unknown`;
+  if (feat.type === "V") {
+    return `/${p}/ · vowel · ${feat.place.replace("-vowel","")} · voiced`;
+  }
+  return `/${p}/ · ${feat.manner} · ${feat.place} · ${feat.voice?"voiced":"voiceless"}`;
+}
+
+function smVisualize() {
+  const input = document.getElementById("sm-input").value;
+  const out = document.getElementById("sm-output");
+  out.innerHTML = "";
+  const tokens = input.toLowerCase().split(/\s+/).map(t => t.replace(/[^a-z\-']/g,"")).filter(Boolean);
+  if (tokens.length === 0) {
+    const empty = document.createElement("div");
+    empty.id = "sm-empty";
+    empty.textContent = "Type or paste a sentence above and click Visualize.";
+    out.appendChild(empty);
+    return;
+  }
+  let missing = 0;
+  for (const w of tokens) {
+    const entry = D[w];
+    const wrap = document.createElement("div");
+    wrap.className = "sm-word";
+    const label = document.createElement("div");
+    label.className = "sm-word-text";
+    if (!entry) {
+      label.classList.add("unknown");
+      label.textContent = w + " (not in dictionary)";
+      wrap.appendChild(label);
+      out.appendChild(wrap);
+      missing++;
+      continue;
+    }
+    label.textContent = w;
+    wrap.appendChild(label);
+    const row = document.createElement("div");
+    row.className = "sm-phoneme-row";
+    const phs = smParsePhonemes(entry[0]);
+    for (const p of phs) {
+      const feat = SM_FEATS[p];
+      const block = document.createElement("span");
+      block.className = "sm-phon";
+      block.textContent = p;
+      if (feat) {
+        block.dataset.place = feat.place;
+        block.dataset.voice = feat.voice ? "1" : "0";
+      }
+      block.title = smDescribe(p, feat);
+      row.appendChild(block);
+    }
+    wrap.appendChild(row);
+    out.appendChild(wrap);
+  }
+  document.getElementById("status-bar").textContent =
+    `${tokens.length} word${tokens.length!==1?"s":""} mapped` +
+    (missing ? ` · ${missing} not in dictionary` : "");
+}
+
+document.getElementById("sm-visualize").addEventListener("click", smVisualize);
+document.getElementById("sm-input").addEventListener("keydown", e => {
+  if (e.key === "Enter" && (e.ctrlKey || e.metaKey)) {
+    e.preventDefault();
+    smVisualize();
+  }
+});
 </script>
 </body>
 </html>
