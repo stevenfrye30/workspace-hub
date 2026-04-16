@@ -207,7 +207,15 @@ body{background:var(--bg);color:var(--text);font-family:"Segoe UI",Arial,sans-se
   #sm-vtract{float:none;width:100%;margin:0 0 14px 0;position:static}
 }
 #sm-empty{color:var(--muted);font-style:italic;line-height:1.5;max-width:560px}
-.sm-word{display:inline-block;margin:0 14px 14px 0;padding:7px 9px 9px;background:var(--surf);border:1px solid var(--bdr);border-radius:var(--radius);vertical-align:top}
+.sm-word{display:inline-block;margin:0 14px 14px 0;padding:7px 9px 9px;background:var(--surf);border:1px solid var(--bdr);border-radius:var(--radius);vertical-align:top;transition:opacity .18s,filter .18s,border-color .18s,box-shadow .18s}
+.sm-proximity-active .sm-word{opacity:.3;filter:saturate(.5) brightness(.85)}
+.sm-proximity-active .sm-word[data-prox="pivot"]{opacity:1;filter:none;border-color:var(--gold);box-shadow:0 0 0 2px rgba(212,162,76,.6), inset 0 0 0 1px var(--gold)}
+.sm-proximity-active .sm-word[data-prox="identical"]{opacity:1;filter:none;border-color:var(--gold)}
+.sm-proximity-active .sm-word[data-prox="exact"]{opacity:1;filter:none;border-color:var(--gold);box-shadow:0 0 0 1px rgba(212,162,76,.55)}
+.sm-proximity-active .sm-word[data-prox="rhyme"]{opacity:.92;filter:none;border-color:rgba(212,162,76,.55)}
+.sm-proximity-active .sm-word[data-prox="slant"]{opacity:.72;filter:none;border-color:rgba(212,162,76,.25)}
+.sm-proximity-active .sm-word[data-prox="family"]{opacity:.55}
+.sm-proximity-active .sm-word[data-prox="far"]{opacity:.25}
 .sm-word-text{font-size:10px;font-weight:600;color:var(--muted);margin-bottom:5px;letter-spacing:.05em;text-transform:uppercase}
 .sm-word-text.unknown{color:#d98880;font-style:italic;text-transform:lowercase}
 .sm-phoneme-row{display:flex;gap:8px;align-items:flex-end;padding:16px 0 8px}
@@ -776,6 +784,79 @@ function smSylRhymeKey(syl) {
   return n ? n + smSylCoda(syl) : "";
 }
 
+// ── Phonetic distance ──────────────────────────────────────────────────
+// Returns 0.0 (identical / deep rhyme) to 1.0 (unrelated).
+function smWordProximity(wA, wB) {
+  if (!wA || !wB) return 1.0;
+  if (wA === wB) return 0.0;
+  const a = D[wA], b = D[wB];
+  if (!a || !b) return 1.0;
+  const rksA = a[1], rksB = b[1];
+  const maxDepth = Math.min(rksA.length, rksB.length);
+  for (let depth = maxDepth; depth >= 1; depth--) {
+    if (rksA[depth-1] === rksB[depth-1]) {
+      // depth 4 -> 0.05 (essentially exact), depth 1 -> 0.45
+      return Math.max(0.05, 0.55 - depth * 0.13);
+    }
+  }
+  // No exact rhyme. Compare last vowel nucleus for assonance / family match.
+  const lastA = smLastVowelOf(a[0]);
+  const lastB = smLastVowelOf(b[0]);
+  if (lastA && lastB) {
+    if (lastA === lastB) return 0.60;                    // same nucleus (assonance)
+    const fA = SM_FEATS[lastA], fB = SM_FEATS[lastB];
+    if (fA && fB && fA.place === fB.place) return 0.78;  // same vowel family
+  }
+  return 1.0;
+}
+
+function smLastVowelOf(ipa) {
+  const phs = smParsePhonemes(ipa);
+  for (let i = phs.length - 1; i >= 0; i--) {
+    const f = SM_FEATS[phs[i]];
+    if (f && f.type === "V") return phs[i];
+  }
+  return null;
+}
+
+function smProximityBucket(d) {
+  if (d <= 0.05) return "identical";
+  if (d <= 0.22) return "exact";    // deep rhyme (2+ syl)
+  if (d <= 0.40) return "rhyme";    // single-syl rhyme
+  if (d <= 0.65) return "slant";    // same nucleus, different coda
+  if (d <= 0.85) return "family";   // same vowel family
+  return "far";
+}
+
+function smHighlightProximity(pivotWord) {
+  const out = document.getElementById("sm-output");
+  out.classList.add("sm-proximity-active");
+  const words = out.querySelectorAll(".sm-word");
+  words.forEach(el => {
+    const w = el.dataset.word;
+    if (w === pivotWord) {
+      el.dataset.prox = "pivot";
+      return;
+    }
+    if (el.dataset.known !== "1") {
+      el.dataset.prox = "far";
+      return;
+    }
+    const d = smWordProximity(pivotWord, w);
+    el.dataset.prox = smProximityBucket(d);
+    el.title = `distance: ${d.toFixed(2)} (${el.dataset.prox})`;
+  });
+}
+
+function smClearProximity() {
+  const out = document.getElementById("sm-output");
+  out.classList.remove("sm-proximity-active");
+  out.querySelectorAll(".sm-word").forEach(el => {
+    delete el.dataset.prox;
+    el.removeAttribute("title");
+  });
+}
+
 const SM_FOOT_NAMES = {
   "iambic":"iambic","trochaic":"trochaic","anapestic":"anapestic",
   "dactylic":"dactylic","spondaic":"spondaic"
@@ -1022,6 +1103,10 @@ function smVisualize() {
       const wp = processed[wIdx];
       const wrap = document.createElement("div");
       wrap.className = "sm-word";
+      wrap.dataset.word = wp.word;
+      wrap.dataset.known = wp.known ? "1" : "0";
+      wrap.addEventListener("mouseenter", () => smHighlightProximity(wp.word));
+      wrap.addEventListener("mouseleave", smClearProximity);
       const label = document.createElement("div");
       label.className = "sm-word-text";
       if (!wp.known) {
