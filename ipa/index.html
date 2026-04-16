@@ -626,6 +626,8 @@ function runSearch(pane, forceWord) {
   if (total===0) noRes.style.display = "block";
   status.textContent =
     `${total} ${depthLabel} rhyme${total!==1?"s":""} found for "${raw}" (/${rhyme}/)`;
+
+  if (typeof rfSaveToHash === "function") rfSaveToHash();
 }
 
 function submitFromPane(pane) {
@@ -680,8 +682,43 @@ document.getElementById("add-pane-btn").addEventListener("click", () => {
   pane.scrollIntoView({ behavior: "smooth", inline: "end", block: "nearest" });
 });
 
-// Start with one pane visible.
+// ── URL-hash state (shareable links) ────────────────────────────────────
+function rfSaveToHash() {
+  const panes = Array.from(document.querySelectorAll("#rf-panes .rf-pane"));
+  const words = panes
+    .map(p => p.querySelector(".word-input").value.trim())
+    .filter(Boolean);
+  const firstPane = panes[0];
+  const d = firstPane ? firstPane.querySelector(".rhyme-depth").value : "1";
+  const p = new URLSearchParams();
+  if (words.length) p.set("w", words.join(","));
+  if (d !== "1") p.set("d", d);
+  const str = p.toString();
+  history.replaceState(null, "", str ? "#" + str : window.location.pathname);
+}
+
+function rfLoadFromHash() {
+  const p = new URLSearchParams(window.location.hash.slice(1));
+  const w = p.get("w");
+  const d = p.get("d") || "1";
+  if (!w) return;
+  const words = w.split(",").map(s => s.trim()).filter(Boolean);
+  // Clear existing panes then add one per word.
+  const container = document.getElementById("rf-panes");
+  container.innerHTML = "";
+  words.forEach(word => {
+    const pane = createPane();
+    const input = pane.querySelector(".word-input");
+    const depSel = pane.querySelector(".rhyme-depth");
+    input.value = word;
+    depSel.value = d;
+    runSearch(pane);
+  });
+}
+
+// Start with one pane visible (unless the hash has state).
 createPane();
+if (window.location.hash) rfLoadFromHash();
 
 // Backwards-compatible helper used by the Rap Endings tab.
 function doSearch(word) {

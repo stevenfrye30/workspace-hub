@@ -1103,6 +1103,8 @@ function smVisualize() {
     if (wp.known) for (const syl of wp.syllables) queryPhonemes.push(...syl.phonemes);
   }
   smLoadCorpus().then(() => smRenderSimilar(queryPhonemes));
+
+  if (typeof smSaveToHash === "function") smSaveToHash();
 }
 
 document.getElementById("sm-visualize").addEventListener("click", smVisualize);
@@ -1227,6 +1229,34 @@ function smRenderSimilar(queryPhonemes) {
 // Start loading the corpus in the background so it's ready by the time the
 // user clicks Visualize.
 smLoadCorpus();
+
+// ── URL-hash state (shareable links) ───────────────────────────────────────
+function smSaveToHash() {
+  const p = new URLSearchParams();
+  const q = document.getElementById("sm-input").value.trim();
+  const mode = document.querySelector('input[name="sm-mode"]:checked').value;
+  if (q) p.set("q", q);
+  if (mode !== "rhyme") p.set("mode", mode);
+  const str = p.toString();
+  history.replaceState(null, "", str ? "#" + str : window.location.pathname);
+}
+
+function smLoadFromHash() {
+  const p = new URLSearchParams(window.location.hash.slice(1));
+  const mode = p.get("mode");
+  if (mode) {
+    const r = document.querySelector(`input[name="sm-mode"][value="${mode}"]`);
+    if (r) r.checked = true;
+  }
+  const q = p.get("q");
+  if (q) {
+    document.getElementById("sm-input").value = q;
+    smVisualize();
+    smSaveToHash();
+  }
+}
+
+window.addEventListener("load", smLoadFromHash);
 </script>
 </body>
 </html>
