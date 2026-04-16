@@ -195,11 +195,25 @@ body{background:var(--bg);color:var(--text);font-family:"Segoe UI",Arial,sans-se
   0%,100%{box-shadow:0 0 0 2px rgba(212,162,76,.35)}
   50%{box-shadow:0 0 0 4px rgba(212,162,76,.6)}
 }
+#sm-similar{flex-shrink:0;max-height:42%;overflow-y:auto;padding:14px 24px 18px;border-top:1px solid var(--bdr);background:var(--surf)}
+#sm-similar.hidden{display:none}
+#sm-similar-header{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:10px}
+#sm-similar-title{color:var(--gold);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+#sm-similar-status{color:var(--muted);font-size:11px;font-style:italic}
+.sm-sim-item{display:flex;align-items:center;gap:12px;padding:8px 10px;border-radius:var(--radius);cursor:pointer;transition:background .1s;margin-bottom:4px}
+.sm-sim-item:hover{background:var(--surf2)}
+.sm-sim-score{flex:0 0 auto;color:var(--gold);font-family:var(--mono);font-size:12px;font-weight:600;min-width:48px;text-align:right}
+.sm-sim-text{flex:1 1 auto;font-size:14px;color:var(--text);line-height:1.3}
+.sm-sim-src{flex:0 0 auto;color:var(--muted);font-size:11px;font-family:var(--mono);min-width:55px;text-align:right}
 @media (max-width:640px){
   #sm-input{flex:1 1 100%;font-size:14px}
   #sm-visualize{flex:1 1 100%}
   #sm-output{padding:16px 14px}
   .sm-phon{min-width:22px;font-size:13px;padding:4px 5px}
+  #sm-similar{padding:10px 14px 14px;max-height:50%}
+  .sm-sim-item{flex-wrap:wrap;gap:6px}
+  .sm-sim-score{min-width:0}
+  .sm-sim-src{min-width:0}
 }
 
 /* ════════════════════ RESPONSIVE ════════════════════ */
@@ -521,6 +535,13 @@ body{background:var(--bg);color:var(--text);font-family:"Segoe UI",Arial,sans-se
   </div>
   <div id="sm-output">
     <div id="sm-empty">Paste a sentence above and click <b>Visualize</b>. Each phoneme is colored by where it's made in the mouth; the glow means your vocal cords buzz while producing it.</div>
+  </div>
+  <div id="sm-similar" class="hidden">
+    <div id="sm-similar-header">
+      <span id="sm-similar-title">Sounds similar · Shakespeare's Sonnets</span>
+      <span id="sm-similar-status"></span>
+    </div>
+    <div id="sm-similar-list"></div>
   </div>
 </div>
 
@@ -1984,6 +2005,14 @@ function smVisualize() {
   document.getElementById("status-bar").textContent =
     `${tokens.length} word${tokens.length!==1?"s":""} mapped` +
     (missing ? ` · ${missing} not in dictionary` : "");
+
+  // Fire corpus similarity search.
+  const queryPhonemes = [];
+  for (const w of tokens) {
+    const e = D[w];
+    if (e) queryPhonemes.push(...smParsePhonemes(e[0]));
+  }
+  smLoadCorpus().then(() => smRenderSimilar(queryPhonemes));
 }
 
 document.getElementById("sm-visualize").addEventListener("click", smVisualize);
@@ -1993,6 +2022,116 @@ document.getElementById("sm-input").addEventListener("keydown", e => {
     smVisualize();
   }
 });
+
+// ── Corpus: Shakespeare's Sonnets (Project Gutenberg #1041, public domain)
+let SM_CORPUS = null;
+let SM_CORPUS_PHON = null;
+
+function smWordsToPhonemes(text) {
+  const tokens = text.toLowerCase().split(/\s+/).map(t => t.replace(/[^a-z\-']/g,"")).filter(Boolean);
+  const out = [];
+  for (const w of tokens) {
+    const entry = D[w];
+    if (!entry) continue;
+    out.push(...smParsePhonemes(entry[0]));
+  }
+  return out;
+}
+
+function smLevenshtein(a, b) {
+  const n = a.length, m = b.length;
+  if (!n) return m;
+  if (!m) return n;
+  let prev = new Array(m + 1);
+  let curr = new Array(m + 1);
+  for (let j = 0; j <= m; j++) prev[j] = j;
+  for (let i = 1; i <= n; i++) {
+    curr[0] = i;
+    for (let j = 1; j <= m; j++) {
+      const cost = a[i-1] === b[j-1] ? 0 : 1;
+      curr[j] = Math.min(prev[j] + 1, curr[j-1] + 1, prev[j-1] + cost);
+    }
+    [prev, curr] = [curr, prev];
+  }
+  return prev[m];
+}
+
+async function smLoadCorpus() {
+  if (SM_CORPUS) return SM_CORPUS;
+  try {
+    const r = await fetch("corpus.json");
+    if (!r.ok) throw new Error("HTTP " + r.status);
+    SM_CORPUS = await r.json();
+    return SM_CORPUS;
+  } catch (err) {
+    SM_CORPUS = [];
+    return SM_CORPUS;
+  }
+}
+
+function smEnsureCorpusPhonemes() {
+  if (SM_CORPUS_PHON) return;
+  SM_CORPUS_PHON = SM_CORPUS.map(e => smWordsToPhonemes(e.line));
+}
+
+function smRenderSimilar(queryPhonemes) {
+  const box = document.getElementById("sm-similar");
+  const list = document.getElementById("sm-similar-list");
+  const status = document.getElementById("sm-similar-status");
+  list.innerHTML = "";
+  if (!SM_CORPUS || !SM_CORPUS.length) {
+    box.classList.add("hidden");
+    return;
+  }
+  if (!queryPhonemes.length) {
+    box.classList.add("hidden");
+    return;
+  }
+  smEnsureCorpusPhonemes();
+  const t0 = performance.now();
+  const scored = [];
+  for (let i = 0; i < SM_CORPUS_PHON.length; i++) {
+    const p = SM_CORPUS_PHON[i];
+    if (!p.length) continue;
+    const dist = smLevenshtein(queryPhonemes, p);
+    const norm = dist / Math.max(queryPhonemes.length, p.length);
+    scored.push([norm, i, dist]);
+  }
+  scored.sort((a, b) => a[0] - b[0]);
+  const top = scored.slice(0, 8);
+  const dt = (performance.now() - t0).toFixed(0);
+  status.textContent = `searched ${SM_CORPUS.length.toLocaleString()} lines in ${dt}ms`;
+  box.classList.remove("hidden");
+  for (const [norm, i] of top) {
+    const e = SM_CORPUS[i];
+    const item = document.createElement("div");
+    item.className = "sm-sim-item";
+    item.title = "Click to copy this line into the Visualizer";
+    const score = document.createElement("span");
+    score.className = "sm-sim-score";
+    score.textContent = `${Math.round((1-norm)*100)}%`;
+    const txt = document.createElement("span");
+    txt.className = "sm-sim-text";
+    txt.textContent = e.line;
+    const src = document.createElement("span");
+    src.className = "sm-sim-src";
+    src.textContent = `Sonnet ${e.sonnet}`;
+    item.appendChild(score);
+    item.appendChild(txt);
+    item.appendChild(src);
+    item.addEventListener("click", () => {
+      const input = document.getElementById("sm-input");
+      input.value = e.line;
+      smVisualize();
+      input.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+    list.appendChild(item);
+  }
+}
+
+// Start loading the corpus in the background so it's ready by the time the
+// user clicks Visualize.
+smLoadCorpus();
 </script>
 </body>
 </html>
