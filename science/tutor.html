@@ -101,68 +101,6 @@
     return p.get('cluster');
   }
 
-  Promise.all([
-    fetch('./data/clusters.json').then(r => r.json()),
-    fetch('./data/glossary.json').then(r => r.json()),
-  ]).then(([clusterData, glossaryData]) => {
-    clusters = clusterData.clusters || [];
-    entries = glossaryData.entries || [];
-    const wantedId = getClusterIdFromUrl();
-    if (wantedId) {
-      const c = clusters.find(x => x.id === wantedId);
-      if (c) renderRunner(c);
-      else renderPicker('Topic not found: ' + wantedId);
-    } else {
-      renderPicker();
-    }
-  }).catch(err => {
-    root.innerHTML = '<div class="error">Failed to load data: ' + esc(err.message) + '</div>';
-  });
-
-  // ------- PICKER -------
-
-  function renderPicker(errMsg) {
-    const hubs = clusters.filter(c => c.kind === 'hub');
-    const bridges = clusters.filter(c => c.kind === 'bridge');
-
-    let html = '<header class="title-block"><h1><span>🎯</span>Tutoring Center</h1>';
-    html += '<p>Pick a topic to quiz yourself on. All content is drawn from the glossary.</p></header>';
-    if (errMsg) html += '<div class="error">' + esc(errMsg) + '</div>';
-
-    if (hubs.length) {
-      html += '<h2>Subject-Area Hubs</h2><div class="pick-grid">';
-      for (const c of hubs) {
-        const hasGloss = c.glossaries && c.glossaries.length > 0;
-        html += '<a class="pick-card' + (hasGloss ? '' : ' disabled') + '"' + (hasGloss ? ' href="?cluster=' + encodeURIComponent(c.id) + '"' : '') + '>';
-        html += '<div class="pick-head"><span class="pick-icon">' + esc(c.icon) + '</span>';
-        html += '<span class="pick-title">' + esc(c.label) + '</span>';
-        html += '<span class="pick-kind">hub</span></div>';
-        html += '<div class="pick-desc">' + esc(c.desc) + '</div>';
-        if (hasGloss) html += '<div class="pick-meta">Glossary: ' + esc(c.glossaries.join(', ')) + '</div>';
-        else html += '<div class="pick-none">No glossary entries for this cluster</div>';
-        html += '</a>';
-      }
-      html += '</div>';
-    }
-
-    if (bridges.length) {
-      html += '<h2>Bridge Concepts</h2><div class="pick-grid">';
-      for (const c of bridges) {
-        html += '<a class="pick-card bridge" href="?cluster=' + encodeURIComponent(c.id) + '">';
-        html += '<div class="pick-head"><span class="pick-icon">' + esc(c.icon) + '</span>';
-        html += '<span class="pick-title">' + esc(c.label) + '</span>';
-        html += '<span class="pick-kind bridge">bridge</span></div>';
-        html += '<div class="pick-desc">' + esc(c.desc) + '</div>';
-        html += '<div class="pick-meta">' + (c.anchor_terms ? c.anchor_terms.length : 0) + ' anchor terms</div>';
-        html += '</a>';
-      }
-      html += '</div>';
-    }
-    root.innerHTML = html;
-  }
-
-  // ------- RUNNER -------
-
   function shuffle(arr) {
     const a = arr.slice();
     for (let i = a.length - 1; i > 0; i--) {
@@ -198,6 +136,70 @@
     }
     return filtered.filter(e => e.definition && e.definition.length > 10);
   }
+
+  Promise.all([
+    fetch('./data/clusters.json').then(r => r.json()),
+    fetch('./data/glossary.json').then(r => r.json()),
+  ]).then(([clusterData, glossaryData]) => {
+    clusters = clusterData.clusters || [];
+    entries = glossaryData.entries || [];
+    const wantedId = getClusterIdFromUrl();
+    if (wantedId) {
+      const c = clusters.find(x => x.id === wantedId);
+      if (c) renderRunner(c);
+      else renderPicker('Topic not found: ' + wantedId);
+    } else {
+      renderPicker();
+    }
+  }).catch(err => {
+    root.innerHTML = '<div class="error">Failed to load data: ' + esc(err.message) + '</div>';
+  });
+
+  // ------- PICKER -------
+
+  function renderPicker(errMsg) {
+    const hubs = clusters.filter(c => c.kind === 'hub');
+    const bridges = clusters.filter(c => c.kind === 'bridge');
+
+    let html = '<header class="title-block"><h1><span>🎯</span>Tutoring Center</h1>';
+    html += '<p>Pick a topic to quiz yourself on. All content is drawn from the glossary.</p></header>';
+    if (errMsg) html += '<div class="error">' + esc(errMsg) + '</div>';
+
+    if (hubs.length) {
+      html += '<h2>Subject-Area Hubs</h2><div class="pick-grid">';
+      for (const c of hubs) {
+        const hasGloss = c.glossaries && c.glossaries.length > 0;
+        const n = hasGloss ? filterEntriesForCluster(c).length : 0;
+        html += '<a class="pick-card' + (hasGloss && n > 0 ? '' : ' disabled') + '"' + (hasGloss && n > 0 ? ' href="?cluster=' + encodeURIComponent(c.id) + '"' : '') + '>';
+        html += '<div class="pick-head"><span class="pick-icon">' + esc(c.icon) + '</span>';
+        html += '<span class="pick-title">' + esc(c.label) + '</span>';
+        html += '<span class="pick-kind">hub</span></div>';
+        html += '<div class="pick-desc">' + esc(c.desc) + '</div>';
+        if (hasGloss && n > 0) html += '<div class="pick-meta">' + n + ' terms &middot; ' + esc(c.glossaries.join(', ')) + '</div>';
+        else html += '<div class="pick-none">No glossary entries for this cluster</div>';
+        html += '</a>';
+      }
+      html += '</div>';
+    }
+
+    if (bridges.length) {
+      html += '<h2>Bridge Concepts</h2><div class="pick-grid">';
+      for (const c of bridges) {
+        const n = filterEntriesForCluster(c).length;
+        html += '<a class="pick-card bridge' + (n === 0 ? ' disabled' : '') + '"' + (n > 0 ? ' href="?cluster=' + encodeURIComponent(c.id) + '"' : '') + '>';
+        html += '<div class="pick-head"><span class="pick-icon">' + esc(c.icon) + '</span>';
+        html += '<span class="pick-title">' + esc(c.label) + '</span>';
+        html += '<span class="pick-kind bridge">bridge</span></div>';
+        html += '<div class="pick-desc">' + esc(c.desc) + '</div>';
+        html += '<div class="pick-meta">' + n + ' terms &middot; ' + (c.anchor_terms ? c.anchor_terms.length : 0) + ' anchors</div>';
+        html += '</a>';
+      }
+      html += '</div>';
+    }
+    root.innerHTML = html;
+  }
+
+  // ------- RUNNER -------
 
   function renderRunner(cluster) {
     const list = filterEntriesForCluster(cluster);
@@ -238,10 +240,13 @@
 
     let queue = shuffle(list);
     let idx = 0;
-    let mode = 'flash';
+    let mode = (localStorage.getItem('tutor:mode') === 'mc') ? 'mc' : 'flash';
     let flipped = false;
     let answered = false;
     let stats = { got: 0, missed: 0 };
+
+    // Set initial active button to match stored mode
+    modeBtns.forEach(b => b.classList.toggle('active', b.dataset.mode === mode));
 
     function render() {
       if (idx >= queue.length) return renderFinal();
@@ -342,6 +347,7 @@
         modeBtns.forEach(x => x.classList.remove('active'));
         b.classList.add('active');
         mode = b.dataset.mode;
+        localStorage.setItem('tutor:mode', mode);
         flipped = false;
         answered = false;
         render();

@@ -133,7 +133,10 @@
       html += '</div>';
       if (e.definition) html += '<div class="entry-def">' + highlight(e.definition, query) + '</div>';
       if (e.key_detail) html += '<div class="entry-detail">' + esc(e.key_detail) + '</div>';
-      if (e.related) html += '<div class="entry-related">Related: <em>' + esc(e.related) + '</em></div>';
+      if (e.related) {
+        const parts = e.related.split(',').map(s => s.trim()).filter(Boolean);
+        html += '<div class="entry-related">Related: ' + parts.map(p => '<em data-term="' + esc(p) + '">' + esc(p) + '</em>').join(', ') + '</div>';
+      }
       html += '</div>';
     }
     if (filtered.length > renderLimit) {
@@ -143,14 +146,15 @@
     const more = document.getElementById('showMoreBtn');
     if (more) more.addEventListener('click', () => { renderLimit += 50; render(); });
 
-    // Clicking a related term searches for it
-    list.querySelectorAll('.entry-related em').forEach(el => {
+    // Clicking a single related term jumps to it
+    list.querySelectorAll('.entry-related em[data-term]').forEach(el => {
       el.addEventListener('click', () => {
-        const txt = el.textContent.split(',')[0].trim();
+        const txt = el.dataset.term;
         searchInput.value = txt;
         query = txt;
         renderLimit = 50;
         render();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       });
     });
   }
