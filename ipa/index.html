@@ -171,7 +171,33 @@ body{background:var(--bg);color:var(--text);font-family:"Segoe UI",Arial,sans-se
 .sm-swatch{display:inline-block;width:11px;height:11px;border-radius:3px}
 .sm-swatch-gradient{background:linear-gradient(90deg,#f7cf74,#b499d9)}
 .sm-swatch-voice{background:#666;box-shadow:0 0 0 2px rgba(212,162,76,.55)}
-#sm-output{flex:1;overflow-y:auto;padding:22px 24px}
+#sm-output{flex:1;overflow-y:auto;padding:22px 24px;position:relative}
+#sm-vtract{float:right;width:280px;margin:0 0 16px 18px;padding:10px 12px 8px;background:var(--surf);border:1px solid var(--bdr);border-radius:var(--radius);position:sticky;top:0;z-index:2}
+#sm-vtract-header{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:6px}
+.sm-vtract-title{color:var(--gold);font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+#sm-vtract-phoneme{color:var(--blue);font-family:var(--mono);font-size:15px;font-weight:700}
+#sm-vtract-svg{width:100%;height:auto;display:block}
+#sm-vtract-readout{color:var(--muted);font-size:10px;margin-top:2px;text-align:center;font-style:italic;min-height:12px}
+.vt-part,.vt-vowel{fill:#3a4c66;stroke:#4a5f82;stroke-width:0.6;transition:fill .2s,stroke .2s}
+.vt-part.active[data-place="bilabial"]{fill:#f5a5c9;stroke:#f5a5c9}
+.vt-part.active[data-place="labiodental"]{fill:#f5b58a;stroke:#f5b58a}
+.vt-part.active[data-place="dental"]{fill:#f0d860;stroke:#f0d860}
+.vt-part.active[data-place="alveolar"]{fill:#9fdc9f;stroke:#9fdc9f}
+.vt-part.active[data-place="postalveolar"]{fill:#7cd0ce;stroke:#7cd0ce}
+.vt-part.active[data-place="palatal"]{fill:#9bbde0;stroke:#9bbde0}
+.vt-part.active[data-place="velar"]{fill:#b9a0db;stroke:#b9a0db}
+.vt-part.active[data-place="glottal"]{fill:#bbbbbb;stroke:#bbbbbb}
+.vt-part.active,.vt-vowel.active{animation:vt-pulse 1s ease-in-out infinite}
+.vt-vowel.active[data-vkey="front-vowel"]{fill:#f7cf74;stroke:#f7cf74}
+.vt-vowel.active[data-vkey="central-vowel"]{fill:#d2c0a5;stroke:#d2c0a5}
+.vt-vowel.active[data-vkey="back-vowel"]{fill:#b499d9;stroke:#b499d9}
+.vt-vowel.active[data-vkey="diphthong"]{fill:#e8c890;stroke:#e8c890}
+#vt-buzz.buzzing{opacity:1;animation:vt-buzz 1s ease-in-out infinite}
+@keyframes vt-pulse{0%,100%{filter:brightness(1)}50%{filter:brightness(1.35)}}
+@keyframes vt-buzz{0%,100%{stroke-width:2;opacity:.4}50%{stroke-width:4;opacity:.9}}
+@media (max-width:720px){
+  #sm-vtract{float:none;width:100%;margin:0 0 14px 0;position:static}
+}
 #sm-empty{color:var(--muted);font-style:italic;line-height:1.5;max-width:560px}
 .sm-word{display:inline-block;margin:0 14px 14px 0;padding:7px 9px 9px;background:var(--surf);border:1px solid var(--bdr);border-radius:var(--radius);vertical-align:top}
 .sm-word-text{font-size:10px;font-weight:600;color:var(--muted);margin-bottom:5px;letter-spacing:.05em;text-transform:uppercase}
@@ -570,6 +596,51 @@ body{background:var(--bg);color:var(--text);font-family:"Segoe UI",Arial,sans-se
     </div>
   </div>
   <div id="sm-output">
+    <div id="sm-vtract" aria-label="Vocal tract diagram">
+      <div id="sm-vtract-header">
+        <span class="sm-vtract-title">Vocal tract</span>
+        <span id="sm-vtract-phoneme"></span>
+      </div>
+      <svg id="sm-vtract-svg" viewBox="0 0 260 180" aria-hidden="true">
+        <!-- Head outline (subtle) -->
+        <path d="M 25 95 Q 15 30, 85 20 L 215 22 Q 255 38, 245 90 L 220 105 Q 215 130, 200 142 L 195 172 L 45 172 Q 18 162, 25 95 Z"
+              fill="none" stroke="#32445c" stroke-width="1.4" opacity="0.55"/>
+        <!-- Nasal cavity -->
+        <path d="M 65 50 Q 75 42, 165 45 L 170 70 L 60 68 Z"
+              fill="#263447" stroke="#32445c" stroke-width="1"/>
+        <text x="115" y="62" text-anchor="middle" font-size="8" fill="#8fa3ba" letter-spacing="0.5">nasal</text>
+        <!-- Mouth cavity -->
+        <path d="M 25 95 L 25 120 Q 45 128, 180 125 Q 210 118, 210 95 Q 200 85, 165 88 Q 120 86, 80 93 Q 45 98, 25 95 Z"
+              fill="#2a3a4f" stroke="#32445c" stroke-width="1"/>
+        <!-- Tongue (default mid-position, purely decorative) -->
+        <path d="M 40 120 Q 90 108, 155 118 Q 180 122, 180 132 Q 130 142, 55 138 Q 40 135, 40 120 Z"
+              fill="#d08f6a" opacity="0.45"/>
+        <!-- Articulator regions (activatable) -->
+        <ellipse class="vt-part" data-place="bilabial" cx="22" cy="107" rx="7" ry="13"/>
+        <rect class="vt-part" data-place="labiodental" x="30" y="95" width="9" height="7" rx="1.5"/>
+        <rect class="vt-part" data-place="dental" x="42" y="93" width="10" height="7" rx="1.5"/>
+        <ellipse class="vt-part" data-place="alveolar" cx="58" cy="90" rx="6" ry="4"/>
+        <ellipse class="vt-part" data-place="postalveolar" cx="80" cy="88" rx="9" ry="5"/>
+        <ellipse class="vt-part" data-place="palatal" cx="115" cy="87" rx="20" ry="5"/>
+        <ellipse class="vt-part" data-place="velar" cx="165" cy="92" rx="18" ry="6"/>
+        <ellipse class="vt-part" data-place="glottal" cx="205" cy="138" rx="8" ry="11"/>
+        <!-- Voicing buzz indicator (glottal) -->
+        <circle id="vt-buzz" cx="205" cy="138" r="16" fill="none" stroke="#d4a24c" stroke-width="2" opacity="0" pointer-events="none"/>
+        <!-- Vowel trapezoid -->
+        <g transform="translate(118, 118)" id="vt-vowel-chart">
+          <path d="M 0 0 L 90 0 L 82 38 L 8 38 Z" fill="#263447" stroke="#32445c" stroke-width="1"/>
+          <text x="-4" y="-3" font-size="7" fill="#8fa3ba" text-anchor="end">front</text>
+          <text x="94" y="-3" font-size="7" fill="#8fa3ba">back</text>
+          <text x="-4" y="5" font-size="7" fill="#8fa3ba" text-anchor="end">high</text>
+          <text x="-4" y="40" font-size="7" fill="#8fa3ba" text-anchor="end">low</text>
+          <circle class="vt-vowel" data-vkey="front-vowel" cx="12" cy="8" r="5"/>
+          <circle class="vt-vowel" data-vkey="central-vowel" cx="45" cy="19" r="5"/>
+          <circle class="vt-vowel" data-vkey="back-vowel" cx="78" cy="8" r="5"/>
+          <circle class="vt-vowel" data-vkey="diphthong" cx="45" cy="32" r="5"/>
+        </g>
+      </svg>
+      <div id="sm-vtract-readout">Click any phoneme to see where it's made.</div>
+    </div>
     <div id="sm-empty">Paste a sentence above and click <b>Visualize</b>. Each phoneme is colored by where it's made in the mouth; the glow means your vocal cords buzz while producing it.</div>
   </div>
   <div id="sm-similar" class="hidden">
@@ -2087,6 +2158,38 @@ function smSpeak(text, rate) {
 
 const SM_AUDIO = "speechSynthesis" in window;
 
+function smUpdateVocalTract(phoneme) {
+  const svg = document.getElementById("sm-vtract-svg");
+  const label = document.getElementById("sm-vtract-phoneme");
+  const readout = document.getElementById("sm-vtract-readout");
+  const buzz = document.getElementById("vt-buzz");
+  if (!svg) return;
+  svg.querySelectorAll(".vt-part.active,.vt-vowel.active").forEach(el => el.classList.remove("active"));
+  if (buzz) buzz.classList.remove("buzzing");
+
+  if (!phoneme) {
+    label.textContent = "";
+    readout.textContent = "Click any phoneme to see where it's made.";
+    return;
+  }
+  const feat = SM_FEATS[phoneme];
+  label.textContent = phoneme;
+  if (!feat) {
+    readout.textContent = "unknown phoneme";
+    return;
+  }
+  if (feat.type === "C") {
+    const el = svg.querySelector(`.vt-part[data-place="${feat.place}"]`);
+    if (el) el.classList.add("active");
+    readout.textContent = `${feat.manner} · ${feat.place} · ${feat.voice ? "voiced" : "voiceless"}`;
+  } else {
+    const el = svg.querySelector(`.vt-vowel[data-vkey="${feat.place}"]`);
+    if (el) el.classList.add("active");
+    readout.textContent = `vowel · ${feat.place.replace("-vowel","")} · voiced`;
+  }
+  if (feat.voice && buzz) buzz.classList.add("buzzing");
+}
+
 function smSylNucleus(syl) {
   for (const p of syl.phonemes) {
     const f = SM_FEATS[p];
@@ -2315,7 +2418,7 @@ function smComputeGroups(processed, byLine, mode) {
 function smVisualize() {
   const raw = document.getElementById("sm-input").value;
   const out = document.getElementById("sm-output");
-  out.innerHTML = "";
+  Array.from(out.children).forEach(c => { if (c.id !== "sm-vtract") c.remove(); });
 
   const lines = raw.split(/\r?\n/);
   const processed = [];
@@ -2417,14 +2520,16 @@ function smVisualize() {
           block.title = SM_AUDIO && example
             ? `${smDescribe(p, feat)} · click to hear "${example}"`
             : smDescribe(p, feat);
-          if (SM_AUDIO) {
-            block.classList.add("clickable");
-            block.addEventListener("click", e => {
-              e.stopPropagation();
+          block.classList.add("clickable");
+          block.addEventListener("click", e => {
+            e.stopPropagation();
+            smUpdateVocalTract(p);
+            if (SM_AUDIO) {
               const ex = SM_PHON_EXAMPLE[p] || p;
               smSpeak(ex, 0.8);
-            });
-          }
+            }
+          });
+          block.addEventListener("mouseenter", () => smUpdateVocalTract(p));
           sylBox.appendChild(block);
         }
         row.appendChild(sylBox);
