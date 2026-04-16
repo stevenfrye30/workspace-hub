@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>The Louvre — Digital Museum</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    background: #1a1612;
+    color: #e8ddc7;
+    min-height: 100vh;
+    line-height: 1.6;
+  }
+  header {
+    background: linear-gradient(180deg, #2a1f15 0%, #1a1612 100%);
+    padding: 4rem 2rem 3rem;
+    text-align: center;
+    border-bottom: 1px solid #8b6f3f;
+  }
+  h1 {
+    font-size: 3.5rem;
+    letter-spacing: 0.3em;
+    color: #d4af6a;
+    font-weight: normal;
+  }
+  .subtitle {
+    margin-top: 1rem;
+    font-style: italic;
+    color: #a89878;
+    letter-spacing: 0.1em;
+  }
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+  }
+  .intro {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    font-size: 1.1rem;
+    color: #c9b896;
+  }
+  .wings {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  .wing {
+    background: #252017;
+    border: 1px solid #4a3a24;
+    padding: 2rem;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .wing:hover {
+    border-color: #d4af6a;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(212, 175, 106, 0.2);
+  }
+  .wing h2 {
+    color: #d4af6a;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: normal;
+    letter-spacing: 0.05em;
+  }
+  .wing .era {
+    color: #8b6f3f;
+    font-size: 0.85rem;
+    font-style: italic;
+    margin-bottom: 1rem;
+  }
+  .wing p {
+    color: #a89878;
+    font-size: 0.95rem;
+  }
+  footer {
+    text-align: center;
+    padding: 2rem;
+    color: #6a5a3a;
+    font-size: 0.85rem;
+    border-top: 1px solid #4a3a24;
+    margin-top: 4rem;
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>M U S É E &nbsp; D U &nbsp; L O U V R E</h1>
+  <div class="subtitle">A Digital Exploration · Paris, France</div>
+</header>
+<main>
+  <p class="intro">
+    Wander the halls of the world's most visited museum. Choose a department to begin.
+    Each wing contains galleries of works with images, history, and stories.
+  </p>
+  <div class="wings">
+    <a class="wing" href="wings/paintings.html">
+      <h2>Paintings</h2>
+      <div class="era">13th – 19th century</div>
+      <p>From the Mona Lisa to Liberty Leading the People — European masterworks across six centuries.</p>
+    </a>
+    <a class="wing" href="wings/egyptian-antiquities.html">
+      <h2>Egyptian Antiquities</h2>
+      <div class="era">4000 BCE – 4th century CE</div>
+      <p>The Seated Scribe, the Great Sphinx of Tanis, sarcophagi, and everyday objects of the Nile.</p>
+    </a>
+    <a class="wing" href="wings/greek-roman-etruscan.html">
+      <h2>Greek, Roman &amp; Etruscan</h2>
+      <div class="era">7000 BCE – 6th century CE</div>
+      <p>Venus de Milo, Winged Victory of Samothrace, and the classical world's enduring forms.</p>
+    </a>
+    <a class="wing" href="wings/near-eastern.html">
+      <h2>Near Eastern Antiquities</h2>
+      <div class="era">Mesopotamia · Persia · Levant</div>
+      <p>The Code of Hammurabi, Lamassu guardians, and the cradle of civilization.</p>
+    </a>
+    <a class="wing" href="wings/sculptures.html">
+      <h2>Sculptures</h2>
+      <div class="era">Medieval – 19th century</div>
+      <p>Michelangelo's Dying Slave, Canova's Psyche Revived, and centuries of carved stone.</p>
+    </a>
+    <a class="wing" href="wings/decorative-arts.html">
+      <h2>Decorative Arts</h2>
+      <div class="era">Middle Ages – 19th century</div>
+      <p>Crown jewels, Napoleon III apartments, tapestries, porcelain, and royal furniture.</p>
+    </a>
+    <a class="wing" href="wings/prints-drawings.html">
+      <h2>Prints &amp; Drawings</h2>
+      <div class="era">Renaissance – modern</div>
+      <p>Over 200,000 works on paper by Leonardo, Dürer, Rembrandt, and others.</p>
+    </a>
+    <a class="wing" href="wings/islamic-art.html">
+      <h2>Islamic Art</h2>
+      <div class="era">7th – 19th century</div>
+      <p>Ceramics, metalwork, and manuscripts spanning Spain to India.</p>
+    </a>
+    <a class="wing" href="history.html">
+      <h2>The Palace Itself</h2>
+      <div class="era">1190 – today</div>
+      <p>From medieval fortress to royal palace to museum. The building's own story.</p>
+    </a>
+  </div>
+</main>
+<footer>
+  A digital museum · built to wander, not to rush
+</footer>
+</body>
+</html>

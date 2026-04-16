@@ -1,0 +1,111 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  background: #1a1612;
+  color: #e8ddc7;
+  min-height: 100vh;
+  line-height: 1.7;
+}
+nav.crumbs {
+  padding: 1.5rem 2rem;
+  background: #0f0c08;
+  border-bottom: 1px solid #4a3a24;
+}
+nav.crumbs a {
+  color: #8b6f3f;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  font-size: 0.9rem;
+}
+nav.crumbs a:hover { color: #d4af6a; }
+header.wing-header {
+  padding: 3rem 2rem 2rem;
+  text-align: center;
+  background: linear-gradient(180deg, #2a1f15 0%, #1a1612 100%);
+  border-bottom: 1px solid #8b6f3f;
+}
+header.wing-header h1 {
+  font-size: 2.5rem;
+  color: #d4af6a;
+  letter-spacing: 0.2em;
+  font-weight: normal;
+}
+header.wing-header .era {
+  color: #a89878;
+  font-style: italic;
+  margin-top: 0.5rem;
+  letter-spacing: 0.1em;
+}
+.intro {
+  max-width: 800px;
+  margin: 2rem auto 0;
+  padding: 0 2rem;
+  color: #c9b896;
+  font-size: 1.05rem;
+  text-align: center;
+  font-style: italic;
+}
+main { max-width: 1100px; margin: 0 auto; padding: 3rem 2rem; }
+.gallery { display: grid; gap: 4rem; }
+.work {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid #3a2f20;
+}
+@media (min-width: 700px) {
+  .work { grid-template-columns: 400px 1fr; gap: 3rem; align-items: start; }
+}
+.work img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid #4a3a24;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+  background: #0a0806;
+}
+.work h2 {
+  color: #d4af6a;
+  font-size: 1.7rem;
+  font-weight: normal;
+  margin-bottom: 0.3rem;
+  letter-spacing: 0.03em;
+}
+.work .artist {
+  color: #a89878;
+  font-style: italic;
+  margin-bottom: 0.3rem;
+}
+.work .meta {
+  color: #6a5a3a;
+  font-size: 0.9rem;
+  margin-bottom: 1.2rem;
+  letter-spacing: 0.05em;
+}
+.work p { margin-bottom: 1rem; color: #c9b896; }
+.work .note {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: #252017;
+  border-left: 3px solid #d4af6a;
+  font-size: 0.95rem;
+  color: #a89878;
+}
+.work .note strong { color: #d4af6a; }
+footer {
+  text-align: center;
+  padding: 2rem;
+  color: #6a5a3a;
+  font-size: 0.85rem;
+  border-top: 1px solid #4a3a24;
+  margin-top: 2rem;
+}
+.stub {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: #a89878;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.stub p { margin-bottom: 1rem; }
