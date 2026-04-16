@@ -317,7 +317,7 @@ body{background:var(--bg);color:var(--text);font-family:"Segoe UI",Arial,sans-se
 <div id="panel-rhyme" class="tab-panel active" role="tabpanel" aria-label="Rhyme Finder">
   <div id="rf-toolbar">
     <button id="add-pane-btn" type="button">+ New search</button>
-    <span id="rf-hint">Open side-by-side searches to compare rhymes across words.</span>
+    <span id="rf-hint">Type multiple words (e.g. <code>big fish swimming</code>) to open a pane per word.</span>
   </div>
   <div id="rf-panes"></div>
   <template id="rf-pane-template">
@@ -536,6 +536,23 @@ function runSearch(pane, forceWord) {
     `${total} ${depthLabel} rhyme${total!==1?"s":""} found for "${raw}" (/${rhyme}/)`;
 }
 
+function submitFromPane(pane) {
+  const input = pane.querySelector(".word-input");
+  const raw = input.value.trim();
+  const words = raw.split(/\s+/).filter(Boolean);
+  if (words.length <= 1) {
+    runSearch(pane);
+    return;
+  }
+  input.value = words[0];
+  runSearch(pane);
+  let last = pane;
+  for (let i = 1; i < words.length; i++) {
+    last = createPane(words[i]);
+  }
+  last.scrollIntoView({ behavior: "smooth", inline: "end", block: "nearest" });
+}
+
 function createPane(initialWord) {
   const tpl = document.getElementById("rf-pane-template");
   const pane = tpl.content.firstElementChild.cloneNode(true);
@@ -544,8 +561,8 @@ function createPane(initialWord) {
   const searchBtn = pane.querySelector(".search-btn");
   const closeBtn = pane.querySelector(".pane-close");
 
-  searchBtn.addEventListener("click", () => runSearch(pane));
-  input.addEventListener("keydown", e => { if (e.key === "Enter") runSearch(pane); });
+  searchBtn.addEventListener("click", () => submitFromPane(pane));
+  input.addEventListener("keydown", e => { if (e.key === "Enter") submitFromPane(pane); });
   depSel.addEventListener("change", () => runSearch(pane));
   closeBtn.addEventListener("click", () => {
     const container = document.getElementById("rf-panes");
