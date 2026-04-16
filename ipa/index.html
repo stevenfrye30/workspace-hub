@@ -176,12 +176,21 @@ body{background:var(--bg);color:var(--text);font-family:"Segoe UI",Arial,sans-se
 .sm-word{display:inline-block;margin:0 14px 14px 0;padding:7px 9px 9px;background:var(--surf);border:1px solid var(--bdr);border-radius:var(--radius);vertical-align:top}
 .sm-word-text{font-size:10px;font-weight:600;color:var(--muted);margin-bottom:5px;letter-spacing:.05em;text-transform:uppercase}
 .sm-word-text.unknown{color:#d98880;font-style:italic;text-transform:lowercase}
-.sm-phoneme-row{display:flex;gap:8px;align-items:flex-end;padding-top:16px}
+.sm-phoneme-row{display:flex;gap:8px;align-items:flex-end;padding:16px 0 8px}
 .sm-syllable{position:relative;display:flex;gap:3px;align-items:flex-end;padding:3px;border-radius:5px;transition:background .15s}
 .sm-syllable[data-stress="1"]{background:rgba(212,162,76,.12);outline:1px solid rgba(212,162,76,.35)}
 .sm-syllable[data-stress="2"]{background:rgba(212,162,76,.05);outline:1px dashed rgba(212,162,76,.22)}
 .sm-syllable[data-stress="1"]::before{content:"ˈ";position:absolute;top:-14px;left:4px;color:var(--gold);font-weight:700;font-size:13px;line-height:1;font-family:var(--mono)}
 .sm-syllable[data-stress="2"]::before{content:"ˌ";position:absolute;top:-14px;left:4px;color:var(--gold);font-weight:700;font-size:13px;line-height:1;opacity:.7;font-family:var(--mono)}
+.sm-syllable[data-group]::after{content:"";position:absolute;left:3px;right:3px;bottom:-5px;height:3px;border-radius:2px;background:var(--sm-group)}
+.sm-syllable[data-group]:hover{background:color-mix(in srgb, var(--sm-group) 20%, transparent)}
+.sm-line{display:block;margin-bottom:8px}
+.sm-line:last-child{margin-bottom:0}
+#sm-mode-picker{flex:0 0 100%;display:flex;flex-wrap:wrap;align-items:center;gap:12px;font-size:11px;color:var(--muted);letter-spacing:.04em;padding-top:4px}
+#sm-mode-picker label{display:inline-flex;align-items:center;gap:5px;cursor:pointer;text-transform:uppercase}
+#sm-mode-picker input[type="radio"]{accent-color:var(--gold);cursor:pointer;margin:0}
+#sm-mode-picker input[type="radio"]:checked + span, #sm-mode-picker label:has(input:checked){color:var(--text)}
+.sm-mode-label{color:var(--gold);font-weight:700;text-transform:uppercase;letter-spacing:.08em}
 .sm-phon{display:inline-flex;align-items:center;justify-content:center;min-width:26px;padding:5px 7px;border-radius:4px;font-family:var(--mono);font-size:15px;color:#111;font-weight:700;position:relative;background:#999}
 .sm-phon[data-place="bilabial"]{background:#f5a5c9}
 .sm-phon[data-place="labiodental"]{background:#f5b58a}
@@ -521,8 +530,17 @@ body{background:var(--bg);color:var(--text);font-family:"Segoe UI",Arial,sans-se
      ══════════════════════════════════════════════════════════ -->
 <div id="panel-sound" class="tab-panel" role="tabpanel" aria-label="Sound Map">
   <div id="sm-toolbar">
-    <textarea id="sm-input" placeholder="paste a sentence or phrase…" rows="2" spellcheck="false"></textarea>
+    <textarea id="sm-input" placeholder="paste a sentence or phrase (one line per verse line)…" rows="3" spellcheck="false"></textarea>
     <button id="sm-visualize" type="button">Visualize</button>
+    <div id="sm-mode-picker" role="group" aria-label="Highlight mode">
+      <span class="sm-mode-label">Highlight</span>
+      <label><input type="radio" name="sm-mode" value="rhyme" checked>Rhyme</label>
+      <label><input type="radio" name="sm-mode" value="endrhyme">End-rhyme</label>
+      <label><input type="radio" name="sm-mode" value="assonance">Assonance</label>
+      <label><input type="radio" name="sm-mode" value="alliteration">Alliteration</label>
+      <label><input type="radio" name="sm-mode" value="consonance">Consonance</label>
+      <label><input type="radio" name="sm-mode" value="none">Off</label>
+    </div>
     <div id="sm-legend">
       <span class="sm-legend-item"><span class="sm-swatch" style="background:#f5a5c9"></span>lips</span>
       <span class="sm-legend-item"><span class="sm-swatch" style="background:#f5b58a"></span>teeth/lip</span>
@@ -2022,70 +2040,192 @@ function smDescribe(p, feat) {
   return `/${p}/ · ${feat.manner} · ${feat.place} · ${feat.voice?"voiced":"voiceless"}`;
 }
 
+const SM_GROUP_COLORS = [
+  "#ff6b6b","#f39c12","#f1c40f","#6ad86a",
+  "#16a085","#4aa3e0","#b47cd6","#e84393"
+];
+
+function smSylNucleus(syl) {
+  for (const p of syl.phonemes) {
+    const f = SM_FEATS[p];
+    if (f && f.type === "V") return p;
+  }
+  return "";
+}
+
+function smSylOnset(syl) {
+  const out = [];
+  for (const p of syl.phonemes) {
+    const f = SM_FEATS[p];
+    if (f && f.type === "V") break;
+    out.push(p);
+  }
+  return out.join("");
+}
+
+function smSylCoda(syl) {
+  const out = [];
+  let seenV = false;
+  for (const p of syl.phonemes) {
+    const f = SM_FEATS[p];
+    if (f && f.type === "V") { seenV = true; out.length = 0; continue; }
+    if (seenV) out.push(p);
+  }
+  return out.join("");
+}
+
+function smSylRhymeKey(syl) {
+  const n = smSylNucleus(syl);
+  return n ? n + smSylCoda(syl) : "";
+}
+
+function smComputeGroups(processed, byLine, mode) {
+  if (mode === "none") return () => null;
+  const entries = [];
+  if (mode === "endrhyme") {
+    for (const lineWords of byLine) {
+      for (let k = lineWords.length - 1; k >= 0; k--) {
+        const wp = processed[lineWords[k]];
+        if (!wp.known || !wp.syllables.length) continue;
+        const s = wp.syllables.length - 1;
+        const key = smSylRhymeKey(wp.syllables[s]);
+        if (key) entries.push({ w: lineWords[k], s, key });
+        break;
+      }
+    }
+  } else if (mode === "alliteration") {
+    for (let w = 0; w < processed.length; w++) {
+      const wp = processed[w];
+      if (!wp.known || !wp.syllables.length) continue;
+      const key = smSylOnset(wp.syllables[0]);
+      if (key) entries.push({ w, s: 0, key });
+    }
+  } else {
+    for (let w = 0; w < processed.length; w++) {
+      const wp = processed[w];
+      if (!wp.known) continue;
+      wp.syllables.forEach((sy, s) => {
+        let key = "";
+        if (mode === "rhyme") key = smSylRhymeKey(sy);
+        else if (mode === "assonance") key = smSylNucleus(sy);
+        else if (mode === "consonance") key = smSylCoda(sy);
+        if (key) entries.push({ w, s, key });
+      });
+    }
+  }
+  const groups = new Map();
+  for (const e of entries) {
+    if (!groups.has(e.key)) groups.set(e.key, []);
+    groups.get(e.key).push(e);
+  }
+  const top = [...groups.entries()]
+    .filter(([, v]) => v.length >= 2)
+    .sort((a, b) => b[1].length - a[1].length)
+    .slice(0, SM_GROUP_COLORS.length);
+  const byPos = new Map();
+  top.forEach(([, occ], i) => {
+    const color = SM_GROUP_COLORS[i];
+    for (const o of occ) byPos.set(o.w + ":" + o.s, color);
+  });
+  return (w, s) => byPos.get(w + ":" + s) || null;
+}
+
 function smVisualize() {
-  const input = document.getElementById("sm-input").value;
+  const raw = document.getElementById("sm-input").value;
   const out = document.getElementById("sm-output");
   out.innerHTML = "";
-  const tokens = input.toLowerCase().split(/\s+/).map(t => t.replace(/[^a-z\-']/g,"")).filter(Boolean);
-  if (tokens.length === 0) {
+
+  const lines = raw.split(/\r?\n/);
+  const processed = [];
+  const byLine = [];
+  for (const rawLine of lines) {
+    const tokens = rawLine.toLowerCase().split(/\s+/).map(t => t.replace(/[^a-z\-']/g,"")).filter(Boolean);
+    if (!tokens.length) continue;
+    const thisLine = [];
+    for (const w of tokens) {
+      const entry = D[w];
+      thisLine.push(processed.length);
+      processed.push({
+        word: w,
+        known: !!entry,
+        syllables: entry ? smSyllabify(entry[0]) : [],
+      });
+    }
+    byLine.push(thisLine);
+  }
+
+  if (processed.length === 0) {
     const empty = document.createElement("div");
     empty.id = "sm-empty";
     empty.textContent = "Type or paste a sentence above and click Visualize.";
     out.appendChild(empty);
+    document.getElementById("sm-similar").classList.add("hidden");
     return;
   }
+
+  const mode = document.querySelector('input[name="sm-mode"]:checked').value;
+  const groupColor = smComputeGroups(processed, byLine, mode);
+
   let missing = 0;
-  for (const w of tokens) {
-    const entry = D[w];
-    const wrap = document.createElement("div");
-    wrap.className = "sm-word";
-    const label = document.createElement("div");
-    label.className = "sm-word-text";
-    if (!entry) {
-      label.classList.add("unknown");
-      label.textContent = w + " (not in dictionary)";
-      wrap.appendChild(label);
-      out.appendChild(wrap);
-      missing++;
-      continue;
-    }
-    label.textContent = w;
-    wrap.appendChild(label);
-    const row = document.createElement("div");
-    row.className = "sm-phoneme-row";
-    const syllables = smSyllabify(entry[0]);
-    syllables.forEach((syl, si) => {
-      const sylBox = document.createElement("div");
-      sylBox.className = "sm-syllable";
-      sylBox.dataset.stress = String(syl.stress);
-      if (syl.stress === 1) sylBox.title = "primary stress";
-      else if (syl.stress === 2) sylBox.title = "secondary stress";
-      else sylBox.title = "unstressed";
-      for (const p of syl.phonemes) {
-        const feat = SM_FEATS[p];
-        const block = document.createElement("span");
-        block.className = "sm-phon";
-        block.textContent = p;
-        if (feat) {
-          block.dataset.place = feat.place;
-          block.dataset.voice = feat.voice ? "1" : "0";
-        }
-        block.title = smDescribe(p, feat);
-        sylBox.appendChild(block);
+  for (const lineWords of byLine) {
+    const lineBox = document.createElement("div");
+    lineBox.className = "sm-line";
+    for (const wIdx of lineWords) {
+      const wp = processed[wIdx];
+      const wrap = document.createElement("div");
+      wrap.className = "sm-word";
+      const label = document.createElement("div");
+      label.className = "sm-word-text";
+      if (!wp.known) {
+        label.classList.add("unknown");
+        label.textContent = wp.word + " (not in dictionary)";
+        wrap.appendChild(label);
+        lineBox.appendChild(wrap);
+        missing++;
+        continue;
       }
-      row.appendChild(sylBox);
-    });
-    out.appendChild(wrap);
+      label.textContent = wp.word;
+      wrap.appendChild(label);
+      const row = document.createElement("div");
+      row.className = "sm-phoneme-row";
+      wp.syllables.forEach((syl, si) => {
+        const sylBox = document.createElement("div");
+        sylBox.className = "sm-syllable";
+        sylBox.dataset.stress = String(syl.stress);
+        sylBox.title = syl.stress === 1 ? "primary stress" : syl.stress === 2 ? "secondary stress" : "unstressed";
+        const c = groupColor(wIdx, si);
+        if (c) {
+          sylBox.dataset.group = "1";
+          sylBox.style.setProperty("--sm-group", c);
+        }
+        for (const p of syl.phonemes) {
+          const feat = SM_FEATS[p];
+          const block = document.createElement("span");
+          block.className = "sm-phon";
+          block.textContent = p;
+          if (feat) {
+            block.dataset.place = feat.place;
+            block.dataset.voice = feat.voice ? "1" : "0";
+          }
+          block.title = smDescribe(p, feat);
+          sylBox.appendChild(block);
+        }
+        row.appendChild(sylBox);
+      });
+      wrap.appendChild(row);
+      lineBox.appendChild(wrap);
+    }
+    out.appendChild(lineBox);
   }
+
+  const totalWords = processed.length;
   document.getElementById("status-bar").textContent =
-    `${tokens.length} word${tokens.length!==1?"s":""} mapped` +
+    `${totalWords} word${totalWords!==1?"s":""} · ${byLine.length} line${byLine.length!==1?"s":""} · highlight: ${mode}` +
     (missing ? ` · ${missing} not in dictionary` : "");
 
-  // Fire corpus similarity search.
   const queryPhonemes = [];
-  for (const w of tokens) {
-    const e = D[w];
-    if (e) queryPhonemes.push(...smParsePhonemes(e[0]));
+  for (const wp of processed) {
+    if (wp.known) for (const syl of wp.syllables) queryPhonemes.push(...syl.phonemes);
   }
   smLoadCorpus().then(() => smRenderSimilar(queryPhonemes));
 }
@@ -2096,6 +2236,11 @@ document.getElementById("sm-input").addEventListener("keydown", e => {
     e.preventDefault();
     smVisualize();
   }
+});
+document.querySelectorAll('input[name="sm-mode"]').forEach(r => {
+  r.addEventListener("change", () => {
+    if (document.getElementById("sm-input").value.trim()) smVisualize();
+  });
 });
 
 // ── Corpus: Shakespeare's Sonnets (Project Gutenberg #1041, public domain)
