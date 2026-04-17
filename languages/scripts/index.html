@@ -209,9 +209,7 @@ body{background:var(--bg);color:var(--text);font-family:system-ui,'Noto Sans',sa
 #draw-canvas{display:block;cursor:crosshair;touch-action:none;max-width:100%;position:relative;z-index:2}
 #draw-ref{position:absolute;top:0;left:0;pointer-events:none;z-index:3;opacity:1;
           border-radius:8px;transition:opacity .4s}
-#draw-guide-char{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
-                 font-size:210px;line-height:1;pointer-events:none;color:#000;
-                 user-select:none;overflow:hidden;opacity:.12;z-index:1}
+#draw-guide-char{display:none}
 #draw-toolbar{display:flex;flex-direction:column;gap:8px;font-size:12px;color:var(--muted)}
 #draw-toolbar button{background:var(--surf2);border:1px solid var(--border);border-radius:5px;
                       padding:5px 10px;font-size:12px;cursor:pointer;color:var(--muted);transition:.15s;text-align:left}
@@ -1894,13 +1892,32 @@ var quizCurrent=null;
 var soAnimating=false;
 var soAnimRAF=null;
 
+function _drawGhost(){
+  if(!drawGuideEnabled||quizMode||!detItem||!detItem.ch)return;
+  var sz=drawCanvas.width;
+  drawCtx.save();
+  var op=parseFloat(document.getElementById('draw-opacity').value)/100;
+  if(!isFinite(op))op=0.15;
+  drawCtx.globalAlpha=op;
+  var sf=detItem.sc?(SCRIPT_FONTS[detItem.sc]||''):'';
+  var fam=sf?'"'+sf+'",system-ui,sans-serif':'system-ui,sans-serif';
+  drawCtx.font='210px '+fam;
+  drawCtx.fillStyle='#000';
+  drawCtx.textAlign='center';
+  drawCtx.textBaseline='middle';
+  drawCtx.fillText(detItem.ch,sz/2,sz/2);
+  drawCtx.restore();
+}
+function _resetDrawSurface(){
+  drawCtx.clearRect(0,0,drawCanvas.width,drawCanvas.height);
+  _drawGhost();
+  if(drawGridEnabled)_drawGrid();
+}
 function initDrawCanvas(){
   drawInitialized=true;
   if(!quizMode){
-    drawCtx.fillStyle='#fff';
-    drawCtx.fillRect(0,0,drawCanvas.width,drawCanvas.height);
+    _resetDrawSurface();
     drawHistory=[];
-    if(drawGridEnabled)_drawGrid();
   }
   // Clear ref canvas
   drawRefCtx.clearRect(0,0,drawRefCanvas.width,drawRefCanvas.height);
@@ -2077,21 +2094,18 @@ document.getElementById('draw-undo').addEventListener('click',function(){
 });
 document.getElementById('draw-clear').addEventListener('click',function(){
   drawHistory.push(drawCtx.getImageData(0,0,drawCanvas.width,drawCanvas.height));
-  drawCtx.fillStyle='#fff';drawCtx.fillRect(0,0,drawCanvas.width,drawCanvas.height);
-  if(drawGridEnabled)_drawGrid();
+  _resetDrawSurface();
 });
 document.getElementById('draw-grid').addEventListener('change',function(){
   drawGridEnabled=this.checked;
-  // Rebuild from blank (grid is non-destructive reference)
+  _resetDrawSurface();
 });
 document.getElementById('draw-guide').addEventListener('change',function(){
   drawGuideEnabled=this.checked;
-  var gc=document.getElementById('draw-guide-char');
-  if(gc)gc.style.display=drawGuideEnabled&&!quizMode?'flex':'none';
+  _resetDrawSurface();
 });
 document.getElementById('draw-opacity').addEventListener('input',function(){
-  var gc=document.getElementById('draw-guide-char');
-  if(gc)gc.style.opacity=(this.value/100).toFixed(2);
+  _resetDrawSurface();
 });
 document.getElementById('draw-save').addEventListener('click',function(){
   // Flatten guide onto canvas for save
@@ -2160,8 +2174,7 @@ function _nextQuizSRS(){
   if(rv){rv.style.display='';rv.disabled=false;}
   var gr=document.getElementById('quiz-grade-row');
   if(gr)gr.style.display='none';
-  drawCtx.fillStyle='#fff';drawCtx.fillRect(0,0,drawCanvas.width,drawCanvas.height);
-  if(drawGridEnabled)_drawGrid();
+  _resetDrawSurface();
   drawHistory=[];
   _updateQuizStats();
 }
