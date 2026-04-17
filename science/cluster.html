@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cluster — Science</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg:#1e2a3a; --fg:#e8ecf1; --muted:#8fa3ba;
+    --border:#32445c; --chrome:#2a3a4f; --active:#d4a24c; --tint:#263447;
+    --card:#243347; --bridge:#d97706;
+  }
+  body { font-family: Georgia, serif; background: var(--bg); color: var(--fg); line-height: 1.55; min-height: 100vh; }
+  .page { max-width: 1200px; margin: 0 auto; padding: 28px 24px 80px; }
+  .back { display: inline-block; margin-bottom: 18px; color: var(--active); text-decoration: none; font-size: 14px; }
+  .back:hover { text-decoration: underline; }
+
+  .head-block { padding: 18px 22px; background: var(--card); border: 1px solid var(--border); margin-bottom: 20px; }
+  .head-block h1 { font-size: 26px; font-weight: 600; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .head-block .desc { color: var(--muted); margin-top: 8px; font-style: italic; }
+  .head-block .meta { color: var(--muted); font-size: 13px; margin-top: 8px; font-family: ui-monospace, monospace; }
+  .kind-badge { font-size: 11px; padding: 2px 10px; border-radius: 12px; text-transform: uppercase; letter-spacing: 0.08em; font-family: system-ui, sans-serif; }
+  .kind-badge.hub { background: rgba(212,162,76,0.2); color: var(--active); }
+  .kind-badge.bridge { background: rgba(217,119,6,0.22); color: #fbbf24; }
+  .anchor-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+  .anchor-chip { background: rgba(217,119,6,0.15); border: 1px solid rgba(217,119,6,0.4); color: #fbbf24; padding: 3px 10px; border-radius: 12px; font-size: 12px; font-family: ui-monospace, monospace; }
+
+  .actions-row { display: flex; gap: 8px; margin-top: 14px; flex-wrap: wrap; }
+  .pill { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; border: 1px solid var(--border); background: var(--chrome); color: var(--fg); text-decoration: none; font-size: 13px; font-family: inherit; }
+  .pill:hover { border-color: var(--active); }
+  .pill.primary { background: var(--active); color: #1e2a3a; border-color: var(--active); font-weight: 600; }
+
+  .split { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  @media (max-width: 900px) { .split { grid-template-columns: 1fr; } }
+
+  .section-label { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; border-bottom: 1px solid var(--border); padding-bottom: 6px; margin: 20px 0 12px; }
+
+  /* File list */
+  .folder-head { display: flex; align-items: baseline; gap: 10px; margin: 14px 0 6px; padding-bottom: 4px; border-bottom: 1px solid var(--border); }
+  .folder-path { font-family: ui-monospace, monospace; font-size: 14px; font-weight: 600; color: var(--active); }
+  .folder-count { color: var(--muted); font-size: 12px; }
+  .file-list { display: flex; flex-direction: column; gap: 2px; }
+  .file-row { display: flex; align-items: center; gap: 10px; padding: 6px 10px; background: transparent; border: 1px solid transparent; color: inherit; font-family: inherit; font-size: 13px; text-align: left; cursor: pointer; width: 100%; }
+  .file-row:hover { background: rgba(212,162,76,0.08); }
+  .file-row.active { background: rgba(212,162,76,0.15); border-color: var(--active); }
+  .file-row .title { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .file-row .meta { color: var(--muted); font-size: 11px; font-family: ui-monospace, monospace; }
+  .file-row .badge { font-size: 10px; font-family: ui-monospace, monospace; padding: 1px 6px; background: var(--chrome); color: var(--muted); border-radius: 3px; }
+  .file-row .badge.ocr { background: rgba(212,162,76,0.22); color: var(--active); }
+
+  /* Glossary */
+  .gloss-entry { background: var(--card); border: 1px solid var(--border); padding: 10px 14px; margin-bottom: 6px; }
+  .gloss-entry.anchor { border-color: rgba(217,119,6,0.45); background: linear-gradient(180deg, rgba(217,119,6,0.06), var(--card)); }
+  .gloss-head { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+  .gloss-term { font-weight: 600; color: var(--active); }
+  .gloss-source { font-size: 11px; color: var(--muted); font-family: ui-monospace, monospace; padding: 1px 6px; border: 1px solid var(--border); }
+  .gloss-def { font-size: 13.5px; line-height: 1.5; margin-top: 4px; }
+  .gloss-related { font-size: 12px; color: var(--muted); margin-top: 4px; }
+  .gloss-related em { color: #a5b4fc; font-style: normal; }
+
+  /* Preview pane */
+  .preview-pane { position: sticky; top: 14px; max-height: calc(100vh - 28px); overflow-y: auto; background: var(--card); border: 1px solid var(--border); padding: 16px; }
+  .preview-empty { color: var(--muted); text-align: center; padding: 30px 10px; font-size: 14px; }
+  .preview-title { font-weight: 600; word-break: break-word; font-size: 15px; }
+  .preview-meta { color: var(--muted); font-size: 12px; margin: 6px 0 14px; font-family: ui-monospace, monospace; }
+  .preview-seg { border-top: 1px solid var(--border); padding: 10px 0; }
+  .preview-seg:first-of-type { border-top: none; padding-top: 0; }
+  .preview-seg-label { color: var(--active); font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; }
+  .preview-seg-text { font-size: 14px; line-height: 1.55; white-space: pre-wrap; }
+
+  .loading { color: var(--muted); text-align: center; padding: 30px; font-size: 14px; }
+  .error { color: #fca5a5; text-align: center; padding: 30px; font-size: 14px; }
+</style>
+</head>
+<body>
+<div class="page">
+  <a class="back" href="./">&larr; Science</a>
+  <div id="root"><div class="loading">Loading&hellip;</div></div>
+</div>
+
+<script>
+(function() {
+  const root = document.getElementById('root');
+  let clusters = [];
+  let entries = [];
+  let index = [];
+
+  function esc(s) {
+    const d = document.createElement('div');
+    d.textContent = s == null ? '' : String(s);
+    return d.innerHTML;
+  }
+  function normalize(t) {
+    return String(t || '').toLowerCase().trim().replace(/\s*\([^)]*\)\s*$/, '').trim();
+  }
+  function getClusterIdFromUrl() {
+    return new URLSearchParams(location.search).get('id');
+  }
+
+  Promise.all([
+    fetch('./data/clusters.json').then(r => r.json()),
+    fetch('./data/glossary.json').then(r => r.json()),
+    fetch('./data/extracts_index.json').then(r => r.json()),
+  ]).then(([c, g, e]) => {
+    clusters = c.clusters || [];
+    entries = g.entries || [];
+    index = e.extracts || [];
+
+    const id = getClusterIdFromUrl();
+    if (!id) return renderIndex();
+    const cluster = clusters.find(x => x.id === id);
+    if (!cluster) return renderIndex('Cluster not found: ' + id);
+    renderCluster(cluster);
+  }).catch(err => {
+    root.innerHTML = '<div class="error">Failed to load: ' + esc(err.message) + '</div>';
+  });
+
+  // ---- Cluster index (picker) ----
+
+  function renderIndex(errMsg) {
+    const hubs = clusters.filter(c => c.kind === 'hub');
+    const bridges = clusters.filter(c => c.kind === 'bridge');
+    const byPath = new Map();
+    for (const ex of index) byPath.set(ex.subject_path, (byPath.get(ex.subject_path) || 0) + 1);
+
+    function countFiles(c) {
+      let n = 0;
+      for (const p of c.subjects || []) n += byPath.get(p) || 0;
+      return n;
+    }
+
+    let html = '<div class="head-block"><h1>📁 Browse by Cluster</h1>';
+    html += '<div class="desc">Lecture text and reference sheets, grouped by topic. Click any cluster to see the underlying files with slide-by-slide content.</div>';
+    html += '</div>';
+    if (errMsg) html += '<div class="error">' + esc(errMsg) + '</div>';
+
+    for (const [header, group] of [['Subject-Area Hubs', hubs], ['Bridge Concepts', bridges]]) {
+      if (!group.length) continue;
+      html += '<div class="section-label">' + header + '</div>';
+      html += '<div style="display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))">';
+      for (const c of group) {
+        const nFiles = countFiles(c);
+        const hasContent = nFiles > 0;
+        const clsBridge = c.kind === 'bridge' ? ' style="border-color:rgba(217,119,6,0.4)"' : '';
+        html += '<a class="pill' + (hasContent ? '' : '' ) + '" href="?id=' + encodeURIComponent(c.id) + '"' + clsBridge + ' style="display:block;padding:14px 16px;text-align:left;background:var(--card);border:1px solid var(--border)">';
+        if (c.kind === 'bridge') html = html.slice(0, -'border:1px solid var(--border)">'.length) + 'border:1px solid rgba(217,119,6,0.4)">';
+        html += '<div style="display:flex;align-items:center;gap:10px;margin-bottom:6px"><span style="font-size:1.3em">' + esc(c.icon) + '</span>';
+        html += '<span style="font-weight:600;color:var(--active)">' + esc(c.label) + '</span>';
+        html += '<span class="kind-badge ' + c.kind + '" style="margin-left:auto">' + esc(c.kind) + '</span></div>';
+        html += '<div style="font-size:13px;color:var(--muted);line-height:1.45">' + esc(c.desc) + '</div>';
+        html += '<div style="margin-top:8px;font-size:12px;color:var(--muted);font-family:ui-monospace,monospace">' + nFiles + ' files</div>';
+        html += '</a>';
+      }
+      html += '</div>';
+    }
+    root.innerHTML = html;
+  }
+
+  // ---- Single cluster view ----
+
+  function renderCluster(cluster) {
+    const anchors = new Set((cluster.anchor_terms || []).map(t => t.toLowerCase().trim()));
+    function isAnchor(term) {
+      if (!anchors.size) return false;
+      const n = normalize(term);
+      for (const a of anchors) if (n === a || n.includes(a) || a.includes(n)) return true;
+      return false;
+    }
+
+    // Filter glossary entries for this cluster (same logic as tutor)
+    const targetGloss = new Set(cluster.glossaries || []);
+    let glossFiltered = entries.filter(e => targetGloss.has(e.file));
+    if (cluster.kind === 'bridge' && anchors.size) {
+      const anchorList = glossFiltered.filter(e => isAnchor(e.term));
+      const related = new Set();
+      for (const e of anchorList) {
+        (e.related || '').split(',').forEach(r => {
+          const n = normalize(r);
+          if (n) related.add(n);
+        });
+      }
+      const neighbors = glossFiltered.filter(e => related.has(normalize(e.term)) && !isAnchor(e.term));
+      glossFiltered = [...anchorList, ...neighbors];
+    }
+    glossFiltered.sort((a, b) => {
+      const aa = isAnchor(a.term) ? 0 : 1;
+      const bb = isAnchor(b.term) ? 0 : 1;
+      if (aa !== bb) return aa - bb;
+      return (a.term || '').localeCompare(b.term || '');
+    });
+
+    // Filter files by cluster's subjects
+    const targetPaths = new Set(cluster.subjects || []);
+    const files = index.filter(x => targetPaths.has(x.subject_path));
+    const byFolder = new Map();
+    for (const f of files) {
+      if (!byFolder.has(f.subject_path)) byFolder.set(f.subject_path, []);
+      byFolder.get(f.subject_path).push(f);
+    }
+    for (const arr of byFolder.values()) arr.sort((a, b) => a.title.localeCompare(b.title));
+
+    let html = '<div class="head-block">';
+    html += '<h1><span>' + esc(cluster.icon) + '</span>' + esc(cluster.label);
+    html += '<span class="kind-badge ' + cluster.kind + '">' + esc(cluster.kind) + '</span></h1>';
+    html += '<div class="desc">' + esc(cluster.desc) + '</div>';
+    html += '<div class="meta">Pulling from: ' + esc((cluster.subjects || []).join(' · ')) + '</div>';
+    if (cluster.anchor_terms && cluster.anchor_terms.length) {
+      html += '<div class="anchor-chips">';
+      for (const t of cluster.anchor_terms) html += '<span class="anchor-chip">' + esc(t) + '</span>';
+      html += '</div>';
+    }
+    html += '<div class="actions-row">';
+    if (cluster.glossaries && cluster.glossaries.length) {
+      html += '<a class="pill primary" href="tutor.html?cluster=' + encodeURIComponent(cluster.id) + '">🎯 Quiz me on this</a>';
+    }
+    html += '<a class="pill" href="cluster.html">← All clusters</a>';
+    html += '</div>';
+    html += '</div>';
+
+    html += '<div class="split">';
+    // Left: files + glossary
+    html += '<div>';
+    if (byFolder.size) {
+      html += '<div class="section-label">Files (' + files.length + ')</div>';
+      for (const [path, arr] of byFolder) {
+        html += '<div class="folder-head"><span class="folder-path">' + esc(path) + '</span><span class="folder-count">' + arr.length + ' file' + (arr.length !== 1 ? 's' : '') + '</span></div>';
+        html += '<div class="file-list">';
+        for (const f of arr) {
+          const isOcr = f.extracted_by && /easyocr|ocr/i.test(f.extracted_by);
+          html += '<button class="file-row" data-id="' + esc(f.id) + '" data-shard="' + esc(f.shard) + '" data-title="' + esc(f.title) + '">';
+          html += '<span class="title">' + esc(f.title) + '</span>';
+          html += '<span class="meta">' + f.segments + 'pg</span>';
+          if (isOcr) html += '<span class="badge ocr">OCR</span>';
+          html += '</button>';
+        }
+        html += '</div>';
+      }
+    } else {
+      html += '<div class="section-label">Files</div><div class="loading">No files found in this cluster.</div>';
+    }
+
+    if (glossFiltered.length) {
+      html += '<div class="section-label" style="margin-top:24px">Glossary (' + glossFiltered.length + ')</div>';
+      for (const e of glossFiltered.slice(0, 200)) {
+        const anchor = isAnchor(e.term);
+        html += '<div class="gloss-entry' + (anchor ? ' anchor' : '') + '">';
+        html += '<div class="gloss-head"><span class="gloss-term">' + esc(e.term) + '</span>';
+        html += '<span class="gloss-source">' + esc(e.file) + '</span></div>';
+        if (e.definition) html += '<div class="gloss-def">' + esc(e.definition) + '</div>';
+        if (e.key_detail) html += '<div class="gloss-def" style="color:var(--active);font-family:ui-monospace,monospace;font-size:12.5px">' + esc(e.key_detail) + '</div>';
+        if (e.related) html += '<div class="gloss-related">Related: <em>' + esc(e.related) + '</em></div>';
+        html += '</div>';
+      }
+      if (glossFiltered.length > 200) html += '<div class="loading">Showing 200 of ' + glossFiltered.length + '.</div>';
+    }
+    html += '</div>';
+
+    // Right: preview pane
+    html += '<aside class="preview-pane" id="previewPane"><div class="preview-empty">Click a file to preview its content here.</div></aside>';
+    html += '</div>';
+
+    root.innerHTML = html;
+
+    const pane = document.getElementById('previewPane');
+    document.querySelectorAll('.file-row').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.file-row.active').forEach(x => x.classList.remove('active'));
+        btn.classList.add('active');
+        loadExtract(pane, btn.dataset.shard, btn.dataset.id, btn.dataset.title);
+      });
+    });
+  }
+
+  async function loadExtract(pane, shard, id, title) {
+    pane.innerHTML = '<div class="loading">Loading ' + esc(title) + '&hellip;</div>';
+    try {
+      const resp = await fetch('./data/extracts/' + shard + '/' + id + '.json');
+      if (!resp.ok) throw new Error('HTTP ' + resp.status);
+      const data = await resp.json();
+      let html = '<div class="preview-title">' + esc(title) + '</div>';
+      html += '<div class="preview-meta">' + esc(data.subject_path) + ' &middot; ' + (data.segments ? data.segments.length : 0) + ' segments';
+      if (data.extracted_by) html += ' &middot; ' + esc(data.extracted_by);
+      html += '</div>';
+      const segs = data.segments || [];
+      for (const s of segs.slice(0, 100)) {
+        const kind = s.kind || 'segment';
+        const label = (kind === 'intro') ? 'Header' : (kind[0].toUpperCase() + kind.slice(1) + ' ' + s.n);
+        html += '<div class="preview-seg">';
+        html += '<div class="preview-seg-label">' + esc(label) + '</div>';
+        html += '<div class="preview-seg-text">' + esc(s.text) + '</div>';
+        html += '</div>';
+      }
+      if (segs.length > 100) html += '<div class="loading">Showing 100 of ' + segs.length + ' segments.</div>';
+      pane.innerHTML = html;
+    } catch (err) {
+      pane.innerHTML = '<div class="error">Failed to load: ' + esc(err.message) + '</div>';
+    }
+  }
+})();
+</script>
+</body>
+</html>
