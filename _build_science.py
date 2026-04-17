@@ -274,6 +274,30 @@ def export_extracts():
         json.dump({"extracts": index}, f, ensure_ascii=False)
     print(f"  extracts: {len(index)} indexed, {total_chars // 1024} KB text, {skipped} skipped")
     print(f"  wrote {index_path} ({os.path.getsize(index_path) // 1024} KB)")
+
+    # Search corpus: same index but with concatenated text for client-side search
+    corpus = []
+    for entry in index:
+        extract_path = os.path.join(EXTRACTS_OUT_DIR, entry["shard"], f"{entry['id']}.json")
+        try:
+            with open(extract_path, "r", encoding="utf-8") as f:
+                payload = json.load(f)
+        except Exception:
+            continue
+        segs = payload.get("segments") or []
+        # Store per-segment so search can attribute matches to slide/page numbers
+        corpus.append({
+            "id": entry["id"],
+            "shard": entry["shard"],
+            "title": entry["title"],
+            "subject_path": entry["subject_path"],
+            "segments": [{"n": s["n"], "kind": s["kind"], "text": s["text"]} for s in segs],
+        })
+    corpus_path = os.path.join(OUT_DIR, "search_corpus.json")
+    with open(corpus_path, "w", encoding="utf-8") as f:
+        json.dump({"extracts": corpus}, f, ensure_ascii=False)
+    print(f"  wrote {corpus_path} ({os.path.getsize(corpus_path) // 1024} KB)")
+
     return {"count": len(index), "chars": total_chars, "skipped": skipped}
 
 

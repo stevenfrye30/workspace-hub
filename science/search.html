@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Search — Science</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg:#1e2a3a; --fg:#e8ecf1; --muted:#8fa3ba;
+    --border:#32445c; --chrome:#2a3a4f; --active:#d4a24c; --tint:#263447;
+    --card:#243347;
+  }
+  body { font-family: Georgia, serif; background: var(--bg); color: var(--fg); line-height: 1.55; min-height: 100vh; }
+  .page { max-width: 1000px; margin: 0 auto; padding: 28px 24px 80px; }
+  .back { display: inline-block; margin-bottom: 14px; color: var(--active); text-decoration: none; font-size: 14px; }
+  .back:hover { text-decoration: underline; }
+
+  header.title-block { border-bottom: 1px solid var(--border); padding-bottom: 18px; margin-bottom: 20px; }
+  header.title-block h1 { font-size: 26px; font-weight: 600; }
+  header.title-block p { color: var(--muted); font-style: italic; margin-top: 6px; }
+
+  .controls { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 14px; align-items: center; }
+  input[type=search] { flex: 1; min-width: 260px; padding: 11px 14px; background: var(--card); border: 1px solid var(--border); color: var(--fg); font-family: inherit; font-size: 15px; }
+  input[type=search]:focus { outline: none; border-color: var(--active); }
+  .source-scope { display: flex; gap: 10px; align-items: center; color: var(--muted); font-size: 13px; }
+  .source-scope label { cursor: pointer; }
+
+  .results-meta { color: var(--muted); font-size: 13px; margin-bottom: 14px; font-family: ui-monospace, monospace; }
+
+  .result { background: var(--card); border: 1px solid var(--border); padding: 12px 16px; margin-bottom: 8px; }
+  .result-head { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+  .result-title { font-weight: 600; color: var(--active); flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .result-subject { font-size: 11px; color: var(--muted); font-family: ui-monospace, monospace; padding: 1px 6px; border: 1px solid var(--border); }
+  .result-count { font-size: 11px; color: var(--active); font-family: ui-monospace, monospace; background: rgba(212,162,76,0.15); padding: 2px 8px; border-radius: 10px; }
+  .result-snippet { font-size: 13.5px; line-height: 1.55; margin-top: 8px; color: var(--fg); }
+  .result-snippet .loc { display: inline-block; color: var(--muted); font-size: 11px; font-family: ui-monospace, monospace; margin-right: 6px; }
+  .result-expand { margin-top: 8px; }
+  .result-expand .toggle { background: transparent; border: none; color: var(--muted); cursor: pointer; font-family: inherit; font-size: 12px; padding: 0; text-decoration: underline dotted; }
+  .result-expand .toggle:hover { color: var(--active); }
+  .result-all { margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--border); display: none; }
+  .result.expanded .result-all { display: block; }
+  .all-hit { margin-bottom: 8px; font-size: 13px; line-height: 1.5; }
+  .all-hit .loc { display: inline-block; color: var(--active); font-size: 11px; font-family: ui-monospace, monospace; margin-right: 6px; }
+
+  mark { background: rgba(212,162,76,0.38); color: var(--fg); padding: 0 2px; border-radius: 2px; }
+  .loading, .empty { color: var(--muted); text-align: center; padding: 40px; }
+  .empty { font-size: 14px; }
+  .tips { color: var(--muted); font-size: 12.5px; line-height: 1.6; background: var(--card); border: 1px solid var(--border); padding: 12px 16px; margin-top: 20px; }
+  .tips strong { color: var(--fg); }
+  kbd { background: var(--chrome); padding: 1px 6px; border-radius: 3px; font-family: ui-monospace, monospace; font-size: 11px; border: 1px solid var(--border); }
+</style>
+</head>
+<body>
+<div class="page">
+  <a class="back" href="./">&larr; Science</a>
+  <header class="title-block">
+    <h1>🔎 Search</h1>
+    <p id="subtitle">Loading search corpus&hellip;</p>
+  </header>
+
+  <div class="controls">
+    <input type="search" id="q" placeholder="Search lecture text and glossary (e.g. Hardy-Weinberg, Na+/K+ pump, aromaticity)…" autofocus>
+    <div class="source-scope">
+      <label><input type="checkbox" id="incLectures" checked> Lectures</label>
+      <label><input type="checkbox" id="incGlossary" checked> Glossary</label>
+    </div>
+  </div>
+  <div class="results-meta" id="meta"></div>
+  <div id="results"><div class="loading">Loading data&hellip;</div></div>
+
+  <div class="tips" id="tips">
+    <strong>Tips.</strong> Match is literal substring, case-insensitive. Multiple words = all must appear in the same extract (AND). Use specific phrases like <code>Hardy-Weinberg</code>, <code>oxidative phosphorylation</code>, or <code>SN1</code> for best results. Keyboard: <kbd>Esc</kbd> clears.
+  </div>
+</div>
+
+<script>
+(function() {
+  const q = document.getElementById('q');
+  const meta = document.getElementById('meta');
+  const out = document.getElementById('results');
+  const subtitle = document.getElementById('subtitle');
+  const incLectures = document.getElementById('incLectures');
+  const incGlossary = document.getElementById('incGlossary');
+
+  let extracts = [];
+  let glossary = [];
+  let ready = false;
+
+  function esc(s) {
+    const d = document.createElement('div');
+    d.textContent = s == null ? '' : String(s);
+    return d.innerHTML;
+  }
+  function highlight(text, terms) {
+    let html = esc(text);
+    for (const t of terms) {
+      if (!t) continue;
+      const re = new RegExp('(' + t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'gi');
+      html = html.replace(re, '<mark>$1</mark>');
+    }
+    return html;
+  }
+
+  Promise.all([
+    fetch('./data/search_corpus.json').then(r => r.json()),
+    fetch('./data/glossary.json').then(r => r.json()),
+  ]).then(([c, g]) => {
+    extracts = c.extracts || [];
+    glossary = g.entries || [];
+    ready = true;
+    subtitle.textContent = extracts.length + ' lecture/reference files + ' + glossary.length + ' glossary entries indexed.';
+    out.innerHTML = '<div class="empty">Start typing to search.</div>';
+    if (q.value) render();
+  }).catch(err => {
+    out.innerHTML = '<div class="empty" style="color:#fca5a5">Failed to load: ' + esc(err.message) + '</div>';
+  });
+
+  q.addEventListener('keydown', (ev) => {
+    if (ev.key === 'Escape') { q.value = ''; render(); }
+  });
+
+  let tid = 0;
+  function schedule() {
+    clearTimeout(tid);
+    tid = setTimeout(render, 180);
+  }
+  q.addEventListener('input', schedule);
+  incLectures.addEventListener('change', schedule);
+  incGlossary.addEventListener('change', schedule);
+
+  function tokenize(s) {
+    return s.toLowerCase().trim().split(/\s+/).filter(t => t.length > 0);
+  }
+
+  function render() {
+    if (!ready) return;
+    const raw = q.value.trim();
+    if (!raw) {
+      meta.textContent = '';
+      out.innerHTML = '<div class="empty">Start typing to search.</div>';
+      return;
+    }
+    const terms = tokenize(raw);
+    const t0 = performance.now();
+
+    let html = '';
+    let lectureHits = 0;
+    let glossaryHits = 0;
+
+    if (incGlossary.checked) {
+      const gMatches = [];
+      for (const e of glossary) {
+        const hay = ((e.term || '') + ' ' + (e.definition || '') + ' ' + (e.related || '') + ' ' + (e.category || '')).toLowerCase();
+        let match = true;
+        for (const t of terms) { if (!hay.includes(t)) { match = false; break; } }
+        if (!match) continue;
+        gMatches.push(e);
+      }
+      // Sort: term prefix matches first, then term exact, then alpha
+      const firstTerm = terms[0];
+      gMatches.sort((a, b) => {
+        const at = (a.term || '').toLowerCase().startsWith(firstTerm) ? 0 : 1;
+        const bt = (b.term || '').toLowerCase().startsWith(firstTerm) ? 0 : 1;
+        if (at !== bt) return at - bt;
+        return (a.term || '').localeCompare(b.term || '');
+      });
+      glossaryHits = gMatches.length;
+      if (gMatches.length) {
+        html += '<div class="results-meta">Glossary matches (' + gMatches.length + ')</div>';
+        for (const e of gMatches.slice(0, 25)) {
+          html += '<div class="result">';
+          html += '<div class="result-head">';
+          html += '<div class="result-title">' + highlight(e.term || '', terms) + '</div>';
+          html += '<div class="result-subject">' + esc(e.file) + '</div>';
+          html += '</div>';
+          if (e.definition) html += '<div class="result-snippet">' + highlight(e.definition, terms) + '</div>';
+          html += '</div>';
+        }
+        if (gMatches.length > 25) html += '<div class="loading">Showing 25 of ' + gMatches.length + ' glossary matches.</div>';
+      }
+    }
+
+    if (incLectures.checked) {
+      const lMatches = [];
+      for (const ex of extracts) {
+        const hits = [];
+        for (const seg of ex.segments || []) {
+          const segLc = seg.text.toLowerCase();
+          let match = true;
+          for (const t of terms) { if (!segLc.includes(t)) { match = false; break; } }
+          if (match) hits.push(seg);
+        }
+        // Also match on title
+        const titleLc = ex.title.toLowerCase();
+        let titleMatch = true;
+        for (const t of terms) { if (!titleLc.includes(t)) { titleMatch = false; break; } }
+        if (hits.length || titleMatch) lMatches.push({ ex, hits });
+      }
+      lMatches.sort((a, b) => b.hits.length - a.hits.length);
+      lectureHits = lMatches.length;
+
+      if (lMatches.length) {
+        html += '<div class="results-meta" style="margin-top:16px">Lecture &amp; reference matches (' + lMatches.length + ' files, ' + lMatches.reduce((s, m) => s + m.hits.length, 0) + ' hits)</div>';
+        for (const { ex, hits } of lMatches.slice(0, 80)) {
+          const first = hits[0];
+          const snippet = first ? segSnippet(first.text, terms) : '(title match)';
+          const loc = first ? segLabel(first) : '';
+          html += '<div class="result" data-id="' + esc(ex.id) + '">';
+          html += '<div class="result-head">';
+          html += '<div class="result-title">' + highlight(ex.title, terms) + '</div>';
+          html += '<div class="result-subject">' + esc(ex.subject_path) + '</div>';
+          html += '<div class="result-count">' + hits.length + ' hit' + (hits.length === 1 ? '' : 's') + '</div>';
+          html += '</div>';
+          if (first) {
+            html += '<div class="result-snippet"><span class="loc">' + esc(loc) + '</span>' + snippet + '</div>';
+          }
+          if (hits.length > 1) {
+            html += '<div class="result-expand"><button class="toggle" data-act="expand">Show all ' + hits.length + ' matches &darr;</button></div>';
+            html += '<div class="result-all">';
+            for (const h of hits) {
+              html += '<div class="all-hit"><span class="loc">' + esc(segLabel(h)) + '</span>' + segSnippet(h.text, terms) + '</div>';
+            }
+            html += '</div>';
+          }
+          html += '</div>';
+        }
+        if (lMatches.length > 80) html += '<div class="loading">Showing 80 of ' + lMatches.length + ' matching files.</div>';
+      }
+    }
+
+    const elapsed = Math.round(performance.now() - t0);
+    meta.textContent = glossaryHits + ' glossary + ' + lectureHits + ' lecture files matched (' + elapsed + 'ms)';
+    if (!glossaryHits && !lectureHits) {
+      out.innerHTML = '<div class="empty">No matches.</div>';
+      return;
+    }
+    out.innerHTML = html;
+
+    out.querySelectorAll('[data-act="expand"]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const card = btn.closest('.result');
+        card.classList.toggle('expanded');
+        btn.textContent = card.classList.contains('expanded')
+          ? btn.textContent.replace('↓', '↑').replace('Show', 'Hide')
+          : btn.textContent.replace('↑', '↓').replace('Hide', 'Show');
+      });
+    });
+  }
+
+  function segLabel(seg) {
+    const kind = seg.kind || 'seg';
+    if (kind === 'intro') return 'Header';
+    return kind[0].toUpperCase() + kind.slice(1) + ' ' + seg.n;
+  }
+
+  function segSnippet(text, terms) {
+    const lc = text.toLowerCase();
+    let at = -1;
+    for (const t of terms) {
+      const i = lc.indexOf(t);
+      if (i >= 0 && (at < 0 || i < at)) at = i;
+    }
+    if (at < 0) at = 0;
+    const start = Math.max(0, at - 80);
+    const end = Math.min(text.length, at + 160);
+    let slice = text.slice(start, end);
+    if (start > 0) slice = '… ' + slice;
+    if (end < text.length) slice = slice + ' …';
+    return highlight(slice, terms);
+  }
+})();
+</script>
+</body>
+</html>
