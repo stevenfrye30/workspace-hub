@@ -2,123 +2,12 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Milwaukee — Workspace</title>
-<style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  :root {
-    --bg:#1e2a3a; --fg:#e8ecf1; --muted:#8fa3ba;
-    --border:#32445c; --chrome:#2a3a4f; --active:#d4a24c; --tint:#263447;
-    --card:#243347;
-  }
-  body { font-family: Georgia, serif; background: var(--bg); color: var(--fg); line-height: 1.6; min-height: 100vh; }
-  .page { max-width: 1080px; margin: 0 auto; padding: 40px 28px 80px; }
-  .breadcrumb { font-size: 13px; color: var(--muted); margin-bottom: 16px; }
-  .breadcrumb a { color: var(--active); text-decoration: none; }
-  .breadcrumb a:hover { text-decoration: underline; }
-  header { border-bottom: 1px solid var(--border); padding-bottom: 20px; margin-bottom: 28px; }
-  h1 { font-size: 30px; font-weight: 600; margin-bottom: 6px; }
-  .subtitle { color: var(--muted); font-style: italic; font-size: 15px; }
-  h2 { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); margin: 32px 0 14px; }
-  .featured { display: block; background: var(--tint); border: 1px solid var(--border); padding: 22px 24px; text-decoration: none; color: inherit; transition: border-color 0.15s, transform 0.15s; }
-  .featured:hover { border-color: var(--active); transform: translateY(-1px); }
-  .featured .t { font-size: 19px; font-weight: 600; color: var(--active); margin-bottom: 4px; }
-  .featured .d { font-size: 14px; color: var(--muted); }
-  .grid { display: grid; gap: 10px; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); }
-  .topic { background: var(--card); border: 1px solid var(--border); padding: 12px 14px; cursor: pointer; font-size: 14px; transition: border-color 0.15s, transform 0.15s; }
-  .topic:hover, .topic.active { border-color: var(--active); transform: translateY(-1px); }
-  .topic .t { color: var(--active); font-weight: 600; }
-  .topic .d { font-size: 12px; color: var(--muted); margin-top: 2px; line-height: 1.4; }
-  #content { margin-top: 28px; padding: 24px 28px; background: var(--card); border: 1px solid var(--border); display: none; }
-  #content.active { display: block; }
-  #content h1 { font-size: 22px; margin: 0 0 14px 0; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
-  #content h2 { font-size: 16px; text-transform: none; letter-spacing: 0; color: var(--fg); margin: 22px 0 8px; font-weight: 600; }
-  #content h3 { font-size: 14px; margin: 16px 0 6px; font-weight: 600; color: var(--active); }
-  #content p { margin-bottom: 12px; font-size: 14px; }
-  #content ul, #content ol { margin: 0 0 12px 22px; font-size: 14px; }
-  #content li { margin-bottom: 3px; }
-  #content li input[type=checkbox] { margin-right: 6px; }
-  #content code { background: var(--chrome); padding: 1px 5px; border-radius: 3px; font-size: 13px; font-family: Consolas, monospace; }
-  #content table { border-collapse: collapse; font-size: 13px; margin: 12px 0; width: 100%; }
-  #content th, #content td { border: 1px solid var(--border); padding: 6px 10px; text-align: left; }
-  #content th { background: var(--tint); }
-  #content hr { border: 0; border-top: 1px solid var(--border); margin: 20px 0; }
-  #content blockquote { border-left: 3px solid var(--active); padding-left: 12px; color: var(--muted); margin: 12px 0; }
-  #content a { color: var(--active); }
-  #content strong { color: var(--fg); }
-  .loading, .err { color: var(--muted); font-style: italic; font-size: 14px; }
-  .err { color: #e09090; }
-  footer { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 13px; color: var(--muted); }
-</style>
+<meta http-equiv="refresh" content="0; url=map/">
+<link rel="canonical" href="map/">
+<title>Milwaukee</title>
 </head>
 <body>
-<div class="page">
-  <div class="breadcrumb"><a href="../">← Workspace</a></div>
-  <header>
-    <h1>Milwaukee</h1>
-    <div class="subtitle">Moving to Milwaukee, WI for two years — orientation, logistics, engagement, and a live map.</div>
-  </header>
-
-  <a class="featured" href="map/">
-    <div class="t">Interactive Map →</div>
-    <div class="d">Neighborhoods, landmarks, food, breweries, parks, sports venues. Favorite places, add your own pins, export your data. Opens full-screen.</div>
-  </a>
-
-  <h2>Orientation</h2>
-  <div class="grid">
-    <div class="topic" data-file="orientation/neighborhoods.md"><div class="t">Neighborhoods</div><div class="d">Bay View, East Side, Third Ward, Tosa, and more.</div></div>
-    <div class="topic" data-file="orientation/weather.md"><div class="t">Weather</div><div class="d">Humid continental; lake-effect; winter gear.</div></div>
-    <div class="topic" data-file="orientation/transit.md"><div class="t">Transit</div><div class="d">Car-first city, The Hop streetcar, Hiawatha.</div></div>
-    <div class="topic" data-file="orientation/culture.md"><div class="t">Culture</div><div class="d">Festivals, fish fry, Old Fashioneds, bubblers.</div></div>
-    <div class="topic" data-file="orientation/food.md"><div class="t">Food &amp; drink</div><div class="d">Custard, butter burgers, supper clubs.</div></div>
-    <div class="topic" data-file="orientation/sports.md"><div class="t">Sports</div><div class="d">Bucks, Brewers, Admirals; Packers nearby.</div></div>
-    <div class="topic" data-file="orientation/history.md"><div class="t">History</div><div class="d">German roots, beer capital, sewer socialism.</div></div>
-  </div>
-
-  <h2>Logistics</h2>
-  <div class="grid">
-    <div class="topic" data-file="logistics/checklist.md"><div class="t">Master checklist</div><div class="d">Move timeline end-to-end.</div></div>
-    <div class="topic" data-file="logistics/housing.md"><div class="t">Housing</div><div class="d">Rent benchmarks, what to ask, buying notes.</div></div>
-    <div class="topic" data-file="logistics/utilities.md"><div class="t">Utilities</div><div class="d">We Energies, water, internet, trash.</div></div>
-    <div class="topic" data-file="logistics/dmv-and-id.md"><div class="t">DMV &amp; ID</div><div class="d">WI license, registration, voter reg.</div></div>
-    <div class="topic" data-file="logistics/healthcare.md"><div class="t">Healthcare</div><div class="d">Systems, PCP search, insurance.</div></div>
-  </div>
-
-  <h2>Engagement</h2>
-  <div class="grid">
-    <div class="topic" data-file="engagement/news-sources.md"><div class="t">News sources</div><div class="d">JS, Urban MKE, WUWM, alt-weeklies.</div></div>
-    <div class="topic" data-file="engagement/events.md"><div class="t">Events calendar</div><div class="d">Summerfest + year-round anchors.</div></div>
-    <div class="topic" data-file="engagement/community.md"><div class="t">Community</div><div class="d">Meetups, leagues, third places.</div></div>
-    <div class="topic" data-file="engagement/places-to-try.md"><div class="t">Places to try</div><div class="d">Iconic food, breweries, day trips.</div></div>
-  </div>
-
-  <div id="content"></div>
-
-  <footer>Source notes live in <a href="https://github.com/stevenfrye30/workspace-hub/tree/main/milwaukee">the repo</a>. Edit markdown there; the dashboard renders it on load.</footer>
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-<script>
-const contentEl = document.getElementById('content');
-
-document.querySelectorAll('.topic').forEach(el => {
-  el.onclick = async () => {
-    document.querySelectorAll('.topic').forEach(x => x.classList.remove('active'));
-    el.classList.add('active');
-    contentEl.classList.add('active');
-    contentEl.innerHTML = '<div class="loading">Loading…</div>';
-    try {
-      const res = await fetch(el.dataset.file);
-      if (!res.ok) throw new Error('HTTP ' + res.status);
-      const md = await res.text();
-      marked.setOptions({ gfm: true, breaks: false });
-      contentEl.innerHTML = marked.parse(md);
-      contentEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    } catch (e) {
-      contentEl.innerHTML = '<div class="err">Could not load content. If opened via file:// some browsers block fetches — serve via a local HTTP server or GitHub Pages.</div>';
-    }
-  };
-});
-</script>
+<p style="font-family:system-ui,sans-serif;padding:20px">Redirecting to <a href="map/">map/</a>…</p>
+<script>location.replace('map/' + location.search + location.hash);</script>
 </body>
 </html>

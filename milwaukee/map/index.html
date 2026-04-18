@@ -2,51 +2,347 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Milwaukee — Explore & Favorites</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Milwaukee — Map</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <meta name="theme-color" content="#1e2a3a">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../icon.svg">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
   <style>
-    body, html { margin: 0; padding: 0; height: 100%; font-family: system-ui, -apple-system, sans-serif; }
-    #app { display: flex; height: 100vh; }
-    #sidebar { width: 340px; overflow-y: auto; border-right: 1px solid #ddd; padding: 12px; box-sizing: border-box; background: #fafafa; }
-    #map { flex: 1; }
-    h1 { font-size: 20px; margin: 0 0 4px 0; }
-    h2 { font-size: 13px; margin: 14px 0 6px 0; color: #666; text-transform: uppercase; letter-spacing: 0.5px; }
-    .sub { font-size: 12px; color: #888; margin-bottom: 10px; }
-    .place { padding: 8px; border-bottom: 1px solid #eee; cursor: pointer; font-size: 13px; }
-    .place:hover { background: #f0f0f0; }
-    .place.favorite { background: #fff8dc; }
-    .place .star { cursor: pointer; user-select: none; margin-right: 4px; }
-    .place .dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 4px; vertical-align: middle; }
-    .place .notes { font-size: 11px; color: #666; margin-top: 3px; }
-    .filters { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 4px; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; font-family: system-ui, -apple-system, sans-serif; overflow: hidden; }
+    #app { display: flex; height: 100vh; position: relative; }
+    #map { flex: 1; z-index: 1; }
+
+    #sidebar {
+      width: 360px;
+      background: #fafafa;
+      border-right: 1px solid #ddd;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      position: relative;
+    }
+    .side-header { padding: 10px 14px; border-bottom: 1px solid #ddd; flex-shrink: 0; background: #fff; }
+    .side-header .top-row { display: flex; justify-content: space-between; align-items: center; }
+    .side-header h1 { font-size: 17px; margin: 0; }
+    .side-header .back { font-size: 12px; color: #2c6bbd; text-decoration: none; }
+    .side-header .btn-row { display: flex; gap: 6px; margin-top: 8px; }
+    .side-header .btn-row button {
+      flex: 1; padding: 6px 10px; border: 1px solid #ccc; background: white; cursor: pointer; border-radius: 4px; font-size: 12px;
+    }
+    .side-header .btn-row button:hover { background: #f0f0f0; }
+
+    .tabs { display: flex; border-bottom: 1px solid #ddd; background: #fff; flex-shrink: 0; }
+    .tabs button { flex: 1; padding: 9px 4px; border: none; background: transparent; cursor: pointer; font-size: 12px; border-bottom: 2px solid transparent; }
+    .tabs button.active { border-bottom-color: #2c6bbd; font-weight: 600; color: #2c6bbd; }
+
+    .today-card { background: white; border: 1px solid #ddd; border-radius: 4px; padding: 10px 12px; margin-bottom: 10px; }
+    .today-card .today-title { font-size: 10px; color: #666; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; margin-bottom: 6px; }
+    .today-card .today-content { font-size: 12px; color: #333; }
+    .today-card .today-content .muted { color: #888; font-style: italic; font-size: 11px; }
+    .today-period { display: flex; justify-content: space-between; gap: 6px; padding: 4px 0; border-top: 1px solid #eee; font-size: 11px; align-items: flex-start; }
+    .today-period:first-child { border-top: 0; padding-top: 0; }
+    .today-period .name { font-weight: 600; width: 78px; flex-shrink: 0; color: #333; }
+    .today-period .desc { flex: 1; color: #666; padding-right: 6px; }
+    .today-period .temp { color: #2c6bbd; font-weight: 600; }
+    .today-news-item { padding: 5px 0; border-top: 1px solid #eee; font-size: 12px; }
+    .today-news-item:first-child { border-top: 0; padding-top: 0; }
+    .today-news-item a { color: #333; text-decoration: none; }
+    .today-news-item a:hover { color: #2c6bbd; }
+    .today-news-item .source { color: #888; font-size: 10px; margin-top: 1px; }
+    .today-event { display: flex; gap: 8px; padding: 4px 0; border-top: 1px solid #eee; font-size: 12px; }
+    .today-event:first-child { border-top: 0; padding-top: 0; }
+    .today-event .when { color: #2c6bbd; font-weight: 600; width: 54px; flex-shrink: 0; }
+    .today-event .what { flex: 1; }
+    .today-event .what .meta { color: #888; font-size: 10px; }
+    .today-team .name { font-weight: 600; font-size: 12px; }
+    .today-team .when { color: #2c6bbd; font-size: 11px; margin-top: 2px; }
+    .today-team .venue { color: #888; font-size: 10px; margin-top: 2px; }
+    .today-alerts .alert { margin-bottom: 6px; }
+    .today-alerts .alert .evt { color: #d84a2a; font-weight: 600; font-size: 12px; }
+    .today-alerts .alert .headline { color: #666; font-size: 11px; }
+    .today-ff { padding: 5px 0; border-top: 1px solid #eee; font-size: 12px; }
+    .today-ff:first-child { border-top: 0; padding-top: 0; }
+    .today-ff .n { font-weight: 600; color: #333; }
+    .today-ff .d { color: #888; font-size: 11px; }
+
+    .notes-section { margin-bottom: 14px; }
+    .notes-heading { font-size: 11px; color: #666; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; margin-bottom: 6px; }
+    .notes-tile { padding: 8px 10px; background: white; border: 1px solid #ddd; border-radius: 4px; margin-bottom: 4px; cursor: pointer; font-size: 13px; transition: border-color 0.15s; }
+    .notes-tile:hover { border-color: #2c6bbd; }
+    .notes-tile .t { font-weight: 600; color: #333; }
+    .notes-tile .d { font-size: 11px; color: #666; margin-top: 2px; }
+
+    #notes-back { border: 1px solid #ccc; background: white; padding: 4px 10px; border-radius: 4px; cursor: pointer; font-size: 12px; margin-bottom: 10px; }
+    #notes-rendered { font-size: 13px; }
+    #notes-rendered h1 { font-size: 18px; margin: 0 0 10px 0; padding-bottom: 6px; border-bottom: 1px solid #ddd; }
+    #notes-rendered h2 { font-size: 14px; margin: 14px 0 6px; font-weight: 600; }
+    #notes-rendered h3 { font-size: 13px; margin: 10px 0 4px; color: #2c6bbd; font-weight: 600; }
+    #notes-rendered p { margin-bottom: 10px; }
+    #notes-rendered ul, #notes-rendered ol { margin: 0 0 10px 20px; }
+    #notes-rendered li { margin-bottom: 3px; }
+    #notes-rendered li input[type=checkbox] { margin-right: 4px; }
+    #notes-rendered table { border-collapse: collapse; font-size: 12px; margin: 10px 0; width: 100%; }
+    #notes-rendered th, #notes-rendered td { border: 1px solid #ddd; padding: 4px 6px; text-align: left; }
+    #notes-rendered th { background: #f5f5f5; }
+    #notes-rendered code { background: #f5f5f5; padding: 1px 4px; border-radius: 3px; font-size: 12px; font-family: Consolas, monospace; }
+    #notes-rendered blockquote { border-left: 3px solid #2c6bbd; padding-left: 10px; color: #666; margin: 10px 0; }
+    #notes-rendered a { color: #2c6bbd; }
+    #notes-rendered hr { border: 0; border-top: 1px solid #ddd; margin: 14px 0; }
+
+    .side-body { flex: 1; overflow-y: auto; padding: 10px 12px; }
+
+    .search { width: 100%; padding: 7px 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 13px; margin-bottom: 8px; }
+
+    .filters { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 10px; }
     .filters button { padding: 3px 8px; border: 1px solid #ccc; background: white; cursor: pointer; border-radius: 12px; font-size: 11px; }
     .filters button.active { background: #333; color: white; border-color: #333; }
-    .add-hint { font-size: 11px; color: #666; margin-top: 14px; padding: 8px; background: #eef; border-radius: 4px; line-height: 1.4; }
-    .export { font-size: 11px; margin-top: 8px; }
-    .export a { color: #2c6bbd; cursor: pointer; text-decoration: underline; margin-right: 10px; }
+
+    .place { padding: 8px 26px 8px 8px; border-bottom: 1px solid #eee; cursor: pointer; font-size: 13px; position: relative; }
+    .place:hover { background: #f0f0f0; }
+    .place.favorite { background: #fff8dc; }
+    .place.visited::after { content: '✓'; position: absolute; top: 10px; right: 10px; color: #2d9a4d; font-weight: bold; font-size: 14px; }
+    .place .star { cursor: pointer; margin-right: 4px; user-select: none; }
+    .place .dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 4px; vertical-align: middle; }
+    .place .notes { font-size: 11px; color: #666; margin-top: 3px; }
+    .place .visit-count { font-size: 10px; color: #2d9a4d; margin-top: 2px; }
+
+    .journal-entry { padding: 10px 8px; border-bottom: 1px solid #eee; font-size: 13px; cursor: pointer; }
+    .journal-entry:hover { background: #f0f0f0; }
+    .journal-entry .date { color: #888; font-size: 11px; }
+    .journal-entry .place-name { font-weight: 600; color: #2c6bbd; }
+    .journal-entry .note { margin-top: 3px; color: #333; font-size: 12px; }
+    .journal-entry img { max-width: 100%; margin-top: 6px; border-radius: 4px; display: block; }
+    .journal-empty { color: #888; font-style: italic; font-size: 13px; padding: 20px; text-align: center; }
+
+    .footer-bar { padding: 8px 12px; border-top: 1px solid #ddd; font-size: 11px; display: flex; gap: 12px; flex-shrink: 0; background: #f0f0f0; }
+    .footer-bar a { color: #2c6bbd; cursor: pointer; text-decoration: underline; }
+
+    .leaflet-popup-content { margin: 10px 12px; }
+    .popup { min-width: 220px; max-width: 280px; font-size: 13px; }
+    .popup .p-name { font-weight: bold; font-size: 14px; }
+    .popup .p-cat { font-size: 10px; color: #666; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+    .popup .p-notes { margin: 4px 0; color: #333; font-size: 12px; }
+    .popup .p-actions { display: flex; gap: 8px; flex-wrap: wrap; font-size: 11px; margin: 6px 0; }
+    .popup .p-actions a { cursor: pointer; color: #2c6bbd; text-decoration: underline; }
+    .popup .p-actions a.danger { color: #d84a2a; }
+    .popup .visits { margin-top: 8px; padding-top: 6px; border-top: 1px solid #eee; }
+    .popup .visits h4 { font-size: 11px; color: #666; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; font-weight: 600; }
+    .popup .visit { margin: 4px 0; font-size: 11px; padding-bottom: 4px; border-bottom: 1px dashed #eee; }
+    .popup .visit .date { color: #888; }
+    .popup .visit img { max-width: 100%; border-radius: 4px; margin-top: 4px; }
+    .popup .add-visit { background: #2c6bbd; color: white; border: none; padding: 6px 12px; border-radius: 4px; font-size: 11px; cursor: pointer; margin-top: 6px; }
+
+    #you-icon {
+      width: 18px; height: 18px;
+      border: 3px solid #2c6bbd;
+      background: white;
+      border-radius: 50%;
+      box-shadow: 0 0 0 4px rgba(44, 107, 189, 0.35);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%   { box-shadow: 0 0 0 4px rgba(44, 107, 189, 0.45); }
+      70%  { box-shadow: 0 0 0 18px rgba(44, 107, 189, 0); }
+      100% { box-shadow: 0 0 0 4px rgba(44, 107, 189, 0); }
+    }
+
+    .modal-bg {
+      position: fixed; inset: 0; background: rgba(0,0,0,0.5);
+      display: none; align-items: center; justify-content: center;
+      z-index: 1000; padding: 20px;
+    }
+    .modal-bg.show { display: flex; }
+    .modal {
+      background: white; border-radius: 8px; padding: 20px; width: 100%; max-width: 400px;
+      max-height: 85vh; overflow-y: auto;
+    }
+    .modal h3 { font-size: 15px; margin-bottom: 12px; }
+    .modal label { display: block; font-size: 12px; color: #666; margin-top: 10px; margin-bottom: 4px; }
+    .modal input[type=text], .modal input[type=date], .modal textarea {
+      width: 100%; padding: 7px 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 13px; font-family: inherit;
+    }
+    .modal textarea { min-height: 60px; resize: vertical; }
+    .modal input[type=file] { font-size: 12px; }
+    .modal .actions { margin-top: 16px; display: flex; justify-content: flex-end; gap: 8px; }
+    .modal button { padding: 7px 14px; border-radius: 4px; font-size: 13px; cursor: pointer; border: 1px solid #ccc; background: white; }
+    .modal button.primary { background: #2c6bbd; color: white; border-color: #2c6bbd; }
+    .modal .preview { margin-top: 8px; }
+    .modal .preview img { max-width: 100%; border-radius: 4px; max-height: 200px; }
+
+    @media (max-width: 720px) {
+      #app { flex-direction: column; }
+      #map { order: 1; flex: 1 1 55%; min-height: 300px; }
+      #sidebar {
+        order: 2; width: 100%; flex: 1 1 45%; border-right: none; border-top: 1px solid #ddd;
+        transition: flex-basis 0.25s;
+      }
+      #sidebar.collapsed { flex: 0 0 46px; }
+      #sidebar.collapsed .side-body, #sidebar.collapsed .tabs, #sidebar.collapsed .footer-bar { display: none; }
+      #sidebar.collapsed .side-header { padding: 8px 14px; border-bottom: none; }
+      #sidebar.collapsed .side-header .btn-row { display: none; }
+      .drawer-toggle {
+        position: absolute; top: 6px; left: 50%; transform: translateX(-50%);
+        width: 40px; height: 4px; background: #999; border-radius: 2px; cursor: pointer;
+      }
+    }
+    @media (min-width: 721px) { .drawer-toggle { display: none; } }
   </style>
 </head>
 <body>
 <div id="app">
   <div id="sidebar">
-    <h1>Milwaukee</h1>
-    <div class="sub">Click map to add places. Star favorites. Data saves locally.</div>
-    <h2>Filters</h2>
-    <div class="filters" id="filters"></div>
-    <h2>Places</h2>
-    <div id="list"></div>
-    <div class="export">
-      <a id="export-btn">Export JSON</a>
-      <a id="reset-btn">Reset to seed</a>
+    <div class="drawer-toggle" id="drawer-toggle" title="Expand/collapse"></div>
+    <div class="side-header">
+      <div class="top-row">
+        <h1>Milwaukee</h1>
+        <a class="back" href="../">← Back</a>
+      </div>
+      <div class="btn-row">
+        <button id="near-me-btn">📍 Near me</button>
+        <button id="center-btn">🔍 Reset view</button>
+      </div>
     </div>
-    <div class="add-hint">Tip: left-click anywhere on the map to drop a new pin.</div>
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="today">Today</button>
+      <button class="tab-btn" data-tab="places">Places</button>
+      <button class="tab-btn" data-tab="suggest">Suggest</button>
+      <button class="tab-btn" data-tab="journal">Journal</button>
+      <button class="tab-btn" data-tab="notes">Notes</button>
+    </div>
+    <div class="side-body" id="today-body">
+      <div class="today-card">
+        <div class="today-title">Weather</div>
+        <div class="today-content" id="today-weather"><div class="muted">Loading NWS forecast…</div></div>
+      </div>
+      <div class="today-card today-alerts" id="today-alerts-card" style="display:none">
+        <div class="today-title" style="color:#d84a2a">Alerts</div>
+        <div class="today-content" id="today-alerts"></div>
+      </div>
+      <div class="today-card today-ff-wrap" id="today-fishfry-card" style="display:none">
+        <div class="today-title">Fish fry tonight</div>
+        <div class="today-content" id="today-fishfry"></div>
+      </div>
+      <div class="today-card today-team">
+        <div class="today-title">Brewers</div>
+        <div class="today-content" id="today-brewers"><div class="muted">Loading schedule…</div></div>
+      </div>
+      <div class="today-card today-team">
+        <div class="today-title">Bucks</div>
+        <div class="today-content" id="today-bucks"><div class="muted">Loading schedule…</div></div>
+      </div>
+      <div class="today-card">
+        <div class="today-title">News — Milwaukee</div>
+        <div class="today-content" id="today-news"><div class="muted">Loading headlines…</div></div>
+      </div>
+      <div class="today-card">
+        <div class="today-title">Coming up</div>
+        <div class="today-content" id="today-events"></div>
+      </div>
+    </div>
+    <div class="side-body" id="places-body" style="display:none">
+      <input type="text" class="search" id="search" placeholder="Search places…">
+      <div class="filters" id="filters"></div>
+      <div id="list"></div>
+    </div>
+    <div class="side-body" id="suggest-body" style="display:none">
+      <div style="font-size:12px;color:#666;margin-bottom:10px">Tell me time + mood, get a mini-itinerary.</div>
+      <label style="font-size:11px;color:#666;display:block;margin-bottom:3px">How much time?</label>
+      <select id="sg-time" class="search" style="margin-bottom:10px">
+        <option value="1">Quick stop (1 place)</option>
+        <option value="2" selected>Casual (2 places)</option>
+        <option value="3">Afternoon (3 places)</option>
+        <option value="5">Half day (5 places)</option>
+        <option value="8">Full day (8 places)</option>
+      </select>
+      <label style="font-size:11px;color:#666;display:block;margin-bottom:3px">What kind?</label>
+      <select id="sg-mood" class="search" style="margin-bottom:10px">
+        <option value="any">Anything</option>
+        <option value="food">Food</option>
+        <option value="brewery">Breweries</option>
+        <option value="culture">Culture</option>
+        <option value="park">Outdoors / parks</option>
+        <option value="sports">Sports</option>
+        <option value="neighborhood">Walk a neighborhood</option>
+      </select>
+      <label style="display:block;font-size:12px;margin-bottom:6px;cursor:pointer"><input type="checkbox" id="sg-unvisited" checked> Places I haven't been</label>
+      <label style="display:block;font-size:12px;margin-bottom:12px;cursor:pointer"><input type="checkbox" id="sg-nearme"> Start from my location</label>
+      <button id="sg-go" style="width:100%;padding:10px;background:#2c6bbd;color:white;border:none;border-radius:4px;font-size:13px;cursor:pointer">✨ Suggest a plan</button>
+      <div id="sg-results" style="margin-top:14px"></div>
+    </div>
+    <div class="side-body" id="journal-body" style="display:none">
+      <div id="journal-list"></div>
+    </div>
+    <div class="side-body" id="notes-body" style="display:none">
+      <div id="notes-browse">
+        <div class="notes-section">
+          <div class="notes-heading">Orientation</div>
+          <div class="notes-tile" data-file="../orientation/neighborhoods.md"><div class="t">Neighborhoods</div><div class="d">Bay View, East Side, Third Ward, Tosa…</div></div>
+          <div class="notes-tile" data-file="../orientation/weather.md"><div class="t">Weather</div><div class="d">Humid continental; lake effect; gear.</div></div>
+          <div class="notes-tile" data-file="../orientation/transit.md"><div class="t">Transit</div><div class="d">Car-first, The Hop, Hiawatha.</div></div>
+          <div class="notes-tile" data-file="../orientation/culture.md"><div class="t">Culture</div><div class="d">Festivals, fish fry, Old Fashioneds.</div></div>
+          <div class="notes-tile" data-file="../orientation/food.md"><div class="t">Food &amp; drink</div><div class="d">Custard, butter burgers, supper clubs.</div></div>
+          <div class="notes-tile" data-file="../orientation/sports.md"><div class="t">Sports</div><div class="d">Bucks, Brewers, Admirals.</div></div>
+          <div class="notes-tile" data-file="../orientation/history.md"><div class="t">History</div><div class="d">German roots, beer capital.</div></div>
+        </div>
+        <div class="notes-section">
+          <div class="notes-heading">Logistics</div>
+          <div class="notes-tile" data-file="../logistics/checklist.md"><div class="t">Master checklist</div><div class="d">Move timeline end-to-end.</div></div>
+          <div class="notes-tile" data-file="../logistics/housing.md"><div class="t">Housing</div><div class="d">Rent benchmarks and buying notes.</div></div>
+          <div class="notes-tile" data-file="../logistics/utilities.md"><div class="t">Utilities</div><div class="d">We Energies, water, internet.</div></div>
+          <div class="notes-tile" data-file="../logistics/dmv-and-id.md"><div class="t">DMV &amp; ID</div><div class="d">WI license, registration, voter reg.</div></div>
+          <div class="notes-tile" data-file="../logistics/healthcare.md"><div class="t">Healthcare</div><div class="d">Systems, PCP, insurance.</div></div>
+        </div>
+        <div class="notes-section">
+          <div class="notes-heading">Engagement</div>
+          <div class="notes-tile" data-file="../engagement/news-sources.md"><div class="t">News sources</div><div class="d">JS, Urban MKE, WUWM, alt-weeklies.</div></div>
+          <div class="notes-tile" data-file="../engagement/events.md"><div class="t">Events calendar</div><div class="d">Summerfest + year-round anchors.</div></div>
+          <div class="notes-tile" data-file="../engagement/community.md"><div class="t">Community</div><div class="d">Meetups, leagues, third places.</div></div>
+          <div class="notes-tile" data-file="../engagement/places-to-try.md"><div class="t">Places to try</div><div class="d">Iconic food, breweries, classics.</div></div>
+          <div class="notes-tile" data-file="../engagement/daytrips.md"><div class="t">Day trips</div><div class="d">Within 90 min — Cedarburg, Madison, Chicago.</div></div>
+        </div>
+      </div>
+      <div id="notes-content" style="display:none">
+        <button id="notes-back">← Back</button>
+        <div id="notes-rendered"></div>
+      </div>
+    </div>
+    <div class="footer-bar">
+      <a id="export-btn">Export</a>
+      <a id="import-btn">Import</a>
+      <a id="reset-btn">Reset to seed</a>
+      <input id="import-input" type="file" accept="application/json" style="display:none">
+    </div>
   </div>
   <div id="map"></div>
 </div>
+
+<div class="modal-bg" id="visit-modal">
+  <div class="modal">
+    <h3 id="visit-modal-title">Log a visit</h3>
+    <label for="v-date">Date</label>
+    <input type="date" id="v-date">
+    <label for="v-note">Note</label>
+    <textarea id="v-note" placeholder="What happened? Who were you with? Anything memorable?"></textarea>
+    <label for="v-photo">Photo (optional)</label>
+    <input type="file" id="v-photo" accept="image/*">
+    <div class="preview" id="v-preview"></div>
+    <div class="actions">
+      <button id="v-cancel">Cancel</button>
+      <button class="primary" id="v-save">Save visit</button>
+    </div>
+  </div>
+</div>
+
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <script>
 const MKE_CENTER = [43.0389, -87.9065];
+const DEFAULT_ZOOM = 12;
 
 const CATS = [
   { key: 'neighborhood', label: 'Neighborhood', color: '#2c6bbd' },
@@ -56,11 +352,11 @@ const CATS = [
   { key: 'food',         label: 'Food',         color: '#d84a2a' },
   { key: 'brewery',      label: 'Brewery',      color: '#8b6914' },
   { key: 'shopping',     label: 'Shopping',     color: '#d936a8' },
+  { key: 'daytrip',      label: 'Day trip',     color: '#0d8796' },
   { key: 'other',        label: 'Other',        color: '#666' }
 ];
 
 const SEED = [
-  // Neighborhoods
   { id: 'nh-thirdward', name: 'Historic Third Ward',           cat: 'neighborhood', lat: 43.0306, lng: -87.9085, notes: 'Arts + shopping + Public Market. Walkable.' },
   { id: 'nh-bayview',   name: 'Bay View',                      cat: 'neighborhood', lat: 42.9942, lng: -87.8872, notes: 'Hip residential; strong bar + food scene.' },
   { id: 'nh-riverwest', name: 'Riverwest',                     cat: 'neighborhood', lat: 43.0705, lng: -87.9015, notes: 'Artsy, diverse, bohemian.' },
@@ -71,7 +367,6 @@ const SEED = [
   { id: 'nh-shorewood', name: 'Shorewood',                     cat: 'neighborhood', lat: 43.0898, lng: -87.8873, notes: 'Lakefront village, top-rated schools.' },
   { id: 'nh-westown',   name: 'Westown / Deer District',       cat: 'neighborhood', lat: 43.0412, lng: -87.9195, notes: 'Bucks-era downtown west of the river.' },
 
-  // Culture
   { id: 'c-mam',      name: 'Milwaukee Art Museum',          cat: 'culture', lat: 43.0404, lng: -87.8968, notes: 'Calatrava brise-soleil opens/closes daily.' },
   { id: 'c-harley',   name: 'Harley-Davidson Museum',        cat: 'culture', lat: 43.0328, lng: -87.9168, notes: 'MKE is HD HQ.' },
   { id: 'c-pabst',    name: 'Pabst Mansion',                 cat: 'culture', lat: 43.0410, lng: -87.9339, notes: 'Gilded-age brewer mansion tour.' },
@@ -80,18 +375,15 @@ const SEED = [
   { id: 'c-basilica', name: 'Basilica of St. Josaphat',      cat: 'culture', lat: 43.0106, lng: -87.9204, notes: 'Polish-American landmark, giant dome.' },
   { id: 'c-fonz',     name: 'Bronze Fonz',                   cat: 'culture', lat: 43.0410, lng: -87.9097, notes: 'Riverwalk statue. Touristy but required.' },
 
-  // Parks
   { id: 'p-bradford', name: 'Bradford Beach',                cat: 'park', lat: 43.0825, lng: -87.8763, notes: 'Lake Michigan beach, volleyball.' },
   { id: 'p-veterans', name: 'Veterans Park (Lakefront)',     cat: 'park', lat: 43.0472, lng: -87.8920, notes: 'Kite-flying, lagoon, bike paths.' },
   { id: 'p-hoyt',     name: 'Hoyt Park',                     cat: 'park', lat: 43.0558, lng: -88.0094, notes: 'Menomonee River, pool, Tosa side.' },
   { id: 'p-lake',     name: 'Lake Park',                     cat: 'park', lat: 43.0756, lng: -87.8757, notes: 'Bluff overlooks; Olmsted design.' },
 
-  // Sports
   { id: 's-amfam',   name: 'American Family Field (Brewers)', cat: 'sports', lat: 43.0280, lng: -87.9712, notes: 'MLB Brewers, retractable roof.' },
   { id: 's-fiserv',  name: 'Fiserv Forum (Bucks)',            cat: 'sports', lat: 43.0451, lng: -87.9172, notes: 'NBA Bucks; 2021 champs.' },
   { id: 's-panther', name: 'UW-Milwaukee Panther Arena',      cat: 'sports', lat: 43.0400, lng: -87.9190, notes: 'Admirals AHL hockey.' },
 
-  // Food
   { id: 'f-market',  name: 'Milwaukee Public Market',         cat: 'food', lat: 43.0310, lng: -87.9103, notes: 'Vendors, lunch spot in Third Ward.' },
   { id: 'f-kopps',   name: "Kopp's Frozen Custard",           cat: 'food', lat: 43.0590, lng: -88.0259, notes: 'Flavor of the day. Iconic.' },
   { id: 'f-leons',   name: "Leon's Frozen Custard",           cat: 'food', lat: 42.9940, lng: -87.9375, notes: "Old-school drive-up; Arnold's-era vibe." },
@@ -99,50 +391,82 @@ const SEED = [
   { id: 'f-sanford', name: 'Sanford Restaurant',              cat: 'food', lat: 43.0616, lng: -87.8937, notes: 'Fine dining mainstay.' },
   { id: 'f-ardent',  name: 'Ardent',                          cat: 'food', lat: 43.0627, lng: -87.8910, notes: 'Tasting menu, Brady area.' },
 
-  // Breweries
   { id: 'b-lakefront', name: 'Lakefront Brewery',             cat: 'brewery', lat: 43.0560, lng: -87.9075, notes: 'Tours + Friday fish fry + river views.' },
   { id: 'b-mke',       name: 'Milwaukee Brewing Co.',         cat: 'brewery', lat: 43.0295, lng: -87.9127, notes: "Walker's Point taproom." },
   { id: 'b-goodcity',  name: 'Good City Brewing',             cat: 'brewery', lat: 43.0620, lng: -87.8862, notes: 'Multiple locations.' },
   { id: 'b-pabst',     name: 'Pabst Milwaukee Brewery',       cat: 'brewery', lat: 43.0420, lng: -87.9235, notes: 'Revived on original Pabst campus.' },
 
-  // Other / events
   { id: 'o-summerfest', name: 'Henry Maier Festival Park (Summerfest)', cat: 'other', lat: 43.0287, lng: -87.8979, notes: "World's largest music fest, late June." },
-  { id: 'o-riverwalk',  name: 'Milwaukee RiverWalk',                    cat: 'other', lat: 43.0422, lng: -87.9108, notes: 'Downtown river trail.' }
+  { id: 'o-riverwalk',  name: 'Milwaukee RiverWalk',                    cat: 'other', lat: 43.0422, lng: -87.9108, notes: 'Downtown river trail.' },
+
+  { id: 'dt-cedarburg',  name: 'Cedarburg',                             cat: 'daytrip', lat: 43.2978, lng: -87.9881, notes: '~25 min N. Historic stone-mill village, shops, fall festival.' },
+  { id: 'dt-portwash',   name: 'Port Washington',                       cat: 'daytrip', lat: 43.3873, lng: -87.8754, notes: '~30 min N. Harbor town, lighthouse, fish fry.' },
+  { id: 'dt-sheboygan',  name: 'Sheboygan',                             cat: 'daytrip', lat: 43.7508, lng: -87.7145, notes: '~60 min N. Bratwurst capital, lakefront, Kohler just inland.' },
+  { id: 'dt-holyhill',   name: 'Holy Hill Basilica',                    cat: 'daytrip', lat: 43.2413, lng: -88.2033, notes: '~35 min NW. Basilica on a high hill; fall color is iconic.' },
+  { id: 'dt-oconomowoc', name: 'Oconomowoc',                            cat: 'daytrip', lat: 43.1117, lng: -88.4998, notes: '~35 min W. Lake town, historic downtown.' },
+  { id: 'dt-westbend',   name: 'West Bend',                             cat: 'daytrip', lat: 43.4253, lng: -88.1832, notes: '~45 min NW. Downtown + Museum of Wisconsin Art.' },
+  { id: 'dt-kettle',     name: 'Kettle Moraine State Forest (South)',   cat: 'daytrip', lat: 42.8833, lng: -88.4739, notes: '~45 min SW. Glacial hills, Ice Age Trail, fall hiking.' },
+  { id: 'dt-lakegeneva', name: 'Lake Geneva',                           cat: 'daytrip', lat: 42.5916, lng: -88.4334, notes: '~55 min SW. Resort lake town, mansion shore path, Yerkes.' },
+  { id: 'dt-horicon',    name: 'Horicon Marsh',                         cat: 'daytrip', lat: 43.5375, lng: -88.6137, notes: '~60 min NW. Largest freshwater cattail marsh; spring/fall bird migration.' },
+  { id: 'dt-racine',     name: 'Racine',                                cat: 'daytrip', lat: 42.7261, lng: -87.7829, notes: '~30 min S. Kringle, Wind Point Lighthouse, Frank Lloyd Wright Wingspread.' },
+  { id: 'dt-kenosha',    name: 'Kenosha',                               cat: 'daytrip', lat: 42.5847, lng: -87.8212, notes: '~40 min S. HarborPark, streetcar loop, Dinosaur Discovery Museum.' },
+  { id: 'dt-madison',    name: 'Madison',                               cat: 'daytrip', lat: 43.0731, lng: -89.4012, notes: '~80 min W. Capitol Square, Memorial Union terrace, Saturday farmers market.' },
+  { id: 'dt-chicago',    name: 'Chicago',                               cat: 'daytrip', lat: 41.8827, lng: -87.6225, notes: '~90 min S by car or Amtrak Hiawatha. Obvious.' }
 ];
 
-const STORAGE_KEY = 'mke-places-v1';
+const STORAGE_KEY = 'mke-places-v2';
 
+function defaultState() {
+  return { places: SEED.map(p => ({...p, favorite: false, visits: []})), hiddenCats: [], favOnly: false, search: '' };
+}
 function loadState() {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
-    if (!raw) return defaultState();
+    if (!raw) {
+      const v1 = localStorage.getItem('mke-places-v1');
+      if (v1) {
+        const p = JSON.parse(v1);
+        p.places = (p.places || []).map(x => ({...x, visits: x.visits || []}));
+        return p;
+      }
+      return defaultState();
+    }
     const s = JSON.parse(raw);
-    // Merge in any new seed places added after first load.
     const have = new Set(s.places.map(p => p.id));
-    SEED.filter(p => !have.has(p.id)).forEach(p => s.places.push({...p, favorite: false}));
+    SEED.filter(p => !have.has(p.id)).forEach(p => s.places.push({...p, favorite: false, visits: []}));
+    s.places.forEach(p => { if (!p.visits) p.visits = []; });
     if (!Array.isArray(s.hiddenCats)) s.hiddenCats = [];
     if (typeof s.favOnly !== 'boolean') s.favOnly = false;
     return s;
   } catch (e) { return defaultState(); }
 }
-function defaultState() {
-  return { places: SEED.map(p => ({...p, favorite: false})), hiddenCats: [], favOnly: false };
+function saveState() {
+  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); }
+  catch (e) { alert('Could not save — storage may be full. Try exporting + clearing old photos.'); }
 }
-function saveState() { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); }
 
 let state = loadState();
+let youMarker = null;
+let currentPopupId = null;
 
-const map = L.map('map').setView(MKE_CENTER, 12);
+const map = L.map('map', { zoomControl: true }).setView(MKE_CENTER, DEFAULT_ZOOM);
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '&copy; OpenStreetMap contributors', maxZoom: 19
 }).addTo(map);
 
 const markers = {};
 const catColor = c => (CATS.find(x => x.key === c) || {}).color || '#666';
+const isVisited = p => (p.visits || []).length > 0;
 
+function matchesSearch(p) {
+  if (!state.search) return true;
+  const q = state.search.toLowerCase();
+  return p.name.toLowerCase().includes(q) || (p.notes || '').toLowerCase().includes(q);
+}
 function isVisible(p) {
   if (state.hiddenCats.includes(p.cat)) return false;
   if (state.favOnly && !p.favorite) return false;
+  if (!matchesSearch(p)) return false;
   return true;
 }
 
@@ -150,41 +474,60 @@ function makeIcon(p) {
   const color = catColor(p.cat);
   const size = p.favorite ? 16 : 12;
   const ring = p.favorite ? 'outline: 2px solid gold; outline-offset: 1px;' : '';
-  const html = `<div style="background:${color};width:${size}px;height:${size}px;border:2px solid white;border-radius:50%;box-shadow:0 0 3px rgba(0,0,0,0.5);${ring}"></div>`;
-  return L.divIcon({ html, className: '', iconSize: [size+6, size+6], iconAnchor: [(size+6)/2, (size+6)/2] });
+  const check = isVisited(p)
+    ? `<div style="position:absolute;top:-6px;right:-6px;width:14px;height:14px;border-radius:50%;background:#2d9a4d;color:white;font-size:10px;font-weight:bold;display:flex;align-items:center;justify-content:center;border:2px solid white">✓</div>`
+    : '';
+  const html = `<div style="position:relative"><div style="background:${color};width:${size}px;height:${size}px;border:2px solid white;border-radius:50%;box-shadow:0 0 3px rgba(0,0,0,0.5);${ring}"></div>${check}</div>`;
+  return L.divIcon({ html, className: '', iconSize: [size+12, size+12], iconAnchor: [(size+12)/2, (size+12)/2] });
+}
+
+function escapeHtml(s) {
+  return String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 }
 
 function popupHtml(p) {
-  return `<div style="min-width:200px">
-    <div style="font-weight:bold;font-size:14px">${escapeHtml(p.name)}</div>
-    <div style="font-size:11px;color:#666;text-transform:uppercase;letter-spacing:0.5px">${p.cat}</div>
-    <div style="margin:6px 0;font-size:12px">${escapeHtml(p.notes || '')}</div>
-    <div style="font-size:12px">
-      <a class="act-star" data-id="${p.id}" style="cursor:pointer">${p.favorite ? '★ Favorited' : '☆ Favorite'}</a>
-      &middot; <a class="act-edit" data-id="${p.id}" style="cursor:pointer;color:#2c6bbd">edit notes</a>
-      &middot; <a class="act-del"  data-id="${p.id}" style="cursor:pointer;color:#d84a2a">delete</a>
+  const visits = (p.visits || []).slice().sort((a,b) => b.date.localeCompare(a.date));
+  const recent = visits.slice(0, 3).map(v => `
+    <div class="visit">
+      <div class="date">${escapeHtml(v.date)}</div>
+      ${v.note ? `<div>${escapeHtml(v.note)}</div>` : ''}
+      ${v.photo ? `<img src="${v.photo}" alt="">` : ''}
     </div>
+  `).join('');
+  const visitsBlock = visits.length
+    ? `<div class="visits"><h4>Visits (${visits.length})</h4>${recent}${visits.length > 3 ? '<div style="font-size:11px;color:#888">+ ' + (visits.length - 3) + ' more (see Journal tab)</div>' : ''}</div>`
+    : '';
+  return `<div class="popup">
+    <div class="p-name">${escapeHtml(p.name)}</div>
+    <div class="p-cat">${p.cat}</div>
+    <div class="p-notes">${escapeHtml(p.notes || '')}</div>
+    <div class="p-actions">
+      <a class="act-star" data-id="${p.id}">${p.favorite ? '★ Favorited' : '☆ Favorite'}</a>
+      <a class="act-edit" data-id="${p.id}">edit notes</a>
+      <a class="act-del danger" data-id="${p.id}">delete</a>
+    </div>
+    <button class="add-visit" data-id="${p.id}">+ Log visit</button>
+    ${visitsBlock}
   </div>`;
-}
-function escapeHtml(s) { return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
-
-function renderAll() {
-  Object.values(markers).forEach(m => map.removeLayer(m));
-  Object.keys(markers).forEach(k => delete markers[k]);
-  state.places.filter(isVisible).forEach(p => {
-    const m = L.marker([p.lat, p.lng], { icon: makeIcon(p) }).addTo(map);
-    m.bindPopup(popupHtml(p));
-    m.on('popupopen', wirePopup);
-    markers[p.id] = m;
-  });
-  renderSidebar();
-  renderFilters();
 }
 
 function wirePopup() {
   document.querySelectorAll('.act-star').forEach(a => a.onclick = () => toggleFav(a.dataset.id));
   document.querySelectorAll('.act-edit').forEach(a => a.onclick = () => editNotes(a.dataset.id));
   document.querySelectorAll('.act-del').forEach(a  => a.onclick = () => deletePlace(a.dataset.id));
+  document.querySelectorAll('.add-visit').forEach(b => b.onclick = () => openVisitModal(b.dataset.id));
+}
+
+function renderMarkers() {
+  Object.values(markers).forEach(m => map.removeLayer(m));
+  Object.keys(markers).forEach(k => delete markers[k]);
+  state.places.filter(isVisible).forEach(p => {
+    const m = L.marker([p.lat, p.lng], { icon: makeIcon(p) }).addTo(map);
+    m.bindPopup(popupHtml(p));
+    m.on('popupopen', () => { currentPopupId = p.id; wirePopup(); });
+    m.on('popupclose', () => { if (currentPopupId === p.id) currentPopupId = null; });
+    markers[p.id] = m;
+  });
 }
 
 function renderSidebar() {
@@ -192,13 +535,14 @@ function renderSidebar() {
   const visible = state.places.filter(isVisible);
   visible.sort((a, b) => (a.favorite !== b.favorite) ? (a.favorite ? -1 : 1) : a.name.localeCompare(b.name));
   list.innerHTML = visible.map(p => `
-    <div class="place ${p.favorite ? 'favorite' : ''}" data-id="${p.id}">
+    <div class="place ${p.favorite ? 'favorite' : ''} ${isVisited(p) ? 'visited' : ''}" data-id="${p.id}">
       <span class="star" data-id="${p.id}">${p.favorite ? '★' : '☆'}</span>
       <span class="dot" style="background:${catColor(p.cat)}"></span>
       <strong>${escapeHtml(p.name)}</strong>
       <div class="notes">${escapeHtml(p.notes || '')}</div>
+      ${isVisited(p) ? `<div class="visit-count">Visited ${p.visits.length}×</div>` : ''}
     </div>
-  `).join('') || '<div class="notes">Nothing matches the filter.</div>';
+  `).join('') || '<div class="journal-empty">Nothing matches the filter.</div>';
   list.querySelectorAll('.place').forEach(el => {
     el.onclick = (e) => {
       if (e.target.classList.contains('star')) { toggleFav(el.dataset.id); return; }
@@ -212,8 +556,7 @@ function renderFilters() {
   const f = document.getElementById('filters');
   f.innerHTML = CATS.map(c =>
     `<button data-cat="${c.key}" class="${state.hiddenCats.includes(c.key) ? '' : 'active'}" style="border-left:6px solid ${c.color}">${c.label}</button>`
-  ).join('') +
-  `<button data-cat="__fav" class="${state.favOnly ? 'active' : ''}">★ Favorites only</button>`;
+  ).join('') + `<button data-cat="__fav" class="${state.favOnly ? 'active' : ''}">★ Favorites</button>`;
   f.querySelectorAll('button').forEach(b => {
     b.onclick = () => {
       const c = b.dataset.cat;
@@ -227,11 +570,104 @@ function renderFilters() {
   });
 }
 
-function toggleFav(id)    { const p = state.places.find(x => x.id === id); if (!p) return; p.favorite = !p.favorite; saveState(); renderAll(); }
-function editNotes(id)    { const p = state.places.find(x => x.id === id); if (!p) return; const n = prompt('Notes:', p.notes || ''); if (n !== null) { p.notes = n; saveState(); renderAll(); } }
-function deletePlace(id)  { if (!confirm('Delete this place?')) return; state.places = state.places.filter(p => p.id !== id); saveState(); renderAll(); }
+function renderJournal() {
+  const jl = document.getElementById('journal-list');
+  const all = [];
+  state.places.forEach(p => (p.visits || []).forEach(v => all.push({p, v})));
+  all.sort((a, b) => b.v.date.localeCompare(a.v.date));
+  if (!all.length) {
+    jl.innerHTML = '<div class="journal-empty">No visits logged yet.<br>Open a pin and tap <strong>+ Log visit</strong>.</div>';
+    return;
+  }
+  jl.innerHTML = all.map(({p, v}) => `
+    <div class="journal-entry" data-id="${p.id}">
+      <div class="date">${escapeHtml(v.date)}</div>
+      <div class="place-name">${escapeHtml(p.name)}</div>
+      ${v.note ? `<div class="note">${escapeHtml(v.note)}</div>` : ''}
+      ${v.photo ? `<img src="${v.photo}" alt="">` : ''}
+    </div>
+  `).join('');
+  jl.querySelectorAll('.journal-entry').forEach(el => {
+    el.onclick = () => {
+      const p = state.places.find(x => x.id === el.dataset.id);
+      if (p && markers[p.id]) { switchTab('places'); map.setView([p.lat, p.lng], 15); markers[p.id].openPopup(); }
+    };
+  });
+}
 
+function renderAll() { renderMarkers(); renderSidebar(); renderFilters(); renderJournal(); }
+
+function toggleFav(id) {
+  const p = state.places.find(x => x.id === id); if (!p) return;
+  p.favorite = !p.favorite; saveState(); renderAll();
+  if (currentPopupId === id && markers[id]) markers[id].openPopup();
+}
+function editNotes(id) {
+  const p = state.places.find(x => x.id === id); if (!p) return;
+  const n = prompt('Notes:', p.notes || '');
+  if (n !== null) { p.notes = n; saveState(); renderAll(); if (markers[id]) markers[id].openPopup(); }
+}
+function deletePlace(id) {
+  if (!confirm('Delete this place?')) return;
+  state.places = state.places.filter(p => p.id !== id); saveState(); renderAll();
+}
+
+// Visit modal
+let visitTargetId = null;
+let visitPhotoData = null;
+const visitModal = document.getElementById('visit-modal');
+function openVisitModal(id) {
+  visitTargetId = id; visitPhotoData = null;
+  document.getElementById('v-date').value = new Date().toISOString().slice(0, 10);
+  document.getElementById('v-note').value = '';
+  document.getElementById('v-photo').value = '';
+  document.getElementById('v-preview').innerHTML = '';
+  const p = state.places.find(x => x.id === id);
+  document.getElementById('visit-modal-title').textContent = 'Log visit to ' + (p?.name || '');
+  visitModal.classList.add('show');
+}
+function closeVisitModal() { visitModal.classList.remove('show'); visitTargetId = null; visitPhotoData = null; }
+document.getElementById('v-cancel').onclick = closeVisitModal;
+visitModal.addEventListener('click', e => { if (e.target === visitModal) closeVisitModal(); });
+
+document.getElementById('v-photo').onchange = async (e) => {
+  const f = e.target.files[0];
+  if (!f) { visitPhotoData = null; document.getElementById('v-preview').innerHTML = ''; return; }
+  visitPhotoData = await resizeImage(f, 1000, 0.75);
+  document.getElementById('v-preview').innerHTML = `<img src="${visitPhotoData}">`;
+};
+
+async function resizeImage(file, maxDim, quality) {
+  const url = URL.createObjectURL(file);
+  try {
+    const img = new Image();
+    img.src = url;
+    await new Promise((res, rej) => { img.onload = res; img.onerror = rej; });
+    const scale = Math.min(1, maxDim / Math.max(img.width, img.height));
+    const w = Math.round(img.width * scale), h = Math.round(img.height * scale);
+    const canvas = document.createElement('canvas');
+    canvas.width = w; canvas.height = h;
+    canvas.getContext('2d').drawImage(img, 0, 0, w, h);
+    return canvas.toDataURL('image/jpeg', quality);
+  } finally { URL.revokeObjectURL(url); }
+}
+
+document.getElementById('v-save').onclick = () => {
+  if (!visitTargetId) return;
+  const date = document.getElementById('v-date').value;
+  const note = document.getElementById('v-note').value.trim();
+  if (!date) { alert('Pick a date'); return; }
+  const p = state.places.find(x => x.id === visitTargetId);
+  if (!p) return;
+  if (!p.visits) p.visits = [];
+  p.visits.push({ date, note, photo: visitPhotoData || '' });
+  saveState(); closeVisitModal(); renderAll();
+  if (markers[p.id]) markers[p.id].openPopup();
+};
+
+// Add pin on map click
 map.on('click', e => {
+  if (visitModal.classList.contains('show')) return;
   const name = prompt('Name for this place?');
   if (!name) return;
   const list = CATS.map((c,i) => `${i+1}=${c.label}`).join('  ');
@@ -239,9 +675,305 @@ map.on('click', e => {
   const idx = parseInt(idxStr, 10) - 1;
   const cat = (idx >= 0 && idx < CATS.length) ? CATS[idx].key : 'other';
   const notes = prompt('Notes (optional)?', '') || '';
-  state.places.push({ id: 'u-' + Date.now(), name, cat, lat: e.latlng.lat, lng: e.latlng.lng, notes, favorite: false });
+  state.places.push({ id: 'u-' + Date.now(), name, cat, lat: e.latlng.lat, lng: e.latlng.lng, notes, favorite: false, visits: [] });
   saveState(); renderAll();
 });
+
+function switchTab(tab) {
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b.dataset.tab === tab));
+  ['today', 'places', 'suggest', 'journal', 'notes'].forEach(t => {
+    const el = document.getElementById(t + '-body');
+    if (el) el.style.display = t === tab ? '' : 'none';
+  });
+  setTimeout(() => map.invalidateSize(), 100);
+}
+document.querySelectorAll('.tab-btn').forEach(b => b.onclick = () => switchTab(b.dataset.tab));
+
+async function generateSuggestion() {
+  const N = parseInt(document.getElementById('sg-time').value, 10);
+  const mood = document.getElementById('sg-mood').value;
+  const unvisitedOnly = document.getElementById('sg-unvisited').checked;
+  const useNearMe = document.getElementById('sg-nearme').checked;
+  const results = document.getElementById('sg-results');
+  results.innerHTML = '<div class="journal-empty">Planning…</div>';
+
+  let origin = MKE_CENTER;
+  if (useNearMe && navigator.geolocation) {
+    try {
+      const pos = await new Promise((res, rej) => navigator.geolocation.getCurrentPosition(res, rej, { timeout: 8000, enableHighAccuracy: true }));
+      origin = [pos.coords.latitude, pos.coords.longitude];
+      if (youMarker) map.removeLayer(youMarker);
+      youMarker = L.marker(origin, {
+        icon: L.divIcon({ html: '<div id="you-icon"></div>', className: '', iconSize: [26, 26], iconAnchor: [13, 13] }),
+        interactive: false
+      }).addTo(map);
+    } catch (e) { /* fall back to city center */ }
+  }
+
+  let pool = state.places.filter(p => {
+    if (mood !== 'any' && p.cat !== mood) return false;
+    if (unvisitedOnly && isVisited(p)) return false;
+    return true;
+  });
+  if (!pool.length) {
+    results.innerHTML = '<div class="journal-empty">Nothing matches. Try broader filters — or turn off "haven\'t been."</div>';
+    return;
+  }
+
+  const dist = p => Math.hypot(p.lat - origin[0], p.lng - origin[1]);
+  pool.sort((a, b) => {
+    if (a.favorite !== b.favorite) return a.favorite ? -1 : 1;
+    return dist(a) - dist(b);
+  });
+
+  const candidatePool = pool.slice(0, Math.max(N * 3, 8));
+  for (let i = candidatePool.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [candidatePool[i], candidatePool[j]] = [candidatePool[j], candidatePool[i]];
+  }
+  const picked = candidatePool.slice(0, N);
+
+  // Greedy nearest-neighbor ordering from origin
+  const ordered = [];
+  const remaining = [...picked];
+  let cur = origin;
+  while (remaining.length) {
+    let bestIdx = 0, bestD = Infinity;
+    remaining.forEach((p, i) => {
+      const d = Math.hypot(p.lat - cur[0], p.lng - cur[1]);
+      if (d < bestD) { bestD = d; bestIdx = i; }
+    });
+    ordered.push(remaining[bestIdx]);
+    cur = [remaining[bestIdx].lat, remaining[bestIdx].lng];
+    remaining.splice(bestIdx, 1);
+  }
+
+  const routeUrl = buildRouteUrl(origin, ordered);
+  results.innerHTML = ordered.map((p, i) => `
+    <div class="place" data-id="${p.id}" style="padding-left:28px;position:relative">
+      <div style="position:absolute;left:6px;top:10px;width:18px;height:18px;background:#2c6bbd;color:white;border-radius:50%;font-size:11px;font-weight:bold;display:flex;align-items:center;justify-content:center">${i + 1}</div>
+      <span class="dot" style="background:${catColor(p.cat)}"></span>
+      <strong>${escapeHtml(p.name)}</strong>
+      <div class="notes">${escapeHtml(p.notes || '')}</div>
+    </div>
+  `).join('') +
+  `<div style="margin-top:12px"><a href="${routeUrl}" target="_blank" rel="noopener" style="display:block;text-align:center;background:#2d9a4d;color:white;padding:10px;border-radius:4px;text-decoration:none;font-size:13px;font-weight:600">🧭 Open route in Google Maps</a></div>
+   <div style="margin-top:8px"><button id="sg-regen" style="width:100%;padding:8px;background:white;border:1px solid #ccc;border-radius:4px;font-size:12px;cursor:pointer">🎲 Regenerate</button></div>`;
+
+  document.querySelectorAll('#sg-results .place').forEach(el => {
+    el.onclick = () => {
+      const p = state.places.find(x => x.id === el.dataset.id);
+      if (p && markers[p.id]) { map.setView([p.lat, p.lng], 15); markers[p.id].openPopup(); }
+    };
+  });
+  const regen = document.getElementById('sg-regen');
+  if (regen) regen.onclick = generateSuggestion;
+
+  const bounds = L.latLngBounds(ordered.map(p => [p.lat, p.lng]));
+  if (useNearMe) bounds.extend(origin);
+  map.fitBounds(bounds, { padding: [40, 40], maxZoom: 14 });
+}
+
+function buildRouteUrl(origin, places) {
+  if (!places.length) return '#';
+  const url = new URL('https://www.google.com/maps/dir/');
+  url.searchParams.set('api', '1');
+  url.searchParams.set('origin', origin[0] + ',' + origin[1]);
+  url.searchParams.set('destination', places[places.length - 1].lat + ',' + places[places.length - 1].lng);
+  if (places.length > 1) {
+    url.searchParams.set('waypoints', places.slice(0, -1).map(p => p.lat + ',' + p.lng).join('|'));
+  }
+  url.searchParams.set('travelmode', 'driving');
+  return url.toString();
+}
+
+document.getElementById('sg-go').onclick = generateSuggestion;
+
+// ----- TODAY tab live data -----
+async function loadTodayWeather() {
+  const el = document.getElementById('today-weather');
+  try {
+    const pt = await fetch('https://api.weather.gov/points/43.0389,-87.9065').then(r => r.json());
+    const fc = await fetch(pt.properties.forecast).then(r => r.json());
+    const periods = fc.properties.periods.slice(0, 4);
+    el.innerHTML = periods.map(p => `
+      <div class="today-period">
+        <div class="name">${escapeHtml(p.name)}</div>
+        <div class="desc">${escapeHtml(p.shortForecast)}</div>
+        <div class="temp">${p.temperature}°${p.temperatureUnit}</div>
+      </div>
+    `).join('');
+  } catch (e) { el.innerHTML = '<div class="muted">Weather unavailable.</div>'; }
+}
+
+async function loadTodayNews() {
+  const el = document.getElementById('today-news');
+  try {
+    const url = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent('https://news.google.com/rss/search?q=Milwaukee&hl=en-US&gl=US&ceid=US:en');
+    const r = await fetch(url).then(r => r.json());
+    if (r.status !== 'ok') throw new Error(r.message || 'rss2json error');
+    el.innerHTML = r.items.slice(0, 5).map(it => {
+      const src = (it.title.match(/ - ([^-]+)$/) || [])[1] || '';
+      const clean = it.title.replace(/ - [^-]+$/, '');
+      return `<div class="today-news-item">
+        <a href="${escapeHtml(it.link)}" target="_blank" rel="noopener">${escapeHtml(clean)}</a>
+        ${src ? `<div class="source">${escapeHtml(src)}</div>` : ''}
+      </div>`;
+    }).join('');
+  } catch (e) { el.innerHTML = '<div class="muted">Headlines unavailable.</div>'; }
+}
+
+async function loadTodayAlerts() {
+  try {
+    const r = await fetch('https://api.weather.gov/alerts/active?point=43.0389,-87.9065').then(r => r.json());
+    const feats = (r.features || []).filter(f => ['Severe','Extreme','Moderate'].includes(f.properties.severity));
+    if (!feats.length) return;
+    document.getElementById('today-alerts-card').style.display = '';
+    document.getElementById('today-alerts').innerHTML = feats.slice(0, 3).map(f => `
+      <div class="alert">
+        <div class="evt">${escapeHtml(f.properties.event)}</div>
+        <div class="headline">${escapeHtml((f.properties.headline || '').slice(0, 140))}</div>
+      </div>
+    `).join('');
+  } catch (e) { /* silent */ }
+}
+
+async function loadTodayTeam(endpoint, elId) {
+  const el = document.getElementById(elId);
+  try {
+    const r = await fetch(endpoint).then(r => r.json());
+    const now = new Date();
+    const events = (r.events || []).map(ev => ({
+      date: new Date(ev.date),
+      name: ev.name || ev.shortName || '',
+      venue: ev.competitions?.[0]?.venue
+    }));
+    const futureHome = events.filter(e => e.date > now && e.venue?.address?.city === 'Milwaukee').sort((a, b) => a.date - b.date);
+    const next = futureHome[0];
+    if (!next) {
+      const anyFuture = events.filter(e => e.date > now).sort((a, b) => a.date - b.date)[0];
+      if (!anyFuture) { el.innerHTML = '<div class="muted">No upcoming games.</div>'; return; }
+      el.innerHTML = `<div class="name">${escapeHtml(anyFuture.name)}</div>
+        <div class="when">${anyFuture.date.toLocaleDateString('en-US', { weekday:'short', month:'short', day:'numeric' })} — away</div>`;
+      return;
+    }
+    const daysOut = Math.round((next.date - now) / (1000 * 60 * 60 * 24));
+    el.innerHTML = `<div class="name">${escapeHtml(next.name)}</div>
+      <div class="when">${next.date.toLocaleDateString('en-US', { weekday:'short', month:'short', day:'numeric' })}${daysOut === 0 ? ' — today' : daysOut === 1 ? ' — tomorrow' : ' — in ' + daysOut + ' days'}</div>
+      <div class="venue">Home @ ${escapeHtml(next.venue?.fullName || '')}</div>`;
+  } catch (e) { el.innerHTML = '<div class="muted">Schedule unavailable.</div>'; }
+}
+
+function loadTodayEvents() {
+  const EVENTS = [
+    { name: 'Polar Plunge', m: 1, d: 1, meta: 'Bradford Beach' },
+    { name: "St. Patrick's Day Parade", m: 3, d: 14, meta: 'Downtown' },
+    { name: 'Polish Fest', m: 5, d: 29, meta: 'Summerfest grounds' },
+    { name: 'Summerfest begins', m: 6, d: 25, meta: '11-day fest, lakefront' },
+    { name: 'Bastille Days', m: 7, d: 10, meta: 'Cathedral Square' },
+    { name: 'Festa Italiana', m: 7, d: 17, meta: 'Summerfest grounds' },
+    { name: 'German Fest', m: 7, d: 24, meta: 'Summerfest grounds' },
+    { name: 'WI State Fair', m: 8, d: 6, meta: 'West Allis — cream puffs' },
+    { name: 'Irish Fest', m: 8, d: 14, meta: 'Summerfest grounds' },
+    { name: 'Mexican Fiesta', m: 8, d: 21, meta: 'Summerfest grounds' },
+    { name: 'Indian Summer Fest', m: 9, d: 11, meta: 'Summerfest grounds' },
+    { name: 'Doors Open Milwaukee', m: 9, d: 19, meta: 'Architecture tours' },
+    { name: 'MKE Film Festival', m: 10, d: 15, meta: 'Multiple theaters' },
+    { name: 'Holiday Folk Fair', m: 11, d: 20, meta: 'State Fair Park' },
+    { name: 'Holiday Lights begin', m: 11, d: 27, meta: 'Downtown' }
+  ];
+  const now = new Date();
+  const y = now.getFullYear();
+  const items = EVENTS.map(ev => {
+    let d = new Date(y, ev.m - 1, ev.d);
+    if (d < now) d = new Date(y + 1, ev.m - 1, ev.d);
+    return { ...ev, date: d };
+  }).sort((a, b) => a.date - b.date).slice(0, 5);
+  const fmt = d => d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+  document.getElementById('today-events').innerHTML = items.map(ev => `
+    <div class="today-event">
+      <div class="when">${fmt(ev.date)}</div>
+      <div class="what">${escapeHtml(ev.name)}<div class="meta">${escapeHtml(ev.meta)}</div></div>
+    </div>
+  `).join('');
+}
+
+function maybeTodayFishFry() {
+  if (new Date().getDay() !== 5) return;
+  document.getElementById('today-fishfry-card').style.display = '';
+  const spots = [
+    { name: 'Lakefront Brewery', note: 'Polka band + river views.' },
+    { name: "Kegel's Inn", note: 'Tosa classic.' },
+    { name: 'Historic Turner Restaurant', note: 'Inside Turner Hall.' },
+    { name: 'Serb Memorial Hall', note: 'Serbian-style; cult favorite.' },
+    { name: 'American Legion Post 449', note: 'Legion hall vibe.' }
+  ];
+  document.getElementById('today-fishfry').innerHTML = spots.map(s => `
+    <div class="today-ff"><div class="n">${escapeHtml(s.name)}</div><div class="d">${escapeHtml(s.note)}</div></div>
+  `).join('');
+}
+
+loadTodayWeather();
+loadTodayNews();
+loadTodayEvents();
+loadTodayAlerts();
+loadTodayTeam('https://site.api.espn.com/apis/site/v2/sports/baseball/mlb/teams/8/schedule', 'today-brewers');
+loadTodayTeam('https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/15/schedule', 'today-bucks');
+maybeTodayFishFry();
+
+// ----- NOTES tab -----
+document.querySelectorAll('.notes-tile').forEach(el => {
+  el.onclick = async () => {
+    const target = document.getElementById('notes-rendered');
+    document.getElementById('notes-browse').style.display = 'none';
+    document.getElementById('notes-content').style.display = '';
+    target.innerHTML = '<div style="color:#888;font-style:italic">Loading…</div>';
+    try {
+      const res = await fetch(el.dataset.file);
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      const md = await res.text();
+      if (typeof marked === 'undefined') { target.textContent = md; return; }
+      marked.setOptions({ gfm: true, breaks: false });
+      target.innerHTML = marked.parse(md);
+      target.scrollTop = 0;
+    } catch (e) {
+      target.innerHTML = '<div style="color:#d84a2a">Could not load.</div>';
+    }
+  };
+});
+document.getElementById('notes-back').onclick = () => {
+  document.getElementById('notes-content').style.display = 'none';
+  document.getElementById('notes-browse').style.display = '';
+};
+
+document.getElementById('search').oninput = (e) => {
+  state.search = e.target.value.trim();
+  renderMarkers(); renderSidebar();
+};
+
+document.getElementById('near-me-btn').onclick = () => {
+  if (!navigator.geolocation) { alert('Geolocation not available.'); return; }
+  const btn = document.getElementById('near-me-btn');
+  btn.textContent = '…locating';
+  navigator.geolocation.getCurrentPosition(
+    pos => {
+      btn.textContent = '📍 Near me';
+      const { latitude, longitude } = pos.coords;
+      if (youMarker) map.removeLayer(youMarker);
+      youMarker = L.marker([latitude, longitude], {
+        icon: L.divIcon({ html: '<div id="you-icon"></div>', className: '', iconSize: [26, 26], iconAnchor: [13, 13] }),
+        interactive: false
+      }).addTo(map);
+      map.setView([latitude, longitude], 14);
+    },
+    err => {
+      btn.textContent = '📍 Near me';
+      alert('Could not get your location: ' + err.message);
+    },
+    { enableHighAccuracy: true, timeout: 10000 }
+  );
+};
+document.getElementById('center-btn').onclick = () => map.setView(MKE_CENTER, DEFAULT_ZOOM);
 
 document.getElementById('export-btn').onclick = () => {
   const blob = new Blob([JSON.stringify(state, null, 2)], {type: 'application/json'});
@@ -250,10 +982,33 @@ document.getElementById('export-btn').onclick = () => {
   a.href = url; a.download = 'milwaukee-places.json'; a.click();
   setTimeout(() => URL.revokeObjectURL(url), 1000);
 };
+document.getElementById('import-btn').onclick = () => document.getElementById('import-input').click();
+document.getElementById('import-input').onchange = async (e) => {
+  const f = e.target.files[0];
+  if (!f) return;
+  try {
+    const text = await f.text();
+    const imported = JSON.parse(text);
+    if (!imported.places) throw new Error('Invalid file');
+    if (!confirm(`Replace current data with imported file (${imported.places.length} places)?`)) return;
+    state = imported;
+    state.places.forEach(p => { if (!p.visits) p.visits = []; });
+    saveState(); renderAll();
+  } catch (err) { alert('Could not import: ' + err.message); }
+};
 document.getElementById('reset-btn').onclick = () => {
-  if (!confirm('Reset all places and favorites to seeded defaults?')) return;
+  if (!confirm('Reset all places, favorites, and visits to seed defaults?')) return;
   state = defaultState(); saveState(); renderAll();
 };
+
+const sidebar = document.getElementById('sidebar');
+document.getElementById('drawer-toggle').onclick = () => sidebar.classList.toggle('collapsed');
+
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('../sw.js').catch(() => {});
+  });
+}
 
 renderAll();
 </script>

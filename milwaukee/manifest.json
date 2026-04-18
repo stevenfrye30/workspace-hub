@@ -1,0 +1,14 @@
+{
+  "name": "Milwaukee",
+  "short_name": "Milwaukee",
+  "description": "My two-year Milwaukee orientation, map, and journal.",
+  "start_url": "./map/",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#1e2a3a",
+  "theme_color": "#1e2a3a",
+  "orientation": "any",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
