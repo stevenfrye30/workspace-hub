@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Milwaukee — Explore & Favorites</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+  <style>
+    body, html { margin: 0; padding: 0; height: 100%; font-family: system-ui, -apple-system, sans-serif; }
+    #app { display: flex; height: 100vh; }
+    #sidebar { width: 340px; overflow-y: auto; border-right: 1px solid #ddd; padding: 12px; box-sizing: border-box; background: #fafafa; }
+    #map { flex: 1; }
+    h1 { font-size: 20px; margin: 0 0 4px 0; }
+    h2 { font-size: 13px; margin: 14px 0 6px 0; color: #666; text-transform: uppercase; letter-spacing: 0.5px; }
+    .sub { font-size: 12px; color: #888; margin-bottom: 10px; }
+    .place { padding: 8px; border-bottom: 1px solid #eee; cursor: pointer; font-size: 13px; }
+    .place:hover { background: #f0f0f0; }
+    .place.favorite { background: #fff8dc; }
+    .place .star { cursor: pointer; user-select: none; margin-right: 4px; }
+    .place .dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 4px; vertical-align: middle; }
+    .place .notes { font-size: 11px; color: #666; margin-top: 3px; }
+    .filters { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 4px; }
+    .filters button { padding: 3px 8px; border: 1px solid #ccc; background: white; cursor: pointer; border-radius: 12px; font-size: 11px; }
+    .filters button.active { background: #333; color: white; border-color: #333; }
+    .add-hint { font-size: 11px; color: #666; margin-top: 14px; padding: 8px; background: #eef; border-radius: 4px; line-height: 1.4; }
+    .export { font-size: 11px; margin-top: 8px; }
+    .export a { color: #2c6bbd; cursor: pointer; text-decoration: underline; margin-right: 10px; }
+  </style>
+</head>
+<body>
+<div id="app">
+  <div id="sidebar">
+    <h1>Milwaukee</h1>
+    <div class="sub">Click map to add places. Star favorites. Data saves locally.</div>
+    <h2>Filters</h2>
+    <div class="filters" id="filters"></div>
+    <h2>Places</h2>
+    <div id="list"></div>
+    <div class="export">
+      <a id="export-btn">Export JSON</a>
+      <a id="reset-btn">Reset to seed</a>
+    </div>
+    <div class="add-hint">Tip: left-click anywhere on the map to drop a new pin.</div>
+  </div>
+  <div id="map"></div>
+</div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+const MKE_CENTER = [43.0389, -87.9065];
+
+const CATS = [
+  { key: 'neighborhood', label: 'Neighborhood', color: '#2c6bbd' },
+  { key: 'culture',      label: 'Culture',      color: '#7b3fbe' },
+  { key: 'park',         label: 'Park',         color: '#2d9a4d' },
+  { key: 'sports',       label: 'Sports',       color: '#e8a317' },
+  { key: 'food',         label: 'Food',         color: '#d84a2a' },
+  { key: 'brewery',      label: 'Brewery',      color: '#8b6914' },
+  { key: 'shopping',     label: 'Shopping',     color: '#d936a8' },
+  { key: 'other',        label: 'Other',        color: '#666' }
+];
+
+const SEED = [
+  // Neighborhoods
+  { id: 'nh-thirdward', name: 'Historic Third Ward',           cat: 'neighborhood', lat: 43.0306, lng: -87.9085, notes: 'Arts + shopping + Public Market. Walkable.' },
+  { id: 'nh-bayview',   name: 'Bay View',                      cat: 'neighborhood', lat: 42.9942, lng: -87.8872, notes: 'Hip residential; strong bar + food scene.' },
+  { id: 'nh-riverwest', name: 'Riverwest',                     cat: 'neighborhood', lat: 43.0705, lng: -87.9015, notes: 'Artsy, diverse, bohemian.' },
+  { id: 'nh-eastside',  name: 'East Side',                     cat: 'neighborhood', lat: 43.0711, lng: -87.8820, notes: 'UWM + lakefront + young energy.' },
+  { id: 'nh-walkers',   name: "Walker's Point",                cat: 'neighborhood', lat: 43.0225, lng: -87.9138, notes: 'Cocktail bars, industrial-chic.' },
+  { id: 'nh-brady',     name: 'Brady Street',                  cat: 'neighborhood', lat: 43.0619, lng: -87.8925, notes: 'Italian heritage; nightlife strip.' },
+  { id: 'nh-tosa',      name: 'Wauwatosa (Tosa Village)',      cat: 'neighborhood', lat: 43.0495, lng: -88.0076, notes: 'Inner-ring suburb with cute village core.' },
+  { id: 'nh-shorewood', name: 'Shorewood',                     cat: 'neighborhood', lat: 43.0898, lng: -87.8873, notes: 'Lakefront village, top-rated schools.' },
+  { id: 'nh-westown',   name: 'Westown / Deer District',       cat: 'neighborhood', lat: 43.0412, lng: -87.9195, notes: 'Bucks-era downtown west of the river.' },
+
+  // Culture
+  { id: 'c-mam',      name: 'Milwaukee Art Museum',          cat: 'culture', lat: 43.0404, lng: -87.8968, notes: 'Calatrava brise-soleil opens/closes daily.' },
+  { id: 'c-harley',   name: 'Harley-Davidson Museum',        cat: 'culture', lat: 43.0328, lng: -87.9168, notes: 'MKE is HD HQ.' },
+  { id: 'c-pabst',    name: 'Pabst Mansion',                 cat: 'culture', lat: 43.0410, lng: -87.9339, notes: 'Gilded-age brewer mansion tour.' },
+  { id: 'c-museum',   name: 'Milwaukee Public Museum',       cat: 'culture', lat: 43.0412, lng: -87.9168, notes: 'Natural history + cultural; new building in progress.' },
+  { id: 'c-domes',    name: 'Mitchell Park Domes',           cat: 'culture', lat: 43.0212, lng: -87.9477, notes: 'Three glass conservatories.' },
+  { id: 'c-basilica', name: 'Basilica of St. Josaphat',      cat: 'culture', lat: 43.0106, lng: -87.9204, notes: 'Polish-American landmark, giant dome.' },
+  { id: 'c-fonz',     name: 'Bronze Fonz',                   cat: 'culture', lat: 43.0410, lng: -87.9097, notes: 'Riverwalk statue. Touristy but required.' },
+
+  // Parks
+  { id: 'p-bradford', name: 'Bradford Beach',                cat: 'park', lat: 43.0825, lng: -87.8763, notes: 'Lake Michigan beach, volleyball.' },
+  { id: 'p-veterans', name: 'Veterans Park (Lakefront)',     cat: 'park', lat: 43.0472, lng: -87.8920, notes: 'Kite-flying, lagoon, bike paths.' },
+  { id: 'p-hoyt',     name: 'Hoyt Park',                     cat: 'park', lat: 43.0558, lng: -88.0094, notes: 'Menomonee River, pool, Tosa side.' },
+  { id: 'p-lake',     name: 'Lake Park',                     cat: 'park', lat: 43.0756, lng: -87.8757, notes: 'Bluff overlooks; Olmsted design.' },
+
+  // Sports
+  { id: 's-amfam',   name: 'American Family Field (Brewers)', cat: 'sports', lat: 43.0280, lng: -87.9712, notes: 'MLB Brewers, retractable roof.' },
+  { id: 's-fiserv',  name: 'Fiserv Forum (Bucks)',            cat: 'sports', lat: 43.0451, lng: -87.9172, notes: 'NBA Bucks; 2021 champs.' },
+  { id: 's-panther', name: 'UW-Milwaukee Panther Arena',      cat: 'sports', lat: 43.0400, lng: -87.9190, notes: 'Admirals AHL hockey.' },
+
+  // Food
+  { id: 'f-market',  name: 'Milwaukee Public Market',         cat: 'food', lat: 43.0310, lng: -87.9103, notes: 'Vendors, lunch spot in Third Ward.' },
+  { id: 'f-kopps',   name: "Kopp's Frozen Custard",           cat: 'food', lat: 43.0590, lng: -88.0259, notes: 'Flavor of the day. Iconic.' },
+  { id: 'f-leons',   name: "Leon's Frozen Custard",           cat: 'food', lat: 42.9940, lng: -87.9375, notes: "Old-school drive-up; Arnold's-era vibe." },
+  { id: 'f-usingers',name: "Usinger's Sausage",               cat: 'food', lat: 43.0442, lng: -87.9095, notes: 'Classic German sausage maker.' },
+  { id: 'f-sanford', name: 'Sanford Restaurant',              cat: 'food', lat: 43.0616, lng: -87.8937, notes: 'Fine dining mainstay.' },
+  { id: 'f-ardent',  name: 'Ardent',                          cat: 'food', lat: 43.0627, lng: -87.8910, notes: 'Tasting menu, Brady area.' },
+
+  // Breweries
+  { id: 'b-lakefront', name: 'Lakefront Brewery',             cat: 'brewery', lat: 43.0560, lng: -87.9075, notes: 'Tours + Friday fish fry + river views.' },
+  { id: 'b-mke',       name: 'Milwaukee Brewing Co.',         cat: 'brewery', lat: 43.0295, lng: -87.9127, notes: "Walker's Point taproom." },
+  { id: 'b-goodcity',  name: 'Good City Brewing',             cat: 'brewery', lat: 43.0620, lng: -87.8862, notes: 'Multiple locations.' },
+  { id: 'b-pabst',     name: 'Pabst Milwaukee Brewery',       cat: 'brewery', lat: 43.0420, lng: -87.9235, notes: 'Revived on original Pabst campus.' },
+
+  // Other / events
+  { id: 'o-summerfest', name: 'Henry Maier Festival Park (Summerfest)', cat: 'other', lat: 43.0287, lng: -87.8979, notes: "World's largest music fest, late June." },
+  { id: 'o-riverwalk',  name: 'Milwaukee RiverWalk',                    cat: 'other', lat: 43.0422, lng: -87.9108, notes: 'Downtown river trail.' }
+];
+
+const STORAGE_KEY = 'mke-places-v1';
+
+function loadState() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (!raw) return defaultState();
+    const s = JSON.parse(raw);
+    // Merge in any new seed places added after first load.
+    const have = new Set(s.places.map(p => p.id));
+    SEED.filter(p => !have.has(p.id)).forEach(p => s.places.push({...p, favorite: false}));
+    if (!Array.isArray(s.hiddenCats)) s.hiddenCats = [];
+    if (typeof s.favOnly !== 'boolean') s.favOnly = false;
+    return s;
+  } catch (e) { return defaultState(); }
+}
+function defaultState() {
+  return { places: SEED.map(p => ({...p, favorite: false})), hiddenCats: [], favOnly: false };
+}
+function saveState() { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); }
+
+let state = loadState();
+
+const map = L.map('map').setView(MKE_CENTER, 12);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '&copy; OpenStreetMap contributors', maxZoom: 19
+}).addTo(map);
+
+const markers = {};
+const catColor = c => (CATS.find(x => x.key === c) || {}).color || '#666';
+
+function isVisible(p) {
+  if (state.hiddenCats.includes(p.cat)) return false;
+  if (state.favOnly && !p.favorite) return false;
+  return true;
+}
+
+function makeIcon(p) {
+  const color = catColor(p.cat);
+  const size = p.favorite ? 16 : 12;
+  const ring = p.favorite ? 'outline: 2px solid gold; outline-offset: 1px;' : '';
+  const html = `<div style="background:${color};width:${size}px;height:${size}px;border:2px solid white;border-radius:50%;box-shadow:0 0 3px rgba(0,0,0,0.5);${ring}"></div>`;
+  return L.divIcon({ html, className: '', iconSize: [size+6, size+6], iconAnchor: [(size+6)/2, (size+6)/2] });
+}
+
+function popupHtml(p) {
+  return `<div style="min-width:200px">
+    <div style="font-weight:bold;font-size:14px">${escapeHtml(p.name)}</div>
+    <div style="font-size:11px;color:#666;text-transform:uppercase;letter-spacing:0.5px">${p.cat}</div>
+    <div style="margin:6px 0;font-size:12px">${escapeHtml(p.notes || '')}</div>
+    <div style="font-size:12px">
+      <a class="act-star" data-id="${p.id}" style="cursor:pointer">${p.favorite ? '★ Favorited' : '☆ Favorite'}</a>
+      &middot; <a class="act-edit" data-id="${p.id}" style="cursor:pointer;color:#2c6bbd">edit notes</a>
+      &middot; <a class="act-del"  data-id="${p.id}" style="cursor:pointer;color:#d84a2a">delete</a>
+    </div>
+  </div>`;
+}
+function escapeHtml(s) { return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+
+function renderAll() {
+  Object.values(markers).forEach(m => map.removeLayer(m));
+  Object.keys(markers).forEach(k => delete markers[k]);
+  state.places.filter(isVisible).forEach(p => {
+    const m = L.marker([p.lat, p.lng], { icon: makeIcon(p) }).addTo(map);
+    m.bindPopup(popupHtml(p));
+    m.on('popupopen', wirePopup);
+    markers[p.id] = m;
+  });
+  renderSidebar();
+  renderFilters();
+}
+
+function wirePopup() {
+  document.querySelectorAll('.act-star').forEach(a => a.onclick = () => toggleFav(a.dataset.id));
+  document.querySelectorAll('.act-edit').forEach(a => a.onclick = () => editNotes(a.dataset.id));
+  document.querySelectorAll('.act-del').forEach(a  => a.onclick = () => deletePlace(a.dataset.id));
+}
+
+function renderSidebar() {
+  const list = document.getElementById('list');
+  const visible = state.places.filter(isVisible);
+  visible.sort((a, b) => (a.favorite !== b.favorite) ? (a.favorite ? -1 : 1) : a.name.localeCompare(b.name));
+  list.innerHTML = visible.map(p => `
+    <div class="place ${p.favorite ? 'favorite' : ''}" data-id="${p.id}">
+      <span class="star" data-id="${p.id}">${p.favorite ? '★' : '☆'}</span>
+      <span class="dot" style="background:${catColor(p.cat)}"></span>
+      <strong>${escapeHtml(p.name)}</strong>
+      <div class="notes">${escapeHtml(p.notes || '')}</div>
+    </div>
+  `).join('') || '<div class="notes">Nothing matches the filter.</div>';
+  list.querySelectorAll('.place').forEach(el => {
+    el.onclick = (e) => {
+      if (e.target.classList.contains('star')) { toggleFav(el.dataset.id); return; }
+      const p = state.places.find(x => x.id === el.dataset.id);
+      if (p && markers[p.id]) { map.setView([p.lat, p.lng], 15); markers[p.id].openPopup(); }
+    };
+  });
+}
+
+function renderFilters() {
+  const f = document.getElementById('filters');
+  f.innerHTML = CATS.map(c =>
+    `<button data-cat="${c.key}" class="${state.hiddenCats.includes(c.key) ? '' : 'active'}" style="border-left:6px solid ${c.color}">${c.label}</button>`
+  ).join('') +
+  `<button data-cat="__fav" class="${state.favOnly ? 'active' : ''}">★ Favorites only</button>`;
+  f.querySelectorAll('button').forEach(b => {
+    b.onclick = () => {
+      const c = b.dataset.cat;
+      if (c === '__fav') state.favOnly = !state.favOnly;
+      else {
+        if (state.hiddenCats.includes(c)) state.hiddenCats = state.hiddenCats.filter(x => x !== c);
+        else state.hiddenCats.push(c);
+      }
+      saveState(); renderAll();
+    };
+  });
+}
+
+function toggleFav(id)    { const p = state.places.find(x => x.id === id); if (!p) return; p.favorite = !p.favorite; saveState(); renderAll(); }
+function editNotes(id)    { const p = state.places.find(x => x.id === id); if (!p) return; const n = prompt('Notes:', p.notes || ''); if (n !== null) { p.notes = n; saveState(); renderAll(); } }
+function deletePlace(id)  { if (!confirm('Delete this place?')) return; state.places = state.places.filter(p => p.id !== id); saveState(); renderAll(); }
+
+map.on('click', e => {
+  const name = prompt('Name for this place?');
+  if (!name) return;
+  const list = CATS.map((c,i) => `${i+1}=${c.label}`).join('  ');
+  const idxStr = prompt('Category number?\n' + list, String(CATS.length));
+  const idx = parseInt(idxStr, 10) - 1;
+  const cat = (idx >= 0 && idx < CATS.length) ? CATS[idx].key : 'other';
+  const notes = prompt('Notes (optional)?', '') || '';
+  state.places.push({ id: 'u-' + Date.now(), name, cat, lat: e.latlng.lat, lng: e.latlng.lng, notes, favorite: false });
+  saveState(); renderAll();
+});
+
+document.getElementById('export-btn').onclick = () => {
+  const blob = new Blob([JSON.stringify(state, null, 2)], {type: 'application/json'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = 'milwaukee-places.json'; a.click();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+};
+document.getElementById('reset-btn').onclick = () => {
+  if (!confirm('Reset all places and favorites to seeded defaults?')) return;
+  state = defaultState(); saveState(); renderAll();
+};
+
+renderAll();
+</script>
+</body>
+</html>
