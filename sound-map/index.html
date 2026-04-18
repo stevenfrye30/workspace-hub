@@ -11,7 +11,45 @@ body { background: var(--bg); color: var(--text); font-family: Georgia, serif; l
 #sm-header .sub { font-size: 12px; color: var(--muted); font-style: italic; flex: 1; }
 #sm-header a { color: var(--muted); text-decoration: none; font-size: 11px; letter-spacing: .04em; text-transform: uppercase; padding: 5px 12px; border: 1px solid var(--bdr); border-radius: var(--radius); }
 #sm-header a:hover { color: var(--gold); border-color: var(--gold); }
-#panel-sound { flex: 1; display: flex; flex-direction: column; overflow: hidden; }
+#panel-sound, #panel-chart { flex: 1; display: none; flex-direction: column; overflow: hidden; }
+#panel-sound.active, #panel-chart.active { display: flex; }
+
+/* ════════════════════ PHONETIC CHART ════════════════════ */
+#panel-chart .pc-scroll{overflow-y:auto;flex:1;padding:22px 26px 60px}
+.pc-intro{color:var(--muted);font-size:13px;max-width:780px;margin-bottom:18px;line-height:1.65}
+.pc-intro strong{color:var(--text)}
+.pc-intro code{font-family:var(--mono);background:var(--surf2);color:var(--gold);padding:1px 6px;border-radius:3px;font-size:12px}
+.pc-toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.pc-search{flex:1;min-width:240px;max-width:420px;background:var(--surf2);border:1px solid var(--bdr);color:var(--text);padding:7px 12px;border-radius:var(--radius);font-family:inherit;font-size:13px;outline:none}
+.pc-search:focus{border-color:var(--gold)}
+.pc-toggle{color:var(--muted);font-size:12px;display:inline-flex;align-items:center;gap:6px;cursor:pointer;user-select:none}
+.pc-toggle input{cursor:pointer;accent-color:var(--gold)}
+.pc-h2{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--gold);margin:22px 0 10px}
+.pc-table{width:100%;border-collapse:collapse;background:var(--surf);border:1px solid var(--bdr);margin-bottom:6px}
+.pc-table thead th{text-align:left;padding:9px 12px;border-bottom:1px solid var(--bdr);font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);background:var(--surf2)}
+.pc-table tbody td{padding:9px 12px;border-bottom:1px solid var(--bdr);vertical-align:top}
+.pc-table tbody tr:last-child td{border-bottom:none}
+.pc-table tbody tr:hover{background:var(--surf2)}
+.pc-col-ipa{width:80px}
+.pc-col-ipa span{font-family:var(--mono);font-size:18px;color:var(--gold);font-weight:700;display:inline-block}
+.pc-col-desc{color:var(--muted);font-size:12px;font-style:italic;width:210px}
+.pc-col-script{text-align:center;cursor:pointer;font-size:20px;transition:background .12s}
+.pc-col-script:hover{background:var(--surf2)}
+.pc-col-script.copied{background:var(--green);color:#111}
+.pc-col-script.empty{color:#3a4256;font-size:14px;font-style:italic;cursor:default}
+.pc-note-row td{padding:0 12px 10px;background:var(--bg);border-bottom:1px solid var(--bdr)}
+.pc-note{color:var(--muted);font-size:12px;font-style:italic;border-left:2px solid var(--gold);padding-left:10px}
+.pc-legend{margin-top:20px;padding:14px 18px;background:var(--surf2);border-left:3px solid var(--gold);font-size:12px;color:var(--muted);line-height:1.75}
+.pc-legend strong{color:var(--text)}
+.pc-legend code{font-family:var(--mono);color:var(--gold)}
+.pc-toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--surf);border:1px solid var(--gold);color:var(--text);padding:10px 16px;border-radius:var(--radius);font-size:13px;opacity:0;transition:opacity .15s;pointer-events:none;z-index:50}
+.pc-toast.show{opacity:1}
+@media(max-width:720px){
+  .pc-col-desc{display:none}
+  .pc-col-script{font-size:17px}
+  .pc-col-ipa span{font-size:16px}
+  .pc-table tbody td{padding:7px 6px}
+}
 
 :root{
   --bg:#0d0d0d; --surf:#161616; --surf2:#1e1e1e; --bdr:#2a2a2a;
@@ -443,12 +481,17 @@ body{background:var(--bg);color:var(--text);font-family:"Segoe UI",Arial,sans-se
 </head>
 <body>
 <header id="sm-header">
-  <h1>Sound Map</h1>
-  <span class="sub">Paste English text to see it broken into colored phonemes. Click a phoneme to hear it and see where in the mouth it's made.</span>
-  <a href="../">← Workspace</a>
+  <h1>Sound</h1>
+  <span class="sub">English phoneme analysis + an IPA-across-scripts chart.</span>
+  <a href="../languages/">← Languages</a>
 </header>
 
-<div id="panel-sound">
+<nav id="tab-nav" role="tablist">
+  <button class="tab-btn active" type="button" data-tab="sound" role="tab" aria-selected="true">Sound Map</button>
+  <button class="tab-btn" type="button" data-tab="chart" role="tab" aria-selected="false">Chart</button>
+</nav>
+
+<div id="panel-sound" class="active" role="tabpanel">
   <div id="sm-toolbar">
     <textarea id="sm-input" placeholder="paste a sentence or phrase (one line per verse line)…" rows="3" spellcheck="false"></textarea>
     <button id="sm-visualize" type="button">Visualize</button>
@@ -533,6 +576,40 @@ body{background:var(--bg);color:var(--text);font-family:"Segoe UI",Arial,sans-se
     </div>
     <div id="sm-similar-list"></div>
   </div>
+</div>
+
+<div id="panel-chart" role="tabpanel">
+  <div class="pc-scroll">
+    <div class="pc-intro">
+      Rows are phonemes in the <strong>International Phonetic Alphabet</strong> (IPA).
+      Columns show the typical grapheme in each script. Click any cell to copy.
+      An em-dash (—) means the script lacks a native equivalent for that sound.
+    </div>
+    <div class="pc-toolbar">
+      <input class="pc-search" id="pc-search" placeholder="Search by sound, description (e.g. nasal, fricative)…" />
+      <label class="pc-toggle"><input type="checkbox" id="pc-show-notes" checked /> Show notes</label>
+    </div>
+    <div class="pc-h2">Consonants</div>
+    <table class="pc-table"><thead><tr>
+      <th class="pc-col-ipa">IPA</th>
+      <th class="pc-col-desc">Description</th>
+      <th>Latin</th>
+      <th>Arabic</th>
+      <th>Telugu</th>
+    </tr></thead><tbody id="pc-consonants-body"></tbody></table>
+    <div class="pc-h2">Vowels</div>
+    <table class="pc-table"><thead><tr>
+      <th class="pc-col-ipa">IPA</th>
+      <th class="pc-col-desc">Description</th>
+      <th>Latin</th>
+      <th>Arabic</th>
+      <th>Telugu</th>
+    </tr></thead><tbody id="pc-vowels-body"></tbody></table>
+    <div class="pc-legend">
+      <strong>How to read this chart.</strong> Latin values reflect English orthography where consistent, and use digraphs (<code>sh</code>, <code>th</code>) where a single letter doesn't suffice. Arabic shows isolated letter forms; vowel diacritics use <code>ـ</code> as a placeholder. Telugu consonants are shown with the inherent /a/; pure consonants require a virama (<code>్</code>). Retroflex, emphatic, and aspirated distinctions are preserved where the target script encodes them.
+    </div>
+  </div>
+  <div class="pc-toast" id="pc-toast"></div>
 </div>
 
 <div class="status-bar" id="status-bar"></div>
@@ -914,6 +991,129 @@ document.getElementById("sm-compare-toggle").addEventListener("change", () => {
   smSaveToHash();
 });
 window.addEventListener("load", smLoadFromHash);
+
+// ══════════════════════════════════
+//  PHONETIC CHART (merged from former Phonetic Center)
+// ══════════════════════════════════
+const PC_PHONEMES = [
+  { ipa: "p",  g: "c", desc: "voiceless bilabial plosive",        latin: "p",  arabic: "ب", telugu: "ప", note: "Arabic has no native /p/; ب (/b/) substitutes in loanwords." },
+  { ipa: "b",  g: "c", desc: "voiced bilabial plosive",           latin: "b",  arabic: "ب", telugu: "బ" },
+  { ipa: "t",  g: "c", desc: "voiceless dental/alveolar plosive", latin: "t",  arabic: "ت", telugu: "త", note: "Telugu త is dental; ట (below) is retroflex." },
+  { ipa: "d",  g: "c", desc: "voiced dental/alveolar plosive",    latin: "d",  arabic: "د", telugu: "ద" },
+  { ipa: "ʈ",  g: "c", desc: "voiceless retroflex plosive",       latin: "—",  arabic: "—", telugu: "ట", note: "Retroflex — tongue curled back. Common in Indic languages, absent from English and Arabic." },
+  { ipa: "ɖ",  g: "c", desc: "voiced retroflex plosive",          latin: "—",  arabic: "—", telugu: "డ" },
+  { ipa: "k",  g: "c", desc: "voiceless velar plosive",           latin: "k",  arabic: "ك", telugu: "క" },
+  { ipa: "ɡ",  g: "c", desc: "voiced velar plosive",              latin: "g",  arabic: "غ", telugu: "గ", note: "Arabic غ is /ɣ/ (a fricative, close to French R); ج is used for /g/ in Egyptian dialect." },
+  { ipa: "q",  g: "c", desc: "voiceless uvular plosive",          latin: "—",  arabic: "ق", telugu: "—", note: "Deep back-of-throat /k/. Distinctive to Arabic and some other Semitic languages." },
+  { ipa: "ʔ",  g: "c", desc: "glottal stop",                      latin: "—",  arabic: "ء", telugu: "—", note: "The catch in 'uh-oh'. Arabic ء (hamza) writes it explicitly." },
+  { ipa: "m",  g: "c", desc: "bilabial nasal",                    latin: "m",  arabic: "م", telugu: "మ" },
+  { ipa: "n",  g: "c", desc: "alveolar nasal",                    latin: "n",  arabic: "ن", telugu: "న" },
+  { ipa: "ɳ",  g: "c", desc: "retroflex nasal",                   latin: "—",  arabic: "—", telugu: "ణ" },
+  { ipa: "ɲ",  g: "c", desc: "palatal nasal",                     latin: "ny", arabic: "—", telugu: "ఞ", note: "Spanish ñ; Italian gn; French gn." },
+  { ipa: "ŋ",  g: "c", desc: "velar nasal",                       latin: "ng", arabic: "—", telugu: "ఙ", note: "The 'ng' in English 'sing'." },
+  { ipa: "f",  g: "c", desc: "voiceless labiodental fricative",   latin: "f",  arabic: "ف", telugu: "ఫ", note: "Telugu ఫ was originally /pʰ/; now used for /f/ in loanwords." },
+  { ipa: "v",  g: "c", desc: "voiced labiodental fricative",      latin: "v",  arabic: "—", telugu: "వ", note: "Arabic has no /v/; ف or foreign ڤ used in loanwords. Telugu వ covers both /v/ and /w/." },
+  { ipa: "θ",  g: "c", desc: "voiceless dental fricative",        latin: "th", arabic: "ث", telugu: "—", note: "'th' in 'thin'." },
+  { ipa: "ð",  g: "c", desc: "voiced dental fricative",           latin: "th", arabic: "ذ", telugu: "—", note: "'th' in 'this'." },
+  { ipa: "s",  g: "c", desc: "voiceless alveolar fricative",      latin: "s",  arabic: "س", telugu: "స" },
+  { ipa: "z",  g: "c", desc: "voiced alveolar fricative",         latin: "z",  arabic: "ز", telugu: "—", note: "No native /z/ in Telugu; transliterated with జ or స + diacritic in loanwords." },
+  { ipa: "ʃ",  g: "c", desc: "voiceless postalveolar fricative",  latin: "sh", arabic: "ش", telugu: "శ", note: "'sh' in 'ship'." },
+  { ipa: "ʒ",  g: "c", desc: "voiced postalveolar fricative",     latin: "zh", arabic: "—", telugu: "—", note: "'s' in 'measure'; French j." },
+  { ipa: "ʂ",  g: "c", desc: "voiceless retroflex fricative",     latin: "—",  arabic: "—", telugu: "ష" },
+  { ipa: "x",  g: "c", desc: "voiceless velar fricative",         latin: "kh", arabic: "خ", telugu: "—", note: "German 'ach'; Scottish 'loch'." },
+  { ipa: "ɣ",  g: "c", desc: "voiced velar fricative",            latin: "gh", arabic: "غ", telugu: "—" },
+  { ipa: "ħ",  g: "c", desc: "voiceless pharyngeal fricative",    latin: "—",  arabic: "ح", telugu: "—", note: "Constricted 'h' deep in the throat. Distinctive to Arabic." },
+  { ipa: "ʕ",  g: "c", desc: "voiced pharyngeal fricative",       latin: "—",  arabic: "ع", telugu: "—", note: "The famous 'ayn' of Arabic — no close equivalent in English or Telugu." },
+  { ipa: "h",  g: "c", desc: "voiceless glottal fricative",       latin: "h",  arabic: "ه", telugu: "హ" },
+  { ipa: "tʃ", g: "c", desc: "voiceless postalveolar affricate",  latin: "ch", arabic: "—", telugu: "చ", note: "'ch' in 'church'. Arabic borrows via چ in Persian/Urdu but not standard." },
+  { ipa: "dʒ", g: "c", desc: "voiced postalveolar affricate",     latin: "j",  arabic: "ج", telugu: "జ", note: "'j' in 'judge'." },
+  { ipa: "l",  g: "c", desc: "alveolar lateral approximant",      latin: "l",  arabic: "ل", telugu: "ల" },
+  { ipa: "ɭ",  g: "c", desc: "retroflex lateral approximant",     latin: "—",  arabic: "—", telugu: "ళ" },
+  { ipa: "r",  g: "c", desc: "alveolar trill / tap",              latin: "r",  arabic: "ر", telugu: "ర", note: "IPA strictly distinguishes trill /r/ from tap /ɾ/; this row covers both informally." },
+  { ipa: "j",  g: "c", desc: "palatal approximant",               latin: "y",  arabic: "ي", telugu: "య", note: "'y' in 'yes'." },
+  { ipa: "w",  g: "c", desc: "labio-velar approximant",           latin: "w",  arabic: "و", telugu: "వ", note: "'w' in 'water'. Telugu వ serves for both /w/ and /v/." },
+  { ipa: "a",  g: "v", desc: "open front/central vowel",          latin: "a",  arabic: "ـَ", telugu: "అ", note: "Arabic diacritic fatha, written above the consonant. Telugu అ is independent; attached to a consonant, it's the inherent vowel (unwritten)." },
+  { ipa: "e",  g: "v", desc: "close-mid front vowel",             latin: "e",  arabic: "—", telugu: "ఎ", note: "Standard Arabic has no /e/; dialects use fatha or a y-glide." },
+  { ipa: "i",  g: "v", desc: "close front vowel",                 latin: "i",  arabic: "ـِ", telugu: "ఇ", note: "Arabic diacritic kasra, written below the consonant." },
+  { ipa: "o",  g: "v", desc: "close-mid back rounded vowel",      latin: "o",  arabic: "—", telugu: "ఒ", note: "Standard Arabic has no /o/; dialects use damma or a w-glide." },
+  { ipa: "u",  g: "v", desc: "close back rounded vowel",          latin: "u",  arabic: "ـُ", telugu: "ఉ", note: "Arabic diacritic damma, written above the consonant." },
+  { ipa: "ə",  g: "v", desc: "mid central vowel (schwa)",         latin: "e",  arabic: "—", telugu: "—", note: "The 'uh' sound in 'sofa'. Unwritten in most scripts; emerges from reduction." },
+  { ipa: "aː", g: "v", desc: "long open vowel",                   latin: "aa", arabic: "ا", telugu: "ఆ" },
+  { ipa: "iː", g: "v", desc: "long close front vowel",            latin: "ee", arabic: "ي", telugu: "ఈ" },
+  { ipa: "uː", g: "v", desc: "long close back rounded vowel",     latin: "oo", arabic: "و", telugu: "ఊ" },
+  { ipa: "eː", g: "v", desc: "long close-mid front vowel",        latin: "ē",  arabic: "—", telugu: "ఏ" },
+  { ipa: "oː", g: "v", desc: "long close-mid back vowel",         latin: "ō",  arabic: "—", telugu: "ఓ" },
+];
+
+function pcRender() {
+  const q = document.getElementById("pc-search").value.trim().toLowerCase();
+  const showNotes = document.getElementById("pc-show-notes").checked;
+  const cBody = document.getElementById("pc-consonants-body");
+  const vBody = document.getElementById("pc-vowels-body");
+  cBody.innerHTML = ""; vBody.innerHTML = "";
+  const COLS = ["latin","arabic","telugu"];
+  const match = (p) => !q || [p.ipa,p.desc,p.latin,p.arabic,p.telugu,p.note||""].join(" ").toLowerCase().includes(q);
+  PC_PHONEMES.filter(match).forEach(p => {
+    const tr = document.createElement("tr");
+    const cells = COLS.map(c => {
+      const v = p[c];
+      const isEmpty = v === "—";
+      return `<td class="pc-col-script${isEmpty ? " empty" : ""}" data-copy="${v.replace(/"/g,"&quot;")}">${v}</td>`;
+    }).join("");
+    tr.innerHTML = `<td class="pc-col-ipa"><span>${p.ipa}</span></td><td class="pc-col-desc">${p.desc}</td>${cells}`;
+    (p.g === "c" ? cBody : vBody).appendChild(tr);
+    if (showNotes && p.note) {
+      const nr = document.createElement("tr");
+      nr.className = "pc-note-row";
+      nr.innerHTML = `<td colspan="5"><div class="pc-note">${p.note}</div></td>`;
+      (p.g === "c" ? cBody : vBody).appendChild(nr);
+    }
+  });
+}
+function pcToast(msg) {
+  const t = document.getElementById("pc-toast");
+  t.textContent = msg; t.classList.add("show");
+  clearTimeout(pcToast._t);
+  pcToast._t = setTimeout(() => t.classList.remove("show"), 900);
+}
+document.getElementById("panel-chart").addEventListener("click", (e) => {
+  const cell = e.target.closest(".pc-col-script");
+  if (!cell || cell.classList.contains("empty")) return;
+  const v = cell.dataset.copy;
+  const done = () => { cell.classList.add("copied"); setTimeout(() => cell.classList.remove("copied"), 400); pcToast(`Copied ${v}`); };
+  if (navigator.clipboard) navigator.clipboard.writeText(v).then(done).catch(() => done());
+  else done();
+});
+document.getElementById("pc-search").addEventListener("input", pcRender);
+document.getElementById("pc-show-notes").addEventListener("change", pcRender);
+pcRender();
+
+// ══════════════════════════════════
+//  TAB SWITCHING
+// ══════════════════════════════════
+function setTab(name) {
+  document.querySelectorAll(".tab-btn").forEach(b => {
+    const on = b.dataset.tab === name;
+    b.classList.toggle("active", on);
+    b.setAttribute("aria-selected", on ? "true" : "false");
+  });
+  document.getElementById("panel-sound").classList.toggle("active", name === "sound");
+  document.getElementById("panel-chart").classList.toggle("active", name === "chart");
+  try { localStorage.setItem("sm-tab", name); } catch(_) {}
+}
+document.querySelectorAll(".tab-btn").forEach(b => {
+  b.addEventListener("click", () => setTab(b.dataset.tab));
+});
+(function initTab() {
+  const params = new URLSearchParams(window.location.search);
+  const fromUrl = params.get("tab");
+  let saved = null;
+  try { saved = localStorage.getItem("sm-tab"); } catch(_) {}
+  const initial = (fromUrl === "chart" || fromUrl === "sound") ? fromUrl
+                : (saved === "chart" || saved === "sound") ? saved
+                : "sound";
+  if (initial !== "sound") setTab(initial);
+})();
 </script>
 </body>
 </html>

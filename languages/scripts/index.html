@@ -277,6 +277,13 @@ body{background:var(--bg);color:var(--text);font-family:system-ui,'Noto Sans',sa
           padding:5px 11px;font-size:12px;cursor:pointer;color:var(--muted);transition:.15s;margin-left:auto}
 #sc-study:hover{border-color:var(--acc3);color:var(--text)}
 #sc-study.active{border-color:var(--acc3);color:var(--acc3)}
+#sc-learn{background:var(--surf2);border:1px solid var(--acc);border-radius:7px;
+          padding:5px 12px;font-size:12px;cursor:pointer;color:var(--acc);transition:.15s;
+          text-decoration:none;display:none;font-weight:600;white-space:nowrap}
+#sc-learn:hover{background:var(--acc);color:#111}
+#sc-learn.show{display:inline-block}
+.sc-learn-badge{font-size:9px;background:var(--acc);color:#111;border-radius:3px;
+                padding:1px 6px;font-weight:700;white-space:nowrap;letter-spacing:.02em}
 .study-overview{display:flex;gap:0;flex-wrap:wrap;background:var(--surf2);
                 border:1px solid var(--border);border-radius:10px;margin-bottom:16px;overflow:hidden}
 .ov-item{display:flex;flex-direction:column;padding:10px 16px;
@@ -351,6 +358,7 @@ body{background:var(--bg);color:var(--text);font-family:system-ui,'Noto Sans',sa
     <div id="sc-sample-big"></div>
     <div><div id="sc-title"></div><div id="sc-subtitle"></div></div>
     <button id="sc-study">&#x1F4D6; Study View</button>
+    <a id="sc-learn" href="#" target="_self">Learn &rarr;</a>
   </div>
   <div class="script-grid" id="script-grid"></div>
   <div class="char-grid" id="sc-char-grid"></div>
@@ -804,12 +812,14 @@ function buildScriptGrid(){
     var tRaw=sc.type||'';
     var tCls='type-badge type-'+tRaw.replace(/ /g,'').replace('&','');
     var tLbl=tRaw?tRaw.charAt(0).toUpperCase()+tRaw.slice(1):'';
+    var hasLearn=sc.name==='Arabic'||sc.name==='Telugu';
     var d=document.createElement('div');d.className='sc-card';d.dataset.sc=sc.name;
     d.innerHTML='<div class="sc-sample">'+sc.sample+'</div>'+
       '<div class="sc-name">'+esc(sc.name)+'</div>'+
       '<div class="sc-count">'+sc.count.toLocaleString()+' chars<span class="sc-langcount"></span></div>'+
       '<div class="sc-badges"><span class="dir-badge">'+esc(sc.dir||'LTR')+'</span>'+
-      '<span class="'+stCls+'">'+esc(sc.status||'Living')+'</span></div>'+
+      '<span class="'+stCls+'">'+esc(sc.status||'Living')+'</span>'+
+      (hasLearn?'<span class="sc-learn-badge">Study App</span>':'')+'</div>'+
       (tLbl?'<div><span class="'+tCls+'">'+esc(tLbl)+'</span></div>':'');
     d.addEventListener('click',function(){openScript(sc);});
     el.appendChild(d);
@@ -836,6 +846,11 @@ function openScript(sc){
     '<div class="sc-ii" id="sc-cldr-cell" style="grid-column:1/-1"></div>';
   bar.classList.add('show');
   if(window.__renderScLangs)window.__renderScLangs(sc.name);
+  var learnBtn=document.getElementById('sc-learn');
+  var learnMap={'Arabic':{href:'../arabic/',label:'Learn Arabic \u2192'},'Telugu':{href:'../telugu/study.html',label:'Learn Telugu \u2192'}};
+  var learn=learnMap[sc.name];
+  if(learn){learnBtn.href=learn.href;learnBtn.textContent=learn.label;learnBtn.classList.add('show');}
+  else{learnBtn.classList.remove('show');}
   studyMode=true;
   var ssBtn=document.getElementById('sc-study');
   ssBtn.textContent='\u2261 Grid View';ssBtn.classList.add('active');
@@ -844,6 +859,7 @@ function openScript(sc){
 document.getElementById('sc-back').addEventListener('click',function(){
   scName=null;scPage=0;
   studyMode=false;
+  document.getElementById('sc-learn').classList.remove('show');
   var ssBtn=document.getElementById('sc-study');
   ssBtn.textContent='\u{1F4D6} Study View';ssBtn.classList.remove('active');
   document.getElementById('study-view').classList.remove('show');

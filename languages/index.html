@@ -14,7 +14,6 @@
   .page { max-width: 1000px; margin: 0 auto; padding: 56px 28px 100px; }
   header { border-bottom: 1px solid var(--border); padding-bottom: 24px; margin-bottom: 36px; display: flex; align-items: baseline; gap: 18px; flex-wrap: wrap; }
   h1 { font-size: 32px; font-weight: 600; letter-spacing: 0.01em; }
-  h2 { font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); margin: 36px 0 14px; }
   .subtitle { color: var(--muted); font-style: italic; font-size: 16px; flex: 1; min-width: 240px; }
   .back { color: var(--active); text-decoration: none; font-size: 14px; }
   .back:hover { text-decoration: underline; }
@@ -24,6 +23,10 @@
   .card .sample { font-family: "Noto Sans", "Segoe UI", system-ui, sans-serif; font-size: 28px; color: var(--active); margin-bottom: 6px; line-height: 1; }
   .card .t { font-size: 17px; font-weight: 600; color: var(--active); margin-bottom: 4px; }
   .card .d { font-size: 13px; color: var(--muted); line-height: 1.5; }
+  .card.featured { background: var(--tint); grid-column: 1 / -1; padding: 26px 28px; }
+  .card.featured .sample { font-size: 36px; margin-bottom: 8px; }
+  .card.featured .t { font-size: 20px; }
+  .card.featured .d { font-size: 14px; max-width: 680px; }
 </style>
 </head>
 <body>
@@ -36,36 +39,16 @@
     <a class="back" href="../../">← Workspace</a>
   </header>
 
-  <h2>Scripts</h2>
   <div class="grid">
-    <a class="card" href="arabic/">
-      <div class="sample">ع</div>
-      <div class="t">Arabic</div>
-      <div class="d">Dictionary, learn, and study tools for Modern Standard Arabic.</div>
-    </a>
-    <a class="card" href="telugu/study.html">
-      <div class="sample">అ</div>
-      <div class="t">Telugu</div>
-      <div class="d">Practice and study dashboard for the Telugu script.</div>
-    </a>
-    <a class="card" href="scripts/">
-      <div class="sample">Aα</div>
-      <div class="t">Scripts</div>
-      <div class="d">81 writing systems — browse, compare, and study characters across Unicode.</div>
-    </a>
-  </div>
-
-  <h2>Phonetics</h2>
-  <div class="grid">
-    <a class="card" href="phonetic-center/">
-      <div class="sample">/θ/</div>
-      <div class="t">Phonetic Center</div>
-      <div class="d">Compare the same IPA sounds across Latin, Arabic, and Telugu.</div>
+    <a class="card featured" href="scripts/">
+      <div class="sample">Aα あ अ</div>
+      <div class="t">Scripts →</div>
+      <div class="d">81 writing systems — browse, compare, and study characters across Unicode. Includes deep study tools for Arabic and Telugu.</div>
     </a>
     <a class="card" href="../sound-map/">
       <div class="sample">/aɪ/</div>
-      <div class="t">Sound Map</div>
-      <div class="d">Paste English text to see its phoneme stream — color-coded, with audio, stress, rhyme highlighting, and meter analysis.</div>
+      <div class="t">Sound</div>
+      <div class="d">Phoneme analysis for English text, plus an IPA chart comparing sounds across Latin, Arabic, and Telugu.</div>
     </a>
     <a class="card" href="../ipa/">
       <div class="sample">/oʊ/</div>
