@@ -584,6 +584,25 @@ body{background:var(--bg);color:var(--text);font-family:"Segoe UI",Arial,sans-se
 .sm-cov-formant-legend-item{display:inline-flex;align-items:center;gap:5px}
 .sm-cov-formant-legend-swatch{width:10px;height:10px;border-radius:50%}
 
+/* Signature sounds */
+.sm-cov-sig-group{margin-bottom:14px}
+.sm-cov-sig-group:last-child{margin-bottom:0}
+.sm-cov-sig-heading{font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px;display:flex;align-items:baseline;gap:8px}
+.sm-cov-sig-heading .sm-cov-sig-sub{color:var(--muted);font-size:9px;font-weight:400;font-style:italic;letter-spacing:0;text-transform:none}
+.sm-cov-sig-strip{display:flex;flex-wrap:wrap;gap:8px}
+.sm-cov-sig-chip{display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:52px;padding:7px 10px;border-radius:var(--radius);background:var(--surf2);border:1px solid var(--bdr);cursor:help;transition:transform .12s}
+.sm-cov-sig-chip:hover{transform:translateY(-1px)}
+.sm-cov-sig-chip.tier-unique{background:linear-gradient(135deg,rgba(232,200,64,.18),rgba(232,200,64,.05));border-color:var(--gold);box-shadow:0 0 0 1px rgba(212,162,76,.4) inset}
+.sm-cov-sig-chip.tier-rare{background:linear-gradient(135deg,rgba(232,200,64,.1),rgba(0,0,0,0));border-color:rgba(212,162,76,.7)}
+.sm-cov-sig-chip.tier-distinctive{border-color:rgba(212,162,76,.35)}
+.sm-cov-sig-chip.tier-common{border-color:var(--bdr);opacity:.85}
+.sm-cov-sig-sym{font-family:var(--mono);font-size:18px;font-weight:700;color:var(--gold);line-height:1}
+.sm-cov-sig-chip.tier-common .sm-cov-sig-sym{color:var(--text)}
+.sm-cov-sig-count{font-family:var(--mono);font-size:9px;color:var(--muted);margin-top:3px;letter-spacing:.02em}
+.sm-cov-sig-tag{font-size:8px;font-weight:700;color:#111;background:var(--gold);padding:1px 5px;border-radius:3px;margin-top:3px;letter-spacing:.06em;text-transform:uppercase}
+.sm-cov-sig-chip:not(.tier-unique) .sm-cov-sig-tag{display:none}
+.sm-cov-sig-empty{color:var(--muted);font-size:11px;font-style:italic;padding:4px 0}
+
 /* Summary line */
 .sm-cov-summary{display:flex;flex-wrap:wrap;gap:10px;padding:10px 12px;background:var(--bg);border-radius:var(--radius);font-size:11px;color:var(--muted);line-height:1.6}
 .sm-cov-summary strong{color:var(--gold)}
@@ -2521,6 +2540,7 @@ function smCovRefreshPanels() {
   right.style.minWidth = "0";
   right.appendChild(smCovBuildTractSection());
   right.appendChild(smCovBuildDiphsSection());
+  right.appendChild(smCovBuildSignatureSection());
   right.appendChild(smCovBuildSummarySection());
   panels.appendChild(right);
 }
@@ -3188,6 +3208,133 @@ function smCovBuildDiphsSection() {
       section.appendChild(strip);
     }
   });
+  return section;
+}
+
+// ── Signature sounds ───────────────────────────────────────────────
+// For each selected language, find the phonemes rare across the other
+// 14 reference languages. Ranked rarest-first; up to 4 shown per language.
+// Tiers (based on how many of the 15 total have the phoneme):
+//   unique     → only this language owns it
+//   rare       → ≤3 languages
+//   distinctive→ 4-6 languages
+//   common     → 7+ languages (shown as fallback if nothing rarer exists)
+
+function smCovSignatures(code) {
+  const idx = smRarityIndex();
+  const data = LANG_PHONEMES[code];
+  if (!data) return [];
+  const entries = [];
+  const push = (ipa, kind, extra) => {
+    const langs = idx[ipa] || new Set();
+    entries.push({
+      ipa, kind,
+      langCount: langs.size,
+      others: Array.from(langs).filter(c => c !== code),
+      ...extra
+    });
+  };
+  data.cons.forEach(([ipa, place, manner, voice]) => push(ipa, "C", { place, manner, voice }));
+  data.vowels.forEach(([ipa]) => push(ipa, "V", {}));
+  (data.diphs || []).forEach(ipa => push(ipa, "D", {}));
+  // Deduplicate by symbol (shouldn't happen within one language, but safe)
+  const seen = new Set();
+  const unique = entries.filter(e => (seen.has(e.ipa) ? false : (seen.add(e.ipa), true)));
+  unique.sort((a, b) => {
+    if (a.langCount !== b.langCount) return a.langCount - b.langCount;
+    // Tie-break: prefer consonants (usually more distinctive), then vowels, then diphs
+    const order = { C: 0, V: 1, D: 2 };
+    return order[a.kind] - order[b.kind];
+  });
+  return unique;
+}
+
+function smCovSigTier(langCount) {
+  if (langCount <= 1) return "unique";
+  if (langCount <= 3) return "rare";
+  if (langCount <= 6) return "distinctive";
+  return "common";
+}
+
+function smCovBuildSignatureSection() {
+  const section = document.createElement("div");
+  section.className = "sm-cov-section";
+  const title = document.createElement("div");
+  title.className = "sm-cov-section-title";
+  title.innerHTML = `<span>Signature sounds</span><span class="sm-cov-section-sub">rarest in this reference set</span>`;
+  section.appendChild(title);
+
+  smCovSelected.forEach((code, i) => {
+    const lang = LANG_INVENTORIES[code];
+    const sigs = smCovSignatures(code).slice(0, 4);
+
+    const group = document.createElement("div");
+    group.className = "sm-cov-sig-group";
+
+    if (smCovSelected.length > 1) {
+      const head = document.createElement("div");
+      head.className = "sm-cov-sig-heading";
+      head.style.color = SM_COV_PALETTE[i];
+      head.innerHTML = `<span>${lang.name}</span>`;
+      group.appendChild(head);
+    }
+
+    if (!sigs.length) {
+      const empty = document.createElement("div");
+      empty.className = "sm-cov-sig-empty";
+      empty.textContent = "no phonemes to analyze";
+      group.appendChild(empty);
+      section.appendChild(group);
+      return;
+    }
+
+    const strip = document.createElement("div");
+    strip.className = "sm-cov-sig-strip";
+    sigs.forEach(sig => {
+      const tier = smCovSigTier(sig.langCount);
+      const chip = document.createElement("div");
+      chip.className = `sm-cov-sig-chip tier-${tier}`;
+      const sym = document.createElement("div");
+      sym.className = "sm-cov-sig-sym";
+      sym.textContent = sig.ipa;
+      chip.appendChild(sym);
+      const cnt = document.createElement("div");
+      cnt.className = "sm-cov-sig-count";
+      cnt.textContent = `${sig.langCount} / 15`;
+      chip.appendChild(cnt);
+      if (tier === "unique") {
+        const tag = document.createElement("div");
+        tag.className = "sm-cov-sig-tag";
+        tag.textContent = "unique";
+        chip.appendChild(tag);
+      }
+      // Tooltip: describe and list co-owners
+      const featText = sig.kind === "C"
+        ? `${sig.manner} · ${sig.place} · ${sig.voice ? "voiced" : "voiceless"}`
+        : sig.kind === "V" ? "vowel" : "diphthong";
+      const others = sig.others.length
+        ? `also in: ${sig.others.map(c => LANG_INVENTORIES[c].name).sort().join(", ")}`
+        : "not in any other reference language";
+      chip.title = `/${sig.ipa}/ — ${featText}\n${others}`;
+      strip.appendChild(chip);
+    });
+    group.appendChild(strip);
+
+    // A short interpretive line under the strip
+    const topRarity = sigs[0].langCount;
+    const tier = smCovSigTier(topRarity);
+    const verdict = document.createElement("div");
+    verdict.className = "sm-cov-sig-empty";
+    verdict.style.marginTop = "6px";
+    if (tier === "unique") verdict.textContent = `has ${sigs.filter(s => s.langCount === 1).length} phoneme(s) no other reference language uses`;
+    else if (tier === "rare") verdict.textContent = "shares its rarest sounds with only a few others";
+    else if (tier === "distinctive") verdict.textContent = "typologically moderate — no strong rarities in this set";
+    else verdict.textContent = "typologically common — its sounds are widespread";
+    group.appendChild(verdict);
+
+    section.appendChild(group);
+  });
+
   return section;
 }
 
