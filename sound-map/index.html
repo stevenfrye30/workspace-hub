@@ -347,6 +347,101 @@ body{background:var(--bg);color:var(--text);font-family:"Segoe UI",Arial,sans-se
 #sm-similar{flex-shrink:0;max-height:42%;overflow-y:auto;padding:14px 24px 18px;border-top:1px solid var(--bdr);background:var(--surf)}
 #sm-similar.hidden{display:none}
 #sm-similar-header{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:10px}
+/* ── View switcher (Map / Timeline / Stats) ── */
+#sm-view-switcher{display:flex;gap:0;background:var(--surf2);border:1px solid var(--bdr);border-radius:var(--radius);padding:2px;align-self:flex-start}
+.sm-view-btn{background:none;border:none;color:var(--muted);cursor:pointer;font-size:11px;font-weight:700;letter-spacing:.06em;padding:7px 12px;text-transform:uppercase;border-radius:4px;transition:background .15s,color .15s}
+.sm-view-btn:hover{color:var(--text)}
+.sm-view-btn.active{background:var(--gold);color:#111}
+
+/* ── View containers ── */
+#sm-view-map,#sm-view-timeline,#sm-view-stats{display:none}
+#sm-output[data-view="map"] #sm-view-map{display:block}
+#sm-output[data-view="timeline"] #sm-view-timeline{display:flex;flex-direction:column;gap:18px}
+#sm-output[data-view="stats"] #sm-view-stats{display:flex;flex-direction:column;gap:22px}
+#sm-output[data-view="timeline"] #sm-vtract,
+#sm-output[data-view="stats"] #sm-vtract{display:none}
+
+/* ── Timeline view ── */
+#sm-tl-stage{display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap}
+#sm-tl-tract{flex:0 0 380px;background:var(--surf);border:1px solid var(--bdr);border-radius:var(--radius);padding:14px}
+#sm-tl-tract svg{width:100%;height:auto;display:block}
+#sm-tl-tract-header{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:8px}
+#sm-tl-tract-title{color:var(--gold);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+#sm-tl-tract-phoneme{color:var(--blue);font-family:var(--mono);font-size:28px;font-weight:700}
+#sm-tl-tract-readout{color:var(--muted);font-size:12px;margin-top:8px;text-align:center;font-style:italic;min-height:14px}
+#sm-tl-tract-meta{color:var(--muted);font-size:11px;margin-top:4px;text-align:center;font-family:var(--mono)}
+#sm-tl-side{flex:1 1 320px;min-width:280px;display:flex;flex-direction:column;gap:14px}
+#sm-tl-controls{display:flex;flex-wrap:wrap;gap:12px;align-items:center;background:var(--surf);border:1px solid var(--bdr);border-radius:var(--radius);padding:12px 14px}
+.sm-tl-play{background:var(--gold);border:none;border-radius:50%;color:#111;cursor:pointer;font-size:16px;font-weight:700;width:42px;height:42px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.sm-tl-play:hover{opacity:.85}
+.sm-tl-btn{background:var(--surf2);border:1px solid var(--bdr);border-radius:var(--radius);color:var(--text);cursor:pointer;font-size:11px;font-weight:600;letter-spacing:.04em;padding:7px 11px;text-transform:uppercase}
+.sm-tl-btn:hover{border-color:var(--gold);color:var(--gold)}
+.sm-tl-speed{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.05em}
+.sm-tl-speed input[type=range]{accent-color:var(--gold);width:120px;cursor:pointer}
+.sm-tl-speed-val{color:var(--gold);font-family:var(--mono);font-weight:700;min-width:42px;text-align:right}
+.sm-tl-loop{display:flex;align-items:center;gap:6px;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.05em;cursor:pointer;user-select:none}
+.sm-tl-loop input{accent-color:var(--gold);cursor:pointer;margin:0}
+#sm-tl-scrub-wrap{background:var(--surf);border:1px solid var(--bdr);border-radius:var(--radius);padding:10px 14px}
+#sm-tl-scrub{width:100%;accent-color:var(--gold);cursor:pointer}
+#sm-tl-scrub-labels{display:flex;justify-content:space-between;color:var(--muted);font-size:10px;font-family:var(--mono);margin-top:4px}
+#sm-tl-strip-wrap{background:var(--surf);border:1px solid var(--bdr);border-radius:var(--radius);padding:12px 14px;overflow-x:auto}
+#sm-tl-strip-title{color:var(--gold);font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px}
+#sm-tl-strip{display:flex;gap:2px;align-items:flex-end;min-width:max-content}
+.sm-tl-word{display:flex;flex-direction:column;align-items:flex-start;padding:4px 6px;border-radius:4px;border:1px solid transparent;transition:border-color .15s,background .15s}
+.sm-tl-word.current{border-color:var(--gold);background:rgba(212,162,76,.08)}
+.sm-tl-word-label{font-size:9px;color:var(--muted);letter-spacing:.05em;text-transform:uppercase;margin-bottom:3px;font-weight:600}
+.sm-tl-word-phons{display:flex;gap:2px}
+.sm-tl-phon{display:inline-flex;align-items:center;justify-content:center;min-width:24px;padding:4px 5px;border-radius:3px;font-family:var(--mono);font-size:13px;color:#111;font-weight:700;background:#999;opacity:.55;transition:opacity .12s,transform .12s,box-shadow .12s;cursor:pointer}
+.sm-tl-phon:hover{opacity:.9}
+.sm-tl-phon.current{opacity:1;transform:scale(1.18);box-shadow:0 0 0 2px var(--gold)}
+.sm-tl-phon.played{opacity:.85}
+.sm-tl-phon[data-place="bilabial"]{background:#f5a5c9}
+.sm-tl-phon[data-place="labiodental"]{background:#f5b58a}
+.sm-tl-phon[data-place="dental"]{background:#f0d860}
+.sm-tl-phon[data-place="alveolar"]{background:#9fdc9f}
+.sm-tl-phon[data-place="postalveolar"]{background:#7cd0ce}
+.sm-tl-phon[data-place="palatal"]{background:#9bbde0}
+.sm-tl-phon[data-place="velar"]{background:#b9a0db}
+.sm-tl-phon[data-place="glottal"]{background:#bbbbbb}
+.sm-tl-phon[data-place="front-vowel"]{background:#f7cf74}
+.sm-tl-phon[data-place="central-vowel"]{background:#d2c0a5}
+.sm-tl-phon[data-place="back-vowel"]{background:#b499d9}
+.sm-tl-phon[data-place="diphthong"]{background:linear-gradient(90deg,#f7cf74,#b499d9)}
+
+/* ── Stats view ── */
+.sm-stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.sm-stat-card{background:var(--surf);border:1px solid var(--bdr);border-radius:var(--radius);padding:14px 16px}
+.sm-stat-label{color:var(--muted);font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px}
+.sm-stat-value{color:var(--gold);font-family:var(--mono);font-size:26px;font-weight:700;line-height:1}
+.sm-stat-sub{color:var(--muted);font-size:11px;margin-top:4px;font-style:italic}
+.sm-stat-section{background:var(--surf);border:1px solid var(--bdr);border-radius:var(--radius);padding:14px 16px}
+.sm-stat-section-title{color:var(--gold);font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px;padding-bottom:6px;border-bottom:1px solid var(--bdr)}
+.sm-bar-row{display:grid;grid-template-columns:120px 1fr 60px;gap:10px;align-items:center;margin-bottom:6px;font-size:12px}
+.sm-bar-label{color:var(--text);text-transform:capitalize}
+.sm-bar-track{height:14px;background:var(--surf2);border-radius:3px;position:relative;overflow:hidden}
+.sm-bar-fill{height:100%;background:var(--gold);border-radius:3px;transition:width .3s}
+.sm-bar-fill.place-bilabial{background:#f5a5c9}
+.sm-bar-fill.place-labiodental{background:#f5b58a}
+.sm-bar-fill.place-dental{background:#f0d860}
+.sm-bar-fill.place-alveolar{background:#9fdc9f}
+.sm-bar-fill.place-postalveolar{background:#7cd0ce}
+.sm-bar-fill.place-palatal{background:#9bbde0}
+.sm-bar-fill.place-velar{background:#b9a0db}
+.sm-bar-fill.place-glottal{background:#bbbbbb}
+.sm-bar-fill.place-front-vowel{background:#f7cf74}
+.sm-bar-fill.place-central-vowel{background:#d2c0a5}
+.sm-bar-fill.place-back-vowel{background:#b499d9}
+.sm-bar-fill.place-diphthong{background:linear-gradient(90deg,#f7cf74,#b499d9)}
+.sm-bar-count{color:var(--muted);font-family:var(--mono);font-size:11px;text-align:right}
+.sm-stat-empty{color:var(--muted);font-style:italic;font-size:13px;padding:10px 0}
+
+@media(max-width:720px){
+  #sm-tl-tract{flex:1 1 100%}
+  #sm-tl-side{flex:1 1 100%;min-width:0}
+  .sm-tl-speed input[type=range]{width:90px}
+  .sm-bar-row{grid-template-columns:90px 1fr 50px;gap:6px;font-size:11px}
+}
+
 #sm-similar-title{color:var(--gold);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
 #sm-similar-status{color:var(--muted);font-size:11px;font-style:italic}
 .sm-sim-item{display:flex;align-items:center;gap:12px;padding:8px 10px;border-radius:var(--radius);cursor:pointer;transition:background .1s;margin-bottom:4px}
@@ -537,6 +632,11 @@ body{background:var(--bg);color:var(--text);font-family:"Segoe UI",Arial,sans-se
   <div id="sm-toolbar">
     <textarea id="sm-input" placeholder="paste a sentence or phrase (one line per verse line)…" rows="3" spellcheck="false"></textarea>
     <button id="sm-visualize" type="button">Visualize</button>
+    <div id="sm-view-switcher" role="group" aria-label="Visualization mode">
+      <button type="button" class="sm-view-btn active" data-view="map">Phoneme Map</button>
+      <button type="button" class="sm-view-btn" data-view="timeline">Articulation</button>
+      <button type="button" class="sm-view-btn" data-view="stats">Stats</button>
+    </div>
     <div id="sm-mode-picker" role="group" aria-label="Highlight mode">
       <span class="sm-mode-label">Highlight</span>
       <label><input type="radio" name="sm-mode" value="rhyme" checked>Rhyme</label>
@@ -563,7 +663,7 @@ body{background:var(--bg);color:var(--text);font-family:"Segoe UI",Arial,sans-se
       <span class="sm-legend-item"><span class="sm-swatch sm-swatch-voice"></span>glow = voiced (cords buzzing)</span>
     </div>
   </div>
-  <div id="sm-output">
+  <div id="sm-output" data-view="map">
     <div id="sm-vtract" aria-label="Vocal tract diagram">
       <div id="sm-vtract-header">
         <span class="sm-vtract-title">Vocal tract</span>
@@ -609,7 +709,11 @@ body{background:var(--bg);color:var(--text);font-family:"Segoe UI",Arial,sans-se
       </svg>
       <div id="sm-vtract-readout">Click any phoneme to see where it's made.</div>
     </div>
-    <div id="sm-empty">Paste a sentence above and click <b>Visualize</b>. Each phoneme is colored by where it's made in the mouth; the glow means your vocal cords buzz while producing it.</div>
+    <div id="sm-view-map">
+      <div id="sm-empty">Paste a sentence above and click <b>Visualize</b>. Each phoneme is colored by where it's made in the mouth; the glow means your vocal cords buzz while producing it.</div>
+    </div>
+    <div id="sm-view-timeline"></div>
+    <div id="sm-view-stats"></div>
   </div>
   <div id="sm-similar" class="hidden">
     <div id="sm-similar-header">
@@ -913,10 +1017,19 @@ function smRenderMeter(lineBox, wordsInLine, processed) {
   lineBox.appendChild(foot);
 }
 
+let smLastData = null; // { processed, byLine, mode }
+
 function smVisualize() {
   const raw = document.getElementById("sm-input").value;
   const out = document.getElementById("sm-output");
-  Array.from(out.children).forEach(c => { if (c.id !== "sm-vtract") c.remove(); });
+  const mapView = document.getElementById("sm-view-map");
+  const tlView = document.getElementById("sm-view-timeline");
+  const statsView = document.getElementById("sm-view-stats");
+
+  smStopTimeline();
+  mapView.innerHTML = "";
+  tlView.innerHTML = "";
+  statsView.innerHTML = "";
 
   const lines = raw.split(/\r?\n/);
   const processed = [];
@@ -941,15 +1054,42 @@ function smVisualize() {
     const empty = document.createElement("div");
     empty.id = "sm-empty";
     empty.textContent = "Type or paste a sentence above and click Visualize.";
-    out.appendChild(empty);
+    mapView.appendChild(empty);
+    smLastData = null;
     document.getElementById("sm-similar").classList.add("hidden");
     return;
   }
 
   const mode = document.querySelector('input[name="sm-mode"]:checked').value;
-  const groupColor = smComputeGroups(processed, byLine, mode);
   out.dataset.mode = mode;
+  smLastData = { processed, byLine, mode };
 
+  const missing = smRenderMap(processed, byLine, mode);
+  smRenderTimeline(processed, byLine);
+  smRenderStats(processed, byLine);
+
+  const totalWords = processed.length;
+  document.getElementById("status-bar").textContent =
+    `${totalWords} word${totalWords!==1?"s":""} · ${byLine.length} line${byLine.length!==1?"s":""} · highlight: ${mode}` +
+    (missing ? ` · ${missing} not in dictionary` : "");
+
+  const queryPhonemes = [];
+  for (const wp of processed) {
+    if (wp.known) for (const syl of wp.syllables) queryPhonemes.push(...syl.phonemes);
+  }
+  const compareOn = document.getElementById("sm-compare-toggle").checked;
+  if (compareOn) {
+    smLoadCorpus().then(() => smRenderSimilar(queryPhonemes));
+  } else {
+    document.getElementById("sm-similar").classList.add("hidden");
+  }
+
+  if (typeof smSaveToHash === "function") smSaveToHash();
+}
+
+function smRenderMap(processed, byLine, mode) {
+  const mapView = document.getElementById("sm-view-map");
+  const groupColor = smComputeGroups(processed, byLine, mode);
   let missing = 0;
   for (const lineWords of byLine) {
     const lineBox = document.createElement("div");
@@ -1040,27 +1180,606 @@ function smVisualize() {
       lineBox.appendChild(wrap);
     }
     smRenderMeter(lineBox, lineWords, processed);
-    out.appendChild(lineBox);
+    mapView.appendChild(lineBox);
   }
-
-  const totalWords = processed.length;
-  document.getElementById("status-bar").textContent =
-    `${totalWords} word${totalWords!==1?"s":""} · ${byLine.length} line${byLine.length!==1?"s":""} · highlight: ${mode}` +
-    (missing ? ` · ${missing} not in dictionary` : "");
-
-  const queryPhonemes = [];
-  for (const wp of processed) {
-    if (wp.known) for (const syl of wp.syllables) queryPhonemes.push(...syl.phonemes);
-  }
-  const compareOn = document.getElementById("sm-compare-toggle").checked;
-  if (compareOn) {
-    smLoadCorpus().then(() => smRenderSimilar(queryPhonemes));
-  } else {
-    document.getElementById("sm-similar").classList.add("hidden");
-  }
-
-  if (typeof smSaveToHash === "function") smSaveToHash();
+  return missing;
 }
+
+// ══════════════════════════════════
+//  TIMELINE VIEW (articulation playback)
+// ══════════════════════════════════
+// Base durations in ms (at 1x speed). Tuned to feel speech-like.
+const SM_TL_DUR = {
+  stop: 180, affricate: 220, fricative: 260, nasal: 240,
+  approximant: 220, vowel: 360, diphthong: 480, pause: 240, unknown: 240
+};
+
+function smTlPhonemeDur(p, feat, stress) {
+  if (!feat) return SM_TL_DUR.unknown;
+  let base;
+  if (feat.type === "V") {
+    base = feat.place === "diphthong" ? SM_TL_DUR.diphthong : SM_TL_DUR.vowel;
+    if (stress === 1) base *= 1.25;
+    else if (stress === 2) base *= 1.1;
+  } else {
+    base = SM_TL_DUR[feat.manner] || SM_TL_DUR.unknown;
+  }
+  return base;
+}
+
+function smTlBuildSequence(processed) {
+  // Flat sequence of events: {phoneme, feat, wordIdx, sylIdx, stress, durMs, isPause}
+  const seq = [];
+  processed.forEach((wp, wIdx) => {
+    if (!wp.known || !wp.syllables.length) {
+      seq.push({ isPause:true, wordIdx:wIdx, durMs: SM_TL_DUR.pause });
+      return;
+    }
+    wp.syllables.forEach((syl, sIdx) => {
+      syl.phonemes.forEach(p => {
+        const feat = SM_FEATS[p];
+        seq.push({
+          phoneme: p, feat, wordIdx: wIdx, sylIdx: sIdx,
+          stress: syl.stress, durMs: smTlPhonemeDur(p, feat, syl.stress), isPause:false
+        });
+      });
+    });
+    // brief pause between words
+    seq.push({ isPause:true, wordIdx:wIdx, durMs: SM_TL_DUR.pause });
+  });
+  // Trim trailing pause
+  while (seq.length && seq[seq.length-1].isPause) seq.pop();
+  return seq;
+}
+
+// Build a bigger copy of the vocal tract SVG for the timeline stage.
+function smTlBuildTractSVG() {
+  return `
+    <svg viewBox="0 0 260 180" aria-hidden="true">
+      <path d="M 25 95 Q 15 30, 85 20 L 215 22 Q 255 38, 245 90 L 220 105 Q 215 130, 200 142 L 195 172 L 45 172 Q 18 162, 25 95 Z"
+            fill="none" stroke="#32445c" stroke-width="1.4" opacity="0.55"/>
+      <path d="M 65 50 Q 75 42, 165 45 L 170 70 L 60 68 Z"
+            fill="#263447" stroke="#32445c" stroke-width="1"/>
+      <text x="115" y="62" text-anchor="middle" font-size="8" fill="#8fa3ba" letter-spacing="0.5">nasal</text>
+      <path d="M 25 95 L 25 120 Q 45 128, 180 125 Q 210 118, 210 95 Q 200 85, 165 88 Q 120 86, 80 93 Q 45 98, 25 95 Z"
+            fill="#2a3a4f" stroke="#32445c" stroke-width="1"/>
+      <path d="M 40 120 Q 90 108, 155 118 Q 180 122, 180 132 Q 130 142, 55 138 Q 40 135, 40 120 Z"
+            fill="#d08f6a" opacity="0.45"/>
+      <ellipse class="vt-part" data-place="bilabial" cx="22" cy="107" rx="7" ry="13"/>
+      <rect class="vt-part" data-place="labiodental" x="30" y="95" width="9" height="7" rx="1.5"/>
+      <rect class="vt-part" data-place="dental" x="42" y="93" width="10" height="7" rx="1.5"/>
+      <ellipse class="vt-part" data-place="alveolar" cx="58" cy="90" rx="6" ry="4"/>
+      <ellipse class="vt-part" data-place="postalveolar" cx="80" cy="88" rx="9" ry="5"/>
+      <ellipse class="vt-part" data-place="palatal" cx="115" cy="87" rx="20" ry="5"/>
+      <ellipse class="vt-part" data-place="velar" cx="165" cy="92" rx="18" ry="6"/>
+      <ellipse class="vt-part" data-place="glottal" cx="205" cy="138" rx="8" ry="11"/>
+      <circle class="vt-buzz" cx="205" cy="138" r="16" fill="none" stroke="#d4a24c" stroke-width="2" opacity="0" pointer-events="none"/>
+      <g transform="translate(118, 118)">
+        <path d="M 0 0 L 90 0 L 82 38 L 8 38 Z" fill="#263447" stroke="#32445c" stroke-width="1"/>
+        <text x="-4" y="-3" font-size="7" fill="#8fa3ba" text-anchor="end">front</text>
+        <text x="94" y="-3" font-size="7" fill="#8fa3ba">back</text>
+        <text x="-4" y="5" font-size="7" fill="#8fa3ba" text-anchor="end">high</text>
+        <text x="-4" y="40" font-size="7" fill="#8fa3ba" text-anchor="end">low</text>
+        <circle class="vt-vowel" data-vkey="front-vowel" cx="12" cy="8" r="5"/>
+        <circle class="vt-vowel" data-vkey="central-vowel" cx="45" cy="19" r="5"/>
+        <circle class="vt-vowel" data-vkey="back-vowel" cx="78" cy="8" r="5"/>
+        <circle class="vt-vowel" data-vkey="diphthong" cx="45" cy="32" r="5"/>
+      </g>
+    </svg>`;
+}
+
+const smTl = {
+  seq: [],
+  totalMs: 0,
+  starts: [],         // cumulative start time per seq item
+  playing: false,
+  rafId: 0,
+  startWallMs: 0,     // performance.now() when current play started
+  baseElapsedMs: 0,   // elapsed at last pause/seek
+  speed: 1,
+  loop: false,
+  curIdx: -1,
+  lineup: null, tractSvg: null, phonLabel: null, readout: null, meta: null,
+  scrub: null, timeLabel: null, totalLabel: null, playBtn: null,
+};
+
+function smStopTimeline() {
+  smTl.playing = false;
+  if (smTl.rafId) { cancelAnimationFrame(smTl.rafId); smTl.rafId = 0; }
+  if (smTl.playBtn) smTl.playBtn.textContent = "▶";
+}
+
+function smFmtMs(ms) {
+  const s = Math.max(0, ms) / 1000;
+  return s.toFixed(2) + "s";
+}
+
+function smRenderTimeline(processed, byLine) {
+  const view = document.getElementById("sm-view-timeline");
+  view.innerHTML = "";
+  smStopTimeline();
+
+  const seq = smTlBuildSequence(processed);
+  if (!seq.length) {
+    const msg = document.createElement("div");
+    msg.id = "sm-empty";
+    msg.textContent = "No phonemes to play. Try words in the CMU dictionary.";
+    view.appendChild(msg);
+    return;
+  }
+  smTl.seq = seq;
+  const starts = [];
+  let t = 0;
+  for (const ev of seq) { starts.push(t); t += ev.durMs; }
+  smTl.starts = starts;
+  smTl.totalMs = t;
+  smTl.baseElapsedMs = 0;
+  smTl.curIdx = -1;
+
+  // Stage (tract + label)
+  const stage = document.createElement("div");
+  stage.id = "sm-tl-stage";
+
+  const tract = document.createElement("div");
+  tract.id = "sm-tl-tract";
+  const tractHeader = document.createElement("div");
+  tractHeader.id = "sm-tl-tract-header";
+  tractHeader.innerHTML = `<span id="sm-tl-tract-title">Vocal tract (live)</span><span id="sm-tl-tract-phoneme"></span>`;
+  tract.appendChild(tractHeader);
+  const svgWrap = document.createElement("div");
+  svgWrap.innerHTML = smTlBuildTractSVG();
+  tract.appendChild(svgWrap.firstElementChild);
+  const readout = document.createElement("div");
+  readout.id = "sm-tl-tract-readout";
+  readout.textContent = "Press play to animate the articulation.";
+  tract.appendChild(readout);
+  const meta = document.createElement("div");
+  meta.id = "sm-tl-tract-meta";
+  tract.appendChild(meta);
+
+  // Side: controls + scrub + strip
+  const side = document.createElement("div");
+  side.id = "sm-tl-side";
+
+  const controls = document.createElement("div");
+  controls.id = "sm-tl-controls";
+  const playBtn = document.createElement("button");
+  playBtn.type = "button";
+  playBtn.className = "sm-tl-play";
+  playBtn.textContent = "▶";
+  playBtn.setAttribute("aria-label", "Play / pause");
+  const stepBack = document.createElement("button");
+  stepBack.type = "button";
+  stepBack.className = "sm-tl-btn";
+  stepBack.textContent = "◀◀";
+  stepBack.title = "Previous phoneme";
+  const stepFwd = document.createElement("button");
+  stepFwd.type = "button";
+  stepFwd.className = "sm-tl-btn";
+  stepFwd.textContent = "▶▶";
+  stepFwd.title = "Next phoneme";
+  const restart = document.createElement("button");
+  restart.type = "button";
+  restart.className = "sm-tl-btn";
+  restart.textContent = "⟲";
+  restart.title = "Restart";
+  const speedWrap = document.createElement("label");
+  speedWrap.className = "sm-tl-speed";
+  const speedLbl = document.createElement("span");
+  speedLbl.textContent = "Speed";
+  const speedSlider = document.createElement("input");
+  speedSlider.type = "range";
+  speedSlider.min = "0.25"; speedSlider.max = "2"; speedSlider.step = "0.05";
+  speedSlider.value = String(smTl.speed);
+  const speedVal = document.createElement("span");
+  speedVal.className = "sm-tl-speed-val";
+  speedVal.textContent = smTl.speed.toFixed(2) + "x";
+  speedWrap.appendChild(speedLbl);
+  speedWrap.appendChild(speedSlider);
+  speedWrap.appendChild(speedVal);
+  const loopWrap = document.createElement("label");
+  loopWrap.className = "sm-tl-loop";
+  const loopBox = document.createElement("input");
+  loopBox.type = "checkbox";
+  loopBox.checked = smTl.loop;
+  loopWrap.appendChild(loopBox);
+  const loopText = document.createElement("span");
+  loopText.textContent = "Loop";
+  loopWrap.appendChild(loopText);
+  controls.appendChild(playBtn);
+  controls.appendChild(restart);
+  controls.appendChild(stepBack);
+  controls.appendChild(stepFwd);
+  controls.appendChild(speedWrap);
+  controls.appendChild(loopWrap);
+
+  const scrubWrap = document.createElement("div");
+  scrubWrap.id = "sm-tl-scrub-wrap";
+  const scrub = document.createElement("input");
+  scrub.type = "range";
+  scrub.id = "sm-tl-scrub";
+  scrub.min = "0"; scrub.max = "1000"; scrub.step = "1"; scrub.value = "0";
+  scrubWrap.appendChild(scrub);
+  const scrubLabels = document.createElement("div");
+  scrubLabels.id = "sm-tl-scrub-labels";
+  const timeLabel = document.createElement("span");
+  timeLabel.textContent = "0.00s";
+  const totalLabel = document.createElement("span");
+  totalLabel.textContent = smFmtMs(smTl.totalMs);
+  scrubLabels.appendChild(timeLabel);
+  scrubLabels.appendChild(totalLabel);
+  scrubWrap.appendChild(scrubLabels);
+
+  // Phoneme strip
+  const stripWrap = document.createElement("div");
+  stripWrap.id = "sm-tl-strip-wrap";
+  const stripTitle = document.createElement("div");
+  stripTitle.id = "sm-tl-strip-title";
+  stripTitle.textContent = "Phoneme sequence";
+  stripWrap.appendChild(stripTitle);
+  const strip = document.createElement("div");
+  strip.id = "sm-tl-strip";
+
+  // Build per-word groups using seq grouping by wordIdx (skip pure-pause blocks between words)
+  const wordGroups = new Map();
+  seq.forEach((ev, i) => {
+    if (!wordGroups.has(ev.wordIdx)) wordGroups.set(ev.wordIdx, []);
+    wordGroups.get(ev.wordIdx).push(i);
+  });
+  wordGroups.forEach((indices, wIdx) => {
+    const wp = processed[wIdx];
+    const wordBox = document.createElement("div");
+    wordBox.className = "sm-tl-word";
+    wordBox.dataset.wordIdx = String(wIdx);
+    const lbl = document.createElement("div");
+    lbl.className = "sm-tl-word-label";
+    lbl.textContent = wp.word + (wp.known ? "" : " (?)");
+    wordBox.appendChild(lbl);
+    const phons = document.createElement("div");
+    phons.className = "sm-tl-word-phons";
+    indices.forEach(i => {
+      const ev = seq[i];
+      if (ev.isPause) return;
+      const b = document.createElement("span");
+      b.className = "sm-tl-phon";
+      b.textContent = ev.phoneme;
+      b.dataset.seqIdx = String(i);
+      if (ev.feat) b.dataset.place = ev.feat.place;
+      b.title = smDescribe(ev.phoneme, ev.feat);
+      b.addEventListener("click", () => smTlSeekToIndex(i));
+      phons.appendChild(b);
+    });
+    if (phons.children.length) wordBox.appendChild(phons);
+    strip.appendChild(wordBox);
+  });
+  stripWrap.appendChild(strip);
+
+  side.appendChild(controls);
+  side.appendChild(scrubWrap);
+  side.appendChild(stripWrap);
+
+  stage.appendChild(tract);
+  stage.appendChild(side);
+  view.appendChild(stage);
+
+  smTl.tractSvg = tract.querySelector("svg");
+  smTl.phonLabel = tract.querySelector("#sm-tl-tract-phoneme");
+  smTl.readout = readout;
+  smTl.meta = meta;
+  smTl.scrub = scrub;
+  smTl.timeLabel = timeLabel;
+  smTl.totalLabel = totalLabel;
+  smTl.playBtn = playBtn;
+
+  playBtn.addEventListener("click", smTlTogglePlay);
+  restart.addEventListener("click", () => { smTlSeekMs(0); if (!smTl.playing) smTlUpdateFrame(0); });
+  stepFwd.addEventListener("click", () => smTlStep(1));
+  stepBack.addEventListener("click", () => smTlStep(-1));
+  speedSlider.addEventListener("input", () => {
+    const v = parseFloat(speedSlider.value) || 1;
+    // Lock elapsed time at current instant so speed change doesn't jump playhead.
+    if (smTl.playing) {
+      smTl.baseElapsedMs = smTlCurrentMs();
+      smTl.startWallMs = performance.now();
+    }
+    smTl.speed = v;
+    speedVal.textContent = v.toFixed(2) + "x";
+  });
+  loopBox.addEventListener("change", () => { smTl.loop = loopBox.checked; });
+  scrub.addEventListener("input", () => {
+    const frac = parseInt(scrub.value, 10) / 1000;
+    smTlSeekMs(frac * smTl.totalMs);
+    smTlUpdateFrame(smTl.baseElapsedMs);
+  });
+
+  smTlUpdateFrame(0);
+}
+
+function smTlCurrentMs() {
+  if (!smTl.playing) return smTl.baseElapsedMs;
+  const wall = performance.now() - smTl.startWallMs;
+  return smTl.baseElapsedMs + wall * smTl.speed;
+}
+
+function smTlSeekMs(ms) {
+  smTl.baseElapsedMs = Math.max(0, Math.min(smTl.totalMs, ms));
+  smTl.startWallMs = performance.now();
+}
+
+function smTlSeekToIndex(i) {
+  if (i < 0 || i >= smTl.seq.length) return;
+  smTlSeekMs(smTl.starts[i] + 1);
+  smTlUpdateFrame(smTl.baseElapsedMs);
+}
+
+function smTlStep(dir) {
+  const cur = smTl.curIdx < 0 ? 0 : smTl.curIdx;
+  let target = cur + dir;
+  while (target >= 0 && target < smTl.seq.length && smTl.seq[target].isPause) target += dir;
+  if (target < 0) target = 0;
+  if (target >= smTl.seq.length) target = smTl.seq.length - 1;
+  smTlSeekToIndex(target);
+  if (smTl.playing) smTlPause();
+}
+
+function smTlTogglePlay() {
+  if (smTl.playing) smTlPause();
+  else smTlPlay();
+}
+
+function smTlPlay() {
+  if (!smTl.seq.length) return;
+  if (smTl.baseElapsedMs >= smTl.totalMs - 1) smTl.baseElapsedMs = 0;
+  smTl.playing = true;
+  smTl.startWallMs = performance.now();
+  smTl.playBtn.textContent = "❚❚";
+  const tick = () => {
+    if (!smTl.playing) return;
+    const t = smTlCurrentMs();
+    if (t >= smTl.totalMs) {
+      if (smTl.loop) { smTl.baseElapsedMs = 0; smTl.startWallMs = performance.now(); smTlUpdateFrame(0); }
+      else { smTlPause(); smTlUpdateFrame(smTl.totalMs); return; }
+    } else {
+      smTlUpdateFrame(t);
+    }
+    smTl.rafId = requestAnimationFrame(tick);
+  };
+  smTl.rafId = requestAnimationFrame(tick);
+}
+
+function smTlPause() {
+  smTl.baseElapsedMs = smTlCurrentMs();
+  smTl.playing = false;
+  if (smTl.rafId) { cancelAnimationFrame(smTl.rafId); smTl.rafId = 0; }
+  if (smTl.playBtn) smTl.playBtn.textContent = "▶";
+}
+
+function smTlFindIndex(timeMs) {
+  // Linear search; sequences are small.
+  const starts = smTl.starts;
+  for (let i = starts.length - 1; i >= 0; i--) {
+    if (timeMs >= starts[i]) return i;
+  }
+  return 0;
+}
+
+function smTlUpdateFrame(timeMs) {
+  if (!smTl.seq.length) return;
+  const idx = smTlFindIndex(timeMs);
+  // Update scrubber + time
+  if (smTl.scrub) {
+    const frac = smTl.totalMs > 0 ? timeMs / smTl.totalMs : 0;
+    smTl.scrub.value = String(Math.round(frac * 1000));
+    smTl.timeLabel.textContent = smFmtMs(timeMs);
+  }
+  if (idx === smTl.curIdx) return;
+  smTl.curIdx = idx;
+
+  // Highlight tract for current phoneme
+  const ev = smTl.seq[idx];
+  const svg = smTl.tractSvg;
+  if (svg) {
+    svg.querySelectorAll(".vt-part.active,.vt-vowel.active").forEach(el => el.classList.remove("active"));
+    const buzz = svg.querySelector(".vt-buzz");
+    if (buzz) { buzz.classList.remove("buzzing"); buzz.style.opacity = "0"; }
+    if (!ev.isPause && ev.feat) {
+      if (ev.feat.type === "C") {
+        const el = svg.querySelector(`.vt-part[data-place="${ev.feat.place}"]`);
+        if (el) el.classList.add("active");
+      } else {
+        const el = svg.querySelector(`.vt-vowel[data-vkey="${ev.feat.place}"]`);
+        if (el) el.classList.add("active");
+      }
+      if (ev.feat.voice && buzz) { buzz.classList.add("buzzing"); buzz.style.opacity = "1"; }
+    }
+  }
+  if (smTl.phonLabel) smTl.phonLabel.textContent = ev.isPause ? "·" : ev.phoneme;
+  if (smTl.readout) {
+    if (ev.isPause) smTl.readout.textContent = "— pause —";
+    else smTl.readout.textContent = smDescribe(ev.phoneme, ev.feat);
+  }
+  if (smTl.meta) {
+    if (ev.isPause) smTl.meta.textContent = "";
+    else {
+      const stressTxt = ev.stress === 1 ? " · primary stress" : ev.stress === 2 ? " · secondary stress" : "";
+      smTl.meta.textContent = `${Math.round(ev.durMs)}ms${stressTxt}`;
+    }
+  }
+
+  // Update strip highlight + played state
+  const strip = document.getElementById("sm-tl-strip");
+  if (strip) {
+    strip.querySelectorAll(".sm-tl-phon.current").forEach(el => el.classList.remove("current"));
+    const cur = strip.querySelector(`.sm-tl-phon[data-seq-idx="${idx}"]`);
+    if (cur) {
+      cur.classList.add("current");
+      // Scroll into view horizontally
+      cur.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+    }
+    // Mark played vs upcoming
+    strip.querySelectorAll(".sm-tl-phon").forEach(el => {
+      const i = parseInt(el.dataset.seqIdx, 10);
+      el.classList.toggle("played", i < idx);
+    });
+    // Current word highlight
+    strip.querySelectorAll(".sm-tl-word.current").forEach(el => el.classList.remove("current"));
+    const wIdx = ev.wordIdx;
+    const wEl = strip.querySelector(`.sm-tl-word[data-word-idx="${wIdx}"]`);
+    if (wEl) wEl.classList.add("current");
+  }
+}
+
+// ══════════════════════════════════
+//  STATS VIEW
+// ══════════════════════════════════
+function smRenderStats(processed, byLine) {
+  const view = document.getElementById("sm-view-stats");
+  view.innerHTML = "";
+
+  const allPhons = [];
+  let known = 0, unknown = 0;
+  let sylCount = 0, stressedCount = 0;
+  for (const wp of processed) {
+    if (wp.known) {
+      known++;
+      for (const syl of wp.syllables) {
+        sylCount++;
+        if (syl.stress === 1) stressedCount++;
+        for (const p of syl.phonemes) allPhons.push(p);
+      }
+    } else {
+      unknown++;
+    }
+  }
+
+  if (!allPhons.length) {
+    const msg = document.createElement("div");
+    msg.className = "sm-stat-empty";
+    msg.textContent = "No dictionary-known words to analyze.";
+    view.appendChild(msg);
+    return;
+  }
+
+  let vowels = 0, cons = 0, voiced = 0, voiceless = 0;
+  const placeCount = {};
+  const mannerCount = {};
+  const phonCount = {};
+  for (const p of allPhons) {
+    phonCount[p] = (phonCount[p] || 0) + 1;
+    const f = SM_FEATS[p];
+    if (!f) continue;
+    placeCount[f.place] = (placeCount[f.place] || 0) + 1;
+    if (f.type === "V") vowels++;
+    else {
+      cons++;
+      mannerCount[f.manner] = (mannerCount[f.manner] || 0) + 1;
+    }
+    if (f.voice) voiced++;
+    else voiceless++;
+  }
+  const total = vowels + cons;
+  const vowelPct = total ? Math.round(vowels/total*100) : 0;
+  const voicedPct = total ? Math.round(voiced/total*100) : 0;
+
+  // Summary cards
+  const grid = document.createElement("div");
+  grid.className = "sm-stats-grid";
+  const addCard = (label, value, sub) => {
+    const c = document.createElement("div");
+    c.className = "sm-stat-card";
+    c.innerHTML = `<div class="sm-stat-label">${label}</div><div class="sm-stat-value">${value}</div>${sub?`<div class="sm-stat-sub">${sub}</div>`:""}`;
+    grid.appendChild(c);
+  };
+  addCard("Phonemes", allPhons.length, `${Object.keys(phonCount).length} unique`);
+  addCard("Syllables", sylCount, `${stressedCount} primary-stressed`);
+  addCard("Words", known, unknown ? `${unknown} unknown` : "all in dictionary");
+  addCard("Vowel ratio", vowelPct + "%", `${vowels} vowels · ${cons} consonants`);
+  addCard("Voicing", voicedPct + "%", `${voiced} voiced · ${voiceless} voiceless`);
+  addCard("Lines", byLine.length, "");
+  view.appendChild(grid);
+
+  // Place-of-articulation histogram
+  const placeOrder = [
+    "bilabial","labiodental","dental","alveolar","postalveolar",
+    "palatal","velar","glottal",
+    "front-vowel","central-vowel","back-vowel","diphthong"
+  ];
+  const placeMax = Math.max(...Object.values(placeCount), 1);
+  const placeSec = document.createElement("div");
+  placeSec.className = "sm-stat-section";
+  placeSec.innerHTML = `<div class="sm-stat-section-title">Where it's made in the mouth</div>`;
+  for (const place of placeOrder) {
+    const n = placeCount[place] || 0;
+    if (!n && place !== "alveolar") continue;
+    const pct = Math.round(n / placeMax * 100);
+    const row = document.createElement("div");
+    row.className = "sm-bar-row";
+    row.innerHTML = `
+      <div class="sm-bar-label">${place.replace("-vowel"," vowel")}</div>
+      <div class="sm-bar-track"><div class="sm-bar-fill place-${place}" style="width:${pct}%"></div></div>
+      <div class="sm-bar-count">${n} · ${Math.round(n/allPhons.length*100)}%</div>`;
+    placeSec.appendChild(row);
+  }
+  view.appendChild(placeSec);
+
+  // Manner histogram (consonants only)
+  const mannerOrder = ["stop","fricative","affricate","nasal","approximant"];
+  if (cons > 0) {
+    const mannerMax = Math.max(...Object.values(mannerCount), 1);
+    const mannerSec = document.createElement("div");
+    mannerSec.className = "sm-stat-section";
+    mannerSec.innerHTML = `<div class="sm-stat-section-title">How consonants are made</div>`;
+    for (const m of mannerOrder) {
+      const n = mannerCount[m] || 0;
+      if (!n) continue;
+      const pct = Math.round(n / mannerMax * 100);
+      const row = document.createElement("div");
+      row.className = "sm-bar-row";
+      row.innerHTML = `
+        <div class="sm-bar-label">${m}</div>
+        <div class="sm-bar-track"><div class="sm-bar-fill" style="width:${pct}%"></div></div>
+        <div class="sm-bar-count">${n} · ${Math.round(n/cons*100)}%</div>`;
+      mannerSec.appendChild(row);
+    }
+    view.appendChild(mannerSec);
+  }
+
+  // Top phonemes
+  const topPhons = Object.entries(phonCount).sort((a,b) => b[1]-a[1]).slice(0, 12);
+  const topMax = topPhons[0] ? topPhons[0][1] : 1;
+  const topSec = document.createElement("div");
+  topSec.className = "sm-stat-section";
+  topSec.innerHTML = `<div class="sm-stat-section-title">Most frequent phonemes</div>`;
+  for (const [p, n] of topPhons) {
+    const f = SM_FEATS[p];
+    const placeClass = f ? `place-${f.place}` : "";
+    const pct = Math.round(n / topMax * 100);
+    const row = document.createElement("div");
+    row.className = "sm-bar-row";
+    row.innerHTML = `
+      <div class="sm-bar-label" style="font-family:var(--mono);color:var(--gold)">/${p}/</div>
+      <div class="sm-bar-track"><div class="sm-bar-fill ${placeClass}" style="width:${pct}%"></div></div>
+      <div class="sm-bar-count">${n}</div>`;
+    topSec.appendChild(row);
+  }
+  view.appendChild(topSec);
+}
+
+// ══════════════════════════════════
+//  VIEW SWITCHER
+// ══════════════════════════════════
+function smSwitchView(view) {
+  const out = document.getElementById("sm-output");
+  out.dataset.view = view;
+  document.querySelectorAll(".sm-view-btn").forEach(b => {
+    b.classList.toggle("active", b.dataset.view === view);
+  });
+  if (view !== "timeline") smStopTimeline();
+}
+
+document.querySelectorAll(".sm-view-btn").forEach(btn => {
+  btn.addEventListener("click", () => smSwitchView(btn.dataset.view));
+});
 
 document.getElementById("sm-visualize").addEventListener("click", smVisualize);
 document.getElementById("sm-input").addEventListener("keydown", e => {
