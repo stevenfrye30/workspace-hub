@@ -454,6 +454,59 @@ const LANG_PHONEMES = {
   }
 })();
 
+// ════════════════════════════════════════════════════════════════════════
+//  Reference formant values (F1, F2 in Hz) — adult male averages
+// ════════════════════════════════════════════════════════════════════════
+//
+// Drawn from Peterson & Barney (1952) for English and Ladefoged &
+// Maddieson's cardinal-vowel tabulations for the rest. Women's and
+// children's formants scale ~17% and ~36% higher respectively; we ship
+// the male reference as a single baseline and flag this in the UI.
+// Missing symbols fall back to the schwa position (500, 1500).
+
+const VOWEL_FORMANTS = {
+  // Close front
+  "i":  { F1: 270, F2: 2290 }, "iː": { F1: 250, F2: 2400 },
+  "y":  { F1: 235, F2: 2100 }, "yː": { F1: 235, F2: 2100 },
+  "ɪ":  { F1: 390, F2: 1990 }, "ʏ":  { F1: 450, F2: 1750 },
+  // Close-mid front
+  "e":  { F1: 390, F2: 2300 }, "eː": { F1: 380, F2: 2300 },
+  "ø":  { F1: 370, F2: 1900 }, "øː": { F1: 370, F2: 1900 },
+  // Open-mid front
+  "ɛ":  { F1: 530, F2: 1840 }, "ɛː": { F1: 530, F2: 1840 },
+  "œ":  { F1: 585, F2: 1710 },
+  // Near-open / open front
+  "æ":  { F1: 660, F2: 1720 },
+  "a":  { F1: 850, F2: 1610 }, "aː": { F1: 850, F2: 1610 },
+  // Central
+  "ɨ":  { F1: 320, F2: 1500 }, "ʉ":  { F1: 320, F2: 1500 },
+  "ɯ":  { F1: 300, F2: 1390 },
+  "ə":  { F1: 500, F2: 1500 }, "ɜ":  { F1: 580, F2: 1400 },
+  "ɝ":  { F1: 490, F2: 1350 }, "ɚ":  { F1: 490, F2: 1350 },
+  "ɐ":  { F1: 750, F2: 1300 },
+  // Back close
+  "u":  { F1: 300, F2: 870 },  "uː": { F1: 280, F2: 870 },
+  "ʊ":  { F1: 440, F2: 1020 },
+  // Back close-mid
+  "o":  { F1: 360, F2: 640 },  "oː": { F1: 360, F2: 640 },
+  "ɤ":  { F1: 460, F2: 1310 },
+  // Back open-mid
+  "ɔ":  { F1: 570, F2: 840 }, "ʌ":  { F1: 640, F2: 1190 },
+  // Back open
+  "ɑ":  { F1: 730, F2: 1090 }, "ɒ":  { F1: 750, F2: 820 }
+};
+
+// Nasal vowels share their oral counterpart's formants (F1/F2 only — nasalization
+// mostly shows up in spectral zeros and extra resonances above F1).
+for (const pair of [
+  ["ĩ","i"],["ẽ","e"],["ɛ̃","ɛ"],["œ̃","œ"],["ɑ̃","ɑ"],["ɔ̃","ɔ"],
+  ["ɐ̃","ɐ"],["õ","o"],["ũ","u"]
+]) {
+  if (VOWEL_FORMANTS[pair[1]] && !VOWEL_FORMANTS[pair[0]]) {
+    VOWEL_FORMANTS[pair[0]] = VOWEL_FORMANTS[pair[1]];
+  }
+}
+
 // Convert a flat phoneme list (user's input) into a normalized place-distribution
 // vector in LANG_PLACE_ORDER. Phonemes without a SM_FEATS entry are ignored.
 function langUserVector(phonemes) {
