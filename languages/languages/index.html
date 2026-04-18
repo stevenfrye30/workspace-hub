@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Languages — Languages</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg:#1e2a3a; --fg:#e8ecf1; --muted:#8fa3ba;
+    --border:#32445c; --active:#d4a24c; --tint:#263447; --card:#243347;
+    --living:#10b981; --classical:#d4a24c; --historical:#8b93c4; --extinct:#b85858;
+  }
+  body { font-family: Georgia, serif; background: var(--bg); color: var(--fg); line-height: 1.55; min-height: 100vh; }
+  .page { max-width: 1280px; margin: 0 auto; padding: 40px 24px 80px; }
+  header { border-bottom: 1px solid var(--border); padding-bottom: 20px; margin-bottom: 22px; display: flex; align-items: baseline; gap: 18px; flex-wrap: wrap; }
+  h1 { font-size: 28px; font-weight: 600; letter-spacing: 0.01em; }
+  .subtitle { color: var(--muted); font-style: italic; font-size: 15px; flex: 1; min-width: 240px; }
+  .back { color: var(--active); text-decoration: none; font-size: 14px; }
+  .back:hover { text-decoration: underline; }
+
+  .toolbar { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin-bottom: 18px; }
+  .search { flex: 1; min-width: 200px; max-width: 360px; background: var(--tint); border: 1px solid var(--border); color: var(--fg); padding: 8px 12px; border-radius: 6px; font-family: inherit; font-size: 14px; outline: none; }
+  .search:focus { border-color: var(--active); }
+  .tabs { display: flex; background: var(--tint); border: 1px solid var(--border); border-radius: 6px; overflow: hidden; }
+  .tab { background: transparent; border: none; color: var(--muted); padding: 8px 16px; cursor: pointer; font-family: inherit; font-size: 14px; border-right: 1px solid var(--border); transition: background 0.12s, color 0.12s; }
+  .tab:last-child { border-right: none; }
+  .tab:hover { color: var(--fg); }
+  .tab.active { background: var(--active); color: #1e2a3a; font-weight: 600; }
+  .filter { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; font-size: 13px; color: var(--muted); }
+  .filter label { display: inline-flex; align-items: center; gap: 5px; cursor: pointer; user-select: none; }
+  .filter input { cursor: pointer; accent-color: var(--active); }
+
+  .legend { display: flex; gap: 14px; font-size: 12px; color: var(--muted); margin-bottom: 14px; flex-wrap: wrap; }
+  .legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; }
+  .dot.living { background: var(--living); }
+  .dot.classical { background: var(--classical); }
+  .dot.historical { background: var(--historical); }
+  .dot.extinct { background: var(--extinct); }
+
+  .layout { display: grid; grid-template-columns: 1fr 340px; gap: 18px; }
+  @media (max-width: 960px) { .layout { grid-template-columns: 1fr; } }
+
+  .views { background: var(--card); border: 1px solid var(--border); min-height: 520px; }
+  .view { display: none; }
+  .view.active { display: block; }
+
+  /* Tree view */
+  .tree-toolbar { display: flex; gap: 10px; align-items: center; padding: 10px 18px; border-bottom: 1px solid var(--border); flex-wrap: wrap; }
+  .tree-toolbar .sub-tabs { display: flex; background: var(--tint); border: 1px solid var(--border); border-radius: 4px; overflow: hidden; }
+  .tree-toolbar .sub-tab { background: transparent; border: none; color: var(--muted); padding: 5px 12px; cursor: pointer; font-family: inherit; font-size: 12px; border-right: 1px solid var(--border); }
+  .tree-toolbar .sub-tab:last-child { border-right: none; }
+  .tree-toolbar .sub-tab.active { background: var(--active); color: #1e2a3a; font-weight: 600; }
+  .tree-toolbar select { background: var(--tint); border: 1px solid var(--border); color: var(--fg); padding: 4px 8px; border-radius: 4px; font-family: inherit; font-size: 13px; outline: none; }
+  .tree-toolbar select:focus { border-color: var(--active); }
+  .tree { padding: 14px 18px; }
+  .tree-diagram { padding: 14px 18px; overflow: auto; max-height: 80vh; }
+  .tree-diagram svg { display: block; background: transparent; }
+  .tree-diagram .tdg-line { stroke: var(--border); stroke-width: 1; fill: none; }
+  .tree-diagram .tdg-label { font-family: Georgia, serif; font-size: 12px; dominant-baseline: middle; cursor: pointer; }
+  .tree-diagram .tdg-label.internal { fill: var(--active); font-weight: 600; font-size: 12px; }
+  .tree-diagram .tdg-label.leaf { fill: var(--fg); }
+  .tree-diagram .tdg-label.leaf:hover { text-decoration: underline; }
+  .tree-diagram .tdg-label.leaf.selected { fill: var(--active); font-weight: 700; }
+  .tree-diagram .tdg-leaf-dot { stroke: none; }
+  .tree-diagram .tdg-leaf-dot.living { fill: #10b981; }
+  .tree-diagram .tdg-leaf-dot.classical { fill: #d4a24c; }
+  .tree-diagram .tdg-leaf-dot.historical { fill: #8b93c4; }
+  .tree-diagram .tdg-leaf-dot.extinct { fill: #b85858; }
+  .tree ul { list-style: none; padding-left: 18px; border-left: 1px solid var(--border); margin: 2px 0; }
+  .tree > ul { padding-left: 0; border-left: none; }
+  .branch > .label { font-weight: 600; cursor: pointer; padding: 4px 6px; color: var(--fg); user-select: none; display: flex; align-items: center; gap: 6px; border-radius: 3px; }
+  .branch > .label:hover { background: var(--tint); }
+  .branch > .label .caret { display: inline-block; width: 10px; text-align: center; color: var(--muted); font-size: 10px; transition: transform 0.12s; }
+  .branch.collapsed > ul { display: none; }
+  .branch.collapsed > .label .caret { transform: rotate(-90deg); }
+  .branch > .label .count { color: var(--muted); font-size: 12px; font-weight: 400; margin-left: 6px; }
+  .branch.top > .label { font-size: 16px; margin-top: 10px; color: var(--active); }
+  .leaf { padding: 3px 6px 3px 20px; cursor: pointer; font-size: 14px; display: flex; align-items: center; gap: 8px; border-radius: 3px; }
+  .leaf:hover { background: var(--tint); }
+  .leaf.selected { background: var(--tint); outline: 1px solid var(--active); }
+  .leaf .native { color: var(--muted); font-style: italic; font-size: 13px; }
+
+  /* Timeline */
+  .timeline { padding: 14px 18px; overflow-x: auto; }
+  .timeline-inner { min-width: 960px; position: relative; }
+  .tl-axis { position: sticky; top: 0; background: var(--card); border-bottom: 1px solid var(--border); padding: 6px 0 8px; display: flex; font-size: 11px; color: var(--muted); z-index: 2; }
+  .tl-axis .tick { position: absolute; border-left: 1px solid var(--border); padding-left: 4px; height: 100%; }
+  .tl-group { margin-top: 12px; }
+  .tl-group > .tl-group-label { font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--active); margin-bottom: 4px; font-weight: 600; }
+  .tl-row { position: relative; height: 22px; margin-bottom: 2px; }
+  .tl-row .row-label { position: absolute; left: 0; font-size: 12px; color: var(--muted); white-space: nowrap; z-index: 1; background: var(--card); padding-right: 6px; }
+  .tl-bar { position: absolute; height: 14px; top: 4px; border-radius: 2px; cursor: pointer; opacity: 0.85; transition: opacity 0.12s, outline 0.12s; }
+  .tl-bar:hover { opacity: 1; outline: 1px solid var(--fg); }
+  .tl-bar.selected { opacity: 1; outline: 2px solid var(--active); }
+  .tl-bar.living { background: var(--living); }
+  .tl-bar.classical { background: var(--classical); }
+  .tl-bar.historical { background: var(--historical); }
+  .tl-bar.extinct { background: var(--extinct); }
+  .tl-label { position: absolute; font-size: 11px; color: var(--fg); white-space: nowrap; top: 5px; pointer-events: none; text-shadow: 0 1px 2px rgba(0,0,0,0.5); }
+
+  /* Map */
+  .map-wrap { height: 620px; position: relative; }
+  #map { width: 100%; height: 100%; background: #152030; }
+  .leaflet-container { font-family: Georgia, serif; background: #152030; }
+  .leaflet-popup-content-wrapper { background: var(--card); color: var(--fg); border: 1px solid var(--border); border-radius: 4px; }
+  .leaflet-popup-tip { background: var(--card); }
+  .leaflet-popup-content { margin: 10px 14px; font-size: 13px; line-height: 1.5; }
+  .leaflet-popup-content b { color: var(--active); }
+  .leaflet-popup-content .native { color: var(--muted); font-style: italic; }
+
+  /* Stats view */
+  .stats { padding: 18px; }
+  .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px; }
+  .stat-card { background: var(--bg); border: 1px solid var(--border); padding: 14px 18px 16px; border-radius: 4px; }
+  .stat-card h3 { font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); font-weight: 600; margin-bottom: 12px; }
+  .stat-card .card-total { font-size: 11px; color: var(--muted); float: right; font-family: ui-monospace, monospace; font-weight: 400; letter-spacing: 0; text-transform: none; }
+  .stat-row { display: grid; grid-template-columns: 130px 1fr 60px; align-items: center; gap: 10px; font-size: 13px; margin-bottom: 5px; }
+  .stat-row .label { color: var(--fg); font-size: 12.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .stat-row .bar { background: var(--tint); border-radius: 3px; height: 9px; overflow: hidden; }
+  .stat-row .bar .fill { height: 100%; background: var(--active); transition: width 0.3s; }
+  .stat-row .bar .fill.status-living      { background: #10b981; }
+  .stat-row .bar .fill.status-classical   { background: #d4a24c; }
+  .stat-row .bar .fill.status-historical  { background: #8b93c4; }
+  .stat-row .bar .fill.status-extinct     { background: #b85858; }
+  .stat-row .count { color: var(--muted); font-family: ui-monospace, monospace; font-size: 11.5px; text-align: right; }
+
+  .stat-card .empty-note { color: var(--muted); font-size: 12px; font-style: italic; }
+
+  /* Active-languages histogram */
+  .century-hist { display: grid; grid-template-columns: 70px 1fr 60px; align-items: center; gap: 10px; font-size: 12px; margin-bottom: 4px; }
+  .century-hist .century { color: var(--muted); font-family: ui-monospace, monospace; font-size: 11px; text-align: right; }
+  .century-hist .ch-bar { background: var(--tint); border-radius: 2px; height: 10px; overflow: hidden; display: flex; }
+  .century-hist .ch-seg.living { background: #10b981; }
+  .century-hist .ch-seg.classical { background: #d4a24c; }
+  .century-hist .ch-seg.historical { background: #8b93c4; }
+  .century-hist .ch-seg.extinct { background: #b85858; }
+  .century-hist .ch-total { color: var(--fg); font-family: ui-monospace, monospace; font-size: 11px; text-align: right; }
+
+  .stats-legend { display: flex; gap: 14px; flex-wrap: wrap; font-size: 11px; color: var(--muted); margin-top: 14px; }
+  .stats-legend span { display: inline-flex; align-items: center; gap: 5px; }
+  .stats-legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; }
+
+  /* Cognates view */
+  .cognates-wrap { padding: 18px; }
+  .cognate-toolbar { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; flex-wrap: wrap; }
+  .cognate-toolbar label { font-size: 13px; color: var(--muted); }
+  .cognate-toolbar select { background: var(--tint); border: 1px solid var(--border); color: var(--fg); padding: 6px 10px; border-radius: 4px; font-family: inherit; font-size: 14px; outline: none; }
+  .cognate-toolbar select:focus { border-color: var(--active); }
+  .cognate-header { background: var(--card); border: 1px solid var(--border); padding: 14px 20px; margin-bottom: 16px; border-radius: 4px; }
+  .cognate-header .pie { font-family: "Noto Sans", serif; font-size: 22px; color: var(--active); font-weight: 600; }
+  .cognate-header .pie-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; margin-right: 8px; }
+  .cognate-header .gloss { color: var(--fg); margin-top: 6px; font-size: 14px; font-style: italic; }
+  .cognate-family { margin-bottom: 18px; }
+  .cognate-family h4 { font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--active); margin-bottom: 6px; font-weight: 600; border-bottom: 1px solid var(--border); padding-bottom: 4px; }
+  .cognate-row { display: grid; grid-template-columns: 160px 1fr; gap: 16px; padding: 4px 0; border-bottom: 1px dashed var(--border); font-size: 13.5px; }
+  .cognate-row:last-child { border-bottom: none; }
+  .cognate-row .lang-name { color: var(--muted); font-size: 12.5px; }
+  .cognate-row .lang-name .lang-id { font-family: ui-monospace, monospace; color: #4a5a70; font-size: 11px; margin-left: 4px; }
+  .cognate-row .form { color: var(--fg); font-family: "Noto Sans", "Noto Sans Devanagari", "Noto Sans Hebrew", "Noto Sans Ethiopic", "Noto Sans Armenian", serif; }
+  .cognate-row.drift .form { color: var(--muted); font-style: italic; }
+  .cognate-row .drift-marker { color: var(--active); cursor: help; }
+  .cognate-row.missing .form { color: #4a5a70; font-style: italic; }
+  .cognate-notes { margin-top: 18px; padding: 12px 18px; background: var(--tint); border-left: 3px solid var(--active); border-radius: 2px; font-size: 12.5px; line-height: 1.7; color: var(--muted); }
+  .cognate-notes .ct-note { margin-bottom: 6px; }
+  .cognate-notes .ct-note b { color: var(--fg); }
+
+  /* Sound change timeline */
+  .sound-timeline { margin-top: 26px; padding: 18px 20px; background: var(--card); border: 1px solid var(--border); border-radius: 4px; }
+  .sound-timeline h4 { font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--active); margin-bottom: 14px; font-weight: 600; }
+  .lineage-track { margin-bottom: 22px; }
+  .lineage-track:last-child { margin-bottom: 0; }
+  .lineage-label { font-size: 12.5px; color: var(--fg); font-weight: 600; margin-bottom: 10px; }
+  .lineage-label .flow { color: var(--muted); font-weight: 400; font-size: 11.5px; }
+  .stage-strip { display: flex; flex-wrap: nowrap; gap: 6px; overflow-x: auto; padding-bottom: 6px; }
+  .stage-box { flex-shrink: 0; min-width: 140px; max-width: 170px; background: var(--tint); border: 1px solid var(--border); border-radius: 3px; padding: 8px 10px; position: relative; font-size: 12px; }
+  .stage-box:not(:last-child)::after { content: "→"; position: absolute; right: -12px; top: 50%; transform: translateY(-50%); color: var(--muted); font-size: 14px; z-index: 1; }
+  .stage-box .s-stage { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 3px; }
+  .stage-box .s-form { font-family: "Noto Sans", "Noto Sans Devanagari", "Noto Sans Arabic", serif; font-size: 14.5px; color: var(--active); font-weight: 600; }
+  .stage-box .s-date { font-family: ui-monospace, monospace; font-size: 10px; color: var(--muted); margin-top: 2px; }
+  .stage-box.clickable { cursor: pointer; }
+  .stage-box.clickable:hover { border-color: var(--active); }
+  .stage-note { margin-top: 8px; padding: 6px 10px; background: var(--tint); border-left: 2px solid var(--active); font-size: 12px; color: var(--muted); font-style: italic; line-height: 1.6; display: none; }
+  .stage-note.show { display: block; }
+
+  /* Detail sidebar */
+  .detail { background: var(--card); border: 1px solid var(--border); padding: 20px 22px; position: sticky; top: 14px; align-self: start; min-height: 200px; }
+  .detail .empty { color: var(--muted); font-style: italic; font-size: 14px; }
+  .detail h3 { font-size: 22px; margin-bottom: 2px; color: var(--fg); }
+  .detail .native-name { color: var(--muted); font-style: italic; font-size: 14px; margin-bottom: 14px; }
+  .detail .pill { display: inline-block; padding: 2px 10px; border-radius: 10px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600; margin-right: 6px; }
+  .pill.living { background: rgba(16,185,129,0.18); color: var(--living); }
+  .pill.classical { background: rgba(212,162,76,0.18); color: var(--classical); }
+  .pill.historical { background: rgba(139,147,196,0.18); color: var(--historical); }
+  .pill.extinct { background: rgba(184,88,88,0.18); color: var(--extinct); }
+  .detail dl { margin-top: 14px; display: grid; grid-template-columns: 88px 1fr; gap: 8px 12px; font-size: 13.5px; }
+  .detail dt { color: var(--muted); text-transform: uppercase; font-size: 11px; letter-spacing: 0.08em; padding-top: 2px; }
+  .detail dd { color: var(--fg); }
+  .detail .crumbs { font-size: 13px; color: var(--muted); }
+  .detail .scripts-dd a { color: var(--active); text-decoration: none; border-bottom: 1px dotted var(--active); }
+  .detail .scripts-dd a:hover { border-bottom-style: solid; }
+  .detail .scripts-dd span { color: var(--fg); }
+  .detail .inventory-link { display: inline-block; color: var(--active); text-decoration: none; font-size: 13px; padding: 6px 12px; border: 1px solid var(--active); border-radius: 3px; transition: background 0.12s; }
+  .detail .inventory-link:hover { background: rgba(212,162,76,0.15); }
+  .detail .crumbs span { color: var(--fg); }
+  .detail .crumbs .sep { color: var(--muted); margin: 0 4px; }
+  .detail .note { margin-top: 14px; padding: 10px 12px; background: var(--tint); border-left: 2px solid var(--active); font-size: 13px; color: var(--muted); font-style: italic; line-height: 1.6; }
+</style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <div>
+      <h1>Languages</h1>
+      <div class="subtitle">Family tree, approximate period, and geography.</div>
+    </div>
+    <nav style="display:flex;gap:14px;align-items:baseline">
+      <a class="back" href="../scripts/">Scripts</a>
+      <a class="back" href="../../sound-map/">Sound</a>
+      <a class="back" href="../../">← Workspace</a>
+    </nav>
+  </header>
+
+  <div class="toolbar">
+    <input class="search" id="search" placeholder="Search language, family, region…" />
+    <div class="tabs" role="tablist">
+      <button class="tab active" data-view="tree">Family Tree</button>
+      <button class="tab" data-view="timeline">Timeline</button>
+      <button class="tab" data-view="map">Map</button>
+      <button class="tab" data-view="stats">Stats</button>
+      <button class="tab" data-view="cognates">Cognates</button>
+    </div>
+    <div class="filter">
+      <label><input type="checkbox" class="f-status" value="living" checked /> Living</label>
+      <label><input type="checkbox" class="f-status" value="classical" checked /> Classical</label>
+      <label><input type="checkbox" class="f-status" value="historical" checked /> Historical</label>
+      <label><input type="checkbox" class="f-status" value="extinct" checked /> Extinct</label>
+    </div>
+  </div>
+
+  <div class="legend">
+    <span><span class="dot living"></span>living — still spoken</span>
+    <span><span class="dot classical"></span>classical — preserved for liturgy or letters</span>
+    <span><span class="dot historical"></span>historical — earlier stage of a living language</span>
+    <span><span class="dot extinct"></span>extinct — no longer spoken, no continuing use</span>
+  </div>
+
+  <div class="layout">
+    <div class="views">
+      <div class="view tree active" id="view-tree"></div>
+      <div class="view timeline" id="view-timeline"></div>
+      <div class="view map" id="view-map"><div class="map-wrap"><div id="map"></div></div></div>
+      <div class="view stats" id="view-stats"></div>
+      <div class="view cognates" id="view-cognates"></div>
+    </div>
+    <aside class="detail" id="detail">
+      <div class="empty">Select a language to see details — family path, approximate period, geographic center, and scripts.</div>
+    </aside>
+  </div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+<script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+<script src="data.js"></script>
+<script src="cognates.js"></script>
+<script src="../phonetic-center/inventories.js"></script>
+<script>
+const STATUS_LABEL = { living:"living", classical:"classical", historical:"historical", extinct:"extinct" };
+
+// Script-name → ISO 15924 code (filename under ../scripts/pages/). Null = no page.
+const SCRIPT_ISO = {
+  "Latin":"Latn","Arabic":"Arab","Cyrillic":"Cyrl","Devanagari":"Deva","Greek":"Grek","Hebrew":"Hebr",
+  "Ethiopic":"Ethi","Tamil":"Taml","Telugu":"Telu","Kannada":"Knda","Malayalam":"Mlym","Sinhala":"Sinh",
+  "Thai":"Thai","Lao":"Laoo","Tibetan":"Tibt","Burmese":"Mymr","Khmer":"Khmr","Mongolian":"Mong",
+  "Armenian":"Armn","Georgian":"Geor","Hangul":"Hang","Han":"Hani","Hiragana":"Hira","Katakana":"Kana",
+  "Runic":"Runr","Gothic":"Goth","Coptic":"Copt","Syriac":"Syrc","Gurmukhi":"Guru","Gujarati":"Gujr",
+  "Odia":"Orya","Bengali":"Beng","Bengali-Assamese":"Beng","Meitei":"Mtei","Tifinagh":"Tfng",
+  "N'Ko":"Nkoo","Vai":"Vaii","Cherokee":"Cher","Canadian Aboriginal syllabics":"Cans","Javanese":"Java",
+  "Balinese":"Bali","Sundanese":"Sund","Batak":"Batk","Old Italic":"Ital","Linear B":"Linb","Linear A":"Lina",
+  "Cuneiform":"Xsux","Egyptian hieroglyphs":"Egyp","Old Persian cuneiform":"Xpeo","Avestan":"Avst",
+  "Phoenician":"Phnx","Ugaritic":"Ugar","Nabataean":"Nbat","Samaritan":"Samr","Glagolitic":"Glag",
+  "Brahmi":"Brah","Kharosthi":"Khar","Sogdian":"Sogd","Manichaean":"Mani","Old Turkic":"Orkh",
+  "Old Uyghur":"Ougr","Tangut":"Tang","Lepcha":"Lepc","Limbu":"Limb","Saurashtra":"Saur","Chakma":"Cakm",
+  "Tagalog":"Tglg","Tagbanwa":"Tagb","Hanunoo":"Hano","Pahawh Hmong":"Hmng","Mru":"Mroo","Ol Chiki":"Olck",
+  "Lontara":"Bugi","Sylheti Nagri":"Sylo","Warang Citi":"Wara","Thaana":"Thaa","Tai Tham":"Lana",
+  "New Tai Lue":"Talu","Tai Viet":"Tavt","Tai Nüa":"Tayo","Yi":"Yiii","Manchu":"Mong","Pahlavi":"Phli",
+  "Osage":"Osge","Dogra":"Dogr","Sharada":"Shrd","Tirhuta":"Tirh","Mithilakshar":"Tirh","Siddham":"Sidd",
+  "Modi":"Modi","Elbasan":"Elba","Elymaic":"Elym","Palmyrene":"Palm","Hatran":"Hatr","Imperial Aramaic":"Armi",
+  "Aramaic":"Armi","Medefaidrin":"Medf","Pau Cin Hau":"Pauc","Mahajani":"Mahj","Khojki":"Khoj",
+  "Multani":"Mult","Wancho":"Wcho","Marchen":"Marc","Bhaiksuki":"Bhks","Soyombo":"Soyo",
+  "Zanabazar Square":"Zanb","Makasar":"Maka","Gunjala Gondi":"Gong","Masaram Gondi":"Gonm","Nüshu":"Nshu",
+  "Tangsa":"Tnsa","Toto":"Toto","Nag Mundari":"Nagm","Kawi":"Kawi","Kaithi":"Kthi","Takri":"Takr",
+  "Mende Kikakui":"Mend","Bassa Vah":"Bass","Anatolian hieroglyphs":"Hluw","Ancient North Arabian":"Narb",
+  "Ancient South Arabian":"Sarb","Carian":"Cari","Caucasian Albanian":"Aghb","Cham":"Cham",
+  "Cypriot syllabary":"Cprt","Duployan":"Dupl","Khwarezmian":"Chrs","Lycian":"Lyci","Lydian":"Lydi",
+  "Ogham":"Ogam","Hanifi Rohingya":"Rohg","Sidetic":"Sidt","Meroitic":"Mero","Lisu":"Lisu","Grantha":"Gran",
+  "Gujr":"Gujr","Vithkuqi":"Vith","Yezidi":"Yezi","Rejang":"Rjng","Buhid":"Buhd","Bamum":"Bamu",
+  "Bopomofo":"Bopo","Braille":"Brai","Buginese":"Bugi","Phags-pa":"Phag","Deseret":"Dsrt","Shavian":"Shaw",
+  "Osmanya":"Osma","Adlam":"Adlm","Ahom":"Ahom","New Tai Le":"Tale","Newa":"Newa","Miao":"Plrd",
+  "Sindhi":"Sind","Sora Sompeng":"Sora","Psalter Pahlavi":"Phlp","Inscriptional Parthian":"Prti",
+  "Hungarian Runes":"Hung","Kayah Li":"Kali","Garay":"Gara","Zanabazar":"Zanb","Nandinagari":"Nand",
+  "SignWriting":"Sgnw",
+};
+function scriptLink(name) {
+  const iso = SCRIPT_ISO[name];
+  if (!iso) return `<span>${name}</span>`;
+  return `<a href="../scripts/pages/${iso}.html" target="_blank">${name}</a>`;
+}
+
+const TIMELINE_MIN = -3500;
+const TIMELINE_MAX = 2100;
+let selectedId = null;
+let mapInstance = null;
+let mapMarkers = {};
+
+function fmtYear(y) {
+  if (y >= 2100) return "today";
+  if (y < 0) return `${Math.abs(y)} BCE`;
+  if (y < 1000) return `${y} CE`;
+  return `${y}`;
+}
+
+function fmtPeriod(lang) {
+  const [a, b] = lang.period;
+  if (lang.status === "living") return `~${fmtYear(a)} – today`;
+  if (lang.status === "classical") return `${fmtYear(a)} – today (liturgical / literary)`;
+  return `${fmtYear(a)} – ${fmtYear(b)}`;
+}
+
+function fmtSpeakers(n) {
+  if (n == null) return "—";
+  if (n < 0.01) return `~${Math.round(n * 1e6).toLocaleString()}`;
+  if (n < 1) return `~${(n * 1000).toFixed(0)} thousand`;
+  if (n < 10) return `~${n.toFixed(1)} million`;
+  return `~${Math.round(n)} million`;
+}
+
+// ── Filters ─────────────────────────────────────────────────
+function activeStatusSet() {
+  return new Set(Array.from(document.querySelectorAll(".f-status:checked")).map(el => el.value));
+}
+
+function filtered() {
+  const q = document.getElementById("search").value.trim().toLowerCase();
+  const s = activeStatusSet();
+  return LANGUAGES.filter(l => {
+    if (!s.has(l.status)) return false;
+    if (!q) return true;
+    const hay = [l.name, l.native, ...l.family, l.note || ""].join(" ").toLowerCase();
+    return hay.includes(q);
+  });
+}
+
+// ── Detail panel ────────────────────────────────────────────
+function renderDetail(lang) {
+  const el = document.getElementById("detail");
+  if (!lang) {
+    el.innerHTML = `<div class="empty">Select a language to see details — family path, approximate period, geographic center, and scripts.</div>`;
+    return;
+  }
+  const crumbs = lang.family.map(f => `<span>${f}</span>`).join('<span class="sep">›</span>');
+  const hasInventory = typeof LANG_PHONEMES !== "undefined" && LANG_PHONEMES[lang.id];
+  const inventoryLink = hasInventory
+    ? `<a href="../phonetic-center/#lang=${lang.id}&name=${encodeURIComponent(lang.name)}" target="_blank" class="inventory-link">View phoneme inventory →</a>`
+    : "";
+  el.innerHTML = `
+    <h3>${lang.name}</h3>
+    ${lang.native ? `<div class="native-name">${lang.native}</div>` : ""}
+    <span class="pill ${lang.status}">${STATUS_LABEL[lang.status]}</span>
+    <dl>
+      <dt>Family</dt><dd class="crumbs">${crumbs}</dd>
+      <dt>Period</dt><dd>${fmtPeriod(lang)}</dd>
+      <dt>Speakers</dt><dd>${fmtSpeakers(lang.speakers)}</dd>
+      <dt>Scripts</dt><dd class="scripts-dd">${lang.scripts.map(scriptLink).join(", ")}</dd>
+      <dt>Region</dt><dd>${lang.coords[0].toFixed(1)}°, ${lang.coords[1].toFixed(1)}°</dd>
+    </dl>
+    ${lang.note ? `<div class="note">${lang.note}</div>` : ""}
+    ${inventoryLink ? `<div style="margin-top:14px">${inventoryLink}</div>` : ""}
+  `;
+}
+
+function selectLang(id) {
+  selectedId = id;
+  const lang = LANGUAGES.find(l => l.id === id);
+  renderDetail(lang);
+  document.querySelectorAll(".leaf.selected, .tl-bar.selected").forEach(el => el.classList.remove("selected"));
+  document.querySelectorAll(`[data-id="${id}"]`).forEach(el => el.classList.add("selected"));
+  if (mapInstance && mapMarkers[id]) {
+    mapMarkers[id].openPopup();
+  }
+}
+
+// ── Family tree ─────────────────────────────────────────────
+function buildTree(langs) {
+  const root = {};
+  for (const l of langs) {
+    let node = root;
+    for (const branch of l.family) {
+      node[branch] = node[branch] || { _children: {}, _langs: [] };
+      node = node[branch]._children;
+    }
+    // attach to the leaf-most node
+    let parent = root;
+    for (let i = 0; i < l.family.length; i++) {
+      if (i === l.family.length - 1) parent[l.family[i]]._langs.push(l);
+      parent = parent[l.family[i]]._children;
+    }
+  }
+  return root;
+}
+
+function countLeaves(node) {
+  let n = 0;
+  for (const k of Object.keys(node._children || {})) {
+    n += (node._children[k]._langs || []).length;
+    n += countLeaves(node._children[k]);
+  }
+  return n;
+}
+
+function renderTreeNode(name, node, depth) {
+  const total = (node._langs || []).length + countLeaves(node);
+  const childKeys = Object.keys(node._children || {});
+  const cls = `branch${depth === 0 ? " top" : ""}`;
+  const children = childKeys.map(k => renderTreeNode(k, node._children[k], depth + 1)).join("");
+  const leaves = (node._langs || []).map(l => `
+    <li class="leaf" data-id="${l.id}">
+      <span class="dot ${l.status}"></span>
+      <span>${l.name}</span>
+      ${l.native ? `<span class="native">${l.native}</span>` : ""}
+    </li>`).join("");
+  return `<li class="${cls}">
+    <div class="label"><span class="caret">▾</span>${name}<span class="count">${total}</span></div>
+    <ul>${children}${leaves}</ul>
+  </li>`;
+}
+
+let treeMode = "list"; // "list" | "diagram"
+let diagramFamily = null; // selected top-level family name for diagram mode
+
+function renderTree() {
+  const container = document.getElementById("view-tree");
+  const langs = filtered();
+  const tree = buildTree(langs);
+  const famNames = Object.keys(tree).sort();
+
+  // default diagram family
+  if (!diagramFamily || !tree[diagramFamily]) diagramFamily = famNames[0];
+
+  const toolbar = `<div class="tree-toolbar">
+    <div class="sub-tabs">
+      <button class="sub-tab ${treeMode === 'list' ? 'active' : ''}" data-tmode="list">List</button>
+      <button class="sub-tab ${treeMode === 'diagram' ? 'active' : ''}" data-tmode="diagram">Diagram</button>
+    </div>
+    ${treeMode === 'diagram' ? `
+      <label style="font-size:12px;color:var(--muted)">Family</label>
+      <select id="tree-family-picker">
+        ${famNames.map(n => `<option value="${n}" ${n === diagramFamily ? 'selected' : ''}>${n}</option>`).join("")}
+      </select>
+    ` : ""}
+  </div>`;
+
+  let body;
+  if (treeMode === "list") {
+    body = `<div class="tree"><ul class="tree-root">${famNames.map(k => renderTreeNode(k, tree[k], 0)).join("")}</ul></div>`;
+  } else {
+    body = `<div class="tree-diagram" id="tree-diagram-wrap">${renderDiagramSVG(diagramFamily, tree[diagramFamily])}</div>`;
+  }
+
+  container.innerHTML = toolbar + body;
+  if (selectedId) {
+    const el = container.querySelector(`[data-id="${selectedId}"]`);
+    if (el) el.classList.add("selected");
+  }
+}
+
+// ── SVG family tree diagram ─────────────────────────────────
+function renderDiagramSVG(familyName, rootNode) {
+  if (!rootNode) return "";
+  // Build an intermediate structure with layout positions
+  // Nodes: each intermediate family becomes a node; each language becomes a leaf
+  const nodes = [];
+  const links = [];
+  let leafY = 0;
+  const LEAF_HEIGHT = 18;
+  const DEPTH_X = 180;
+  const LEFT_PAD = 20;
+  const TOP_PAD = 16;
+
+  function walk(name, node, depth) {
+    const me = { name, depth, x: LEFT_PAD + depth * DEPTH_X, y: 0, children: [], leaves: [], isLeaf: false };
+    nodes.push(me);
+
+    // direct leaves (languages)
+    for (const l of node._langs || []) {
+      const leaf = { name: l.name, native: l.native, status: l.status, id: l.id, depth: depth + 1,
+                     x: LEFT_PAD + (depth + 1) * DEPTH_X, y: TOP_PAD + leafY * LEAF_HEIGHT, isLeaf: true };
+      leafY++;
+      nodes.push(leaf);
+      links.push({ from: me, to: leaf });
+      me.leaves.push(leaf);
+    }
+    // child families
+    for (const childName of Object.keys(node._children || {}).sort()) {
+      const child = walk(childName, node._children[childName], depth + 1);
+      me.children.push(child);
+      links.push({ from: me, to: child });
+    }
+    // y of this node = centroid of children + leaves
+    const all = [...me.children, ...me.leaves];
+    if (all.length) {
+      me.y = all.reduce((sum, c) => sum + c.y, 0) / all.length;
+    } else {
+      me.y = TOP_PAD + leafY * LEAF_HEIGHT;
+      leafY++;
+    }
+    return me;
+  }
+
+  walk(familyName, rootNode, 0);
+
+  // width/height
+  const maxDepth = nodes.reduce((m, n) => Math.max(m, n.depth), 0);
+  const width = LEFT_PAD + (maxDepth + 1) * DEPTH_X + 240;
+  const height = TOP_PAD + leafY * LEAF_HEIGHT + TOP_PAD;
+
+  // Draw: for each link, a step path: horizontal from parent mid-x to child-x at parent-y, then vertical to child-y.
+  // For cleaner trees, use a "hockey-stick": go right from parent to midpoint, then down/up, then right to child.
+  const paths = links.map(({ from, to }) => {
+    const midX = (from.x + to.x) / 2;
+    return `M${from.x} ${from.y} H${midX} V${to.y} H${to.x}`;
+  }).join(" ");
+
+  const nodeHtml = nodes.map(n => {
+    if (n.isLeaf) {
+      const dot = `<circle class="tdg-leaf-dot ${n.status}" cx="${n.x - 8}" cy="${n.y}" r="3"/>`;
+      return `${dot}<text class="tdg-label leaf" x="${n.x}" y="${n.y}" data-id="${n.id}">${n.name}${n.native ? ` <tspan fill="#8fa3ba" font-style="italic" font-size="10"> ${n.native}</tspan>` : ""}</text>`;
+    } else {
+      return `<text class="tdg-label internal" x="${n.x}" y="${n.y}">${n.name}</text>`;
+    }
+  }).join("");
+
+  return `<svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
+    <path class="tdg-line" d="${paths}"/>
+    ${nodeHtml}
+  </svg>`;
+}
+
+// ── Timeline ────────────────────────────────────────────────
+function renderTimeline() {
+  const langs = filtered().slice().sort((a, b) => a.period[0] - b.period[0]);
+  const groups = {};
+  for (const l of langs) {
+    const key = l.family[0];
+    (groups[key] = groups[key] || []).push(l);
+  }
+  const range = TIMELINE_MAX - TIMELINE_MIN;
+  const ticks = [-3000, -2000, -1000, 0, 500, 1000, 1500, 2000];
+  const axisHtml = ticks.map(t => {
+    const pct = ((t - TIMELINE_MIN) / range) * 100;
+    return `<span class="tick" style="left:${pct}%">${fmtYear(t)}</span>`;
+  }).join("");
+  const groupsHtml = Object.keys(groups).sort().map(gk => {
+    const rows = groups[gk].map(l => {
+      const startPct = ((l.period[0] - TIMELINE_MIN) / range) * 100;
+      const widthPct = ((l.period[1] - l.period[0]) / range) * 100;
+      return `<div class="tl-row">
+        <div class="tl-bar ${l.status}" data-id="${l.id}" style="left:${startPct}%;width:${Math.max(widthPct, 0.4)}%" title="${l.name} — ${fmtPeriod(l)}"></div>
+        <div class="tl-label" style="left:calc(${startPct + Math.max(widthPct, 0.4)}% + 6px)">${l.name}</div>
+      </div>`;
+    }).join("");
+    return `<div class="tl-group"><div class="tl-group-label">${gk}</div>${rows}</div>`;
+  }).join("");
+  document.getElementById("view-timeline").innerHTML = `
+    <div class="timeline-inner">
+      <div class="tl-axis" style="position:relative;height:24px">${axisHtml}</div>
+      ${groupsHtml}
+    </div>
+  `;
+  if (selectedId) {
+    const el = document.querySelector(`.tl-bar[data-id="${selectedId}"]`);
+    if (el) el.classList.add("selected");
+  }
+}
+
+// ── Map ─────────────────────────────────────────────────────
+let mapClusterLayer = null;
+
+function ensureMap() {
+  if (mapInstance) return;
+  mapInstance = L.map("map", { worldCopyJump: true, minZoom: 2 }).setView([30, 20], 2);
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    attribution: "© OpenStreetMap contributors",
+    maxZoom: 7,
+  }).addTo(mapInstance);
+  mapClusterLayer = L.markerClusterGroup({
+    chunkedLoading: true,
+    spiderfyOnMaxZoom: true,
+    showCoverageOnHover: false,
+    maxClusterRadius: 50,
+    disableClusteringAtZoom: 6,
+  });
+  mapInstance.addLayer(mapClusterLayer);
+}
+
+const STATUS_COLOR = { living:"#10b981", classical:"#d4a24c", historical:"#8b93c4", extinct:"#b85858" };
+
+function renderMap() {
+  ensureMap();
+  mapClusterLayer.clearLayers();
+  mapMarkers = {};
+  const markers = [];
+  for (const l of filtered()) {
+    const m = L.circleMarker(l.coords, {
+      radius: 6,
+      color: "#fff",
+      weight: 1,
+      fillColor: STATUS_COLOR[l.status],
+      fillOpacity: 0.85,
+    });
+    m.bindPopup(`
+      <b>${l.name}</b>${l.native ? ` <span class="native">${l.native}</span>` : ""}<br>
+      ${l.family.join(" › ")}<br>
+      <i>${fmtPeriod(l)}</i>
+    `);
+    m.on("click", () => selectLang(l.id));
+    markers.push(m);
+    mapMarkers[l.id] = m;
+  }
+  mapClusterLayer.addLayers(markers);
+  setTimeout(() => mapInstance.invalidateSize(), 50);
+}
+
+// ── Stats view ──────────────────────────────────────────────
+const CONTINENTS = [
+  { name: "Europe",        test: (lat, lng) => lat > 35 && lat < 72 && lng > -25 && lng < 45 },
+  { name: "Asia",          test: (lat, lng) => lat > -10 && lat < 75 && lng >= 45 && lng < 180 },
+  { name: "Africa",        test: (lat, lng) => lat > -35 && lat <= 37 && lng >= -20 && lng < 55 },
+  { name: "Oceania",       test: (lat, lng) => lat > -50 && lat < 10 && (lng >= 110 && lng < 180 || lng >= -180 && lng < -130) },
+  { name: "N. America",    test: (lat, lng) => lat > 15 && lng < -50 && lng > -170 },
+  { name: "C. America",    test: (lat, lng) => lat > 7 && lat <= 25 && lng <= -80 && lng > -110 },
+  { name: "S. America",    test: (lat, lng) => lat <= 15 && lng < -30 && lng > -85 },
+];
+function continentOf(lang) {
+  const [lat, lng] = lang.coords;
+  const c = CONTINENTS.find(c => c.test(lat, lng));
+  return c ? c.name : "Other";
+}
+
+function renderStatsView() {
+  const langs = filtered();
+  if (!langs.length) {
+    document.getElementById("view-stats").innerHTML = `<div class="stats"><div class="stat-card"><div class="empty-note">No languages match current filters.</div></div></div>`;
+    return;
+  }
+
+  // Top-level families
+  const families = {};
+  for (const l of langs) families[l.family[0]] = (families[l.family[0]] || 0) + 1;
+  const famRanked = Object.entries(families).sort((a, b) => b[1] - a[1]);
+  const famTop = famRanked.slice(0, 15);
+  const famMax = famTop.length ? famTop[0][1] : 1;
+  const famRows = famTop.map(([name, n]) => {
+    const pct = Math.round((n / famMax) * 100);
+    return `<div class="stat-row">
+      <div class="label" title="${name}">${name}</div>
+      <div class="bar"><div class="fill" style="width:${pct}%"></div></div>
+      <div class="count">${n}</div>
+    </div>`;
+  }).join("");
+  const famExtraLine = famRanked.length > 15 ? `<div class="stat-row" style="grid-template-columns:1fr 60px"><div class="label" style="color:var(--muted);font-style:italic">… ${famRanked.length - 15} more families</div><div class="count">${famRanked.slice(15).reduce((s, [,n]) => s + n, 0)}</div></div>` : "";
+
+  // Status breakdown
+  const statuses = { living: 0, classical: 0, historical: 0, extinct: 0 };
+  for (const l of langs) statuses[l.status] = (statuses[l.status] || 0) + 1;
+  const statMax = Math.max(...Object.values(statuses), 1);
+  const statOrder = ["living", "classical", "historical", "extinct"];
+  const statRows = statOrder.filter(s => statuses[s]).map(s => {
+    const pct = Math.round((statuses[s] / statMax) * 100);
+    const pctTotal = Math.round((statuses[s] / langs.length) * 100);
+    return `<div class="stat-row">
+      <div class="label" style="text-transform:capitalize">${s}</div>
+      <div class="bar"><div class="fill status-${s}" style="width:${pct}%"></div></div>
+      <div class="count">${statuses[s]} · ${pctTotal}%</div>
+    </div>`;
+  }).join("");
+
+  // Speaker buckets
+  const BUCKETS = [
+    { label: "100M+",        test: s => s >= 100 },
+    { label: "10M – 100M",   test: s => s >= 10 && s < 100 },
+    { label: "1M – 10M",     test: s => s >= 1 && s < 10 },
+    { label: "100K – 1M",    test: s => s >= 0.1 && s < 1 },
+    { label: "10K – 100K",   test: s => s >= 0.01 && s < 0.1 },
+    { label: "1K – 10K",     test: s => s >= 0.001 && s < 0.01 },
+    { label: "< 1K",         test: s => s > 0 && s < 0.001 },
+    { label: "no data",      test: s => s == null },
+  ];
+  const speakerBuckets = BUCKETS.map(b => ({
+    label: b.label,
+    count: langs.filter(l => b.test(l.speakers)).length,
+  }));
+  const spMax = Math.max(...speakerBuckets.map(b => b.count), 1);
+  const spRows = speakerBuckets.filter(b => b.count).map(b => {
+    const pct = Math.round((b.count / spMax) * 100);
+    return `<div class="stat-row">
+      <div class="label">${b.label}</div>
+      <div class="bar"><div class="fill" style="width:${pct}%"></div></div>
+      <div class="count">${b.count}</div>
+    </div>`;
+  }).join("");
+
+  // Scripts usage
+  const scripts = {};
+  for (const l of langs) for (const s of l.scripts) {
+    if (s === "—") continue;
+    scripts[s] = (scripts[s] || 0) + 1;
+  }
+  const scriptTop = Object.entries(scripts).sort((a, b) => b[1] - a[1]).slice(0, 15);
+  const scMax = scriptTop.length ? scriptTop[0][1] : 1;
+  const scRows = scriptTop.map(([name, n]) => {
+    const pct = Math.round((n / scMax) * 100);
+    return `<div class="stat-row">
+      <div class="label" title="${name}">${name}</div>
+      <div class="bar"><div class="fill" style="width:${pct}%"></div></div>
+      <div class="count">${n}</div>
+    </div>`;
+  }).join("");
+
+  // Continent distribution
+  const continents = {};
+  for (const l of langs) {
+    const c = continentOf(l);
+    continents[c] = (continents[c] || 0) + 1;
+  }
+  const contRanked = Object.entries(continents).sort((a, b) => b[1] - a[1]);
+  const contMax = contRanked.length ? contRanked[0][1] : 1;
+  const contRows = contRanked.map(([name, n]) => {
+    const pct = Math.round((n / contMax) * 100);
+    const pctTotal = Math.round((n / langs.length) * 100);
+    return `<div class="stat-row">
+      <div class="label">${name}</div>
+      <div class="bar"><div class="fill" style="width:${pct}%"></div></div>
+      <div class="count">${n} · ${pctTotal}%</div>
+    </div>`;
+  }).join("");
+
+  // Languages active in each period (by century, stacked by status)
+  const CENTURIES = [];
+  for (let y = -3000; y <= 2000; y += 500) CENTURIES.push(y);
+  const histRows = CENTURIES.map(year => {
+    const active = langs.filter(l => l.period[0] <= year && l.period[1] >= year);
+    const byStatus = { living: 0, classical: 0, historical: 0, extinct: 0 };
+    for (const l of active) byStatus[l.status]++;
+    const total = active.length;
+    if (!total) return "";
+    const label = year < 0 ? `${Math.abs(year)} BCE` : year === 0 ? "0" : year === 2000 ? "today" : `${year} CE`;
+    const histMax2 = langs.length;
+    const segPct = n => (n / histMax2) * 100;
+    return `<div class="century-hist">
+      <div class="century">${label}</div>
+      <div class="ch-bar">${["extinct","historical","classical","living"]
+        .filter(s => byStatus[s])
+        .map(s => `<div class="ch-seg ${s}" style="width:${segPct(byStatus[s])}%" title="${s}: ${byStatus[s]}"></div>`)
+        .join("")}
+      </div>
+      <div class="ch-total">${total}</div>
+    </div>`;
+  }).join("");
+  const histLegend = `<div class="stats-legend">
+    <span><i style="background:#10b981"></i>living</span>
+    <span><i style="background:#d4a24c"></i>classical</span>
+    <span><i style="background:#8b93c4"></i>historical</span>
+    <span><i style="background:#b85858"></i>extinct</span>
+  </div>`;
+
+  document.getElementById("view-stats").innerHTML = `
+    <div class="stats">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <h3>Top-level families <span class="card-total">${langs.length} total</span></h3>
+          ${famRows}${famExtraLine}
+        </div>
+        <div class="stat-card">
+          <h3>Status <span class="card-total">${langs.length} total</span></h3>
+          ${statRows}
+        </div>
+        <div class="stat-card">
+          <h3>Speaker counts (living + classical)</h3>
+          ${spRows}
+        </div>
+        <div class="stat-card">
+          <h3>Scripts used <span class="card-total">top 15</span></h3>
+          ${scRows}
+        </div>
+        <div class="stat-card">
+          <h3>Distribution by region</h3>
+          ${contRows}
+          <div class="empty-note" style="margin-top:10px;font-size:11px">Each language is assigned to the continent of its approximate geographic center — so a language spanning regions (e.g., Russian, Swahili) lands in one bucket.</div>
+        </div>
+        <div class="stat-card" style="grid-column: 1 / -1">
+          <h3>Languages active by period</h3>
+          ${histRows || '<div class="empty-note">No periods to show.</div>'}
+          ${histLegend}
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+// ── Cognates view ───────────────────────────────────────────
+let selectedCognateWord = null;
+let selectedCognateFamily = "ie";
+
+function renderCognatesView() {
+  const container = document.getElementById("view-cognates");
+  if (typeof COGNATE_FAMILIES === "undefined") {
+    container.innerHTML = `<div class="cognates-wrap"><div class="empty-note">Cognate data not loaded.</div></div>`;
+    return;
+  }
+  const fam = COGNATE_FAMILIES[selectedCognateFamily];
+  const words = Object.keys(fam.words);
+  if (!selectedCognateWord || !fam.words[selectedCognateWord]) selectedCognateWord = words[0];
+  const word = fam.words[selectedCognateWord];
+
+  const langLookup = Object.fromEntries(LANGUAGES.map(l => [l.id, l]));
+
+  const famHtml = fam.lang_order.map(({ family, langs }) => {
+    const rows = langs.map(id => {
+      const form = word.forms[id];
+      if (form === undefined) return "";
+      const langEntry = langLookup[id];
+      const langName = langEntry ? langEntry.name : id;
+      const isMissing = form === "—" || form === "";
+      const hasDrift = form.includes("†");
+      const cls = isMissing ? "missing" : hasDrift ? "drift" : "";
+      const displayForm = isMissing ? "(no inherited cognate)" : form;
+      const driftMarker = hasDrift ? ` <span class="drift-marker" title="Semantic or form drift — see notes">†</span>` : "";
+      return `<div class="cognate-row ${cls}">
+        <div class="lang-name">${langName}<span class="lang-id">${id}</span></div>
+        <div class="form">${displayForm.replace(/†/g, "")}${driftMarker}</div>
+      </div>`;
+    }).join("");
+    if (!rows) return "";
+    return `<div class="cognate-family"><h4>${family}</h4>${rows}</div>`;
+  }).join("");
+
+  const notesHtml = word.notes ? Object.entries(word.notes).map(([id, note]) => {
+    const langEntry = langLookup[id];
+    const langName = langEntry ? langEntry.name : id;
+    return `<div class="ct-note"><b>${langName}:</b> ${note}</div>`;
+  }).join("") : "";
+
+  const familyOptions = Object.entries(COGNATE_FAMILIES).map(([k, v]) =>
+    `<option value="${k}" ${k === selectedCognateFamily ? 'selected' : ''}>${v.name}</option>`).join("");
+  const wordOptions = words.map(w => `<option value="${w}" ${w === selectedCognateWord ? 'selected' : ''}>${w} (${fam.words[w].gloss})</option>`).join("");
+
+  // Sound-change timeline (only when stages data is present — currently IE only)
+  let timelineHtml = "";
+  const stages = fam.stages ? fam.stages[selectedCognateWord] : null;
+  if (stages) {
+    const lineages = [
+      { key: "english", title: "Germanic → English", flow: "PIE → Proto-Germanic → Old English → Modern English" },
+      { key: "french",  title: "Italic → French",    flow: "PIE → Latin → Old French → Modern French" },
+      { key: "hindi",   title: "Indo-Iranian → Hindi", flow: "PIE → Sanskrit → Prakrit → Modern Hindi" },
+    ];
+    const tracksHtml = lineages.filter(L => stages[L.key]).map(L => {
+      const boxes = stages[L.key].map((s, i) => {
+        const date = s.date ? fmtCognateDate(s.date) : "";
+        const hasNote = s.note;
+        return `<div class="stage-box ${hasNote ? 'clickable' : ''}" data-lineage="${L.key}" data-idx="${i}">
+          <div class="s-stage">${s.stage}</div>
+          <div class="s-form">${s.form}</div>
+          <div class="s-date">${date}</div>
+        </div>`;
+      }).join("");
+      return `<div class="lineage-track" data-lineage="${L.key}">
+        <div class="lineage-label">${L.title} <span class="flow">· ${L.flow}</span></div>
+        <div class="stage-strip">${boxes}</div>
+        <div class="stage-note" id="note-${L.key}"></div>
+      </div>`;
+    }).join("");
+    timelineHtml = `<div class="sound-timeline">
+      <h4>Sound change timeline</h4>
+      ${tracksHtml}
+    </div>`;
+  }
+
+  container.innerHTML = `
+    <div class="cognates-wrap">
+      <div class="cognate-toolbar">
+        <label for="cognate-family-picker">Family:</label>
+        <select id="cognate-family-picker">${familyOptions}</select>
+        <label for="cognate-picker" style="margin-left:12px">Core word:</label>
+        <select id="cognate-picker">${wordOptions}</select>
+      </div>
+      <div class="cognate-header">
+        <span class="pie-label">${fam.proto_label} root</span>
+        <span class="pie">${word.pie}</span>
+        <div class="gloss">"${word.gloss}"</div>
+        <div style="color:var(--muted);font-size:12px;margin-top:8px;line-height:1.6">${fam.proto_note}</div>
+      </div>
+      ${famHtml}
+      ${notesHtml ? `<div class="cognate-notes">${notesHtml}</div>` : ""}
+      ${timelineHtml}
+    </div>
+  `;
+}
+
+function fmtCognateDate(d) {
+  const n = parseInt(d, 10);
+  if (isNaN(n)) return "";
+  if (n < 0) return `${Math.abs(n)} BCE`;
+  if (n === 0) return `0`;
+  return `${n} CE`;
+}
+
+// ── View switching ──────────────────────────────────────────
+function activateView(view) {
+  document.querySelectorAll(".tab").forEach(t => t.classList.toggle("active", t.dataset.view === view));
+  document.querySelectorAll(".view").forEach(v => v.classList.remove("active"));
+  document.getElementById(`view-${view}`).classList.add("active");
+  if (view === "map") setTimeout(() => { if (mapInstance) mapInstance.invalidateSize(); }, 50);
+  if (view === "stats") renderStatsView();
+  if (view === "cognates") renderCognatesView();
+}
+
+function renderAll() {
+  renderTree();
+  renderTimeline();
+  renderMap();
+  // Stats are re-rendered on tab activation + on filter changes (if currently active)
+  if (document.getElementById("view-stats").classList.contains("active")) renderStatsView();
+}
+
+// ── Events ──────────────────────────────────────────────────
+document.addEventListener("click", (e) => {
+  const tab = e.target.closest(".tab");
+  if (tab) { activateView(tab.dataset.view); return; }
+
+  const subTab = e.target.closest(".sub-tab");
+  if (subTab) { treeMode = subTab.dataset.tmode; renderTree(); return; }
+
+  const branchLabel = e.target.closest(".branch > .label");
+  if (branchLabel) { branchLabel.parentElement.classList.toggle("collapsed"); return; }
+
+  const leaf = e.target.closest(".leaf");
+  if (leaf) { selectLang(leaf.dataset.id); return; }
+
+  const bar = e.target.closest(".tl-bar");
+  if (bar) { selectLang(bar.dataset.id); return; }
+
+  const tdgLeaf = e.target.closest("text.tdg-label.leaf");
+  if (tdgLeaf) { selectLang(tdgLeaf.dataset.id); return; }
+
+  const stageBox = e.target.closest(".stage-box.clickable");
+  if (stageBox) {
+    const lineage = stageBox.dataset.lineage;
+    const idx = parseInt(stageBox.dataset.idx, 10);
+    const stages = typeof COGNATE_STAGES !== "undefined" ? COGNATE_STAGES[selectedCognateWord] : null;
+    if (stages && stages[lineage] && stages[lineage][idx]) {
+      const note = stages[lineage][idx].note || "";
+      const noteEl = document.getElementById(`note-${lineage}`);
+      if (noteEl) {
+        noteEl.textContent = note;
+        noteEl.classList.toggle("show", !!note);
+      }
+      // highlight selected stage
+      document.querySelectorAll(`.lineage-track[data-lineage="${lineage}"] .stage-box`).forEach(b => b.style.outline = "");
+      stageBox.style.outline = "2px solid var(--active)";
+    }
+    return;
+  }
+});
+
+document.addEventListener("change", (e) => {
+  if (e.target.id === "tree-family-picker") {
+    diagramFamily = e.target.value;
+    renderTree();
+  }
+  if (e.target.id === "cognate-picker") {
+    selectedCognateWord = e.target.value;
+    renderCognatesView();
+  }
+  if (e.target.id === "cognate-family-picker") {
+    selectedCognateFamily = e.target.value;
+    selectedCognateWord = null; // reset; will pick first word of new family
+    renderCognatesView();
+  }
+});
+
+document.getElementById("search").addEventListener("input", renderAll);
+document.querySelectorAll(".f-status").forEach(el => el.addEventListener("change", renderAll));
+
+renderAll();
+
+// Deep-link: if URL hash is #lang-<id>, auto-select that language.
+(function handleHash() {
+  const m = location.hash.match(/^#lang-([a-zA-Z0-9_-]+)$/);
+  if (m && LANGUAGES.some(l => l.id === m[1])) {
+    selectLang(m[1]);
+  }
+})();
+window.addEventListener("hashchange", () => {
+  const m = location.hash.match(/^#lang-([a-zA-Z0-9_-]+)$/);
+  if (m && LANGUAGES.some(l => l.id === m[1])) selectLang(m[1]);
+});
+</script>
+</body>
+</html>
