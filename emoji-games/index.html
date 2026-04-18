@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>EmojiGames 🎮</title>
+<title>EmojiLand 🎮</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
@@ -25,14 +25,30 @@
   }
   .back-btn:hover { background: #2a2245; border-color: #6d4ed8; color: #fff; }
 
+  .main-tabs {
+    max-width: 1200px; margin: 0 auto 20px;
+    display: flex; gap: 4px; border-bottom: 1px solid #2e2547;
+  }
+  .main-tab {
+    background: none; border: none; color: #9ca3af;
+    padding: 12px 22px; font-size: 1rem; font-weight: 600;
+    cursor: pointer; border-bottom: 2px solid transparent;
+    transition: all 0.15s;
+  }
+  .main-tab:hover { color: #e5e7eb; }
+  .main-tab.active { color: #fbbf24; border-bottom-color: #fbbf24; }
+
+  .panel { display: none; }
+  .panel.active { display: block; }
+
   .controls { max-width: 1200px; margin: 14px auto 18px; display: flex; flex-wrap: wrap; gap: 10px; }
-  #search {
+  .search-box {
     flex: 1; min-width: 240px; max-width: 420px;
     background: #1a1530; border: 1px solid #2e2547; color: #e5e7eb;
     padding: 10px 14px; border-radius: 8px; font-size: 0.95rem; outline: none;
     transition: border 0.15s;
   }
-  #search:focus { border-color: #8b5cf6; }
+  .search-box:focus { border-color: #8b5cf6; }
   .tags { max-width: 1200px; margin: 0 auto 18px; display: flex; flex-wrap: wrap; gap: 6px; }
   .tag {
     background: #1a1530; border: 1px solid #2e2547; color: #9ca3af;
@@ -80,6 +96,30 @@
   }
   .empty { text-align: center; color: #6b7280; padding: 60px; grid-column: 1 / -1; }
   footer { max-width: 1200px; margin: 50px auto 0; color: #4b5563; font-size: 0.78rem; text-align: center; }
+
+  .emoji-grid {
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(72px, 1fr)); gap: 6px;
+  }
+  .ec {
+    background: #1a1530; border: 1px solid #2e2547; border-radius: 8px;
+    padding: 10px 4px 6px; text-align: center; cursor: pointer;
+    transition: border-color 0.15s, transform 0.1s;
+  }
+  .ec:hover { border-color: #8b5cf6; transform: translateY(-2px); }
+  .ec-char { font-size: 34px; line-height: 1.2; display: block; }
+  .ec-name {
+    font-size: 9px; color: #6b7280; margin-top: 4px;
+    overflow: hidden; white-space: nowrap; text-overflow: ellipsis; padding: 0 4px;
+  }
+  .emoji-status { max-width: 1200px; margin: 10px auto; color: #6b7280; font-size: 0.82rem; text-align: right; }
+  .copy-toast {
+    position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%);
+    background: #8b5cf6; color: #fff; padding: 10px 20px; border-radius: 8px;
+    font-size: 0.9rem; opacity: 0; pointer-events: none; transition: opacity 0.2s;
+    z-index: 200;
+  }
+  .copy-toast.show { opacity: 1; }
 </style>
 </head>
 <body>
@@ -88,80 +128,223 @@
 
 <header>
   <div class="title">
-    <h1>🎮 EmojiGames</h1>
-    <p>A playground of bite-sized emoji-themed mini games</p>
+    <h1>🎮 EmojiLand</h1>
+    <p>Mini games and a browsable emoji library, all in one place</p>
   </div>
   <a href="../../Launcher/index.html" class="back-btn">← Back to Workspace</a>
 </header>
 
-<div class="controls">
-  <input id="search" type="search" placeholder="Search games...">
+<div class="main-tabs">
+  <button class="main-tab active" data-panel="emojis">😀 Emojis</button>
+  <button class="main-tab" data-panel="games">🎮 Games</button>
 </div>
 
-<div class="tags" id="tags"></div>
+<!-- Emojis panel -->
+<div id="panel-emojis" class="panel active">
+  <div class="controls">
+    <input id="emoji-search" class="search-box" type="search" placeholder="Search emojis by name...">
+    <span class="emoji-status" id="emoji-status" style="margin:0;align-self:center"></span>
+  </div>
+  <div class="tags" id="emoji-groups"></div>
+  <div class="tags" id="emoji-subs"></div>
+  <div class="emoji-grid" id="emoji-grid"></div>
+</div>
 
-<div class="grid" id="grid"></div>
+<!-- Games panel -->
+<div id="panel-games" class="panel">
+  <div class="controls">
+    <input id="games-search" class="search-box" type="search" placeholder="Search games...">
+  </div>
+  <div class="tags" id="game-tags"></div>
+  <div class="grid" id="games-grid"></div>
+  <footer>
+    Drop new games into <code style="background:#1a1530;padding:2px 6px;border-radius:4px;">projects/EmojiGames/games/</code> and add an entry to <code style="background:#1a1530;padding:2px 6px;border-radius:4px;">games.js</code>
+  </footer>
+</div>
 
-<footer>
-  Drop new games into <code style="background:#1a1530;padding:2px 6px;border-radius:4px;">projects/EmojiGames/games/</code> and add an entry to <code style="background:#1a1530;padding:2px 6px;border-radius:4px;">games.js</code>
-</footer>
+<div class="copy-toast" id="copy-toast"></div>
 
 <script src="games.js"></script>
+<script src="emojis.js"></script>
 <script>
-  const grid = document.getElementById('grid');
-  const tagsEl = document.getElementById('tags');
-  const search = document.getElementById('search');
-  let activeTag = null;
+  // ── Main tab switching ─────────────────────────────────────────────
+  document.querySelectorAll('.main-tab').forEach(function(b){
+    b.addEventListener('click', function(){
+      document.querySelectorAll('.main-tab').forEach(function(x){x.classList.remove('active');});
+      b.classList.add('active');
+      var p = b.dataset.panel;
+      document.querySelectorAll('.panel').forEach(function(x){x.classList.remove('active');});
+      document.getElementById('panel-'+p).classList.add('active');
+    });
+  });
 
-  const allTags = [...new Set(GAMES.flatMap(g => g.tags || []))].sort();
+  // ── Copy toast ─────────────────────────────────────────────────────
+  var toast = document.getElementById('copy-toast');
+  var toastTimer = null;
+  function showToast(msg) {
+    toast.textContent = msg;
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toast.classList.remove('show'); }, 1400);
+  }
 
-  function renderTags() {
-    tagsEl.innerHTML = '';
-    const allBtn = document.createElement('span');
-    allBtn.className = 'tag' + (activeTag === null ? ' active' : '');
+  // ── Games panel ────────────────────────────────────────────────────
+  var gamesGrid = document.getElementById('games-grid');
+  var gameTagsEl = document.getElementById('game-tags');
+  var gamesSearch = document.getElementById('games-search');
+  var activeGameTag = null;
+  var allGameTags = [...new Set(GAMES.flatMap(function(g){return g.tags || [];}))].sort();
+
+  function renderGameTags() {
+    gameTagsEl.innerHTML = '';
+    var allBtn = document.createElement('span');
+    allBtn.className = 'tag' + (activeGameTag === null ? ' active' : '');
     allBtn.textContent = 'All';
-    allBtn.onclick = () => { activeTag = null; render(); };
-    tagsEl.appendChild(allBtn);
-    allTags.forEach(t => {
-      const el = document.createElement('span');
-      el.className = 'tag' + (activeTag === t ? ' active' : '');
+    allBtn.onclick = function(){ activeGameTag = null; renderGames(); };
+    gameTagsEl.appendChild(allBtn);
+    allGameTags.forEach(function(t){
+      var el = document.createElement('span');
+      el.className = 'tag' + (activeGameTag === t ? ' active' : '');
       el.textContent = t;
-      el.onclick = () => { activeTag = activeTag === t ? null : t; render(); };
-      tagsEl.appendChild(el);
+      el.onclick = function(){ activeGameTag = activeGameTag === t ? null : t; renderGames(); };
+      gameTagsEl.appendChild(el);
     });
   }
 
-  function render() {
-    renderTags();
-    const q = search.value.trim().toLowerCase();
-    const filtered = GAMES.filter(g => {
-      if (activeTag && !(g.tags || []).includes(activeTag)) return false;
+  function renderGames() {
+    renderGameTags();
+    var q = gamesSearch.value.trim().toLowerCase();
+    var filtered = GAMES.filter(function(g){
+      if (activeGameTag && !(g.tags || []).includes(activeGameTag)) return false;
       if (!q) return true;
       return (g.name + ' ' + g.desc).toLowerCase().includes(q);
     });
-    grid.innerHTML = '';
+    gamesGrid.innerHTML = '';
     if (!filtered.length) {
-      grid.innerHTML = '<div class="empty">No games match.</div>';
+      gamesGrid.innerHTML = '<div class="empty">No games match.</div>';
       return;
     }
-    filtered.forEach(g => {
-      const card = document.createElement(g.path ? 'a' : 'div');
+    filtered.forEach(function(g){
+      var card = document.createElement(g.path ? 'a' : 'div');
       card.className = 'card' + (g.path ? '' : ' coming-soon');
       if (g.path) card.href = g.path;
       if (g.color) card.style.setProperty('--accent', g.color);
-      card.innerHTML = `
-        ${!g.path ? '<span class="badge">Coming soon</span>' : ''}
-        <div class="card-emoji">${g.emoji}</div>
-        <div class="card-name">${g.name}</div>
-        <div class="card-desc">${g.desc}</div>
-        <div class="card-tags">${(g.tags || []).map(t => `<span class="card-tag">${t}</span>`).join('')}</div>
-      `;
-      grid.appendChild(card);
+      card.innerHTML =
+        (!g.path ? '<span class="badge">Coming soon</span>' : '') +
+        '<div class="card-emoji">' + g.emoji + '</div>' +
+        '<div class="card-name">' + g.name + '</div>' +
+        '<div class="card-desc">' + g.desc + '</div>' +
+        '<div class="card-tags">' + (g.tags || []).map(function(t){return '<span class="card-tag">'+t+'</span>';}).join('') + '</div>';
+      gamesGrid.appendChild(card);
+    });
+  }
+  gamesSearch.addEventListener('input', renderGames);
+  renderGames();
+
+  // ── Emojis panel ───────────────────────────────────────────────────
+  var emojiGroupsEl = document.getElementById('emoji-groups');
+  var emojiSubsEl = document.getElementById('emoji-subs');
+  var emojiGridEl = document.getElementById('emoji-grid');
+  var emojiSearch = document.getElementById('emoji-search');
+  var emojiStatus = document.getElementById('emoji-status');
+  var eGrp = 'all', eSub = 'all', eQ = '';
+  var PER_PAGE = 500;
+  var eLoaded = PER_PAGE;
+
+  function mkTag(label, active) {
+    var t = document.createElement('span');
+    t.className = 'tag' + (active ? ' active' : '');
+    t.textContent = label;
+    return t;
+  }
+
+  function buildGroups() {
+    var grps = ['all'].concat(Array.from(new Set(EMOJIS.map(function(e){return e.grp;}))));
+    emojiGroupsEl.innerHTML = '';
+    grps.forEach(function(g){
+      var t = mkTag(g === 'all' ? 'All Groups' : g, g === eGrp);
+      t.onclick = function(){
+        eGrp = g; eSub = 'all';
+        buildGroups(); buildSubs(); renderEmojis();
+      };
+      emojiGroupsEl.appendChild(t);
     });
   }
 
-  search.addEventListener('input', render);
-  render();
+  function buildSubs() {
+    emojiSubsEl.innerHTML = '';
+    var src = eGrp === 'all' ? EMOJIS : EMOJIS.filter(function(e){return e.grp === eGrp;});
+    var subs = ['all'].concat(Array.from(new Set(src.map(function(e){return e.sub;}))));
+    if (subs.length <= 2) return;
+    subs.forEach(function(s){
+      var t = mkTag(s === 'all' ? 'All' : s, s === eSub);
+      t.onclick = function(){ eSub = s; buildSubs(); renderEmojis(); };
+      emojiSubsEl.appendChild(t);
+    });
+  }
+
+  function filterEmojis() {
+    var s = EMOJIS;
+    if (eGrp !== 'all') s = s.filter(function(e){return e.grp === eGrp;});
+    if (eSub !== 'all') s = s.filter(function(e){return e.sub === eSub;});
+    if (eQ) s = s.filter(function(e){return e.name.toLowerCase().includes(eQ);});
+    return s;
+  }
+
+  function renderEmojis() {
+    var list = filterEmojis();
+    eLoaded = PER_PAGE;
+    emojiStatus.textContent = list.length.toLocaleString() + ' emojis';
+    emojiGridEl.innerHTML = '';
+    if (!list.length) {
+      emojiGridEl.innerHTML = '<div class="empty">No emojis found.</div>';
+      return;
+    }
+    appendEmojiBatch(list.slice(0, PER_PAGE));
+    window._emojiList = list;
+    window.scrollTo(0, 0);
+  }
+
+  function appendEmojiBatch(items) {
+    var frag = document.createDocumentFragment();
+    items.forEach(function(e){
+      var d = document.createElement('div');
+      d.className = 'ec';
+      var c = document.createElement('span');
+      c.className = 'ec-char'; c.textContent = e.ch;
+      var n = document.createElement('div');
+      n.className = 'ec-name'; n.textContent = e.name;
+      d.appendChild(c); d.appendChild(n);
+      d.addEventListener('click', function(){
+        navigator.clipboard.writeText(e.ch).then(function(){
+          showToast('Copied ' + e.ch);
+        });
+      });
+      frag.appendChild(d);
+    });
+    emojiGridEl.appendChild(frag);
+  }
+
+  // Infinite scroll for emoji grid
+  window.addEventListener('scroll', function(){
+    if (!document.getElementById('panel-emojis').classList.contains('active')) return;
+    var list = window._emojiList;
+    if (!list || eLoaded >= list.length) return;
+    if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 500) {
+      var batch = list.slice(eLoaded, eLoaded + PER_PAGE);
+      appendEmojiBatch(batch);
+      eLoaded += batch.length;
+    }
+  });
+
+  emojiSearch.addEventListener('input', function(){
+    eQ = emojiSearch.value.trim().toLowerCase();
+    renderEmojis();
+  });
+
+  buildGroups();
+  buildSubs();
+  renderEmojis();
 </script>
 
 </body>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Unicode Explorer</title>
+<title>Scripts Explorer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600&family=Noto+Serif&family=Noto+Sans+Mono&family=Noto+Sans+Arabic&family=Noto+Sans+Hebrew&family=Noto+Sans+Syriac&family=Noto+Sans+Devanagari&family=Noto+Sans+Bengali&family=Noto+Sans+Gurmukhi&family=Noto+Sans+Gujarati&family=Noto+Sans+Oriya&family=Noto+Sans+Tamil&family=Noto+Sans+Telugu&family=Noto+Sans+Kannada&family=Noto+Sans+Malayalam&family=Noto+Sans+Sinhala&family=Noto+Sans+Thai&family=Noto+Sans+Lao&family=Noto+Serif+Tibetan&family=Noto+Sans+Myanmar&family=Noto+Sans+Georgian&family=Noto+Sans+Armenian&family=Noto+Sans+Ethiopic&family=Noto+Sans+Cherokee&family=Noto+Sans+Canadian+Aboriginal&family=Noto+Sans+Mongolian&family=Noto+Sans+Khmer&family=Noto+Sans+Lisu&family=Noto+Sans+Balinese&family=Noto+Sans+Javanese&family=Noto+Sans+Sundanese&family=Noto+Sans+Batak&family=Noto+Sans+Tagalog&family=Noto+Sans+Runic&family=Noto+Sans+Gothic&family=Noto+Sans+Deseret&family=Noto+Sans+Shavian&family=Noto+Sans+NKo&family=Noto+Sans+Tifinagh&family=Noto+Sans+Osmanya&family=Noto+Sans+Ol+Chiki&family=Noto+Sans+Symbols&family=Noto+Sans+Symbols+2&family=Noto+Sans+Glagolitic&family=Noto+Sans+Coptic&family=Noto+Sans+Linear+B&family=Noto+Sans+Cypriot&family=Noto+Sans+Old+Persian&family=Noto+Sans+Ugaritic&family=Noto+Sans+Phoenician&family=Noto+Sans+Lydian&family=Noto+Sans+Avestan&family=Noto+Sans+Imperial+Aramaic&family=Noto+Sans+Old+South+Arabian&family=Noto+Sans+Old+Turkic&family=Noto+Sans+Mandaic&display=swap">
@@ -318,12 +318,10 @@ body{background:var(--bg);color:var(--text);font-family:system-ui,'Noto Sans',sa
 <div id="nav">
   <h1>&#x2728; Scripts</h1>
   <button class="tab-btn active" data-tab="scripts">Scripts</button>
-  <button class="tab-btn" data-tab="emoji">Emojis</button>
-  <button class="tab-btn" data-tab="symbols">Symbols</button>
   <button class="tab-btn" data-tab="saved">&#x2605; Saved</button>
   <button class="tab-btn" data-tab="coverage">Coverage</button>
   <div id="nav-right">
-    <input id="search-box" placeholder="Name or sound (bilabial, /s/, &#x3B8;)&#x2026;" autocomplete="off">
+    <input id="search-box" placeholder="Search by name&#x2026;" autocomplete="off">
     <span id="status"></span>
     <button id="gear-btn" title="Tools">&#x2699;</button>
   </div>
@@ -338,15 +336,6 @@ body{background:var(--bg);color:var(--text);font-family:system-ui,'Noto Sans',sa
     <option value="mono">Noto Mono</option>
   </select>
   <button id="export-btn">&#x2193; Export</button>
-</div>
-
-<div id="tab-emoji" class="tab-panel">
-  <div class="tip"><strong>3944 emojis</strong> &#x2014; skin tone &amp; gender variants included. Click to copy.</div>
-  <div class="pills" id="emoji-groups"></div>
-  <div class="subpills" id="emoji-subs"></div>
-  <div class="char-grid" id="emoji-grid"></div>
-  <div id="emoji-sentinel"></div>
-  <div class="pager" id="emoji-pager"></div>
 </div>
 
 <div id="tab-scripts" class="tab-panel active">
@@ -365,15 +354,6 @@ body{background:var(--bg);color:var(--text);font-family:system-ui,'Noto Sans',sa
   <div id="sc-sentinel"></div>
   <div class="pager" id="sc-pager"></div>
   <div id="study-view"></div>
-</div>
-
-<div id="tab-symbols" class="tab-panel">
-  <div id="sym-tip" class="tip"><strong>67905 characters</strong> &#x2014; all Unicode categories. Filter by category, block, or search by name.</div>
-  <div class="pills" id="sym-cats"></div>
-  <div class="subpills" id="sym-blocks"></div>
-  <div class="char-grid" id="sym-grid"></div>
-  <div id="sym-sentinel"></div>
-  <div class="pager" id="sym-pager"></div>
 </div>
 
 <div id="tab-saved" class="tab-panel">
@@ -638,10 +618,7 @@ document.getElementById('cp-input').addEventListener('keydown',function(e){if(e.
 // ── Export ────────────────────────────────────────────────────────────────
 document.getElementById('export-btn').addEventListener('click',function(){
   var rows,fname;
-  if(tab==='emoji'){
-    rows=filtE().map(function(e){return e.ch+'\t'+e.name+'\tU+'+e.cps.join(' U+');});
-    fname='emojis.txt';
-  }else if(tab==='scripts'&&scName){
+  if(tab==='scripts'&&scName){
     rows=SYMBOLS.filter(function(s){return s.sc===scName&&(!q||s.name.toLowerCase().includes(q));})
                .map(function(s){return s.ch+'\t'+s.name+'\tU+'+s.cp;});
     fname=scName.replace(/\s+/g,'_')+'.txt';
@@ -649,8 +626,7 @@ document.getElementById('export-btn').addEventListener('click',function(){
     rows=favs.concat(recs).map(function(r){return r.ch+'\t'+r.name;});
     fname='saved.txt';
   }else{
-    rows=filtS().map(function(s){return s.ch+'\t'+s.name+'\tU+'+s.cp;});
-    fname='symbols.txt';
+    return;
   }
   var blob=new Blob([rows.join('\n')],{type:'text/plain;charset=utf-8'});
   var a=document.createElement('a');
@@ -674,14 +650,8 @@ document.querySelectorAll('.tab-btn').forEach(function(b){
   });
 });
 
-// ── Phonetic pill dimming helper ─────────────────────────────────────────
-function _setPhoneticPillOpacity(on){
-  var op=on?'0.35':'';
-  document.getElementById('sym-cats').style.opacity=op;
-  document.getElementById('sym-blocks').style.opacity=op;
-  document.getElementById('sym-cats').style.pointerEvents=on?'none':'';
-  document.getElementById('sym-blocks').style.pointerEvents=on?'none':'';
-}
+// ── Phonetic pill dimming helper (no-op; symbols tab removed) ────────────
+function _setPhoneticPillOpacity(on){}
 
 // ── Phonetic search helper ────────────────────────────────────────────────
 function _resolvePhonetic(raw){
@@ -726,27 +696,7 @@ document.getElementById('search-box').addEventListener('input',function(e){
       render();
       return;
     }
-    // Detect phonetic search: starts with /, or single IPA key, or descriptor words
-    var isPhonetic=raw.startsWith('/');
-    if(!isPhonetic&&raw.length<=4)isPhonetic=!!IPA_REVERSE[raw];
-    if(!isPhonetic){var words=raw.toLowerCase().split(/\s+/);isPhonetic=words.every(function(w){return PHONETIC_WORDS.has(w);});}
-    if(isPhonetic){
-      var resolved=_resolvePhonetic(raw);
-      if(resolved&&resolved.length){
-        phoneticQuery=resolved;
-        _setPhoneticPillOpacity(true);
-        // Switch to symbols tab
-        if(tab!=='symbols'){
-          document.querySelectorAll('.tab-btn').forEach(function(x){x.classList.remove('active');});
-          document.querySelectorAll('.tab-panel').forEach(function(x){x.classList.remove('active');});
-          document.querySelector('[data-tab="symbols"]').classList.add('active');
-          document.getElementById('tab-symbols').classList.add('active');
-          tab='symbols';
-        }
-        render();
-        return;
-      }
-    }
+    // Phonetic search (IPA) is disabled in the Scripts app — use the Math Center for symbols.
     phoneticQuery=null;
     _setPhoneticPillOpacity(false);
     render();
@@ -2385,15 +2335,10 @@ var scrollObserver=new IntersectionObserver(function(entries){
     else if(id==='sc-sentinel')loadMoreSc();
   });
 },{rootMargin:'200px'});
-scrollObserver.observe(document.getElementById('emoji-sentinel'));
-scrollObserver.observe(document.getElementById('sym-sentinel'));
 scrollObserver.observe(document.getElementById('sc-sentinel'));
 
 // ── Init ──────────────────────────────────────────────────────────────────
-buildEmojiGroups();
-buildEmojiSubs();
 buildScriptGroupPills();
-buildSymCats();
 render();
 
 // ── Languages panel (from scripts_languages/data/script_index.json) ──────
