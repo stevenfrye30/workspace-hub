@@ -455,6 +455,51 @@ const LANG_PHONEMES = {
 })();
 
 // ════════════════════════════════════════════════════════════════════════
+//  Max syllable templates per language
+// ════════════════════════════════════════════════════════════════════════
+// onset/coda = max consonant-cluster size permitted in a native syllable.
+// Drawn from standard phonotactic descriptions (Gussenhoven & Jacobs,
+// Laver, plus per-language phonology surveys). These are native-word
+// maxima — loanword clusters can exceed these in practice.
+
+const LANG_SYLLABLE_MAX = {
+  en:  { onset: 3, coda: 4 },   // "strengths" /strɛŋkθs/
+  es:  { onset: 2, coda: 1 },   // "tren" /tren/
+  zh:  { onset: 1, coda: 1 },   // coda only /n ŋ/
+  ja:  { onset: 1, coda: 1 },   // coda only moraic /N/ or geminate
+  ar:  { onset: 1, coda: 2 },   // MSA native; dialects vary
+  hi:  { onset: 2, coda: 2 },
+  fr:  { onset: 3, coda: 3 },
+  de:  { onset: 3, coda: 4 },   // "strolchst" style
+  ru:  { onset: 4, coda: 4 },   // "vzglyad" /vzglʲat/
+  pt:  { onset: 2, coda: 2 },
+  ko:  { onset: 1, coda: 1 },
+  tr:  { onset: 1, coda: 2 },
+  sw:  { onset: 2, coda: 0 },   // mostly open; NC clusters treated as units
+  vi:  { onset: 1, coda: 1 },
+  haw: { onset: 1, coda: 0 }    // strictly open
+};
+
+// Attach to LANG_INVENTORIES for convenience
+for (const code in LANG_INVENTORIES) {
+  if (LANG_SYLLABLE_MAX[code]) LANG_INVENTORIES[code].syllable = LANG_SYLLABLE_MAX[code];
+}
+
+// Human-readable template like "(C)(C)(C)V(C)(C)(C)(C)"
+function langSyllableTemplate(code) {
+  const s = LANG_SYLLABLE_MAX[code];
+  if (!s) return "?";
+  return "(C)".repeat(s.onset) + "V" + "(C)".repeat(s.coda);
+}
+
+// English diphthong decomposition → sequence of monophthong vowels. Only
+// English (CMUdict) symbols appear in user input, so this table is enough.
+const DIPH_DECOMP = {
+  "eɪ":["e","ɪ"], "aɪ":["a","ɪ"], "aʊ":["a","ʊ"], "oʊ":["o","ʊ"], "ɔɪ":["ɔ","ɪ"],
+  "ɑr":["ɑ"], "ɪr":["ɪ"], "ɛr":["ɛ"], "ɔr":["ɔ"], "ʊr":["ʊ"]
+};
+
+// ════════════════════════════════════════════════════════════════════════
 //  Reference formant values (F1, F2 in Hz) — adult male averages
 // ════════════════════════════════════════════════════════════════════════
 //

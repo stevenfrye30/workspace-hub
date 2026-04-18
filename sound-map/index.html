@@ -455,6 +455,62 @@ body{background:var(--bg);color:var(--text);font-family:"Segoe UI",Arial,sans-se
 .sm-rarity-count .tag.common{background:#50d090;color:#111}
 .sm-rarity-langlist{color:var(--muted);font-size:10px;font-style:italic;grid-column:1 / -1;padding:2px 8px 6px 70px;margin-top:-4px}
 
+/* Syllable fit (Phase 5a) */
+.sm-syl-intro{color:var(--muted);font-size:12px;line-height:1.55;margin-bottom:10px;max-width:720px}
+.sm-syl-intro strong{color:var(--text)}
+.sm-syl-your{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;background:var(--bg);border-radius:var(--radius);margin:4px 0 14px;font-size:12px}
+.sm-syl-your-label{color:var(--muted);text-transform:uppercase;letter-spacing:.05em;font-size:10px;font-weight:700}
+.sm-syl-your-template{font-family:var(--mono);font-size:14px;color:var(--gold);font-weight:700}
+.sm-syl-your-example{color:var(--muted);font-size:11px;font-style:italic}
+.sm-syl-row{display:grid;grid-template-columns:110px 140px 80px 1fr;gap:10px;align-items:center;padding:6px 8px;border-radius:4px;font-size:12px;transition:background .12s;border-left:3px solid transparent}
+.sm-syl-row:hover{background:var(--surf2)}
+.sm-syl-row.fit{border-left-color:#50d090}
+.sm-syl-row.tight{border-left-color:#e8c840}
+.sm-syl-row.fail{border-left-color:#e85050}
+.sm-syl-lang{font-weight:600}
+.sm-syl-lang-sub{color:var(--muted);font-size:10px;font-style:italic;margin-left:6px}
+.sm-syl-template{font-family:var(--mono);font-size:13px;color:var(--text);letter-spacing:.01em}
+.sm-syl-template .v{color:var(--gold);font-weight:700}
+.sm-syl-template .c{color:#40b0e8;opacity:.85}
+.sm-syl-verdict{font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+.sm-syl-verdict.fit{color:#50d090}
+.sm-syl-verdict.tight{color:#e8c840}
+.sm-syl-verdict.fail{color:#e85050}
+.sm-syl-why{color:var(--muted);font-size:11px;font-style:italic}
+.sm-syl-why .cluster{color:#e85050;font-family:var(--mono);font-weight:700}
+@media(max-width:720px){
+  .sm-syl-row{grid-template-columns:1fr 1fr;gap:4px 10px}
+  .sm-syl-why{grid-column:1 / -1}
+}
+
+/* Translate by sound (Phase 5b) */
+.sm-tr-intro{color:var(--muted);font-size:12px;line-height:1.55;margin-bottom:10px;max-width:720px}
+.sm-tr-intro strong{color:var(--text)}
+.sm-tr-picker{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+.sm-tr-chip{background:var(--surf2);border:1px solid var(--bdr);border-radius:20px;color:var(--muted);cursor:pointer;font-size:11px;padding:5px 12px;transition:all .12s}
+.sm-tr-chip:hover{color:var(--text);border-color:var(--muted)}
+.sm-tr-chip.active{background:var(--gold);color:#111;border-color:var(--gold);font-weight:700}
+.sm-tr-output{display:flex;flex-direction:column;gap:4px}
+.sm-tr-word{display:grid;grid-template-columns:minmax(90px,140px) minmax(0,1fr) minmax(0,1fr) 42px;gap:12px;align-items:center;padding:6px 10px;border-radius:4px;font-size:12px;transition:background .12s}
+.sm-tr-word:hover{background:var(--surf2)}
+.sm-tr-word-txt{font-weight:600;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sm-tr-word-txt.unknown{color:#d98880;font-style:italic}
+.sm-tr-phons{display:flex;flex-wrap:wrap;gap:3px;align-items:center;font-family:var(--mono);font-size:13px;min-width:0}
+.sm-tr-phon{display:inline-block;padding:2px 5px;border-radius:3px;background:var(--surf2);color:var(--muted);line-height:1.3}
+.sm-tr-phon.changed{background:var(--gold);color:#111;font-weight:700}
+.sm-tr-phon.same{background:rgba(80,208,144,.15);color:var(--text)}
+.sm-tr-phon.added{background:var(--gold);color:#111;font-weight:700;border-radius:50%;padding:1px 4px;font-size:11px}
+.sm-tr-arrow{color:var(--muted);font-size:14px;text-align:center;flex-shrink:0}
+.sm-tr-changes{font-family:var(--mono);font-size:11px;color:var(--muted);text-align:right}
+.sm-tr-changes .n{color:var(--gold);font-weight:700}
+.sm-tr-summary{display:flex;flex-wrap:wrap;gap:16px;margin-top:10px;padding:10px 12px;background:var(--bg);border-radius:var(--radius);font-size:11px;color:var(--muted);line-height:1.5}
+.sm-tr-summary strong{color:var(--gold)}
+@media(max-width:720px){
+  .sm-tr-word{grid-template-columns:1fr 1fr;gap:4px 10px}
+  .sm-tr-arrow{display:none}
+  .sm-tr-changes{text-align:left}
+}
+
 /* ── Language similarity (Phase 2) ── */
 .sm-lang-intro{color:var(--muted);font-size:12px;line-height:1.6;margin-bottom:12px;max-width:720px}
 .sm-lang-intro strong{color:var(--text)}
@@ -1946,6 +2002,12 @@ function smRenderStats(processed, byLine) {
   // Global rarity — how many of the 15 languages contain each phoneme the user used.
   smRenderRarity(view, phonCount);
 
+  // Syllable fit — which languages could pronounce these shapes as-is.
+  smRenderSyllableFit(view, processed);
+
+  // Translate by sound — map each phoneme to the nearest equivalent in a target lang.
+  smRenderTranslate(view, processed);
+
   // Top phonemes
   const topPhons = Object.entries(phonCount).sort((a,b) => b[1]-a[1]).slice(0, 12);
   const topMax = topPhons[0] ? topPhons[0][1] : 1;
@@ -2047,6 +2109,340 @@ function smRenderRarity(view, phonCount) {
   });
 
   view.appendChild(section);
+}
+
+// ══════════════════════════════════
+//  SYLLABLE FIT (Phase 5a)
+// ══════════════════════════════════
+// For each language, check whether the user's text would fit as-is given
+// the language's max-onset / max-coda phonotactic limits. Languages with
+// looser rules (English, German, Russian) accommodate more; strict-CV
+// languages like Hawaiian or Japanese flag every cluster.
+
+// Walk the user's syllables and return:
+//   { maxOnset, maxCoda, shapes: Map(shape→count), worstWord, worstShape }
+function smSyllableProfile(processed) {
+  const shapes = new Map();
+  let maxOnset = 0, maxCoda = 0;
+  let worstWord = "", worstShape = "", worstScore = -1;
+  for (const wp of processed) {
+    if (!wp.known) continue;
+    for (const syl of wp.syllables) {
+      // Build CVC shape using existing onset/nucleus/coda helpers
+      const onsetStr = (typeof smSylOnset === "function") ? smSylOnset(syl) : "";
+      const codaStr  = (typeof smSylCoda === "function")  ? smSylCoda(syl)  : "";
+      const onsetN = onsetStr ? smCountConsTokens(onsetStr) : 0;
+      const codaN  = codaStr  ? smCountConsTokens(codaStr)  : 0;
+      const shape = "C".repeat(onsetN) + "V" + "C".repeat(codaN);
+      shapes.set(shape, (shapes.get(shape) || 0) + 1);
+      if (onsetN > maxOnset) maxOnset = onsetN;
+      if (codaN > maxCoda) maxCoda = codaN;
+      const sc = onsetN * 10 + codaN;
+      if (sc > worstScore) { worstScore = sc; worstWord = wp.word; worstShape = shape; }
+    }
+  }
+  return { maxOnset, maxCoda, shapes, worstWord, worstShape };
+}
+
+// Token-count consonant phonemes in a string built from smSylOnset/smSylCoda
+// (those concatenate IPA without separators). Multi-char phonemes like
+// /tʃ/ /dʒ/ count as one — match against SM_PHONEMES greedy longest-first.
+function smCountConsTokens(s) {
+  let i = 0, n = 0;
+  while (i < s.length) {
+    let matched = null;
+    if (typeof SM_PHONEMES !== "undefined") {
+      for (const p of SM_PHONEMES) {
+        if (s.startsWith(p, i)) { matched = p; break; }
+      }
+    }
+    if (!matched) matched = s[i];
+    n++;
+    i += matched.length;
+  }
+  return n;
+}
+
+function smRenderSyllableFit(view, processed) {
+  if (typeof LANG_SYLLABLE_MAX === "undefined") return;
+  const profile = smSyllableProfile(processed);
+  if (profile.shapes.size === 0) return;
+
+  const section = document.createElement("div");
+  section.className = "sm-stat-section";
+  section.innerHTML = `<div class="sm-stat-section-title">Syllable fit</div>`;
+
+  const intro = document.createElement("div");
+  intro.className = "sm-syl-intro";
+  intro.innerHTML = `Phonotactic compatibility: which reference languages have rules
+    permissive enough to pronounce your text's syllable shapes as-is. Languages with
+    strict-CV inventories (Hawaiian, Japanese) flag every cluster; cluster-friendly
+    languages (English, German, Russian) accommodate almost anything.`;
+  section.appendChild(intro);
+
+  const your = document.createElement("div");
+  your.className = "sm-syl-your";
+  const yourTemplate = "C".repeat(profile.maxOnset) + "V" + "C".repeat(profile.maxCoda);
+  your.innerHTML = `
+    <span class="sm-syl-your-label">Your text's max</span>
+    <span class="sm-syl-your-template">${yourTemplate || "V"}</span>
+    ${profile.worstWord ? `<span class="sm-syl-your-example">e.g. <em>${profile.worstWord}</em> (${profile.worstShape})</span>` : ""}`;
+  section.appendChild(your);
+
+  // Rank languages: those that fit first, sorted by template "tightness"
+  const rows = [];
+  for (const code in LANG_INVENTORIES) {
+    const s = LANG_INVENTORIES[code].syllable;
+    if (!s) continue;
+    const onsetGap = s.onset - profile.maxOnset;
+    const codaGap  = s.coda  - profile.maxCoda;
+    let verdict, klass, why;
+    if (onsetGap >= 0 && codaGap >= 0) {
+      // Fit; tight if exactly equal
+      if (onsetGap === 0 || codaGap === 0) { verdict = "tight"; klass = "tight"; why = "exact match — no headroom"; }
+      else { verdict = "fits"; klass = "fit"; why = `${onsetGap}+${codaGap}C of headroom`; }
+    } else {
+      verdict = "needs repair"; klass = "fail";
+      const issues = [];
+      if (onsetGap < 0) issues.push(`onset cluster <span class="cluster">×${profile.maxOnset}</span> exceeds limit ×${s.onset}`);
+      if (codaGap  < 0) issues.push(`coda cluster <span class="cluster">×${profile.maxCoda}</span> exceeds limit ×${s.coda}`);
+      why = issues.join(" · ");
+    }
+    rows.push({ code, lang: LANG_INVENTORIES[code], s, verdict, klass, why,
+                gap: onsetGap + codaGap });
+  }
+  rows.sort((a, b) => {
+    const order = { fit: 0, tight: 1, fail: 2 };
+    if (order[a.klass] !== order[b.klass]) return order[a.klass] - order[b.klass];
+    return b.gap - a.gap;
+  });
+
+  rows.forEach(r => {
+    const row = document.createElement("div");
+    row.className = `sm-syl-row ${r.klass}`;
+    const tplStr = "(C)".repeat(r.s.onset).replace(/\(C\)/g, '<span class="c">(C)</span>')
+                 + '<span class="v">V</span>'
+                 + "(C)".repeat(r.s.coda).replace(/\(C\)/g, '<span class="c">(C)</span>');
+    row.innerHTML = `
+      <div class="sm-syl-lang">${r.lang.name}<span class="sm-syl-lang-sub">${r.lang.variety}</span></div>
+      <div class="sm-syl-template">${tplStr}</div>
+      <div class="sm-syl-verdict ${r.klass}">${r.verdict}</div>
+      <div class="sm-syl-why">${r.why}</div>`;
+    section.appendChild(row);
+  });
+
+  view.appendChild(section);
+}
+
+// ══════════════════════════════════
+//  TRANSLATE BY SOUND (Phase 5b)
+// ══════════════════════════════════
+// Map each user phoneme to the nearest equivalent in a target language's
+// inventory using a simple feature-similarity score. Diphthongs that
+// don't exist in the target are decomposed into component vowels and
+// each part mapped individually.
+
+const SM_TR_PLACE_ORDER = [
+  "bilabial","labiodental","dental","alveolar","postalveolar",
+  "retroflex","palatal","velar","uvular","pharyngeal","glottal"
+];
+
+let smTrTarget = "ja"; // default: Japanese — small inventory makes mappings dramatic
+
+function smTrPlaceDistance(a, b) {
+  const i1 = SM_TR_PLACE_ORDER.indexOf(a);
+  const i2 = SM_TR_PLACE_ORDER.indexOf(b);
+  if (i1 < 0 || i2 < 0) return 99;
+  return Math.abs(i1 - i2);
+}
+
+// Returns [mapped IPA, ...] (one or more symbols if a diphthong decomposes).
+function smTrMap(p, targetCode) {
+  const data = LANG_PHONEMES[targetCode];
+  if (!data) return { out: [p], same: true };
+
+  const feat = SM_FEATS[p];
+  if (!feat) return { out: [p], same: true };
+
+  // Diphthong path
+  if (feat.type === "V" && feat.place === "diphthong") {
+    if ((data.diphs || []).includes(p)) return { out: [p], same: true };
+    const parts = DIPH_DECOMP[p] || [];
+    if (!parts.length) return { out: [p], same: true };
+    const mapped = [];
+    let allSame = true;
+    for (const part of parts) {
+      const sub = smTrMap(part, targetCode);
+      mapped.push(...sub.out);
+      if (!sub.same) allSame = false;
+    }
+    return { out: mapped, same: false }; // a diph→2-vowel split is always a "change"
+  }
+
+  // Consonant path
+  if (feat.type === "C") {
+    // Exact symbol match wins
+    const exact = data.cons.find(c => c[0] === p);
+    if (exact) return { out: [p], same: true };
+    let best = null, bestScore = -Infinity;
+    for (const [ipa, place, manner, voice] of data.cons) {
+      let score = 0;
+      if (manner === feat.manner) score += 4;
+      if (voice === feat.voice) score += 1;
+      const dPlace = smTrPlaceDistance(place, feat.place);
+      score += Math.max(0, 6 - dPlace * 2); // 6 same place, 4 adj, 2 next, 0 distant
+      if (score > bestScore) { bestScore = score; best = ipa; }
+    }
+    return { out: [best || p], same: false };
+  }
+
+  // Vowel path
+  if (feat.type === "V") {
+    const exact = data.vowels.find(v => v[0] === p);
+    if (exact) return { out: [p], same: true };
+    const vf = (typeof SM_COV_VOWEL_FEAT !== "undefined") ? SM_COV_VOWEL_FEAT[p] : null;
+    if (!vf) return { out: [p], same: true };
+    let best = null, bestScore = Infinity;
+    for (const [ipa, h, b, r] of data.vowels) {
+      const d = Math.abs(h - vf.h) + Math.abs(b - vf.b) + 0.5 * Math.abs(r - vf.r);
+      if (d < bestScore) { bestScore = d; best = ipa; }
+    }
+    return { out: [best || p], same: false };
+  }
+
+  return { out: [p], same: true };
+}
+
+function smTrTranslateWord(syllables, targetCode) {
+  // Returns flat array of {ipa, same, original} entries.
+  const out = [];
+  for (const syl of syllables) {
+    for (const p of syl.phonemes) {
+      const r = smTrMap(p, targetCode);
+      r.out.forEach(ipa => {
+        out.push({ ipa, same: r.same && ipa === p, original: p });
+      });
+    }
+  }
+  return out;
+}
+
+function smRenderTranslate(view, processed) {
+  if (typeof LANG_PHONEMES === "undefined") return;
+  if (!processed.some(wp => wp.known && wp.syllables.length)) return;
+
+  const section = document.createElement("div");
+  section.className = "sm-stat-section";
+  section.id = "sm-tr-section";
+  section.innerHTML = `<div class="sm-stat-section-title">Translate by sound</div>`;
+
+  const intro = document.createElement("div");
+  intro.className = "sm-tr-intro";
+  intro.innerHTML = `Each phoneme in your text mapped to the <strong>nearest equivalent</strong>
+    in a target language's inventory (matched by manner, place, and voicing for
+    consonants; by height, backness, and rounding for vowels). Diphthongs the
+    target lacks are split into their component vowels. Gold marks every change.`;
+  section.appendChild(intro);
+
+  // Target language picker (single-select chips, default Japanese)
+  const picker = document.createElement("div");
+  picker.className = "sm-tr-picker";
+  picker.id = "sm-tr-picker";
+  for (const code in LANG_INVENTORIES) {
+    if (code === "en") continue; // pointless to translate English to English
+    const chip = document.createElement("button");
+    chip.type = "button";
+    chip.className = "sm-tr-chip" + (code === smTrTarget ? " active" : "");
+    chip.dataset.code = code;
+    chip.textContent = LANG_INVENTORIES[code].name;
+    chip.addEventListener("click", () => {
+      smTrTarget = code;
+      smTrRefreshOutput(processed);
+      picker.querySelectorAll(".sm-tr-chip").forEach(c => {
+        c.classList.toggle("active", c.dataset.code === smTrTarget);
+      });
+    });
+    picker.appendChild(chip);
+  }
+  section.appendChild(picker);
+
+  const out = document.createElement("div");
+  out.className = "sm-tr-output";
+  out.id = "sm-tr-output";
+  section.appendChild(out);
+
+  const summary = document.createElement("div");
+  summary.className = "sm-tr-summary";
+  summary.id = "sm-tr-summary";
+  section.appendChild(summary);
+
+  view.appendChild(section);
+  smTrRefreshOutput(processed);
+}
+
+function smTrRefreshOutput(processed) {
+  const out = document.getElementById("sm-tr-output");
+  const summary = document.getElementById("sm-tr-summary");
+  if (!out || !summary) return;
+  out.innerHTML = "";
+
+  let totalPhonemes = 0, totalChanges = 0, totalAdded = 0;
+  const targetName = LANG_INVENTORIES[smTrTarget] ? LANG_INVENTORIES[smTrTarget].name : smTrTarget;
+
+  for (const wp of processed) {
+    if (!wp.known || !wp.syllables.length) continue;
+    const original = [];
+    for (const syl of wp.syllables) for (const p of syl.phonemes) original.push(p);
+    const mapped = smTrTranslateWord(wp.syllables, smTrTarget);
+    totalPhonemes += original.length;
+    const changeCount = mapped.filter(m => !m.same).length;
+    totalChanges += changeCount;
+    if (mapped.length > original.length) totalAdded += (mapped.length - original.length);
+
+    const row = document.createElement("div");
+    row.className = "sm-tr-word";
+    const wrd = document.createElement("div");
+    wrd.className = "sm-tr-word-txt";
+    wrd.textContent = wp.word;
+    row.appendChild(wrd);
+
+    const origBox = document.createElement("div");
+    origBox.className = "sm-tr-phons";
+    original.forEach(p => {
+      const span = document.createElement("span");
+      span.className = "sm-tr-phon";
+      span.textContent = p;
+      origBox.appendChild(span);
+    });
+    row.appendChild(origBox);
+
+    const targetBox = document.createElement("div");
+    targetBox.className = "sm-tr-phons";
+    mapped.forEach(m => {
+      const span = document.createElement("span");
+      span.className = "sm-tr-phon " + (m.same ? "same" : "changed");
+      span.textContent = m.ipa;
+      if (!m.same) span.title = `was /${m.original}/`;
+      targetBox.appendChild(span);
+    });
+    row.appendChild(targetBox);
+
+    const cnt = document.createElement("div");
+    cnt.className = "sm-tr-changes";
+    cnt.innerHTML = changeCount > 0
+      ? `<span class="n">${changeCount}</span>/${original.length}`
+      : `<span style="color:#50d090">all fit</span>`;
+    cnt.title = changeCount > 0 ? `${changeCount} of ${original.length} phonemes had to be remapped` : "fits without changes";
+    row.appendChild(cnt);
+    out.appendChild(row);
+  }
+
+  const pct = totalPhonemes ? Math.round(totalChanges / totalPhonemes * 100) : 0;
+  summary.innerHTML = `
+    <div><strong>${targetName}</strong>: <em style="color:var(--text)">${totalChanges}</em>
+      of ${totalPhonemes} phonemes remapped (${pct}%).</div>
+    ${totalAdded > 0 ? `<div>${totalAdded} extra vowel(s) inserted from decomposed diphthongs.</div>` : ""}
+    <div style="opacity:.7">Smaller inventories force more remapping. Try Hawaiian for the most dramatic shift.</div>`;
 }
 
 // ══════════════════════════════════
