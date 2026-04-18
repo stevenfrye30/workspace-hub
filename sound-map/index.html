@@ -435,6 +435,50 @@ body{background:var(--bg);color:var(--text);font-family:"Segoe UI",Arial,sans-se
 .sm-bar-count{color:var(--muted);font-family:var(--mono);font-size:11px;text-align:right}
 .sm-stat-empty{color:var(--muted);font-style:italic;font-size:13px;padding:10px 0}
 
+/* ── Language similarity (Phase 2) ── */
+.sm-lang-intro{color:var(--muted);font-size:12px;line-height:1.6;margin-bottom:12px;max-width:720px}
+.sm-lang-intro strong{color:var(--text)}
+.sm-lang-caveat{color:var(--muted);font-size:11px;font-style:italic;margin-top:8px;padding:8px 10px;background:var(--bg);border-left:2px solid var(--gold);border-radius:0 3px 3px 0}
+.sm-lang-rank{display:flex;flex-direction:column;gap:5px}
+.sm-lang-rank-row{display:grid;grid-template-columns:22px 1fr 1fr 70px;gap:10px;align-items:center;padding:6px 8px;border-radius:4px;transition:background .12s;cursor:pointer;border:1px solid transparent}
+.sm-lang-rank-row:hover{background:var(--surf2)}
+.sm-lang-rank-row.selected{border-color:var(--gold);background:rgba(212,162,76,.05)}
+.sm-lang-rank-pos{color:var(--muted);font-family:var(--mono);font-size:11px;text-align:right;font-weight:700}
+.sm-lang-rank-pos.top{color:var(--gold)}
+.sm-lang-rank-name{font-size:13px;color:var(--text);font-weight:600;display:flex;align-items:baseline;gap:8px;min-width:0}
+.sm-lang-rank-variety{color:var(--muted);font-size:10px;font-style:italic;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sm-lang-rank-bar-wrap{position:relative;height:14px;background:var(--surf2);border-radius:3px;overflow:hidden}
+.sm-lang-rank-bar{height:100%;background:linear-gradient(90deg,rgba(212,162,76,.35),var(--gold));border-radius:3px;transition:width .3s}
+.sm-lang-rank-score{color:var(--gold);font-family:var(--mono);font-size:12px;font-weight:700;text-align:right}
+.sm-lang-picker{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+.sm-lang-chip{background:var(--surf2);border:1px solid var(--bdr);border-radius:20px;color:var(--muted);cursor:pointer;font-size:11px;padding:5px 12px;transition:all .12s;user-select:none}
+.sm-lang-chip:hover{color:var(--text);border-color:var(--muted)}
+.sm-lang-chip.active{background:var(--gold);color:#111;border-color:var(--gold);font-weight:700}
+.sm-lang-chip.disabled{opacity:.45;cursor:not-allowed}
+.sm-lang-chip.disabled:hover{color:var(--muted);border-color:var(--bdr)}
+.sm-lang-picker-hint{color:var(--muted);font-size:10px;font-style:italic;flex-basis:100%;margin-top:2px}
+.sm-lang-overlay{margin-top:14px}
+.sm-lang-overlay-legend{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:10px;font-size:11px;color:var(--muted)}
+.sm-lang-legend-item{display:inline-flex;align-items:center;gap:6px}
+.sm-lang-legend-swatch{width:14px;height:4px;border-radius:2px;flex-shrink:0}
+.sm-lang-overlay-row{display:grid;grid-template-columns:130px 1fr;gap:12px;align-items:center;margin-bottom:10px;font-size:12px;padding-bottom:8px;border-bottom:1px dashed rgba(255,255,255,.04)}
+.sm-lang-overlay-row:last-child{border-bottom:none}
+.sm-lang-overlay-label{color:var(--text);text-transform:capitalize;font-size:11px;letter-spacing:.02em}
+.sm-lang-overlay-bars{display:flex;flex-direction:column;gap:3px}
+.sm-lang-overlay-bar-row{display:grid;grid-template-columns:48px 1fr 48px;gap:8px;align-items:center;font-size:10px}
+.sm-lang-overlay-series{color:var(--muted);font-family:var(--mono);text-transform:uppercase;letter-spacing:.04em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sm-lang-overlay-track{height:9px;background:var(--surf2);border-radius:2px;overflow:hidden}
+.sm-lang-overlay-fill{height:100%;border-radius:2px;transition:width .4s}
+.sm-lang-overlay-val{color:var(--muted);font-family:var(--mono);text-align:right;font-size:10px}
+.sm-lang-sum{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px;padding:10px 12px;background:var(--bg);border-radius:var(--radius);font-size:11px;color:var(--muted);line-height:1.55}
+.sm-lang-sum strong{color:var(--gold)}
+@media(max-width:720px){
+  .sm-lang-rank-row{grid-template-columns:18px 1fr 60px;gap:6px}
+  .sm-lang-rank-bar-wrap{display:none}
+  .sm-lang-overlay-row{grid-template-columns:1fr;gap:4px}
+  .sm-lang-overlay-label{margin-bottom:2px;font-weight:700;color:var(--gold)}
+}
+
 @media(max-width:720px){
   #sm-tl-tract{flex:1 1 100%}
   #sm-tl-side{flex:1 1 100%;min-width:0}
@@ -919,6 +963,7 @@ body{background:var(--bg);color:var(--text);font-family:"Segoe UI",Arial,sans-se
 
 <script src="../data/cmudict.js"></script>
 <script src="../data/phonetics.js"></script>
+<script src="../data/language_phonetics.js"></script>
 <script>
 // ══════════════════════════════════
 //  SOUND MAP
@@ -1698,6 +1743,9 @@ function smRenderStats(processed, byLine) {
   addCard("Lines", byLine.length, "");
   view.appendChild(grid);
 
+  // Cross-language similarity + overlay (Phase 2)
+  smLangRenderSection(view, allPhons);
+
   // Place-of-articulation histogram
   const placeOrder = [
     "bilabial","labiodental","dental","alveolar","postalveolar",
@@ -1763,6 +1811,258 @@ function smRenderStats(processed, byLine) {
     topSec.appendChild(row);
   }
   view.appendChild(topSec);
+}
+
+// ══════════════════════════════════
+//  CROSS-LANGUAGE SIMILARITY (Phase 2)
+// ══════════════════════════════════
+// Module-scope: which language codes are currently selected for the overlay,
+// and the latest user vector so chip toggles can re-render without re-parsing.
+const SM_LANG_PALETTE = ["#40b0e8", "#50d090", "#e85050"]; // up to 3 overlays
+const SM_LANG_MAX_OVERLAY = 3;
+let smLangSelected = []; // array of lang codes, in selection order
+let smLangUser = null;   // { vector, counts, total }
+
+function smLangRenderSection(view, allPhons) {
+  if (typeof LANG_INVENTORIES === "undefined") return; // data file missing
+
+  smLangUser = langUserVector(allPhons);
+  if (smLangUser.total === 0) return; // nothing mappable
+
+  // Keep only still-valid selections (data might have changed between runs)
+  smLangSelected = smLangSelected.filter(code => LANG_INVENTORIES[code]);
+
+  const section = document.createElement("div");
+  section.className = "sm-stat-section";
+  section.id = "sm-lang-section";
+  section.innerHTML = `<div class="sm-stat-section-title">Language similarity</div>`;
+
+  const intro = document.createElement("div");
+  intro.className = "sm-lang-intro";
+  intro.innerHTML = `
+    Your text's <strong>place-of-articulation profile</strong> (how often each
+    part of the mouth is engaged) is compared against 15 languages using
+    <strong>cosine similarity</strong>. Click a language to overlay it against
+    your text below. Scores closer to 100% mean a more similar distribution of
+    articulation regions.`;
+  section.appendChild(intro);
+
+  // Similarity ranking
+  const ranking = smLangComputeRanking(smLangUser.vector);
+  const rankList = document.createElement("div");
+  rankList.className = "sm-lang-rank";
+  rankList.id = "sm-lang-rank";
+  ranking.forEach((r, i) => rankList.appendChild(smLangBuildRankRow(r, i)));
+  section.appendChild(rankList);
+
+  // Picker (chips) — offers the full 15, with selected state reflected.
+  const pickerTitle = document.createElement("div");
+  pickerTitle.className = "sm-stat-label";
+  pickerTitle.style.marginTop = "18px";
+  pickerTitle.textContent = "Overlay languages";
+  section.appendChild(pickerTitle);
+
+  const picker = document.createElement("div");
+  picker.className = "sm-lang-picker";
+  picker.id = "sm-lang-picker";
+  // Show in ranked order so "most similar" reads left-to-right.
+  ranking.forEach(r => picker.appendChild(smLangBuildChip(r.code, r.name)));
+  const hint = document.createElement("div");
+  hint.className = "sm-lang-picker-hint";
+  hint.textContent = `Pick up to ${SM_LANG_MAX_OVERLAY} to compare. Rows in the ranking above are also clickable.`;
+  picker.appendChild(hint);
+  section.appendChild(picker);
+
+  // Overlay container — populated/refreshed by smLangRefreshOverlay
+  const overlay = document.createElement("div");
+  overlay.className = "sm-lang-overlay";
+  overlay.id = "sm-lang-overlay";
+  section.appendChild(overlay);
+
+  // Caveat
+  const caveat = document.createElement("div");
+  caveat.className = "sm-lang-caveat";
+  caveat.innerHTML = `
+    <strong>Honest note.</strong> Language percentages are derived from
+    <em>phoneme inventories</em> (which sounds exist in the language) for a
+    standard variety, not from running-speech corpora. Your text's
+    percentages are token-based (every occurrence counts). That mismatch
+    means similarities are approximate — useful for spotting structural
+    resemblance, less so for quantitative claims.`;
+  section.appendChild(caveat);
+
+  view.appendChild(section);
+  smLangRefreshOverlay();
+  smLangRefreshChips();
+}
+
+function smLangComputeRanking(userVec) {
+  const out = [];
+  for (const code in LANG_INVENTORIES) {
+    const lang = LANG_INVENTORIES[code];
+    const sim = langCosineSim(userVec, lang.vector);
+    out.push({ code, name: lang.name, variety: lang.variety, family: lang.family, sim });
+  }
+  out.sort((a, b) => b.sim - a.sim);
+  return out;
+}
+
+function smLangBuildRankRow(r, idx) {
+  const row = document.createElement("div");
+  row.className = "sm-lang-rank-row";
+  row.dataset.code = r.code;
+  const pct = Math.round(r.sim * 1000) / 10; // one decimal
+  const barPct = Math.max(0, Math.min(100, r.sim * 100));
+  const posClass = idx < 3 ? "top" : "";
+  row.innerHTML = `
+    <div class="sm-lang-rank-pos ${posClass}">#${idx+1}</div>
+    <div class="sm-lang-rank-name">
+      ${r.name}
+      <span class="sm-lang-rank-variety">${r.variety} · ${r.family}</span>
+    </div>
+    <div class="sm-lang-rank-bar-wrap"><div class="sm-lang-rank-bar" style="width:${barPct}%"></div></div>
+    <div class="sm-lang-rank-score">${pct.toFixed(1)}%</div>`;
+  row.addEventListener("click", () => smLangToggleSelection(r.code));
+  return row;
+}
+
+function smLangBuildChip(code, name) {
+  const chip = document.createElement("button");
+  chip.type = "button";
+  chip.className = "sm-lang-chip";
+  chip.dataset.code = code;
+  chip.textContent = name;
+  chip.addEventListener("click", () => smLangToggleSelection(code));
+  return chip;
+}
+
+function smLangToggleSelection(code) {
+  const at = smLangSelected.indexOf(code);
+  if (at >= 0) {
+    smLangSelected.splice(at, 1);
+  } else {
+    if (smLangSelected.length >= SM_LANG_MAX_OVERLAY) {
+      smLangSelected.shift(); // drop oldest to make room
+    }
+    smLangSelected.push(code);
+  }
+  smLangRefreshChips();
+  smLangRefreshOverlay();
+}
+
+function smLangRefreshChips() {
+  const picker = document.getElementById("sm-lang-picker");
+  const rank = document.getElementById("sm-lang-rank");
+  if (!picker) return;
+  const atCapacity = smLangSelected.length >= SM_LANG_MAX_OVERLAY;
+  picker.querySelectorAll(".sm-lang-chip").forEach(chip => {
+    const code = chip.dataset.code;
+    const isSelected = smLangSelected.includes(code);
+    chip.classList.toggle("active", isSelected);
+    chip.classList.toggle("disabled", atCapacity && !isSelected);
+  });
+  if (rank) {
+    rank.querySelectorAll(".sm-lang-rank-row").forEach(row => {
+      row.classList.toggle("selected", smLangSelected.includes(row.dataset.code));
+    });
+  }
+}
+
+function smLangRefreshOverlay() {
+  const overlay = document.getElementById("sm-lang-overlay");
+  if (!overlay || !smLangUser) return;
+  overlay.innerHTML = "";
+
+  if (smLangSelected.length === 0) {
+    const empty = document.createElement("div");
+    empty.className = "sm-stat-empty";
+    empty.textContent = "Pick a language above to overlay it against your text.";
+    overlay.appendChild(empty);
+    return;
+  }
+
+  // Legend
+  const legend = document.createElement("div");
+  legend.className = "sm-lang-overlay-legend";
+  legend.appendChild(smLangBuildLegendItem("Your text", "var(--gold)"));
+  smLangSelected.forEach((code, i) => {
+    const lang = LANG_INVENTORIES[code];
+    legend.appendChild(smLangBuildLegendItem(lang.name, SM_LANG_PALETTE[i] || "#999"));
+  });
+  overlay.appendChild(legend);
+
+  // Per-place rows. Only render places with non-zero on at least one series
+  // to keep the chart dense.
+  const series = [
+    { label: "YOU", vector: smLangUser.vector, color: "var(--gold)" },
+    ...smLangSelected.map((code, i) => {
+      const lang = LANG_INVENTORIES[code];
+      return { label: code.toUpperCase(), vector: lang.vector, color: SM_LANG_PALETTE[i] || "#999", code };
+    })
+  ];
+
+  // Find the max value across all visible series for normalizing bar widths —
+  // bars are drawn against the largest single value in view, so small-but-present
+  // places don't render as empty slivers.
+  let maxVal = 0;
+  for (const s of series) {
+    for (const v of s.vector) if (v > maxVal) maxVal = v;
+  }
+  if (maxVal === 0) maxVal = 1;
+
+  LANG_PLACE_ORDER.forEach((place, pIdx) => {
+    const hasAny = series.some(s => s.vector[pIdx] > 0);
+    if (!hasAny) return;
+    const row = document.createElement("div");
+    row.className = "sm-lang-overlay-row";
+    const label = document.createElement("div");
+    label.className = "sm-lang-overlay-label";
+    label.textContent = LANG_PLACE_LABELS[place] || place;
+    const bars = document.createElement("div");
+    bars.className = "sm-lang-overlay-bars";
+    series.forEach(s => {
+      const v = s.vector[pIdx];
+      const w = Math.round((v / maxVal) * 100);
+      const barRow = document.createElement("div");
+      barRow.className = "sm-lang-overlay-bar-row";
+      barRow.innerHTML = `
+        <span class="sm-lang-overlay-series">${s.label}</span>
+        <div class="sm-lang-overlay-track"><div class="sm-lang-overlay-fill" style="width:${w}%;background:${s.color}"></div></div>
+        <span class="sm-lang-overlay-val">${(v*100).toFixed(1)}%</span>`;
+      bars.appendChild(barRow);
+    });
+    row.appendChild(label);
+    row.appendChild(bars);
+    overlay.appendChild(row);
+  });
+
+  // Pairwise summary: for each selected lang, show similarity + biggest contrasts.
+  const sum = document.createElement("div");
+  sum.className = "sm-lang-sum";
+  const summaries = smLangSelected.map((code, i) => {
+    const lang = LANG_INVENTORIES[code];
+    const sim = langCosineSim(smLangUser.vector, lang.vector);
+    const diffs = LANG_PLACE_ORDER.map((place, pIdx) => ({
+      place,
+      diff: smLangUser.vector[pIdx] - lang.vector[pIdx]
+    }));
+    const moreIn = diffs.filter(d => d.diff > 0.01).sort((a,b) => b.diff - a.diff)[0];
+    const lessIn = diffs.filter(d => d.diff < -0.01).sort((a,b) => a.diff - b.diff)[0];
+    const swatch = SM_LANG_PALETTE[i] || "#999";
+    const bits = [`<strong style="color:${swatch}">${lang.name}</strong>: ${(sim*100).toFixed(1)}% similar`];
+    if (moreIn) bits.push(`your text uses <strong>${LANG_PLACE_LABELS[moreIn.place]}</strong> +${(moreIn.diff*100).toFixed(1)}pp more`);
+    if (lessIn) bits.push(`<strong>${LANG_PLACE_LABELS[lessIn.place]}</strong> ${(lessIn.diff*100).toFixed(1)}pp less`);
+    return `<div>${bits.join(" · ")}</div>`;
+  });
+  sum.innerHTML = summaries.join("");
+  overlay.appendChild(sum);
+}
+
+function smLangBuildLegendItem(label, color) {
+  const item = document.createElement("span");
+  item.className = "sm-lang-legend-item";
+  item.innerHTML = `<span class="sm-lang-legend-swatch" style="background:${color}"></span>${label}`;
+  return item;
 }
 
 // ══════════════════════════════════
