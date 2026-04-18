@@ -354,12 +354,14 @@ body{background:var(--bg);color:var(--text);font-family:"Segoe UI",Arial,sans-se
 .sm-view-btn.active{background:var(--gold);color:#111}
 
 /* ── View containers ── */
-#sm-view-map,#sm-view-timeline,#sm-view-stats{display:none}
+#sm-view-map,#sm-view-timeline,#sm-view-stats,#sm-view-coverage{display:none}
 #sm-output[data-view="map"] #sm-view-map{display:block}
 #sm-output[data-view="timeline"] #sm-view-timeline{display:flex;flex-direction:column;gap:18px}
 #sm-output[data-view="stats"] #sm-view-stats{display:flex;flex-direction:column;gap:22px}
+#sm-output[data-view="coverage"] #sm-view-coverage{display:flex;flex-direction:column;gap:18px}
 #sm-output[data-view="timeline"] #sm-vtract,
-#sm-output[data-view="stats"] #sm-vtract{display:none}
+#sm-output[data-view="stats"] #sm-vtract,
+#sm-output[data-view="coverage"] #sm-vtract{display:none}
 
 /* ── Timeline view ── */
 #sm-tl-stage{display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap}
@@ -476,6 +478,82 @@ body{background:var(--bg);color:var(--text);font-family:"Segoe UI",Arial,sans-se
   .sm-lang-overlay-col{min-width:40px}
   .sm-lang-overlay-col-bars{height:80px}
   .sm-lang-overlay-col-label{font-size:8px}
+}
+
+/* ── Coverage view (Phase 3) ── */
+#sm-view-coverage{padding:20px 24px;overflow-y:auto}
+.sm-cov-intro{color:var(--muted);font-size:12px;line-height:1.6;margin-bottom:4px;max-width:720px}
+.sm-cov-intro strong{color:var(--text)}
+.sm-cov-picker{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:4px}
+.sm-cov-picker-title{color:var(--muted);font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;flex-basis:100%;margin-bottom:4px}
+.sm-cov-chip{background:var(--surf2);border:1px solid var(--bdr);border-radius:20px;color:var(--muted);cursor:pointer;font-size:11px;padding:5px 12px;transition:all .12s;user-select:none;display:inline-flex;align-items:center;gap:6px}
+.sm-cov-chip:hover{color:var(--text);border-color:var(--muted)}
+.sm-cov-chip.active{color:#111;font-weight:700;border-width:2px;padding:4px 11px}
+.sm-cov-chip.active .sm-cov-chip-dot{box-shadow:0 0 0 2px rgba(0,0,0,.25)}
+.sm-cov-chip-dot{width:8px;height:8px;border-radius:50%;display:inline-block}
+.sm-cov-panels{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:18px}
+.sm-cov-section{background:var(--surf);border:1px solid var(--bdr);border-radius:var(--radius);padding:14px 16px}
+.sm-cov-section-title{color:var(--gold);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid var(--bdr);display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.sm-cov-section-sub{color:var(--muted);font-size:10px;font-style:italic;text-transform:none;letter-spacing:0;font-weight:400}
+
+/* IPA consonant grid */
+.sm-cov-grid-wrap{overflow-x:auto}
+.sm-cov-grid{border-collapse:collapse;font-family:var(--mono);font-size:13px;width:100%;table-layout:fixed}
+.sm-cov-grid th{background:var(--surf2);color:var(--muted);font-family:"Segoe UI",Arial,sans-serif;font-size:9px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:4px 2px;border:1px solid var(--bdr);text-align:center;writing-mode:vertical-rl;transform:rotate(180deg);height:64px;vertical-align:bottom;white-space:nowrap}
+.sm-cov-grid th.sm-cov-manner-th{writing-mode:horizontal-tb;transform:none;text-align:right;width:74px;padding:4px 8px;font-size:10px;height:auto;vertical-align:middle}
+.sm-cov-grid td{border:1px solid var(--bdr);padding:3px 2px;text-align:center;vertical-align:middle;background:var(--surf2);color:var(--muted);min-height:28px;height:28px;position:relative}
+.sm-cov-grid td.filled{background:var(--cov-cell-bg,#444);color:#111;font-weight:700}
+.sm-cov-grid td.filled.multi{background:linear-gradient(90deg,var(--cov-cell-bg) 50%,var(--cov-cell-bg2) 50%)}
+.sm-cov-grid td.filled.multi3{background:linear-gradient(90deg,var(--cov-cell-bg) 33%,var(--cov-cell-bg2) 33% 66%,var(--cov-cell-bg3) 66%)}
+.sm-cov-grid td.empty{color:#3a4256;font-size:11px}
+.sm-cov-grid td .sm-cov-pair{display:inline-flex;gap:5px;align-items:center;justify-content:center;flex-wrap:wrap}
+.sm-cov-grid td .sm-cov-symbol{display:inline-block}
+.sm-cov-grid td .sm-cov-symbol.v0{opacity:.95}
+.sm-cov-grid td .sm-cov-symbol.v1{opacity:1}
+
+/* Vowel trapezoid */
+.sm-cov-trap-wrap{display:flex;justify-content:center;padding:6px 0 2px}
+.sm-cov-trap{width:100%;max-width:340px;height:200px;display:block}
+.sm-cov-trap .sm-cov-trap-frame{fill:none;stroke:#32445c;stroke-width:1.2}
+.sm-cov-trap .sm-cov-trap-axis{font-family:"Segoe UI",Arial,sans-serif;font-size:9px;fill:#8fa3ba;text-transform:uppercase;letter-spacing:.05em}
+.sm-cov-trap .sm-cov-trap-pt{cursor:pointer;transition:transform .12s}
+.sm-cov-trap .sm-cov-trap-pt:hover{transform:scale(1.3);transform-origin:center}
+.sm-cov-trap .sm-cov-trap-label{font-family:var(--mono);font-size:11px;fill:var(--text);font-weight:700;pointer-events:none}
+.sm-cov-trap-legend{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px;font-size:10px;color:var(--muted);justify-content:center}
+.sm-cov-trap-legend-item{display:inline-flex;align-items:center;gap:6px}
+.sm-cov-trap-legend-swatch{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+
+/* Heat-shaded vocal tract */
+.sm-cov-tract-wrap{display:flex;flex-direction:column;gap:8px;align-items:center}
+.sm-cov-tract-svg{width:100%;max-width:340px;height:auto;display:block}
+.sm-cov-tract-svg .vt-part{fill:#263447;stroke:#32445c;stroke-width:0.6;transition:fill .25s}
+.sm-cov-tract-stats{display:grid;grid-template-columns:1fr 1fr;gap:4px 10px;font-size:10px;color:var(--muted);width:100%;max-width:340px;font-family:var(--mono)}
+.sm-cov-tract-stat{display:flex;justify-content:space-between;padding:2px 6px;border-radius:2px}
+.sm-cov-tract-stat.hot{background:rgba(212,162,76,.12);color:var(--text)}
+.sm-cov-tract-stat .pct{color:var(--gold);font-weight:700}
+
+/* Diphthong strip */
+.sm-cov-diphs{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
+.sm-cov-diph{background:linear-gradient(90deg,#f7cf74,#b499d9);color:#111;font-family:var(--mono);font-size:13px;font-weight:700;padding:4px 10px;border-radius:14px}
+.sm-cov-diphs-empty{color:var(--muted);font-size:11px;font-style:italic;padding:4px 0}
+
+/* Summary line */
+.sm-cov-summary{display:flex;flex-wrap:wrap;gap:10px;padding:10px 12px;background:var(--bg);border-radius:var(--radius);font-size:11px;color:var(--muted);line-height:1.6}
+.sm-cov-summary strong{color:var(--gold)}
+.sm-cov-summary em{color:var(--text);font-style:normal}
+
+/* Compare legend in the consonant grid header */
+.sm-cov-compare-legend{display:inline-flex;flex-wrap:wrap;gap:8px;font-size:10px}
+.sm-cov-compare-legend .sm-cov-compare-swatch{width:10px;height:10px;border-radius:2px;display:inline-block;vertical-align:middle;margin-right:4px}
+
+@media(max-width:900px){
+  .sm-cov-panels{grid-template-columns:1fr}
+}
+@media(max-width:720px){
+  #sm-view-coverage{padding:14px}
+  .sm-cov-grid{font-size:12px}
+  .sm-cov-grid th{font-size:8px;height:48px;padding:2px}
+  .sm-cov-grid th.sm-cov-manner-th{width:58px;font-size:9px}
 }
 
 @media(max-width:720px){
@@ -679,6 +757,7 @@ body{background:var(--bg);color:var(--text);font-family:"Segoe UI",Arial,sans-se
       <button type="button" class="sm-view-btn active" data-view="map">Phoneme Map</button>
       <button type="button" class="sm-view-btn" data-view="timeline">Articulation</button>
       <button type="button" class="sm-view-btn" data-view="stats">Stats</button>
+      <button type="button" class="sm-view-btn" data-view="coverage">Coverage</button>
     </div>
     <div id="sm-mode-picker" role="group" aria-label="Highlight mode">
       <span class="sm-mode-label">Highlight</span>
@@ -757,6 +836,7 @@ body{background:var(--bg);color:var(--text);font-family:"Segoe UI",Arial,sans-se
     </div>
     <div id="sm-view-timeline"></div>
     <div id="sm-view-stats"></div>
+    <div id="sm-view-coverage"></div>
   </div>
   <div id="sm-similar" class="hidden">
     <div id="sm-similar-header">
@@ -2074,6 +2154,641 @@ function smLangBuildLegendItem(label, color) {
 }
 
 // ══════════════════════════════════
+//  COVERAGE VIEW (Phase 3)
+// ══════════════════════════════════
+// Visualizes each language's phoneme inventory as an IPA consonant grid,
+// a vowel trapezoid, and a heat-shaded vocal tract. Compare mode (2-3
+// languages) color-codes grid cells by which language owns each slot.
+
+const SM_COV_PALETTE = ["#e8c840", "#40b0e8", "#e85050"]; // gold, blue, red
+const SM_COV_MAX = 3;
+let smCovSelected = ["en"]; // default: English
+let smCovRendered = false;  // lazy first render
+
+const SM_COV_VOWEL_PALETTE = {
+  "front-vowel":"#f7cf74", "central-vowel":"#d2c0a5", "back-vowel":"#b499d9", diphthong:"#e8c890"
+};
+const SM_COV_PLACE_PALETTE = {
+  bilabial:"#f5a5c9", labiodental:"#f5b58a", dental:"#f0d860",
+  alveolar:"#9fdc9f", postalveolar:"#7cd0ce", retroflex:"#b7d68c",
+  palatal:"#9bbde0", velar:"#b9a0db", uvular:"#c99aff",
+  pharyngeal:"#ffa0a0", glottal:"#bbbbbb"
+};
+
+// Places to show in the consonant grid (left-to-right).
+const SM_COV_PLACES_CONS = [
+  "bilabial","labiodental","dental","alveolar","postalveolar",
+  "retroflex","palatal","velar","uvular","pharyngeal","glottal"
+];
+
+function smCovRender() {
+  const view = document.getElementById("sm-view-coverage");
+  if (!view) return;
+  if (typeof LANG_PHONEMES === "undefined") return;
+  view.innerHTML = "";
+  smCovRendered = true;
+
+  const intro = document.createElement("div");
+  intro.className = "sm-cov-intro";
+  intro.innerHTML = `
+    <strong>Phonetic coverage.</strong> Each language's inventory plotted on the
+    IPA consonant grid, vowel trapezoid, and vocal tract. Pick one for a detailed
+    view, or select up to three to compare which slots they share.`;
+  view.appendChild(intro);
+
+  // Language chip picker
+  const pickerTitle = document.createElement("div");
+  pickerTitle.className = "sm-cov-picker-title";
+  pickerTitle.textContent = "Languages";
+  view.appendChild(pickerTitle);
+
+  const picker = document.createElement("div");
+  picker.className = "sm-cov-picker";
+  picker.id = "sm-cov-picker";
+  // Build chips in a stable order (same as LANG_INVENTORIES iteration order)
+  for (const code in LANG_INVENTORIES) {
+    picker.appendChild(smCovBuildChip(code));
+  }
+  view.appendChild(picker);
+
+  // Panels container
+  const panels = document.createElement("div");
+  panels.className = "sm-cov-panels";
+  panels.id = "sm-cov-panels";
+  view.appendChild(panels);
+
+  smCovRefreshChips();
+  smCovRefreshPanels();
+}
+
+function smCovBuildChip(code) {
+  const lang = LANG_INVENTORIES[code];
+  const chip = document.createElement("button");
+  chip.type = "button";
+  chip.className = "sm-cov-chip";
+  chip.dataset.code = code;
+  const dot = document.createElement("span");
+  dot.className = "sm-cov-chip-dot";
+  chip.appendChild(dot);
+  const label = document.createElement("span");
+  label.textContent = lang.name;
+  chip.appendChild(label);
+  chip.addEventListener("click", () => smCovToggle(code));
+  return chip;
+}
+
+function smCovToggle(code) {
+  const at = smCovSelected.indexOf(code);
+  if (at >= 0) {
+    if (smCovSelected.length === 1) return; // keep at least one selected
+    smCovSelected.splice(at, 1);
+  } else {
+    if (smCovSelected.length >= SM_COV_MAX) smCovSelected.shift();
+    smCovSelected.push(code);
+  }
+  smCovRefreshChips();
+  smCovRefreshPanels();
+}
+
+function smCovRefreshChips() {
+  const picker = document.getElementById("sm-cov-picker");
+  if (!picker) return;
+  picker.querySelectorAll(".sm-cov-chip").forEach(chip => {
+    const code = chip.dataset.code;
+    const idx = smCovSelected.indexOf(code);
+    const active = idx >= 0;
+    chip.classList.toggle("active", active);
+    const dot = chip.querySelector(".sm-cov-chip-dot");
+    if (active) {
+      const color = SM_COV_PALETTE[idx] || "#999";
+      chip.style.background = color;
+      chip.style.borderColor = color;
+      if (dot) dot.style.background = "#111";
+    } else {
+      chip.style.background = "";
+      chip.style.borderColor = "";
+      if (dot) dot.style.background = "#555";
+    }
+  });
+}
+
+function smCovRefreshPanels() {
+  const panels = document.getElementById("sm-cov-panels");
+  if (!panels) return;
+  panels.innerHTML = "";
+  if (smCovSelected.length === 0) return;
+
+  // Left column: consonant grid (always) + vowel trapezoid
+  const left = document.createElement("div");
+  left.style.display = "flex";
+  left.style.flexDirection = "column";
+  left.style.gap = "18px";
+  left.style.minWidth = "0";
+  left.appendChild(smCovBuildConsSection());
+  left.appendChild(smCovBuildVowelSection());
+  panels.appendChild(left);
+
+  // Right column: heat-shaded tract + diphthongs + summary
+  const right = document.createElement("div");
+  right.style.display = "flex";
+  right.style.flexDirection = "column";
+  right.style.gap = "18px";
+  right.style.minWidth = "0";
+  right.appendChild(smCovBuildTractSection());
+  right.appendChild(smCovBuildDiphsSection());
+  right.appendChild(smCovBuildSummarySection());
+  panels.appendChild(right);
+}
+
+// ── Consonant grid ──────────────────────────────────────────────────
+function smCovBuildConsSection() {
+  const section = document.createElement("div");
+  section.className = "sm-cov-section";
+
+  const title = document.createElement("div");
+  title.className = "sm-cov-section-title";
+  const titleText = document.createElement("span");
+  titleText.textContent = `Consonant inventory · IPA grid`;
+  title.appendChild(titleText);
+  if (smCovSelected.length > 1) {
+    const legend = document.createElement("div");
+    legend.className = "sm-cov-compare-legend";
+    smCovSelected.forEach((code, i) => {
+      const span = document.createElement("span");
+      span.innerHTML = `<span class="sm-cov-compare-swatch" style="background:${SM_COV_PALETTE[i]}"></span>${LANG_INVENTORIES[code].name}`;
+      legend.appendChild(span);
+    });
+    title.appendChild(legend);
+  } else {
+    const sub = document.createElement("span");
+    sub.className = "sm-cov-section-sub";
+    sub.textContent = "rows · manner  /  cols · place";
+    title.appendChild(sub);
+  }
+  section.appendChild(title);
+
+  const wrap = document.createElement("div");
+  wrap.className = "sm-cov-grid-wrap";
+  wrap.appendChild(smCovBuildConsTable());
+  section.appendChild(wrap);
+  return section;
+}
+
+function smCovBuildConsTable() {
+  // Aggregate presence: map "manner|place" -> array of {code, phonemes}
+  // per selected language. Also track the primary (first) language for single-view.
+  const cellMap = new Map();
+  smCovSelected.forEach((code, idx) => {
+    const data = LANG_PHONEMES[code];
+    if (!data) return;
+    for (const [ipa, place, manner, voice] of data.cons) {
+      const key = manner + "|" + place;
+      if (!cellMap.has(key)) cellMap.set(key, []);
+      const entry = cellMap.get(key);
+      let langEntry = entry.find(e => e.code === code);
+      if (!langEntry) {
+        langEntry = { code, colorIdx: idx, phonemes: [] };
+        entry.push(langEntry);
+      }
+      langEntry.phonemes.push({ ipa, voice });
+    }
+  });
+
+  const table = document.createElement("table");
+  table.className = "sm-cov-grid";
+  // Header row
+  const thead = document.createElement("thead");
+  const headerRow = document.createElement("tr");
+  const cornerTh = document.createElement("th");
+  cornerTh.className = "sm-cov-manner-th";
+  cornerTh.style.writingMode = "initial";
+  cornerTh.style.transform = "none";
+  cornerTh.style.height = "auto";
+  cornerTh.textContent = "";
+  headerRow.appendChild(cornerTh);
+  SM_COV_PLACES_CONS.forEach(place => {
+    const th = document.createElement("th");
+    th.textContent = LANG_PLACE_LABELS[place] || place;
+    th.style.color = SM_COV_PLACE_PALETTE[place] || "var(--muted)";
+    headerRow.appendChild(th);
+  });
+  thead.appendChild(headerRow);
+  table.appendChild(thead);
+
+  const tbody = document.createElement("tbody");
+  LANG_MANNER_ORDER.forEach(manner => {
+    const tr = document.createElement("tr");
+    const rowTh = document.createElement("th");
+    rowTh.className = "sm-cov-manner-th";
+    rowTh.textContent = manner;
+    tr.appendChild(rowTh);
+    SM_COV_PLACES_CONS.forEach(place => {
+      const td = document.createElement("td");
+      const key = manner + "|" + place;
+      const entry = cellMap.get(key);
+      if (!entry || entry.length === 0) {
+        td.className = "empty";
+        td.textContent = "·";
+        td.title = `no ${manner} at ${place}`;
+      } else {
+        td.classList.add("filled");
+        // Color the cell: if compare mode, split by language
+        if (smCovSelected.length > 1 && entry.length > 1) {
+          const sorted = entry.sort((a, b) => a.colorIdx - b.colorIdx);
+          td.classList.add(sorted.length >= 3 ? "multi3" : "multi");
+          td.style.setProperty("--cov-cell-bg", SM_COV_PALETTE[sorted[0].colorIdx]);
+          td.style.setProperty("--cov-cell-bg2", SM_COV_PALETTE[sorted[1].colorIdx] || "#999");
+          if (sorted[2]) td.style.setProperty("--cov-cell-bg3", SM_COV_PALETTE[sorted[2].colorIdx]);
+        } else {
+          const only = entry[0];
+          td.style.setProperty("--cov-cell-bg",
+            smCovSelected.length > 1 ? SM_COV_PALETTE[only.colorIdx] : (SM_COV_PLACE_PALETTE[place] || "#999"));
+        }
+        // Assemble symbols: in single view show all, in compare just a marker symbol
+        const pair = document.createElement("span");
+        pair.className = "sm-cov-pair";
+        if (smCovSelected.length === 1) {
+          const phs = entry[0].phonemes.slice().sort((a, b) => a.voice - b.voice); // voiceless first
+          phs.forEach(ph => {
+            const s = document.createElement("span");
+            s.className = "sm-cov-symbol v" + ph.voice;
+            s.textContent = ph.ipa;
+            pair.appendChild(s);
+          });
+        } else {
+          // Compact marker: dot per owner language
+          entry.forEach(le => {
+            const dot = document.createElement("span");
+            dot.style.display = "inline-block";
+            dot.style.width = "8px";
+            dot.style.height = "8px";
+            dot.style.borderRadius = "50%";
+            dot.style.background = SM_COV_PALETTE[le.colorIdx];
+            dot.style.margin = "0 1px";
+            dot.style.boxShadow = "0 0 0 1px rgba(0,0,0,.4)";
+            pair.appendChild(dot);
+          });
+        }
+        td.appendChild(pair);
+        // Tooltip: list each language's phonemes in that cell
+        const lines = entry.map(le => {
+          const name = LANG_INVENTORIES[le.code].name;
+          const syms = le.phonemes.map(p => p.ipa).join(" ");
+          return `${name}: ${syms}`;
+        });
+        td.title = `${manner} · ${place}\n${lines.join("\n")}`;
+      }
+      tr.appendChild(td);
+    });
+    tbody.appendChild(tr);
+  });
+  table.appendChild(tbody);
+  return table;
+}
+
+// ── Vowel trapezoid ────────────────────────────────────────────────
+function smCovBuildVowelSection() {
+  const section = document.createElement("div");
+  section.className = "sm-cov-section";
+  const title = document.createElement("div");
+  title.className = "sm-cov-section-title";
+  const tTxt = document.createElement("span");
+  tTxt.textContent = "Vowels · trapezoid";
+  title.appendChild(tTxt);
+  const sub = document.createElement("span");
+  sub.className = "sm-cov-section-sub";
+  sub.textContent = "front ← high → back, low ↓";
+  title.appendChild(sub);
+  section.appendChild(title);
+
+  const wrap = document.createElement("div");
+  wrap.className = "sm-cov-trap-wrap";
+  wrap.appendChild(smCovBuildTrap());
+  section.appendChild(wrap);
+
+  if (smCovSelected.length > 1) {
+    const legend = document.createElement("div");
+    legend.className = "sm-cov-trap-legend";
+    smCovSelected.forEach((code, i) => {
+      const item = document.createElement("span");
+      item.className = "sm-cov-trap-legend-item";
+      item.innerHTML = `<span class="sm-cov-trap-legend-swatch" style="background:${SM_COV_PALETTE[i]}"></span>${LANG_INVENTORIES[code].name}`;
+      legend.appendChild(item);
+    });
+    section.appendChild(legend);
+  }
+  return section;
+}
+
+function smCovBuildTrap() {
+  // Trapezoid coords in a 340x180 viewBox.
+  // Front column slightly wider than back (traditional IPA shape).
+  const VB_W = 340, VB_H = 180;
+  const TOP = 18, BOT = 154, L_TOP = 18, R_TOP = 322, L_BOT = 74, R_BOT = 268;
+  const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+  svg.setAttribute("viewBox", `0 0 ${VB_W} ${VB_H}`);
+  svg.setAttribute("class", "sm-cov-trap");
+
+  // Frame
+  const frame = document.createElementNS("http://www.w3.org/2000/svg", "polygon");
+  frame.setAttribute("points", `${L_TOP},${TOP} ${R_TOP},${TOP} ${R_BOT},${BOT} ${L_BOT},${BOT}`);
+  frame.setAttribute("class", "sm-cov-trap-frame");
+  svg.appendChild(frame);
+
+  // Axis labels
+  const addText = (x, y, text, anchor) => {
+    const t = document.createElementNS("http://www.w3.org/2000/svg", "text");
+    t.setAttribute("x", x); t.setAttribute("y", y);
+    t.setAttribute("class", "sm-cov-trap-axis");
+    if (anchor) t.setAttribute("text-anchor", anchor);
+    t.textContent = text;
+    svg.appendChild(t);
+  };
+  addText(L_TOP, TOP - 6, "front", "start");
+  addText(R_TOP, TOP - 6, "back", "end");
+  addText(L_TOP - 4, TOP + 4, "close", "end");
+  addText(L_TOP - 4, BOT + 2, "open", "end");
+  addText((L_TOP + R_TOP)/2, TOP - 6, "central", "middle");
+
+  // Heights divide vertical axis in 4 equal sections
+  const heights = [TOP, TOP + (BOT-TOP)/3, TOP + 2*(BOT-TOP)/3, BOT];
+
+  // Build projection from (h, b) → (x, y). Trapezoid narrows as h increases (going down).
+  const project = (h, b, rounded) => {
+    const fY = h / 3; // 0..1
+    const yL = L_TOP + fY * (L_BOT - L_TOP);
+    const yR = R_TOP + fY * (R_BOT - R_TOP);
+    const y = TOP + fY * (BOT - TOP);
+    const fB = b / 2; // 0..1
+    const x = yL + fB * (yR - yL);
+    return { x, y };
+  };
+
+  // Aggregate: cluster vowels by rounded-to-integer (h,b) to avoid exact overlap.
+  // Each cluster stores array of {ipa, rounded, code, colorIdx}.
+  const clusters = new Map();
+  smCovSelected.forEach((code, idx) => {
+    const data = LANG_PHONEMES[code];
+    if (!data) return;
+    for (const [ipa, h, b, rounded] of data.vowels) {
+      const key = `${h},${b}`;
+      if (!clusters.has(key)) clusters.set(key, []);
+      clusters.get(key).push({ ipa, rounded, code, colorIdx: idx });
+    }
+  });
+
+  // Render cluster points; offset overlapping langs horizontally within the cell.
+  clusters.forEach((items, key) => {
+    const [h, b] = key.split(",").map(Number);
+    const { x: cx, y: cy } = project(h, b);
+    // Group by lang color first
+    const byColor = new Map();
+    items.forEach(it => {
+      if (!byColor.has(it.colorIdx)) byColor.set(it.colorIdx, []);
+      byColor.get(it.colorIdx).push(it);
+    });
+    // Lay out circles: one per lang, small label with combined IPA inside
+    const colors = Array.from(byColor.keys()).sort();
+    const count = colors.length;
+    const spacing = 22;
+    const startX = cx - ((count - 1) * spacing) / 2;
+    colors.forEach((ci, i) => {
+      const langItems = byColor.get(ci);
+      const x = startX + i * spacing;
+      const color = SM_COV_PALETTE[ci] || "#999";
+      // Circle
+      const c = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+      c.setAttribute("cx", x); c.setAttribute("cy", cy);
+      c.setAttribute("r", 10);
+      c.setAttribute("fill", color);
+      c.setAttribute("fill-opacity", "0.85");
+      c.setAttribute("stroke", color);
+      c.setAttribute("stroke-width", "1.4");
+      c.setAttribute("class", "sm-cov-trap-pt");
+      const names = langItems.map(it => it.ipa).join(" ");
+      c.setAttribute("title", `${LANG_INVENTORIES[smCovSelected[ci]].name}: ${names}`);
+      // Tooltip via <title> child
+      const titleEl = document.createElementNS("http://www.w3.org/2000/svg", "title");
+      titleEl.textContent = `${LANG_INVENTORIES[smCovSelected[ci]].name}: ${names}`;
+      c.appendChild(titleEl);
+      svg.appendChild(c);
+      // Label (first IPA glyph)
+      const t = document.createElementNS("http://www.w3.org/2000/svg", "text");
+      t.setAttribute("x", x); t.setAttribute("y", cy + 4);
+      t.setAttribute("text-anchor", "middle");
+      t.setAttribute("class", "sm-cov-trap-label");
+      t.setAttribute("fill", "#111");
+      t.textContent = langItems[0].ipa.slice(0, 3);
+      svg.appendChild(t);
+    });
+  });
+
+  return svg;
+}
+
+// ── Heat-shaded vocal tract ────────────────────────────────────────
+function smCovBuildTractSection() {
+  const section = document.createElement("div");
+  section.className = "sm-cov-section";
+  const title = document.createElement("div");
+  title.className = "sm-cov-section-title";
+  title.innerHTML = `<span>Articulation zones · heat map</span><span class="sm-cov-section-sub">brightness = proportion of inventory</span>`;
+  section.appendChild(title);
+
+  const wrap = document.createElement("div");
+  wrap.className = "sm-cov-tract-wrap";
+  // If more than one language, show small multiples
+  if (smCovSelected.length === 1) {
+    wrap.appendChild(smCovBuildTract(smCovSelected[0]));
+    wrap.appendChild(smCovBuildTractStats(smCovSelected[0]));
+  } else {
+    const row = document.createElement("div");
+    row.style.display = "grid";
+    row.style.gridTemplateColumns = `repeat(${smCovSelected.length}, minmax(0, 1fr))`;
+    row.style.gap = "8px";
+    row.style.width = "100%";
+    smCovSelected.forEach((code, i) => {
+      const cell = document.createElement("div");
+      cell.style.display = "flex";
+      cell.style.flexDirection = "column";
+      cell.style.alignItems = "center";
+      cell.style.gap = "4px";
+      const label = document.createElement("div");
+      label.style.fontSize = "10px";
+      label.style.fontWeight = "700";
+      label.style.color = SM_COV_PALETTE[i];
+      label.style.textTransform = "uppercase";
+      label.style.letterSpacing = ".05em";
+      label.textContent = LANG_INVENTORIES[code].name;
+      cell.appendChild(label);
+      cell.appendChild(smCovBuildTract(code));
+      row.appendChild(cell);
+    });
+    wrap.appendChild(row);
+  }
+  section.appendChild(wrap);
+  return section;
+}
+
+function smCovBuildTract(code) {
+  const lang = LANG_INVENTORIES[code];
+  const vec = lang.vector;
+  // Build lookup: place → proportion
+  const prop = {};
+  LANG_PLACE_ORDER.forEach((p, i) => { prop[p] = vec[i]; });
+
+  const ns = "http://www.w3.org/2000/svg";
+  const svg = document.createElementNS(ns, "svg");
+  svg.setAttribute("viewBox", "0 0 260 180");
+  svg.setAttribute("class", "sm-cov-tract-svg");
+
+  // Head outline + cavities (same as timeline tract, kept terse)
+  const paths = [
+    { d: "M 25 95 Q 15 30, 85 20 L 215 22 Q 255 38, 245 90 L 220 105 Q 215 130, 200 142 L 195 172 L 45 172 Q 18 162, 25 95 Z", fill: "none", stroke: "#32445c", "stroke-width": "1.4", opacity: "0.55" },
+    { d: "M 65 50 Q 75 42, 165 45 L 170 70 L 60 68 Z", fill: "#1a2330", stroke: "#32445c", "stroke-width": "1" },
+    { d: "M 25 95 L 25 120 Q 45 128, 180 125 Q 210 118, 210 95 Q 200 85, 165 88 Q 120 86, 80 93 Q 45 98, 25 95 Z", fill: "#1a2330", stroke: "#32445c", "stroke-width": "1" },
+    { d: "M 40 120 Q 90 108, 155 118 Q 180 122, 180 132 Q 130 142, 55 138 Q 40 135, 40 120 Z", fill: "#d08f6a", opacity: "0.35" }
+  ];
+  paths.forEach(attrs => {
+    const el = document.createElementNS(ns, "path");
+    for (const k in attrs) el.setAttribute(k, attrs[k]);
+    svg.appendChild(el);
+  });
+
+  // Articulator zones with heat opacity. Shape coords match the timeline tract.
+  // Add extended zones for retroflex / uvular / pharyngeal (new in this view).
+  const zones = [
+    { shape: "ellipse", place: "bilabial",    attrs: { cx: 22, cy: 107, rx: 7, ry: 13 } },
+    { shape: "rect",    place: "labiodental", attrs: { x: 30, y: 95, width: 9, height: 7, rx: 1.5 } },
+    { shape: "rect",    place: "dental",      attrs: { x: 42, y: 93, width: 10, height: 7, rx: 1.5 } },
+    { shape: "ellipse", place: "alveolar",    attrs: { cx: 58, cy: 90, rx: 6, ry: 4 } },
+    { shape: "ellipse", place: "postalveolar",attrs: { cx: 80, cy: 88, rx: 9, ry: 5 } },
+    { shape: "ellipse", place: "retroflex",   attrs: { cx: 95, cy: 100, rx: 7, ry: 5 } },
+    { shape: "ellipse", place: "palatal",     attrs: { cx: 115, cy: 87, rx: 20, ry: 5 } },
+    { shape: "ellipse", place: "velar",       attrs: { cx: 165, cy: 92, rx: 18, ry: 6 } },
+    { shape: "ellipse", place: "uvular",      attrs: { cx: 192, cy: 102, rx: 8, ry: 6 } },
+    { shape: "ellipse", place: "pharyngeal",  attrs: { cx: 205, cy: 120, rx: 8, ry: 10 } },
+    { shape: "ellipse", place: "glottal",     attrs: { cx: 205, cy: 144, rx: 8, ry: 9 } }
+  ];
+  // Normalize against the max place-proportion for this language so the
+  // dominant zone shows full brightness.
+  let maxProp = 0;
+  zones.forEach(z => { if ((prop[z.place] || 0) > maxProp) maxProp = prop[z.place]; });
+  if (maxProp === 0) maxProp = 1;
+
+  zones.forEach(z => {
+    const el = document.createElementNS(ns, z.shape);
+    for (const k in z.attrs) el.setAttribute(k, z.attrs[k]);
+    el.setAttribute("class", "vt-part");
+    el.dataset.place = z.place;
+    const p = prop[z.place] || 0;
+    const intensity = p > 0 ? 0.25 + 0.75 * (p / maxProp) : 0;
+    const baseColor = SM_COV_PLACE_PALETTE[z.place] || "#666";
+    if (intensity > 0) {
+      el.setAttribute("fill", baseColor);
+      el.setAttribute("fill-opacity", intensity.toFixed(3));
+      el.setAttribute("stroke", baseColor);
+      el.setAttribute("stroke-width", "0.8");
+    } else {
+      el.setAttribute("fill", "#2a3a4f");
+      el.setAttribute("fill-opacity", "0.4");
+      el.setAttribute("stroke", "#32445c");
+    }
+    const title = document.createElementNS(ns, "title");
+    title.textContent = `${LANG_PLACE_LABELS[z.place] || z.place}: ${(p*100).toFixed(1)}% of inventory`;
+    el.appendChild(title);
+    svg.appendChild(el);
+  });
+
+  return svg;
+}
+
+function smCovBuildTractStats(code) {
+  const lang = LANG_INVENTORIES[code];
+  const vec = lang.vector;
+  // Top 4 consonantal zones by proportion
+  const rows = LANG_PLACE_ORDER.map((p, i) => ({ place: p, pct: vec[i] }))
+    .filter(r => r.place.indexOf("vowel") < 0 && r.place !== "diphthong")
+    .sort((a, b) => b.pct - a.pct);
+  const stats = document.createElement("div");
+  stats.className = "sm-cov-tract-stats";
+  rows.slice(0, 6).forEach((r, i) => {
+    const div = document.createElement("div");
+    div.className = "sm-cov-tract-stat" + (i === 0 && r.pct > 0 ? " hot" : "");
+    div.innerHTML = `<span>${LANG_PLACE_LABELS[r.place] || r.place}</span><span class="pct">${(r.pct*100).toFixed(0)}%</span>`;
+    stats.appendChild(div);
+  });
+  return stats;
+}
+
+// ── Diphthongs strip ───────────────────────────────────────────────
+function smCovBuildDiphsSection() {
+  const section = document.createElement("div");
+  section.className = "sm-cov-section";
+  const title = document.createElement("div");
+  title.className = "sm-cov-section-title";
+  title.innerHTML = `<span>Diphthongs</span><span class="sm-cov-section-sub">phonemic gliding vowels</span>`;
+  section.appendChild(title);
+  // Per selected lang, group diphthongs
+  smCovSelected.forEach((code, i) => {
+    const lang = LANG_INVENTORIES[code];
+    const diphs = (LANG_PHONEMES[code] && LANG_PHONEMES[code].diphs) || [];
+    if (smCovSelected.length > 1) {
+      const head = document.createElement("div");
+      head.style.fontSize = "10px";
+      head.style.fontWeight = "700";
+      head.style.letterSpacing = ".05em";
+      head.style.textTransform = "uppercase";
+      head.style.marginTop = i > 0 ? "10px" : "2px";
+      head.style.marginBottom = "6px";
+      head.style.color = SM_COV_PALETTE[i];
+      head.textContent = lang.name;
+      section.appendChild(head);
+    }
+    if (diphs.length === 0) {
+      const empty = document.createElement("div");
+      empty.className = "sm-cov-diphs-empty";
+      empty.textContent = "no phonemic diphthongs — vowel sequences only";
+      section.appendChild(empty);
+    } else {
+      const strip = document.createElement("div");
+      strip.className = "sm-cov-diphs";
+      diphs.forEach(d => {
+        const chip = document.createElement("span");
+        chip.className = "sm-cov-diph";
+        chip.textContent = d;
+        strip.appendChild(chip);
+      });
+      section.appendChild(strip);
+    }
+  });
+  return section;
+}
+
+// ── Summary footer ─────────────────────────────────────────────────
+function smCovBuildSummarySection() {
+  const section = document.createElement("div");
+  section.className = "sm-cov-summary";
+  const lines = smCovSelected.map((code, i) => {
+    const lang = LANG_INVENTORIES[code];
+    const data = LANG_PHONEMES[code] || { cons: [], vowels: [], diphs: [] };
+    // Find the largest place concentration
+    const top = LANG_PLACE_ORDER
+      .map((p, j) => ({ p, pct: lang.vector[j] }))
+      .filter(r => r.p.indexOf("vowel") < 0 && r.p !== "diphthong")
+      .sort((a, b) => b.pct - a.pct)[0];
+    const swatch = SM_COV_PALETTE[i] || "#999";
+    return `<div><strong style="color:${swatch}">${lang.name}</strong>
+      (${lang.variety}): <em>${data.cons.length}</em> consonants,
+      <em>${data.vowels.length}</em> vowels, <em>${data.diphs.length}</em> diphthongs ·
+      heaviest at <em>${LANG_PLACE_LABELS[top.p] || top.p}</em>
+      (${(top.pct*100).toFixed(0)}% of inventory)</div>`;
+  });
+  section.innerHTML = lines.join("");
+  return section;
+}
+
+// ══════════════════════════════════
 //  VIEW SWITCHER
 // ══════════════════════════════════
 function smSwitchView(view) {
@@ -2083,6 +2798,7 @@ function smSwitchView(view) {
     b.classList.toggle("active", b.dataset.view === view);
   });
   if (view !== "timeline") smStopTimeline();
+  if (view === "coverage" && !smCovRendered) smCovRender();
 }
 
 document.querySelectorAll(".sm-view-btn").forEach(btn => {
