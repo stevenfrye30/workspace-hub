@@ -11,8 +11,49 @@ body { background: var(--bg); color: var(--text); font-family: Georgia, serif; l
 #sm-header .sub { font-size: 12px; color: var(--muted); font-style: italic; flex: 1; }
 #sm-header a { color: var(--muted); text-decoration: none; font-size: 11px; letter-spacing: .04em; text-transform: uppercase; padding: 5px 12px; border: 1px solid var(--bdr); border-radius: var(--radius); }
 #sm-header a:hover { color: var(--gold); border-color: var(--gold); }
-#panel-sound, #panel-chart { flex: 1; display: none; flex-direction: column; overflow: hidden; }
-#panel-sound.active, #panel-chart.active { display: flex; }
+#panel-sound, #panel-chart, #panel-flow { flex: 1; display: none; flex-direction: column; overflow: hidden; }
+#panel-sound.active, #panel-chart.active, #panel-flow.active { display: flex; }
+
+/* ════════════════════ FLOW LAB (nested sub-tabs) ════════════════════ */
+#fl-tab-nav{display:flex;background:var(--surf2);border-bottom:1px solid var(--bdr);flex-shrink:0;padding:0 14px;gap:2px;align-items:flex-end}
+.fl-tab-btn{background:none;border:none;color:var(--muted);cursor:pointer;font-size:11px;font-weight:600;letter-spacing:.05em;padding:9px 14px 7px;text-transform:uppercase;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.fl-tab-btn:hover{color:var(--text)}
+.fl-tab-btn.active{color:var(--gold);border-bottom-color:var(--gold)}
+.fl-tab-panel{display:none;flex:1;overflow:hidden}
+.fl-tab-panel.active{display:flex;flex-direction:column}
+
+/* ════════════════════ BAR BUILDER ════════════════════ */
+#bb-toolbar{display:flex;align-items:flex-start;gap:12px;padding:14px 24px;border-bottom:1px solid var(--bdr);flex-shrink:0;flex-wrap:wrap;background:var(--surf)}
+#bb-input{flex:1 1 320px;min-height:70px;background:var(--surf2);border:1px solid var(--bdr);border-radius:var(--radius);color:var(--text);font-size:15px;padding:10px 14px;outline:none;resize:vertical;font-family:inherit;line-height:1.4}
+#bb-input:focus{border-color:var(--gold)}
+#bb-analyze{background:var(--gold);border:none;border-radius:var(--radius);color:#111;cursor:pointer;font-size:12px;font-weight:700;letter-spacing:.05em;padding:10px 20px;text-transform:uppercase;align-self:flex-start}
+#bb-analyze:hover{opacity:.85}
+#bb-legend{flex:0 0 100%;display:flex;flex-wrap:wrap;gap:10px;font-size:10px;color:var(--muted);letter-spacing:.03em;text-transform:uppercase}
+#bb-output{flex:1;overflow-y:auto;padding:22px 24px}
+#bb-empty{color:var(--muted);font-style:italic;line-height:1.5;max-width:560px}
+.bb-line-row{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:20px;align-items:start;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid var(--bdr)}
+.bb-line-row:last-child{border-bottom:none}
+.bb-line-phonemes{min-width:0}
+.bb-suggest{font-size:11px}
+.bb-suggest-title{color:var(--gold);font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px}
+.bb-suggest-empty{color:var(--muted);font-style:italic;font-size:11px}
+.bb-suggest-item{display:flex;align-items:baseline;gap:8px;padding:4px 6px;border-radius:3px;cursor:pointer;transition:background .1s}
+.bb-suggest-item:hover{background:var(--surf2)}
+.bb-suggest-score{font-family:var(--mono);color:var(--gold);font-size:10px;width:36px;text-align:right;flex-shrink:0}
+.bb-suggest-word{font-weight:600;font-size:12px;flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bb-suggest-ipa{font-family:var(--mono);color:var(--blue);font-size:10px;opacity:.8;flex-shrink:0}
+#bb-output.sm-proximity-active .sm-word{opacity:.3;filter:saturate(.5) brightness(.85)}
+#bb-output.sm-proximity-active .sm-word[data-prox="pivot"]{opacity:1;filter:none;border-color:var(--gold);box-shadow:0 0 0 2px rgba(212,162,76,.6)}
+#bb-output.sm-proximity-active .sm-word[data-prox="identical"]{opacity:1;filter:none;border-color:var(--gold)}
+#bb-output.sm-proximity-active .sm-word[data-prox="exact"]{opacity:1;filter:none;border-color:var(--gold);box-shadow:0 0 0 1px rgba(212,162,76,.55)}
+#bb-output.sm-proximity-active .sm-word[data-prox="rhyme"]{opacity:.92;border-color:rgba(212,162,76,.55)}
+#bb-output.sm-proximity-active .sm-word[data-prox="slant"]{opacity:.72;border-color:rgba(212,162,76,.25)}
+#bb-output.sm-proximity-active .sm-word[data-prox="family"]{opacity:.55}
+#bb-output.sm-proximity-active .sm-word[data-prox="far"]{opacity:.25}
+@media (max-width:720px){
+  .bb-line-row{grid-template-columns:1fr;gap:8px}
+  .bb-suggest{border-top:1px solid var(--bdr);padding-top:8px}
+}
 
 /* ════════════════════ PHONETIC CHART ════════════════════ */
 #panel-chart .pc-scroll{overflow-y:auto;flex:1;padding:22px 26px 60px}
@@ -152,7 +193,7 @@ body{background:var(--bg);color:var(--text);font-family:"Segoe UI",Arial,sans-se
 .legend-dot{width:10px;height:10px;border-radius:50%}
 
 /* ════════════════════ RAP ENDINGS ════════════════════ */
-#panel-endings .panel-scroll{padding:18px 20px}
+#fl-panel-endings .panel-scroll{padding:18px 20px}
 .endings-filter{display:flex;align-items:center;gap:10px;margin-bottom:18px;flex-wrap:wrap}
 .fam-btn{background:var(--surf2);border:1px solid var(--bdr);border-radius:20px;color:var(--muted);cursor:pointer;font-size:13px;font-family:var(--mono);padding:6px 14px;transition:all .15s}
 .fam-btn:hover,.fam-btn.active{background:var(--gold);color:#111;border-color:var(--gold);font-weight:700}
@@ -174,7 +215,7 @@ body{background:var(--bg);color:var(--text);font-family:"Segoe UI",Arial,sans-se
 .ec-ex{font-size:12px;color:var(--muted);margin-top:3px;line-height:1.4}
 
 /* ════════════════════ BAR SHEET ════════════════════ */
-#bars-panel .panel-scroll{padding:18px 24px}
+#fl-panel-bars .panel-scroll{padding:18px 24px}
 .song-meta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:20px;padding:14px 16px;background:var(--surf);border:1px solid var(--bdr);border-radius:var(--radius)}
 .meta-field{display:flex;flex-direction:column;gap:4px}
 .meta-label{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;font-weight:600}
@@ -489,6 +530,7 @@ body{background:var(--bg);color:var(--text);font-family:"Segoe UI",Arial,sans-se
 <nav id="tab-nav" role="tablist">
   <button class="tab-btn active" type="button" data-tab="sound" role="tab" aria-selected="true">Sound Map</button>
   <button class="tab-btn" type="button" data-tab="chart" role="tab" aria-selected="false">Chart</button>
+  <button class="tab-btn" type="button" data-tab="flow" role="tab" aria-selected="false">Flow Lab</button>
 </nav>
 
 <div id="panel-sound" class="active" role="tabpanel">
@@ -610,6 +652,163 @@ body{background:var(--bg);color:var(--text);font-family:"Segoe UI",Arial,sans-se
     </div>
   </div>
   <div class="pc-toast" id="pc-toast"></div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     FLOW LAB  (nested sub-tabs)
+     ══════════════════════════════════════════════════════════ -->
+<div id="panel-flow" role="tabpanel">
+  <nav id="fl-tab-nav" role="tablist" aria-label="Flow Lab sections">
+    <button class="fl-tab-btn active" role="tab" aria-selected="true" aria-controls="fl-panel-rhyme" data-fl-tab="rhyme" onclick="flSwitchTab('rhyme',this)">Rhyme Finder</button>
+    <button class="fl-tab-btn" role="tab" aria-selected="false" aria-controls="fl-panel-endings" data-fl-tab="endings" onclick="flSwitchTab('endings',this)">Rap Endings</button>
+    <button class="fl-tab-btn" role="tab" aria-selected="false" aria-controls="fl-panel-bar-builder" data-fl-tab="bar-builder" onclick="flSwitchTab('bar-builder',this)">Bar Builder</button>
+    <button class="fl-tab-btn" role="tab" aria-selected="false" aria-controls="fl-panel-bars" data-fl-tab="bars" onclick="flSwitchTab('bars',this)">Bar Sheet</button>
+  </nav>
+
+  <!-- ── Rhyme Finder ── -->
+  <div id="fl-panel-rhyme" class="fl-tab-panel active" role="tabpanel" aria-label="Rhyme Finder">
+    <div id="rf-toolbar">
+      <button id="add-pane-btn" type="button">+ New search</button>
+      <span id="rf-hint">Type multiple words (e.g. <code>big fish swimming</code>) to open a pane per word.</span>
+    </div>
+    <div id="rf-panes"></div>
+    <div id="rf-pins" class="hidden" aria-label="Pinned words"></div>
+    <template id="rf-pane-template">
+      <div class="rf-pane">
+        <div class="rf-pane-header">
+          <input class="word-input" type="text" placeholder="type a word…" spellcheck="false" autocomplete="off" aria-label="Word to search">
+          <select class="rhyme-depth" aria-label="Rhyme depth">
+            <option value="1">Single rhyme</option>
+            <option value="2">Double rhyme</option>
+            <option value="3">Triple rhyme</option>
+            <option value="4">4-syl rhyme</option>
+          </select>
+          <button class="search-btn" type="button">Search</button>
+          <button class="pane-close" type="button" title="Close this search" aria-label="Close pane">×</button>
+        </div>
+        <div class="query-block">
+          <div class="query-ipa"></div>
+          <div class="query-meta"></div>
+        </div>
+        <div class="results-cols"></div>
+        <div class="no-results">No matches found.</div>
+      </div>
+    </template>
+  </div>
+
+  <!-- ── Rap Endings ── -->
+  <div id="fl-panel-endings" class="fl-tab-panel" role="tabpanel" aria-label="Rap Endings">
+    <div class="panel-scroll">
+      <div class="endings-filter" id="fam-filters"></div>
+      <div id="endings-content"></div>
+    </div>
+  </div>
+
+  <!-- ── Bar Builder ── -->
+  <div id="fl-panel-bar-builder" class="fl-tab-panel" role="tabpanel" aria-label="Bar Builder">
+    <div id="bb-toolbar">
+      <textarea id="bb-input" placeholder="type or paste bars, one per line…" rows="3" spellcheck="false"></textarea>
+      <button id="bb-analyze" type="button">Analyze</button>
+      <div id="bb-legend">
+        <span class="sm-legend-item"><span class="sm-swatch" style="background:#f5a5c9"></span>lips</span>
+        <span class="sm-legend-item"><span class="sm-swatch" style="background:#f5b58a"></span>teeth/lip</span>
+        <span class="sm-legend-item"><span class="sm-swatch" style="background:#f0d860"></span>tongue + teeth</span>
+        <span class="sm-legend-item"><span class="sm-swatch" style="background:#9fdc9f"></span>tongue-tip</span>
+        <span class="sm-legend-item"><span class="sm-swatch" style="background:#7cd0ce"></span>tongue-blade</span>
+        <span class="sm-legend-item"><span class="sm-swatch" style="background:#b9a0db"></span>back-of-tongue</span>
+        <span class="sm-legend-item"><span class="sm-swatch" style="background:#f7cf74"></span>front vowel</span>
+        <span class="sm-legend-item"><span class="sm-swatch" style="background:#b499d9"></span>back vowel</span>
+        <span class="sm-legend-item"><span class="sm-swatch sm-swatch-gradient"></span>diphthong</span>
+        <span class="sm-legend-item">hover a word to see near-rhymes in the bar</span>
+      </div>
+    </div>
+    <div id="bb-output">
+      <div id="bb-empty">Paste your bars above and click <b>Analyze</b>. Each line's end-word will get ranked near-rhyme suggestions from the dictionary.</div>
+    </div>
+  </div>
+
+  <!-- ── Bar Sheet ── -->
+  <div id="fl-panel-bars" class="fl-tab-panel" role="tabpanel" aria-label="Bar Sheet">
+    <div class="panel-scroll">
+
+      <!-- Song Metadata -->
+      <div class="song-meta">
+        <div class="meta-field">
+          <label class="meta-label">Artist / Name</label>
+          <input class="meta-input wide" id="m-artist" type="text" placeholder="Artist name">
+        </div>
+        <div class="meta-field">
+          <label class="meta-label">Song Title</label>
+          <input class="meta-input wide" id="m-title" type="text" placeholder="Song title">
+        </div>
+        <div class="meta-field">
+          <label class="meta-label">BPM</label>
+          <input class="meta-input narrow" id="m-bpm" type="number" min="80" max="160" placeholder="90">
+        </div>
+        <div class="meta-field">
+          <label class="meta-label">Date</label>
+          <input class="meta-input narrow" id="m-date" type="date">
+        </div>
+        <div class="meta-field" style="justify-content:flex-end">
+          <label class="meta-label">&nbsp;</label>
+          <div style="display:flex;gap:8px">
+            <button class="tool-btn" onclick="printSheet()">Print / Export</button>
+            <button class="tool-btn" onclick="clearSheet()" style="color:var(--muted)">Clear All</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Flow Trainer Toolbar -->
+      <div class="flow-toolbar" id="flow-toolbar">
+        <div class="flow-group">
+          <label>BPM</label>
+          <input type="number" id="flow-bpm" min="80" max="160" value="90" oninput="syncBPM(this.value,'flow')">
+        </div>
+        <div class="flow-group">
+          <label>View</label>
+          <div class="view-toggle" id="view-toggle">
+            <button class="active" onclick="setView('table',this)" title="Classic 4-beat columns">Table</button>
+            <button onclick="setView('grid',this)" title="8-slot rhythm grid (1 &amp; 2 &amp; 3 &amp; 4 &amp;)">Beat Grid</button>
+          </div>
+        </div>
+        <button class="metro-btn" id="metro-btn" onclick="toggleMetronome()" title="Click track synced to your BPM">
+          <span class="metro-pulse" id="metro-pulse"></span>
+          Metronome
+        </button>
+        <button class="auto-dist-btn" onclick="autoDistributeAll()" title="Spread words evenly across beats by syllable weight">Auto-Distribute</button>
+        <div class="rhyme-legend">
+          <span class="rhyme-legend-item"><span class="rhyme-legend-swatch end"></span>End</span>
+          <span class="rhyme-legend-item"><span class="rhyme-legend-swatch internal"></span>Internal</span>
+          <span class="rhyme-legend-item"><span class="rhyme-legend-swatch multi"></span>Multi-syl</span>
+        </div>
+        <button class="tool-btn" onclick="openFreestyle()" style="margin-left:auto" title="Freestyle over a beat with random word prompts">Freestyle Mode</button>
+      </div>
+
+      <!-- Bar sections injected by JS -->
+      <div id="bar-sections"></div>
+
+    </div>
+  </div>
+
+  <!-- Freestyle Mode Overlay -->
+  <div class="freestyle-overlay" id="freestyle-overlay">
+    <div class="freestyle-prompt">FREESTYLE MODE</div>
+    <div class="freestyle-bpm" id="fs-bpm-display">90 BPM</div>
+    <div class="freestyle-beat-vis" id="fs-beat-vis">
+      <div class="freestyle-beat-dot"></div>
+      <div class="freestyle-beat-dot"></div>
+      <div class="freestyle-beat-dot"></div>
+      <div class="freestyle-beat-dot"></div>
+    </div>
+    <div class="freestyle-timer" id="fs-timer">0:00</div>
+    <div class="freestyle-word" id="fs-word">&nbsp;</div>
+    <div class="freestyle-ipa" id="fs-ipa">&nbsp;</div>
+    <div class="freestyle-controls">
+      <button class="freestyle-btn" id="fs-start-btn" onclick="toggleFreestyle()">START</button>
+      <button class="freestyle-btn secondary" onclick="newFreestyleWord()">New Word</button>
+      <button class="freestyle-btn secondary" onclick="closeFreestyle()">Exit</button>
+    </div>
+  </div>
 </div>
 
 <div class="status-bar" id="status-bar"></div>
@@ -1088,20 +1287,1570 @@ document.getElementById("pc-search").addEventListener("input", pcRender);
 document.getElementById("pc-show-notes").addEventListener("change", pcRender);
 pcRender();
 
+// ══════════════════════════════════════════════════════════════════════════
+//  FLOW LAB  (nested inside #panel-flow)
+//  Ported from the former ipa/ app. Sub-tabs use .fl-tab-btn / .fl-tab-panel
+//  and switchTab → flSwitchTab (scoped to #panel-flow) so nothing collides
+//  with the top-level Sound Map tab system.
+// ══════════════════════════════════════════════════════════════════════════
+
+// ── Sub-tab switching (scoped to #panel-flow) ──────────────────────────────
+function flSwitchTab(name, btn) {
+  document.querySelectorAll("#panel-flow .fl-tab-panel").forEach(p => p.classList.remove("active"));
+  document.querySelectorAll("#panel-flow .fl-tab-btn").forEach(b => { b.classList.remove("active"); b.setAttribute("aria-selected","false"); });
+  const panel = document.getElementById("fl-panel-"+name);
+  if (panel) panel.classList.add("active");
+  if (btn) { btn.classList.add("active"); btn.setAttribute("aria-selected","true"); }
+  if (typeof rfSaveToHash === "function") rfSaveToHash();
+}
+
+function flSwitchTabDirect(name) {
+  document.querySelectorAll("#panel-flow .fl-tab-panel").forEach(p => p.classList.remove("active"));
+  document.querySelectorAll("#panel-flow .fl-tab-btn").forEach(b => { b.classList.remove("active"); b.setAttribute("aria-selected","false"); });
+  const panel = document.getElementById("fl-panel-"+name);
+  if (panel) panel.classList.add("active");
+  const btn = document.querySelector(`#panel-flow .fl-tab-btn[data-fl-tab="${name}"]`);
+  if (btn) { btn.classList.add("active"); btn.setAttribute("aria-selected","true"); }
+}
+
+// ══════════════════════════════════
+//  RHYME FINDER (multi-pane)
+// ══════════════════════════════════
+const SYL_LABELS = {1:"1 syllable",2:"2 syllables",3:"3 syllables",4:"4 syllables",5:"5+ syllables"};
+
+const pinned = new Map();
+
+function togglePin(word, ipa) {
+  if (pinned.has(word)) pinned.delete(word);
+  else pinned.set(word, ipa);
+  renderPins();
+  document.querySelectorAll(".rw-pin").forEach(b => {
+    b.classList.toggle("pinned", pinned.has(b.dataset.word));
+  });
+}
+
+function renderPins() {
+  const tray = document.getElementById("rf-pins");
+  tray.innerHTML = "";
+  if (pinned.size === 0) { tray.classList.add("hidden"); return; }
+  tray.classList.remove("hidden");
+  const label = document.createElement("span");
+  label.className = "pin-label";
+  label.textContent = `Pinned · ${pinned.size}`;
+  tray.appendChild(label);
+  pinned.forEach((ipa, w) => {
+    const chip = document.createElement("span");
+    chip.className = "pin-chip";
+    chip.title = "Click to search rhymes for this word";
+    const txt = document.createElement("span");
+    txt.className = "pin-chip-text";
+    txt.textContent = w;
+    const ipaEl = document.createElement("span");
+    ipaEl.className = "pin-chip-ipa";
+    ipaEl.textContent = ipa;
+    const rm = document.createElement("button");
+    rm.type = "button";
+    rm.className = "pin-chip-x";
+    rm.textContent = "×";
+    rm.title = "Remove pin";
+    rm.addEventListener("click", e => {
+      e.stopPropagation();
+      togglePin(w, ipa);
+    });
+    chip.addEventListener("click", () => {
+      const p = document.querySelector("#rf-panes .rf-pane") || createPane();
+      runSearch(p, w);
+    });
+    chip.appendChild(txt);
+    chip.appendChild(ipaEl);
+    chip.appendChild(rm);
+    tray.appendChild(chip);
+  });
+  const clearBtn = document.createElement("button");
+  clearBtn.type = "button";
+  clearBtn.className = "pin-clear";
+  clearBtn.textContent = "Clear all";
+  clearBtn.addEventListener("click", () => {
+    pinned.clear();
+    renderPins();
+    document.querySelectorAll(".rw-pin").forEach(b => b.classList.remove("pinned"));
+  });
+  tray.appendChild(clearBtn);
+}
+
+function runSearch(pane, forceWord) {
+  const input   = pane.querySelector(".word-input");
+  const qIpa    = pane.querySelector(".query-ipa");
+  const qMeta   = pane.querySelector(".query-meta");
+  const qBlk    = pane.querySelector(".query-block");
+  const cols    = pane.querySelector(".results-cols");
+  const noRes   = pane.querySelector(".no-results");
+  const depSel  = pane.querySelector(".rhyme-depth");
+  const status  = document.getElementById("status-bar");
+
+  const raw   = (forceWord != null ? forceWord : input.value).trim().toLowerCase().replace(/[^a-z\-]/g,"");
+  if (forceWord != null) input.value = raw;
+  const entry = D[raw];
+  const depth = parseInt(depSel.value);
+
+  cols.innerHTML = "";
+  noRes.style.display = "none";
+
+  if (!entry) {
+    qBlk.style.display = "block";
+    qIpa.textContent   = raw ? `"${raw}" not in dictionary` : "";
+    qMeta.textContent  = "";
+    status.textContent = raw ? `"${raw}" not found.` : "";
+    return;
+  }
+
+  const [ipa, rks, syl] = entry;
+  const maxDepth = rks.length;
+  const useDepth = Math.min(depth, maxDepth);
+  const rhyme    = rks[useDepth - 1];
+  const depthLabel = ["single","double","triple","4-syl"][useDepth-1] || useDepth+"-syl";
+
+  qBlk.style.display = "block";
+  qIpa.textContent   = ipa;
+  qMeta.textContent  = `${depthLabel} rhyme: /${rhyme}/ · ${syl} syllable${syl!==1?"s":""}`;
+
+  for (let i = 0; i < depSel.options.length; i++) {
+    depSel.options[i].disabled = (i + 1) > maxDepth;
+  }
+
+  const buckets = {1:[],2:[],3:[],4:[],5:[]};
+  for (const [w, e] of Object.entries(D)) {
+    if (w === raw) continue;
+    const eRks = e[1];
+    if (eRks.length < useDepth) continue;
+    if (eRks[useDepth - 1] !== rhyme) continue;
+    buckets[Math.min(e[2],5)].push([w, e[0]]);
+  }
+
+  let total = 0;
+  for (let s=1; s<=5; s++) {
+    const words = buckets[s];
+    if (!words.length) continue;
+    words.sort((a,b) => a[0].localeCompare(b[0]));
+    total += words.length;
+    const col = document.createElement("div");
+    col.className = "syl-col";
+    col.innerHTML = `<div class="syl-hdr">${SYL_LABELS[s]}<span class="cnt">${words.length}</span></div>`;
+    for (const [w, wipa] of words) {
+      const d = document.createElement("div");
+      d.className = "rhyme-word";
+      const txt = document.createElement("span");
+      txt.className = "rw-text";
+      txt.textContent = w;
+      const ipaEl = document.createElement("span");
+      ipaEl.className = "rw-ipa";
+      ipaEl.textContent = wipa;
+      const pin = document.createElement("button");
+      pin.type = "button";
+      pin.className = "rw-pin" + (pinned.has(w) ? " pinned" : "");
+      pin.textContent = "★";
+      pin.title = "Pin this word";
+      pin.dataset.word = w;
+      pin.addEventListener("click", e => {
+        e.stopPropagation();
+        togglePin(w, wipa);
+      });
+      d.appendChild(txt);
+      d.appendChild(ipaEl);
+      d.appendChild(pin);
+      d.addEventListener("click", () => runSearch(pane, w));
+      col.appendChild(d);
+    }
+    cols.appendChild(col);
+  }
+
+  if (total===0) noRes.style.display = "block";
+  status.textContent =
+    `${total} ${depthLabel} rhyme${total!==1?"s":""} found for "${raw}" (/${rhyme}/)`;
+
+  if (typeof rfSaveToHash === "function") rfSaveToHash();
+}
+
+function submitFromPane(pane) {
+  const input = pane.querySelector(".word-input");
+  const raw = input.value.trim();
+  const words = raw.split(/\s+/).filter(Boolean);
+  if (words.length <= 1) {
+    runSearch(pane);
+    return;
+  }
+  input.value = words[0];
+  runSearch(pane);
+  let last = pane;
+  for (let i = 1; i < words.length; i++) {
+    last = createPane(words[i]);
+  }
+  last.scrollIntoView({ behavior: "smooth", inline: "end", block: "nearest" });
+}
+
+function createPane(initialWord) {
+  const tpl = document.getElementById("rf-pane-template");
+  const pane = tpl.content.firstElementChild.cloneNode(true);
+  const input = pane.querySelector(".word-input");
+  const depSel = pane.querySelector(".rhyme-depth");
+  const searchBtn = pane.querySelector(".search-btn");
+  const closeBtn = pane.querySelector(".pane-close");
+
+  searchBtn.addEventListener("click", () => submitFromPane(pane));
+  input.addEventListener("keydown", e => { if (e.key === "Enter") submitFromPane(pane); });
+  depSel.addEventListener("change", () => runSearch(pane));
+  closeBtn.addEventListener("click", () => {
+    const container = document.getElementById("rf-panes");
+    if (container.children.length > 1) {
+      pane.remove();
+    } else {
+      input.value = "";
+      runSearch(pane);
+    }
+  });
+
+  document.getElementById("rf-panes").appendChild(pane);
+  if (initialWord) {
+    input.value = initialWord;
+    runSearch(pane);
+  }
+  input.focus();
+  return pane;
+}
+
+document.getElementById("add-pane-btn").addEventListener("click", () => {
+  const pane = createPane();
+  pane.scrollIntoView({ behavior: "smooth", inline: "end", block: "nearest" });
+});
+
+// ── URL-hash state (shareable links) ────────────────────────────────────
+function rfSaveToHash() {
+  const activeBtn = document.querySelector("#panel-flow .fl-tab-btn.active");
+  const activeTab = activeBtn ? activeBtn.dataset.flTab : "rhyme";
+  const panes = Array.from(document.querySelectorAll("#rf-panes .rf-pane"));
+  const words = panes
+    .map(p => p.querySelector(".word-input").value.trim())
+    .filter(Boolean);
+  const firstPane = panes[0];
+  const d = firstPane ? firstPane.querySelector(".rhyme-depth").value : "1";
+  const bbEl = document.getElementById("bb-input");
+  const bb = bbEl ? bbEl.value.trim() : "";
+
+  const p = new URLSearchParams();
+  if (activeTab && activeTab !== "rhyme") p.set("fltab", activeTab);
+  if (words.length) p.set("w", words.join(","));
+  if (d !== "1") p.set("d", d);
+  if (bb) p.set("bb", bb);
+  const str = p.toString();
+  // Preserve any existing top-level hash state by merging into the hash.
+  // Simple approach: only write if this is the Flow Lab area's state.
+  // (Sound Map uses its own hash keys: q, mode, cmp.)
+  const existing = new URLSearchParams(window.location.hash.slice(1));
+  // Clear fltab/w/d/bb from existing then merge current
+  ["fltab","w","d","bb"].forEach(k => existing.delete(k));
+  p.forEach((v, k) => existing.set(k, v));
+  const merged = existing.toString();
+  history.replaceState(null, "", merged ? "#" + merged : window.location.pathname);
+}
+
+function rfLoadFromHash() {
+  const p = new URLSearchParams(window.location.hash.slice(1));
+  const w = p.get("w");
+  const d = p.get("d") || "1";
+  if (w) {
+    const words = w.split(",").map(s => s.trim()).filter(Boolean);
+    const container = document.getElementById("rf-panes");
+    container.innerHTML = "";
+    words.forEach(word => {
+      const pane = createPane();
+      const input = pane.querySelector(".word-input");
+      const depSel = pane.querySelector(".rhyme-depth");
+      input.value = word;
+      depSel.value = d;
+      runSearch(pane);
+    });
+  }
+  const bb = p.get("bb");
+  if (bb) {
+    document.getElementById("bb-input").value = bb;
+    bbAnalyze();
+  }
+  const tab = p.get("fltab");
+  if (tab) {
+    const btn = document.querySelector(`#panel-flow .fl-tab-btn[data-fl-tab="${tab}"]`);
+    if (btn) btn.click();
+  }
+}
+
+// Start with one pane visible (unless the hash has state).
+createPane();
+if (window.location.hash) rfLoadFromHash();
+
+// Backwards-compatible helper used by the Rap Endings tab.
+function doSearch(word) {
+  const firstPane = document.querySelector("#rf-panes .rf-pane") || createPane();
+  runSearch(firstPane, word);
+}
+
+// ══════════════════════════════════
+//  RAP ENDINGS
+// ══════════════════════════════════
+(function buildEndings() {
+  const filterEl   = document.getElementById("fam-filters");
+  const contentEl  = document.getElementById("endings-content");
+  const families   = Object.keys(ENDINGS);
+
+  // "All" button
+  const allBtn = document.createElement("button");
+  allBtn.className = "fam-btn active";
+  allBtn.textContent = "All";
+  allBtn.onclick = () => {
+    document.querySelectorAll(".family-block").forEach(b => b.classList.remove("hidden"));
+    document.querySelectorAll(".fam-btn").forEach(b => b.classList.remove("active"));
+    allBtn.classList.add("active");
+  };
+  filterEl.appendChild(allBtn);
+
+  families.forEach(fname => {
+    // Filter button
+    const btn = document.createElement("button");
+    btn.className = "fam-btn";
+    btn.textContent = fname;
+    btn.onclick = () => {
+      document.querySelectorAll(".family-block").forEach(b => {
+        b.classList.toggle("hidden", b.dataset.family!==fname);
+      });
+      document.querySelectorAll(".fam-btn").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+    };
+    filterEl.appendChild(btn);
+
+    // Column block
+    const block = document.createElement("div");
+    block.className = "family-block";
+    block.dataset.family = fname;
+
+    const title = document.createElement("div");
+    title.className = "family-title";
+    title.innerHTML = `<span class="ipa-key">${fname}</span><span class="fam-count">${ENDINGS[fname].length}</span>`;
+    block.appendChild(title);
+
+    const grid = document.createElement("div");
+    grid.className = "endings-grid";
+    const stripStress = s => s.replace(/[ˈˌ]/g, "");
+    ENDINGS[fname].forEach(item => {
+      const cleanEnd = stripStress(item.end);
+      let matchWord = null, matchDepth = 0;
+      for (const [w, e] of Object.entries(D)) {
+        const rks = e[1];
+        for (let i = 0; i < rks.length; i++) {
+          if (stripStress(rks[i]) === cleanEnd) {
+            matchWord = w;
+            matchDepth = i + 1;
+            break;
+          }
+        }
+        if (matchWord) break;
+      }
+
+      const card = document.createElement("div");
+      card.className = "ending-card" + (matchWord ? "" : " ending-card-empty");
+      card.innerHTML = `<div class="ec-sym">${item.end}</div>${item.ex ? `<div class="ec-ex">${item.ex}</div>` : ""}`;
+      card.title = matchWord
+        ? `Search rhymes for /${item.end}/ (depth ${matchDepth})`
+        : `No words found ending in /${item.end}/`;
+      if (matchWord) {
+        card.onclick = () => {
+          flSwitchTabDirect("rhyme");
+          const pane = document.querySelector("#rf-panes .rf-pane") || createPane();
+          const depSel = pane.querySelector(".rhyme-depth");
+          depSel.value = String(matchDepth);
+          runSearch(pane, matchWord);
+        };
+      }
+      grid.appendChild(card);
+    });
+    block.appendChild(grid);
+    contentEl.appendChild(block);
+  });
+})();
+
+// ══════════════════════════════════
+//  BAR SHEET + FLOW TRAINER
+// ══════════════════════════════════
+const SECTIONS = [
+  { id:"v1", label:"Verse 1",  type:"verse",  bars:16 },
+  { id:"h1", label:"Hook 1",   type:"hook",   bars:8  },
+  { id:"v2", label:"Verse 2",  type:"verse",  bars:16 },
+  { id:"h2", label:"Hook 2",   type:"hook",   bars:8  },
+  { id:"v3", label:"Verse 3",  type:"verse",  bars:16 },
+  { id:"h3", label:"Hook 3",   type:"hook",   bars:8  },
+];
+
+// IPA vowels for syllable detection
+const IPA_VOWELS = new Set([
+  "i","ɪ","e","ɛ","æ","ɑ","ɔ","o","ʊ","u","ʌ","ə","ɝ","ɚ",
+  "eɪ","aɪ","ɔɪ","oʊ","aʊ","ɪɹ","ɛɹ","ɑɹ","ɔɹ","ʊɹ"
+]);
+// Single-char vowel nuclei for counting
+const IPA_VOWEL_CHARS = new Set(["i","ɪ","e","ɛ","æ","ɑ","ɔ","o","ʊ","u","ʌ","ə","ɝ","ɚ","a"]);
+
+// Current view mode: "table" or "grid"
+let currentView = "table";
+
+// ── Syllable counting ──────────────────────────────────────────────────────
+
+// Count syllables for a word using the IPA dictionary, fallback to heuristic
+function countSyllables(word) {
+  const clean = word.trim().toLowerCase().replace(/[^a-z\-]/g, "");
+  if (!clean) return 0;
+  // Try dictionary first
+  const entry = D[clean];
+  if (entry) return entry[2];
+  // Heuristic fallback: count vowel groups in English spelling
+  const vowelGroups = clean.match(/[aeiouy]+/gi);
+  if (!vowelGroups) return 1;
+  let count = vowelGroups.length;
+  // Silent e
+  if (clean.endsWith("e") && count > 1) count--;
+  // -le ending adds a syllable
+  if (clean.match(/[^aeiouy]le$/)) count++;
+  return Math.max(count, 1);
+}
+
+// Count syllables for a full line of text
+function countLineSyllables(text) {
+  if (!text || !text.trim()) return 0;
+  const words = text.trim().split(/\s+/);
+  return words.reduce((sum, w) => sum + countSyllables(w), 0);
+}
+
+// Get IPA rhyme key for a word (returns array of keys at different depths)
+function getRhymeKeys(word) {
+  const clean = word.trim().toLowerCase().replace(/[^a-z\-]/g, "");
+  if (!clean) return null;
+  const entry = D[clean];
+  if (!entry) return null;
+  return { ipa: entry[0], keys: entry[1], syls: entry[2] };
+}
+
+// Extract vowel sounds from IPA string for internal rhyme matching
+function extractIPAVowels(ipa) {
+  if (!ipa) return [];
+  const vowels = [];
+  // Check for diphthongs first (2-char sequences)
+  for (let i = 0; i < ipa.length; i++) {
+    const two = ipa.slice(i, i + 2);
+    if (IPA_VOWELS.has(two)) {
+      vowels.push(two);
+      i++; // skip next char
+    } else if (IPA_VOWEL_CHARS.has(ipa[i])) {
+      vowels.push(ipa[i]);
+    }
+  }
+  return vowels;
+}
+
+// ── Build Bar Sheet (dual mode: table + beat grid) ──────────────────────────
+
+function buildBarSheet() {
+  const container = document.getElementById("bar-sections");
+  container.innerHTML = "";
+  SECTIONS.forEach(sec => {
+    const wrap = document.createElement("div");
+    wrap.className = "section-block";
+    wrap.id = `sec-${sec.id}`;
+
+    const lbl = document.createElement("div");
+    lbl.className = `section-label ${sec.type}`;
+    lbl.textContent = sec.label;
+    wrap.appendChild(lbl);
+
+    // === TABLE VIEW (original) ===
+    const tbl = document.createElement("table");
+    tbl.className = "bar-table";
+    tbl.id = `tbl-${sec.id}`;
+    tbl.innerHTML = `<thead><tr>
+      <th style="width:28px">#</th>
+      <th>Beat 1</th><th>Beat 2</th><th>Beat 3</th><th>Beat 4</th>
+      <th title="Syllables">SYL</th>
+    </tr></thead><tbody></tbody>`;
+    const tbody = tbl.querySelector("tbody");
+
+    for (let b = 1; b <= sec.bars; b++) {
+      const tr = document.createElement("tr");
+      tr.innerHTML = `<td class="bar-num">${b}</td>`;
+      for (let beat = 1; beat <= 4; beat++) {
+        const td = document.createElement("td");
+        td.className = "bar-cell";
+        const inp = document.createElement("input");
+        inp.type = "text";
+        inp.className = "bar-input";
+        inp.dataset.section = sec.id;
+        inp.dataset.bar = b;
+        inp.dataset.beat = beat;
+        inp.placeholder = beat === 4 ? "rhyme →" : "";
+        inp.addEventListener("input", debouncedAnalyze);
+        inp.addEventListener("keydown", e => {
+          if (e.key === "Tab" && beat === 4 && b < sec.bars) {
+            e.preventDefault();
+            const next = tbl.querySelector(`[data-bar="${b + 1}"][data-beat="1"]`);
+            if (next) next.focus();
+          }
+        });
+        td.appendChild(inp);
+        tr.appendChild(td);
+      }
+      const sylTd = document.createElement("td");
+      sylTd.className = "syl-cell";
+      const sylInp = document.createElement("input");
+      sylInp.type = "number";
+      sylInp.className = "syl-input";
+      sylInp.min = 0; sylInp.max = 32;
+      sylInp.placeholder = "—";
+      sylTd.appendChild(sylInp);
+      tr.appendChild(sylTd);
+      tbody.appendChild(tr);
+    }
+    wrap.appendChild(tbl);
+
+    // === BEAT GRID VIEW ===
+    const grid = document.createElement("div");
+    grid.className = "beat-grid-container";
+    grid.id = `grid-${sec.id}`;
+    grid.style.display = "none";
+
+    // Header
+    const hdr = document.createElement("div");
+    hdr.className = "beat-grid-hdr";
+    hdr.innerHTML = `<span>#</span>
+      <span class="on-beat">1</span><span>&</span>
+      <span class="on-beat">2</span><span>&</span>
+      <span class="on-beat">3</span><span>&</span>
+      <span class="on-beat">4</span><span>&</span>
+      <span>SYL</span><span>FLOW</span>`;
+    grid.appendChild(hdr);
+
+    // Rows
+    for (let b = 1; b <= sec.bars; b++) {
+      const row = document.createElement("div");
+      row.className = "beat-grid-row";
+
+      const numEl = document.createElement("div");
+      numEl.className = "bar-num";
+      numEl.textContent = b;
+      row.appendChild(numEl);
+
+      for (let slot = 1; slot <= 8; slot++) {
+        const slotDiv = document.createElement("div");
+        slotDiv.className = `beat-slot ${slot % 2 === 1 ? "on-beat" : "off-beat"}`;
+        const inp = document.createElement("input");
+        inp.type = "text";
+        inp.className = "grid-input";
+        inp.dataset.section = sec.id;
+        inp.dataset.bar = b;
+        inp.dataset.slot = slot;
+        inp.placeholder = slot % 2 === 1 ? String(Math.ceil(slot / 2)) : "&";
+        inp.addEventListener("input", debouncedAnalyze);
+        inp.addEventListener("keydown", e => {
+          if (e.key === "Tab" && slot === 8 && b < sec.bars) {
+            e.preventDefault();
+            const next = grid.querySelector(`[data-bar="${b + 1}"][data-slot="1"]`);
+            if (next) next.focus();
+          }
+        });
+        slotDiv.appendChild(inp);
+        row.appendChild(slotDiv);
+      }
+
+      // Auto syl count
+      const sylDiv = document.createElement("div");
+      sylDiv.className = "syl-auto";
+      sylDiv.dataset.section = sec.id;
+      sylDiv.dataset.bar = b;
+      sylDiv.textContent = "—";
+      row.appendChild(sylDiv);
+
+      // Flow micro-score
+      const flowDiv = document.createElement("div");
+      flowDiv.className = "flow-score-cell";
+      flowDiv.dataset.section = sec.id;
+      flowDiv.dataset.bar = b;
+      for (let d = 0; d < 5; d++) {
+        const dot = document.createElement("div");
+        dot.className = "flow-dot";
+        flowDiv.appendChild(dot);
+      }
+      row.appendChild(flowDiv);
+
+      grid.appendChild(row);
+    }
+    wrap.appendChild(grid);
+
+    // === SECTION SCORES ===
+    const scores = document.createElement("div");
+    scores.className = "section-scores";
+    scores.id = `scores-${sec.id}`;
+    scores.innerHTML = `
+      <div class="score-item">
+        <span class="score-label">Flow</span>
+        <span class="score-value" data-score="flow">—</span>
+        <div class="score-bar"><div class="score-fill" style="width:0;background:var(--gold)"></div></div>
+      </div>
+      <div class="score-item">
+        <span class="score-label">Rhymes</span>
+        <span class="score-value" data-score="rhymes">—</span>
+        <div class="score-bar"><div class="score-fill" style="width:0;background:var(--blue)"></div></div>
+      </div>
+      <div class="score-item">
+        <span class="score-label">Internal</span>
+        <span class="score-value" data-score="internal">—</span>
+        <div class="score-bar"><div class="score-fill" style="width:0;background:var(--green)"></div></div>
+      </div>
+      <div class="score-item">
+        <span class="score-label">Complexity</span>
+        <span class="score-value" data-score="complexity">—</span>
+        <div class="score-bar"><div class="score-fill" style="width:0;background:var(--red)"></div></div>
+      </div>`;
+    wrap.appendChild(scores);
+
+    container.appendChild(wrap);
+  });
+}
+
+// ── View toggle ─────────────────────────────────────────────────────────────
+
+function setView(mode, btn) {
+  const prevView = currentView;
+  currentView = mode;
+  // Update toggle buttons
+  document.querySelectorAll("#view-toggle button").forEach(b => b.classList.remove("active"));
+  if (btn) btn.classList.add("active");
+
+  SECTIONS.forEach(sec => {
+    const tbl = document.getElementById(`tbl-${sec.id}`);
+    const grid = document.getElementById(`grid-${sec.id}`);
+    if (mode === "table") {
+      tbl.style.display = "";
+      grid.style.display = "none";
+    } else {
+      tbl.style.display = "none";
+      grid.style.display = "";
+    }
+  });
+
+  // Sync data only if the destination view is empty (avoid clobbering user work)
+  if (mode === "grid" && prevView !== "grid") {
+    if (isViewEmpty("grid")) syncTableToGrid();
+  } else if (mode === "table" && prevView !== "table") {
+    if (isViewEmpty("table")) syncGridToTable();
+  }
+
+  runFullAnalysis();
+  saveSheet();
+}
+
+// Check if a view is fully empty
+function isViewEmpty(view) {
+  const sel = view === "grid" ? ".grid-input" : ".bar-input";
+  const inputs = document.querySelectorAll(sel);
+  for (const inp of inputs) {
+    if (inp.value.trim()) return false;
+  }
+  return true;
+}
+
+// Sync table inputs → grid inputs
+function syncTableToGrid() {
+  SECTIONS.forEach(sec => {
+    for (let b = 1; b <= sec.bars; b++) {
+      // Gather all words from beats 1-4
+      const words = [];
+      for (let beat = 1; beat <= 4; beat++) {
+        const inp = document.querySelector(`.bar-input[data-section="${sec.id}"][data-bar="${b}"][data-beat="${beat}"]`);
+        if (inp && inp.value.trim()) {
+          inp.value.trim().split(/\s+/).forEach(w => words.push(w));
+        }
+      }
+      // Distribute across 8 slots
+      const slots = document.querySelectorAll(`.grid-input[data-section="${sec.id}"][data-bar="${b}"]`);
+      slots.forEach(s => s.value = "");
+      if (words.length > 0) {
+        const step = Math.max(1, Math.floor(8 / words.length));
+        words.forEach((w, i) => {
+          const idx = Math.min(i * step, 7);
+          if (slots[idx]) {
+            slots[idx].value = slots[idx].value ? slots[idx].value + " " + w : w;
+          }
+        });
+      }
+    }
+  });
+}
+
+// Sync grid inputs → table inputs
+function syncGridToTable() {
+  SECTIONS.forEach(sec => {
+    for (let b = 1; b <= sec.bars; b++) {
+      const slots = document.querySelectorAll(`.grid-input[data-section="${sec.id}"][data-bar="${b}"]`);
+      const allWords = [];
+      slots.forEach(s => {
+        if (s.value.trim()) allWords.push(s.value.trim());
+      });
+      // Distribute words across 4 beats
+      for (let beat = 1; beat <= 4; beat++) {
+        const inp = document.querySelector(`.bar-input[data-section="${sec.id}"][data-bar="${b}"][data-beat="${beat}"]`);
+        if (inp) inp.value = "";
+      }
+      if (allWords.length > 0) {
+        const perBeat = Math.ceil(allWords.length / 4);
+        for (let beat = 1; beat <= 4; beat++) {
+          const start = (beat - 1) * perBeat;
+          const chunk = allWords.slice(start, start + perBeat);
+          const inp = document.querySelector(`.bar-input[data-section="${sec.id}"][data-bar="${b}"][data-beat="${beat}"]`);
+          if (inp) inp.value = chunk.join(" ");
+        }
+      }
+    }
+  });
+}
+
+// ── BPM sync ────────────────────────────────────────────────────────────────
+
+function syncBPM(val, source) {
+  val = Math.max(80, Math.min(160, parseInt(val) || 90));
+  if (source !== "flow") document.getElementById("flow-bpm").value = val;
+  if (source !== "meta") document.getElementById("m-bpm").value = val;
+  // Restart metronome if playing so tempo stays in sync
+  if (metronomeRunning) { stopMetronome(); startMetronome(); }
+}
+
+document.getElementById("m-bpm").addEventListener("input", function() {
+  const v = parseInt(this.value);
+  if (v >= 80 && v <= 160) syncBPM(v, "meta");
+});
+
+// ── Analysis engine (debounced) ─────────────────────────────────────────────
+
+let _analyzeTimer;
+function debouncedAnalyze() {
+  clearTimeout(_analyzeTimer);
+  _analyzeTimer = setTimeout(runFullAnalysis, 200);
+}
+// Keep old name working
+function debouncedHighlight() { debouncedAnalyze(); }
+
+function runFullAnalysis() {
+  autoCountSyllables();
+  highlightRhymes();
+  detectInternalRhymes();
+  computeSectionScores();
+}
+
+// ── View-agnostic bar text helper ───────────────────────────────────────────
+
+// Returns all text in a bar, reading from whichever view is active
+function getBarText(secId, barNum) {
+  let text = "";
+  if (currentView === "grid") {
+    const slots = document.querySelectorAll(`.grid-input[data-section="${secId}"][data-bar="${barNum}"]`);
+    slots.forEach(s => { if (s.value.trim()) text += " " + s.value.trim(); });
+  } else {
+    for (let beat = 1; beat <= 4; beat++) {
+      const inp = document.querySelector(`.bar-input[data-section="${secId}"][data-bar="${barNum}"][data-beat="${beat}"]`);
+      if (inp && inp.value.trim()) text += " " + inp.value.trim();
+    }
+  }
+  return text.trim();
+}
+
+// Returns the last word in a bar (the end-rhyme word)
+function getBarEndWord(secId, barNum) {
+  let text = "";
+  if (currentView === "grid") {
+    // Read from last occupied grid slot
+    const slots = document.querySelectorAll(`.grid-input[data-section="${secId}"][data-bar="${barNum}"]`);
+    for (let i = slots.length - 1; i >= 0; i--) {
+      if (slots[i].value.trim()) { text = slots[i].value.trim(); break; }
+    }
+  } else {
+    const inp = document.querySelector(`.bar-input[data-section="${secId}"][data-bar="${barNum}"][data-beat="4"]`);
+    if (inp) text = inp.value.trim();
+  }
+  const words = text.toLowerCase().split(/\s+/);
+  return words[words.length - 1]?.replace(/[^a-z]/g, "") || "";
+}
+
+// Returns the end-rhyme input element (for highlighting)
+function getBarEndInput(secId, barNum) {
+  if (currentView === "grid") {
+    const slots = document.querySelectorAll(`.grid-input[data-section="${secId}"][data-bar="${barNum}"]`);
+    for (let i = slots.length - 1; i >= 0; i--) {
+      if (slots[i].value.trim()) return slots[i];
+    }
+    return null;
+  }
+  return document.querySelector(`.bar-input[data-section="${secId}"][data-bar="${barNum}"][data-beat="4"]`);
+}
+
+// Returns non-end inputs for a bar (for internal rhyme detection)
+function getBarInternalInputs(secId, barNum) {
+  if (currentView === "grid") {
+    const slots = [...document.querySelectorAll(`.grid-input[data-section="${secId}"][data-bar="${barNum}"]`)];
+    // Exclude the last occupied slot (that's the end word)
+    let lastIdx = -1;
+    for (let i = slots.length - 1; i >= 0; i--) {
+      if (slots[i].value.trim()) { lastIdx = i; break; }
+    }
+    return slots.filter((s, i) => i !== lastIdx && s.value.trim());
+  }
+  const result = [];
+  for (let beat = 1; beat <= 3; beat++) {
+    const inp = document.querySelector(`.bar-input[data-section="${secId}"][data-bar="${barNum}"][data-beat="${beat}"]`);
+    if (inp && inp.value.trim()) result.push(inp);
+  }
+  return result;
+}
+
+// ── Auto syllable counting ──────────────────────────────────────────────────
+
+function autoCountSyllables() {
+  SECTIONS.forEach(sec => {
+    for (let b = 1; b <= sec.bars; b++) {
+      const lineText = getBarText(sec.id, b);
+      const count = countLineSyllables(lineText);
+
+      // Update grid syl display (always, so it stays current)
+      const sylEl = document.querySelector(`.syl-auto[data-section="${sec.id}"][data-bar="${b}"]`);
+      if (sylEl) {
+        sylEl.textContent = count > 0 ? count : "—";
+      }
+
+      // Update table syl-input
+      const sylInputs = document.querySelectorAll(`#tbl-${sec.id} .syl-input`);
+      const sylInp = sylInputs[b - 1];
+      if (sylInp) {
+        sylInp.value = count > 0 ? count : "";
+      }
+    }
+  });
+
+  highlightUnevenFlow();
+}
+
+function highlightUnevenFlow() {
+  SECTIONS.forEach(sec => {
+    const counts = [];
+    for (let b = 1; b <= sec.bars; b++) {
+      counts.push(countLineSyllables(getBarText(sec.id, b)));
+    }
+
+    const filled = counts.filter(c => c > 0);
+    if (filled.length < 2) {
+      // Clear uneven marks
+      for (let b = 1; b <= sec.bars; b++) {
+        const sylEl = document.querySelector(`.syl-auto[data-section="${sec.id}"][data-bar="${b}"]`);
+        if (sylEl) sylEl.classList.remove("uneven");
+      }
+      return;
+    }
+    const avg = filled.reduce((a, b) => a + b, 0) / filled.length;
+
+    for (let b = 1; b <= sec.bars; b++) {
+      const sylEl = document.querySelector(`.syl-auto[data-section="${sec.id}"][data-bar="${b}"]`);
+      if (sylEl) {
+        if (counts[b - 1] > 0) {
+          const deviation = Math.abs(counts[b - 1] - avg) / avg;
+          sylEl.classList.toggle("uneven", deviation > 0.4);
+        } else {
+          sylEl.classList.remove("uneven");
+        }
+      }
+    }
+  });
+}
+
+// ── Enhanced rhyme detection ────────────────────────────────────────────────
+
+function highlightRhymes() {
+  // Clear all rhyme highlights from both views
+  document.querySelectorAll(".bar-input").forEach(inp => {
+    inp.classList.remove("rhyme-highlight", "rhyme-end", "rhyme-internal", "rhyme-multi");
+  });
+  document.querySelectorAll(".grid-input").forEach(inp => {
+    inp.classList.remove("rhyme-highlight", "rhyme-end", "rhyme-internal", "rhyme-multi");
+  });
+
+  // Collect end-word data per bar using view-agnostic helpers
+  const endEntries = []; // { secId, bar, word, info, input }
+  SECTIONS.forEach(sec => {
+    for (let b = 1; b <= sec.bars; b++) {
+      const word = getBarEndWord(sec.id, b);
+      if (!word) continue;
+      const info = getRhymeKeys(word);
+      const inp = getBarEndInput(sec.id, b);
+      const key = info ? info.keys[0] : word.slice(-3);
+      endEntries.push({ secId: sec.id, bar: b, word, info, inp, key });
+    }
+  });
+
+  // === END RHYMES ===
+  const endGroups = {};
+  endEntries.forEach(e => {
+    (endGroups[e.key] = endGroups[e.key] || []).push(e);
+  });
+  Object.values(endGroups).forEach(arr => {
+    if (arr.length > 1) {
+      arr.forEach(e => {
+        if (e.inp) e.inp.classList.add("rhyme-highlight", "rhyme-end");
+      });
+    }
+  });
+
+  // === MULTI-SYLLABLE END RHYMES ===
+  for (let i = 0; i < endEntries.length; i++) {
+    const a = endEntries[i];
+    if (!a.info || a.info.keys.length < 2) continue;
+    for (let j = i + 1; j < endEntries.length; j++) {
+      const b = endEntries[j];
+      if (!b.info || b.info.keys.length < 2) continue;
+      if (a.info.keys[1] === b.info.keys[1]) {
+        if (a.inp) a.inp.classList.add("rhyme-multi");
+        if (b.inp) b.inp.classList.add("rhyme-multi");
+      }
+    }
+  }
+}
+
+// ── Internal rhyme detection ────────────────────────────────────────────────
+
+function detectInternalRhymes() {
+  SECTIONS.forEach(sec => {
+    // Collect end-word rhyme keys per bar
+    const endKeys = {};
+    for (let b = 1; b <= sec.bars; b++) {
+      const word = getBarEndWord(sec.id, b);
+      if (!word) continue;
+      const entry = D[word];
+      if (entry) endKeys[b] = entry[1][0];
+    }
+
+    // Check non-end inputs for internal rhymes
+    for (let b = 1; b <= sec.bars; b++) {
+      const inputs = getBarInternalInputs(sec.id, b);
+      for (const inp of inputs) {
+        const words = inp.value.trim().toLowerCase().split(/\s+/);
+        let found = false;
+        for (const word of words) {
+          if (found) break;
+          const clean = word.replace(/[^a-z]/g, "");
+          if (!clean) continue;
+          const entry = D[clean];
+          if (!entry) continue;
+          const wordKey = entry[1][0];
+          for (const [barNum, endKey] of Object.entries(endKeys)) {
+            if (wordKey === endKey) {
+              inp.classList.add("rhyme-internal");
+              found = true;
+              break;
+            }
+          }
+        }
+      }
+    }
+  });
+}
+
+// ── Section flow scores ─────────────────────────────────────────────────────
+
+function computeSectionScores() {
+  SECTIONS.forEach(sec => {
+    const scoresEl = document.getElementById(`scores-${sec.id}`);
+    if (!scoresEl) return;
+
+    const barData = [];
+    let endRhymeCount = 0;
+    let internalRhymeCount = 0;
+    let multiSylRhymeCount = 0;
+
+    for (let b = 1; b <= sec.bars; b++) {
+      const lineText = getBarText(sec.id, b);
+      const syls = countLineSyllables(lineText);
+      barData.push({ syls });
+
+      // Count internal rhymes from class state
+      const internalInputs = getBarInternalInputs(sec.id, b);
+      internalInputs.forEach(inp => {
+        if (inp.classList.contains("rhyme-internal")) internalRhymeCount++;
+      });
+
+      // Count end rhymes from class state
+      const endInp = getBarEndInput(sec.id, b);
+      if (endInp && endInp.classList.contains("rhyme-end")) endRhymeCount++;
+      if (endInp && endInp.classList.contains("rhyme-multi")) multiSylRhymeCount++;
+    }
+
+    const filledBars = barData.filter(d => d.syls > 0);
+
+    // Hide section scores entirely when nothing meaningful to show
+    if (filledBars.length < 2) {
+      scoresEl.classList.add("empty");
+      // Clear grid flow dots
+      for (let b = 1; b <= sec.bars; b++) {
+        const flowCell = document.querySelector(`.flow-score-cell[data-section="${sec.id}"][data-bar="${b}"]`);
+        if (flowCell) flowCell.querySelectorAll(".flow-dot").forEach(d => { d.className = "flow-dot"; });
+      }
+      return;
+    }
+    scoresEl.classList.remove("empty");
+
+    // FLOW SCORE: syllable consistency (lower variance = higher score)
+    const avgSyls = filledBars.reduce((a, d) => a + d.syls, 0) / filledBars.length;
+    const variance = filledBars.reduce((a, d) => a + Math.pow(d.syls - avgSyls, 2), 0) / filledBars.length;
+    const stdDev = Math.sqrt(variance);
+    const flowScore = Math.round(Math.max(0, Math.min(10, 10 - stdDev * 1.5)));
+
+    // RHYME SCORE: ratio of end-rhyming bars
+    const rhymeRatio = endRhymeCount / filledBars.length;
+    const rhymeScore = Math.round(Math.min(10, rhymeRatio * 10 + multiSylRhymeCount * 0.5));
+
+    // INTERNAL RHYME SCORE
+    const internalRatio = internalRhymeCount / Math.max(filledBars.length, 1);
+    const internalScore = Math.round(Math.min(10, internalRatio * 8));
+
+    // COMPLEXITY: syllable density + multi-syl rhymes + internal rhymes
+    const densityBonus = Math.min(3, avgSyls / 4);
+    const multiBonus = Math.min(3, multiSylRhymeCount);
+    const complexityScore = Math.round(Math.min(10, densityBonus + multiBonus + internalScore * 0.4));
+
+    const scoreData = { flow: flowScore, rhymes: rhymeScore, internal: internalScore, complexity: complexityScore };
+    const fills = scoresEl.querySelectorAll(".score-fill");
+    const order = ["flow", "rhymes", "internal", "complexity"];
+    order.forEach((key, idx) => {
+      const val = scoreData[key];
+      const el = scoresEl.querySelector(`[data-score="${key}"]`);
+      if (el) {
+        el.textContent = `${val}/10`;
+        el.className = "score-value " + (val >= 7 ? "high" : val >= 4 ? "mid" : "low");
+      }
+      if (fills[idx]) fills[idx].style.width = (val * 10) + "%";
+    });
+
+    // Update per-bar flow dots in grid view
+    for (let b = 1; b <= sec.bars; b++) {
+      const flowCell = document.querySelector(`.flow-score-cell[data-section="${sec.id}"][data-bar="${b}"]`);
+      if (!flowCell) continue;
+      const dots = flowCell.querySelectorAll(".flow-dot");
+      const barSyls = barData[b - 1].syls;
+      if (barSyls === 0) {
+        dots.forEach(d => { d.className = "flow-dot"; });
+        continue;
+      }
+      const deviation = Math.abs(barSyls - avgSyls) / Math.max(avgSyls, 1);
+      const barScore = Math.round(Math.max(0, Math.min(5, 5 - deviation * 4)));
+      dots.forEach((d, i) => {
+        d.className = "flow-dot" + (i < barScore ? (barScore >= 4 ? " lit good" : barScore >= 2 ? " lit" : " lit warn") : "");
+      });
+    }
+  });
+}
+
+// ── Auto-distribute words across beats ──────────────────────────────────────
+
+// Distributes a flat list of words into N buckets weighted by syllable count
+function distributeWords(words, buckets) {
+  const wordSyls = words.map(w => ({ word: w, syls: countSyllables(w) }));
+  const totalSyls = wordSyls.reduce((a, ws) => a + ws.syls, 0);
+  const targetPer = totalSyls / buckets;
+  const result = Array.from({ length: buckets }, () => []);
+  let idx = 0, acc = 0;
+  wordSyls.forEach(ws => {
+    result[idx].push(ws.word);
+    acc += ws.syls;
+    if (acc >= targetPer && idx < buckets - 1) { idx++; acc = 0; }
+  });
+  return result;
+}
+
+function autoDistributeAll() {
+  SECTIONS.forEach(sec => {
+    for (let b = 1; b <= sec.bars; b++) {
+      const allText = getBarText(sec.id, b);
+      const words = allText.split(/\s+/).filter(w => w);
+      if (words.length === 0) continue;
+
+      if (currentView === "grid") {
+        const slots = document.querySelectorAll(`.grid-input[data-section="${sec.id}"][data-bar="${b}"]`);
+        slots.forEach(s => s.value = "");
+        const dist = distributeWords(words, 8);
+        dist.forEach((bucket, i) => { if (slots[i]) slots[i].value = bucket.join(" "); });
+      } else {
+        const dist = distributeWords(words, 4);
+        for (let beat = 1; beat <= 4; beat++) {
+          const inp = document.querySelector(`.bar-input[data-section="${sec.id}"][data-bar="${b}"][data-beat="${beat}"]`);
+          if (inp) inp.value = dist[beat - 1].join(" ");
+        }
+      }
+    }
+  });
+
+  runFullAnalysis();
+  saveSheet();
+}
+
+// ── Metronome (drift-free, AudioContext scheduled) ──────────────────────────
+
+let metronomeRunning = false;
+let audioCtx = null;
+let metronomeBeat = 0;        // 0..7 (8th-note position)
+let metronomeNextNoteTime = 0; // ctx-time of the next click
+let metronomeSchedulerId = null;
+const METRO_LOOKAHEAD_MS = 25;
+const METRO_SCHEDULE_AHEAD = 0.1; // schedule 100ms into the future
+
+function getAudioCtx() {
+  if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  return audioCtx;
+}
+
+// Schedule a click at a precise audio-context time
+function scheduleClick(time, accent) {
+  const ctx = getAudioCtx();
+  const osc = ctx.createOscillator();
+  const gain = ctx.createGain();
+  osc.connect(gain);
+  gain.connect(ctx.destination);
+  // 1: high accent (beat 1), 2: mid (other downbeats), 3: low (offbeats)
+  osc.frequency.value = accent === 1 ? 1200 : accent === 2 ? 900 : 700;
+  gain.gain.setValueAtTime(accent === 1 ? 0.32 : accent === 2 ? 0.22 : 0.12, time);
+  osc.start(time);
+  gain.gain.exponentialRampToValueAtTime(0.001, time + 0.08);
+  osc.stop(time + 0.08);
+}
+
+// Visual pulse + freestyle dots scheduled to align with audio
+function scheduleVisual(time, beat) {
+  const delay = Math.max(0, (time - getAudioCtx().currentTime) * 1000);
+  setTimeout(() => {
+    const pulse = document.getElementById("metro-pulse");
+    if (pulse) {
+      pulse.classList.add("tick");
+      setTimeout(() => pulse.classList.remove("tick"), 80);
+    }
+    const fsDots = document.querySelectorAll("#fs-beat-vis .freestyle-beat-dot");
+    fsDots.forEach((d, i) => d.classList.toggle("active", i === Math.floor(beat / 2)));
+  }, delay);
+}
+
+function metronomeScheduler() {
+  const ctx = getAudioCtx();
+  const bpm = parseInt(document.getElementById("flow-bpm").value) || 90;
+  const secPerEighth = 60 / bpm / 2;
+
+  while (metronomeNextNoteTime < ctx.currentTime + METRO_SCHEDULE_AHEAD) {
+    const isDownbeat = metronomeBeat % 2 === 0;
+    const isOne = metronomeBeat === 0;
+    const accent = isOne ? 1 : isDownbeat ? 2 : 3;
+    scheduleClick(metronomeNextNoteTime, accent);
+    scheduleVisual(metronomeNextNoteTime, metronomeBeat);
+    metronomeNextNoteTime += secPerEighth;
+    metronomeBeat = (metronomeBeat + 1) % 8;
+  }
+}
+
+function startMetronome() {
+  if (metronomeRunning) return;
+  const ctx = getAudioCtx();
+  // Resume context (browsers suspend until user gesture)
+  if (ctx.state === "suspended") ctx.resume();
+  metronomeBeat = 0;
+  metronomeNextNoteTime = ctx.currentTime + 0.05;
+  metronomeRunning = true;
+  document.getElementById("metro-btn").classList.add("playing");
+  metronomeSchedulerId = setInterval(metronomeScheduler, METRO_LOOKAHEAD_MS);
+}
+
+function stopMetronome() {
+  clearInterval(metronomeSchedulerId);
+  metronomeSchedulerId = null;
+  metronomeRunning = false;
+  metronomeBeat = 0;
+  document.getElementById("metro-btn").classList.remove("playing");
+  document.querySelectorAll("#fs-beat-vis .freestyle-beat-dot").forEach(d => d.classList.remove("active"));
+}
+
+function toggleMetronome() {
+  if (metronomeRunning) stopMetronome();
+  else startMetronome();
+}
+
+// ── Freestyle mode ──────────────────────────────────────────────────────────
+
+let freestyleRunning = false;
+let freestyleTimer = null;
+let freestyleSeconds = 0;
+let freestyleWordTimer = null;
+let freestyleStartedMetro = false; // track whether we started the metronome
+let freestyleWordPool = null;       // cached filtered word list
+
+function buildFreestyleWordPool() {
+  // Common-ish words: 1-3 syllables, 3-10 letters, no hyphens, no apostrophes
+  const pool = [];
+  for (const w in D) {
+    const e = D[w];
+    if (e[2] >= 1 && e[2] <= 3 && w.length >= 3 && w.length <= 10 && !w.includes("-") && !w.includes("'")) {
+      pool.push(w);
+    }
+  }
+  return pool;
+}
+
+function getRandomWord() {
+  if (!freestyleWordPool) freestyleWordPool = buildFreestyleWordPool();
+  if (!freestyleWordPool.length) return "flow";
+  return freestyleWordPool[Math.floor(Math.random() * freestyleWordPool.length)];
+}
+
+function openFreestyle() {
+  const overlay = document.getElementById("freestyle-overlay");
+  overlay.classList.add("active");
+  document.getElementById("fs-bpm-display").textContent = (document.getElementById("flow-bpm").value || 90) + " BPM";
+  // Reset display
+  freestyleSeconds = 0;
+  document.getElementById("fs-timer").textContent = "0:00";
+  document.getElementById("fs-start-btn").textContent = "START";
+  newFreestyleWord();
+}
+
+function closeFreestyle() {
+  stopFreestyle();
+  // Stop metronome only if freestyle started it
+  if (freestyleStartedMetro && metronomeRunning) {
+    stopMetronome();
+  }
+  freestyleStartedMetro = false;
+  document.getElementById("freestyle-overlay").classList.remove("active");
+}
+
+function newFreestyleWord() {
+  const word = getRandomWord();
+  document.getElementById("fs-word").textContent = word;
+  const entry = D[word];
+  document.getElementById("fs-ipa").textContent = entry ? `/${entry[0]}/` : "\u00a0";
+}
+
+function toggleFreestyle() {
+  if (freestyleRunning) stopFreestyle();
+  else startFreestyle();
+}
+
+function startFreestyle() {
+  freestyleRunning = true;
+  freestyleSeconds = 0;
+  document.getElementById("fs-timer").textContent = "0:00";
+  document.getElementById("fs-start-btn").textContent = "STOP";
+
+  // Start metronome and remember we did so
+  if (!metronomeRunning) {
+    startMetronome();
+    freestyleStartedMetro = true;
+  }
+
+  freestyleTimer = setInterval(() => {
+    freestyleSeconds++;
+    const min = Math.floor(freestyleSeconds / 60);
+    const sec = freestyleSeconds % 60;
+    document.getElementById("fs-timer").textContent = `${min}:${sec.toString().padStart(2, "0")}`;
+  }, 1000);
+
+  // New word every 15 seconds
+  freestyleWordTimer = setInterval(newFreestyleWord, 15000);
+}
+
+function stopFreestyle() {
+  freestyleRunning = false;
+  clearInterval(freestyleTimer);
+  clearInterval(freestyleWordTimer);
+  freestyleTimer = null;
+  freestyleWordTimer = null;
+  document.getElementById("fs-start-btn").textContent = "START";
+}
+
+// Close freestyle on Escape
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape" && document.getElementById("freestyle-overlay").classList.contains("active")) {
+    closeFreestyle();
+  }
+});
+
+// ── Local storage persistence ────────────────────────────────────────────────
+const LS_KEY = "ipa-lab-barsheet";
+
+function saveSheet() {
+  // Save only the active view to prevent stale data in the inactive view
+  const bars = {};
+  const gridSlots = {};
+
+  if (currentView === "table") {
+    document.querySelectorAll(".bar-input").forEach(inp => {
+      const k = `${inp.dataset.section}-${inp.dataset.bar}-${inp.dataset.beat}`;
+      if (inp.value) bars[k] = inp.value;
+    });
+  } else {
+    document.querySelectorAll(".grid-input").forEach(inp => {
+      const k = `${inp.dataset.section}-${inp.dataset.bar}-${inp.dataset.slot}`;
+      if (inp.value) gridSlots[k] = inp.value;
+    });
+  }
+
+  const meta = {};
+  ["m-artist","m-title","m-bpm","m-date"].forEach(id => {
+    const v = document.getElementById(id).value;
+    if (v) meta[id] = v;
+  });
+
+  try {
+    localStorage.setItem(LS_KEY, JSON.stringify({ bars, gridSlots, meta, view: currentView }));
+  } catch(e) {}
+}
+
+function loadSheet() {
+  let saved;
+  try { saved = JSON.parse(localStorage.getItem(LS_KEY)); } catch(e) {}
+  if (!saved) return;
+
+  if (saved.bars) {
+    document.querySelectorAll(".bar-input").forEach(inp => {
+      const k = `${inp.dataset.section}-${inp.dataset.bar}-${inp.dataset.beat}`;
+      if (saved.bars[k]) inp.value = saved.bars[k];
+    });
+  }
+  if (saved.gridSlots) {
+    document.querySelectorAll(".grid-input").forEach(inp => {
+      const k = `${inp.dataset.section}-${inp.dataset.bar}-${inp.dataset.slot}`;
+      if (saved.gridSlots[k]) inp.value = saved.gridSlots[k];
+    });
+  }
+  if (saved.meta) {
+    ["m-artist","m-title","m-bpm","m-date"].forEach(id => {
+      if (saved.meta[id]) document.getElementById(id).value = saved.meta[id];
+    });
+  }
+  // Restore active view
+  if (saved.view === "grid") {
+    const gridBtn = document.querySelectorAll("#view-toggle button")[1];
+    if (gridBtn) setView("grid", gridBtn);
+  }
+  // Sync BPM to flow toolbar
+  const bpm = document.getElementById("m-bpm").value;
+  if (bpm) document.getElementById("flow-bpm").value = bpm;
+
+  runFullAnalysis();
+}
+
+function clearSheet() {
+  if (!confirm("Clear all bar content?")) return;
+  document.querySelectorAll(".bar-input,.syl-input,.grid-input").forEach(i => i.value = "");
+  document.querySelectorAll(".bar-input,.grid-input").forEach(i =>
+    i.classList.remove("rhyme-highlight", "rhyme-end", "rhyme-internal", "rhyme-multi")
+  );
+  document.querySelectorAll(".syl-auto").forEach(el => { el.textContent = "—"; el.classList.remove("uneven"); });
+  ["m-artist","m-title","m-bpm","m-date"].forEach(id => document.getElementById(id).value = "");
+  document.getElementById("flow-bpm").value = 90;
+  try { localStorage.removeItem(LS_KEY); } catch(e) {}
+  runFullAnalysis();
+}
+
+function printSheet() {
+  window.print();
+}
+
+buildBarSheet();
+loadSheet();
+
+// Auto-save on any bar sheet change (scoped to the bar sheet panel)
+document.getElementById("fl-panel-bars").addEventListener("input", saveSheet);
+
+// ══════════════════════════════════
+//  BAR BUILDER
+// ══════════════════════════════════
+function bbRenderWordBox(word, syllables, known) {
+  const wrap = document.createElement("div");
+  wrap.className = "sm-word";
+  wrap.dataset.word = word;
+  wrap.dataset.known = known ? "1" : "0";
+  const label = document.createElement("div");
+  label.className = "sm-word-text";
+  if (!known) {
+    label.classList.add("unknown");
+    label.textContent = word + " (?)";
+    wrap.appendChild(label);
+    return wrap;
+  }
+  label.textContent = word;
+  wrap.appendChild(label);
+  const row = document.createElement("div");
+  row.className = "sm-phoneme-row";
+  syllables.forEach(syl => {
+    const sylBox = document.createElement("div");
+    sylBox.className = "sm-syllable";
+    sylBox.dataset.stress = String(syl.stress);
+    for (const p of syl.phonemes) {
+      const feat = SM_FEATS[p];
+      const block = document.createElement("span");
+      block.className = "sm-phon";
+      block.textContent = p;
+      if (feat) {
+        block.dataset.place = feat.place;
+        block.dataset.voice = feat.voice ? "1" : "0";
+      }
+      block.title = smDescribe(p, feat);
+      sylBox.appendChild(block);
+    }
+    row.appendChild(sylBox);
+  });
+  wrap.appendChild(row);
+  return wrap;
+}
+
+function bbSuggestNearRhymes(word, limit) {
+  return smNearRhymes(word, limit || 20);
+}
+
+function bbHighlightProximity(pivot, root) {
+  root.classList.add("sm-proximity-active");
+  root.querySelectorAll(".sm-word").forEach(el => {
+    const w = el.dataset.word;
+    if (w === pivot) { el.dataset.prox = "pivot"; return; }
+    if (el.dataset.known !== "1") { el.dataset.prox = "far"; return; }
+    const d = smWordProximity(pivot, w);
+    const bucket = smProximityBucket(d);
+    el.dataset.prox = bucket;
+    el.title = bucket === "far" ? "" : `${bucket} rhyme with "${pivot}"`;
+  });
+}
+
+function bbClearProximity(root) {
+  root.classList.remove("sm-proximity-active");
+  root.querySelectorAll(".sm-word").forEach(el => {
+    delete el.dataset.prox;
+    el.removeAttribute("title");
+  });
+}
+
+function bbAnalyze() {
+  const raw = document.getElementById("bb-input").value;
+  const out = document.getElementById("bb-output");
+  out.innerHTML = "";
+
+  const lines = raw.split(/\r?\n/);
+  let anyLine = false;
+  for (const rawLine of lines) {
+    const tokens = rawLine.toLowerCase().split(/\s+/).map(t => t.replace(/[^a-z\-']/g,"")).filter(Boolean);
+    if (!tokens.length) continue;
+    anyLine = true;
+
+    const row = document.createElement("div");
+    row.className = "bb-line-row";
+
+    const phoneBox = document.createElement("div");
+    phoneBox.className = "bb-line-phonemes";
+    const lineEl = document.createElement("div");
+    lineEl.className = "sm-line";
+    let endWordKnown = null;
+    for (const w of tokens) {
+      const entry = D[w];
+      const known = !!entry;
+      const syllables = known ? smSyllabify(entry[0]) : [];
+      const wordEl = bbRenderWordBox(w, syllables, known);
+      wordEl.addEventListener("mouseenter", () => bbHighlightProximity(w, out));
+      wordEl.addEventListener("mouseleave", () => bbClearProximity(out));
+      lineEl.appendChild(wordEl);
+      if (known) endWordKnown = w;
+    }
+    phoneBox.appendChild(lineEl);
+    row.appendChild(phoneBox);
+
+    const sideBox = document.createElement("div");
+    sideBox.className = "bb-suggest";
+    const title = document.createElement("div");
+    title.className = "bb-suggest-title";
+    if (endWordKnown) {
+      title.textContent = `Near-rhymes for ${endWordKnown}`;
+      sideBox.appendChild(title);
+      const sugg = bbSuggestNearRhymes(endWordKnown, 15);
+      if (!sugg.length) {
+        const em = document.createElement("div");
+        em.className = "bb-suggest-empty";
+        em.textContent = "no near rhymes found";
+        sideBox.appendChild(em);
+      } else {
+        for (const s of sugg) {
+          const it = document.createElement("div");
+          it.className = "bb-suggest-item";
+          it.title = smProximityBucket(s.dist) + " rhyme";
+          const sc = document.createElement("span");
+          sc.className = "bb-suggest-score";
+          sc.textContent = `${Math.round((1-s.dist)*100)}%`;
+          const wd = document.createElement("span");
+          wd.className = "bb-suggest-word";
+          wd.textContent = s.word;
+          const ipa = document.createElement("span");
+          ipa.className = "bb-suggest-ipa";
+          ipa.textContent = D[s.word][0];
+          it.appendChild(sc);
+          it.appendChild(wd);
+          it.appendChild(ipa);
+          sideBox.appendChild(it);
+        }
+      }
+    } else {
+      title.textContent = "Near-rhymes";
+      sideBox.appendChild(title);
+      const em = document.createElement("div");
+      em.className = "bb-suggest-empty";
+      em.textContent = "no dictionary word found in this line";
+      sideBox.appendChild(em);
+    }
+    row.appendChild(sideBox);
+    out.appendChild(row);
+  }
+
+  if (!anyLine) {
+    const em = document.createElement("div");
+    em.id = "bb-empty";
+    em.textContent = "Enter some bars above and click Analyze.";
+    out.appendChild(em);
+  }
+}
+
+document.getElementById("bb-analyze").addEventListener("click", () => {
+  bbAnalyze();
+  if (typeof rfSaveToHash === "function") rfSaveToHash();
+});
+document.getElementById("bb-input").addEventListener("keydown", e => {
+  if (e.key === "Enter" && (e.ctrlKey || e.metaKey)) {
+    e.preventDefault();
+    bbAnalyze();
+    if (typeof rfSaveToHash === "function") rfSaveToHash();
+  }
+});
+
 // ══════════════════════════════════
 //  TAB SWITCHING
 // ══════════════════════════════════
 function setTab(name) {
-  document.querySelectorAll(".tab-btn").forEach(b => {
+  document.querySelectorAll("#tab-nav .tab-btn").forEach(b => {
     const on = b.dataset.tab === name;
     b.classList.toggle("active", on);
     b.setAttribute("aria-selected", on ? "true" : "false");
   });
   document.getElementById("panel-sound").classList.toggle("active", name === "sound");
   document.getElementById("panel-chart").classList.toggle("active", name === "chart");
+  document.getElementById("panel-flow").classList.toggle("active", name === "flow");
   try { localStorage.setItem("sm-tab", name); } catch(_) {}
 }
-document.querySelectorAll(".tab-btn").forEach(b => {
+document.querySelectorAll("#tab-nav .tab-btn").forEach(b => {
   b.addEventListener("click", () => setTab(b.dataset.tab));
 });
 (function initTab() {
@@ -1109,9 +2858,9 @@ document.querySelectorAll(".tab-btn").forEach(b => {
   const fromUrl = params.get("tab");
   let saved = null;
   try { saved = localStorage.getItem("sm-tab"); } catch(_) {}
-  const initial = (fromUrl === "chart" || fromUrl === "sound") ? fromUrl
-                : (saved === "chart" || saved === "sound") ? saved
-                : "sound";
+  const validUrl = (fromUrl === "chart" || fromUrl === "sound" || fromUrl === "flow") ? fromUrl : null;
+  const validSaved = (saved === "chart" || saved === "sound" || saved === "flow") ? saved : null;
+  const initial = validUrl || validSaved || "sound";
   if (initial !== "sound") setTab(initial);
 })();
 </script>
