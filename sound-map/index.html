@@ -457,26 +457,25 @@ body{background:var(--bg);color:var(--text);font-family:"Segoe UI",Arial,sans-se
 .sm-lang-chip.disabled{opacity:.45;cursor:not-allowed}
 .sm-lang-chip.disabled:hover{color:var(--muted);border-color:var(--bdr)}
 .sm-lang-picker-hint{color:var(--muted);font-size:10px;font-style:italic;flex-basis:100%;margin-top:2px}
-.sm-lang-overlay{margin-top:14px}
-.sm-lang-overlay-legend{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:10px;font-size:11px;color:var(--muted)}
+.sm-lang-overlay{margin-top:12px}
+.sm-lang-overlay-legend{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:8px;font-size:11px;color:var(--muted)}
 .sm-lang-legend-item{display:inline-flex;align-items:center;gap:6px}
-.sm-lang-legend-swatch{width:14px;height:4px;border-radius:2px;flex-shrink:0}
-.sm-lang-overlay-row{display:grid;grid-template-columns:130px 1fr;gap:12px;align-items:center;margin-bottom:10px;font-size:12px;padding-bottom:8px;border-bottom:1px dashed rgba(255,255,255,.04)}
-.sm-lang-overlay-row:last-child{border-bottom:none}
-.sm-lang-overlay-label{color:var(--text);text-transform:capitalize;font-size:11px;letter-spacing:.02em}
-.sm-lang-overlay-bars{display:flex;flex-direction:column;gap:3px}
-.sm-lang-overlay-bar-row{display:grid;grid-template-columns:48px 1fr 48px;gap:8px;align-items:center;font-size:10px}
-.sm-lang-overlay-series{color:var(--muted);font-family:var(--mono);text-transform:uppercase;letter-spacing:.04em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.sm-lang-overlay-track{height:9px;background:var(--surf2);border-radius:2px;overflow:hidden}
-.sm-lang-overlay-fill{height:100%;border-radius:2px;transition:width .4s}
-.sm-lang-overlay-val{color:var(--muted);font-family:var(--mono);text-align:right;font-size:10px}
+.sm-lang-legend-swatch{width:12px;height:12px;border-radius:2px;flex-shrink:0}
+.sm-lang-overlay-chart{display:flex;gap:4px;align-items:flex-end;padding:10px 10px 6px;background:var(--bg);border-radius:var(--radius);overflow-x:auto;border:1px solid var(--bdr)}
+.sm-lang-overlay-col{display:flex;flex-direction:column;align-items:center;flex:0 0 auto;min-width:44px}
+.sm-lang-overlay-col-bars{display:flex;align-items:flex-end;justify-content:center;gap:2px;height:96px;padding:0 2px 2px;border-bottom:1px solid var(--bdr);width:100%}
+.sm-lang-overlay-col-bar{width:8px;border-radius:2px 2px 0 0;min-height:1px;transition:height .35s;cursor:help}
+.sm-lang-overlay-col-bar:hover{filter:brightness(1.25)}
+.sm-lang-overlay-col-label{font-size:9px;color:var(--muted);margin-top:5px;text-align:center;line-height:1.15;max-width:56px;text-transform:lowercase;letter-spacing:.01em}
+.sm-lang-overlay-col-label.highlight{color:var(--gold);font-weight:700}
 .sm-lang-sum{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px;padding:10px 12px;background:var(--bg);border-radius:var(--radius);font-size:11px;color:var(--muted);line-height:1.55}
 .sm-lang-sum strong{color:var(--gold)}
 @media(max-width:720px){
   .sm-lang-rank-row{grid-template-columns:18px 1fr 60px;gap:6px}
   .sm-lang-rank-bar-wrap{display:none}
-  .sm-lang-overlay-row{grid-template-columns:1fr;gap:4px}
-  .sm-lang-overlay-label{margin-bottom:2px;font-weight:700;color:var(--gold)}
+  .sm-lang-overlay-col{min-width:40px}
+  .sm-lang-overlay-col-bars{height:80px}
+  .sm-lang-overlay-col-label{font-size:8px}
 }
 
 @media(max-width:720px){
@@ -2010,31 +2009,40 @@ function smLangRefreshOverlay() {
   }
   if (maxVal === 0) maxVal = 1;
 
+  const chart = document.createElement("div");
+  chart.className = "sm-lang-overlay-chart";
   LANG_PLACE_ORDER.forEach((place, pIdx) => {
     const hasAny = series.some(s => s.vector[pIdx] > 0);
     if (!hasAny) return;
-    const row = document.createElement("div");
-    row.className = "sm-lang-overlay-row";
-    const label = document.createElement("div");
-    label.className = "sm-lang-overlay-label";
-    label.textContent = LANG_PLACE_LABELS[place] || place;
+    const col = document.createElement("div");
+    col.className = "sm-lang-overlay-col";
     const bars = document.createElement("div");
-    bars.className = "sm-lang-overlay-bars";
+    bars.className = "sm-lang-overlay-col-bars";
+    // Highlight column if user's value is the largest of the series in that column.
+    const userV = smLangUser.vector[pIdx];
+    const anyLangBigger = smLangSelected.some((code, i) => {
+      const langV = LANG_INVENTORIES[code].vector[pIdx];
+      return langV > userV;
+    });
     series.forEach(s => {
       const v = s.vector[pIdx];
-      const w = Math.round((v / maxVal) * 100);
-      const barRow = document.createElement("div");
-      barRow.className = "sm-lang-overlay-bar-row";
-      barRow.innerHTML = `
-        <span class="sm-lang-overlay-series">${s.label}</span>
-        <div class="sm-lang-overlay-track"><div class="sm-lang-overlay-fill" style="width:${w}%;background:${s.color}"></div></div>
-        <span class="sm-lang-overlay-val">${(v*100).toFixed(1)}%</span>`;
-      bars.appendChild(barRow);
+      const h = Math.max(1, Math.round((v / maxVal) * 94)); // px — leaves head-room
+      const bar = document.createElement("div");
+      bar.className = "sm-lang-overlay-col-bar";
+      bar.style.height = h + "px";
+      bar.style.background = s.color;
+      bar.title = `${s.label} · ${LANG_PLACE_LABELS[place]}: ${(v*100).toFixed(1)}%`;
+      bars.appendChild(bar);
     });
-    row.appendChild(label);
-    row.appendChild(bars);
-    overlay.appendChild(row);
+    const label = document.createElement("div");
+    label.className = "sm-lang-overlay-col-label";
+    if (!anyLangBigger && userV > 0) label.classList.add("highlight");
+    label.textContent = LANG_PLACE_LABELS[place] || place;
+    col.appendChild(bars);
+    col.appendChild(label);
+    chart.appendChild(col);
   });
+  overlay.appendChild(chart);
 
   // Pairwise summary: for each selected lang, show similarity + biggest contrasts.
   const sum = document.createElement("div");
