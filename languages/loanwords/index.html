@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Loanwords — Languages</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg:#1e2a3a; --fg:#e8ecf1; --muted:#8fa3ba;
+    --border:#32445c; --active:#d4a24c; --tint:#263447; --card:#243347;
+  }
+  body { font-family: Georgia, serif; background: var(--bg); color: var(--fg); line-height: 1.55; min-height: 100vh; }
+  .page { max-width: 1280px; margin: 0 auto; padding: 40px 24px 80px; }
+  header { border-bottom: 1px solid var(--border); padding-bottom: 20px; margin-bottom: 22px; display: flex; align-items: baseline; gap: 18px; flex-wrap: wrap; }
+  h1 { font-size: 28px; font-weight: 600; }
+  .subtitle { color: var(--muted); font-style: italic; font-size: 15px; flex: 1; min-width: 240px; }
+  .back { color: var(--active); text-decoration: none; font-size: 14px; }
+  .back:hover { text-decoration: underline; }
+
+  .intro { color: var(--muted); font-size: 14px; max-width: 900px; margin-bottom: 22px; line-height: 1.75; }
+  .intro strong { color: var(--fg); }
+
+  .toolbar { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; margin-bottom: 22px; }
+  .toolbar select { background: var(--tint); border: 1px solid var(--border); color: var(--fg); padding: 6px 10px; border-radius: 4px; font-family: inherit; font-size: 13px; outline: none; }
+  .toolbar label { font-size: 13px; color: var(--muted); }
+
+  .summary { background: var(--card); border: 1px solid var(--border); padding: 18px 22px; border-radius: 4px; margin-bottom: 24px; }
+  .summary h2 { font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 12px; font-weight: 600; }
+  .bar-stack { display: flex; height: 22px; border-radius: 3px; overflow: hidden; margin-bottom: 12px; border: 1px solid var(--border); }
+  .bar-seg { position: relative; font-size: 11px; color: #fff; text-align: center; line-height: 22px; font-weight: 500; transition: opacity 0.12s; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+  .bar-seg:hover { opacity: 0.85; }
+  .bar-seg.active { outline: 2px solid var(--fg); outline-offset: -2px; }
+  .bar-legend { display: flex; gap: 14px; flex-wrap: wrap; font-size: 12.5px; color: var(--muted); }
+  .bar-legend .leg { display: inline-flex; align-items: center; gap: 5px; cursor: pointer; user-select: none; padding: 3px 6px; border-radius: 3px; }
+  .bar-legend .leg:hover { background: var(--tint); }
+  .bar-legend .leg.active { background: var(--tint); color: var(--fg); }
+  .bar-legend .leg i { display: inline-block; width: 11px; height: 11px; border-radius: 2px; }
+  .bar-legend .count { color: var(--muted); font-family: ui-monospace, monospace; font-size: 11px; }
+
+  .source-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(420px, 1fr)); gap: 16px; }
+  .source-card { background: var(--card); border: 1px solid var(--border); border-left: 3px solid var(--active); padding: 16px 20px 18px; border-radius: 3px; }
+  .source-card.dimmed { opacity: 0.35; }
+  .source-card h3 { font-size: 16px; color: var(--fg); margin-bottom: 2px; display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+  .source-card h3 .count { color: var(--muted); font-family: ui-monospace, monospace; font-size: 12px; font-weight: 400; }
+  .source-card .meta { color: var(--muted); font-size: 12px; font-style: italic; margin-bottom: 10px; }
+  .source-card .ctx { font-size: 13px; color: var(--muted); margin-bottom: 12px; padding: 8px 10px; background: var(--tint); border-left: 2px solid var(--active); border-radius: 2px; line-height: 1.6; }
+  .source-card .ctx b { color: var(--fg); }
+  .word-list { display: grid; gap: 4px; }
+  .word-item { display: grid; grid-template-columns: 130px 1fr; gap: 12px; font-size: 13px; padding: 3px 0; border-bottom: 1px dashed var(--border); }
+  .word-item:last-child { border-bottom: none; }
+  .word-item .w { color: var(--active); font-weight: 600; font-family: Georgia, serif; }
+  .word-item .etymology { color: var(--muted); font-size: 12.5px; }
+  .word-item .etymology .src-form { color: var(--fg); font-style: italic; }
+  .word-item .etymology .via { color: var(--muted); font-size: 11.5px; margin-top: 2px; display: block; }
+</style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <div>
+      <h1>Loanword Network</h1>
+      <div class="subtitle">What a language borrowed, and from whom.</div>
+    </div>
+    <nav style="display:flex;gap:14px;align-items:baseline">
+      <a class="back" href="../languages/">Languages</a>
+      <a class="back" href="../phonetic-center/">Phonetic Center</a>
+      <a class="back" href="../scripts/">Scripts</a>
+      <a class="back" href="../scripts-tree/">Script Evolution</a>
+      <a class="back" href="../">← Languages Hub</a>
+    </nav>
+  </header>
+
+  <div class="intro">
+    English is famously a <strong>layered language</strong>. Its Anglo-Saxon core sits beneath a dense Norman-French crust
+    (after 1066), overlaid with Latin and Greek scholarly vocabulary, then dusted with words pulled in from every empire,
+    trade route, and cultural contact. Click a bar or a legend item below to focus on one source; the totals show the rough shape
+    of the donation — not raw frequency (common words still skew Anglo-Saxon), but the variety of sources contributing to the lexicon.
+  </div>
+
+  <div class="toolbar">
+    <label for="target-picker">Target language:</label>
+    <select id="target-picker">
+      <option value="en">English</option>
+    </select>
+  </div>
+
+  <div class="summary" id="summary"></div>
+
+  <div class="source-grid" id="source-grid"></div>
+</div>
+
+<script>
+// ═══════════════════════════════════════════════════════════════
+// Loanword data
+// ═══════════════════════════════════════════════════════════════
+const LOANWORDS = {
+  en: {
+    name: "English",
+    note: "English has one of the most diverse loanword profiles of any major language — a consequence of the Norman conquest, the British Empire, American immigration, and global trade.",
+    sources: [
+      {
+        lang: "Old Norse",
+        langId: "non",
+        color: "#3b82f6",
+        period: "9th–11th c.",
+        context: "Viking settlement in the <b>Danelaw</b> (northern and eastern England) brought a closely-related Germanic language into intense contact. Because Old Norse and Old English were partially mutually intelligible, borrowing ran deep — even into the pronouns and grammatical particles, which is extraordinarily rare.",
+        words: [
+          { w: "sky",     src: "ský",        note: "originally 'cloud'; replaced OE wolcen" },
+          { w: "window",  src: "vindauga",   note: "literally 'wind-eye'" },
+          { w: "egg",     src: "egg",        note: "replaced OE æg" },
+          { w: "they / them / their", src: "þeir / þeim / þeira", note: "pronoun borrowing is very rare typologically" },
+          { w: "law",     src: "lǫg",        note: "OE had āw; now marginal" },
+          { w: "leg",     src: "leggr" },
+          { w: "knife",   src: "knífr" },
+          { w: "husband", src: "húsbóndi",   note: "'house-dweller'" },
+          { w: "anger",   src: "angr" },
+          { w: "bag",     src: "baggi" },
+          { w: "cake",    src: "kaka" },
+          { w: "dirt",    src: "drit" },
+          { w: "get",     src: "geta" },
+          { w: "give",    src: "gefa",       note: "OE had giefan with palatalized /j/; hard /g/ is the Norse form" },
+          { w: "happy",   src: "happ",       note: "'luck'" },
+          { w: "kid",     src: "kið",        note: "young goat" },
+          { w: "skin",    src: "skinn",      note: "native OE hȳd → 'hide'" },
+          { w: "skirt",   src: "skyrta",     note: "native cognate 'shirt' — same word split by Norse/English" },
+          { w: "seat",    src: "sæti" },
+          { w: "ugly",    src: "uggligr" },
+        ],
+      },
+      {
+        lang: "Norman French",
+        langId: "xno",
+        color: "#d4a24c",
+        period: "1066 onward",
+        context: "The <b>Norman Conquest of 1066</b> made French the language of the English aristocracy, law, and the church for ~300 years. As a result, roughly a third of Modern English vocabulary — and most of the formal register — is from Norman or Central French. Many pairs preserve the class distinction: OE <i>cow</i>/<i>pig</i>/<i>sheep</i> (peasant) vs. French <i>beef</i>/<i>pork</i>/<i>mutton</i> (table).",
+        words: [
+          { w: "government", src: "governement" },
+          { w: "justice",    src: "justice" },
+          { w: "castle",     src: "castel" },
+          { w: "beef",       src: "boef",       note: "from Latin bōs; peasant kept cow, lord ate boef" },
+          { w: "pork",       src: "porc" },
+          { w: "mutton",     src: "moton" },
+          { w: "jury",       src: "jurée" },
+          { w: "court",      src: "court" },
+          { w: "prison",     src: "prisun" },
+          { w: "army",       src: "armée" },
+          { w: "parliament", src: "parlement" },
+          { w: "honor",      src: "onour" },
+          { w: "fashion",    src: "façon" },
+          { w: "music",      src: "musique" },
+          { w: "beauty",     src: "beauté" },
+          { w: "adventure",  src: "aventure" },
+          { w: "chamber",    src: "chambre" },
+          { w: "second",     src: "second" },
+          { w: "very",       src: "verrai",     note: "originally 'truly'" },
+          { w: "purple",     src: "purpre" },
+        ],
+      },
+      {
+        lang: "Latin",
+        langId: "la",
+        color: "#a78bfa",
+        period: "continuous; peak 15th–17th c.",
+        context: "Latin entered English at every period — through the Roman occupation, the early Church, medieval scholarship, and the <b>Renaissance inkhorn-word</b> craze. Much of English's scientific, legal, and philosophical vocabulary is direct Latin borrowing, often with Latin endings preserved (alumni, fungi, data).",
+        words: [
+          { w: "street",     src: "strata",      note: "'paved road'; earliest loan, pre-OE" },
+          { w: "wall",       src: "vallum" },
+          { w: "wine",       src: "vinum" },
+          { w: "school",     src: "schola" },
+          { w: "minute",     src: "minuta" },
+          { w: "library",    src: "librarium" },
+          { w: "medical",    src: "medicalis" },
+          { w: "video",      src: "video",        note: "literally 'I see'" },
+          { w: "census",     src: "census" },
+          { w: "series",     src: "series" },
+          { w: "fact",       src: "factum",       note: "'something done'" },
+          { w: "circus",     src: "circus" },
+          { w: "omnibus",    src: "omnibus",      note: "'for all'; bus is a clipping" },
+          { w: "exit",       src: "exit",         note: "'he/she goes out'" },
+          { w: "virus",      src: "virus",        note: "'poison'" },
+          { w: "agenda",     src: "agenda",       note: "'things to be done'" },
+          { w: "et cetera",  src: "et cetera" },
+          { w: "status",     src: "status" },
+          { w: "formula",    src: "formula" },
+          { w: "data",       src: "data",         note: "plural of datum" },
+        ],
+      },
+      {
+        lang: "Greek",
+        langId: "grc",
+        color: "#38bdf8",
+        period: "via Latin; direct from Renaissance",
+        context: "Greek supplies the vast majority of <b>scientific and technical vocabulary</b>, usually through Latin intermediation. Almost every word ending in <i>-ology</i>, <i>-graphy</i>, <i>-phobia</i>, <i>-meter</i>, or <i>-logy</i> is Greek-derived. In the 19th century, Greek roots became the preferred source for coining neologisms (telephone, photograph, television).",
+        words: [
+          { w: "democracy",  src: "dēmokratía",   note: "'rule by the people'" },
+          { w: "philosophy", src: "philosophía",  note: "'love of wisdom'" },
+          { w: "physics",    src: "phusiká" },
+          { w: "theater",    src: "théatron" },
+          { w: "music",      src: "mousikḗ",      via: "via Latin musica" },
+          { w: "idea",       src: "idéa" },
+          { w: "school",     src: "skholḗ",       via: "via Latin schola" },
+          { w: "history",    src: "historía" },
+          { w: "chaos",      src: "kháos" },
+          { w: "telephone",  src: "têle + phōnḗ", note: "coined 1849 from Greek roots" },
+          { w: "photograph", src: "phôs + gráphō",note: "'light-writing'; coined 1839" },
+          { w: "television", src: "têle + visio", note: "hybrid Greek + Latin" },
+          { w: "astronomy",  src: "ástron + nómos" },
+          { w: "archive",    src: "arkhêion" },
+          { w: "ethics",     src: "ēthikós" },
+          { w: "climate",    src: "klíma" },
+          { w: "panic",      src: "panikós",      note: "fear inspired by the god Pan" },
+          { w: "catastrophe",src: "katastrophḗ",  note: "'overturning'" },
+          { w: "stigma",     src: "stígma",       note: "'tattoo mark'" },
+          { w: "problem",    src: "próblēma" },
+        ],
+      },
+      {
+        lang: "Arabic",
+        langId: "ar",
+        color: "#10b981",
+        period: "11th–17th c., via Spanish/Italian/Latin",
+        context: "Arabic was the language of <b>Islamic scholarship</b> — mathematics, astronomy, chemistry, medicine — and Al-Andalus (Muslim Iberia, 711–1492) transmitted much of it into Romance languages and then into English. A signature: words starting with <i>al-</i> (the Arabic article).",
+        words: [
+          { w: "algebra",    src: "al-jabr",      note: "'the restoring'; from al-Khwārizmī's 9th-c. treatise" },
+          { w: "algorithm",  src: "al-Khwārizmī", note: "from the mathematician's name" },
+          { w: "alchemy",    src: "al-kīmiyāʾ" },
+          { w: "alcohol",    src: "al-kuḥl",      note: "originally powdered antimony for eye cosmetics" },
+          { w: "alkali",     src: "al-qily" },
+          { w: "admiral",    src: "amīr al-",     note: "'commander of the...'" },
+          { w: "zenith",     src: "samt ar-raʾs", note: "'path over the head'" },
+          { w: "zero",       src: "ṣifr",         note: "also source of 'cipher'" },
+          { w: "sugar",      src: "sukkar",       via: "via Italian zucchero" },
+          { w: "cotton",     src: "quṭn",         via: "via Italian cotone" },
+          { w: "coffee",     src: "qahwa",        via: "via Turkish kahve" },
+          { w: "candy",      src: "qandi" },
+          { w: "lemon",      src: "līmūn",        via: "via Old French" },
+          { w: "magazine",   src: "makhāzin",     note: "'storehouse'; semantic drift to periodical" },
+          { w: "sofa",       src: "ṣuffa" },
+          { w: "giraffe",    src: "zarāfa" },
+          { w: "mattress",   src: "maṭraḥ",       note: "'where something is thrown'" },
+          { w: "safari",     src: "safar",        note: "'journey'; via Swahili" },
+          { w: "assassin",   src: "ḥashshāshīn",  note: "a medieval Isma'ili sect" },
+          { w: "checkmate",  src: "shāh māt",     note: "from Persian via Arabic: 'the king is dead'" },
+        ],
+      },
+      {
+        lang: "Dutch / Low German",
+        langId: "nl",
+        color: "#f59e0b",
+        period: "16th–18th c.",
+        context: "Dutch and Low German donated a concentrated layer of <b>nautical, trade, and colonial terms</b>, especially during Dutch maritime dominance in the 17th century. New Amsterdam (now New York) gave American English much of its early vocabulary.",
+        words: [
+          { w: "skipper",    src: "schipper" },
+          { w: "deck",       src: "dek" },
+          { w: "yacht",      src: "jacht" },
+          { w: "boss",       src: "baas",         note: "entered American English via New Amsterdam" },
+          { w: "cookie",     src: "koekje",       note: "'little cake'" },
+          { w: "waffle",     src: "wafel" },
+          { w: "sleigh",     src: "slee" },
+          { w: "Santa Claus",src: "Sinterklaas",  note: "'Saint Nicholas'" },
+          { w: "dollar",     src: "daler",        note: "from German Taler via Dutch" },
+          { w: "brandy",     src: "brandewijn",   note: "'burnt wine'" },
+          { w: "landscape",  src: "landschap" },
+          { w: "gin",        src: "genever" },
+          { w: "cruise",     src: "kruisen",      note: "'to cross'" },
+          { w: "Yankee",     src: "Jan Kees?",    note: "contested etymology; possibly a Dutch nickname" },
+          { w: "easel",      src: "ezel",         note: "literally 'donkey'" },
+          { w: "freight",    src: "vracht" },
+        ],
+      },
+      {
+        lang: "German",
+        langId: "de",
+        color: "#ef4444",
+        period: "19th–20th c.",
+        context: "German contributed <b>scientific terms</b> (especially in 19th-c. philosophy, psychology, and physics) and <b>cultural concepts</b> without English equivalents. The German loanword <i>kindergarten</i> is so naturalized that most speakers don't recognize it as foreign.",
+        words: [
+          { w: "kindergarten",src: "Kindergarten", note: "'children's garden'" },
+          { w: "zeitgeist",   src: "Zeitgeist",    note: "'spirit of the age'" },
+          { w: "wanderlust",  src: "Wanderlust" },
+          { w: "schadenfreude",src: "Schadenfreude",note: "'harm-joy'" },
+          { w: "doppelganger",src: "Doppelgänger" },
+          { w: "angst",       src: "Angst" },
+          { w: "gestalt",     src: "Gestalt" },
+          { w: "pretzel",     src: "Brezel" },
+          { w: "hamburger",   src: "Hamburger",    note: "'from Hamburg'" },
+          { w: "sauerkraut",  src: "Sauerkraut" },
+          { w: "über",        src: "über" },
+          { w: "poltergeist", src: "Poltergeist",  note: "'noisy ghost'" },
+          { w: "glitch",      src: "glitschig",    via: "via Yiddish" },
+          { w: "quartz",      src: "Quarz" },
+          { w: "nickel",      src: "Nickel" },
+          { w: "gesundheit",  src: "Gesundheit",   note: "'health'" },
+          { w: "blitz",       src: "Blitz",        note: "'lightning'" },
+        ],
+      },
+      {
+        lang: "Yiddish",
+        langId: "yi",
+        color: "#f472b6",
+        period: "late 19th–20th c.",
+        context: "Yiddish entered English primarily through <b>Jewish immigration to New York</b> starting in the 1880s. Many words describe specific types of personality, humor, or mild complaint — filling expressive gaps that English lacked.",
+        words: [
+          { w: "chutzpah",   src: "khutspe",      note: "'audacity' — the iconic Yiddish virtue/vice" },
+          { w: "klutz",      src: "klots",        note: "'block of wood'" },
+          { w: "schlep",     src: "shlepn",       note: "'to drag'" },
+          { w: "schmooze",   src: "shmuesn" },
+          { w: "schmaltz",   src: "shmalts",      note: "'chicken fat' → sentimentality" },
+          { w: "bagel",      src: "beygl" },
+          { w: "nosh",       src: "nashn",        note: "'to nibble'" },
+          { w: "kvetch",     src: "kvetshn",      note: "'to complain'" },
+          { w: "meh",        src: "mè",           note: "interjection of indifference" },
+          { w: "glitch",     src: "glitsh",       note: "'slip'" },
+          { w: "mensch",     src: "mentsh",       note: "'person of integrity'" },
+          { w: "nebbish",    src: "nebekh",       note: "'pitiable, hapless'" },
+          { w: "oy vey",     src: "oy vey",       note: "'oh, woe'" },
+          { w: "schmuck",    src: "shmok" },
+          { w: "tush",       src: "tukhes" },
+          { w: "spiel",      src: "shpil",        note: "'play, sales pitch'" },
+        ],
+      },
+      {
+        lang: "Hindi / Urdu",
+        langId: "hi",
+        color: "#c084fc",
+        period: "17th–20th c.; British Raj",
+        context: "British imperial contact in South Asia (1600–1947) pulled <b>thousands of words</b> into English — especially for things with no English equivalent: spices, fabrics, clothing, religious concepts, jungle flora and fauna.",
+        words: [
+          { w: "bungalow",   src: "baṅglā",       note: "'Bengali (style house)'" },
+          { w: "jungle",     src: "jaṅgal",       note: "'forest, wilderness'" },
+          { w: "shampoo",    src: "chāmpo",       note: "'massage'" },
+          { w: "pajamas",    src: "pāy-jāma",     note: "'leg-garment'; from Persian via Hindi-Urdu" },
+          { w: "thug",       src: "ṭhag",         note: "'swindler'; originally a specific criminal cult" },
+          { w: "guru",       src: "guru" },
+          { w: "yoga",       src: "yoga" },
+          { w: "karma",      src: "karma" },
+          { w: "avatar",     src: "avatāra",      note: "'descent (of a god)'" },
+          { w: "pundit",     src: "paṇḍit",       note: "'learned man'" },
+          { w: "dinghy",     src: "ḍiṅgī" },
+          { w: "bangle",     src: "baṅglī" },
+          { w: "curry",      src: "kaṟi",         note: "actually Tamil; via Hindi" },
+          { w: "veranda",    src: "varaṇḍā" },
+          { w: "loot",       src: "lūṭ",          note: "'plunder'" },
+          { w: "cot",        src: "khāṭ",         note: "'bedstead'" },
+          { w: "dungarees",  src: "duṅgrī",       note: "a type of coarse cotton cloth from Dongri, Bombay" },
+          { w: "chit",       src: "ciṭṭhī" },
+          { w: "pariah",     src: "paṟaiyar",     note: "Tamil; a specific caste" },
+          { w: "cheetah",    src: "cītā",         note: "'variegated'" },
+        ],
+      },
+      {
+        lang: "Nahuatl",
+        langId: "nah",
+        color: "#84cc16",
+        period: "16th c., via Spanish",
+        context: "Spanish conquistadors in Mexico adopted <b>Aztec</b> words for plants, animals, and foods unknown in Europe; these spread into English via Spanish.",
+        words: [
+          { w: "tomato",    src: "tomatl" },
+          { w: "chocolate", src: "xocolātl",      note: "'bitter water'" },
+          { w: "chili",     src: "chīlli" },
+          { w: "avocado",   src: "āhuacatl",      note: "also 'testicle'; shape resemblance" },
+          { w: "coyote",    src: "coyōtl" },
+          { w: "mescal",    src: "metl" },
+          { w: "ocelot",    src: "ōcēlōtl" },
+          { w: "guacamole", src: "āhuacamōlli",   note: "'avocado sauce'" },
+          { w: "peyote",    src: "peyōtl" },
+          { w: "shack",     src: "xahcalli",      note: "via Mexican Spanish jacal" },
+        ],
+      },
+      {
+        lang: "Algonquian / Native American",
+        langId: "alg",
+        color: "#eab308",
+        period: "17th–19th c.",
+        context: "Early colonial contact with Algonquian, Iroquoian, and other Eastern Woodland languages gave English words for <b>new North American flora, fauna, and cultural items</b>.",
+        words: [
+          { w: "moose",      src: "mooz",          note: "Eastern Abenaki" },
+          { w: "skunk",      src: "segongw",       note: "Massachusett" },
+          { w: "raccoon",    src: "ahrah-koon-em", note: "Powhatan" },
+          { w: "opossum",    src: "opassum",       note: "'white animal'" },
+          { w: "chipmunk",   src: "ajidamoonh",    note: "Ojibwe" },
+          { w: "squash",     src: "asquutasquash", note: "Narragansett" },
+          { w: "pecan",      src: "pakan",         note: "Ojibwe" },
+          { w: "hickory",    src: "pocohicora",    note: "Powhatan" },
+          { w: "tepee",      src: "thípi",         note: "Lakota" },
+          { w: "wigwam",     src: "wikuwam",       note: "Eastern Abenaki" },
+          { w: "moccasin",   src: "makisin",       note: "Ojibwe" },
+          { w: "tomahawk",   src: "tamahaac",      note: "Powhatan" },
+          { w: "caucus",     src: "caucauasu",     note: "Algonquian 'advisor'" },
+          { w: "powwow",     src: "powwaw",        note: "'healer'" },
+          { w: "toboggan",   src: "topakan" },
+        ],
+      },
+      {
+        lang: "Japanese",
+        langId: "ja",
+        color: "#ec4899",
+        period: "late 19th–21st c.",
+        context: "Japanese loans arrived in waves: the <b>Meiji era opening</b> (1868+), post-WWII occupation, and the global spread of <b>Japanese popular culture</b> from the 1980s onward.",
+        words: [
+          { w: "tsunami",    src: "津波 / tsunami", note: "'harbor wave'" },
+          { w: "sushi",      src: "寿司 / sushi" },
+          { w: "karaoke",    src: "カラオケ",       note: "'empty orchestra'" },
+          { w: "emoji",      src: "絵文字",          note: "'picture character'; coincidence with English 'emotion' is accidental" },
+          { w: "manga",      src: "漫画 / manga" },
+          { w: "anime",      src: "アニメ",          note: "clipping of 'animation'" },
+          { w: "samurai",    src: "侍 / samurai" },
+          { w: "ninja",      src: "忍者 / ninja" },
+          { w: "sake",       src: "酒 / sake" },
+          { w: "tycoon",     src: "大君 / taikun",  note: "'great lord'" },
+          { w: "honcho",     src: "班長 / hanchō",  note: "'squad leader'" },
+          { w: "futon",      src: "布団 / futon" },
+          { w: "origami",    src: "折り紙",          note: "'folded paper'" },
+          { w: "bonsai",     src: "盆栽",            note: "'tray plantation'" },
+          { w: "zen",        src: "禅 / zen",       note: "from Chinese chán, from Sanskrit dhyāna" },
+          { w: "soy",        src: "しょうゆ / shōyu" },
+          { w: "karate",     src: "空手 / karate",  note: "'empty hand'" },
+          { w: "haiku",      src: "俳句 / haiku" },
+          { w: "skosh",      src: "少し / sukoshi", note: "'a little'; GI slang, post-WWII" },
+        ],
+      },
+      {
+        lang: "Chinese",
+        langId: "zh",
+        color: "#fb923c",
+        period: "18th–20th c.",
+        context: "Chinese loans reflect the <b>tea trade</b>, maritime contact through Canton, and later immigration. Most come from southern Chinese (Cantonese, Min Nan) rather than Mandarin, reflecting where the 19th-century trade happened.",
+        words: [
+          { w: "tea",         src: "té",            note: "from Min Nan, via Dutch. The 'cha' form (Mandarin-based) went overland via Turkish → Russian чай." },
+          { w: "typhoon",     src: "大風 / tái-fong",note: "Cantonese 'great wind'" },
+          { w: "ketchup",     src: "鮭汁 / kê-tsiap",note: "Min Nan 'fish sauce'; via Malay" },
+          { w: "kowtow",      src: "叩頭 / kòu-tóu", note: "'knock the head'" },
+          { w: "gung-ho",     src: "工合 / gōng-hé", note: "'work together'; picked up by US Marines in 1930s China" },
+          { w: "yin and yang",src: "陰陽",            note: "shade + sunshine" },
+          { w: "kung fu",     src: "功夫 / gōng-fū" },
+          { w: "dim sum",     src: "點心 / dím-sām",  note: "Cantonese 'touch the heart'" },
+          { w: "wok",         src: "鑊 / wok",         note: "Cantonese" },
+          { w: "chow",        src: "食 / chow",       note: "via Chinese Pidgin English" },
+          { w: "feng shui",   src: "風水 / fēng-shuǐ",note: "'wind-water'" },
+          { w: "lose face",   src: "丟臉 / diū-liǎn", note: "calque (literal translation) from Chinese" },
+          { w: "long time no see",src: "好久不見",    note: "calque from Chinese 好久不見" },
+        ],
+      },
+      {
+        lang: "Persian",
+        langId: "fa",
+        color: "#eab308",
+        period: "medieval, via Turkish + Arabic",
+        context: "Persian was the <b>literary and court language</b> of much of the Islamic world for a thousand years — and of Mughal India. Most Persian loans arrived via Arabic, Turkish, or Hindi-Urdu intermediaries.",
+        words: [
+          { w: "bazaar",     src: "bāzār" },
+          { w: "caravan",    src: "kārwān" },
+          { w: "paradise",   src: "paridaiza",     note: "'walled garden'; Avestan origin" },
+          { w: "pajamas",    src: "pāy-jāma",      note: "'leg-garment'" },
+          { w: "shawl",      src: "šāl" },
+          { w: "check",      src: "shāh",          note: "chess term → banking term" },
+          { w: "chess",      src: "shāh",          note: "'king'; named after the key piece" },
+          { w: "orange",     src: "nārang",        via: "via Arabic and French" },
+          { w: "spinach",    src: "aspanāx" },
+          { w: "jasmine",    src: "yāsamīn" },
+          { w: "tiger",      src: "tigrā",         via: "Old Persian via Greek" },
+          { w: "peach",      src: "pêrsā",         note: "'Persian fruit'" },
+          { w: "kiosk",      src: "kūšk",          note: "'pavilion'" },
+          { w: "magic",      src: "magu",          note: "Old Persian priestly class" },
+        ],
+      },
+      {
+        lang: "Turkic",
+        langId: "tr",
+        color: "#06b6d4",
+        period: "via Ottoman Turkish + Russian",
+        context: "Ottoman Turkish was the transmitting language for many Central Asian and Persian words into European languages. Russian also acted as a conduit for Turkic words into English.",
+        words: [
+          { w: "yogurt",     src: "yoğurt" },
+          { w: "horde",      src: "ordu",          note: "'army'; via Old Turkic" },
+          { w: "caviar",     src: "havyar" },
+          { w: "turquoise",  src: "turquoise",     note: "'Turkish (stone)'" },
+          { w: "coffee",     src: "kahve",         via: "via Arabic qahwa" },
+          { w: "bridge (card game)",src: "bir-üç", note: "possibly from Ottoman 'one-three'; contested" },
+          { w: "shish kebab",src: "şiş kebap",     note: "'skewer meat'" },
+          { w: "tulip",      src: "tülbent",       note: "'turban', from the flower shape" },
+          { w: "khan",       src: "xan" },
+        ],
+      },
+      {
+        lang: "Spanish",
+        langId: "es",
+        color: "#d97706",
+        period: "American frontier + Caribbean",
+        context: "Spanish contributed through <b>Caribbean and American Southwest contact</b>, absorbing many Nahuatl, Taíno, and Quechua words on the way. American English is particularly rich in Spanish-sourced vocabulary.",
+        words: [
+          { w: "canyon",     src: "cañón" },
+          { w: "rodeo",      src: "rodeo" },
+          { w: "tornado",    src: "tronada" },
+          { w: "armada",     src: "armada" },
+          { w: "mosquito",   src: "mosquito",      note: "'little fly'" },
+          { w: "guitar",     src: "guitarra",      via: "ultimately from Greek kithára" },
+          { w: "embargo",    src: "embargo" },
+          { w: "sierra",     src: "sierra" },
+          { w: "mesa",       src: "mesa",          note: "'table'" },
+          { w: "plaza",      src: "plaza" },
+          { w: "cargo",      src: "cargo" },
+          { w: "patio",      src: "patio" },
+          { w: "ranch",      src: "rancho" },
+          { w: "lasso",      src: "lazo" },
+          { w: "siesta",     src: "siesta" },
+          { w: "aficionado", src: "aficionado" },
+          { w: "vanilla",    src: "vainilla",      note: "'little pod'" },
+          { w: "hurricane",  src: "huracán",       via: "from Taíno" },
+          { w: "cannibal",   src: "caníbal",       via: "from Carib" },
+          { w: "tobacco",    src: "tabaco",        via: "from Taíno" },
+        ],
+      },
+      {
+        lang: "Italian",
+        langId: "it",
+        color: "#f97316",
+        period: "Renaissance + musical/culinary 18th–20th c.",
+        context: "Italian dominates <b>music, art, food, and architecture</b>. Most musical terms (piano, forte, allegro, sonata, opera, aria) are Italian, reflecting the language's dominance in European classical music from the 17th century onward.",
+        words: [
+          { w: "piano",      src: "piano",         note: "clipping of pianoforte" },
+          { w: "opera",      src: "opera",         note: "'work'" },
+          { w: "ballet",     src: "balletto",      via: "via French" },
+          { w: "violin",     src: "violino" },
+          { w: "sonata",     src: "sonata" },
+          { w: "soprano",    src: "soprano" },
+          { w: "balcony",    src: "balcone" },
+          { w: "studio",     src: "studio" },
+          { w: "gondola",    src: "gondola" },
+          { w: "pizza",      src: "pizza" },
+          { w: "pasta",      src: "pasta" },
+          { w: "spaghetti",  src: "spaghetti",     note: "'little strings'" },
+          { w: "broccoli",   src: "broccoli",      note: "'little sprouts'" },
+          { w: "espresso",   src: "espresso" },
+          { w: "paparazzi",  src: "Paparazzo",     note: "character in Fellini's La Dolce Vita (1960)" },
+          { w: "fiasco",     src: "fiasco",        note: "'bottle'; theater slang for a failure" },
+          { w: "graffiti",   src: "graffiti" },
+          { w: "diva",       src: "diva",          note: "'goddess'" },
+          { w: "scenario",   src: "scenario" },
+          { w: "volcano",    src: "vulcano" },
+        ],
+      },
+      {
+        lang: "Hawaiian",
+        langId: "haw",
+        color: "#22c55e",
+        period: "19th c.+",
+        context: "A small but vivid set — Hawaiian's distinctive CV-only phonotactics (consonant + vowel, no clusters) gives its loans a recognizable flavor.",
+        words: [
+          { w: "ukulele",    src: "ʻukulele",      note: "'jumping flea'" },
+          { w: "luau",       src: "lūʻau" },
+          { w: "aloha",      src: "aloha",         note: "greeting + farewell + love" },
+          { w: "hula",       src: "hula" },
+          { w: "mahalo",     src: "mahalo",        note: "'thanks'" },
+          { w: "wiki",       src: "wiki",          note: "'quick'; adopted by Ward Cunningham in 1994" },
+          { w: "poi",        src: "poi" },
+          { w: "tiki",       src: "tiki",          via: "actually Maori; Hawaiian has kiʻi" },
+        ],
+      },
+      {
+        lang: "Australian Aboriginal",
+        langId: "wbp",
+        color: "#65a30d",
+        period: "19th c.+",
+        context: "Most come from <b>Dharug</b> (the language of the Sydney region at first contact), though English speakers usually can't name the source language.",
+        words: [
+          { w: "kangaroo",   src: "gaṉgurru",      note: "Guugu Yimithirr (NE Queensland)" },
+          { w: "boomerang",  src: "bumariny",      note: "Dharug" },
+          { w: "koala",      src: "gula",          note: "Dharug" },
+          { w: "wombat",     src: "wambad",        note: "Dharug" },
+          { w: "dingo",      src: "din-gu",        note: "Dharug" },
+          { w: "wallaby",    src: "walabi",        note: "Dharug" },
+          { w: "budgerigar", src: "budgery gar",   note: "'good cockatoo'" },
+          { w: "billabong",  src: "bilabaŋ" },
+          { w: "cooee",      src: "kuwi",          note: "attention-calling shout" },
+          { w: "didgeridoo", src: "unknown",       note: "etymology disputed; possibly Irish 'dúdaire dubh'!" },
+        ],
+      },
+      {
+        lang: "Russian",
+        langId: "ru",
+        color: "#dc2626",
+        period: "mostly 18th–20th c.",
+        context: "A concentrated political/scientific layer — many words are one-for-one markers of specific Russian/Soviet concepts that English lacked.",
+        words: [
+          { w: "vodka",      src: "водка / vodka", note: "diminutive of 'water'" },
+          { w: "mammoth",    src: "мамонт / mamont",note: "probably via Yakut" },
+          { w: "tundra",     src: "тундра / tundra",note: "via Sámi" },
+          { w: "samovar",    src: "самовар",       note: "'self-boiler'" },
+          { w: "sputnik",    src: "спутник",       note: "'fellow-traveler, companion'" },
+          { w: "czar / tsar",src: "царь / tsarʼ", note: "ultimately from Latin Caesar" },
+          { w: "bolshevik",  src: "большевик",     note: "'majority member'" },
+          { w: "intelligentsia",src: "интеллигенция" },
+          { w: "pogrom",     src: "погром",        note: "'devastation'" },
+          { w: "glasnost",   src: "гласность",     note: "'openness'" },
+          { w: "perestroika",src: "перестройка",   note: "'restructuring'" },
+          { w: "babushka",   src: "бабушка" },
+          { w: "dacha",      src: "дача" },
+          { w: "balalaika",  src: "балалайка" },
+        ],
+      },
+      {
+        lang: "Irish / Scottish Gaelic",
+        langId: "ga",
+        color: "#16a34a",
+        period: "medieval to modern",
+        context: "A distinctive Celtic residue, usually describing <b>landscape, folklore, and emotive life</b>. Most words feel hallmark-Gaelic to English speakers (<i>whiskey, banshee, galore</i>).",
+        words: [
+          { w: "whiskey",    src: "uisce beatha",  note: "'water of life'" },
+          { w: "banshee",    src: "bean sí",       note: "'fairy woman'" },
+          { w: "galore",     src: "go leor",       note: "'sufficiently, plenty'" },
+          { w: "bog",        src: "bog",           note: "'soft'" },
+          { w: "brogue",     src: "bróg",          note: "'shoe'" },
+          { w: "smithereens",src: "smidiríní",     note: "'little fragments'" },
+          { w: "clan",       src: "clann",         note: "'children, family'" },
+          { w: "hooligan",   src: "Ó hUallacháin", note: "from a family name" },
+          { w: "leprechaun", src: "leipreachán" },
+          { w: "slogan",     src: "sluagh-ghairm", note: "'battle cry'" },
+          { w: "kibosh",     src: "caidhp bháis",  note: "'cap of death'; contested" },
+          { w: "phoney",     src: "fáinne",        note: "contested; possibly from a fake-gold ring scam" },
+          { w: "trousers",   src: "triús" },
+        ],
+      },
+      {
+        lang: "Malay / Indonesian",
+        langId: "ms",
+        color: "#14b8a6",
+        period: "17th–19th c.; spice trade",
+        context: "Trade contact in the <b>East Indies</b> brought a crop of words for tropical flora, fauna, and items — often via Dutch.",
+        words: [
+          { w: "amok",       src: "mengamok",      note: "'attack furiously'" },
+          { w: "orangutan",  src: "orang hutan",   note: "'person of the forest'" },
+          { w: "bamboo",     src: "bambu",         via: "via Dutch/Portuguese" },
+          { w: "gong",       src: "gong" },
+          { w: "sarong",     src: "sarung" },
+          { w: "ketchup",    src: "kecap",         note: "contested whether via Malay or directly from Min Nan" },
+          { w: "cockatoo",   src: "kakaktua",      note: "'elder sister'" },
+          { w: "paddy",      src: "padi",          note: "'rice in husk'" },
+          { w: "compound (dwelling)",src: "kampong",note: "'village'" },
+          { w: "junk (boat)",src: "jong",          via: "via Portuguese" },
+        ],
+      },
+      {
+        lang: "Swahili",
+        langId: "sw",
+        color: "#f59e0b",
+        period: "19th–20th c.",
+        context: "Loans from East African contact — mostly wildlife and travel-related.",
+        words: [
+          { w: "safari",     src: "safari",        note: "'journey'; ultimately from Arabic safar" },
+          { w: "jumbo",      src: "jumbo",         note: "'chief'; popularized by P.T. Barnum's elephant" },
+          { w: "simba",      src: "simba",         note: "'lion'; popular via The Lion King" },
+        ],
+      },
+      {
+        lang: "Hebrew",
+        langId: "he",
+        color: "#0ea5e9",
+        period: "via Latin, via Yiddish, directly",
+        context: "The oldest Hebrew loans came through <b>Biblical translation</b> into Latin and Greek. Modern Hebrew has contributed its own layer, particularly cultural and political terms.",
+        words: [
+          { w: "amen",       src: "אָמֵן / amen",      note: "'so be it'" },
+          { w: "hallelujah", src: "הַלְלוּיָהּ",          note: "'praise Yah'" },
+          { w: "messiah",    src: "מָשִׁיחַ / māšîaḥ",    note: "'anointed'" },
+          { w: "cherub",     src: "כְּרוּב / kərûḇ" },
+          { w: "seraph",     src: "שָׂרָף / śərāp̄" },
+          { w: "jubilee",    src: "יוֹבֵל / yōḇēl",     note: "'ram, ram's horn'" },
+          { w: "kibbutz",    src: "קִבּוּץ / qibbúṣ",    note: "'gathering, commune'" },
+          { w: "shibboleth", src: "שִׁבֹּלֶת",          note: "a test word from Judges 12" },
+          { w: "Sabbath",    src: "שַׁבָּת / šabbāṯ" },
+          { w: "cabal",      src: "קַבָּלָה / qabbālāh" },
+          { w: "behemoth",   src: "בְּהֵמוֹת / bəhēmôṯ" },
+          { w: "jock (strap)",src: "yokh?",           note: "disputed etymology" },
+          { w: "satan",      src: "שָׂטָן / śāṭān",     note: "'adversary'" },
+        ],
+      },
+      {
+        lang: "Portuguese",
+        langId: "pt",
+        color: "#a16207",
+        period: "16th–19th c.; age of exploration",
+        context: "Portuguese maritime expansion brought a specific sprinkle — plus many <b>Brazilian</b> contributions (often from Tupi).",
+        words: [
+          { w: "marmalade",  src: "marmelada",     note: "originally from quinces" },
+          { w: "molasses",   src: "melaço" },
+          { w: "fetish",     src: "feitiço",       note: "'charm, spell'" },
+          { w: "tank",       src: "tanque" },
+          { w: "cobra",      src: "cobra",         note: "from 'snake-hood' — the king cobra's distinctive feature" },
+          { w: "caste",      src: "casta",         note: "'pure, unmixed'" },
+          { w: "verandah",   src: "varanda",       note: "actually of disputed origin — may be South Asian" },
+          { w: "tapioca",    src: "tipioca",       via: "from Tupi" },
+          { w: "jaguar",     src: "jaguara",       via: "from Tupi yaguara" },
+          { w: "piranha",    src: "piranha",       via: "from Tupi" },
+          { w: "samba",      src: "samba",         via: "from Kimbundu semba" },
+        ],
+      },
+    ],
+  },
+};
+
+// ═══════════════════════════════════════════════════════════════
+// Render
+// ═══════════════════════════════════════════════════════════════
+let activeFilter = null; // index of source to focus on, or null for all
+
+function render() {
+  const target = LOANWORDS.en;
+  const total = target.sources.reduce((sum, s) => sum + s.words.length, 0);
+
+  // Summary bar stack (proportional)
+  const segs = target.sources.map((s, i) => {
+    const pct = (s.words.length / total) * 100;
+    return `<div class="bar-seg ${activeFilter === i ? 'active' : ''}" data-idx="${i}" style="width:${pct}%;background:${s.color};" title="${s.lang}: ${s.words.length} words (${pct.toFixed(1)}%)">
+      ${pct >= 5 ? s.lang : ''}
+    </div>`;
+  }).join("");
+
+  const legend = target.sources.map((s, i) => {
+    return `<span class="leg ${activeFilter === i ? 'active' : ''}" data-idx="${i}">
+      <i style="background:${s.color}"></i>${s.lang}<span class="count">${s.words.length}</span>
+    </span>`;
+  }).join("") + `<span class="leg" data-idx="-1">Show all</span>`;
+
+  document.getElementById("summary").innerHTML = `
+    <h2>Distribution by source (${target.sources.length} sources, ${total} words catalogued)</h2>
+    <div class="bar-stack">${segs}</div>
+    <div class="bar-legend">${legend}</div>
+  `;
+
+  // Source cards
+  const cardHtml = target.sources.map((s, i) => {
+    const dim = activeFilter !== null && activeFilter !== i;
+    const wordsHtml = s.words.map(w => {
+      const via = w.via ? `<span class="via">${w.via}</span>` : "";
+      const note = w.note ? ` — ${w.note}` : "";
+      return `<div class="word-item">
+        <div class="w">${w.w}</div>
+        <div class="etymology"><span class="src-form">${w.src}</span>${note}${via}</div>
+      </div>`;
+    }).join("");
+    return `<div class="source-card ${dim ? 'dimmed' : ''}" data-idx="${i}" style="border-left-color:${s.color}">
+      <h3>${s.lang} <span class="count">· ${s.words.length} words</span></h3>
+      <div class="meta">${s.period}</div>
+      <div class="ctx">${s.context}</div>
+      <div class="word-list">${wordsHtml}</div>
+    </div>`;
+  }).join("");
+  document.getElementById("source-grid").innerHTML = cardHtml;
+}
+
+document.addEventListener("click", (e) => {
+  const seg = e.target.closest(".bar-seg, .leg");
+  if (seg) {
+    const idx = parseInt(seg.dataset.idx, 10);
+    if (idx === -1 || activeFilter === idx) activeFilter = null;
+    else activeFilter = idx;
+    render();
+    // Scroll focused card into view
+    if (activeFilter !== null) {
+      setTimeout(() => {
+        const card = document.querySelector(`.source-card[data-idx="${activeFilter}"]`);
+        if (card) card.scrollIntoView({ behavior: "smooth", block: "center" });
+      }, 50);
+    }
+  }
+});
+
+render();
+</script>
+</body>
+</html>

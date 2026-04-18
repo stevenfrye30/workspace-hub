@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Script Evolution — Languages</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg:#1e2a3a; --fg:#e8ecf1; --muted:#8fa3ba;
+    --border:#32445c; --active:#d4a24c; --tint:#263447; --card:#243347;
+  }
+  body { font-family: Georgia, serif; background: var(--bg); color: var(--fg); line-height: 1.55; min-height: 100vh; }
+  .page { max-width: 1400px; margin: 0 auto; padding: 40px 24px 80px; }
+  header { border-bottom: 1px solid var(--border); padding-bottom: 20px; margin-bottom: 22px; display: flex; align-items: baseline; gap: 18px; flex-wrap: wrap; }
+  h1 { font-size: 28px; font-weight: 600; }
+  .subtitle { color: var(--muted); font-style: italic; font-size: 15px; flex: 1; min-width: 240px; }
+  .back { color: var(--active); text-decoration: none; font-size: 14px; }
+  .back:hover { text-decoration: underline; }
+
+  .intro { color: var(--muted); font-size: 14px; max-width: 880px; margin-bottom: 26px; line-height: 1.7; }
+  .intro code { font-family: ui-monospace, monospace; color: var(--active); background: var(--tint); padding: 1px 5px; border-radius: 3px; font-size: 12.5px; }
+
+  .toolbar { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; margin-bottom: 18px; }
+  .toolbar select { background: var(--tint); border: 1px solid var(--border); color: var(--fg); padding: 6px 10px; border-radius: 4px; font-family: inherit; font-size: 13px; outline: none; }
+  .toolbar select:focus { border-color: var(--active); }
+  .toolbar label { font-size: 13px; color: var(--muted); }
+
+  .tree-wrap { background: var(--card); border: 1px solid var(--border); overflow: auto; border-radius: 4px; padding: 20px; max-height: 85vh; }
+  .tree-wrap svg { display: block; background: transparent; }
+
+  .st-line { stroke: var(--border); stroke-width: 1.2; fill: none; }
+  .st-line.dashed { stroke-dasharray: 4 3; stroke: var(--muted); opacity: 0.6; }
+
+  .st-node { cursor: pointer; }
+  .st-node text.label { font-family: "Noto Sans", "Noto Sans Arabic", "Noto Sans Hebrew", "Noto Sans Devanagari", "Noto Sans Ethiopic", serif; dominant-baseline: middle; font-size: 13px; fill: var(--fg); }
+  .st-node text.date { font-family: ui-monospace, monospace; font-size: 10px; fill: var(--muted); dominant-baseline: middle; }
+  .st-node text.sample { font-size: 20px; fill: var(--active); font-weight: 600; dominant-baseline: middle; }
+  .st-node:hover text.label { fill: var(--active); }
+  .st-node.status-extinct text.label { fill: var(--muted); }
+  .st-node.selected rect.bg { fill: var(--active); fill-opacity: 0.15; stroke: var(--active); }
+  rect.bg { fill: transparent; stroke: transparent; }
+
+  .legend { display: flex; gap: 18px; flex-wrap: wrap; color: var(--muted); font-size: 12.5px; margin-top: 14px; }
+  .legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .legend .lswatch { display: inline-block; width: 12px; height: 12px; border-radius: 2px; background: var(--active); }
+  .legend .lswatch.dashed { background: transparent; border: 1.5px dashed var(--muted); }
+
+  .detail-pop { background: var(--card); border: 1px solid var(--border); padding: 16px 20px; margin-top: 18px; border-radius: 4px; display: none; }
+  .detail-pop.show { display: block; }
+  .detail-pop h3 { font-size: 19px; color: var(--fg); margin-bottom: 4px; }
+  .detail-pop .sample { font-size: 28px; color: var(--active); margin-right: 10px; }
+  .detail-pop .meta { color: var(--muted); font-size: 13px; font-style: italic; margin-bottom: 10px; }
+  .detail-pop dl { display: grid; grid-template-columns: 100px 1fr; gap: 6px 12px; font-size: 13.5px; }
+  .detail-pop dt { color: var(--muted); text-transform: uppercase; font-size: 10.5px; letter-spacing: 0.08em; padding-top: 2px; }
+  .detail-pop dd { color: var(--fg); }
+  .detail-pop .note { margin-top: 14px; padding: 10px 12px; background: var(--tint); border-left: 2px solid var(--active); font-size: 13px; color: var(--muted); font-style: italic; line-height: 1.6; }
+  .detail-pop .open-link { color: var(--active); text-decoration: none; border-bottom: 1px dotted; font-size: 13px; margin-top: 10px; display: inline-block; }
+</style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <div>
+      <h1>Script Evolution</h1>
+      <div class="subtitle">How writing systems descended from their ancestors.</div>
+    </div>
+    <nav style="display:flex;gap:14px;align-items:baseline">
+      <a class="back" href="../languages/">Languages</a>
+      <a class="back" href="../scripts/">Scripts</a>
+      <a class="back" href="../phonetic-center/">Phonetic Center</a>
+      <a class="back" href="../loanwords/">Loanwords</a>
+      <a class="back" href="../">← Languages Hub</a>
+    </nav>
+  </header>
+
+  <div class="intro">
+    Almost every alphabet in use today descends from a single invention around 1800 BCE: <strong>Proto-Sinaitic</strong>, devised by Semitic-speaking workers in Egypt who adapted hieroglyphs into a consonantal script. Through <strong>Phoenician</strong> it spread along Mediterranean trade routes, giving rise to Greek (and via Greek, Latin and Cyrillic), Aramaic (and via Aramaic, Arabic, Hebrew, Syriac, and — probably — Brahmi), and South Arabian (and via that, Ge'ez).
+    Other traditions arose independently: <strong>Chinese</strong> characters, <strong>Maya</strong> hieroglyphs, and a handful of 19th- and 20th-century inventions (<strong>Cherokee</strong>, <strong>Hangul</strong>, <strong>Vai</strong>, <strong>Bamum</strong>, <strong>Canadian Syllabics</strong>). This tree is a pedagogical simplification — derivation is often debated, and many scripts influence each other sideways rather than descending cleanly.
+  </div>
+
+  <div class="toolbar">
+    <label for="family-picker">Lineage:</label>
+    <select id="family-picker">
+      <option value="all">All (full tree)</option>
+      <option value="proto-sinaitic">Proto-Sinaitic descent (Phoenician, Greek, Latin, Cyrillic, Arabic, Hebrew, Brahmi…)</option>
+      <option value="chinese">Chinese descent (Han, Kanji, Hanja, Chữ Nôm, Khitan, Tangut)</option>
+      <option value="independent">Independent inventions (Cherokee, Hangul, Vai, Bamum, etc.)</option>
+    </select>
+  </div>
+
+  <div class="tree-wrap" id="tree-wrap"></div>
+
+  <div class="legend">
+    <span><span class="lswatch"></span>solid line = direct descent</span>
+    <span><span class="lswatch dashed"></span>dashed line = likely / partial influence</span>
+    <span><span style="color:var(--muted);font-style:italic">greyed label</span> = script no longer in current use</span>
+  </div>
+
+  <div class="detail-pop" id="detail"></div>
+</div>
+
+<script>
+// ═══════════════════════════════════════════════════════════════
+// Script descent data
+// Each entry: id, name, sample (one representative glyph), date (approx. emergence),
+// status (living/extinct/classical), notes (optional), iso (ISO 15924 if viewable)
+// parent: id of parent (or array of multiple parents); null for roots
+// dashed: true if derivation is uncertain / influence rather than descent
+// ═══════════════════════════════════════════════════════════════
+const SCRIPTS = [
+  // ── Egyptian origin ──
+  { id:"egyp", name:"Egyptian hieroglyphs", sample:"𓁹", date:"-3200", status:"extinct", parent:null, iso:"Egyp", note:"World's oldest continuously-used writing system (~3500 years); precursor of the alphabet via its simplified forms." },
+  { id:"hierat", name:"Hieratic", sample:"", date:"-3000", status:"extinct", parent:"egyp", note:"Cursive Egyptian for everyday writing." },
+  { id:"demot", name:"Demotic", sample:"", date:"-650", status:"extinct", parent:"hierat", note:"Late-stage Egyptian cursive; language of the Rosetta Stone's middle register." },
+  { id:"copt",  name:"Coptic", sample:"ⲁ", date:"200", status:"classical", parent:"grek", iso:"Copt", note:"Alphabet for the Egyptian language; adopted Greek letters plus 6 demotic-derived signs." },
+
+  // ── Proto-Sinaitic → Phoenician branch ──
+  { id:"pros",  name:"Proto-Sinaitic", sample:"𐤀", date:"-1800", status:"extinct", parent:"egyp", dashed:true, note:"First alphabet. Semitic workers in Egypt repurposed ~30 hieroglyphs as consonants using the acrophonic principle (ox-head 𐤀 → ʾ)." },
+  { id:"phnx",  name:"Phoenician", sample:"𐤀", date:"-1050", status:"extinct", parent:"pros", iso:"Phnx", note:"22 consonants, no vowels. Carried along Mediterranean trade; ancestor of nearly every alphabet in use." },
+  { id:"palh",  name:"Paleo-Hebrew", sample:"𐤀", date:"-1000", status:"extinct", parent:"phnx", note:"Canaanite variant of Phoenician used for early biblical texts." },
+  { id:"samr",  name:"Samaritan", sample:"ࠀ", date:"-600", status:"classical", parent:"palh", iso:"Samr", note:"Still in liturgical use by the Samaritan community (~800 speakers)." },
+
+  // ── Aramaic branch ──
+  { id:"armi",  name:"Imperial Aramaic", sample:"𐡀", date:"-900", status:"extinct", parent:"phnx", iso:"Armi", note:"Administrative script of the Achaemenid Empire; lingua franca of the Near East for a millennium." },
+  { id:"hebr",  name:"Hebrew (square)", sample:"א", date:"-200", status:"living", parent:"armi", iso:"Hebr", note:"The 'square' or Aramaic script; replaced Paleo-Hebrew after the Babylonian exile." },
+  { id:"syrc",  name:"Syriac", sample:"ܐ", date:"100", status:"classical", parent:"armi", iso:"Syrc", note:"Edessene Aramaic script; ancestor of Arabic via Nabataean cursive influences." },
+  { id:"nbat",  name:"Nabataean", sample:"𐢀", date:"-200", status:"extinct", parent:"armi", iso:"Nbat", note:"Cursive Aramaic of the Nabataean kingdom; the direct ancestor of Arabic script." },
+  { id:"arab",  name:"Arabic", sample:"ا", date:"400", status:"living", parent:"nbat", iso:"Arab", note:"Most-used script after Latin and Chinese; spread with Islam from the 7th c." },
+  { id:"palm",  name:"Palmyrene", sample:"𐡠", date:"-100", status:"extinct", parent:"armi", iso:"Palm" },
+  { id:"hatr",  name:"Hatran", sample:"𐣠", date:"0", status:"extinct", parent:"armi", iso:"Hatr" },
+  { id:"mani",  name:"Manichaean", sample:"𐫀", date:"250", status:"extinct", parent:"syrc", iso:"Mani", note:"Script of Manichaean scripture; followed the Silk Road." },
+  { id:"sogd",  name:"Sogdian", sample:"𐼰", date:"200", status:"extinct", parent:"syrc", iso:"Sogd", note:"Cursive descendant; Silk Road lingua franca script." },
+  { id:"ougr",  name:"Old Uyghur", sample:"", date:"800", status:"extinct", parent:"sogd", iso:"Ougr", note:"Adopted by the Uyghurs from Sogdian; rotated 90° for vertical writing." },
+  { id:"mong",  name:"Mongolian", sample:"ᠮ", date:"1204", status:"living", parent:"ougr", iso:"Mong", note:"Commissioned by Genghis Khan; writes top-to-bottom in left-to-right columns." },
+  { id:"manc",  name:"Manchu", sample:"ᠮ", date:"1599", status:"classical", parent:"mong", note:"Adopted by the Qing dynasty; Manchu is now functionally extinct as a spoken language." },
+  { id:"todr",  name:"Todhri", sample:"", date:"700", status:"extinct", parent:"armi", iso:"Todr", dashed:true },
+  { id:"phli",  name:"Inscriptional Pahlavi", sample:"𐭠", date:"-200", status:"extinct", parent:"armi", iso:"Phli", note:"Sasanian Middle Persian script, adapted from Aramaic." },
+  { id:"phlp",  name:"Psalter Pahlavi", sample:"𐮀", date:"400", status:"extinct", parent:"phli", iso:"Phlp" },
+  { id:"avst",  name:"Avestan", sample:"𐬀", date:"400", status:"classical", parent:"phlp", iso:"Avst", note:"Devised to write Zoroastrian scripture with full vocalic precision." },
+
+  // ── Brahmi and its descendants (South + Southeast Asia) ──
+  { id:"khar",  name:"Kharosthi", sample:"𐨀", date:"-300", status:"extinct", parent:"armi", iso:"Khar", note:"Aramaic-derived script of Gandhara; wrote Gandhari Prakrit, the language of early Buddhism." },
+  { id:"brah",  name:"Brahmi", sample:"𑀅", date:"-300", status:"extinct", parent:"armi", dashed:true, iso:"Brah", note:"Ancestor of all Indic + Southeast Asian scripts. Derivation from Aramaic is debated but widely accepted." },
+  { id:"gupt",  name:"Gupta", sample:"", date:"400", status:"extinct", parent:"brah", note:"Central node from which Devanagari, Bengali, Tibetan, etc. descend." },
+  { id:"sidd",  name:"Siddham", sample:"𑖀", date:"600", status:"classical", parent:"gupt", iso:"Sidd", note:"Preserved in Japan for Buddhist mantras; otherwise superseded in India." },
+  { id:"nand",  name:"Nandinagari", sample:"", date:"800", status:"extinct", parent:"gupt", iso:"Nand" },
+  { id:"deva",  name:"Devanagari", sample:"अ", date:"1000", status:"living", parent:"gupt", iso:"Deva", note:"Used for Hindi, Sanskrit, Marathi, Nepali, and dozens of other Indo-Aryan languages." },
+  { id:"gujr",  name:"Gujarati", sample:"અ", date:"1500", status:"living", parent:"deva", iso:"Gujr" },
+  { id:"mult",  name:"Multani", sample:"𑊀", date:"1500", status:"extinct", parent:"deva", iso:"Mult" },
+  { id:"modi",  name:"Modi", sample:"𑘀", date:"1600", status:"extinct", parent:"deva", iso:"Modi", note:"Cursive Marathi script; replaced by Devanagari in the 20th century." },
+  { id:"kthi",  name:"Kaithi", sample:"𑂃", date:"1500", status:"extinct", parent:"deva", iso:"Kthi" },
+  { id:"mahj",  name:"Mahajani", sample:"𑅐", date:"1500", status:"extinct", parent:"deva", iso:"Mahj" },
+  { id:"mtei",  name:"Meitei", sample:"ꯑ", date:"1000", status:"living", parent:"gupt", iso:"Mtei", dashed:true },
+  { id:"beng",  name:"Bengali-Assamese", sample:"অ", date:"1000", status:"living", parent:"gupt", iso:"Beng", note:"Shared script; Bengali and Assamese diverge in only a few letters." },
+  { id:"shrd",  name:"Sharada", sample:"𑆃", date:"800", status:"extinct", parent:"gupt", iso:"Shrd", note:"Ancestral to Kashmiri + Sikh scripts." },
+  { id:"guru",  name:"Gurmukhi", sample:"ਅ", date:"1500", status:"living", parent:"shrd", iso:"Guru", note:"Devised by Guru Angad for Punjabi; name means 'from the Guru's mouth'." },
+  { id:"takr",  name:"Takri", sample:"𑚀", date:"1500", status:"extinct", parent:"shrd", iso:"Takr" },
+  { id:"dogr",  name:"Dogra", sample:"𑠀", date:"1800", status:"living", parent:"takr", iso:"Dogr" },
+  { id:"tibt",  name:"Tibetan", sample:"ཀ", date:"650", status:"living", parent:"gupt", iso:"Tibt", note:"Devised by Thonmi Sambhota for King Songtsen Gampo." },
+  { id:"phag",  name:"Phags-pa", sample:"ꡀ", date:"1269", status:"extinct", parent:"tibt", iso:"Phag", note:"Yuan dynasty 'national script'; commissioned by Kublai Khan. Possibly influenced Hangul's square shapes." },
+  { id:"soyo",  name:"Soyombo", sample:"𑩐", date:"1686", status:"extinct", parent:"tibt", iso:"Soyo" },
+  { id:"zanb",  name:"Zanabazar Square", sample:"𑨀", date:"1686", status:"extinct", parent:"tibt", iso:"Zanb" },
+  { id:"lepc",  name:"Lepcha", sample:"ᰀ", date:"1700", status:"living", parent:"tibt", iso:"Lepc", dashed:true },
+  { id:"limb",  name:"Limbu", sample:"ᤁ", date:"1700", status:"living", parent:"gupt", iso:"Limb", dashed:true },
+  { id:"mymr",  name:"Burmese", sample:"က", date:"1000", status:"living", parent:"pall", iso:"Mymr" },
+
+  // Pallava / Southern Brahmi descendants
+  { id:"pall",  name:"Pallava", sample:"", date:"500", status:"extinct", parent:"brah", note:"Southern Indian script; ancestor of Tamil, SE Asian scripts, and much Indic-derived writing." },
+  { id:"gran",  name:"Grantha", sample:"𑌅", date:"700", status:"classical", parent:"pall", iso:"Gran", note:"Used for writing Sanskrit in Tamil country." },
+  { id:"taml",  name:"Tamil", sample:"அ", date:"700", status:"living", parent:"pall", iso:"Taml" },
+  { id:"mlym",  name:"Malayalam", sample:"അ", date:"800", status:"living", parent:"gran", iso:"Mlym" },
+  { id:"sinh",  name:"Sinhala", sample:"අ", date:"500", status:"living", parent:"pall", iso:"Sinh" },
+  { id:"knda",  name:"Kannada", sample:"ಅ", date:"600", status:"living", parent:"pall", iso:"Knda" },
+  { id:"telu",  name:"Telugu", sample:"అ", date:"600", status:"living", parent:"pall", iso:"Telu", note:"Shares ancestry with Kannada; the two split around 1400 CE." },
+  { id:"saur",  name:"Saurashtra", sample:"ꢂ", date:"1800", status:"living", parent:"gran", iso:"Saur", dashed:true },
+  { id:"tirh",  name:"Tirhuta", sample:"𑒁", date:"900", status:"classical", parent:"gupt", iso:"Tirh" },
+  { id:"khmr",  name:"Khmer", sample:"ក", date:"600", status:"living", parent:"pall", iso:"Khmr" },
+  { id:"thai",  name:"Thai", sample:"ก", date:"1283", status:"living", parent:"khmr", iso:"Thai", note:"Devised by King Ramkhamhaeng; modeled on Khmer." },
+  { id:"laoo",  name:"Lao", sample:"ກ", date:"1350", status:"living", parent:"khmr", iso:"Laoo" },
+  { id:"lana",  name:"Tai Tham", sample:"ᨠ", date:"1400", status:"living", parent:"mymr", iso:"Lana" },
+  { id:"talu",  name:"New Tai Lue", sample:"ᦀ", date:"1950", status:"living", parent:"lana", iso:"Talu" },
+  { id:"cham",  name:"Cham", sample:"ꨀ", date:"300", status:"living", parent:"pall", iso:"Cham" },
+  { id:"java",  name:"Javanese", sample:"ꦀ", date:"800", status:"living", parent:"pall", iso:"Java" },
+  { id:"bali",  name:"Balinese", sample:"ᬅ", date:"1000", status:"living", parent:"java", iso:"Bali" },
+  { id:"sund",  name:"Sundanese", sample:"ᮃ", date:"1400", status:"living", parent:"java", iso:"Sund" },
+  { id:"rjng",  name:"Rejang", sample:"ꥀ", date:"1700", status:"living", parent:"java", iso:"Rjng" },
+  { id:"bugi",  name:"Lontara / Buginese", sample:"ᨀ", date:"1600", status:"living", parent:"brah", iso:"Bugi", dashed:true },
+  { id:"maka",  name:"Makasar", sample:"𑻠", date:"1600", status:"extinct", parent:"bugi", iso:"Maka" },
+  { id:"batk",  name:"Batak", sample:"ᯀ", date:"1700", status:"living", parent:"brah", iso:"Batk", dashed:true },
+  { id:"tglg",  name:"Tagalog (Baybayin)", sample:"ᜁ", date:"1400", status:"extinct", parent:"brah", iso:"Tglg", dashed:true },
+  { id:"hano",  name:"Hanunoo", sample:"ᜠ", date:"1500", status:"living", parent:"tglg", iso:"Hano" },
+  { id:"buhd",  name:"Buhid", sample:"ᝀ", date:"1500", status:"living", parent:"tglg", iso:"Buhd" },
+  { id:"tagb",  name:"Tagbanwa", sample:"ᝠ", date:"1500", status:"living", parent:"tglg", iso:"Tagb" },
+
+  // Southeast Asian scripts continued
+  { id:"cakm",  name:"Chakma", sample:"𑄃", date:"1700", status:"living", parent:"mymr", iso:"Cakm" },
+
+  // Thaana (Dhivehi) – from numerals + Arabic layering
+  { id:"thaa",  name:"Thaana", sample:"ހ", date:"1700", status:"living", parent:"arab", iso:"Thaa", dashed:true, note:"Dhivehi script of the Maldives; letters derive from numerals plus Arabic loans. Right-to-left like Arabic." },
+
+  // ── Greek branch ──
+  { id:"grek",  name:"Greek", sample:"Α", date:"-800", status:"living", parent:"phnx", iso:"Grek", note:"First alphabet to write vowels as full letters. Basis of Latin, Cyrillic, Coptic, Gothic, Armenian, Georgian (indirectly)." },
+  { id:"ital",  name:"Old Italic / Etruscan", sample:"𐌀", date:"-700", status:"extinct", parent:"grek", iso:"Ital", note:"Etruscan adaptation of Greek; ancestor of Latin and Runic." },
+  { id:"latn",  name:"Latin", sample:"A", date:"-700", status:"living", parent:"ital", iso:"Latn", note:"Now writes more languages than any other script, including English, Spanish, Indonesian, Vietnamese." },
+  { id:"runr",  name:"Runic", sample:"ᚠ", date:"150", status:"extinct", parent:"ital", iso:"Runr", note:"Germanic runes (Elder Futhark); probably from an Old Italic script rather than Latin." },
+  { id:"ogam",  name:"Ogham", sample:"ᚁ", date:"350", status:"extinct", parent:"latn", iso:"Ogam", dashed:true, note:"Irish script carved along the edges of stones." },
+  { id:"goth",  name:"Gothic", sample:"𐌰", date:"350", status:"extinct", parent:"grek", iso:"Goth", note:"Devised by Bishop Wulfila to translate the Bible into Gothic." },
+  { id:"glag",  name:"Glagolitic", sample:"Ⰰ", date:"860", status:"extinct", parent:"grek", iso:"Glag", note:"Devised by Saints Cyril and Methodius for Old Church Slavonic; replaced by Cyrillic in most regions." },
+  { id:"cyrl",  name:"Cyrillic", sample:"А", date:"900", status:"living", parent:"grek", iso:"Cyrl", note:"Named for Cyril though probably devised by his disciples; Greek uncial shapes adapted to Slavic phonology." },
+
+  // South Arabian branch
+  { id:"sarb",  name:"Ancient South Arabian", sample:"𐩠", date:"-1000", status:"extinct", parent:"phnx", iso:"Sarb", note:"Pre-Islamic Arabian peninsula writing; ancestor of Ge'ez." },
+  { id:"ethi",  name:"Ge'ez (Ethiopic)", sample:"ሀ", date:"-100", status:"living", parent:"sarb", iso:"Ethi", note:"One of few scripts to evolve from consonantal abjad into a full syllabary." },
+
+  // ── Armenian / Georgian ──
+  { id:"armn",  name:"Armenian", sample:"Ա", date:"405", status:"living", parent:"grek", iso:"Armn", dashed:true, note:"Created by Mesrop Mashtots; inspired by Greek but structurally original." },
+  { id:"geor",  name:"Georgian", sample:"ა", date:"430", status:"living", parent:"armn", iso:"Geor", dashed:true, note:"Origin debated: traditionally attributed to Mashtots, but also linked to Aramaic/Greek." },
+
+  // ── Chinese lineage ──
+  { id:"orch",  name:"Oracle Bone", sample:"", date:"-1250", status:"extinct", parent:null, note:"The oldest stratum of Chinese writing; pictographs inscribed on ox scapulas and turtle plastrons." },
+  { id:"bron",  name:"Bronze Script", sample:"", date:"-1100", status:"extinct", parent:"orch" },
+  { id:"seal",  name:"Seal Script", sample:"", date:"-700", status:"classical", parent:"bron" },
+  { id:"hani",  name:"Han / 漢字", sample:"字", date:"-200", status:"living", parent:"seal", iso:"Hani", note:"The regularized script from the Han dynasty; used today across Chinese, Japanese (Kanji), Korean (Hanja), and historically Vietnamese." },
+  { id:"kanji", name:"Kanji (Japan)", sample:"字", date:"500", status:"living", parent:"hani", note:"Chinese characters borrowed wholesale for Japanese; still used alongside kana." },
+  { id:"hira",  name:"Hiragana", sample:"あ", date:"800", status:"living", parent:"kanji", iso:"Hira", note:"Simplified cursive forms of kanji, used for grammatical particles and native Japanese words." },
+  { id:"kana",  name:"Katakana", sample:"ア", date:"800", status:"living", parent:"kanji", iso:"Kana", note:"Angular forms extracted from kanji radicals, used for loanwords and emphasis." },
+  { id:"hanja", name:"Hanja (Korea)", sample:"字", date:"500", status:"classical", parent:"hani" },
+  { id:"nom",   name:"Chữ Nôm", sample:"", date:"1000", status:"extinct", parent:"hani", note:"Vietnamese extension of Han characters; replaced by Latin-based Quốc ngữ." },
+  { id:"kits",  name:"Khitan (Large)", sample:"", date:"920", status:"extinct", parent:"hani", iso:"Kits" },
+  { id:"jurc",  name:"Jurchen", sample:"", date:"1120", status:"extinct", parent:"kits" },
+  { id:"tang",  name:"Tangut", sample:"𘀀", date:"1036", status:"extinct", parent:"hani", iso:"Tang", note:"Ingeniously complex; every character a unique composition. Deciphered only in the 20th century." },
+  { id:"nshu",  name:"Nüshu", sample:"𛆁", date:"1400", status:"extinct", parent:"hani", iso:"Nshu", note:"A women's script developed secretly in rural Hunan." },
+  { id:"bopo",  name:"Bopomofo", sample:"ㄅ", date:"1918", status:"living", parent:"hani", iso:"Bopo", note:"Phonetic notation derived from shorthand forms of Chinese characters." },
+
+  // ── Korean ──
+  { id:"hang",  name:"Hangul", sample:"ㄱ", date:"1443", status:"living", parent:"phag", dashed:true, iso:"Hang", note:"Commissioned by King Sejong; a featural alphabet. Derivation from Phags-pa is debated — some see it as wholly independent." },
+
+  // ── Other / independent ──
+  { id:"cher",  name:"Cherokee", sample:"Ꭰ", date:"1821", status:"living", parent:null, iso:"Cher", note:"Invented by Sequoyah, a non-literate Cherokee silversmith. He borrowed Latin/Greek shapes but assigned entirely new values — not true descent." },
+  { id:"vaii",  name:"Vai", sample:"ꕒ", date:"1833", status:"living", parent:null, iso:"Vaii", note:"Invented by Momolu Duwalu Bukele in Liberia; reportedly inspired by a dream." },
+  { id:"bamu",  name:"Bamum", sample:"ꚠ", date:"1896", status:"living", parent:null, iso:"Bamu", note:"Devised by King Njoya of the Bamum kingdom in Cameroon; evolved from pictographic to syllabic in just 20 years." },
+  { id:"mend",  name:"Mende Kikakui", sample:"𞠀", date:"1917", status:"living", parent:null, iso:"Mend", note:"Devised by Mohammed Turay." },
+  { id:"nkoo",  name:"N'Ko", sample:"ߊ", date:"1949", status:"living", parent:null, iso:"Nkoo", note:"Created by Solomana Kanté for Manding languages. Right-to-left." },
+  { id:"cans",  name:"Canadian Syllabics", sample:"ᐊ", date:"1840", status:"living", parent:null, iso:"Cans", note:"Devised by James Evans for Cree; spread to Inuktitut, Ojibwe, Blackfoot and others." },
+  { id:"dsrt",  name:"Deseret", sample:"𐐀", date:"1854", status:"extinct", parent:null, iso:"Dsrt", note:"Devised by the LDS Church for English; briefly used then abandoned." },
+  { id:"shaw",  name:"Shavian", sample:"𐑐", date:"1958", status:"extinct", parent:null, iso:"Shaw", note:"Designed per George Bernard Shaw's bequest to reform English spelling." },
+  { id:"tnsa",  name:"Tangsa", sample:"𖩰", date:"1990", status:"living", parent:null, iso:"Tnsa" },
+  { id:"hmng",  name:"Pahawh Hmong", sample:"𖬀", date:"1959", status:"living", parent:null, iso:"Hmng", note:"Devised by Shong Lue Yang for the Hmong language." },
+  { id:"olck",  name:"Ol Chiki", sample:"ᱚ", date:"1925", status:"living", parent:null, iso:"Olck", note:"Devised by Raghunath Murmu for Santali." },
+  { id:"wara",  name:"Warang Citi", sample:"𑢠", date:"1950", status:"living", parent:null, iso:"Wara", note:"Devised for the Ho language." },
+  { id:"brai",  name:"Braille", sample:"⠁", date:"1825", status:"living", parent:null, iso:"Brai", note:"Devised by Louis Braille; 6-dot code based on earlier French military 'night writing'." },
+
+  // ── Cuneiform (separate Mesopotamian tradition) ──
+  { id:"xsux",  name:"Sumerian Cuneiform", sample:"𒀭", date:"-3200", status:"extinct", parent:null, iso:"Xsux", note:"Wedge-shaped strokes pressed into clay; originally pictographic, evolved into a mixed logo-syllabary." },
+  { id:"xpeo",  name:"Old Persian Cuneiform", sample:"𐎠", date:"-600", status:"extinct", parent:"xsux", iso:"Xpeo", note:"Simplified alphabetic adaptation for Achaemenid royal inscriptions." },
+  { id:"ugar",  name:"Ugaritic", sample:"𐎀", date:"-1400", status:"extinct", parent:"xsux", iso:"Ugar", dashed:true, note:"A cuneiform-style alphabet — used cuneiform shapes but with alphabetic sound values." },
+  { id:"hluw",  name:"Anatolian hieroglyphs", sample:"𔐀", date:"-1400", status:"extinct", parent:null, iso:"Hluw", note:"Used for Luwian; independent from cuneiform though developed alongside." },
+
+  // ── Maya (independent American development) ──
+  { id:"maya",  name:"Maya hieroglyphs", sample:"", date:"-300", status:"extinct", parent:null, note:"Fully developed Mesoamerican writing; logo-syllabic like Egyptian or Chinese. Most of it was destroyed in the 16th century." },
+
+  // ── Minor branches ──
+  { id:"cpmn",  name:"Cypro-Minoan", sample:"𒾐", date:"-1500", status:"extinct", parent:null, iso:"Cpmn", note:"Undeciphered." },
+  { id:"cprt",  name:"Cypriot syllabary", sample:"𐠀", date:"-1100", status:"extinct", parent:"cpmn", iso:"Cprt" },
+  { id:"linb",  name:"Linear B", sample:"𐀀", date:"-1450", status:"extinct", parent:null, iso:"Linb", dashed:true, note:"Mycenaean Greek syllabary; descendant of Linear A, itself undeciphered." },
+  { id:"lina",  name:"Linear A", sample:"𐘀", date:"-1800", status:"extinct", parent:null, iso:"Lina", note:"Minoan; undeciphered." },
+  { id:"cari",  name:"Carian", sample:"𐊠", date:"-700", status:"extinct", parent:"grek", iso:"Cari" },
+  { id:"lyci",  name:"Lycian", sample:"𐊀", date:"-500", status:"extinct", parent:"grek", iso:"Lyci" },
+  { id:"lydi",  name:"Lydian", sample:"𐤠", date:"-700", status:"extinct", parent:"grek", iso:"Lydi" },
+];
+
+// ═══════════════════════════════════════════════════════════════
+// Layout + render
+// ═══════════════════════════════════════════════════════════════
+const SCRIPT_BY_ID = Object.fromEntries(SCRIPTS.map(s => [s.id, s]));
+
+function filterByLineage(key) {
+  if (key === "all") return SCRIPTS;
+  if (key === "chinese") {
+    // Descendants of orch
+    const keep = new Set(["orch"]);
+    let changed = true;
+    while (changed) {
+      changed = false;
+      for (const s of SCRIPTS) {
+        if (s.parent && keep.has(s.parent) && !keep.has(s.id)) {
+          keep.add(s.id); changed = true;
+        }
+      }
+    }
+    return SCRIPTS.filter(s => keep.has(s.id));
+  }
+  if (key === "independent") {
+    return SCRIPTS.filter(s => s.parent === null && !["pros","egyp","xsux","orch","hluw","maya","lina","cpmn"].includes(s.id));
+  }
+  if (key === "proto-sinaitic") {
+    const keep = new Set(["egyp","pros"]);
+    let changed = true;
+    while (changed) {
+      changed = false;
+      for (const s of SCRIPTS) {
+        if (s.parent && keep.has(s.parent) && !keep.has(s.id)) {
+          keep.add(s.id); changed = true;
+        }
+      }
+    }
+    return SCRIPTS.filter(s => keep.has(s.id));
+  }
+  return SCRIPTS;
+}
+
+function renderTree(lineageKey) {
+  const list = filterByLineage(lineageKey);
+  const byId = Object.fromEntries(list.map(s => [s.id, s]));
+
+  // Build children map
+  const children = {};
+  const roots = [];
+  for (const s of list) {
+    if (s.parent && byId[s.parent]) {
+      (children[s.parent] = children[s.parent] || []).push(s);
+    } else {
+      roots.push(s);
+    }
+  }
+
+  // Layout: left-to-right. Each node has a fixed x based on depth.
+  // Leaves get sequential y; parents get centroid.
+  const ROW_H = 32;
+  const COL_W = 180;
+  const PAD_X = 24;
+  const PAD_Y = 24;
+
+  const layout = new Map();  // id -> {x, y}
+  let yCounter = 0;
+
+  function layoutNode(s, depth) {
+    const kids = children[s.id] || [];
+    kids.sort((a, b) => (parseInt(a.date) || 0) - (parseInt(b.date) || 0));
+    if (!kids.length) {
+      const pos = { x: PAD_X + depth * COL_W, y: PAD_Y + yCounter * ROW_H, depth };
+      layout.set(s.id, pos);
+      yCounter++;
+      return pos;
+    }
+    const childPositions = kids.map(k => layoutNode(k, depth + 1));
+    const meanY = childPositions.reduce((sum, p) => sum + p.y, 0) / childPositions.length;
+    const pos = { x: PAD_X + depth * COL_W, y: meanY, depth };
+    layout.set(s.id, pos);
+    return pos;
+  }
+
+  // Sort roots by date
+  roots.sort((a, b) => (parseInt(a.date) || 0) - (parseInt(b.date) || 0));
+  for (const r of roots) layoutNode(r, 0);
+
+  // SVG dimensions
+  const maxDepth = Math.max(...Array.from(layout.values()).map(p => p.depth));
+  const width = PAD_X + (maxDepth + 1) * COL_W + 200;
+  const height = PAD_Y + yCounter * ROW_H + PAD_Y;
+
+  // Build lines
+  const lines = [];
+  for (const s of list) {
+    if (!s.parent || !byId[s.parent]) continue;
+    const parentPos = layout.get(s.parent);
+    const myPos = layout.get(s.id);
+    if (!parentPos || !myPos) continue;
+    const midX = parentPos.x + COL_W * 0.55;
+    const cls = s.dashed ? "st-line dashed" : "st-line";
+    lines.push(`<path class="${cls}" d="M${parentPos.x + 70} ${parentPos.y} H${midX} V${myPos.y} H${myPos.x - 4}"/>`);
+  }
+
+  // Build node elements
+  const nodes = list.map(s => {
+    const pos = layout.get(s.id);
+    const date = formatDate(s.date);
+    const status = s.status || "living";
+    const sample = s.sample ? `<text class="sample" x="${pos.x}" y="${pos.y - 1}" text-anchor="middle">${s.sample}</text>` : "";
+    return `<g class="st-node status-${status}" data-id="${s.id}" transform="translate(0,0)">
+      <rect class="bg" x="${pos.x - 14}" y="${pos.y - 14}" width="${COL_W - 4}" height="26" rx="3"/>
+      ${sample}
+      <text class="label" x="${pos.x + 18}" y="${pos.y - 2}">${s.name}</text>
+      <text class="date" x="${pos.x + 18}" y="${pos.y + 9}">${date}</text>
+    </g>`;
+  }).join("");
+
+  document.getElementById("tree-wrap").innerHTML = `
+    <svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
+      ${lines.join("")}
+      ${nodes}
+    </svg>
+  `;
+}
+
+function formatDate(s) {
+  const n = parseInt(s, 10);
+  if (isNaN(n)) return "";
+  if (n < 0) return `c. ${Math.abs(n)} BCE`;
+  if (n === 0) return `c. 0`;
+  if (n < 1000) return `c. ${n} CE`;
+  return `c. ${n}`;
+}
+
+function showDetail(id) {
+  const s = SCRIPT_BY_ID[id];
+  if (!s) return;
+  const el = document.getElementById("detail");
+  const parent = s.parent ? SCRIPT_BY_ID[s.parent] : null;
+  const kids = SCRIPTS.filter(x => x.parent === s.id).map(x => x.name);
+  const isoLink = s.iso ? `<a class="open-link" href="../scripts/pages/${s.iso}.html" target="_blank">View characters in Unicode Explorer →</a>` : "";
+  el.classList.add("show");
+  el.innerHTML = `
+    <h3>${s.sample ? `<span class="sample">${s.sample}</span>` : ""}${s.name}</h3>
+    <div class="meta">${formatDate(s.date)} · ${s.status || 'living'}${s.iso ? ` · ISO 15924: ${s.iso}` : ""}</div>
+    <dl>
+      ${parent ? `<dt>Descends from</dt><dd>${parent.name}${s.dashed ? " (uncertain / partial)" : ""}</dd>` : `<dt>Ancestry</dt><dd>Independent invention or unresolved</dd>`}
+      ${kids.length ? `<dt>Gave rise to</dt><dd>${kids.join(", ")}</dd>` : ""}
+    </dl>
+    ${s.note ? `<div class="note">${s.note}</div>` : ""}
+    ${isoLink}
+  `;
+
+  document.querySelectorAll(".st-node.selected").forEach(n => n.classList.remove("selected"));
+  document.querySelector(`.st-node[data-id="${id}"]`)?.classList.add("selected");
+}
+
+document.addEventListener("click", (e) => {
+  const node = e.target.closest(".st-node");
+  if (node) { showDetail(node.dataset.id); return; }
+});
+
+document.getElementById("family-picker").addEventListener("change", (e) => {
+  renderTree(e.target.value);
+  document.getElementById("detail").classList.remove("show");
+});
+
+renderTree("all");
+</script>
+</body>
+</html>

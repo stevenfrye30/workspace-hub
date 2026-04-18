@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Phonetic Center — Languages</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg:#1e2a3a; --fg:#e8ecf1; --muted:#8fa3ba;
+    --border:#32445c; --active:#d4a24c; --tint:#263447;
+    --card:#243347; --copied:#10b981;
+  }
+  body { font-family: Georgia, serif; background: var(--bg); color: var(--fg); line-height: 1.55; min-height: 100vh; }
+  .page { max-width: 1180px; margin: 0 auto; padding: 48px 24px 100px; }
+  header { border-bottom: 1px solid var(--border); padding-bottom: 20px; margin-bottom: 28px; display: flex; align-items: baseline; gap: 18px; flex-wrap: wrap; }
+  h1 { font-size: 28px; font-weight: 600; letter-spacing: 0.01em; }
+  .subtitle { color: var(--muted); font-style: italic; font-size: 15px; flex: 1; min-width: 240px; }
+  .back { color: var(--active); text-decoration: none; font-size: 14px; }
+  .back:hover { text-decoration: underline; }
+
+  .intro { color: var(--muted); font-size: 14px; max-width: 780px; margin-bottom: 26px; line-height: 1.7; }
+  .intro code { font-family: ui-monospace, "Cascadia Code", monospace; background: var(--tint); color: var(--active); padding: 1px 6px; border-radius: 3px; font-size: 13px; }
+
+  .toolbar { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin-bottom: 18px; }
+  .search { flex: 1; min-width: 240px; max-width: 420px; background: var(--tint); border: 1px solid var(--border); color: var(--fg); padding: 8px 12px; border-radius: 6px; font-family: inherit; font-size: 14px; outline: none; }
+  .search:focus { border-color: var(--active); }
+  .toggle { color: var(--muted); font-size: 13px; display: inline-flex; align-items: center; gap: 6px; cursor: pointer; user-select: none; }
+  .toggle input { cursor: pointer; accent-color: var(--active); }
+
+  h2 { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); margin: 30px 0 12px; }
+
+  .table-wrap { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; background: var(--card); border: 1px solid var(--border); min-width: 1100px; }
+  thead th { text-align: left; padding: 8px 6px; border-bottom: 1px solid var(--border); font-size: 10.5px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); background: var(--tint); white-space: nowrap; }
+  thead th:nth-child(1), thead th:nth-child(2) { text-align: left; }
+  thead th:nth-child(n+3) { text-align: center; }
+  tbody td { padding: 8px 6px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:hover { background: var(--tint); }
+
+  .col-ipa { width: 76px; padding-left: 12px !important; position: relative; }
+  .ipa-play { display: inline-block; background: transparent; border: 1px solid var(--border); color: var(--muted); cursor: pointer; width: 18px; height: 18px; border-radius: 50%; font-size: 9px; line-height: 14px; margin-left: 4px; padding: 0; vertical-align: middle; transition: all 0.12s; }
+  .ipa-play:hover { color: var(--fg); border-color: var(--active); background: rgba(212,162,76,0.1); }
+  .ipa-play.playing { color: var(--active); border-color: var(--active); background: rgba(212,162,76,0.15); }
+  .ipa-play.failed { color: #b85858; border-color: #b85858; }
+  .col-desc { color: var(--muted); font-size: 12.5px; font-style: italic; width: 210px; min-width: 180px; }
+  .col-script { text-align: center; cursor: pointer; font-family: "Noto Sans","Noto Sans Devanagari","Noto Sans Hebrew","Noto Sans Ethiopic","Noto Sans Armenian","Noto Sans CJK","Segoe UI",system-ui,sans-serif; font-size: 18px; transition: background 0.12s; position: relative; min-width: 50px; }
+  .col-script:hover { background: var(--tint); }
+  .col-script.copied { background: var(--copied); color: #fff; }
+  .col-ipa span { font-family: "Noto Sans", system-ui, sans-serif; font-size: 18px; color: var(--active); font-weight: 600; display: inline-block; }
+  .col-script.empty { color: #4a5a70; font-size: 14px; font-style: italic; }
+  .note-row td { padding: 0 12px 10px; background: var(--bg); border-bottom: 1px solid var(--border); }
+
+  /* Reverse-lookup popover */
+  .col-ipa { cursor: pointer; }
+  .col-ipa:hover { background: var(--tint); }
+  .col-ipa.active-lookup { background: rgba(212,162,76,0.2); }
+  .reverse-popover { position: fixed; right: 20px; top: 90px; width: 320px; max-height: 70vh; background: var(--card); border: 1px solid var(--border); border-left: 3px solid var(--active); padding: 14px 18px 16px; border-radius: 4px; box-shadow: 0 8px 32px rgba(0,0,0,0.3); z-index: 60; overflow-y: auto; display: none; }
+  .reverse-popover.show { display: block; }
+  .reverse-popover h4 { font-size: 14px; color: var(--fg); margin-bottom: 2px; }
+  .reverse-popover .rp-sym { font-size: 32px; color: var(--active); font-weight: 600; font-family: "Noto Sans", sans-serif; }
+  .reverse-popover .rp-sub { color: var(--muted); font-size: 12px; font-style: italic; margin-bottom: 10px; }
+  .reverse-popover .rp-close { position: absolute; top: 8px; right: 12px; background: none; border: none; color: var(--muted); cursor: pointer; font-size: 18px; line-height: 1; }
+  .reverse-popover .rp-close:hover { color: var(--fg); }
+  .reverse-popover .rp-family { margin-top: 10px; }
+  .reverse-popover .rp-family-name { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; margin-bottom: 4px; }
+  .reverse-popover .rp-lang { font-size: 13px; color: var(--fg); padding: 2px 0; }
+  .reverse-popover .rp-lang .rp-lang-id { color: var(--muted); font-family: ui-monospace, monospace; font-size: 11px; margin-left: 6px; }
+  .reverse-popover .rp-empty { color: var(--muted); font-style: italic; font-size: 13px; padding: 8px 0; }
+  .reverse-popover .rp-total { font-size: 11px; color: var(--muted); margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--border); font-family: ui-monospace, monospace; }
+
+  /* Per-language highlighting */
+  body.highlight-mode tbody tr.phoneme-row:not(.in-inventory) { opacity: 0.28; }
+  body.highlight-mode tbody tr.phoneme-row.in-inventory { background: rgba(16,185,129,0.08); }
+  body.highlight-mode tbody tr.phoneme-row.in-inventory .col-ipa span { color: #10b981; }
+  body.highlight-mode .note-row { opacity: 0.3; }
+  .note { color: var(--muted); font-size: 12.5px; font-style: italic; border-left: 2px solid var(--active); padding-left: 10px; }
+
+  .legend { margin-top: 30px; padding: 16px 20px; background: var(--tint); border-left: 3px solid var(--active); font-size: 13px; color: var(--muted); line-height: 1.8; }
+  .legend strong { color: var(--fg); }
+  .legend code { font-family: ui-monospace, monospace; color: var(--active); }
+
+  .toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); background: var(--card); border: 1px solid var(--active); color: var(--fg); padding: 10px 16px; border-radius: 6px; font-size: 14px; opacity: 0; transition: opacity 0.15s; pointer-events: none; z-index: 50; }
+
+  /* ── Statistics section ── */
+  .stats { margin-top: 40px; }
+  .stats h2 { font-size: 18px; color: var(--fg); text-transform: none; letter-spacing: 0; font-weight: 600; margin: 0 0 6px; }
+  .stats .stats-intro { color: var(--muted); font-size: 13px; margin-bottom: 18px; max-width: 780px; line-height: 1.6; }
+  .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-bottom: 20px; }
+  .stat-card { background: var(--card); border: 1px solid var(--border); padding: 14px 18px; border-radius: 4px; }
+  .stat-card h3 { font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); font-weight: 600; margin-bottom: 10px; }
+  .stat-row { display: grid; grid-template-columns: 70px 1fr 60px; align-items: center; gap: 10px; font-size: 13.5px; margin-bottom: 6px; }
+  .stat-row .label { color: var(--fg); }
+  .stat-row .bar { background: var(--tint); border-radius: 3px; height: 8px; overflow: hidden; }
+  .stat-row .bar .fill { height: 100%; background: var(--active); transition: width 0.3s; }
+  .stat-row .bar .fill.latin      { background: #8fa3ba; }
+  .stat-row .bar .fill.arabic     { background: #d4a24c; }
+  .stat-row .bar .fill.telugu     { background: #10b981; }
+  .stat-row .bar .fill.devanagari { background: #c084fc; }
+  .stat-row .bar .fill.cyrillic   { background: #ef4444; }
+  .stat-row .bar .fill.greek      { background: #38bdf8; }
+  .stat-row .bar .fill.hebrew     { background: #f59e0b; }
+  .stat-row .bar .fill.ethiopic   { background: #84cc16; }
+  .stat-row .bar .fill.armenian   { background: #a78bfa; }
+  .stat-row .bar .fill.hangul     { background: #f472b6; }
+  .stat-row .count { color: var(--muted); font-family: ui-monospace, monospace; font-size: 12px; text-align: right; }
+
+  .overlap { display: grid; grid-template-columns: 1fr auto; gap: 6px 14px; font-size: 13.5px; }
+  .overlap dt { color: var(--muted); }
+  .overlap dd { color: var(--fg); font-family: ui-monospace, monospace; text-align: right; }
+  .overlap dt.all { color: var(--active); font-weight: 600; }
+  .overlap dd.all { color: var(--active); font-weight: 600; }
+
+  /* IPA consonant grid */
+  .ipa-grid-wrap { margin-top: 20px; overflow-x: auto; }
+  .ipa-grid-wrap h3 { font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); font-weight: 600; margin-bottom: 10px; }
+  table.ipa-grid { border-collapse: collapse; width: 100%; min-width: 720px; font-size: 13px; background: var(--card); border: 1px solid var(--border); }
+  table.ipa-grid th, table.ipa-grid td { border: 1px solid var(--border); padding: 5px 6px; text-align: center; vertical-align: middle; }
+  table.ipa-grid thead th { background: var(--tint); color: var(--muted); font-weight: 500; font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.04em; padding: 6px 4px; }
+  table.ipa-grid tbody th { background: var(--tint); color: var(--muted); text-align: right; font-weight: 500; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; padding: 4px 8px; white-space: nowrap; }
+  .ipa-cell { display: flex; flex-direction: column; align-items: center; gap: 3px; min-height: 30px; justify-content: center; padding: 3px 0; }
+  .ipa-pair { display: flex; gap: 6px; align-items: center; }
+  .ipa-phoneme { display: flex; flex-direction: column; align-items: center; gap: 1px; }
+  .ipa-phoneme .sym { font-family: "Noto Sans", system-ui, sans-serif; color: var(--active); font-size: 15px; line-height: 1; }
+  .ipa-dots { display: flex; gap: 2px; }
+  .ipa-dot { width: 6px; height: 6px; border-radius: 50%; background: #3a4960; }
+  .ipa-dot.has-latin      { background: #8fa3ba; }
+  .ipa-dot.has-arabic     { background: #d4a24c; }
+  .ipa-dot.has-telugu     { background: #10b981; }
+  .ipa-dot.has-devanagari { background: #c084fc; }
+  .ipa-dot.has-cyrillic   { background: #ef4444; }
+  .ipa-dot.has-greek      { background: #38bdf8; }
+  .ipa-dot.has-hebrew     { background: #f59e0b; }
+  .ipa-dot.has-ethiopic   { background: #84cc16; }
+  .ipa-dot.has-armenian   { background: #a78bfa; }
+  .ipa-dot.has-hangul     { background: #f472b6; }
+
+  /* Universality histogram */
+  .histogram { display: flex; flex-direction: column; gap: 3px; font-size: 12px; }
+  .hist-row { display: grid; grid-template-columns: 30px 1fr 30px; align-items: center; gap: 8px; }
+  .hist-row .nbox { color: var(--muted); font-family: ui-monospace, monospace; font-size: 11px; text-align: right; }
+  .hist-row .hbar { height: 10px; background: var(--tint); border-radius: 2px; overflow: hidden; }
+  .hist-row .hbar-fill { height: 100%; background: var(--active); }
+  .hist-row .ncount { color: var(--fg); font-family: ui-monospace, monospace; font-size: 11px; text-align: right; }
+
+  /* Coverage heatmap strip */
+  .heat-strip { display: flex; gap: 2px; }
+  .heat-cell { flex: 1; height: 14px; border-radius: 2px; min-width: 12px; }
+  .heat-cell.off { background: var(--tint); opacity: 0.4; }
+
+  /* IPA grid badge */
+  .cov-badge { display: inline-block; font-size: 9px; padding: 1px 4px; border-radius: 8px; background: var(--tint); color: var(--muted); font-family: ui-monospace, monospace; margin-top: 1px; }
+  .cov-badge.c-high { background: rgba(16,185,129,0.25); color: #10b981; }
+  .cov-badge.c-mid  { background: rgba(212,162,76,0.25); color: #d4a24c; }
+  .cov-badge.c-low  { background: rgba(184,88,88,0.25); color: #ef4444; }
+  .ipa-legend { display: flex; gap: 14px; flex-wrap: wrap; color: var(--muted); font-size: 12px; margin-top: 8px; }
+  .ipa-legend span { display: inline-flex; align-items: center; gap: 5px; }
+  .ipa-legend .ipa-dot { width: 8px; height: 8px; }
+  .toast.show { opacity: 1; }
+
+  @media (max-width: 720px) {
+    .col-desc { display: none; }
+    .col-script { font-size: 16px; }
+    .col-ipa span { font-size: 15px; }
+    tbody td { padding: 6px 4px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <div>
+      <h1>Phonetic Center</h1>
+      <div class="subtitle">Compare how the same sounds are written across scripts.</div>
+    </div>
+    <nav style="display:flex;gap:14px;align-items:baseline">
+      <a class="back" href="../languages/">Languages</a>
+      <a class="back" href="../scripts/">Scripts</a>
+      <a class="back" href="../scripts-tree/">Script Evolution</a>
+      <a class="back" href="../loanwords/">Loanwords</a>
+      <a class="back" href="../">← Languages Hub</a>
+    </nav>
+  </header>
+
+  <div class="intro">
+    Rows are phonemes in the <strong>International Phonetic Alphabet</strong> (IPA).
+    Columns show the typical grapheme in each of 10 major scripts. Click any cell to copy.
+    An em-dash (—) means the script lacks a native equivalent for that sound.
+    Modern standards are used throughout — historical allographs and archaic pronunciations are noted where relevant.
+  </div>
+
+  <div class="toolbar">
+    <input class="search" id="search" placeholder="Search by sound, description (e.g. nasal, fricative)…" />
+    <label class="toggle"><input type="checkbox" id="showNotes" checked /> Show notes</label>
+    <div id="lang-highlight" style="display:none; font-size:13px; color:var(--muted); margin-left:auto;">
+      <span>Highlighting <b id="lang-highlight-name" style="color:var(--active)"></b></span>
+      <a href="#" id="lang-highlight-clear" style="color:var(--active); margin-left:10px;">clear</a>
+    </div>
+  </div>
+
+  <h2>Consonants</h2>
+  <div class="table-wrap">
+    <table><thead><tr>
+      <th class="col-ipa">IPA</th>
+      <th class="col-desc">Description</th>
+      <th>Latin</th>
+      <th>Arabic</th>
+      <th>Telugu</th>
+      <th>Devanagari</th>
+      <th>Cyrillic</th>
+      <th>Greek</th>
+      <th>Hebrew</th>
+      <th>Ethiopic</th>
+      <th>Armenian</th>
+      <th>Hangul</th>
+    </tr></thead><tbody id="consonants-body"></tbody></table>
+  </div>
+
+  <h2>Vowels</h2>
+  <div class="table-wrap">
+    <table><thead><tr>
+      <th class="col-ipa">IPA</th>
+      <th class="col-desc">Description</th>
+      <th>Latin</th>
+      <th>Arabic</th>
+      <th>Telugu</th>
+      <th>Devanagari</th>
+      <th>Cyrillic</th>
+      <th>Greek</th>
+      <th>Hebrew</th>
+      <th>Ethiopic</th>
+      <th>Armenian</th>
+      <th>Hangul</th>
+    </tr></thead><tbody id="vowels-body"></tbody></table>
+  </div>
+
+  <div class="legend">
+    <strong>How to read this chart.</strong> Latin values reflect English orthography where consistent, and use digraphs (<code>sh</code>, <code>th</code>) where a single letter doesn't suffice. <strong>Arabic</strong> shows isolated letter forms; vowel diacritics use <code>ـ</code> as a placeholder. <strong>Telugu</strong> and <strong>Devanagari</strong> consonants are shown with the inherent /a/; pure consonants require a virama. <strong>Hebrew</strong> bet/kaf/pe/tav distinguish /b v/, /k x/, /p f/, /t θ/ via the dagesh diacritic (a dot inside the letter). <strong>Greek</strong> digraphs (μπ, ντ, γκ, τσ, τζ) are modern conventions for /b, d, g, tʃ, dʒ/. <strong>Ethiopic</strong> is a syllabary — shown here is the base form with inherent /ä/. <strong>Hangul</strong> jamo are isolated; real Korean writing composes them into syllable blocks. Retroflex, emphatic, and aspirated distinctions are preserved where the target script encodes them.
+  </div>
+
+  <section class="stats">
+    <h2>Statistics</h2>
+    <div class="stats-intro">Computed from the chart above. An em-dash counts as "not covered"; a grapheme (even a digraph like <code>sh</code>) counts as covered. <code>w</code> and <code>j</code> are treated as approximants; <code>w</code> is placed under the velar column.</div>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <h3>Coverage</h3>
+        <div id="coverage"></div>
+      </div>
+      <div class="stat-card">
+        <h3>Script overlap</h3>
+        <dl class="overlap" id="overlap"></dl>
+      </div>
+      <div class="stat-card">
+        <h3>By manner (consonants)</h3>
+        <div id="by-manner"></div>
+      </div>
+      <div class="stat-card">
+        <h3>By height (vowels)</h3>
+        <div id="by-height"></div>
+      </div>
+    </div>
+
+    <div class="ipa-grid-wrap">
+      <h3>IPA consonant grid · script coverage</h3>
+      <table class="ipa-grid" id="ipa-grid"></table>
+      <div class="ipa-legend" id="ipa-legend"></div>
+    </div>
+  </section>
+
+  <div class="toast" id="toast"></div>
+
+  <div class="reverse-popover" id="reverse-popover">
+    <button class="rp-close" id="rp-close">×</button>
+    <div class="rp-sym" id="rp-sym"></div>
+    <div class="rp-sub" id="rp-desc"></div>
+    <div id="rp-body"></div>
+  </div>
+</div>
+
+<script src="../languages/data.js"></script>
+<script src="inventories.js"></script>
+<script>
+const PHONEMES = [
+  // ── Plosives ───────────────────────────────────────────────
+  { ipa:"p",  g:"consonants", desc:"voiceless bilabial plosive",        latin:"p",  arabic:"ب", telugu:"ప", devanagari:"प",  cyrillic:"п",  greek:"π",  hebrew:"פּ", ethiopic:"ፐ", armenian:"պ",  hangul:"ㅍ", note:"Arabic has no native /p/; ب (/b/) substitutes in loanwords." },
+  { ipa:"b",  g:"consonants", desc:"voiced bilabial plosive",           latin:"b",  arabic:"ب", telugu:"బ", devanagari:"ब",  cyrillic:"б",  greek:"μπ", hebrew:"בּ", ethiopic:"በ", armenian:"բ",  hangul:"ㅂ" },
+  { ipa:"t",  g:"consonants", desc:"voiceless dental/alveolar plosive", latin:"t",  arabic:"ت", telugu:"త", devanagari:"त",  cyrillic:"т",  greek:"τ",  hebrew:"תּ", ethiopic:"ተ", armenian:"տ",  hangul:"ㄷ", note:"Telugu త is dental; ట (below) is retroflex. Hangul ㄷ is unvoiced in isolation." },
+  { ipa:"d",  g:"consonants", desc:"voiced dental/alveolar plosive",    latin:"d",  arabic:"د", telugu:"ద", devanagari:"द",  cyrillic:"д",  greek:"ντ", hebrew:"ד",  ethiopic:"ደ", armenian:"դ",  hangul:"—" },
+  { ipa:"ʈ",  g:"consonants", desc:"voiceless retroflex plosive",       latin:"—",  arabic:"—", telugu:"ట", devanagari:"ट",  cyrillic:"—",  greek:"—",  hebrew:"—",  ethiopic:"—", armenian:"—",  hangul:"—", note:"Retroflex — tongue curled back. Native to Indic; absent from most others." },
+  { ipa:"ɖ",  g:"consonants", desc:"voiced retroflex plosive",          latin:"—",  arabic:"—", telugu:"డ", devanagari:"ड",  cyrillic:"—",  greek:"—",  hebrew:"—",  ethiopic:"—", armenian:"—",  hangul:"—" },
+  { ipa:"k",  g:"consonants", desc:"voiceless velar plosive",           latin:"k",  arabic:"ك", telugu:"క", devanagari:"क",  cyrillic:"к",  greek:"κ",  hebrew:"כּ", ethiopic:"ከ", armenian:"կ",  hangul:"ㅋ" },
+  { ipa:"ɡ",  g:"consonants", desc:"voiced velar plosive",              latin:"g",  arabic:"غ", telugu:"గ", devanagari:"ग",  cyrillic:"г",  greek:"γκ", hebrew:"ג",  ethiopic:"ገ", armenian:"գ",  hangul:"ㄱ", note:"Arabic غ is /ɣ/ (a fricative); ج in Egyptian dialect. Modern Greek γκ is a digraph." },
+  { ipa:"q",  g:"consonants", desc:"voiceless uvular plosive",          latin:"—",  arabic:"ق", telugu:"—", devanagari:"क़", cyrillic:"—",  greek:"—",  hebrew:"ק",  ethiopic:"ቀ", armenian:"—",  hangul:"—", note:"Deep back-of-throat /k/; distinctive of Semitic and some Ethiopic emphatics." },
+  { ipa:"ʔ",  g:"consonants", desc:"glottal stop",                      latin:"—",  arabic:"ء", telugu:"—", devanagari:"ऽ",  cyrillic:"—",  greek:"—",  hebrew:"א",  ethiopic:"አ", armenian:"—",  hangul:"—", note:"The catch in 'uh-oh'. Arabic ء (hamza) and Hebrew א explicitly mark it." },
+
+  // ── Nasals ─────────────────────────────────────────────────
+  { ipa:"m",  g:"consonants", desc:"bilabial nasal",                    latin:"m",  arabic:"م", telugu:"మ", devanagari:"म",  cyrillic:"м",  greek:"μ",  hebrew:"מ",  ethiopic:"መ", armenian:"մ",  hangul:"ㅁ" },
+  { ipa:"n",  g:"consonants", desc:"alveolar nasal",                    latin:"n",  arabic:"ن", telugu:"న", devanagari:"न",  cyrillic:"н",  greek:"ν",  hebrew:"נ",  ethiopic:"ነ", armenian:"ն",  hangul:"ㄴ" },
+  { ipa:"ɳ",  g:"consonants", desc:"retroflex nasal",                   latin:"—",  arabic:"—", telugu:"ణ", devanagari:"ण",  cyrillic:"—",  greek:"—",  hebrew:"—",  ethiopic:"—", armenian:"—",  hangul:"—" },
+  { ipa:"ɲ",  g:"consonants", desc:"palatal nasal",                     latin:"ny", arabic:"—", telugu:"ఞ", devanagari:"ञ",  cyrillic:"нь", greek:"—",  hebrew:"—",  ethiopic:"ኘ", armenian:"—",  hangul:"—", note:"Spanish ñ; Italian gn; French gn." },
+  { ipa:"ŋ",  g:"consonants", desc:"velar nasal",                       latin:"ng", arabic:"—", telugu:"ఙ", devanagari:"ङ",  cyrillic:"—",  greek:"γκ", hebrew:"—",  ethiopic:"ኝ", armenian:"—",  hangul:"ㅇ", note:"The 'ng' in English 'sing'. Hangul ㅇ is silent as onset; /ŋ/ as coda." },
+
+  // ── Fricatives ─────────────────────────────────────────────
+  { ipa:"f",  g:"consonants", desc:"voiceless labiodental fricative",   latin:"f",  arabic:"ف", telugu:"ఫ", devanagari:"फ़", cyrillic:"ф",  greek:"φ",  hebrew:"פ",  ethiopic:"ፈ", armenian:"ֆ",  hangul:"—", note:"Telugu ఫ was originally /pʰ/; now used for /f/ in loanwords. Hebrew פ without dagesh." },
+  { ipa:"v",  g:"consonants", desc:"voiced labiodental fricative",      latin:"v",  arabic:"—", telugu:"వ", devanagari:"व",  cyrillic:"в",  greek:"β",  hebrew:"ב",  ethiopic:"—", armenian:"վ",  hangul:"—", note:"Arabic has no /v/; ف or ڤ in loanwords. Modern Greek β = /v/ (Ancient /b/). Telugu వ covers /v/ and /w/." },
+  { ipa:"θ",  g:"consonants", desc:"voiceless dental fricative",        latin:"th", arabic:"ث", telugu:"—", devanagari:"—", cyrillic:"—",  greek:"θ",  hebrew:"ת",  ethiopic:"—", armenian:"—",  hangul:"—", note:"'th' in 'thin'. Hebrew ת (without dagesh) was /θ/ in Sephardi tradition." },
+  { ipa:"ð",  g:"consonants", desc:"voiced dental fricative",           latin:"th", arabic:"ذ", telugu:"—", devanagari:"—", cyrillic:"—",  greek:"δ",  hebrew:"ד",  ethiopic:"—", armenian:"—",  hangul:"—", note:"'th' in 'this'. Hebrew ד (without dagesh) was /ð/ in Yemenite tradition." },
+  { ipa:"s",  g:"consonants", desc:"voiceless alveolar fricative",      latin:"s",  arabic:"س", telugu:"స", devanagari:"स",  cyrillic:"с",  greek:"σ",  hebrew:"ס",  ethiopic:"ሰ", armenian:"ս",  hangul:"ㅅ" },
+  { ipa:"z",  g:"consonants", desc:"voiced alveolar fricative",         latin:"z",  arabic:"ز", telugu:"—", devanagari:"ज़", cyrillic:"з",  greek:"ζ",  hebrew:"ז",  ethiopic:"ዘ", armenian:"զ",  hangul:"—", note:"No native /z/ in Telugu. Modern Greek ζ = /z/ (Ancient /zd/)." },
+  { ipa:"ʃ",  g:"consonants", desc:"voiceless postalveolar fricative",  latin:"sh", arabic:"ش", telugu:"శ", devanagari:"श",  cyrillic:"ш",  greek:"—",  hebrew:"שׁ", ethiopic:"ሸ", armenian:"շ",  hangul:"—", note:"'sh' in 'ship'." },
+  { ipa:"ʒ",  g:"consonants", desc:"voiced postalveolar fricative",     latin:"zh", arabic:"—", telugu:"—", devanagari:"—", cyrillic:"ж",  greek:"—",  hebrew:"—",  ethiopic:"ዠ", armenian:"ժ",  hangul:"—", note:"'s' in 'measure'; French j." },
+  { ipa:"ʂ",  g:"consonants", desc:"voiceless retroflex fricative",     latin:"—",  arabic:"—", telugu:"ష", devanagari:"ष",  cyrillic:"—",  greek:"—",  hebrew:"—",  ethiopic:"—", armenian:"—",  hangul:"—" },
+  { ipa:"x",  g:"consonants", desc:"voiceless velar fricative",         latin:"kh", arabic:"خ", telugu:"—", devanagari:"—", cyrillic:"х",  greek:"χ",  hebrew:"כ",  ethiopic:"—", armenian:"խ",  hangul:"—", note:"German 'ach'; Scottish 'loch'. Hebrew כ without dagesh." },
+  { ipa:"ɣ",  g:"consonants", desc:"voiced velar fricative",            latin:"gh", arabic:"غ", telugu:"—", devanagari:"—", cyrillic:"—",  greek:"γ",  hebrew:"—",  ethiopic:"—", armenian:"ղ",  hangul:"—" },
+  { ipa:"ħ",  g:"consonants", desc:"voiceless pharyngeal fricative",    latin:"—",  arabic:"ح", telugu:"—", devanagari:"—", cyrillic:"—",  greek:"—",  hebrew:"ח",  ethiopic:"ሐ", armenian:"—",  hangul:"—", note:"Constricted 'h' deep in throat. Semitic + some Cushitic." },
+  { ipa:"ʕ",  g:"consonants", desc:"voiced pharyngeal fricative",       latin:"—",  arabic:"ع", telugu:"—", devanagari:"—", cyrillic:"—",  greek:"—",  hebrew:"ע",  ethiopic:"ዐ", armenian:"—",  hangul:"—", note:"The 'ayn' of Arabic; written in Hebrew and Ge'ez but often merged in Modern Hebrew." },
+  { ipa:"h",  g:"consonants", desc:"voiceless glottal fricative",       latin:"h",  arabic:"ه", telugu:"హ", devanagari:"ह",  cyrillic:"—",  greek:"—",  hebrew:"ה",  ethiopic:"ሀ", armenian:"հ",  hangul:"ㅎ", note:"Modern Greek has no /h/; aspirated reconstructed for Ancient (rough breathing ʽ)." },
+
+  // ── Affricates ─────────────────────────────────────────────
+  { ipa:"tʃ", g:"consonants", desc:"voiceless postalveolar affricate",  latin:"ch", arabic:"—", telugu:"చ", devanagari:"च",  cyrillic:"ч",  greek:"τσ", hebrew:"צ׳", ethiopic:"ቸ", armenian:"ճ",  hangul:"ㅊ", note:"'ch' in 'church'. Hebrew uses צ׳ (with geresh) for loanwords." },
+  { ipa:"dʒ", g:"consonants", desc:"voiced postalveolar affricate",     latin:"j",  arabic:"ج", telugu:"జ", devanagari:"ज",  cyrillic:"дж", greek:"τζ", hebrew:"ג׳", ethiopic:"ጀ", armenian:"ջ",  hangul:"—", note:"'j' in 'judge'." },
+
+  // ── Approximants / Liquids ────────────────────────────────
+  { ipa:"l",  g:"consonants", desc:"alveolar lateral approximant",      latin:"l",  arabic:"ل", telugu:"ల", devanagari:"ल",  cyrillic:"л",  greek:"λ",  hebrew:"ל",  ethiopic:"ለ", armenian:"լ",  hangul:"ㄹ", note:"Hangul ㄹ = /l/ in coda, /ɾ/ in onset." },
+  { ipa:"ɭ",  g:"consonants", desc:"retroflex lateral approximant",     latin:"—",  arabic:"—", telugu:"ళ", devanagari:"ळ",  cyrillic:"—",  greek:"—",  hebrew:"—",  ethiopic:"—", armenian:"—",  hangul:"—" },
+  { ipa:"r",  g:"consonants", desc:"alveolar trill / tap",              latin:"r",  arabic:"ر", telugu:"ర", devanagari:"र",  cyrillic:"р",  greek:"ρ",  hebrew:"ר",  ethiopic:"ረ", armenian:"ր",  hangul:"ㄹ", note:"Armenian ր is tap, ռ is trill; shown here is ր." },
+  { ipa:"j",  g:"consonants", desc:"palatal approximant",               latin:"y",  arabic:"ي", telugu:"య", devanagari:"य",  cyrillic:"й",  greek:"γι", hebrew:"י",  ethiopic:"የ", armenian:"յ",  hangul:"—", note:"'y' in 'yes'. Hangul fuses /j/ with a vowel into ㅑㅕㅛㅠ." },
+  { ipa:"w",  g:"consonants", desc:"labio-velar approximant",           latin:"w",  arabic:"و", telugu:"వ", devanagari:"—", cyrillic:"—",  greek:"ου", hebrew:"ו",  ethiopic:"ወ", armenian:"—",  hangul:"—", note:"Hangul fuses /w/ with a vowel into ㅘㅝ etc. Devanagari uses व for both /v/ and /w/." },
+
+  // ── Short Vowels ──────────────────────────────────────────
+  { ipa:"a",  g:"vowels", desc:"open front/central vowel",              latin:"a",  arabic:"ـَ", telugu:"అ", devanagari:"अ",  cyrillic:"а",  greek:"α",  hebrew:"ַ",   ethiopic:"አ", armenian:"ա",  hangul:"ㅏ", note:"Arabic fatha (diacritic). Telugu అ is independent; inherent after a consonant." },
+  { ipa:"e",  g:"vowels", desc:"close-mid front vowel",                 latin:"e",  arabic:"—", telugu:"ఎ", devanagari:"ऎ",  cyrillic:"э",  greek:"ε",  hebrew:"ֶ",   ethiopic:"ኧ", armenian:"ե",  hangul:"ㅔ", note:"Standard Arabic has no /e/; dialects use fatha or y-glide." },
+  { ipa:"i",  g:"vowels", desc:"close front vowel",                     latin:"i",  arabic:"ـِ", telugu:"ఇ", devanagari:"इ",  cyrillic:"и",  greek:"ι",  hebrew:"ִ",   ethiopic:"ኢ", armenian:"ի",  hangul:"ㅣ", note:"Arabic kasra (diacritic below)." },
+  { ipa:"o",  g:"vowels", desc:"close-mid back rounded vowel",          latin:"o",  arabic:"—", telugu:"ఒ", devanagari:"ऒ",  cyrillic:"о",  greek:"ο",  hebrew:"ֹ",   ethiopic:"ኦ", armenian:"ո",  hangul:"ㅗ", note:"Standard Arabic has no /o/; dialects use damma or w-glide." },
+  { ipa:"u",  g:"vowels", desc:"close back rounded vowel",              latin:"u",  arabic:"ـُ", telugu:"ఉ", devanagari:"उ",  cyrillic:"у",  greek:"ου", hebrew:"ֻ",   ethiopic:"ኡ", armenian:"ու", hangul:"ㅜ", note:"Arabic damma (diacritic above). Greek uses digraph ου." },
+  { ipa:"ə",  g:"vowels", desc:"mid central vowel (schwa)",             latin:"e",  arabic:"—", telugu:"—", devanagari:"—", cyrillic:"—",  greek:"—",  hebrew:"ְ",   ethiopic:"—", armenian:"ը",  hangul:"ㅓ", note:"The 'uh' sound in 'sofa'. Hebrew sheva, Armenian ը, Korean ㅓ approximate it. Usually unwritten in reduction." },
+
+  // ── Long Vowels ───────────────────────────────────────────
+  { ipa:"aː", g:"vowels", desc:"long open vowel",                       latin:"aa", arabic:"ا", telugu:"ఆ", devanagari:"आ",  cyrillic:"а",  greek:"α",  hebrew:"ָ",   ethiopic:"ኣ", armenian:"ա",  hangul:"ㅏ" },
+  { ipa:"iː", g:"vowels", desc:"long close front vowel",                latin:"ee", arabic:"ي", telugu:"ఈ", devanagari:"ई",  cyrillic:"и",  greek:"η",  hebrew:"ִי",  ethiopic:"ኢ", armenian:"ի",  hangul:"ㅣ" },
+  { ipa:"uː", g:"vowels", desc:"long close back rounded vowel",         latin:"oo", arabic:"و", telugu:"ఊ", devanagari:"ऊ",  cyrillic:"у",  greek:"ου", hebrew:"וּ",  ethiopic:"ኡ", armenian:"ու", hangul:"ㅜ" },
+  { ipa:"eː", g:"vowels", desc:"long close-mid front vowel",            latin:"ē",  arabic:"—", telugu:"ఏ", devanagari:"ए",  cyrillic:"—",  greek:"η",  hebrew:"ֵ",   ethiopic:"ኤ", armenian:"է",  hangul:"ㅔ" },
+  { ipa:"oː", g:"vowels", desc:"long close-mid back vowel",             latin:"ō",  arabic:"—", telugu:"ఓ", devanagari:"ओ",  cyrillic:"—",  greek:"ω",  hebrew:"וֹ",  ethiopic:"ኦ", armenian:"օ",  hangul:"ㅗ" },
+
+  // ── Additional Vowels ─────────────────────────────────────
+  { ipa:"ɨ",  g:"vowels", desc:"close central unrounded vowel",         latin:"—",  arabic:"—", telugu:"—", devanagari:"—", cyrillic:"ы",  greek:"—",  hebrew:"—",  ethiopic:"—", armenian:"—",  hangul:"ㅡ", note:"Russian ы; Romanian â. The central-close slot between /i/ and /u/." },
+  { ipa:"ɯ",  g:"vowels", desc:"close back unrounded vowel",            latin:"—",  arabic:"—", telugu:"—", devanagari:"—", cyrillic:"—",  greek:"—",  hebrew:"—",  ethiopic:"—", armenian:"—",  hangul:"ㅡ", note:"Like /u/ but without lip-rounding. Turkish ı, Japanese /u/, Korean ㅡ." },
+  { ipa:"ɪ",  g:"vowels", desc:"near-close near-front vowel",           latin:"i",  arabic:"—", telugu:"—", devanagari:"—", cyrillic:"—",  greek:"—",  hebrew:"—",  ethiopic:"ኢ", armenian:"—",  hangul:"—", note:"'i' in English 'bit' (vs. /i/ in 'beet')." },
+  { ipa:"ʊ",  g:"vowels", desc:"near-close near-back rounded vowel",    latin:"u",  arabic:"—", telugu:"—", devanagari:"—", cyrillic:"ў",  greek:"—",  hebrew:"—",  ethiopic:"—", armenian:"—",  hangul:"—", note:"'oo' in English 'foot' (vs. /uː/ in 'food')." },
+  { ipa:"ɛ",  g:"vowels", desc:"open-mid front unrounded vowel",        latin:"e",  arabic:"—", telugu:"—", devanagari:"ॅ",  cyrillic:"э",  greek:"ε",  hebrew:"ֶ",   ethiopic:"ኧ", armenian:"ե",  hangul:"ㅐ", note:"'e' in English 'bed'." },
+  { ipa:"ɔ",  g:"vowels", desc:"open-mid back rounded vowel",           latin:"o",  arabic:"—", telugu:"—", devanagari:"ॉ",  cyrillic:"—",  greek:"ο",  hebrew:"ָ",   ethiopic:"—", armenian:"—",  hangul:"ㅓ", note:"'aw' in English 'law' (in some dialects)." },
+  { ipa:"æ",  g:"vowels", desc:"near-open front unrounded vowel",       latin:"a",  arabic:"—", telugu:"—", devanagari:"ऍ",  cyrillic:"—",  greek:"—",  hebrew:"—",  ethiopic:"—", armenian:"—",  hangul:"—", note:"'a' in English 'cat'. Arabic imāla tilts /a/ toward this." },
+  { ipa:"ɐ",  g:"vowels", desc:"near-open central vowel",               latin:"a",  arabic:"—", telugu:"—", devanagari:"—", cyrillic:"а",  greek:"—",  hebrew:"ַ",   ethiopic:"አ", armenian:"ա",  hangul:"ㅏ", note:"Standard German unstressed 'er'." },
+  { ipa:"ɒ",  g:"vowels", desc:"open back rounded vowel",               latin:"o",  arabic:"—", telugu:"—", devanagari:"ऑ",  cyrillic:"—",  greek:"—",  hebrew:"—",  ethiopic:"—", armenian:"—",  hangul:"—", note:"'o' in British English 'lot'." },
+  { ipa:"y",  g:"vowels", desc:"close front rounded vowel",             latin:"ü",  arabic:"—", telugu:"—", devanagari:"—", cyrillic:"—",  greek:"υ",  hebrew:"—",  ethiopic:"—", armenian:"—",  hangul:"ㅟ", note:"German ü, French u, Turkish ü. Ancient/Katharevousa Greek υ = /y/." },
+  { ipa:"ø",  g:"vowels", desc:"close-mid front rounded vowel",         latin:"ö",  arabic:"—", telugu:"—", devanagari:"—", cyrillic:"—",  greek:"—",  hebrew:"—",  ethiopic:"—", armenian:"—",  hangul:"ㅚ", note:"German ö, French eu, Swedish ö." },
+
+  // ── Ejectives (air from larynx; Caucasian, Amharic, Mayan, etc.) ─
+  { ipa:"pʼ", g:"consonants", desc:"ejective bilabial plosive",         latin:"—",  arabic:"—", telugu:"—", devanagari:"—", cyrillic:"—",  greek:"—",  hebrew:"—",  ethiopic:"ጵ", armenian:"—",  hangul:"—", note:"Ejective — glottalized stop with air compressed above the closed glottis. Common in Caucasian, Ethiopian Semitic, and Indigenous American." },
+  { ipa:"tʼ", g:"consonants", desc:"ejective alveolar plosive",         latin:"—",  arabic:"ط", telugu:"—", devanagari:"—", cyrillic:"—",  greek:"—",  hebrew:"ט",  ethiopic:"ጥ", armenian:"—",  hangul:"—", note:"Arabic ط and Hebrew ט are traditionally described as emphatic; historically linked to ejective realizations in Proto-Semitic." },
+  { ipa:"kʼ", g:"consonants", desc:"ejective velar plosive",            latin:"—",  arabic:"—", telugu:"—", devanagari:"—", cyrillic:"—",  greek:"—",  hebrew:"—",  ethiopic:"ቅ", armenian:"—",  hangul:"—" },
+  { ipa:"qʼ", g:"consonants", desc:"ejective uvular plosive",           latin:"—",  arabic:"—", telugu:"—", devanagari:"—", cyrillic:"—",  greek:"—",  hebrew:"—",  ethiopic:"—", armenian:"—",  hangul:"—", note:"Found in NW/NE Caucasian, some Semitic. No script here writes it distinctly." },
+  { ipa:"tsʼ",g:"consonants", desc:"ejective alveolar affricate",       latin:"—",  arabic:"—", telugu:"—", devanagari:"—", cyrillic:"—",  greek:"—",  hebrew:"צ",  ethiopic:"ጽ", armenian:"ծ",  hangul:"—", note:"Hebrew צ (tsade), Ethiopic ጽ, Armenian ծ are historically emphatic/ejective." },
+  { ipa:"tʃʼ",g:"consonants", desc:"ejective postalveolar affricate",   latin:"—",  arabic:"—", telugu:"—", devanagari:"—", cyrillic:"—",  greek:"—",  hebrew:"—",  ethiopic:"ጨ", armenian:"ճ",  hangul:"—" },
+  { ipa:"sʼ", g:"consonants", desc:"ejective alveolar fricative",       latin:"—",  arabic:"ص", telugu:"—", devanagari:"—", cyrillic:"—",  greek:"—",  hebrew:"—",  ethiopic:"ሠ", armenian:"—",  hangul:"—", note:"Arabic ص (ṣād) and Ethiopic ሠ are emphatic/pharyngealized variants of /s/." },
+
+  // ── Implosives (ingressive glottalic airflow) ─────────────
+  { ipa:"ɓ",  g:"consonants", desc:"voiced bilabial implosive",         latin:"—",  arabic:"—", telugu:"—", devanagari:"—", cyrillic:"—",  greek:"—",  hebrew:"—",  ethiopic:"—", armenian:"—",  hangul:"—", note:"Common in West African languages (Fulfulde, Hausa), Sindhi. Lowered-larynx /b/ with 'sucking' quality." },
+  { ipa:"ɗ",  g:"consonants", desc:"voiced alveolar implosive",         latin:"—",  arabic:"—", telugu:"—", devanagari:"—", cyrillic:"—",  greek:"—",  hebrew:"—",  ethiopic:"—", armenian:"—",  hangul:"—" },
+  { ipa:"ʄ",  g:"consonants", desc:"voiced palatal implosive",          latin:"—",  arabic:"—", telugu:"—", devanagari:"—", cyrillic:"—",  greek:"—",  hebrew:"—",  ethiopic:"—", armenian:"—",  hangul:"—", note:"Vietnamese đ partially; Sindhi and some Niger-Congo." },
+  { ipa:"ɠ",  g:"consonants", desc:"voiced velar implosive",            latin:"—",  arabic:"—", telugu:"—", devanagari:"—", cyrillic:"—",  greek:"—",  hebrew:"—",  ethiopic:"—", armenian:"—",  hangul:"—" },
+
+  // ── Clicks (Khoisan, some Bantu) ─────────────────────────
+  { ipa:"ǀ",  g:"consonants", desc:"dental click",                      latin:"c",  arabic:"—", telugu:"—", devanagari:"—", cyrillic:"—",  greek:"—",  hebrew:"—",  ethiopic:"—", armenian:"—",  hangul:"—", note:"'Tsk-tsk' disapproval sound. Latin c in Xhosa/Zulu orthography." },
+  { ipa:"ǁ",  g:"consonants", desc:"lateral click",                     latin:"x",  arabic:"—", telugu:"—", devanagari:"—", cyrillic:"—",  greek:"—",  hebrew:"—",  ethiopic:"—", armenian:"—",  hangul:"—", note:"Sound used to urge on horses. Latin x in Xhosa/Zulu." },
+  { ipa:"ǃ",  g:"consonants", desc:"alveolar click",                    latin:"q",  arabic:"—", telugu:"—", devanagari:"—", cyrillic:"—",  greek:"—",  hebrew:"—",  ethiopic:"—", armenian:"—",  hangul:"—", note:"Sharp pop. Latin q in Xhosa/Zulu. The ǃ in 'Xhosa'." },
+  { ipa:"ǂ",  g:"consonants", desc:"palatal click",                     latin:"—",  arabic:"—", telugu:"—", devanagari:"—", cyrillic:"—",  greek:"—",  hebrew:"—",  ethiopic:"—", armenian:"—",  hangul:"—", note:"Absent from Bantu borrowings; distinctive of Khoisan proper." },
+  { ipa:"ʘ",  g:"consonants", desc:"bilabial click",                    latin:"—",  arabic:"—", telugu:"—", devanagari:"—", cyrillic:"—",  greek:"—",  hebrew:"—",  ethiopic:"—", armenian:"—",  hangul:"—", note:"Kissing-like smack. Only in a handful of Khoisan languages (e.g. ǃXóõ)." },
+
+  // ── Extra Rhotics + Flaps ─────────────────────────────────
+  { ipa:"ɾ",  g:"consonants", desc:"alveolar tap",                      latin:"r",  arabic:"—", telugu:"—", devanagari:"ड़", cyrillic:"р",  greek:"ρ",  hebrew:"—",  ethiopic:"—", armenian:"ր",  hangul:"ㄹ", note:"Single-contact rhotic. Spanish 'pero', Hindi ड़, Korean syllable-onset ㄹ." },
+  { ipa:"ʁ",  g:"consonants", desc:"voiced uvular fricative",           latin:"r",  arabic:"—", telugu:"—", devanagari:"—", cyrillic:"—",  greek:"—",  hebrew:"ר",  ethiopic:"—", armenian:"—",  hangul:"—", note:"Standard French 'r', German 'r' in most dialects, Modern Hebrew ר." },
+  { ipa:"ʀ",  g:"consonants", desc:"uvular trill",                      latin:"—",  arabic:"—", telugu:"—", devanagari:"—", cyrillic:"—",  greek:"—",  hebrew:"—",  ethiopic:"—", armenian:"—",  hangul:"—", note:"Northern French, some German dialects, older standard Parisian." },
+  { ipa:"ɽ",  g:"consonants", desc:"retroflex flap",                    latin:"—",  arabic:"—", telugu:"ఱ", devanagari:"ड़", cyrillic:"—",  greek:"—",  hebrew:"—",  ethiopic:"—", armenian:"—",  hangul:"—", note:"Indic retroflex flap. Telugu ఱ (rare), Hindi ड़ (standard)." },
+
+  // ── Additional Nasals / Fricatives ────────────────────────
+  { ipa:"ɴ",  g:"consonants", desc:"uvular nasal",                      latin:"—",  arabic:"—", telugu:"—", devanagari:"—", cyrillic:"—",  greek:"—",  hebrew:"—",  ethiopic:"—", armenian:"—",  hangul:"ㄴ", note:"Japanese syllable-final ん before /k, g/; also Inuit." },
+  { ipa:"ɸ",  g:"consonants", desc:"voiceless bilabial fricative",      latin:"—",  arabic:"—", telugu:"—", devanagari:"—", cyrillic:"—",  greek:"φ",  hebrew:"—",  ethiopic:"—", armenian:"—",  hangul:"—", note:"Classical Greek φ (before shift to /f/). Japanese 'f' is near-ɸ." },
+  { ipa:"β",  g:"consonants", desc:"voiced bilabial fricative",         latin:"—",  arabic:"—", telugu:"—", devanagari:"—", cyrillic:"—",  greek:"β",  hebrew:"ב",  ethiopic:"—", armenian:"—",  hangul:"—", note:"Ancient Greek β; Spanish b/v between vowels; Hebrew ב without dagesh historically /β/ → /v/." },
+];
+
+const COLS = ["latin", "arabic", "telugu", "devanagari", "cyrillic", "greek", "hebrew", "ethiopic", "armenian", "hangul"];
+const COL_LABELS = { latin:"Latin", arabic:"Arabic", telugu:"Telugu", devanagari:"Devanāgarī", cyrillic:"Cyrillic", greek:"Greek", hebrew:"Hebrew", ethiopic:"Ethiopic", armenian:"Armenian", hangul:"Hangul" };
+
+let highlightedLang = null;  // language id being highlighted, or null
+let highlightedInventory = null;  // Set of IPA symbols for that language
+
+function render() {
+  const q = document.getElementById("search").value.trim().toLowerCase();
+  const showNotes = document.getElementById("showNotes").checked;
+  const bodies = { consonants: document.getElementById("consonants-body"), vowels: document.getElementById("vowels-body") };
+  bodies.consonants.innerHTML = "";
+  bodies.vowels.innerHTML = "";
+
+  const match = (p) => {
+    if (!q) return true;
+    const hay = [p.ipa, p.desc, ...COLS.map(c => p[c]), p.note || ""].join(" ").toLowerCase();
+    return hay.includes(q);
+  };
+
+  PHONEMES.filter(match).forEach(p => {
+    const tr = document.createElement("tr");
+    tr.className = "phoneme-row";
+    if (highlightedInventory && highlightedInventory.has(p.ipa)) tr.classList.add("in-inventory");
+    const ipaCell = `<td class="col-ipa"><span>${p.ipa}</span><button class="ipa-play" data-ipa="${p.ipa}" title="Hear this sound (Wikipedia)" aria-label="Play audio for ${p.ipa}">▶</button></td>`;
+    const descCell = `<td class="col-desc">${p.desc}</td>`;
+    const scriptCells = COLS.map(c => {
+      const v = p[c];
+      const isEmpty = v === "—";
+      return `<td class="col-script${isEmpty ? " empty" : ""}" data-copy="${v.replace(/"/g,'&quot;')}" data-name="${p.ipa}">${v}</td>`;
+    }).join("");
+    tr.innerHTML = ipaCell + descCell + scriptCells;
+    bodies[p.g].appendChild(tr);
+
+    if (showNotes && p.note) {
+      const nr = document.createElement("tr");
+      nr.className = "note-row";
+      nr.innerHTML = `<td colspan="12"><div class="note">${p.note}</div></td>`;
+      bodies[p.g].appendChild(nr);
+    }
+  });
+}
+
+function applyLangHighlight(id, displayName) {
+  if (id && typeof LANG_PHONEMES !== "undefined" && LANG_PHONEMES[id]) {
+    highlightedLang = id;
+    highlightedInventory = new Set(LANG_PHONEMES[id]);
+    document.body.classList.add("highlight-mode");
+    document.getElementById("lang-highlight").style.display = "flex";
+    document.getElementById("lang-highlight-name").textContent = displayName || id;
+  } else {
+    highlightedLang = null;
+    highlightedInventory = null;
+    document.body.classList.remove("highlight-mode");
+    document.getElementById("lang-highlight").style.display = "none";
+  }
+  render();
+}
+
+function parseLangHash() {
+  const m = location.hash.match(/^#lang=([a-zA-Z0-9_-]+)(?:&name=([^&]+))?/);
+  if (m) {
+    const name = m[2] ? decodeURIComponent(m[2]) : m[1];
+    applyLangHighlight(m[1], name);
+  } else {
+    applyLangHighlight(null);
+  }
+}
+
+const toast = document.getElementById("toast");
+function showToast(msg) {
+  toast.textContent = msg;
+  toast.classList.add("show");
+  clearTimeout(showToast._t);
+  showToast._t = setTimeout(() => toast.classList.remove("show"), 900);
+}
+
+document.addEventListener("click", (e) => {
+  const cell = e.target.closest(".col-script");
+  if (!cell || cell.classList.contains("empty")) return;
+  const v = cell.dataset.copy;
+  navigator.clipboard?.writeText(v).then(() => {
+    cell.classList.add("copied");
+    setTimeout(() => cell.classList.remove("copied"), 400);
+    showToast(`Copied ${v}`);
+  }).catch(() => {
+    const ta = document.createElement("textarea");
+    ta.value = v; document.body.appendChild(ta); ta.select();
+    try { document.execCommand("copy"); showToast(`Copied ${v}`); } catch(_) {}
+    document.body.removeChild(ta);
+  });
+});
+
+document.getElementById("search").addEventListener("input", render);
+document.getElementById("showNotes").addEventListener("change", render);
+document.getElementById("lang-highlight-clear").addEventListener("click", (e) => {
+  e.preventDefault();
+  history.replaceState(null, "", location.pathname + location.search);
+  applyLangHighlight(null);
+});
+window.addEventListener("hashchange", parseLangHash);
+parseLangHash();
+render();
+
+// ═══════════════════════════════════════════════════════════════
+// Audio playback via Wikimedia Commons
+// ═══════════════════════════════════════════════════════════════
+function normalizeAudioName(desc) {
+  let name = desc.toLowerCase().trim();
+  name = name.replace(/\s*\([^)]*\)\s*/g, " ").trim();     // drop parentheticals
+  name = name.replace(/dental\/alveolar/g, "alveolar");    // unify combined
+  name = name.replace(/front\/central/g, "front");
+  if (name.includes("/")) name = name.split("/")[0].trim();
+  // Reorder "ejective X Y" → "X Y ejective" (Wikipedia convention)
+  name = name.replace(/^ejective\s+(.+?)\s+(plosive|affricate|fricative)$/, "$1 ejective $2");
+  // Reorder "implosive X Y" → "X Y implosive"
+  name = name.replace(/^implosive\s+(.+?)\s+(plosive|affricate)$/, "$1 implosive");
+  name = name.charAt(0).toUpperCase() + name.slice(1);
+  return name.replace(/\s+/g, "_");
+}
+function audioUrlFor(phoneme) {
+  return `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(normalizeAudioName(phoneme.desc))}.ogg`;
+}
+function wikiUrlFor(phoneme) {
+  return `https://en.wikipedia.org/wiki/${encodeURIComponent(normalizeAudioName(phoneme.desc))}`;
+}
+
+let currentAudio = null;
+function playPhonemeAudio(phoneme, btn) {
+  if (currentAudio) { try { currentAudio.pause(); } catch(_) {} currentAudio = null; }
+  document.querySelectorAll(".ipa-play.playing").forEach(b => b.classList.remove("playing"));
+  btn.classList.remove("failed");
+
+  const audio = new Audio(audioUrlFor(phoneme));
+  currentAudio = audio;
+  btn.classList.add("playing");
+  audio.play().then(() => {
+    audio.addEventListener("ended", () => btn.classList.remove("playing"));
+  }).catch(() => {
+    btn.classList.remove("playing");
+    btn.classList.add("failed");
+    // Fall back: open Wikipedia article
+    window.open(wikiUrlFor(phoneme), "_blank", "noopener");
+  });
+}
+
+document.addEventListener("click", (e) => {
+  const playBtn = e.target.closest(".ipa-play");
+  if (playBtn) {
+    e.stopPropagation();
+    const ipa = playBtn.dataset.ipa;
+    const phoneme = PHONEMES.find(p => p.ipa === ipa);
+    if (phoneme) playPhonemeAudio(phoneme, playBtn);
+  }
+});
+
+// ═══════════════════════════════════════════════════════════════
+// Reverse phoneme lookup — click an IPA symbol to see which
+// inventoried languages contain it.
+// ═══════════════════════════════════════════════════════════════
+function findLanguagesWithPhoneme(ipa) {
+  if (typeof LANG_PHONEMES === "undefined") return [];
+  const langLookup = typeof LANGUAGES !== "undefined"
+    ? Object.fromEntries(LANGUAGES.map(l => [l.id, l]))
+    : {};
+  const matches = [];
+  for (const [id, phonemes] of Object.entries(LANG_PHONEMES)) {
+    if (phonemes.includes(ipa)) {
+      matches.push({ id, lang: langLookup[id] || { id, name: id, family: ["Unknown"] } });
+    }
+  }
+  return matches;
+}
+
+function groupByFamily(matches) {
+  const groups = {};
+  for (const m of matches) {
+    const family = m.lang.family ? m.lang.family[0] : "Unknown";
+    (groups[family] = groups[family] || []).push(m);
+  }
+  // Sort families by member count desc, and languages within alphabetically
+  return Object.entries(groups)
+    .sort((a, b) => b[1].length - a[1].length)
+    .map(([family, items]) => ({ family, items: items.sort((a, b) => a.lang.name.localeCompare(b.lang.name)) }));
+}
+
+function openReverseLookup(phoneme) {
+  const pop = document.getElementById("reverse-popover");
+  const sym = document.getElementById("rp-sym");
+  const desc = document.getElementById("rp-desc");
+  const body = document.getElementById("rp-body");
+
+  sym.textContent = phoneme.ipa;
+  desc.textContent = phoneme.desc;
+
+  const matches = findLanguagesWithPhoneme(phoneme.ipa);
+  const totalInventoried = typeof LANG_PHONEMES !== "undefined" ? Object.keys(LANG_PHONEMES).length : 0;
+
+  if (!matches.length) {
+    body.innerHTML = `<div class="rp-empty">None of the ${totalInventoried} inventoried languages have this phoneme.</div>
+                     <div class="rp-total">Absent from all inventoried languages</div>`;
+  } else {
+    const grouped = groupByFamily(matches);
+    const famHtml = grouped.map(({ family, items }) => {
+      const langsHtml = items.map(m => `<div class="rp-lang">${m.lang.name}<span class="rp-lang-id">${m.id}</span></div>`).join("");
+      return `<div class="rp-family">
+        <div class="rp-family-name">${family} (${items.length})</div>
+        ${langsHtml}
+      </div>`;
+    }).join("");
+    body.innerHTML = famHtml + `<div class="rp-total">${matches.length} of ${totalInventoried} inventoried languages</div>`;
+  }
+
+  pop.classList.add("show");
+
+  // Mark which cell is active
+  document.querySelectorAll(".col-ipa.active-lookup").forEach(c => c.classList.remove("active-lookup"));
+  document.querySelectorAll(`.col-ipa`).forEach(c => {
+    if (c.querySelector("span")?.textContent === phoneme.ipa) c.classList.add("active-lookup");
+  });
+}
+
+function closeReverseLookup() {
+  document.getElementById("reverse-popover").classList.remove("show");
+  document.querySelectorAll(".col-ipa.active-lookup").forEach(c => c.classList.remove("active-lookup"));
+}
+
+document.addEventListener("click", (e) => {
+  const ipaCell = e.target.closest(".col-ipa");
+  if (ipaCell) {
+    const ipaSym = ipaCell.querySelector("span")?.textContent;
+    const phoneme = PHONEMES.find(p => p.ipa === ipaSym);
+    if (phoneme) {
+      e.stopPropagation();
+      openReverseLookup(phoneme);
+    }
+  }
+});
+
+document.getElementById("rp-close").addEventListener("click", closeReverseLookup);
+
+// Close popover on escape
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") closeReverseLookup();
+});
+
+// ═══════════════════════════════════════════════════════════════
+// Statistics
+// ═══════════════════════════════════════════════════════════════
+
+const SCRIPTS = COLS.slice();
+const SCRIPT_COLORS = {
+  latin:"#8fa3ba", arabic:"#d4a24c", telugu:"#10b981", devanagari:"#c084fc",
+  cyrillic:"#ef4444", greek:"#38bdf8", hebrew:"#f59e0b", ethiopic:"#84cc16",
+  armenian:"#a78bfa", hangul:"#f472b6",
+};
+const PLACES = ["bilabial","labiodental","dental","alveolar","postalveolar","retroflex","palatal","velar","uvular","pharyngeal","glottal"];
+const MANNERS = ["plosive","nasal","fricative","affricate","approximant","lateral","trill","tap","flap","click","ejective","implosive"];
+
+function features(p) {
+  const d = p.desc.toLowerCase();
+  const voicing = d.includes("voiceless") ? "voiceless" : (d.includes("voiced") ? "voiced" : null);
+  const places = PLACES.filter(pl => d.includes(pl));
+  if (d.includes("labio-velar")) places.push("velar");
+  // check distinctive manners first, then fall back
+  let manner = null;
+  if (d.includes("click")) manner = "click";
+  else if (d.includes("ejective")) manner = "ejective";
+  else if (d.includes("implosive")) manner = "implosive";
+  else if (d.includes("tap")) manner = "tap";
+  else if (d.includes("flap")) manner = "flap";
+  else manner = MANNERS.find(m => d.includes(m)) || (d.includes("stop") ? "plosive" : null);
+  const height = ["near-close","near-open","open-mid","close-mid","open","close","mid"].find(h => d.includes(h));
+  const frontness = ["near-front","near-back","front","central","back"].find(f => d.includes(f));
+  return { voicing, places, manner, height, frontness };
+}
+
+function has(p, s) { return p[s] && p[s] !== "—"; }
+
+function renderCoverage() {
+  const total = PHONEMES.length;
+  const rows = SCRIPTS.map(s => {
+    const covered = PHONEMES.filter(p => has(p, s)).length;
+    const pct = Math.round((covered / total) * 100);
+    return `<div class="stat-row">
+      <div class="label">${COL_LABELS[s]}</div>
+      <div class="bar"><div class="fill ${s}" style="width:${pct}%"></div></div>
+      <div class="count">${covered}/${total} · ${pct}%</div>
+    </div>`;
+  }).join("");
+  document.getElementById("coverage").innerHTML = rows;
+}
+
+// Histogram: how many phonemes are in N scripts, for N = 0..SCRIPTS.length
+function renderOverlap() {
+  const n = SCRIPTS.length;
+  const counts = new Array(n + 1).fill(0);
+  for (const p of PHONEMES) {
+    const k = SCRIPTS.filter(s => has(p, s)).length;
+    counts[k]++;
+  }
+  const max = Math.max(...counts);
+  const rows = [];
+  for (let k = n; k >= 0; k--) {
+    const pct = max ? Math.round((counts[k] / max) * 100) : 0;
+    const label = k === n ? `all ${n}` : k === 0 ? "none" : `${k}`;
+    const cls = k === n ? "all" : "";
+    rows.push(`<div class="hist-row">
+      <div class="nbox ${cls}">${label}</div>
+      <div class="hbar"><div class="hbar-fill" style="width:${pct}%;background:${k === n ? 'var(--active)' : k >= Math.floor(n*0.7) ? '#10b981' : k >= Math.floor(n*0.4) ? '#d4a24c' : '#b85858'}"></div></div>
+      <div class="ncount">${counts[k]}</div>
+    </div>`);
+  }
+  document.getElementById("overlap").innerHTML = `<div class="histogram">${rows.join("")}</div>`;
+}
+
+function renderGroupedCoverage(targetId, group, orderArr, featureKey) {
+  const groups = {};
+  for (const p of PHONEMES) {
+    if (p.g !== group) continue;
+    const f = features(p);
+    const key = f[featureKey] || "other";
+    groups[key] = groups[key] || { total: 0, covered: Object.fromEntries(SCRIPTS.map(s => [s, 0])) };
+    groups[key].total++;
+    for (const s of SCRIPTS) if (has(p, s)) groups[key].covered[s]++;
+  }
+  const html = orderArr.filter(k => groups[k]).map(k => {
+    const row = groups[k];
+    const cells = SCRIPTS.map(s => {
+      const ok = row.covered[s];
+      const covered = ok === row.total;
+      const partial = ok > 0 && ok < row.total;
+      const style = covered ? `background:${SCRIPT_COLORS[s]}` :
+                    partial ? `background:${SCRIPT_COLORS[s]};opacity:${0.3 + 0.7 * (ok/row.total)}` :
+                    "";
+      return `<div class="heat-cell ${ok ? '' : 'off'}" style="${style}" title="${COL_LABELS[s]}: ${ok}/${row.total}"></div>`;
+    }).join("");
+    return `<div class="stat-row" style="grid-template-columns: 90px 1fr 30px">
+      <div class="label" style="font-size:12.5px">${k}</div>
+      <div class="heat-strip">${cells}</div>
+      <div class="count">${row.total}</div>
+    </div>`;
+  }).join("");
+  document.getElementById(targetId).innerHTML = html;
+}
+
+function renderByManner() {
+  renderGroupedCoverage("by-manner", "consonants", MANNERS.concat(["other"]), "manner");
+}
+function renderByHeight() {
+  renderGroupedCoverage("by-height", "vowels", ["close","near-close","close-mid","mid","open-mid","near-open","open","other"], "height");
+}
+
+function renderIpaGrid() {
+  // place × manner; split voiceless/voiced within each cell
+  const cells = {};
+  for (const p of PHONEMES) {
+    if (p.g !== "consonants") continue;
+    const f = features(p);
+    if (!f.manner) continue;
+    const place = f.places[0] || "other";
+    const key = `${f.manner}|${place}`;
+    (cells[key] = cells[key] || []).push({ p, voicing: f.voicing });
+  }
+  // show only places that actually appear, in canonical order
+  const usedPlaces = PLACES.filter(pl => PHONEMES.some(p => p.g === "consonants" && features(p).places.includes(pl)));
+  const usedManners = MANNERS.filter(m => PHONEMES.some(p => p.g === "consonants" && features(p).manner === m));
+
+  const thead = `<thead><tr><th></th>${usedPlaces.map(pl => `<th>${pl.slice(0,4)}</th>`).join("")}</tr></thead>`;
+  const rows = usedManners.map(m => {
+    const tds = usedPlaces.map(pl => {
+      const entries = cells[`${m}|${pl}`] || [];
+      if (!entries.length) return `<td></td>`;
+      // sort: voiceless first, then voiced, then others
+      entries.sort((a, b) => {
+        const ord = v => v === "voiceless" ? 0 : v === "voiced" ? 1 : 2;
+        return ord(a.voicing) - ord(b.voicing);
+      });
+      const inner = `<div class="ipa-cell"><div class="ipa-pair">${
+        entries.map(({p}) => {
+          const dots = SCRIPTS.map(s => `<span class="ipa-dot ${has(p,s) ? 'has-'+s : ''}" title="${s}: ${has(p,s) ? p[s] : 'not covered'}"></span>`).join("");
+          return `<div class="ipa-phoneme"><span class="sym">${p.ipa}</span><span class="ipa-dots">${dots}</span></div>`;
+        }).join("")
+      }</div></div>`;
+      return `<td>${inner}</td>`;
+    }).join("");
+    return `<tr><th>${m}</th>${tds}</tr>`;
+  }).join("");
+  document.getElementById("ipa-grid").innerHTML = thead + `<tbody>${rows}</tbody>`;
+}
+
+function renderIpaLegend() {
+  const html = SCRIPTS.map(s => `<span><span class="ipa-dot has-${s}"></span>${COL_LABELS[s]}</span>`).join("") +
+               `<span><span class="ipa-dot"></span>not covered</span>`;
+  document.getElementById("ipa-legend").innerHTML = html;
+}
+
+function renderStats() {
+  renderCoverage();
+  renderOverlap();
+  renderByManner();
+  renderByHeight();
+  renderIpaGrid();
+  renderIpaLegend();
+}
+renderStats();
+</script>
+</body>
+</html>
