@@ -3,52 +3,62 @@
     {
       "slug": "africa",
       "title": "Africa",
-      "blurb": "Ife, Benin, Great Zimbabwe, Lalibela, Djenné."
+      "blurb": "Ife, Benin, Great Zimbabwe, Lalibela, Djenné.",
+      "continent": "Africa"
     },
     {
       "slug": "egypt-nubia",
       "title": "Egypt & Nubia",
-      "blurb": "Pyramids, Nefertiti, Karnak, Abu Simbel, Meroë."
+      "blurb": "Pyramids, Nefertiti, Karnak, Abu Simbel, Meroë.",
+      "continent": "Africa"
     },
     {
       "slug": "mesopotamia-persia",
       "title": "Mesopotamia & Persia",
-      "blurb": "Ishtar Gate, Hammurabi, Lamassu, Persepolis."
+      "blurb": "Ishtar Gate, Hammurabi, Lamassu, Persepolis.",
+      "continent": "Near East & Mediterranean"
     },
     {
       "slug": "mediterranean",
       "title": "Mediterranean",
-      "blurb": "Parthenon, Venus de Milo, Laocoön, Pompeii."
+      "blurb": "Parthenon, Venus de Milo, Laocoön, Pompeii.",
+      "continent": "Near East & Mediterranean"
     },
     {
       "slug": "europe",
       "title": "Europe",
-      "blurb": "Kells, Chartres, Sistine Chapel, Rembrandt, Van Gogh."
+      "blurb": "Kells, Chartres, Sistine Chapel, Rembrandt, Van Gogh.",
+      "continent": "Europe & Islamic World"
     },
     {
       "slug": "islamic-world",
       "title": "Islamic World",
-      "blurb": "Alhambra, Dome of the Rock, Córdoba, Isfahan."
+      "blurb": "Alhambra, Dome of the Rock, Córdoba, Isfahan.",
+      "continent": "Europe & Islamic World"
     },
     {
       "slug": "south-asia",
       "title": "South Asia",
-      "blurb": "Taj Mahal, Ajanta, Khajuraho, Chola bronze, Sanchi."
+      "blurb": "Taj Mahal, Ajanta, Khajuraho, Chola bronze, Sanchi.",
+      "continent": "Asia & Pacific"
     },
     {
       "slug": "east-asia",
       "title": "East Asia",
-      "blurb": "Terracotta Army, Forbidden City, Hokusai, Hōryū-ji."
+      "blurb": "Terracotta Army, Forbidden City, Hokusai, Hōryū-ji.",
+      "continent": "Asia & Pacific"
     },
     {
       "slug": "southeast-asia-oceania",
       "title": "Southeast Asia & Oceania",
-      "blurb": "Angkor Wat, Borobudur, Bagan, Moai, Aboriginal rock art."
+      "blurb": "Angkor Wat, Borobudur, Bagan, Moai, Aboriginal rock art.",
+      "continent": "Asia & Pacific"
     },
     {
       "slug": "americas",
       "title": "Americas",
-      "blurb": "Teotihuacan, Palenque, Sun Stone, Machu Picchu, Nazca."
+      "blurb": "Teotihuacan, Palenque, Sun Stone, Machu Picchu, Nazca.",
+      "continent": "Americas"
     }
   ],
   "museums": [
