@@ -577,6 +577,18 @@
       "description": "Religion of the Pacific Northwest peoples. Raven is the great trickster-culture-hero. Totemic animals have supernatural counterparts; the Thunderbird is cosmic guardian."
     },
     {
+      "id": "sikh",
+      "name": "Sikh",
+      "region": "Punjab / Diaspora",
+      "active_from": 1500,
+      "active_to": 2025,
+      "peak_from": 1700,
+      "peak_to": 2025,
+      "color": "#5a6aa0",
+      "description": "Founded by Guru Nanak (1469–1539). Monotheistic — one formless Ik Onkar. The ten human Gurus transmitted the teaching; since 1708 the Guru Granth Sahib (scripture) is the eternal Guru. Figures listed here are historical Gurus, not deities.",
+      "category": "abrahamic"
+    },
+    {
       "id": "deified-humans",
       "name": "Deified Humans",
       "region": "Various",
@@ -660,7 +672,8 @@
         "guabancex",
         "horagalles",
         "namarrgon",
-        "thunderbird"
+        "thunderbird",
+        "huracan"
       ]
     },
     {
@@ -744,7 +757,8 @@
         "oshun",
         "astghik",
         "al-uzza",
-        "erzulie"
+        "erzulie",
+        "turan"
       ]
     },
     {
@@ -788,7 +802,8 @@
         "maketaori",
         "arawn",
         "anguta",
-        "owuo"
+        "owuo",
+        "yanluo"
       ]
     },
     {
@@ -861,7 +876,8 @@
         "nyame",
         "bathala",
         "father-of-greatness",
-        "raven"
+        "raven",
+        "huracan"
       ]
     },
     {
@@ -917,7 +933,9 @@
         "kvasir",
         "wenchang",
         "brihaspati",
-        "fukurokuju"
+        "fukurokuju",
+        "nisaba",
+        "narada"
       ]
     },
     {
@@ -935,7 +953,8 @@
         "illuyanka",
         "kay-kay-vilu",
         "rainbow-serpent",
-        "damballa"
+        "damballa",
+        "simargl"
       ]
     }
   ],
@@ -20408,6 +20427,1220 @@
       "parallels": [],
       "description": "First of 24 Jain Tirthankaras. In Jain cosmology he discovered agriculture, law, and kingship before renouncing all; in later Hindu scripture he was absorbed as an avatar of Vishnu.",
       "wiki_title": "Rishabhanatha"
+    },
+    {
+      "id": "ik-onkar",
+      "name": "Ik Onkar",
+      "pantheon": "sikh",
+      "category": "abrahamic",
+      "gender": "N",
+      "domains": [
+        "the-one",
+        "formless-absolute"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [
+        "ein-sof",
+        "monad"
+      ],
+      "description": "'One God'. The formless Absolute of Sikhism. First words of the Guru Granth Sahib. Not anthropomorphic; neither masculine nor feminine.",
+      "wiki_title": "Ik Onkar"
+    },
+    {
+      "id": "guru-nanak",
+      "name": "Guru Nanak",
+      "pantheon": "sikh",
+      "category": "abrahamic",
+      "gender": "M",
+      "domains": [
+        "founder",
+        "first-guru"
+      ],
+      "parents": [
+        "kalu-mehta",
+        "tripta"
+      ],
+      "consorts": [
+        "mata-sulakhani"
+      ],
+      "children": [
+        "sri-chand",
+        "lakhmi-das"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "1469–1539. Founder of Sikhism. 'Na koi Hindu, na koi Musalman' — there is neither Hindu nor Muslim.",
+      "wiki_title": "Guru Nanak"
+    },
+    {
+      "id": "guru-angad",
+      "name": "Guru Angad",
+      "pantheon": "sikh",
+      "category": "abrahamic",
+      "gender": "M",
+      "domains": [
+        "second-guru",
+        "gurmukhi-script"
+      ],
+      "parents": [],
+      "consorts": [
+        "mata-khivi"
+      ],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "1504–1552. Codified the Gurmukhi script used to write Punjabi and the Guru Granth Sahib.",
+      "wiki_title": "Guru Angad"
+    },
+    {
+      "id": "guru-amar-das",
+      "name": "Guru Amar Das",
+      "pantheon": "sikh",
+      "category": "abrahamic",
+      "gender": "M",
+      "domains": [
+        "third-guru",
+        "langar"
+      ],
+      "parents": [],
+      "consorts": [
+        "mata-mansa-devi"
+      ],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "1479–1574. Institutionalized the free community kitchen (langar) — every visitor, regardless of caste, ate together before meeting the Guru.",
+      "wiki_title": "Guru Amar Das"
+    },
+    {
+      "id": "guru-ram-das",
+      "name": "Guru Ram Das",
+      "pantheon": "sikh",
+      "category": "abrahamic",
+      "gender": "M",
+      "domains": [
+        "fourth-guru",
+        "amritsar"
+      ],
+      "parents": [],
+      "consorts": [
+        "mata-bhani"
+      ],
+      "children": [
+        "prithi-chand",
+        "mahadev",
+        "guru-arjan"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "1534–1581. Founded the city of Amritsar — site of the Golden Temple.",
+      "wiki_title": "Guru Ram Das"
+    },
+    {
+      "id": "guru-arjan",
+      "name": "Guru Arjan",
+      "pantheon": "sikh",
+      "category": "abrahamic",
+      "gender": "M",
+      "domains": [
+        "fifth-guru",
+        "martyr",
+        "compiler-of-scripture"
+      ],
+      "parents": [
+        "guru-ram-das",
+        "mata-bhani"
+      ],
+      "consorts": [
+        "mata-ganga"
+      ],
+      "children": [
+        "guru-hargobind"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "1563–1606. Compiled the Adi Granth (first scripture). Tortured to death under Emperor Jahangir — Sikhism's first martyr.",
+      "wiki_title": "Guru Arjan"
+    },
+    {
+      "id": "guru-hargobind",
+      "name": "Guru Hargobind",
+      "pantheon": "sikh",
+      "category": "abrahamic",
+      "gender": "M",
+      "domains": [
+        "sixth-guru",
+        "militarized-sikhism"
+      ],
+      "parents": [
+        "guru-arjan",
+        "mata-ganga"
+      ],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "1595–1644. Wore two swords — spiritual authority and temporal power (miri-piri). Response to his father's martyrdom.",
+      "wiki_title": "Guru Hargobind"
+    },
+    {
+      "id": "guru-har-rai",
+      "name": "Guru Har Rai",
+      "pantheon": "sikh",
+      "category": "abrahamic",
+      "gender": "M",
+      "domains": [
+        "seventh-guru",
+        "medicine",
+        "gentleness"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [
+        "guru-har-krishan",
+        "ram-rai"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "1630–1661. Known for establishing free medical care; sheltered the Mughal prince Dara Shikoh.",
+      "wiki_title": "Guru Har Rai"
+    },
+    {
+      "id": "guru-har-krishan",
+      "name": "Guru Har Krishan",
+      "pantheon": "sikh",
+      "category": "abrahamic",
+      "gender": "M",
+      "domains": [
+        "eighth-guru",
+        "child-guru"
+      ],
+      "parents": [
+        "guru-har-rai"
+      ],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "1656–1664. Became Guru at age 5; died of smallpox at 8 while tending to Delhi's plague sick.",
+      "wiki_title": "Guru Har Krishan"
+    },
+    {
+      "id": "guru-tegh-bahadur",
+      "name": "Guru Tegh Bahadur",
+      "pantheon": "sikh",
+      "category": "abrahamic",
+      "gender": "M",
+      "domains": [
+        "ninth-guru",
+        "martyr",
+        "religious-freedom"
+      ],
+      "parents": [
+        "guru-hargobind"
+      ],
+      "consorts": [
+        "mata-gujri"
+      ],
+      "children": [
+        "guru-gobind-singh"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "1621–1675. Beheaded in Delhi for refusing to convert to Islam — defending Hindu Kashmiris' right to their faith.",
+      "wiki_title": "Guru Tegh Bahadur"
+    },
+    {
+      "id": "guru-gobind-singh",
+      "name": "Guru Gobind Singh",
+      "pantheon": "sikh",
+      "category": "abrahamic",
+      "gender": "M",
+      "domains": [
+        "tenth-guru",
+        "khalsa-founder",
+        "warrior-scholar"
+      ],
+      "parents": [
+        "guru-tegh-bahadur",
+        "mata-gujri"
+      ],
+      "consorts": [
+        "mata-sundari",
+        "mata-jito",
+        "mata-sahib"
+      ],
+      "children": [
+        "ajit-singh",
+        "jujhar-singh",
+        "zorawar-singh",
+        "fateh-singh"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "1666–1708. Founded the Khalsa (1699). Lost all four sons to Mughal persecution. Declared the Guru Granth Sahib the eternal Guru after him.",
+      "wiki_title": "Guru Gobind Singh"
+    },
+    {
+      "id": "lu-dongbin",
+      "name": "Lü Dongbin",
+      "pantheon": "chinese",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "sword",
+        "scholar",
+        "leader-of-immortals"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Leader of the Eight Immortals. Scholar-poet; carries a demon-slaying sword. Patron of barbers and the ill.",
+      "wiki_title": "Lü Dongbin"
+    },
+    {
+      "id": "li-tieguai",
+      "name": "Li Tieguai",
+      "pantheon": "chinese",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "crippled",
+        "medicine",
+        "beggars"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Crippled beggar with an iron crutch. Medicine gourd holds elixirs for the afflicted.",
+      "wiki_title": "Li Tieguai"
+    },
+    {
+      "id": "zhongli-quan",
+      "name": "Zhongli Quan",
+      "pantheon": "chinese",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "fan",
+        "resurrection",
+        "alchemy"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Chief of the Eight Immortals. His magic fan revives the dead and transforms stones into gold.",
+      "wiki_title": "Zhongli Quan"
+    },
+    {
+      "id": "lan-caihe",
+      "name": "Lan Caihe",
+      "pantheon": "chinese",
+      "category": "minor",
+      "gender": "N",
+      "domains": [
+        "flowers",
+        "gender-ambiguous",
+        "minstrel"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Flower-basket-carrying minstrel of indeterminate gender and age. Patron of florists.",
+      "wiki_title": "Lan Caihe"
+    },
+    {
+      "id": "zhang-guolao",
+      "name": "Zhang Guolao",
+      "pantheon": "chinese",
+      "category": "minor",
+      "gender": "M",
+      "domains": [
+        "elderly",
+        "donkey-riding",
+        "bamboo-drum"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Ancient hermit who rode his donkey backwards. Carries a bamboo drum-tube.",
+      "wiki_title": "Zhang Guolao"
+    },
+    {
+      "id": "he-xiangu",
+      "name": "He Xiangu",
+      "pantheon": "chinese",
+      "category": "minor",
+      "gender": "F",
+      "domains": [
+        "purity",
+        "lotus",
+        "virgin"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Only regularly female Immortal. Carries a lotus; gained immortality after eating mica powder.",
+      "wiki_title": "He Xiangu"
+    },
+    {
+      "id": "han-xiangzi",
+      "name": "Han Xiangzi",
+      "pantheon": "chinese",
+      "category": "minor",
+      "gender": "M",
+      "domains": [
+        "flute",
+        "music",
+        "nature"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Flute-playing Immortal. Music could cause flowers to bloom instantly. Patron of musicians.",
+      "wiki_title": "Han Xiangzi"
+    },
+    {
+      "id": "cao-guojiu",
+      "name": "Cao Guojiu",
+      "pantheon": "chinese",
+      "category": "minor",
+      "gender": "M",
+      "domains": [
+        "jade-tablet",
+        "nobility",
+        "theater"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Emperor's brother-in-law turned Immortal. Carries a jade tablet; patron of actors.",
+      "wiki_title": "Cao Guojiu"
+    },
+    {
+      "id": "yanluo",
+      "name": "Yanluo Wang",
+      "pantheon": "chinese",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "underworld-king",
+        "judge-of-dead"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": "underworld-ruler",
+      "parallels": [
+        "yama"
+      ],
+      "description": "King Yama of Chinese folk religion — fifth and chief judge of the ten courts of hell. Buddhist borrowing from Hindu Yama.",
+      "wiki_title": "Yama (East Asia)"
+    },
+    {
+      "id": "taiyi-shangren",
+      "name": "Taiyi Shangren",
+      "pantheon": "chinese",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "supreme-one",
+        "astronomy",
+        "taoism"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "'Great Unity' — personified pole star, supreme deity in some Taoist schools.",
+      "wiki_title": "Taiyi"
+    },
+    {
+      "id": "vasistha",
+      "name": "Vasistha",
+      "pantheon": "hindu",
+      "category": "minor",
+      "gender": "M",
+      "domains": [
+        "saptarishi",
+        "royal-priest"
+      ],
+      "parents": [
+        "brahma"
+      ],
+      "consorts": [
+        "arundhati"
+      ],
+      "children": [
+        "shakti-maharishi"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "One of the Saptarishi. Royal preceptor of the Raghu dynasty (including Rama).",
+      "wiki_title": "Vasishtha"
+    },
+    {
+      "id": "vishvamitra",
+      "name": "Vishvamitra",
+      "pantheon": "hindu",
+      "category": "minor",
+      "gender": "M",
+      "domains": [
+        "saptarishi",
+        "warrior-turned-sage"
+      ],
+      "parents": [],
+      "consorts": [
+        "menaka"
+      ],
+      "children": [
+        "shakuntala"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "Began as a king; through penance became a Brahmarishi — the only kshatriya to achieve the highest rank.",
+      "wiki_title": "Vishvamitra"
+    },
+    {
+      "id": "bhrigu",
+      "name": "Bhrigu",
+      "pantheon": "hindu",
+      "category": "minor",
+      "gender": "M",
+      "domains": [
+        "saptarishi",
+        "astrology",
+        "sage"
+      ],
+      "parents": [
+        "brahma"
+      ],
+      "consorts": [
+        "khyati"
+      ],
+      "children": [
+        "shukra",
+        "lakshmi-alt"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "Saptarishi. Father of Shukra (Venus). Author of the Bhrigu Samhita, foundational astrology text.",
+      "wiki_title": "Bhrigu"
+    },
+    {
+      "id": "agastya",
+      "name": "Agastya",
+      "pantheon": "hindu",
+      "category": "minor",
+      "gender": "M",
+      "domains": [
+        "saptarishi",
+        "tamil-culture-bringer",
+        "drinker-of-ocean"
+      ],
+      "parents": [
+        "varuna",
+        "mitra-hindu"
+      ],
+      "consorts": [
+        "lopamudra"
+      ],
+      "children": [
+        "dridhasyu"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "Saptarishi who carried Vedic culture south. In one story, drank the entire ocean in his palm to reveal hidden demons.",
+      "wiki_title": "Agastya"
+    },
+    {
+      "id": "dattatreya",
+      "name": "Dattatreya",
+      "pantheon": "hindu",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "trimurti-combined",
+        "yoga",
+        "tantra"
+      ],
+      "parents": [
+        "atri",
+        "anasuya"
+      ],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Three-headed sage-deity embodying Brahma, Vishnu, and Shiva together. Cornerstone of several yoga traditions.",
+      "wiki_title": "Dattatreya"
+    },
+    {
+      "id": "narada",
+      "name": "Narada",
+      "pantheon": "hindu",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "divine-messenger",
+        "musician",
+        "gossip",
+        "mischief"
+      ],
+      "parents": [
+        "brahma"
+      ],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Wandering sage with a vina. Travels between all three worlds carrying news (and sometimes provocations).",
+      "wiki_title": "Narada"
+    },
+    {
+      "id": "gula",
+      "name": "Gula",
+      "pantheon": "mesopotamian",
+      "category": "major",
+      "gender": "F",
+      "domains": [
+        "medicine",
+        "healing",
+        "dogs"
+      ],
+      "parents": [],
+      "consorts": [
+        "ninurta"
+      ],
+      "children": [],
+      "archetype": null,
+      "parallels": [
+        "asclepius"
+      ],
+      "description": "Great goddess of healing. Accompanied by a dog; physicians prayed to her.",
+      "wiki_title": "Gula (goddess)"
+    },
+    {
+      "id": "nisaba",
+      "name": "Nisaba",
+      "pantheon": "mesopotamian",
+      "category": "major",
+      "gender": "F",
+      "domains": [
+        "grain",
+        "writing",
+        "accounting"
+      ],
+      "parents": [
+        "anu"
+      ],
+      "consorts": [
+        "haya"
+      ],
+      "children": [
+        "ninlil-alt"
+      ],
+      "archetype": "wisdom-god",
+      "parallels": [
+        "seshat"
+      ],
+      "description": "Goddess of writing, counting, and grain. Sumerian patron of scribes before Nabu displaced her.",
+      "wiki_title": "Nisaba"
+    },
+    {
+      "id": "pazuzu",
+      "name": "Pazuzu",
+      "pantheon": "mesopotamian",
+      "category": "monster",
+      "gender": "M",
+      "domains": [
+        "wind-demon",
+        "protection-against-lamashtu"
+      ],
+      "parents": [
+        "hanbi"
+      ],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "King of the wind demons. Paradoxically worn as an amulet to ward off the infant-killer Lamashtu.",
+      "wiki_title": "Pazuzu"
+    },
+    {
+      "id": "lamashtu",
+      "name": "Lamashtu",
+      "pantheon": "mesopotamian",
+      "category": "monster",
+      "gender": "F",
+      "domains": [
+        "child-killer",
+        "disease",
+        "miscarriage"
+      ],
+      "parents": [
+        "anu"
+      ],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [
+        "lilith"
+      ],
+      "description": "Demoness who killed infants and unborn children. Warded off by Pazuzu amulets.",
+      "wiki_title": "Lamashtu"
+    },
+    {
+      "id": "ashnan",
+      "name": "Ashnan",
+      "pantheon": "mesopotamian",
+      "category": "minor",
+      "gender": "F",
+      "domains": [
+        "grain",
+        "cultivation"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Sumerian grain-goddess. Debate between Ashnan and Lahar (cattle) is a famous Sumerian wisdom text.",
+      "wiki_title": "Ashnan"
+    },
+    {
+      "id": "erinyes",
+      "name": "Erinyes",
+      "pantheon": "greek",
+      "category": "minor",
+      "gender": "F",
+      "domains": [
+        "vengeance",
+        "blood-crime",
+        "curses"
+      ],
+      "parents": [
+        "uranus"
+      ],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "The Furies — Alecto, Tisiphone, Megaera. Born from the blood of castrated Uranus. Hounded kin-killers.",
+      "wiki_title": "Erinyes"
+    },
+    {
+      "id": "arachne",
+      "name": "Arachne",
+      "pantheon": "greek",
+      "category": "hero",
+      "gender": "F",
+      "domains": [
+        "weaver",
+        "hubris",
+        "spider-transformation"
+      ],
+      "parents": [
+        "idmon"
+      ],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Mortal weaver who challenged Athena. Her superior weaving earned her transformation into a spider.",
+      "wiki_title": "Arachne"
+    },
+    {
+      "id": "scylla",
+      "name": "Scylla",
+      "pantheon": "greek",
+      "category": "monster",
+      "gender": "F",
+      "domains": [
+        "six-headed-sea-monster"
+      ],
+      "parents": [
+        "phorcys",
+        "ceto"
+      ],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Six-headed sea-monster opposite Charybdis. Snatched six of Odysseus's men from his ship.",
+      "wiki_title": "Scylla"
+    },
+    {
+      "id": "charybdis",
+      "name": "Charybdis",
+      "pantheon": "greek",
+      "category": "monster",
+      "gender": "F",
+      "domains": [
+        "whirlpool"
+      ],
+      "parents": [
+        "poseidon",
+        "gaia"
+      ],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Enormous whirlpool opposite Scylla. Sailors had to choose which monster to face.",
+      "wiki_title": "Charybdis"
+    },
+    {
+      "id": "cassandra",
+      "name": "Cassandra",
+      "pantheon": "greek",
+      "category": "hero",
+      "gender": "F",
+      "domains": [
+        "prophecy",
+        "unheeded-truth"
+      ],
+      "parents": [
+        "priam",
+        "hecuba"
+      ],
+      "consorts": [
+        "agamemnon"
+      ],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Trojan princess cursed by Apollo: she would see the future truly, but never be believed.",
+      "wiki_title": "Cassandra"
+    },
+    {
+      "id": "tantalus",
+      "name": "Tantalus",
+      "pantheon": "greek",
+      "category": "hero",
+      "gender": "M",
+      "domains": [
+        "punishment",
+        "eternal-thirst"
+      ],
+      "parents": [
+        "zeus",
+        "plouto"
+      ],
+      "consorts": [
+        "dione"
+      ],
+      "children": [
+        "pelops",
+        "niobe"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "Served his own son Pelops to the gods in a test. Eternal punishment in Tartarus: food and water forever just out of reach.",
+      "wiki_title": "Tantalus"
+    },
+    {
+      "id": "sisyphus",
+      "name": "Sisyphus",
+      "pantheon": "greek",
+      "category": "hero",
+      "gender": "M",
+      "domains": [
+        "trickery",
+        "eternal-labor"
+      ],
+      "parents": [
+        "aeolus"
+      ],
+      "consorts": [
+        "merope"
+      ],
+      "children": [
+        "glaucus"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "Tricked Death twice. In punishment, eternally rolls a boulder uphill that always slips back.",
+      "wiki_title": "Sisyphus"
+    },
+    {
+      "id": "amenominakanushi",
+      "name": "Amenominakanushi",
+      "pantheon": "japanese",
+      "category": "primordial",
+      "gender": "N",
+      "domains": [
+        "central-master-of-heaven",
+        "first-kami"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "First kami to come into being; stood alone in the high plain of heaven. Never directly worshipped historically — too abstract.",
+      "wiki_title": "Ame-no-Minakanushi"
+    },
+    {
+      "id": "takamimusubi",
+      "name": "Takamimusubi",
+      "pantheon": "japanese",
+      "category": "primordial",
+      "gender": "M",
+      "domains": [
+        "heavenly-production",
+        "second-kami"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [
+        "omoikane"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "Second primordial kami; agent of 'productive' cosmic principle.",
+      "wiki_title": "Takamimusubi"
+    },
+    {
+      "id": "kamimusubi",
+      "name": "Kamimusubi",
+      "pantheon": "japanese",
+      "category": "primordial",
+      "gender": "F",
+      "domains": [
+        "divine-production",
+        "third-kami"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [
+        "sukunabikona"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "Third primordial kami; feminine counterpart to Takamimusubi's masculine productive principle.",
+      "wiki_title": "Kamimusubi"
+    },
+    {
+      "id": "heka",
+      "name": "Heka",
+      "pantheon": "egyptian",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "magic",
+        "life-force"
+      ],
+      "parents": [
+        "khnum",
+        "menhit"
+      ],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Personification of magic itself — the life-force every Egyptian god and spell relied on. Existed before the gods.",
+      "wiki_title": "Heka (god)"
+    },
+    {
+      "id": "sia",
+      "name": "Sia",
+      "pantheon": "egyptian",
+      "category": "minor",
+      "gender": "M",
+      "domains": [
+        "perception",
+        "understanding"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Personified perception and mental understanding. Paired with Hu (utterance).",
+      "wiki_title": "Sia (god)"
+    },
+    {
+      "id": "hu",
+      "name": "Hu",
+      "pantheon": "egyptian",
+      "category": "minor",
+      "gender": "M",
+      "domains": [
+        "divine-utterance",
+        "authoritative-command"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Personified divine speech — the word that brings into being. With Sia and Heka, one of the forces of creation.",
+      "wiki_title": "Hu (Egyptian god)"
+    },
+    {
+      "id": "wepwawet",
+      "name": "Wepwawet",
+      "pantheon": "egyptian",
+      "category": "minor",
+      "gender": "M",
+      "domains": [
+        "opener-of-ways",
+        "wolf",
+        "war"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": "psychopomp",
+      "parallels": [
+        "anubis"
+      ],
+      "description": "'Opener of Ways'. Wolf-headed god who preceded the pharaoh in battle and the dead into the underworld.",
+      "wiki_title": "Wepwawet"
+    },
+    {
+      "id": "huracan",
+      "name": "Huracán",
+      "pantheon": "mayan",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "wind",
+        "storm",
+        "creation",
+        "one-legged"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": "storm-god",
+      "parallels": [
+        "chaac",
+        "guabancex"
+      ],
+      "description": "K'iche' Maya creator-storm god. His name is the root of Spanish huracán and English 'hurricane'. Destroyed the wooden-people age in a flood.",
+      "wiki_title": "Huracan"
+    },
+    {
+      "id": "bacab",
+      "name": "Bacabs",
+      "pantheon": "mayan",
+      "category": "minor",
+      "gender": "M",
+      "domains": [
+        "four-corners",
+        "sky-bearers"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Four brothers who hold up the four corners of the sky — one for each cardinal direction.",
+      "wiki_title": "Bacab"
+    },
+    {
+      "id": "zorya",
+      "name": "Zorya",
+      "pantheon": "slavic",
+      "category": "major",
+      "gender": "F",
+      "domains": [
+        "morning-star",
+        "evening-star",
+        "dawn",
+        "dusk"
+      ],
+      "parents": [
+        "dazhbog"
+      ],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [
+        "hausos",
+        "eos",
+        "aurora"
+      ],
+      "description": "Three sister-goddesses of dawn, dusk, and midnight. Open and close heaven's gates each day; chain the apocalyptic hound Simargl to the pole star.",
+      "wiki_title": "Zorya"
+    },
+    {
+      "id": "simargl",
+      "name": "Simargl",
+      "pantheon": "slavic",
+      "category": "monster",
+      "gender": "M",
+      "domains": [
+        "winged-hound",
+        "apocalypse-chained"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Winged hound chained to the pole star. If he ever breaks free, the universe ends.",
+      "wiki_title": "Simargl"
+    },
+    {
+      "id": "fjalar",
+      "name": "Fjalar and Galar",
+      "pantheon": "norse",
+      "category": "monster",
+      "gender": "M",
+      "domains": [
+        "dwarves",
+        "murder-of-kvasir"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Dwarf brothers who murdered Kvasir and brewed the mead of poetry from his blood mixed with honey.",
+      "wiki_title": "Fjalar and Galar"
+    },
+    {
+      "id": "aurvandil",
+      "name": "Aurvandil",
+      "pantheon": "norse",
+      "category": "minor",
+      "gender": "M",
+      "domains": [
+        "hero-rescued-by-thor",
+        "star"
+      ],
+      "parents": [],
+      "consorts": [
+        "groa"
+      ],
+      "children": [
+        "svipdagr"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "Thor carried him across the Élivágar rivers in a basket; a frozen toe broke off and Thor threw it into the sky — the star Aurvandil's Toe.",
+      "wiki_title": "Aurvandil"
+    },
+    {
+      "id": "mama-zara",
+      "name": "Mama Zara",
+      "pantheon": "inca",
+      "category": "minor",
+      "gender": "F",
+      "domains": [
+        "maize",
+        "corn-mother"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "'Corn mother' — personified maize, essential staple of the Andes. Maize effigies dressed in textiles.",
+      "wiki_title": "Mama Zara"
+    },
+    {
+      "id": "tork-angegh",
+      "name": "Tork Angegh",
+      "pantheon": "armenian",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "mountains",
+        "strength",
+        "ugly-but-noble"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Grotesquely ugly but immensely powerful mountain-hero of Armenia. Could break boulders with his hands.",
+      "wiki_title": "Tork Angegh"
+    },
+    {
+      "id": "spandaramet-alt",
+      "name": "Anahit-Tir-Mihr Triad",
+      "pantheon": "armenian",
+      "category": "major",
+      "gender": "N",
+      "domains": [
+        "armenian-holy-triad"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Placeholder reference for the Armenian Anahit–Tir–Mihr devotional triad, central to late pagan worship."
+    },
+    {
+      "id": "turan",
+      "name": "Turan",
+      "pantheon": "etruscan",
+      "category": "major",
+      "gender": "F",
+      "domains": [
+        "love",
+        "desire",
+        "swans"
+      ],
+      "parents": [],
+      "consorts": [
+        "atunis"
+      ],
+      "children": [],
+      "archetype": "love-goddess",
+      "parallels": [
+        "aphrodite",
+        "venus"
+      ],
+      "description": "Etruscan goddess of love and beauty. Source of Roman Venus; consorted with Atunis (Adonis).",
+      "wiki_title": "Turan (mythology)"
+    },
+    {
+      "id": "tages",
+      "name": "Tages",
+      "pantheon": "etruscan",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "divination",
+        "haruspex-origin",
+        "child-sage"
+      ],
+      "parents": [
+        "tinia"
+      ],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Child-sage who sprang from a plowed furrow. Dictated the Etruscan Discipline — haruspicy, lightning-reading, and ritual.",
+      "wiki_title": "Tages"
     }
   ]
 }

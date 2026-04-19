@@ -1080,14 +1080,44 @@ function wireModal() {
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 }
 
-// Keyboard: Enter/Space on role=button elements triggers click
+// Keyboard shortcuts
 document.addEventListener('keydown', e => {
-  if (e.key !== 'Enter' && e.key !== ' ') return;
   const t = e.target;
-  if (!t || !(t instanceof HTMLElement)) return;
-  if (t.getAttribute('role') === 'button' && !t.matches('button, a, input, select, textarea')) {
+  const inEditable = t && t.matches && t.matches('input, textarea, select, [contenteditable]');
+
+  // Enter/Space on role=button elements triggers click
+  if ((e.key === 'Enter' || e.key === ' ') && t instanceof HTMLElement
+      && t.getAttribute('role') === 'button'
+      && !t.matches('button, a, input, select, textarea')) {
     e.preventDefault();
     t.click();
+    return;
+  }
+
+  // Below shortcuts only when not typing in a field
+  if (inEditable) return;
+
+  // "/" focuses the search input (if on browse tab, switch and focus)
+  if (e.key === '/' && !e.ctrlKey && !e.metaKey) {
+    e.preventDefault();
+    selectTab('browse');
+    const inp = document.getElementById('searchInput');
+    if (inp) { inp.focus(); inp.select(); }
+    return;
+  }
+
+  // Arrow keys on the tablist cycle through tabs when focus is on a tab button
+  if ((e.key === 'ArrowLeft' || e.key === 'ArrowRight')
+      && t instanceof HTMLElement && t.classList.contains('tab-btn')) {
+    e.preventDefault();
+    const tabs = Array.from(document.querySelectorAll('.tab-btn'));
+    const idx = tabs.indexOf(t);
+    if (idx < 0) return;
+    const next = e.key === 'ArrowRight'
+      ? tabs[(idx + 1) % tabs.length]
+      : tabs[(idx - 1 + tabs.length) % tabs.length];
+    next.focus();
+    selectTab(next.dataset.tab);
   }
 });
 function closeModal() { document.getElementById('modalBg').classList.remove('open'); }
@@ -1161,7 +1191,7 @@ const PANTHEON_GROUPS = [
   { id:'arctic-oceania', name:'Arctic & Oceania',
     ids:['inuit','aboriginal','polynesian'] },
   { id:'abrahamic', name:'Abrahamic & Adjacent',
-    ids:['judaism','christianity','islam','kabbalistic','gnostic','manichaean'] },
+    ids:['judaism','christianity','islam','sikh','kabbalistic','gnostic','manichaean'] },
   { id:'diaspora', name:'Diaspora & Syncretic',
     ids:['haitian-vodou'] },
   { id:'human', name:'Elevated Humans',
