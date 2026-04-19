@@ -8,7 +8,7 @@
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
     --bg:#1e2a3a; --fg:#e8ecf1; --muted:#8fa3ba;
-    --border:#32445c; --active:#d4a24c; --tint:#263447; --card:#243347;
+    --border:#32445c; --active:#d4a24c; --card:#243347;
   }
   body { font-family: Georgia, serif; background: var(--bg); color: var(--fg); line-height: 1.55; min-height: 100vh; }
   .page { max-width: 1000px; margin: 0 auto; padding: 56px 28px 100px; }
@@ -17,12 +17,13 @@
   .subtitle { color: var(--muted); font-style: italic; font-size: 16px; flex: 1; min-width: 240px; }
   .back { color: var(--active); text-decoration: none; font-size: 14px; }
   .back:hover { text-decoration: underline; }
-  .grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
-  .card { display: block; background: var(--card); border: 1px solid var(--border); padding: 20px 22px; text-decoration: none; color: inherit; transition: border-color 0.15s, transform 0.15s; }
+  h2.section { font-size: 15px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.12em; font-weight: 600; margin: 28px 0 14px; }
+  h2.section:first-of-type { margin-top: 0; }
+  .grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+  .card { display: block; background: var(--card); border: 1px solid var(--border); padding: 18px 20px; text-decoration: none; color: inherit; transition: border-color 0.15s, transform 0.15s; }
   .card:hover { border-color: var(--active); transform: translateY(-1px); }
-  .card .t { font-size: 17px; font-weight: 600; color: var(--active); margin-bottom: 4px; }
+  .card .t { font-size: 16px; font-weight: 600; color: var(--active); margin-bottom: 4px; }
   .card .d { font-size: 13px; color: var(--muted); line-height: 1.5; }
-  .card .meta { font-size: 12px; color: var(--muted); margin-top: 10px; font-style: italic; }
 </style>
 </head>
 <body>
@@ -30,16 +31,60 @@
   <header>
     <div>
       <h1>Images</h1>
-      <div class="subtitle">Collections of art, architecture, and visual reference.</div>
+      <div class="subtitle">A world gallery — art and architecture from everywhere.</div>
     </div>
     <a class="back" href="../../">← Workspace</a>
   </header>
 
+  <h2 class="section">By region</h2>
+  <div class="grid">
+    <a class="card" href="regions/africa.html">
+      <div class="t">Africa</div>
+      <div class="d">Ife, Benin, Great Zimbabwe, Lalibela, Djenné.</div>
+    </a>
+    <a class="card" href="regions/egypt-nubia.html">
+      <div class="t">Egypt &amp; Nubia</div>
+      <div class="d">Pyramids, Nefertiti, Karnak, Abu Simbel, Meroë.</div>
+    </a>
+    <a class="card" href="regions/mesopotamia-persia.html">
+      <div class="t">Mesopotamia &amp; Persia</div>
+      <div class="d">Ishtar Gate, Hammurabi, Lamassu, Persepolis.</div>
+    </a>
+    <a class="card" href="regions/mediterranean.html">
+      <div class="t">Mediterranean</div>
+      <div class="d">Parthenon, Venus de Milo, Laocoön, Pompeii.</div>
+    </a>
+    <a class="card" href="regions/europe.html">
+      <div class="t">Europe</div>
+      <div class="d">Kells, Chartres, Sistine Chapel, Rembrandt, Van Gogh.</div>
+    </a>
+    <a class="card" href="regions/islamic-world.html">
+      <div class="t">Islamic World</div>
+      <div class="d">Alhambra, Dome of the Rock, Córdoba, Isfahan.</div>
+    </a>
+    <a class="card" href="regions/south-asia.html">
+      <div class="t">South Asia</div>
+      <div class="d">Taj Mahal, Ajanta, Khajuraho, Chola bronze, Sanchi.</div>
+    </a>
+    <a class="card" href="regions/east-asia.html">
+      <div class="t">East Asia</div>
+      <div class="d">Terracotta Army, Forbidden City, Hokusai, Hōryū-ji.</div>
+    </a>
+    <a class="card" href="regions/southeast-asia-oceania.html">
+      <div class="t">Southeast Asia &amp; Oceania</div>
+      <div class="d">Angkor Wat, Borobudur, Bagan, Moai, Aboriginal rock art.</div>
+    </a>
+    <a class="card" href="regions/americas.html">
+      <div class="t">Americas</div>
+      <div class="d">Teotihuacan, Palenque, Sun Stone, Machu Picchu, Nazca.</div>
+    </a>
+  </div>
+
+  <h2 class="section">Museums</h2>
   <div class="grid">
     <a class="card" href="louvre/">
       <div class="t">The Louvre</div>
-      <div class="d">Digital walk through the collections — history, wings, and selected works.</div>
-      <div class="meta">Paris, France</div>
+      <div class="d">Wings, history, and selected works. Paris, France.</div>
     </a>
   </div>
 </div>
