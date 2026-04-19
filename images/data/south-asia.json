@@ -128,6 +128,36 @@
       "meta": "Sikh · 16th–19th c. · Amritsar",
       "desc": "The holiest site of Sikhism. Marble walls inlaid with gemstone, upper floors covered in gold leaf, the whole thing floating on a sacred pool.",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/The_Golden_Temple_of_Amrithsar_7.jpg/960px-The_Golden_Temple_of_Amrithsar_7.jpg"
+    },
+    {
+      "title": "Hawa Mahal",
+      "meta": "Rajput · 1799 · Jaipur",
+      "desc": "The \"Palace of Winds\" — a honeycomb facade of 953 latticed windows, built so the women of the court could watch the street without being seen.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/East_facade_Hawa_Mahal_Jaipur_from_ground_level_%28July_2022%29_-_img_01.jpg/960px-East_facade_Hawa_Mahal_Jaipur_from_ground_level_%28July_2022%29_-_img_01.jpg"
+    },
+    {
+      "title": "Amber Fort",
+      "meta": "Rajput · 16th–18th c. · Jaipur",
+      "desc": "Hilltop fort-palace of the Kachhwaha dynasty. The Hall of Mirrors inside glitters with thousands of convex glass inlays; a single candle lights the whole room.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/20191219_Fort_Amber%2C_Amer%2C_Jaipur_0955_9481.jpg/960px-20191219_Fort_Amber%2C_Amer%2C_Jaipur_0955_9481.jpg"
+    },
+    {
+      "title": "Jantar Mantar",
+      "meta": "Rajput · Jai Singh II · 1734 · Jaipur",
+      "desc": "An observatory of huge masonry instruments — sundials ninety feet tall, instruments to locate any star. Built to correct the drifting calendars of Mughal India.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Jantar_Mantar_at_Jaipur.jpg/960px-Jantar_Mantar_at_Jaipur.jpg"
+    },
+    {
+      "title": "Victoria Memorial",
+      "meta": "British Raj · 1906–1921 · Kolkata",
+      "desc": "A white marble domed memorial to Queen Victoria, built at the height of imperial self-regard. Now a museum of the Raj and the nationalism that ended it.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Victoria_Memorial_situated_in_Kolkata.jpg/960px-Victoria_Memorial_situated_in_Kolkata.jpg"
+    },
+    {
+      "title": "Mughal Miniature Painting",
+      "meta": "Mughal · 16th–18th c. · North India",
+      "desc": "Album leaves commissioned by the Mughal emperors — historical chronicles, portraits, and natural history drawn with jeweller's precision.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Govardhan._Jahangir_Visiting_the_Ascetic_Jadrup._ca._1616-20%2C_Musee_Guimet%2C_Paris.jpg/960px-Govardhan._Jahangir_Visiting_the_Ascetic_Jadrup._ca._1616-20%2C_Musee_Guimet%2C_Paris.jpg"
     }
   ]
 }

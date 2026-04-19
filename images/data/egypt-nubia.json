@@ -122,6 +122,36 @@
       "meta": "Amarna period · c. 1350 BCE",
       "desc": "The heretic pharaoh depicted with a long face, wide hips, and swollen belly — a deliberate break from centuries of idealized royal portraiture.",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/GD-EG-Caire-Mus%C3%A9e061.JPG/960px-GD-EG-Caire-Mus%C3%A9e061.JPG"
+    },
+    {
+      "title": "Ramesseum",
+      "meta": "New Kingdom · Ramesses II · 13th c. BCE · Thebes",
+      "desc": "Memorial temple of Ramesses II. A collapsed colossus here inspired Shelley's \"Ozymandias\" — though Shelley never saw it.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/SFEC_AEH_-ThebesNecropolis-2010-RamsesII-021.jpg/960px-SFEC_AEH_-ThebesNecropolis-2010-RamsesII-021.jpg"
+    },
+    {
+      "title": "Medinet Habu",
+      "meta": "New Kingdom · Ramesses III · c. 1150 BCE · Thebes",
+      "desc": "The fortress-temple of the last great warrior pharaoh. Its walls narrate the repulse of the Sea Peoples — history preserved because the victor carved it.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Templo_funerario_de_Rams%C3%A9s_III%2C_Luxor%2C_Egipto%2C_2022-04-03%2C_DD_22.jpg/960px-Templo_funerario_de_Rams%C3%A9s_III%2C_Luxor%2C_Egipto%2C_2022-04-03%2C_DD_22.jpg"
+    },
+    {
+      "title": "Dendera Temple",
+      "meta": "Ptolemaic → Roman · 54 BCE – 20 CE",
+      "desc": "Temple of Hathor. Its astronomical ceilings include the only known circular zodiac from ancient Egypt — now a replica; the original is in the Louvre.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Dendera_7_977.PNG/960px-Dendera_7_977.PNG"
+    },
+    {
+      "title": "Kom Ombo",
+      "meta": "Ptolemaic · 2nd c. BCE",
+      "desc": "A rare double temple — one half for the crocodile god Sobek, the other for Horus the Elder. Mummified crocodiles still fill a side chamber.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Kom_Ombo_Portal_04.jpg/960px-Kom_Ombo_Portal_04.jpg"
+    },
+    {
+      "title": "Tomb of Tutankhamun",
+      "meta": "18th Dynasty · c. 1323 BCE · Valley of the Kings",
+      "desc": "A small, hastily decorated tomb, overlooked by thieves for three thousand years. Howard Carter opened it in 1922 and the world went Egyptomaniac again.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Inside_Pharaoh_Tutankhamun%27s_tomb%2C_18th_dynasty.jpg/960px-Inside_Pharaoh_Tutankhamun%27s_tomb%2C_18th_dynasty.jpg"
     }
   ]
 }

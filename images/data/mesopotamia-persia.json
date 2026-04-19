@@ -104,6 +104,36 @@
       "meta": "Sasanian · 3rd–6th c. CE · Iraq",
       "desc": "The largest single-span brick vault in the ancient world — the throne hall of the Sasanian palace at Ctesiphon. It still stands, barely.",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/001125-TaqKasra-Iraq-IMG_7914-2.jpg/960px-001125-TaqKasra-Iraq-IMG_7914-2.jpg"
+    },
+    {
+      "title": "Ram in a Thicket",
+      "meta": "Sumerian · c. 2500 BCE · Royal Cemetery of Ur",
+      "desc": "A goat rearing against a golden bush, made of wood, gold leaf, silver, lapis, and shell. Leonard Woolley named it for Abraham's offering in Genesis.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Raminathicket2.jpg/960px-Raminathicket2.jpg"
+    },
+    {
+      "title": "Apadana Reliefs",
+      "meta": "Achaemenid Persia · c. 500 BCE · Persepolis",
+      "desc": "The great staircase of the audience hall. Subject peoples from 23 nations process forward with tribute — Ethiopians with ivory, Lydians with bowls, Bactrian camels.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Persepolis001.jpg/960px-Persepolis001.jpg"
+    },
+    {
+      "title": "Nimrud",
+      "meta": "Neo-Assyrian · 879 BCE onward · Iraq",
+      "desc": "Ashurnasirpal II's Northwest Palace, once lined with alabaster reliefs of hunt and war. ISIS dynamited the site in 2015; much had already been moved to museums.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Iraq%3B_Nimrud_-_Assyria%2C_Lamassu%27s_Guarding_Palace_Entrance.jpg"
+    },
+    {
+      "title": "Babylon",
+      "meta": "Old Babylonian → Neo-Babylonian · 18th c. BCE – 6th c. BCE",
+      "desc": "Capital of Hammurabi, Nebuchadnezzar, and Cyrus. Reconstructed in the 1980s by Saddam Hussein with bricks stamped in his own name.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Ishtar_Gate.jpg/960px-Ishtar_Gate.jpg"
+    },
+    {
+      "title": "Mesopotamian Cylinder Seals",
+      "meta": "Sumerian onward · 4th millennium BCE onward",
+      "desc": "Tiny carved stone cylinders rolled across clay to sign a document. Each person owned one — an identity card and an art form at once.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Cylinder_seal_king_Louvre_AO6620.jpg/960px-Cylinder_seal_king_Louvre_AO6620.jpg"
     }
   ]
 }

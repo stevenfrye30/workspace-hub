@@ -128,6 +128,36 @@
       "meta": "Aṉangu · sacred site · Australia",
       "desc": "A sandstone monolith rising 1,100 feet out of the center of the continent. For the Aṉangu it is the physical record of ancestral beings' creation journeys.",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/ULURU.jpg/960px-ULURU.jpg"
+    },
+    {
+      "title": "Angkor Thom",
+      "meta": "Khmer Empire · late 12th c. · Cambodia",
+      "desc": "The last capital of the Khmer Empire — nine square kilometers walled in laterite. At its heart, the Bayon; at its gates, giants pulling serpents in cosmic tug-of-war.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Angkor_Thom_%28II%29.jpg/960px-Angkor_Thom_%28II%29.jpg"
+    },
+    {
+      "title": "Ananda Temple",
+      "meta": "Pagan Kingdom · 1105 · Myanmar",
+      "desc": "A cruciform white temple with four standing Buddhas, each eighteen feet tall. From a distance the gold umbrella on its stupa is the last thing to disappear.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Bagan%2C_Myanmar%2C_Ananda_Temple.jpg/960px-Bagan%2C_Myanmar%2C_Ananda_Temple.jpg"
+    },
+    {
+      "title": "Besakih Temple",
+      "meta": "Balinese Hindu · 14th c. onward · Bali",
+      "desc": "The Mother Temple of Bali — 23 linked sanctuaries up the slope of Mount Agung. When Agung erupted in 1963, lava stopped meters from its gates.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Besakih_Bali_Indonesia_Pura-Besakih-02.jpg/960px-Besakih_Bali_Indonesia_Pura-Besakih-02.jpg"
+    },
+    {
+      "title": "Banaue Rice Terraces",
+      "meta": "Ifugao · 2000+ years old · Philippines",
+      "desc": "Stone-walled terraces climbing the mountainside. Built without wheeled carts, draft animals, or cement. If unwrapped they'd circle half the globe.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Banaue-terrace.JPG/960px-Banaue-terrace.JPG"
+    },
+    {
+      "title": "Plain of Jars",
+      "meta": "Iron Age · 500 BCE – 500 CE · Laos",
+      "desc": "Thousands of carved stone jars scattered across a plateau. Probably funerary; ground-truth research has been slow because the plain is still littered with unexploded American bombs.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Plainofjars_2.jpg/960px-Plainofjars_2.jpg"
     }
   ]
 }

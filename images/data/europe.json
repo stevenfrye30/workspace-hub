@@ -152,6 +152,41 @@
       "meta": "Modern · Rodin · 1880–1904",
       "desc": "Originally a small figure above The Gates of Hell — Dante, looking down at his Inferno. Enlarged and cast on its own, it became a universal emblem of thought.",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Le_Penseur_by_Rodin_%28Kunsthalle_Bielefeld%29_2014-04-10.JPG/960px-Le_Penseur_by_Rodin_%28Kunsthalle_Bielefeld%29_2014-04-10.JPG"
+    },
+    {
+      "title": "Wanderer above the Sea of Fog",
+      "meta": "German Romanticism · 1818",
+      "desc": "A man stands on a rocky peak, his back to us, looking into swirling cloud. Romanticism in one image — the sublime, and the lone self against it.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Caspar_David_Friedrich_-_Wanderer_above_the_Sea_of_Fog.jpeg/960px-Caspar_David_Friedrich_-_Wanderer_above_the_Sea_of_Fog.jpeg",
+      "artist": "Caspar David Friedrich"
+    },
+    {
+      "title": "The Third of May 1808",
+      "meta": "Spanish Romanticism · 1814",
+      "desc": "A Madrid citizen, arms flung wide, faces a French firing squad in lantern-light. Painted as an accusation — art reporting on atrocity for the first time.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/El_Tres_de_Mayo%2C_by_Francisco_de_Goya%2C_from_Prado_thin_black_margin.jpg/960px-El_Tres_de_Mayo%2C_by_Francisco_de_Goya%2C_from_Prado_thin_black_margin.jpg",
+      "artist": "Francisco Goya"
+    },
+    {
+      "title": "The Hay Wain",
+      "meta": "English Romanticism · 1821",
+      "desc": "A farm cart in a shallow stream on a summer afternoon. Nothing is happening. Constable turned rural quiet into monumental painting.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/John_Constable_-_The_Hay_Wain_%281821%29.jpg/960px-John_Constable_-_The_Hay_Wain_%281821%29.jpg",
+      "artist": "John Constable"
+    },
+    {
+      "title": "Le Déjeuner sur l'herbe",
+      "meta": "Early Modern · 1863",
+      "desc": "A nude woman picnics with two fully dressed men. The scandal wasn't the nudity — it was that she looks directly at the viewer, unashamed.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Edouard_Manet_-_Luncheon_on_the_Grass_-_Google_Art_Project.jpg/960px-Edouard_Manet_-_Luncheon_on_the_Grass_-_Google_Art_Project.jpg",
+      "artist": "Édouard Manet"
+    },
+    {
+      "title": "Olympia",
+      "meta": "Early Modern · 1863",
+      "desc": "A courtesan reclining nude, a Black maid bringing flowers, a cat raising its tail. The Salon hung it high to keep people from slashing it.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Edouard_Manet_-_Olympia_-_Google_Art_ProjectFXD.jpg/960px-Edouard_Manet_-_Olympia_-_Google_Art_ProjectFXD.jpg",
+      "artist": "Édouard Manet"
     }
   ]
 }
