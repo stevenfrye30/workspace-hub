@@ -50,7 +50,11 @@ h3.era:first-of-type { margin-top: 4px; }
 .work img { width: 100%; height: 240px; object-fit: cover; background: #111; display: block; cursor: zoom-in; transition: opacity 0.15s; }
 .work img:hover { opacity: 0.88; }
 .work .body { padding: 14px 16px 18px; }
-.work .region-badge { display: inline-block; background: var(--bg); color: var(--muted); font-size: 10px; padding: 2px 8px; border: 1px solid var(--border); border-radius: 10px; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.08em; }
+.work .region-badge { display: inline-block; background: var(--bg); color: var(--muted); font-size: 10px; padding: 2px 8px; border: 1px solid var(--border); border-radius: 10px; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.08em; text-decoration: none; transition: color 0.15s, border-color 0.15s; }
+.work a.region-badge:hover { color: var(--active); border-color: var(--active); }
+.work .work-artist { font-size: 13px; color: var(--muted); font-style: italic; margin-bottom: 6px; }
+.work .work-artist a { color: var(--muted); text-decoration: none; border-bottom: 1px dotted var(--border); padding-bottom: 1px; transition: color 0.15s, border-color 0.15s; }
+.work .work-artist a:hover { color: var(--active); border-bottom-color: var(--active); }
 .work .t { font-size: 17px; color: var(--active); margin-bottom: 4px; font-weight: 600; }
 .work .meta { font-size: 12px; color: var(--muted); font-style: italic; margin-bottom: 8px; }
 .work .d { font-size: 14px; color: var(--fg); line-height: 1.55; }

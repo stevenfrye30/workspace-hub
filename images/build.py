@@ -40,8 +40,19 @@ def h_attr(s: str) -> str:
 
 
 def slugify(s: str) -> str:
+    # Strip diacritics first so "Édouard" -> "edouard", "Tōshūsai" -> "toshusai".
+    s = unicodedata.normalize("NFKD", s)
+    s = "".join(c for c in s if not unicodedata.combining(c))
     s = re.sub(r"[^\w\s-]", "", s, flags=re.UNICODE).strip().lower()
     return re.sub(r"[\s_-]+", "-", s)
+
+
+def resolve_href(target: str, ctx_prefix: str = "") -> str:
+    """Prepend ctx_prefix to internal page links (relative paths).
+    Absolute URLs (http, https, /, #) pass through unchanged."""
+    if target.startswith(("http://", "https://", "/", "#")):
+        return target
+    return ctx_prefix + target
 
 
 def normalize_search(s: str) -> str:
@@ -122,8 +133,8 @@ NAV_TPL = """<nav class="top-nav">
 """
 
 
-def make_nav(current: str, in_regions_dir: bool = False) -> str:
-    prefix = "../" if in_regions_dir else ""
+def make_nav(current: str, in_subdir: bool = False) -> str:
+    prefix = "../" if in_subdir else ""
     return NAV_TPL.format(
         workspace=f"{prefix}../",
         home=f"{prefix}index.html",
@@ -153,7 +164,7 @@ WORK_TPL = """    <article class="work">
       <img src="{image}" alt="{alt}" loading="lazy">
       <div class="body">
         <div class="t">{title}</div>
-        <div class="meta">{meta}</div>
+{artist}        <div class="meta">{meta}</div>
         <div class="d">{desc}</div>
       </div>
     </article>
@@ -162,9 +173,9 @@ WORK_TPL = """    <article class="work">
 ALL_WORK_TPL = """    <article class="work" data-search="{search}" data-year="{year}">
       <img src="{image}" alt="{alt}" loading="lazy">
       <div class="body">
-        <div class="region-badge">{region}</div>
+        {region_badge}
         <div class="t">{title}</div>
-        <div class="meta">{meta}</div>
+{artist}        <div class="meta">{meta}</div>
         <div class="d">{desc}</div>
       </div>
     </article>
@@ -174,48 +185,65 @@ TL_WORK_TPL = """      <article class="work tl-entry" data-year="{year}">
         <div class="tl-year">{year_display}</div>
         <img src="{image}" alt="{alt}" loading="lazy">
         <div class="body">
-          <div class="region-badge">{region}</div>
+          {region_badge}
           <div class="t">{title}</div>
-          <div class="meta">{meta}</div>
+{artist}          <div class="meta">{meta}</div>
           <div class="d">{desc}</div>
         </div>
       </article>
 """
 
 
-def render_work(w: dict, image_prefix: str = "") -> str:
+def _artist_line(w: dict, ctx_prefix: str, indent: str = "        ") -> str:
+    artist = w.get("artist")
+    if not artist:
+        return ""
+    slug = slugify(artist)
+    href = resolve_href(f"artists/{slug}.html", ctx_prefix)
+    return f'{indent}<div class="work-artist">by <a href="{href}">{h(artist)}</a></div>\n'
+
+
+def _region_badge(region_title: str, region_slug: str, ctx_prefix: str) -> str:
+    href = resolve_href(f"regions/{region_slug}.html", ctx_prefix)
+    return f'<a class="region-badge" href="{href}">{h(region_title)}</a>'
+
+
+def render_work(w: dict, ctx_prefix: str = "") -> str:
     return WORK_TPL.format(
-        image=resolve_image(w["image"], image_prefix),
+        image=resolve_image(w["image"], ctx_prefix),
         alt=h(w["title"]),
         title=h(w["title"]),
+        artist=_artist_line(w, ctx_prefix),
         meta=h(w["meta"]),
         desc=h(w["desc"]),
     )
 
 
-def render_all_work(w: dict, region_title: str) -> str:
+def render_all_work(w: dict, region_title: str, region_slug: str, ctx_prefix: str = "") -> str:
     tokens = [w["title"], w["meta"], w.get("desc", ""), w.get("artist", ""), region_title]
     search = normalize_search(" ".join(t for t in tokens if t))
     return ALL_WORK_TPL.format(
-        image=resolve_image(w["image"]),
+        image=resolve_image(w["image"], ctx_prefix),
         alt=h(w["title"]),
         title=h(w["title"]),
+        artist=_artist_line(w, ctx_prefix),
         meta=h(w["meta"]),
         desc=h(w["desc"]),
-        region=h(region_title),
+        region_badge=_region_badge(region_title, region_slug, ctx_prefix),
         search=h_attr(search),
         year=w.get("year", 0),
     )
 
 
-def render_tl_work(w: dict, region_title: str) -> str:
+def render_tl_work(w: dict, region_title: str, region_slug: str, ctx_prefix: str = "") -> str:
     return TL_WORK_TPL.format(
-        image=resolve_image(w["image"]),
+        image=resolve_image(w["image"], ctx_prefix),
         alt=h(w["title"]),
         title=h(w["title"]),
+        artist=_artist_line(w, ctx_prefix, indent="          "),
         meta=h(w["meta"]),
         desc=h(w["desc"]),
-        region=h(region_title),
+        region_badge=_region_badge(region_title, region_slug, ctx_prefix),
         year=w.get("year", 0),
         year_display=h(format_year(w.get("year", 0))),
     )
@@ -269,7 +297,7 @@ def build_region(slug: str, data: dict, neighbors: tuple[dict, dict]) -> int:
         parts.append(f'  <h3 class="era">{h(label)}</h3>')
         parts.append('  <div class="grid">')
         for w in era_works:
-            parts.append(render_work(w, image_prefix="../").rstrip("\n"))
+            parts.append(render_work(w, ctx_prefix="../").rstrip("\n"))
         parts.append("  </div>")
     works_html = "\n".join(parts)
 
@@ -280,7 +308,7 @@ def build_region(slug: str, data: dict, neighbors: tuple[dict, dict]) -> int:
         subtitle=h(data["subtitle"]),
         intro=h(data["intro"]),
         works=works_html,
-        nav=make_nav("regions", in_regions_dir=True),
+        nav=make_nav("regions", in_subdir=True),
         prev_href=f"{prev['slug']}.html",
         prev_title=h(prev["title"]),
         next_href=f"{next_['slug']}.html",
@@ -294,7 +322,7 @@ def build_region(slug: str, data: dict, neighbors: tuple[dict, dict]) -> int:
 # Artists page
 # ---------------------------------------------------------------------------
 
-ARTISTS_TPL = """<!DOCTYPE html>
+ARTISTS_DIR_TPL = """<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -309,32 +337,53 @@ ARTISTS_TPL = """<!DOCTYPE html>
   <header class="page-header">
     <div>
       <h1>By Artist</h1>
-      <div class="subtitle">Named makers, grouped. Anonymous and collective works live in the regional views.</div>
+      <div class="subtitle">@@COUNT@@ named makers. Click a name to see all of their works. Anonymous and collective works live in the regional views.</div>
     </div>
   </header>
-  <div class="hint">Click any image to enlarge. Use &larr; &rarr; or close with Esc.</div>
-  <nav class="artist-toc">
-@@TOC@@
-  </nav>
-@@SECTIONS@@
+  <div class="card-grid">
+@@CARDS@@
+  </div>
   <footer class="page-footer">
     Images via <a href="https://commons.wikimedia.org/" target="_blank" rel="noopener">Wikimedia Commons</a>. Click any image to open it and see its source.
   </footer>
 </div>
-<script src="lightbox.js"></script>
 </body>
 </html>
 """
 
-ARTIST_SECTION_TPL = """  <section class="artist-section" id="{slug}">
-    <h2 class="artist-name">{name}<span class="artist-count">{count} {noun}</span></h2>
-    <div class="grid">
-{works}
+ARTIST_PAGE_TPL = """<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{name} &mdash; World Gallery</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<!-- Generated by build.py. -->
+{nav}
+<div class="page">
+  <header class="page-header">
+    <div>
+      <h1>{name}</h1>
+      <div class="subtitle">{count} {noun} in the gallery.</div>
     </div>
-  </section>
-"""
-
-ARTIST_TOC_TPL = """    <a href="#{slug}">{name}<span class="c">{count}</span></a>
+  </header>
+  <div class="hint">Click any image to enlarge. Use &larr; &rarr; or close with Esc.</div>
+  <div class="grid">
+{works}
+  </div>
+  <footer class="region-footer">
+    <a href="{prev_href}"><span class="arrow">&larr;</span>{prev_name}</a>
+    <a href="{next_href}">{next_name}<span class="arrow">&rarr;</span></a>
+  </footer>
+  <footer class="page-footer">
+    Images via <a href="https://commons.wikimedia.org/" target="_blank" rel="noopener">Wikimedia Commons</a>. Click any image to open it and see its source.
+  </footer>
+</div>
+<script src="../lightbox.js"></script>
+</body>
+</html>
 """
 
 
@@ -350,44 +399,68 @@ def collect_artists(meta: dict) -> dict[str, list[dict]]:
 
 
 def build_artists(artists: dict[str, list[dict]]) -> tuple[int, int]:
-    nav = make_nav("artists")
+    artists_out = HERE / "artists"
+    artists_out.mkdir(exist_ok=True)
+    nav_top = make_nav("artists")
+
     if not artists:
         html_out = (
-            ARTISTS_TPL
-            .replace("@@NAV@@", nav)
-            .replace("@@TOC@@", "")
-            .replace("@@SECTIONS@@", '<p class="intro">No artist-tagged works yet.</p>')
+            ARTISTS_DIR_TPL
+            .replace("@@NAV@@", nav_top)
+            .replace("@@COUNT@@", "0")
+            .replace("@@CARDS@@", '    <p class="intro">No artist-tagged works yet.</p>')
         )
         (HERE / "artists.html").write_text(html_out, encoding="utf-8")
         return 0, 0
 
     names = sorted(artists.keys(), key=artist_sort_key)
-    toc = "".join(
-        ARTIST_TOC_TPL.format(slug=slugify(n), name=h(n), count=len(artists[n]))
-        for n in names
-    ).rstrip()
-
-    sections = ""
     total_works = 0
-    for name in names:
-        works = artists[name]
-        works_html = "".join(render_work(w) for w in works).rstrip()
-        sections += ARTIST_SECTION_TPL.format(
-            slug=slugify(name),
-            name=h(name),
-            count=len(works),
-            noun="work" if len(works) == 1 else "works",
-            works=works_html,
-        )
-        total_works += len(works)
 
-    html_out = (
-        ARTISTS_TPL
-        .replace("@@NAV@@", nav)
-        .replace("@@TOC@@", toc)
-        .replace("@@SECTIONS@@", sections.rstrip())
+    # Directory page: one card per artist, linking to artists/<slug>.html.
+    cards = []
+    for name in names:
+        slug = slugify(name)
+        count = len(artists[name])
+        noun = "work" if count == 1 else "works"
+        cards.append(
+            f'    <a class="card" href="artists/{slug}.html">\n'
+            f'      <div class="t">{h(name)}</div>\n'
+            f'      <div class="d">{count} {noun}</div>\n'
+            f'    </a>'
+        )
+    dir_html = (
+        ARTISTS_DIR_TPL
+        .replace("@@NAV@@", nav_top)
+        .replace("@@COUNT@@", str(len(names)))
+        .replace("@@CARDS@@", "\n".join(cards))
     )
-    (HERE / "artists.html").write_text(html_out, encoding="utf-8")
+    (HERE / "artists.html").write_text(dir_html, encoding="utf-8")
+
+    # Per-artist detail pages at artists/<slug>.html, with wrap-around
+    # prev/next alphabetical navigation.
+    nav_detail = make_nav("artists", in_subdir=True)
+    for i, name in enumerate(names):
+        slug = slugify(name)
+        works = sorted(artists[name], key=lambda w: w.get("year", 0))
+        works_html = "".join(render_work(w, ctx_prefix="../") for w in works).rstrip()
+        prev_name = names[(i - 1) % len(names)]
+        next_name = names[(i + 1) % len(names)]
+        count = len(works)
+        noun = "work" if count == 1 else "works"
+        html_out = ARTIST_PAGE_TPL.format(
+            name=h(name),
+            count=count,
+            noun=noun,
+            works=works_html,
+            nav=nav_detail,
+            prev_href=f"{slugify(prev_name)}.html",
+            prev_name=h(prev_name),
+            next_href=f"{slugify(next_name)}.html",
+            next_name=h(next_name),
+        )
+        (artists_out / f"{slug}.html").write_text(html_out, encoding="utf-8")
+        total_works += count
+
     return len(names), total_works
 
 
@@ -556,7 +629,7 @@ def build_all_works(meta: dict) -> int:
     for r in meta["regions"]:
         data = json.loads((DATA / f"{r['slug']}.json").read_text(encoding="utf-8"))
         for w in data["works"]:
-            works_html_chunks.append(render_all_work(w, r["title"]))
+            works_html_chunks.append(render_all_work(w, r["title"], r["slug"]))
             all_works_flat.append(w)
             total += 1
     works_html = "".join(works_html_chunks).rstrip()
@@ -585,23 +658,23 @@ def build_all_works(meta: dict) -> int:
 
 
 def build_timeline(meta: dict) -> int:
-    # Flatten all (work, region_title) pairs, then bucket.
-    pairs: list[tuple[dict, str]] = []
+    # Flatten all (work, region_title, region_slug) triples, then bucket.
+    triples: list[tuple[dict, str, str]] = []
     for r in meta["regions"]:
         data = json.loads((DATA / f"{r['slug']}.json").read_text(encoding="utf-8"))
         for w in data["works"]:
-            pairs.append((w, r["title"]))
+            triples.append((w, r["title"], r["slug"]))
 
     sections = []
     for lo, hi, label, _slug in ERAS:
-        era_pairs = [(w, rt) for w, rt in pairs if lo <= w.get("year", 0) < hi]
-        if not era_pairs:
+        era_triples = [(w, rt, rs) for w, rt, rs in triples if lo <= w.get("year", 0) < hi]
+        if not era_triples:
             continue
-        era_pairs.sort(key=lambda x: x[0].get("year", 0))
-        body = "".join(render_tl_work(w, rt) for w, rt in era_pairs).rstrip()
+        era_triples.sort(key=lambda x: x[0].get("year", 0))
+        body = "".join(render_tl_work(w, rt, rs) for w, rt, rs in era_triples).rstrip()
         sections.append(
             f'  <section class="tl-era" id="era-{_slug}">\n'
-            f'    <h2 class="tl-era-title">{h(label)}<span class="tl-era-count">{len(era_pairs)} works</span></h2>\n'
+            f'    <h2 class="tl-era-title">{h(label)}<span class="tl-era-count">{len(era_triples)} works</span></h2>\n'
             f'    <div class="grid">\n{body}\n    </div>\n'
             f'  </section>'
         )
@@ -610,11 +683,11 @@ def build_timeline(meta: dict) -> int:
     html_out = (
         TIMELINE_TPL
         .replace("@@NAV@@", make_nav("timeline"))
-        .replace("@@TOTAL@@", str(len(pairs)))
+        .replace("@@TOTAL@@", str(len(triples)))
         .replace("@@ERAS@@", eras_html)
     )
     (HERE / "timeline.html").write_text(html_out, encoding="utf-8")
-    return len(pairs)
+    return len(triples)
 
 
 # ---------------------------------------------------------------------------
@@ -703,7 +776,7 @@ def build_index(meta: dict, counts: dict[str, int], artists: dict[str, list[dict
     )
     artist_cards = "".join(
         CARD_TPL.format(
-            href=f"artists.html#{slugify(name)}",
+            href=f"artists/{slugify(name)}.html",
             title=h(name),
             blurb=f"{len(works)} works",
         )
