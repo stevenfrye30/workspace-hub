@@ -71,6 +71,8 @@ body { background: var(--bg); color: var(--text); font-family: Georgia, serif; l
 .pc-table tbody td{padding:9px 12px;border-bottom:1px solid var(--bdr);vertical-align:top}
 .pc-table tbody tr:last-child td{border-bottom:none}
 .pc-table tbody tr:hover{background:var(--surf2)}
+.pc-table tbody tr.pc-row-flash{animation:pc-flash 1.6s ease-out}
+@keyframes pc-flash{0%,30%{background:rgba(212,162,76,.4)}100%{background:transparent}}
 .pc-col-ipa{width:80px}
 .pc-col-ipa span{font-family:var(--mono);font-size:18px;color:var(--gold);font-weight:700;display:inline-block}
 .pc-col-desc{color:var(--muted);font-size:12px;font-style:italic;width:210px}
@@ -3971,6 +3973,7 @@ function pcRender() {
       const isEmpty = v === "—";
       return `<td class="pc-col-script${isEmpty ? " empty" : ""}" data-copy="${v.replace(/"/g,"&quot;")}">${v}</td>`;
     }).join("");
+    tr.dataset.ipa = p.ipa;
     tr.innerHTML = `<td class="pc-col-ipa"><span>${p.ipa}</span></td><td class="pc-col-desc">${p.desc}</td>${cells}`;
     (p.g === "c" ? cBody : vBody).appendChild(tr);
     if (showNotes && p.note) {
@@ -5575,6 +5578,46 @@ document.querySelectorAll("#tab-nav .tab-btn").forEach(b => {
   const initial = validUrl || validSaved || "sound";
   if (initial !== "sound") setTab(initial);
 })();
+
+// ══════════════════════════════════
+//  HASH-BASED PHONEME FOCUS (deep-linkable)
+// ══════════════════════════════════
+// Supported hashes:
+//   #vt=<ipa>     → Sound Map tab, vocal tract focused on that phoneme
+//   #chart=<ipa>  → Chart tab, scroll matching IPA row into view + flash
+// Used by Phonetic Center "See articulation" links and any other inbound deep link.
+
+function smHandleHash() {
+  const hash = window.location.hash.replace(/^#/, "");
+  if (!hash) return;
+  const parts = hash.split("=");
+  if (parts.length !== 2) return;
+  const key = parts[0];
+  let val;
+  try { val = decodeURIComponent(parts[1]); } catch (_) { val = parts[1]; }
+  if (!val) return;
+
+  if (key === "vt") {
+    setTab("sound");
+    // smUpdateVocalTract may be called before the tract section is interactive,
+    // but the SVG is in the DOM at parse time, so this is safe.
+    if (typeof smUpdateVocalTract === "function") smUpdateVocalTract(val);
+  } else if (key === "chart") {
+    setTab("chart");
+    // Wait one frame so the chart panel's display:flex has applied before scroll.
+    requestAnimationFrame(() => {
+      const row = document.querySelector(`#panel-chart tr[data-ipa="${CSS.escape(val)}"]`);
+      if (!row) return;
+      row.scrollIntoView({ behavior: "smooth", block: "center" });
+      row.classList.remove("pc-row-flash");
+      // Force reflow so animation re-triggers if user re-clicks the same hash.
+      void row.offsetWidth;
+      row.classList.add("pc-row-flash");
+    });
+  }
+}
+window.addEventListener("hashchange", smHandleHash);
+smHandleHash();
 </script>
 </body>
 </html>

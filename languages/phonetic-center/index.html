@@ -69,6 +69,8 @@
   .reverse-popover .rp-lang .rp-lang-id { color: var(--muted); font-family: ui-monospace, monospace; font-size: 11px; margin-left: 6px; }
   .reverse-popover .rp-empty { color: var(--muted); font-style: italic; font-size: 13px; padding: 8px 0; }
   .reverse-popover .rp-total { font-size: 11px; color: var(--muted); margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--border); font-family: ui-monospace, monospace; }
+  .reverse-popover .rp-cross { display: block; margin-top: 10px; padding: 8px 10px; background: var(--tint); border: 1px solid var(--border); border-radius: 4px; color: var(--active); font-size: 12px; text-decoration: none; text-align: center; transition: border-color 0.15s, background 0.15s; }
+  .reverse-popover .rp-cross:hover { border-color: var(--active); background: rgba(212,162,76,0.08); }
 
   /* Per-language highlighting */
   body.highlight-mode tbody tr.phoneme-row:not(.in-inventory) { opacity: 0.28; }
@@ -179,6 +181,7 @@
       <a class="back" href="../scripts/">Scripts</a>
       <a class="back" href="../scripts-tree/">Script Evolution</a>
       <a class="back" href="../loanwords/">Loanwords</a>
+      <a class="back" href="../../sound-map/">Sound Map ↗</a>
       <a class="back" href="../">← Languages Hub</a>
     </nav>
   </header>
@@ -602,6 +605,10 @@ function openReverseLookup(phoneme) {
     }).join("");
     body.innerHTML = famHtml + `<div class="rp-total">${matches.length} of ${totalInventoried} inventoried languages</div>`;
   }
+  // Cross-link to Sound Map: opens at the matching phoneme's articulation.
+  const enc = encodeURIComponent(phoneme.ipa);
+  body.insertAdjacentHTML("beforeend",
+    `<a class="rp-cross" href="../../sound-map/#vt=${enc}" target="_blank" rel="noopener">See articulation in Sound Map ↗</a>`);
 
   pop.classList.add("show");
 
