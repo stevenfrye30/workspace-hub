@@ -11,11 +11,26 @@ h1 { font-size: 30px; font-weight: 600; letter-spacing: 0.01em; }
 .back { color: var(--active); text-decoration: none; font-size: 14px; }
 .back:hover { text-decoration: underline; }
 .intro { color: var(--muted); max-width: 760px; margin-bottom: 32px; font-size: 15px; }
+.hint { color: var(--muted); font-size: 12px; margin-bottom: 18px; font-style: italic; }
 .grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
-.work { background: var(--card); border: 1px solid var(--border); text-decoration: none; color: inherit; overflow: hidden; display: flex; flex-direction: column; transition: border-color 0.15s, transform 0.15s; }
-.work:hover { border-color: var(--active); transform: translateY(-2px); }
-.work img { width: 100%; height: 240px; object-fit: cover; background: #111; display: block; }
+.work { background: var(--card); border: 1px solid var(--border); overflow: hidden; display: flex; flex-direction: column; }
+.work img { width: 100%; height: 240px; object-fit: cover; background: #111; display: block; cursor: zoom-in; transition: opacity 0.15s; }
+.work img:hover { opacity: 0.88; }
 .work .body { padding: 14px 16px 18px; }
 .work .t { font-size: 17px; color: var(--active); margin-bottom: 4px; font-weight: 600; }
 .work .meta { font-size: 12px; color: var(--muted); font-style: italic; margin-bottom: 8px; }
-.work .d { font-size: 14px; color: var(--fg); line-height: 1.5; }
+.work .d { font-size: 14px; color: var(--fg); line-height: 1.55; }
+
+#lightbox { position: fixed; inset: 0; background: rgba(0,0,0,0.94); z-index: 100; display: flex; align-items: center; justify-content: center; padding: 40px 20px; }
+#lightbox[hidden] { display: none; }
+#lightbox figure { max-width: 1100px; width: 100%; display: flex; flex-direction: column; align-items: center; gap: 16px; }
+#lightbox .lb-img { max-width: 100%; max-height: 76vh; object-fit: contain; background: #111; }
+#lightbox .lb-cap { color: var(--fg); font-size: 14px; line-height: 1.6; max-width: 760px; text-align: center; font-family: Georgia, serif; padding: 0 12px; }
+#lightbox .lb-cap .lb-t { color: var(--active); font-size: 17px; font-weight: 600; display: block; margin-bottom: 4px; }
+#lightbox .lb-cap .lb-m { color: var(--muted); font-style: italic; display: block; margin-bottom: 8px; font-size: 13px; }
+#lightbox button { position: absolute; background: rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.25); color: #fff; width: 44px; height: 44px; cursor: pointer; font-size: 22px; line-height: 1; font-family: Georgia, serif; }
+#lightbox button:hover { background: rgba(255,255,255,0.12); border-color: var(--active); }
+#lightbox .lb-close { top: 20px; right: 20px; }
+#lightbox .lb-prev { left: 20px; top: 50%; transform: translateY(-50%); }
+#lightbox .lb-next { right: 20px; top: 50%; transform: translateY(-50%); }
+#lightbox .lb-count { position: absolute; top: 28px; left: 28px; color: var(--muted); font-size: 13px; font-style: italic; }
