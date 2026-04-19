@@ -10,7 +10,9 @@ Writes:
     regions/<slug>.html     — one page per region, works bucketed by era,
                               with prev/next footer
     artists.html            — works grouped by named artist
-    all.html                — every work on one page, live search filter
+    timeline.html           — every work in chronological order, era-banded
+    all.html                — every work on one page, live search + era
+                              filter + by-year / by-region sort
 
 Shared: style.css and lightbox.js at the top level.
 
@@ -60,15 +62,17 @@ def resolve_image(url: str, prefix: str = "") -> str:
     return prefix + url
 
 
-# Era buckets used to sub-group works inside region pages.
+# Era buckets used to sub-group works on region pages and the timeline,
+# and to power the filter chips on All Works. Slugs must match the JS
+# `eraBounds` keys in ALL_TPL.
 ERAS = [
-    (-10**9, -1000, "Before 1000 BCE"),
-    (-1000, 0, "1000 BCE \u2013 0"),
-    (0, 500, "0 \u2013 500 CE"),
-    (500, 1000, "500 \u2013 1000"),
-    (1000, 1500, "1000 \u2013 1500"),
-    (1500, 1800, "1500 \u2013 1800"),
-    (1800, 10**9, "1800 onward"),
+    (-10**9, -1000, "Before 1000 BCE", "pre-1000bce"),
+    (-1000, 0, "1000 BCE \u2013 0", "1000bce-0"),
+    (0, 500, "0 \u2013 500 CE", "0-500"),
+    (500, 1000, "500 \u2013 1000", "500-1000"),
+    (1000, 1500, "1000 \u2013 1500", "1000-1500"),
+    (1500, 1800, "1500 \u2013 1800", "1500-1800"),
+    (1800, 10**9, "1800 onward", "1800+"),
 ]
 
 
@@ -76,7 +80,7 @@ def bucket_by_era(works: list[dict]) -> list[tuple[str, list[dict]]]:
     """Return works grouped by era label, preserving the ERAS order.
     Only returns buckets that have at least one work."""
     blocks = []
-    for lo, hi, label in ERAS:
+    for lo, hi, label, _slug in ERAS:
         era_works = [w for w in works if lo <= w.get("year", 0) < hi]
         if era_works:
             era_works.sort(key=lambda w: w.get("year", 0))
@@ -111,6 +115,7 @@ NAV_TPL = """<nav class="top-nav">
   <div class="nav-links">
     <a href="{home}"{cls_regions}>Regions</a>
     <a href="{artists}"{cls_artists}>Artists</a>
+    <a href="{timeline}"{cls_timeline}>Timeline</a>
     <a href="{all_}"{cls_all}>All works</a>
   </div>
 </nav>
@@ -123,11 +128,21 @@ def make_nav(current: str, in_regions_dir: bool = False) -> str:
         workspace=f"{prefix}../",
         home=f"{prefix}index.html",
         artists=f"{prefix}artists.html",
+        timeline=f"{prefix}timeline.html",
         all_=f"{prefix}all.html",
         cls_regions=' class="active"' if current == "regions" else "",
         cls_artists=' class="active"' if current == "artists" else "",
+        cls_timeline=' class="active"' if current == "timeline" else "",
         cls_all=' class="active"' if current == "all" else "",
     )
+
+
+def format_year(year: int) -> str:
+    if year < 0:
+        return f"{-year} BCE"
+    if year < 1000:
+        return f"{year} CE"
+    return str(year)
 
 
 # ---------------------------------------------------------------------------
@@ -144,7 +159,7 @@ WORK_TPL = """    <article class="work">
     </article>
 """
 
-ALL_WORK_TPL = """    <article class="work" data-search="{search}">
+ALL_WORK_TPL = """    <article class="work" data-search="{search}" data-year="{year}">
       <img src="{image}" alt="{alt}" loading="lazy">
       <div class="body">
         <div class="region-badge">{region}</div>
@@ -153,6 +168,18 @@ ALL_WORK_TPL = """    <article class="work" data-search="{search}">
         <div class="d">{desc}</div>
       </div>
     </article>
+"""
+
+TL_WORK_TPL = """      <article class="work tl-entry" data-year="{year}">
+        <div class="tl-year">{year_display}</div>
+        <img src="{image}" alt="{alt}" loading="lazy">
+        <div class="body">
+          <div class="region-badge">{region}</div>
+          <div class="t">{title}</div>
+          <div class="meta">{meta}</div>
+          <div class="d">{desc}</div>
+        </div>
+      </article>
 """
 
 
@@ -177,6 +204,20 @@ def render_all_work(w: dict, region_title: str) -> str:
         desc=h(w["desc"]),
         region=h(region_title),
         search=h_attr(search),
+        year=w.get("year", 0),
+    )
+
+
+def render_tl_work(w: dict, region_title: str) -> str:
+    return TL_WORK_TPL.format(
+        image=resolve_image(w["image"]),
+        alt=h(w["title"]),
+        title=h(w["title"]),
+        meta=h(w["meta"]),
+        desc=h(w["desc"]),
+        region=h(region_title),
+        year=w.get("year", 0),
+        year_display=h(format_year(w.get("year", 0))),
     )
 
 
@@ -376,6 +417,15 @@ ALL_TPL = """<!DOCTYPE html>
     <input type="text" id="search-input" placeholder="Search @@TOTAL@@ works&hellip; (e.g. Monet, Buddhist, bronze)" autofocus>
     <div class="result-count" id="result-count">@@TOTAL@@ works</div>
   </div>
+  <div class="filter-controls">
+    <div class="filter-chips">
+@@CHIPS@@
+    </div>
+    <div class="sort-toggle">
+      <button class="sort-btn active" data-sort="region">By region</button>
+      <button class="sort-btn" data-sort="year">Chronological</button>
+    </div>
+  </div>
   <div class="grid" id="all-grid">
 @@WORKS@@
   </div>
@@ -388,52 +438,183 @@ ALL_TPL = """<!DOCTYPE html>
 <script>
 (function() {
   const input = document.getElementById('search-input');
-  const works = Array.from(document.querySelectorAll('#all-grid .work'));
+  const grid = document.getElementById('all-grid');
+  const works = Array.from(grid.querySelectorAll('.work'));
   const count = document.getElementById('result-count');
   const empty = document.getElementById('no-results');
   const total = works.length;
 
+  // Remember the original region-grouped order so "By region" can restore it.
+  works.forEach((w, i) => { w.dataset.origIndex = i; });
+
+  const eraBounds = {
+    'all': [null, null],
+    'pre-1000bce': [null, -1000],
+    '1000bce-0': [-1000, 0],
+    '0-500': [0, 500],
+    '500-1000': [500, 1000],
+    '1000-1500': [1000, 1500],
+    '1500-1800': [1500, 1800],
+    '1800+': [1800, null]
+  };
+  let currentEra = 'all';
+
   function normalize(s) {
     return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
   }
-  function filter() {
+
+  function matchEra(year, era) {
+    const [lo, hi] = eraBounds[era];
+    if (lo !== null && year < lo) return false;
+    if (hi !== null && year >= hi) return false;
+    return true;
+  }
+
+  function apply() {
     const q = normalize(input.value.trim());
     let visible = 0;
     for (const w of works) {
-      const match = !q || w.dataset.search.includes(q);
+      const year = +w.dataset.year;
+      const textMatch = !q || w.dataset.search.includes(q);
+      const eraMatch = matchEra(year, currentEra);
+      const match = textMatch && eraMatch;
       w.style.display = match ? '' : 'none';
       if (match) visible++;
     }
-    count.textContent = q ? (visible + ' of ' + total + ' works') : (total + ' works');
+    const filtering = q || currentEra !== 'all';
+    count.textContent = filtering ? (visible + ' of ' + total + ' works') : (total + ' works');
     empty.style.display = (visible === 0) ? 'block' : 'none';
   }
 
-  input.addEventListener('input', filter);
+  input.addEventListener('input', apply);
+
+  document.querySelectorAll('.era-chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      document.querySelectorAll('.era-chip').forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      currentEra = chip.dataset.era;
+      apply();
+    });
+  });
+
+  document.querySelectorAll('.sort-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.sort-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const mode = btn.dataset.sort;
+      const sorted = works.slice();
+      if (mode === 'year') {
+        sorted.sort((a, b) => +a.dataset.year - +b.dataset.year);
+      } else {
+        sorted.sort((a, b) => +a.dataset.origIndex - +b.dataset.origIndex);
+      }
+      for (const w of sorted) grid.appendChild(w);
+    });
+  });
 })();
 </script>
 </body>
 </html>
 """
 
+TIMELINE_TPL = """<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Timeline &mdash; World Gallery</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- Generated by build.py. -->
+@@NAV@@
+<div class="page">
+  <header class="page-header">
+    <div>
+      <h1>Timeline</h1>
+      <div class="subtitle">All @@TOTAL@@ works in chronological order &mdash; cross-cultural contemporaries lined up.</div>
+    </div>
+  </header>
+  <div class="hint">Click any image to enlarge. Use &larr; &rarr; or close with Esc.</div>
+@@ERAS@@
+  <footer class="page-footer">
+    Images via <a href="https://commons.wikimedia.org/" target="_blank" rel="noopener">Wikimedia Commons</a>. Click any image to open it and see its source.
+  </footer>
+</div>
+<script src="lightbox.js"></script>
+</body>
+</html>
+"""
+
+ERA_CHIP_TPL = '      <button class="era-chip" data-era="{era}">{label}<span class="c">{count}</span></button>\n'
+
 
 def build_all_works(meta: dict) -> int:
     works_html_chunks = []
+    all_works_flat: list[dict] = []
     total = 0
     for r in meta["regions"]:
         data = json.loads((DATA / f"{r['slug']}.json").read_text(encoding="utf-8"))
         for w in data["works"]:
             works_html_chunks.append(render_all_work(w, r["title"]))
+            all_works_flat.append(w)
             total += 1
     works_html = "".join(works_html_chunks).rstrip()
+
+    # Era filter chips with per-bucket counts.
+    chips = [f'      <button class="era-chip active" data-era="all">All<span class="c">{total}</span></button>']
+    for lo, hi, label, slug in ERAS:
+        count = sum(1 for w in all_works_flat if lo <= w.get("year", 0) < hi)
+        if count == 0:
+            continue
+        chips.append(
+            ERA_CHIP_TPL.format(era=slug, label=h(label), count=count).rstrip("\n")
+        )
+    chips_html = "\n".join(chips)
+
     nav = make_nav("all")
     html_out = (
         ALL_TPL
         .replace("@@NAV@@", nav)
         .replace("@@WORKS@@", works_html)
+        .replace("@@CHIPS@@", chips_html)
         .replace("@@TOTAL@@", str(total))
     )
     (HERE / "all.html").write_text(html_out, encoding="utf-8")
     return total
+
+
+def build_timeline(meta: dict) -> int:
+    # Flatten all (work, region_title) pairs, then bucket.
+    pairs: list[tuple[dict, str]] = []
+    for r in meta["regions"]:
+        data = json.loads((DATA / f"{r['slug']}.json").read_text(encoding="utf-8"))
+        for w in data["works"]:
+            pairs.append((w, r["title"]))
+
+    sections = []
+    for lo, hi, label, _slug in ERAS:
+        era_pairs = [(w, rt) for w, rt in pairs if lo <= w.get("year", 0) < hi]
+        if not era_pairs:
+            continue
+        era_pairs.sort(key=lambda x: x[0].get("year", 0))
+        body = "".join(render_tl_work(w, rt) for w, rt in era_pairs).rstrip()
+        sections.append(
+            f'  <section class="tl-era" id="era-{_slug}">\n'
+            f'    <h2 class="tl-era-title">{h(label)}<span class="tl-era-count">{len(era_pairs)} works</span></h2>\n'
+            f'    <div class="grid">\n{body}\n    </div>\n'
+            f'  </section>'
+        )
+    eras_html = "\n".join(sections)
+
+    html_out = (
+        TIMELINE_TPL
+        .replace("@@NAV@@", make_nav("timeline"))
+        .replace("@@TOTAL@@", str(len(pairs)))
+        .replace("@@ERAS@@", eras_html)
+    )
+    (HERE / "timeline.html").write_text(html_out, encoding="utf-8")
+    return len(pairs)
 
 
 # ---------------------------------------------------------------------------
@@ -567,9 +748,10 @@ def main() -> None:
     artists = collect_artists(meta)
     n_artists, n_artist_works = build_artists(artists)
     total_all = build_all_works(meta)
+    build_timeline(meta)
     build_index(meta, counts, artists)
     print(
-        f"\nBuilt {len(regions)} regions + index + artists + all-works. "
+        f"\nBuilt {len(regions)} regions + index + artists + timeline + all. "
         f"{total_all} works total ({n_artist_works} by {n_artists} named artists)."
     )
 
