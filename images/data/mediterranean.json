@@ -25,7 +25,8 @@
       "title": "Discobolus",
       "meta": "Classical Greek · c. 450 BCE (Roman copy)",
       "desc": "Myron's discus thrower — the original bronze is lost; only Roman marble copies survive. A moment just before release, coiled and still.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Roman_bronze_copy_of_Myron%E2%80%99s_Discobolos%2C_2nd_century_CE_%28Glyptothek_Munich%29.jpg/960px-Roman_bronze_copy_of_Myron%E2%80%99s_Discobolos%2C_2nd_century_CE_%28Glyptothek_Munich%29.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Roman_bronze_copy_of_Myron%E2%80%99s_Discobolos%2C_2nd_century_CE_%28Glyptothek_Munich%29.jpg/960px-Roman_bronze_copy_of_Myron%E2%80%99s_Discobolos%2C_2nd_century_CE_%28Glyptothek_Munich%29.jpg",
+      "artist": "Myron"
     },
     {
       "title": "Venus de Milo",
@@ -79,7 +80,8 @@
       "title": "Aphrodite of Knidos",
       "meta": "Classical Greek · Praxiteles · c. 360 BCE",
       "desc": "The first free-standing nude female figure in Greek sculpture — scandalous enough that men climbed her sanctuary walls at night. Only copies survive.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Cnidus_Aphrodite_Altemps_Inv8619.jpg/960px-Cnidus_Aphrodite_Altemps_Inv8619.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Cnidus_Aphrodite_Altemps_Inv8619.jpg/960px-Cnidus_Aphrodite_Altemps_Inv8619.jpg",
+      "artist": "Praxiteles"
     },
     {
       "title": "Kroisos Kouros",
@@ -103,7 +105,8 @@
       "title": "Apoxyomenos",
       "meta": "Classical Greek · Lysippos · c. 330 BCE",
       "desc": "An athlete scraping oil from his arm. The Roman marble copy stands in for a lost bronze original by Alexander the Great's favorite sculptor.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Apoxyomenos_Pio-Clementino_Inv1185_n2.jpg/960px-Apoxyomenos_Pio-Clementino_Inv1185_n2.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Apoxyomenos_Pio-Clementino_Inv1185_n2.jpg/960px-Apoxyomenos_Pio-Clementino_Inv1185_n2.jpg",
+      "artist": "Lysippos"
     },
     {
       "title": "Sarcophagus of the Spouses",
@@ -115,7 +118,8 @@
       "title": "Doryphoros",
       "meta": "Classical Greek · Polykleitos · c. 440 BCE",
       "desc": "The \"Spear Bearer\" — a treatise on ideal human proportion made in marble. Polykleitos wrote a book called the Canon about it; only this statue survives.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/02_10_2024_Photo_Paolo_Villa-Napoli-mann-Museo_Archeologico-FO232526tris-Arte_Greca_copia_romana-Policleto_Doriforo_Polykleitos_Doryphoros_from_Pompeii-marmo_marble_carrara.jpg/960px-thumbnail.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/02_10_2024_Photo_Paolo_Villa-Napoli-mann-Museo_Archeologico-FO232526tris-Arte_Greca_copia_romana-Policleto_Doriforo_Polykleitos_Doryphoros_from_Pompeii-marmo_marble_carrara.jpg/960px-thumbnail.jpg",
+      "artist": "Polykleitos"
     },
     {
       "title": "Dying Gaul",

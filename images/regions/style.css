@@ -21,6 +21,16 @@ h1 { font-size: 30px; font-weight: 600; letter-spacing: 0.01em; }
 .work .meta { font-size: 12px; color: var(--muted); font-style: italic; margin-bottom: 8px; }
 .work .d { font-size: 14px; color: var(--fg); line-height: 1.55; }
 
+.artist-section { margin-bottom: 48px; scroll-margin-top: 20px; }
+.artist-name { font-size: 22px; color: var(--active); border-bottom: 1px solid var(--border); padding-bottom: 8px; margin-bottom: 20px; font-weight: 600; }
+.artist-count { color: var(--muted); font-size: 13px; font-weight: normal; font-style: italic; margin-left: 10px; }
+.artist-toc { columns: 3; column-gap: 24px; font-size: 14px; margin-bottom: 40px; padding-bottom: 20px; border-bottom: 1px solid var(--border); }
+.artist-toc a { color: var(--fg); text-decoration: none; display: block; padding: 4px 0; }
+.artist-toc a:hover { color: var(--active); }
+.artist-toc a .c { color: var(--muted); font-size: 12px; margin-left: 6px; font-style: italic; }
+@media (max-width: 700px) { .artist-toc { columns: 2; } }
+@media (max-width: 420px) { .artist-toc { columns: 1; } }
+
 #lightbox { position: fixed; inset: 0; background: rgba(0,0,0,0.94); z-index: 100; display: flex; align-items: center; justify-content: center; padding: 40px 20px; }
 #lightbox[hidden] { display: none; }
 #lightbox figure { max-width: 1100px; width: 100%; display: flex; flex-direction: column; align-items: center; gap: 16px; }

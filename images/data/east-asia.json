@@ -37,7 +37,8 @@
       "title": "Along the River During Qingming",
       "meta": "Northern Song · Zhang Zeduan · 12th c.",
       "desc": "A five-meter handscroll showing hundreds of people in the Song capital on a spring festival day. Read right to left — it unfolds as you walk past.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Bianjing_city_gate.JPG/960px-Bianjing_city_gate.JPG"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Bianjing_city_gate.JPG/960px-Bianjing_city_gate.JPG",
+      "artist": "Zhang Zeduan"
     },
     {
       "title": "Forbidden City",
@@ -67,7 +68,8 @@
       "title": "The Great Wave off Kanagawa",
       "meta": "Edo Japan · Hokusai · c. 1831",
       "desc": "A woodblock print sold for the price of a bowl of noodles. Mount Fuji sits small and steady under the claw of the wave. Hokusai was in his seventies.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Tsunami_by_hokusai_19th_century.jpg/960px-Tsunami_by_hokusai_19th_century.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Tsunami_by_hokusai_19th_century.jpg/960px-Tsunami_by_hokusai_19th_century.jpg",
+      "artist": "Katsushika Hokusai"
     },
     {
       "title": "Longmen Grottoes",
@@ -97,7 +99,8 @@
       "title": "Early Spring",
       "meta": "Northern Song · Guo Xi · 1072 · China",
       "desc": "A mountain landscape in ink and subtle color. Guo Xi said a painter should look at nature \"as if going on a journey\" — this scroll is that walk.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Guo_Xi_-_Early_Spring_%28large%29.jpg/960px-Guo_Xi_-_Early_Spring_%28large%29.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Guo_Xi_-_Early_Spring_%28large%29.jpg/960px-Guo_Xi_-_Early_Spring_%28large%29.jpg",
+      "artist": "Guo Xi"
     },
     {
       "title": "Potala Palace",
