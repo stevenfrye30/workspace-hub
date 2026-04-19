@@ -1030,7 +1030,8 @@
         "nu",
         "apsu-tiamat"
       ],
-      "description": "The primordial void from which the first gods emerged in Hesiod's Theogony."
+      "description": "The primordial void from which the first gods emerged in Hesiod's Theogony.",
+      "wiki_title": "Chaos (cosmogony)"
     },
     {
       "id": "gaia",
@@ -1077,7 +1078,8 @@
         "jord",
         "prithvi"
       ],
-      "description": "Primordial Earth, mother of the Titans and most subsequent divine life. Goaded her children to castrate Uranus."
+      "description": "Primordial Earth, mother of the Titans and most subsequent divine life. Goaded her children to castrate Uranus.",
+      "wiki_title": "Gaia"
     },
     {
       "id": "uranus",
@@ -1116,7 +1118,8 @@
         "caelus",
         "varuna"
       ],
-      "description": "Primordial sky, son-husband of Gaia. Castrated by his son Cronus; from his severed genitals came Aphrodite."
+      "description": "Primordial sky, son-husband of Gaia. Castrated by his son Cronus; from his severed genitals came Aphrodite.",
+      "wiki_title": "Uranus (mythology)"
     },
     {
       "id": "tartarus",
@@ -1287,7 +1290,8 @@
         "saturn",
         "el"
       ],
-      "description": "Youngest Titan; overthrew Uranus and ruled the Golden Age. Swallowed his children to prevent being overthrown, until Zeus escaped."
+      "description": "Youngest Titan; overthrew Uranus and ruled the Golden Age. Swallowed his children to prevent being overthrown, until Zeus escaped.",
+      "wiki_title": "Cronus"
     },
     {
       "id": "rhea",
@@ -1319,7 +1323,8 @@
         "ops",
         "cybele"
       ],
-      "description": "Titaness mother of the Olympians. Hid infant Zeus from Cronus by giving him a swaddled stone to swallow."
+      "description": "Titaness mother of the Olympians. Hid infant Zeus from Cronus by giving him a swaddled stone to swallow.",
+      "wiki_title": "Rhea (mythology)"
     },
     {
       "id": "oceanus",
@@ -1529,7 +1534,8 @@
       "parallels": [
         "ma'at"
       ],
-      "description": "Titaness of divine law and natural order. Early consort of Zeus; held Delphi before Apollo."
+      "description": "Titaness of divine law and natural order. Early consort of Zeus; held Delphi before Apollo.",
+      "wiki_title": "Themis"
     },
     {
       "id": "mnemosyne",
@@ -1792,7 +1798,8 @@
         "juno",
         "frigg"
       ],
-      "description": "Queen of the gods; sister and wife of Zeus. Relentlessly persecutes Zeus's lovers and illegitimate children."
+      "description": "Queen of the gods; sister and wife of Zeus. Relentlessly persecutes Zeus's lovers and illegitimate children.",
+      "wiki_title": "Hera"
     },
     {
       "id": "poseidon",
@@ -1979,7 +1986,8 @@
         "minerva",
         "sulis"
       ],
-      "description": "Virgin goddess of wisdom and strategic warfare. Sprang fully-armed from Zeus's head after he swallowed her pregnant mother Metis."
+      "description": "Virgin goddess of wisdom and strategic warfare. Sprang fully-armed from Zeus's head after he swallowed her pregnant mother Metis.",
+      "wiki_title": "Athena"
     },
     {
       "id": "apollo",
@@ -2078,7 +2086,8 @@
       "parallels": [
         "mars"
       ],
-      "description": "God of warfare, bloodlust, and martial rage. Unloved by his parents."
+      "description": "God of warfare, bloodlust, and martial rage. Unloved by his parents.",
+      "wiki_title": "Ares"
     },
     {
       "id": "aphrodite",
@@ -2149,7 +2158,8 @@
         "ptah",
         "ilmarinen"
       ],
-      "description": "Lame smith of the gods. Cast from Olympus by Hera for his deformity. Forged the gods' weapons and palaces."
+      "description": "Lame smith of the gods. Cast from Olympus by Hera for his deformity. Forged the gods' weapons and palaces.",
+      "wiki_title": "Hephaestus"
     },
     {
       "id": "hermes",
@@ -2183,7 +2193,8 @@
         "loki",
         "anubis"
       ],
-      "description": "Messenger of the gods, psychopomp, patron of thieves and travelers. Stole Apollo's cattle on his first day."
+      "description": "Messenger of the gods, psychopomp, patron of thieves and travelers. Stole Apollo's cattle on his first day.",
+      "wiki_title": "Hermes"
     },
     {
       "id": "dionysus",
@@ -2214,7 +2225,8 @@
         "osiris",
         "sabazios"
       ],
-      "description": "Twice-born god of wine and ecstatic release. Born from Zeus's thigh after Semele was destroyed. Later replaced Hestia on Olympus."
+      "description": "Twice-born god of wine and ecstatic release. Born from Zeus's thigh after Semele was destroyed. Later replaced Hestia on Olympus.",
+      "wiki_title": "Dionysus"
     },
     {
       "id": "helios",
@@ -2244,7 +2256,8 @@
         "sol",
         "sol-invictus"
       ],
-      "description": "Personification of the sun. Drove a fiery chariot across the sky each day. Often conflated with Apollo in later tradition."
+      "description": "Personification of the sun. Drove a fiery chariot across the sky each day. Often conflated with Apollo in later tradition.",
+      "wiki_title": "Helios"
     },
     {
       "id": "selene",
@@ -2272,7 +2285,8 @@
       "parallels": [
         "luna"
       ],
-      "description": "Personification of the moon. Loved the mortal Endymion, granted eternal sleep so she could visit him nightly."
+      "description": "Personification of the moon. Loved the mortal Endymion, granted eternal sleep so she could visit him nightly.",
+      "wiki_title": "Selene"
     },
     {
       "id": "eos",
@@ -2381,7 +2395,8 @@
       "parallels": [
         "faunus"
       ],
-      "description": "Goat-legged god of shepherds, wild places, and panic."
+      "description": "Goat-legged god of shepherds, wild places, and panic.",
+      "wiki_title": "Pan (god)"
     },
     {
       "id": "eros",
@@ -2408,7 +2423,8 @@
         "cupid",
         "kamadeva"
       ],
-      "description": "God of romantic desire. Armed with arrows that compel love. Married the mortal Psyche after many trials."
+      "description": "God of romantic desire. Armed with arrows that compel love. Married the mortal Psyche after many trials.",
+      "wiki_title": "Eros"
     },
     {
       "id": "nike",
@@ -2451,7 +2467,8 @@
       "children": [],
       "archetype": null,
       "parallels": [],
-      "description": "Rainbow-messenger of the gods, especially Hera."
+      "description": "Rainbow-messenger of the gods, especially Hera.",
+      "wiki_title": "Iris (mythology)"
     },
     {
       "id": "asclepius",
@@ -2706,7 +2723,8 @@
         "melqart",
         "samson"
       ],
-      "description": "Greatest Greek hero; completed twelve impossible labors. Deified after his death, married Hebe on Olympus."
+      "description": "Greatest Greek hero; completed twelve impossible labors. Deified after his death, married Hebe on Olympus.",
+      "wiki_title": "Heracles"
     },
     {
       "id": "perseus",
@@ -2801,7 +2819,8 @@
         "indra",
         "tarhunt"
       ],
-      "description": "Roman chief god, equated with Zeus; head of the Capitoline Triad (Jupiter, Juno, Minerva)."
+      "description": "Roman chief god, equated with Zeus; head of the Capitoline Triad (Jupiter, Juno, Minerva).",
+      "wiki_title": "Jupiter (god)"
     },
     {
       "id": "juno",
@@ -2830,7 +2849,8 @@
       "parallels": [
         "hera"
       ],
-      "description": "Queen of the Roman gods; protector of Rome's women and state."
+      "description": "Queen of the Roman gods; protector of Rome's women and state.",
+      "wiki_title": "Juno (mythology)"
     },
     {
       "id": "neptune",
@@ -2857,7 +2877,8 @@
       "parallels": [
         "poseidon"
       ],
-      "description": "Roman god of the sea, equated with Poseidon; originally a fresh-water deity."
+      "description": "Roman god of the sea, equated with Poseidon; originally a fresh-water deity.",
+      "wiki_title": "Neptune (mythology)"
     },
     {
       "id": "pluto",
@@ -2881,7 +2902,8 @@
       "parallels": [
         "hades"
       ],
-      "description": "Roman god of the underworld; emphasizes the 'rich one' aspect of Hades."
+      "description": "Roman god of the underworld; emphasizes the 'rich one' aspect of Hades.",
+      "wiki_title": "Pluto (mythology)"
     },
     {
       "id": "saturn",
@@ -2913,7 +2935,8 @@
         "cronus",
         "el"
       ],
-      "description": "Pre-Olympian king of a Golden Age in Italy; conflated with Cronus. The Saturnalia festival reversed social order in his honor."
+      "description": "Pre-Olympian king of a Golden Age in Italy; conflated with Cronus. The Saturnalia festival reversed social order in his honor.",
+      "wiki_title": "Saturn (mythology)"
     },
     {
       "id": "ops",
@@ -2940,7 +2963,8 @@
       "parallels": [
         "rhea"
       ],
-      "description": "Roman goddess of agricultural abundance; consort of Saturn."
+      "description": "Roman goddess of agricultural abundance; consort of Saturn.",
+      "wiki_title": "Ops"
     },
     {
       "id": "ceres",
@@ -2967,7 +2991,8 @@
       "parallels": [
         "demeter"
       ],
-      "description": "Roman goddess of grain and agriculture, source of the word 'cereal'."
+      "description": "Roman goddess of grain and agriculture, source of the word 'cereal'.",
+      "wiki_title": "Ceres (mythology)"
     },
     {
       "id": "vesta",
@@ -2990,7 +3015,8 @@
       "parallels": [
         "hestia"
       ],
-      "description": "Virgin goddess of the hearth; her sacred flame was tended by the Vestal Virgins."
+      "description": "Virgin goddess of the hearth; her sacred flame was tended by the Vestal Virgins.",
+      "wiki_title": "Vesta (mythology)"
     },
     {
       "id": "mars",
@@ -3021,7 +3047,8 @@
         "ares",
         "tyr"
       ],
-      "description": "Roman war-god, second only to Jupiter. Father of Romulus and Remus. Originally also an agricultural deity."
+      "description": "Roman war-god, second only to Jupiter. Father of Romulus and Remus. Originally also an agricultural deity.",
+      "wiki_title": "Mars (mythology)"
     },
     {
       "id": "venus",
@@ -3053,7 +3080,8 @@
         "aphrodite",
         "inanna"
       ],
-      "description": "Roman love-goddess; ancestral mother of the Roman people through Aeneas."
+      "description": "Roman love-goddess; ancestral mother of the Roman people through Aeneas.",
+      "wiki_title": "Venus (mythology)"
     },
     {
       "id": "vulcan",
@@ -3107,7 +3135,8 @@
         "hermes",
         "odin"
       ],
-      "description": "Roman messenger god of merchants and thieves."
+      "description": "Roman messenger god of merchants and thieves.",
+      "wiki_title": "Mercury (mythology)"
     },
     {
       "id": "minerva",
@@ -3129,7 +3158,8 @@
       "parallels": [
         "athena"
       ],
-      "description": "Roman goddess of wisdom and crafts; third of the Capitoline Triad."
+      "description": "Roman goddess of wisdom and crafts; third of the Capitoline Triad.",
+      "wiki_title": "Minerva"
     },
     {
       "id": "apollo-roman",
@@ -3153,7 +3183,8 @@
       "parallels": [
         "apollo"
       ],
-      "description": "Adopted without translation from the Greek. Augustus promoted him as imperial patron."
+      "description": "Adopted without translation from the Greek. Augustus promoted him as imperial patron.",
+      "wiki_title": "Apollo"
     },
     {
       "id": "diana",
@@ -3176,7 +3207,8 @@
       "parallels": [
         "artemis"
       ],
-      "description": "Roman goddess of the hunt, moon, and wild places."
+      "description": "Roman goddess of the hunt, moon, and wild places.",
+      "wiki_title": "Diana (mythology)"
     },
     {
       "id": "bacchus",
@@ -3200,7 +3232,8 @@
       "parallels": [
         "dionysus"
       ],
-      "description": "Roman Dionysus; central to the Bacchanalia (suppressed by the Senate in 186 BCE)."
+      "description": "Roman Dionysus; central to the Bacchanalia (suppressed by the Senate in 186 BCE).",
+      "wiki_title": "Dionysus"
     },
     {
       "id": "janus",
@@ -3224,7 +3257,8 @@
       ],
       "archetype": null,
       "parallels": [],
-      "description": "Two-faced god of beginnings and endings. Purely Roman — no Greek equivalent. January is named for him."
+      "description": "Two-faced god of beginnings and endings. Purely Roman — no Greek equivalent. January is named for him.",
+      "wiki_title": "Janus"
     },
     {
       "id": "quirinus",
@@ -3357,7 +3391,8 @@
       ],
       "archetype": "creator",
       "parallels": [],
-      "description": "Self-created completion-god who emerged from Nun; spawned Shu and Tefnut by masturbation or spittle. Heliopolitan creator; later merged with Ra as Atum-Ra."
+      "description": "Self-created completion-god who emerged from Nun; spawned Shu and Tefnut by masturbation or spittle. Heliopolitan creator; later merged with Ra as Atum-Ra.",
+      "wiki_title": "Atum"
     },
     {
       "id": "ra",
@@ -3386,7 +3421,8 @@
         "helios",
         "surya"
       ],
-      "description": "Sun-god, chief deity for most of Egyptian history. Travels the sky by day and the underworld by night, battling Apep."
+      "description": "Sun-god, chief deity for most of Egyptian history. Travels the sky by day and the underworld by night, battling Apep.",
+      "wiki_title": "Ra"
     },
     {
       "id": "shu",
@@ -3410,7 +3446,8 @@
       ],
       "archetype": null,
       "parallels": [],
-      "description": "God of air; holds the sky (Nut) above the earth (Geb)."
+      "description": "God of air; holds the sky (Nut) above the earth (Geb).",
+      "wiki_title": "Shu (Egyptian god)"
     },
     {
       "id": "tefnut",
@@ -3491,7 +3528,8 @@
       ],
       "archetype": null,
       "parallels": [],
-      "description": "Sky-goddess arched over Geb, swallowing the sun each evening and giving birth to it at dawn."
+      "description": "Sky-goddess arched over Geb, swallowing the sun each evening and giving birth to it at dawn.",
+      "wiki_title": "Nut (goddess)"
     },
     {
       "id": "osiris",
@@ -3527,7 +3565,8 @@
         "adonis",
         "dionysus"
       ],
-      "description": "Murdered by Set, reassembled by Isis, became judge of the dead. Archetypal dying-and-rising god."
+      "description": "Murdered by Set, reassembled by Isis, became judge of the dead. Archetypal dying-and-rising god.",
+      "wiki_title": "Osiris"
     },
     {
       "id": "isis",
@@ -3561,7 +3600,8 @@
         "inanna",
         "mary"
       ],
-      "description": "Great magician; reassembled Osiris's scattered body. Her cult spread across the Roman Empire."
+      "description": "Great magician; reassembled Osiris's scattered body. Her cult spread across the Roman Empire.",
+      "wiki_title": "Isis"
     },
     {
       "id": "set",
@@ -3596,7 +3636,8 @@
       "parallels": [
         "apep"
       ],
-      "description": "Red-haired god of the desert and disorder. Murdered Osiris, battled Horus, but also nightly defends Ra against Apep."
+      "description": "Red-haired god of the desert and disorder. Murdered Osiris, battled Horus, but also nightly defends Ra against Apep.",
+      "wiki_title": "Set (deity)"
     },
     {
       "id": "nephthys",
@@ -3652,7 +3693,8 @@
       ],
       "archetype": null,
       "parallels": [],
-      "description": "Falcon-headed god of kingship; avenged his father Osiris by defeating Set. Each pharaoh was considered Horus incarnate."
+      "description": "Falcon-headed god of kingship; avenged his father Osiris by defeating Set. Each pharaoh was considered Horus incarnate.",
+      "wiki_title": "Horus"
     },
     {
       "id": "hathor",
@@ -3681,7 +3723,8 @@
         "aphrodite",
         "inanna"
       ],
-      "description": "Cow-horned sky-goddess of love, music, and motherhood. Sometimes the destructive Eye of Ra (as Sekhmet)."
+      "description": "Cow-horned sky-goddess of love, music, and motherhood. Sometimes the destructive Eye of Ra (as Sekhmet).",
+      "wiki_title": "Hathor"
     },
     {
       "id": "thoth",
@@ -3784,7 +3827,8 @@
       "parallels": [
         "hephaestus"
       ],
-      "description": "Memphite creator-god who made the world by thinking and speaking. Patron of craftsmen."
+      "description": "Memphite creator-god who made the world by thinking and speaking. Patron of craftsmen.",
+      "wiki_title": "Ptah"
     },
     {
       "id": "sekhmet",
@@ -3809,7 +3853,8 @@
       ],
       "archetype": "war-god",
       "parallels": [],
-      "description": "Lion-headed goddess of warfare and plague. When unleashed, nearly destroyed humanity until tricked with red beer."
+      "description": "Lion-headed goddess of warfare and plague. When unleashed, nearly destroyed humanity until tricked with red beer.",
+      "wiki_title": "Sekhmet"
     },
     {
       "id": "bastet",
@@ -3834,7 +3879,8 @@
       ],
       "archetype": null,
       "parallels": [],
-      "description": "Cat-headed goddess of the home. Fierce protector, softer counterpart to Sekhmet."
+      "description": "Cat-headed goddess of the home. Fierce protector, softer counterpart to Sekhmet.",
+      "wiki_title": "Bastet"
     },
     {
       "id": "khonsu",
@@ -3996,7 +4042,8 @@
         "vritra",
         "leviathan"
       ],
-      "description": "Primordial salt-water. Rose against the younger gods to avenge Apsu; slain by Marduk, her body split to form heaven and earth."
+      "description": "Primordial salt-water. Rose against the younger gods to avenge Apsu; slain by Marduk, her body split to form heaven and earth.",
+      "wiki_title": "Tiamat"
     },
     {
       "id": "anu",
@@ -4025,7 +4072,8 @@
       "parallels": [
         "dyeus"
       ],
-      "description": "Sumerian An, Akkadian Anu — sky-god and supreme authority of the Mesopotamian pantheon. Remote and rarely active."
+      "description": "Sumerian An, Akkadian Anu — sky-god and supreme authority of the Mesopotamian pantheon. Remote and rarely active.",
+      "wiki_title": "Anu"
     },
     {
       "id": "ki",
@@ -4078,7 +4126,8 @@
       ],
       "archetype": null,
       "parallels": [],
-      "description": "God of wind and kingship; chief executive of the pantheon. Decreed the Flood."
+      "description": "God of wind and kingship; chief executive of the pantheon. Decreed the Flood.",
+      "wiki_title": "Enlil"
     },
     {
       "id": "enki",
@@ -4108,7 +4157,8 @@
       ],
       "archetype": "wisdom-god",
       "parallels": [],
-      "description": "Akkadian Ea. Clever trickster-wise god of fresh water and mischief. Warned Utnapishtim of the Flood."
+      "description": "Akkadian Ea. Clever trickster-wise god of fresh water and mischief. Warned Utnapishtim of the Flood.",
+      "wiki_title": "Enki"
     },
     {
       "id": "ninhursag",
@@ -4170,7 +4220,8 @@
         "astarte",
         "hathor"
       ],
-      "description": "Paradox goddess of love AND war. Descended to the underworld; her return required Dumuzi as substitute. One of the oldest recorded deities."
+      "description": "Paradox goddess of love AND war. Descended to the underworld; her return required Dumuzi as substitute. One of the oldest recorded deities.",
+      "wiki_title": "Inanna"
     },
     {
       "id": "dumuzi",
@@ -4365,7 +4416,8 @@
         "baal",
         "zeus"
       ],
-      "description": "Babylonian storm-king; killed Tiamat and reshaped the cosmos. Rose to head the pantheon as Babylon rose to empire."
+      "description": "Babylonian storm-king; killed Tiamat and reshaped the cosmos. Rose to head the pantheon as Babylon rose to empire.",
+      "wiki_title": "Marduk"
     },
     {
       "id": "nabu",
@@ -4472,7 +4524,8 @@
       "parallels": [
         "heracles"
       ],
-      "description": "Two-thirds divine king of Uruk. Historical basis for the hero of the world's oldest surviving epic. Later deified as an underworld judge."
+      "description": "Two-thirds divine king of Uruk. Historical basis for the hero of the world's oldest surviving epic. Later deified as an underworld judge.",
+      "wiki_title": "Gilgamesh"
     },
     {
       "id": "el-canaanite",
@@ -4502,7 +4555,8 @@
         "anu",
         "dyeus"
       ],
-      "description": "Supreme Canaanite patriarch-god. Later identified in early Israelite religion with YHWH ('El Shaddai', 'El Elyon')."
+      "description": "Supreme Canaanite patriarch-god. Later identified in early Israelite religion with YHWH ('El Shaddai', 'El Elyon').",
+      "wiki_title": "El (deity)"
     },
     {
       "id": "athirat",
@@ -4558,7 +4612,8 @@
         "teshub",
         "zeus"
       ],
-      "description": "Storm-god who defeated Yam (sea) and Mot (death) to claim kingship. Chief rival deity in the Hebrew Bible."
+      "description": "Storm-god who defeated Yam (sea) and Mot (death) to claim kingship. Chief rival deity in the Hebrew Bible.",
+      "wiki_title": "Baal"
     },
     {
       "id": "anat",
@@ -4606,7 +4661,8 @@
         "inanna",
         "aphrodite"
       ],
-      "description": "Phoenician counterpart of Ishtar. Her cult reached Egypt, Greece (as Aphrodite), and Carthage (as Tanit)."
+      "description": "Phoenician counterpart of Ishtar. Her cult reached Egypt, Greece (as Aphrodite), and Carthage (as Tanit).",
+      "wiki_title": "Astarte"
     },
     {
       "id": "yam",
@@ -4691,7 +4747,8 @@
       ],
       "archetype": null,
       "parallels": [],
-      "description": "Grain-god of Philistine and Ugaritic worship. Sometimes listed as Baal's father."
+      "description": "Grain-god of Philistine and Ugaritic worship. Sometimes listed as Baal's father.",
+      "wiki_title": "Dagon"
     },
     {
       "id": "moloch",
@@ -4960,7 +5017,8 @@
       ],
       "archetype": "wisdom-god",
       "parallels": [],
-      "description": "All-father of the Aesir. Sacrificed an eye for wisdom, hanged himself on Yggdrasil for the runes. God of kings, poets, madmen, and the dead."
+      "description": "All-father of the Aesir. Sacrificed an eye for wisdom, hanged himself on Yggdrasil for the runes. God of kings, poets, madmen, and the dead.",
+      "wiki_title": "Odin"
     },
     {
       "id": "frigg",
@@ -4988,7 +5046,8 @@
         "hera",
         "juno"
       ],
-      "description": "Queen of the Aesir, wife of Odin. Knew all fates but spoke of none. Tried to save Baldr by extracting oaths from all things — missing only mistletoe."
+      "description": "Queen of the Aesir, wife of Odin. Knew all fates but spoke of none. Tried to save Baldr by extracting oaths from all things — missing only mistletoe.",
+      "wiki_title": "Frigg"
     },
     {
       "id": "thor",
@@ -5023,7 +5082,8 @@
         "indra",
         "tarhunt"
       ],
-      "description": "Red-bearded thunder-god. Wielded the hammer Mjölnir; defender of Asgard against giants. Fated to kill and be killed by Jörmungandr at Ragnarök."
+      "description": "Red-bearded thunder-god. Wielded the hammer Mjölnir; defender of Asgard against giants. Fated to kill and be killed by Jörmungandr at Ragnarök.",
+      "wiki_title": "Thor"
     },
     {
       "id": "baldr",
@@ -5051,7 +5111,8 @@
         "dumuzi",
         "osiris"
       ],
-      "description": "Most beautiful of the Aesir. Killed by his blind brother Hodr (manipulated by Loki) via mistletoe. Returns after Ragnarök."
+      "description": "Most beautiful of the Aesir. Killed by his blind brother Hodr (manipulated by Loki) via mistletoe. Returns after Ragnarök.",
+      "wiki_title": "Baldr"
     },
     {
       "id": "tyr",
@@ -5075,7 +5136,8 @@
         "mars",
         "dyeus"
       ],
-      "description": "God of justice and oaths. Gave his right hand to bind the wolf Fenrir. Likely originally the PIE sky-father (*Tiwaz < *Dyēus)."
+      "description": "God of justice and oaths. Gave his right hand to bind the wolf Fenrir. Likely originally the PIE sky-father (*Tiwaz < *Dyēus).",
+      "wiki_title": "Týr"
     },
     {
       "id": "loki",
@@ -5111,7 +5173,8 @@
         "anansi",
         "prometheus"
       ],
-      "description": "Jötunn-born trickster counted among the Aesir. Mother (by Svadilfari) of Odin's steed Sleipnir. Instigates Ragnarök."
+      "description": "Jötunn-born trickster counted among the Aesir. Mother (by Svadilfari) of Odin's steed Sleipnir. Instigates Ragnarök.",
+      "wiki_title": "Loki"
     },
     {
       "id": "heimdall",
@@ -5231,7 +5294,8 @@
       ],
       "archetype": null,
       "parallels": [],
-      "description": "Vanir god of fertility, peace, and harvest. Gave up his sword for love; fated to fall to Surt at Ragnarök."
+      "description": "Vanir god of fertility, peace, and harvest. Gave up his sword for love; fated to fall to Surt at Ragnarök.",
+      "wiki_title": "Freyr"
     },
     {
       "id": "freyja",
@@ -5265,7 +5329,8 @@
         "aphrodite",
         "inanna"
       ],
-      "description": "Vanir goddess of love, fertility, and seidr-magic. Claims half the battle-dead (Odin gets the other half)."
+      "description": "Vanir goddess of love, fertility, and seidr-magic. Claims half the battle-dead (Odin gets the other half).",
+      "wiki_title": "Freyja"
     },
     {
       "id": "skadi",
@@ -5312,7 +5377,8 @@
         "ereshkigal",
         "persephone"
       ],
-      "description": "Half-living, half-corpse daughter of Loki. Rules the underworld realm sharing her name."
+      "description": "Half-living, half-corpse daughter of Loki. Rules the underworld realm sharing her name.",
+      "wiki_title": "Hel (being)"
     },
     {
       "id": "fenrir",
@@ -5403,7 +5469,8 @@
       ],
       "archetype": "creator",
       "parallels": [],
-      "description": "Creator-god of the Trimurti. Born from Vishnu's navel-lotus. Rarely worshipped directly."
+      "description": "Creator-god of the Trimurti. Born from Vishnu's navel-lotus. Rarely worshipped directly.",
+      "wiki_title": "Brahma"
     },
     {
       "id": "vishnu",
@@ -5426,7 +5493,8 @@
       ],
       "archetype": null,
       "parallels": [],
-      "description": "Preserver of the Trimurti. Descends in avatars (Rama, Krishna, Buddha, Kalki, and others) to restore dharma."
+      "description": "Preserver of the Trimurti. Descends in avatars (Rama, Krishna, Buddha, Kalki, and others) to restore dharma.",
+      "wiki_title": "Vishnu"
     },
     {
       "id": "shiva",
@@ -5452,7 +5520,8 @@
       ],
       "archetype": null,
       "parallels": [],
-      "description": "Destroyer-transformer of the Trimurti. Meditates on Kailash; dances the Tandava. Paradoxically ascetic and erotic."
+      "description": "Destroyer-transformer of the Trimurti. Meditates on Kailash; dances the Tandava. Paradoxically ascetic and erotic.",
+      "wiki_title": "Shiva"
     },
     {
       "id": "saraswati",
@@ -5476,7 +5545,8 @@
         "athena",
         "minerva"
       ],
-      "description": "Goddess of learning, music, and speech. Consort of Brahma."
+      "description": "Goddess of learning, music, and speech. Consort of Brahma.",
+      "wiki_title": "Saraswati"
     },
     {
       "id": "lakshmi",
@@ -5500,7 +5570,8 @@
         "tyche",
         "fortuna"
       ],
-      "description": "Goddess of wealth and fortune. Consort of Vishnu, born from the churning of the ocean."
+      "description": "Goddess of wealth and fortune. Consort of Vishnu, born from the churning of the ocean.",
+      "wiki_title": "Lakshmi"
     },
     {
       "id": "parvati",
@@ -5527,7 +5598,8 @@
       ],
       "archetype": null,
       "parallels": [],
-      "description": "Mountain goddess; consort of Shiva. Mother of Ganesha and Kartikeya. Manifests as fierce Durga and Kali."
+      "description": "Mountain goddess; consort of Shiva. Mother of Ganesha and Kartikeya. Manifests as fierce Durga and Kali.",
+      "wiki_title": "Parvati"
     },
     {
       "id": "durga",
@@ -5545,7 +5617,8 @@
       "children": [],
       "archetype": "war-god",
       "parallels": [],
-      "description": "Fierce warrior aspect of Parvati/Devi. Slew the buffalo-demon Mahishasura."
+      "description": "Fierce warrior aspect of Parvati/Devi. Slew the buffalo-demon Mahishasura.",
+      "wiki_title": "Durga"
     },
     {
       "id": "kali",
@@ -5565,7 +5638,8 @@
       "children": [],
       "archetype": null,
       "parallels": [],
-      "description": "Ferocious black goddess of time and destruction; ultimately benevolent as destroyer of ego."
+      "description": "Ferocious black goddess of time and destruction; ultimately benevolent as destroyer of ego.",
+      "wiki_title": "Kali"
     },
     {
       "id": "ganesha",
@@ -5591,7 +5665,8 @@
       "children": [],
       "archetype": null,
       "parallels": [],
-      "description": "Elephant-headed remover of obstacles. Beheaded by Shiva and given an elephant's head. Invoked before any undertaking."
+      "description": "Elephant-headed remover of obstacles. Beheaded by Shiva and given an elephant's head. Invoked before any undertaking.",
+      "wiki_title": "Ganesha"
     },
     {
       "id": "kartikeya",
@@ -5615,7 +5690,8 @@
       "children": [],
       "archetype": "war-god",
       "parallels": [],
-      "description": "Six-faced commander of the divine army. Major deity in Tamil Hinduism as Murugan."
+      "description": "Six-faced commander of the divine army. Major deity in Tamil Hinduism as Murugan.",
+      "wiki_title": "Kartikeya"
     },
     {
       "id": "indra",
@@ -5646,7 +5722,8 @@
         "zeus",
         "tarhunt"
       ],
-      "description": "King of the Devas in the Vedic period. Slew the dragon Vritra with his vajra. Later eclipsed by the Trimurti."
+      "description": "King of the Devas in the Vedic period. Slew the dragon Vritra with his vajra. Later eclipsed by the Trimurti.",
+      "wiki_title": "Indra"
     },
     {
       "id": "agni",
@@ -5669,7 +5746,8 @@
       "children": [],
       "archetype": null,
       "parallels": [],
-      "description": "Fire god; carrier of offerings between worlds. One of the most-hymned deities in the Rigveda."
+      "description": "Fire god; carrier of offerings between worlds. One of the most-hymned deities in the Rigveda.",
+      "wiki_title": "Agni"
     },
     {
       "id": "surya",
@@ -5699,7 +5777,8 @@
         "helios",
         "ra"
       ],
-      "description": "Sun-god. Father of Yama (death), Manu (first man), and Karna (hero of the Mahabharata)."
+      "description": "Sun-god. Father of Yama (death), Manu (first man), and Karna (hero of the Mahabharata).",
+      "wiki_title": "Surya"
     },
     {
       "id": "chandra",
@@ -5756,7 +5835,8 @@
         "osiris",
         "mictlantecuhtli"
       ],
-      "description": "First mortal; became first lord of the dead and judge of the departed. Cognate to Iranian Yima."
+      "description": "First mortal; became first lord of the dead and judge of the departed. Cognate to Iranian Yima.",
+      "wiki_title": "Yama (Hinduism)"
     },
     {
       "id": "varuna",
@@ -5785,7 +5865,8 @@
         "uranus",
         "ahura-mazda"
       ],
-      "description": "Vedic guardian of rta (cosmic order), demoted to sea-god in later Hinduism. Cognate to Iranian Ahura Mazda."
+      "description": "Vedic guardian of rta (cosmic order), demoted to sea-god in later Hinduism. Cognate to Iranian Ahura Mazda.",
+      "wiki_title": "Varuna"
     },
     {
       "id": "kama",
@@ -5831,7 +5912,8 @@
       "children": [],
       "archetype": null,
       "parallels": [],
-      "description": "Vanara (monkey-god); devoted servant of Rama. Embodiment of bhakti."
+      "description": "Vanara (monkey-god); devoted servant of Rama. Embodiment of bhakti.",
+      "wiki_title": "Hanuman"
     },
     {
       "id": "rama",
@@ -5857,7 +5939,8 @@
       ],
       "archetype": null,
       "parallels": [],
-      "description": "Seventh avatar of Vishnu. Hero-king of the Ramayana."
+      "description": "Seventh avatar of Vishnu. Hero-king of the Ramayana.",
+      "wiki_title": "Rama"
     },
     {
       "id": "krishna",
@@ -5885,7 +5968,8 @@
       ],
       "archetype": null,
       "parallels": [],
-      "description": "Eighth avatar of Vishnu. Charioteer-teacher of the Bhagavad Gita; playful cowherd of Vrindavan."
+      "description": "Eighth avatar of Vishnu. Charioteer-teacher of the Bhagavad Gita; playful cowherd of Vrindavan.",
+      "wiki_title": "Krishna"
     },
     {
       "id": "vritra",
@@ -6008,7 +6092,8 @@
       "parallels": [
         "varuna"
       ],
-      "description": "The 'Wise Lord' — supreme creator god of Zoroastrianism. Uncreated. Eternally opposed to Angra Mainyu."
+      "description": "The 'Wise Lord' — supreme creator god of Zoroastrianism. Uncreated. Eternally opposed to Angra Mainyu.",
+      "wiki_title": "Ahura Mazda"
     },
     {
       "id": "angra-mainyu",
@@ -6031,7 +6116,8 @@
       "parallels": [
         "satan"
       ],
-      "description": "Destructive spirit, eternal adversary of Ahura Mazda. Created the demons (daevas). Will be defeated at the end of time."
+      "description": "Destructive spirit, eternal adversary of Ahura Mazda. Created the demons (daevas). Will be defeated at the end of time.",
+      "wiki_title": "Angra Mainyu"
     },
     {
       "id": "mithra",
@@ -6051,7 +6137,8 @@
       "parallels": [
         "mitra-vedic"
       ],
-      "description": "God of covenants and light. Shared origin with Vedic Mitra. Spawned the Roman cult of Mithras."
+      "description": "God of covenants and light. Shared origin with Vedic Mitra. Spawned the Roman cult of Mithras.",
+      "wiki_title": "Mithra"
     },
     {
       "id": "anahita",
@@ -6130,7 +6217,8 @@
       "children": [],
       "archetype": null,
       "parallels": [],
-      "description": "Historical prophet-founder of Zoroastrianism (dates debated, possibly c. 1500–1000 BCE)."
+      "description": "Historical prophet-founder of Zoroastrianism (dates debated, possibly c. 1500–1000 BCE).",
+      "wiki_title": "Zoroaster"
     },
     {
       "id": "dagda",
@@ -6161,7 +6249,8 @@
       ],
       "archetype": null,
       "parallels": [],
-      "description": "'Good God' — father-figure of the Tuatha Dé Danann. Owned a cauldron of plenty, a magical club, and a harp that ordered the seasons."
+      "description": "'Good God' — father-figure of the Tuatha Dé Danann. Owned a cauldron of plenty, a magical club, and a harp that ordered the seasons.",
+      "wiki_title": "Dagda"
     },
     {
       "id": "lugh",
@@ -6190,7 +6279,8 @@
         "mercury",
         "lugus"
       ],
-      "description": "'Master of all skills'. Led the Tuatha Dé Danann to victory over the Fomorians. Father of the hero Cú Chulainn."
+      "description": "'Master of all skills'. Led the Tuatha Dé Danann to victory over the Fomorians. Father of the hero Cú Chulainn.",
+      "wiki_title": "Lugh"
     },
     {
       "id": "morrigan",
@@ -6212,7 +6302,8 @@
       "children": [],
       "archetype": "war-god",
       "parallels": [],
-      "description": "Crow-goddess of battle and sovereignty. Triple goddess with Badb and Macha (or Nemain)."
+      "description": "Crow-goddess of battle and sovereignty. Triple goddess with Badb and Macha (or Nemain).",
+      "wiki_title": "The Morrígan"
     },
     {
       "id": "brigid",
@@ -6238,7 +6329,8 @@
       ],
       "archetype": null,
       "parallels": [],
-      "description": "Goddess of poetry, smithcraft, and healing. Her cult continued into Christian Ireland as Saint Brigid."
+      "description": "Goddess of poetry, smithcraft, and healing. Her cult continued into Christian Ireland as Saint Brigid.",
+      "wiki_title": "Brigid"
     },
     {
       "id": "danu",
@@ -6382,7 +6474,8 @@
       ],
       "archetype": null,
       "parallels": [],
-      "description": "Hero of the Ulster Cycle. Unleashed the battle-frenzy 'warp spasm'. Died young, tied to a standing stone."
+      "description": "Hero of the Ulster Cycle. Unleashed the battle-frenzy 'warp spasm'. Died young, tied to a standing stone.",
+      "wiki_title": "Cú Chulainn"
     },
     {
       "id": "don",
@@ -6556,7 +6649,8 @@
       ],
       "archetype": null,
       "parallels": [],
-      "description": "Giant-king of Britain in the Second Branch. His head, buried under the Tower of London, protects Britain."
+      "description": "Giant-king of Britain in the Second Branch. His head, buried under the Tower of London, protects Britain.",
+      "wiki_title": "Brân the Blessed"
     },
     {
       "id": "branwen",
@@ -6611,7 +6705,8 @@
         "perkunas",
         "thor"
       ],
-      "description": "Chief thunder-god of the Slavs. Topped Vladimir's pagan pantheon in Kyiv. Opposed by the serpent Veles."
+      "description": "Chief thunder-god of the Slavs. Topped Vladimir's pagan pantheon in Kyiv. Opposed by the serpent Veles.",
+      "wiki_title": "Perun"
     },
     {
       "id": "veles",
@@ -6633,7 +6728,8 @@
       "children": [],
       "archetype": "serpent-dragon",
       "parallels": [],
-      "description": "Chthonic 'horned' god of cattle, magic, and the underworld. Eternal adversary of Perun — the Slavic chaoskampf."
+      "description": "Chthonic 'horned' god of cattle, magic, and the underworld. Eternal adversary of Perun — the Slavic chaoskampf.",
+      "wiki_title": "Veles (god)"
     },
     {
       "id": "svarog",
@@ -6657,7 +6753,8 @@
       "parallels": [
         "hephaestus"
       ],
-      "description": "Smith-sky-god, creator or ancestor. Father of Dazhbog."
+      "description": "Smith-sky-god, creator or ancestor. Father of Dazhbog.",
+      "wiki_title": "Svarog"
     },
     {
       "id": "dazhbog",
@@ -6677,7 +6774,8 @@
       "children": [],
       "archetype": "sun-god",
       "parallels": [],
-      "description": "'Giving god' — sun-god and source of wealth."
+      "description": "'Giving god' — sun-god and source of wealth.",
+      "wiki_title": "Dazhbog"
     },
     {
       "id": "mokosh",
@@ -6702,7 +6800,8 @@
       ],
       "archetype": "earth-mother",
       "parallels": [],
-      "description": "Moist-earth-mother. Only female deity in Vladimir's pantheon. Her worship persisted under the Christian cult of Mary."
+      "description": "Moist-earth-mother. Only female deity in Vladimir's pantheon. Her worship persisted under the Christian cult of Mary.",
+      "wiki_title": "Mokosh"
     },
     {
       "id": "yarilo",
@@ -6787,7 +6886,8 @@
         "thor",
         "perun"
       ],
-      "description": "Chief Finnish sky-thunder god. 'Ukkonen' (thunder) in modern Finnish still bears his name."
+      "description": "Chief Finnish sky-thunder god. 'Ukkonen' (thunder) in modern Finnish still bears his name.",
+      "wiki_title": "Ukko"
     },
     {
       "id": "akka",
@@ -6828,7 +6928,8 @@
       "parallels": [
         "odin"
       ],
-      "description": "Eternal sage-bard, central hero of the Kalevala. Creates the world with his songs."
+      "description": "Eternal sage-bard, central hero of the Kalevala. Creates the world with his songs.",
+      "wiki_title": "Väinämöinen"
     },
     {
       "id": "ilmarinen",
@@ -6850,7 +6951,8 @@
       "parallels": [
         "hephaestus"
       ],
-      "description": "Eternal smith; forged the sky-dome and the mythic Sampo."
+      "description": "Eternal smith; forged the sky-dome and the mythic Sampo.",
+      "wiki_title": "Ilmarinen"
     },
     {
       "id": "louhi",
@@ -7049,7 +7151,8 @@
       ],
       "archetype": "sun-god",
       "parallels": [],
-      "description": "Sun-goddess; ancestor of the Imperial Family. Hid in the Heavenly Rock Cave after Susanoo's rampage, plunging the world into darkness."
+      "description": "Sun-goddess; ancestor of the Imperial Family. Hid in the Heavenly Rock Cave after Susanoo's rampage, plunging the world into darkness.",
+      "wiki_title": "Amaterasu"
     },
     {
       "id": "tsukuyomi",
@@ -7073,7 +7176,8 @@
       ],
       "archetype": "moon-deity",
       "parallels": [],
-      "description": "Moon-god; estranged from Amaterasu after killing a food-goddess, explaining the separation of day and night."
+      "description": "Moon-god; estranged from Amaterasu after killing a food-goddess, explaining the separation of day and night.",
+      "wiki_title": "Tsukuyomi-no-Mikoto"
     },
     {
       "id": "susanoo",
@@ -7101,7 +7205,8 @@
       ],
       "archetype": "storm-god",
       "parallels": [],
-      "description": "Storm-god. Exiled for rampaging; slew the eight-headed serpent Yamata-no-Orochi; recovered the sword Kusanagi."
+      "description": "Storm-god. Exiled for rampaging; slew the eight-headed serpent Yamata-no-Orochi; recovered the sword Kusanagi.",
+      "wiki_title": "Susanoo-no-Mikoto"
     },
     {
       "id": "izanagi",
@@ -7127,7 +7232,8 @@
       ],
       "archetype": "creator",
       "parallels": [],
-      "description": "Creator-god. With Izanami, churned the primal sea to form the Japanese islands."
+      "description": "Creator-god. With Izanami, churned the primal sea to form the Japanese islands.",
+      "wiki_title": "Izanagi"
     },
     {
       "id": "izanami",
@@ -7152,7 +7258,8 @@
       ],
       "archetype": "mother-goddess",
       "parallels": [],
-      "description": "Creator-goddess, later queen of Yomi (underworld) after dying giving birth to Kagutsuchi."
+      "description": "Creator-goddess, later queen of Yomi (underworld) after dying giving birth to Kagutsuchi.",
+      "wiki_title": "Izanami"
     },
     {
       "id": "kagutsuchi",
@@ -7191,7 +7298,8 @@
       "children": [],
       "archetype": null,
       "parallels": [],
-      "description": "Gender-variable kami of rice and prosperity. Messenger foxes (kitsune) serve Inari. One-third of Japan's shrines are Inari shrines."
+      "description": "Gender-variable kami of rice and prosperity. Messenger foxes (kitsune) serve Inari. One-third of Japan's shrines are Inari shrines.",
+      "wiki_title": "Inari Ōkami"
     },
     {
       "id": "raijin",
@@ -7274,7 +7382,8 @@
       "children": [],
       "archetype": "war-god",
       "parallels": [],
-      "description": "War-god, patron of the samurai. Often identified with deified Emperor Ōjin."
+      "description": "War-god, patron of the samurai. Often identified with deified Emperor Ōjin.",
+      "wiki_title": "Hachiman"
     },
     {
       "id": "yamata-no-orochi",
@@ -7475,7 +7584,8 @@
       ],
       "archetype": null,
       "parallels": [],
-      "description": "Jade Emperor — supreme ruler of heaven in Chinese folk religion. Head of the celestial bureaucracy."
+      "description": "Jade Emperor — supreme ruler of heaven in Chinese folk religion. Head of the celestial bureaucracy.",
+      "wiki_title": "Jade Emperor"
     },
     {
       "id": "xiwangmu",
@@ -7495,7 +7605,8 @@
       "children": [],
       "archetype": null,
       "parallels": [],
-      "description": "Queen Mother of the West; tends the peaches of immortality."
+      "description": "Queen Mother of the West; tends the peaches of immortality.",
+      "wiki_title": "Queen Mother of the West"
     },
     {
       "id": "pangu",
@@ -7515,7 +7626,8 @@
         "ymir",
         "purusha"
       ],
-      "description": "Primordial giant who separated heaven from earth; the world was made from his body."
+      "description": "Primordial giant who separated heaven from earth; the world was made from his body.",
+      "wiki_title": "Pangu"
     },
     {
       "id": "nuwa",
@@ -7535,7 +7647,8 @@
       "children": [],
       "archetype": "mother-goddess",
       "parallels": [],
-      "description": "Serpent-bodied goddess who created humans from clay and repaired the collapsed sky with colored stones."
+      "description": "Serpent-bodied goddess who created humans from clay and repaired the collapsed sky with colored stones.",
+      "wiki_title": "Nüwa"
     },
     {
       "id": "fuxi",
@@ -7556,7 +7669,8 @@
       "children": [],
       "archetype": null,
       "parallels": [],
-      "description": "Serpent-bodied culture-hero; gave humans the trigrams of the I Ching. First of the mythical Three Sovereigns."
+      "description": "Serpent-bodied culture-hero; gave humans the trigrams of the I Ching. First of the mythical Three Sovereigns.",
+      "wiki_title": "Fuxi"
     },
     {
       "id": "shangdi",
@@ -7614,7 +7728,8 @@
       "children": [],
       "archetype": null,
       "parallels": [],
-      "description": "Archer who shot down nine of the ten suns to save the earth from scorching."
+      "description": "Archer who shot down nine of the ten suns to save the earth from scorching.",
+      "wiki_title": "Hou Yi"
     },
     {
       "id": "change",
@@ -7632,7 +7747,8 @@
       "children": [],
       "archetype": "moon-deity",
       "parallels": [],
-      "description": "Moon-goddess. Consumed the elixir of immortality and fled to the moon. Mid-Autumn Festival honors her."
+      "description": "Moon-goddess. Consumed the elixir of immortality and fled to the moon. Mid-Autumn Festival honors her.",
+      "wiki_title": "Chang'e"
     },
     {
       "id": "longwang",
@@ -7667,7 +7783,8 @@
       "children": [],
       "archetype": null,
       "parallels": [],
-      "description": "Goddess of mercy. Chinese form of the bodhisattva Avalokiteśvara; underwent gender-shift on entering East Asia."
+      "description": "Goddess of mercy. Chinese form of the bodhisattva Avalokiteśvara; underwent gender-shift on entering East Asia.",
+      "wiki_title": "Guanyin"
     },
     {
       "id": "zaojun",
@@ -7731,7 +7848,8 @@
       ],
       "archetype": null,
       "parallels": [],
-      "description": "Sky-father orisha delegated to shape humans from clay; sometimes drunk while working, explaining birth defects."
+      "description": "Sky-father orisha delegated to shape humans from clay; sometimes drunk while working, explaining birth defects.",
+      "wiki_title": "Obatala"
     },
     {
       "id": "yemaya",
@@ -7756,7 +7874,8 @@
       ],
       "archetype": "mother-goddess",
       "parallels": [],
-      "description": "Mother of all orishas; goddess of the Ogun river (and in the diaspora, the ocean)."
+      "description": "Mother of all orishas; goddess of the Ogun river (and in the diaspora, the ocean).",
+      "wiki_title": "Yemọja"
     },
     {
       "id": "shango",
@@ -7784,7 +7903,8 @@
         "thor",
         "perun"
       ],
-      "description": "Thunder-god and legendary fourth Alaafin of Oyo. Historical king who became an orisha."
+      "description": "Thunder-god and legendary fourth Alaafin of Oyo. Historical king who became an orisha.",
+      "wiki_title": "Shango"
     },
     {
       "id": "oshun",
@@ -7812,7 +7932,8 @@
         "aphrodite",
         "hathor"
       ],
-      "description": "River-goddess of love and beauty. Central to Cuban Santería."
+      "description": "River-goddess of love and beauty. Central to Cuban Santería.",
+      "wiki_title": "Oshun"
     },
     {
       "id": "ogun",
@@ -7838,7 +7959,8 @@
       "parallels": [
         "hephaestus-war-combined"
       ],
-      "description": "Orisha of iron, warfare, and technology. First among the orishas to descend to earth, cutting a path with his machete."
+      "description": "Orisha of iron, warfare, and technology. First among the orishas to descend to earth, cutting a path with his machete.",
+      "wiki_title": "Ogun"
     },
     {
       "id": "oya",
@@ -7883,7 +8005,8 @@
         "loki",
         "anansi"
       ],
-      "description": "Messenger between humans and orishas. Trickster at crossroads. Offerings to Eshu precede those to any other orisha."
+      "description": "Messenger between humans and orishas. Trickster at crossroads. Offerings to Eshu precede those to any other orisha.",
+      "wiki_title": "Eshu"
     },
     {
       "id": "oxossi",
@@ -7971,7 +8094,8 @@
       ],
       "archetype": null,
       "parallels": [],
-      "description": "'Smoking Mirror'. Omnipotent and mercurial. Ruled earlier world-ages; eternal rival of Quetzalcoatl."
+      "description": "'Smoking Mirror'. Omnipotent and mercurial. Ruled earlier world-ages; eternal rival of Quetzalcoatl.",
+      "wiki_title": "Tezcatlipoca"
     },
     {
       "id": "quetzalcoatl",
@@ -8000,7 +8124,8 @@
       ],
       "archetype": "dying-rising",
       "parallels": [],
-      "description": "Feathered Serpent. Created humans by bringing bones from the underworld. Self-immolated to become Venus."
+      "description": "Feathered Serpent. Created humans by bringing bones from the underworld. Self-immolated to become Venus.",
+      "wiki_title": "Quetzalcoatl"
     },
     {
       "id": "huitzilopochtli",
@@ -8020,7 +8145,8 @@
       "children": [],
       "archetype": "war-god",
       "parallels": [],
-      "description": "War and sun-god; patron of the Mexica. Born fully-armed to defend Coatlicue from Coyolxauhqui."
+      "description": "War and sun-god; patron of the Mexica. Born fully-armed to defend Coatlicue from Coyolxauhqui.",
+      "wiki_title": "Huitzilopochtli"
     },
     {
       "id": "xipe-totec",
@@ -8041,7 +8167,8 @@
       "children": [],
       "archetype": "dying-rising",
       "parallels": [],
-      "description": "'Flayed Lord' — agricultural god of vegetation-renewal. Priests wore flayed skins in his festival."
+      "description": "'Flayed Lord' — agricultural god of vegetation-renewal. Priests wore flayed skins in his festival.",
+      "wiki_title": "Xipe Totec"
     },
     {
       "id": "coatlicue",
@@ -8065,7 +8192,8 @@
       ],
       "archetype": "mother-goddess",
       "parallels": [],
-      "description": "'Serpent-skirt' — earth goddess who miraculously conceived Huitzilopochtli by a ball of feathers. Her daughter attempted matricide in response."
+      "description": "'Serpent-skirt' — earth goddess who miraculously conceived Huitzilopochtli by a ball of feathers. Her daughter attempted matricide in response.",
+      "wiki_title": "Coatlicue"
     },
     {
       "id": "coyolxauhqui",
@@ -8109,7 +8237,8 @@
       "parallels": [
         "chaac"
       ],
-      "description": "Rain-god. Children sacrificed to him — their tears symbolized rainfall."
+      "description": "Rain-god. Children sacrificed to him — their tears symbolized rainfall.",
+      "wiki_title": "Tlaloc"
     },
     {
       "id": "chalchiuhtlicue",
@@ -8152,7 +8281,8 @@
         "hades",
         "yama"
       ],
-      "description": "Skeletal lord of Mictlan, the Aztec underworld."
+      "description": "Skeletal lord of Mictlan, the Aztec underworld.",
+      "wiki_title": "Mictlāntēcutli"
     },
     {
       "id": "xochiquetzal",
@@ -8259,7 +8389,8 @@
       "children": [],
       "archetype": "creator",
       "parallels": [],
-      "description": "Supreme creator-god; source of writing and the calendar."
+      "description": "Supreme creator-god; source of writing and the calendar.",
+      "wiki_title": "Itzamna"
     },
     {
       "id": "ix-chel",
@@ -8299,7 +8430,8 @@
       "parallels": [
         "quetzalcoatl"
       ],
-      "description": "Feathered Serpent; Maya equivalent of Quetzalcoatl. The shadow-serpent appears on El Castillo at equinoxes."
+      "description": "Feathered Serpent; Maya equivalent of Quetzalcoatl. The shadow-serpent appears on El Castillo at equinoxes.",
+      "wiki_title": "Kukulkan"
     },
     {
       "id": "chaac",
@@ -8319,7 +8451,8 @@
       "parallels": [
         "tlaloc"
       ],
-      "description": "Rain-god. Four Chaacs correspond to the four cardinal directions."
+      "description": "Rain-god. Four Chaacs correspond to the four cardinal directions.",
+      "wiki_title": "Chaac"
     },
     {
       "id": "hunahpu",
@@ -8418,7 +8551,8 @@
       ],
       "archetype": "sun-god",
       "parallels": [],
-      "description": "Sun-god and divine ancestor of the Sapa Inca."
+      "description": "Sun-god and divine ancestor of the Sapa Inca.",
+      "wiki_title": "Inti"
     },
     {
       "id": "viracocha",
@@ -8442,7 +8576,8 @@
       ],
       "archetype": "creator",
       "parallels": [],
-      "description": "Creator-god; taught humans civilization and then disappeared across the Pacific."
+      "description": "Creator-god; taught humans civilization and then disappeared across the Pacific.",
+      "wiki_title": "Viracocha"
     },
     {
       "id": "pachamama",
@@ -8467,7 +8602,8 @@
       ],
       "archetype": "earth-mother",
       "parallels": [],
-      "description": "Earth-mother of the Andes, still honored today with offerings of food and alcohol."
+      "description": "Earth-mother of the Andes, still honored today with offerings of food and alcohol.",
+      "wiki_title": "Pachamama"
     },
     {
       "id": "mama-killa",
@@ -8672,7 +8808,8 @@
       "children": [],
       "archetype": null,
       "parallels": [],
-      "description": "Hawaiian volcano-goddess. Lives in Kīlauea. Creates Hawaiian islands through eruptions."
+      "description": "Hawaiian volcano-goddess. Lives in Kīlauea. Creates Hawaiian islands through eruptions.",
+      "wiki_title": "Pele (deity)"
     },
     {
       "id": "hine-nui",
@@ -8727,7 +8864,8 @@
       "children": [],
       "archetype": null,
       "parallels": [],
-      "description": "Chief archangel; warrior against evil. Appears in Daniel, Jude, and Revelation."
+      "description": "Chief archangel; warrior against evil. Appears in Daniel, Jude, and Revelation.",
+      "wiki_title": "Michael (archangel)"
     },
     {
       "id": "gabriel",
@@ -8744,7 +8882,8 @@
       "children": [],
       "archetype": null,
       "parallels": [],
-      "description": "Messenger archangel. Revealed prophecy to Daniel, announced Jesus's birth to Mary, recited Qur'an to Muhammad."
+      "description": "Messenger archangel. Revealed prophecy to Daniel, announced Jesus's birth to Mary, recited Qur'an to Muhammad.",
+      "wiki_title": "Gabriel"
     },
     {
       "id": "raphael",
@@ -8760,7 +8899,8 @@
       "children": [],
       "archetype": null,
       "parallels": [],
-      "description": "Healing archangel; major figure in the Book of Tobit."
+      "description": "Healing archangel; major figure in the Book of Tobit.",
+      "wiki_title": "Raphael (archangel)"
     },
     {
       "id": "uriel",
@@ -8777,7 +8917,8 @@
       "children": [],
       "archetype": null,
       "parallels": [],
-      "description": "Archangel of light and wisdom. Prominent in 2 Esdras and Enochic literature."
+      "description": "Archangel of light and wisdom. Prominent in 2 Esdras and Enochic literature.",
+      "wiki_title": "Uriel"
     },
     {
       "id": "metatron",
@@ -8793,7 +8934,8 @@
       "children": [],
       "archetype": null,
       "parallels": [],
-      "description": "Highest angel in later Jewish mysticism. In some traditions, the ascended Enoch transformed into an angel."
+      "description": "Highest angel in later Jewish mysticism. In some traditions, the ascended Enoch transformed into an angel.",
+      "wiki_title": "Metatron"
     },
     {
       "id": "satan",
@@ -8810,7 +8952,8 @@
       "children": [],
       "archetype": null,
       "parallels": [],
-      "description": "In the Hebrew Bible, 'the accuser' in the heavenly court. Evolved into Christianity's adversary of God."
+      "description": "In the Hebrew Bible, 'the accuser' in the heavenly court. Evolved into Christianity's adversary of God.",
+      "wiki_title": "Satan"
     },
     {
       "id": "lilith",
@@ -8833,7 +8976,8 @@
       "parallels": [
         "lilith-meso"
       ],
-      "description": "Night-demon of rabbinic lore. Alphabet of Ben Sira made her Adam's first wife, rejected for demanding equality."
+      "description": "Night-demon of rabbinic lore. Alphabet of Ben Sira made her Adam's first wife, rejected for demanding equality.",
+      "wiki_title": "Lilith"
     },
     {
       "id": "asmodeus",
@@ -8886,7 +9030,8 @@
       "children": [],
       "archetype": "dying-rising",
       "parallels": [],
-      "description": "In Christian theology, the incarnate second person of the Trinity. Historical Jesus (c. 4 BCE – 30 CE) crucified under Pilate."
+      "description": "In Christian theology, the incarnate second person of the Trinity. Historical Jesus (c. 4 BCE – 30 CE) crucified under Pilate.",
+      "wiki_title": "Jesus"
     },
     {
       "id": "mary",
@@ -8910,7 +9055,8 @@
       ],
       "archetype": null,
       "parallels": [],
-      "description": "Mother of Jesus. Revered especially in Catholic and Orthodox traditions as Theotokos ('God-bearer')."
+      "description": "Mother of Jesus. Revered especially in Catholic and Orthodox traditions as Theotokos ('God-bearer').",
+      "wiki_title": "Mary, mother of Jesus"
     },
     {
       "id": "holy-spirit",
@@ -8944,7 +9090,8 @@
       "children": [],
       "archetype": null,
       "parallels": [],
-      "description": "In Christian tradition, the fallen highest angel. Identified with Satan and (via mistranslation) Isaiah 14's 'morning star'."
+      "description": "In Christian tradition, the fallen highest angel. Identified with Satan and (via mistranslation) Isaiah 14's 'morning star'.",
+      "wiki_title": "Lucifer"
     },
     {
       "id": "allah",
@@ -9100,7 +9247,8 @@
       ],
       "archetype": null,
       "parallels": [],
-      "description": "63 BCE – 14 CE. First Roman emperor. Deified after death (Divus Augustus), beginning the imperial cult. Already had temples during his life in the eastern provinces."
+      "description": "63 BCE – 14 CE. First Roman emperor. Deified after death (Divus Augustus), beginning the imperial cult. Already had temples during his life in the eastern provinces.",
+      "wiki_title": "Augustus"
     },
     {
       "id": "julius-caesar",
@@ -9127,7 +9275,8 @@
       ],
       "archetype": null,
       "parallels": [],
-      "description": "100–44 BCE. First Roman officially deified (Divus Julius, 42 BCE), opening the door to imperial cult."
+      "description": "100–44 BCE. First Roman officially deified (Divus Julius, 42 BCE), opening the door to imperial cult.",
+      "wiki_title": "Julius Caesar"
     },
     {
       "id": "alexander",
@@ -9152,7 +9301,8 @@
       ],
       "archetype": null,
       "parallels": [],
-      "description": "356–323 BCE. Declared son of Zeus-Ammon at Siwa. Worshipped during his lifetime in Egypt and after across the Hellenistic world."
+      "description": "356–323 BCE. Declared son of Zeus-Ammon at Siwa. Worshipped during his lifetime in Egypt and after across the Hellenistic world.",
+      "wiki_title": "Alexander the Great"
     },
     {
       "id": "imhotep-dh",
@@ -9193,7 +9343,8 @@
       ],
       "archetype": "war-god",
       "parallels": [],
-      "description": "~160–220 CE. Chinese general of the Three Kingdoms. Deified as Guan Di, god of war and brotherhood. Still widely worshipped, including by police and triads alike."
+      "description": "~160–220 CE. Chinese general of the Three Kingdoms. Deified as Guan Di, god of war and brotherhood. Still widely worshipped, including by police and triads alike.",
+      "wiki_title": "Guan Yu"
     },
     {
       "id": "confucius",
@@ -9218,7 +9369,8 @@
       ],
       "archetype": "wisdom-god",
       "parallels": [],
-      "description": "551–479 BCE. Historical philosopher. Received divine titles and temple worship from the Han dynasty onward."
+      "description": "551–479 BCE. Historical philosopher. Received divine titles and temple worship from the Han dynasty onward.",
+      "wiki_title": "Confucius"
     },
     {
       "id": "laozi",
@@ -9236,7 +9388,8 @@
       "children": [],
       "archetype": null,
       "parallels": [],
-      "description": "Semi-legendary c. 6th-century BCE sage. Deified in Taoism as Taishang Laojun, one of the Three Pure Ones."
+      "description": "Semi-legendary c. 6th-century BCE sage. Deified in Taoism as Taishang Laojun, one of the Three Pure Ones.",
+      "wiki_title": "Laozi"
     },
     {
       "id": "mazu",
@@ -9256,7 +9409,8 @@
       "children": [],
       "archetype": null,
       "parallels": [],
-      "description": "Historical Lin Moniang (960–987 CE), a Fujian shaman girl. Deified as sea-goddess; among the most widely-worshipped figures in Chinese folk religion."
+      "description": "Historical Lin Moniang (960–987 CE), a Fujian shaman girl. Deified as sea-goddess; among the most widely-worshipped figures in Chinese folk religion.",
+      "wiki_title": "Mazu"
     },
     {
       "id": "tenjin",
@@ -9318,7 +9472,8 @@
       ],
       "archetype": null,
       "parallels": [],
-      "description": "c. 563–483 BCE (debated). Founder of Buddhism. Not a 'god' in original Buddhism, but venerated and iconographically deified in Mahayana and folk practice."
+      "description": "c. 563–483 BCE (debated). Founder of Buddhism. Not a 'god' in original Buddhism, but venerated and iconographically deified in Mahayana and folk practice.",
+      "wiki_title": "Gautama Buddha"
     },
     {
       "id": "asklepios-dh",
@@ -9454,7 +9609,8 @@
         "thor",
         "indra"
       ],
-      "description": "Thunder-god. The most direct surviving continuation of *Perkʷunos. Chases the devil Velnias across the sky."
+      "description": "Thunder-god. The most direct surviving continuation of *Perkʷunos. Chases the devil Velnias across the sky.",
+      "wiki_title": "Perkūnas"
     },
     {
       "id": "saule",
@@ -9543,7 +9699,8 @@
         "moirai",
         "norns"
       ],
-      "description": "Goddess of fate. Visits each newborn to determine their life's course."
+      "description": "Goddess of fate. Visits each newborn to determine their life's course.",
+      "wiki_title": "Laima"
     },
     {
       "id": "zemyna",
@@ -10055,7 +10212,8 @@
         "dyeus",
         "anu"
       ],
-      "description": "Eternal Blue Sky. Supreme god of the steppe peoples. Mandate of the khagans came from Tengri."
+      "description": "Eternal Blue Sky. Supreme god of the steppe peoples. Mandate of the khagans came from Tengri.",
+      "wiki_title": "Tengri"
     },
     {
       "id": "umay",
@@ -11383,7 +11541,8 @@
       "parallels": [
         "ein-sof"
       ],
-      "description": "The True God of Gnosticism. Unknowable, beyond being. Not the creator-god of Genesis (who is the Demiurge)."
+      "description": "The True God of Gnosticism. Unknowable, beyond being. Not the creator-god of Genesis (who is the Demiurge).",
+      "wiki_title": "Monad (Gnosticism)"
     },
     {
       "id": "barbelo",
@@ -12148,7 +12307,8 @@
       ],
       "archetype": null,
       "parallels": [],
-      "description": "Cupbearer of the gods before Ganymede. Married the deified Heracles on Olympus."
+      "description": "Cupbearer of the gods before Ganymede. Married the deified Heracles on Olympus.",
+      "wiki_title": "Hebe (mythology)"
     },
     {
       "id": "eileithyia",
@@ -12308,7 +12468,8 @@
       ],
       "archetype": null,
       "parallels": [],
-      "description": "Phoenician princess abducted by Zeus in the form of a white bull. Eponym of the continent."
+      "description": "Phoenician princess abducted by Zeus in the form of a white bull. Eponym of the continent.",
+      "wiki_title": "Europa (consort of Zeus)"
     },
     {
       "id": "leda",
@@ -12454,7 +12615,8 @@
       ],
       "archetype": null,
       "parallels": [],
-      "description": "Priestess of Hera loved by Zeus, turned into a cow to escape Hera's notice. Wandered the world tormented by a gadfly before regaining her form in Egypt."
+      "description": "Priestess of Hera loved by Zeus, turned into a cow to escape Hera's notice. Wandered the world tormented by a gadfly before regaining her form in Egypt.",
+      "wiki_title": "Io (mythology)"
     },
     {
       "id": "psyche",
@@ -12475,7 +12637,8 @@
       ],
       "archetype": null,
       "parallels": [],
-      "description": "Mortal woman whose beauty enraged Aphrodite. Married Eros; completed impossible trials to reunite with him and was granted immortality."
+      "description": "Mortal woman whose beauty enraged Aphrodite. Married Eros; completed impossible trials to reunite with him and was granted immortality.",
+      "wiki_title": "Psyche (mythology)"
     },
     {
       "id": "andromeda",
@@ -12578,7 +12741,8 @@
       "children": [],
       "archetype": null,
       "parallels": [],
-      "description": "Winged horse born from Medusa's severed neck. Aid of Bellerophon; later carried Zeus's thunderbolts."
+      "description": "Winged horse born from Medusa's severed neck. Aid of Bellerophon; later carried Zeus's thunderbolts.",
+      "wiki_title": "Pegasus"
     },
     {
       "id": "orion",
@@ -12601,7 +12765,8 @@
       "children": [],
       "archetype": null,
       "parallels": [],
-      "description": "Giant hunter. Killed by Artemis (versions differ); placed among the stars with his dog Sirius."
+      "description": "Giant hunter. Killed by Artemis (versions differ); placed among the stars with his dog Sirius.",
+      "wiki_title": "Orion (mythology)"
     },
     {
       "id": "aeneas",
@@ -12704,7 +12869,8 @@
       ],
       "archetype": null,
       "parallels": [],
-      "description": "Witch-goddess of Aeaea. Transformed Odysseus's crew into swine; later became his ally and lover."
+      "description": "Witch-goddess of Aeaea. Transformed Odysseus's crew into swine; later became his ally and lover.",
+      "wiki_title": "Circe"
     },
     {
       "id": "jord",
@@ -13396,7 +13562,8 @@
       "children": [],
       "archetype": null,
       "parallels": [],
-      "description": "Crocodile-headed god. Patron of the Nile's power; protector of pharaohs."
+      "description": "Crocodile-headed god. Patron of the Nile's power; protector of pharaohs.",
+      "wiki_title": "Sobek"
     },
     {
       "id": "neith",
@@ -13460,7 +13627,8 @@
       "children": [],
       "archetype": null,
       "parallels": [],
-      "description": "Dwarf-god protector of households and childbirth. Grotesque features scared away evil spirits."
+      "description": "Dwarf-god protector of households and childbirth. Grotesque features scared away evil spirits.",
+      "wiki_title": "Bes"
     },
     {
       "id": "taweret",
@@ -13733,7 +13901,8 @@
       "children": [],
       "archetype": null,
       "parallels": [],
-      "description": "Wild man created by Aruru to rival Gilgamesh. Became his closest friend; his death set Gilgamesh on his quest for immortality."
+      "description": "Wild man created by Aruru to rival Gilgamesh. Became his closest friend; his death set Gilgamesh on his quest for immortality.",
+      "wiki_title": "Enkidu"
     },
     {
       "id": "ningal",
@@ -14468,7 +14637,8 @@
         "eros",
         "kama"
       ],
-      "description": "Roman Eros. Winged archer whose arrows compel love."
+      "description": "Roman Eros. Winged archer whose arrows compel love.",
+      "wiki_title": "Cupid"
     },
     {
       "id": "sol",
@@ -14486,7 +14656,8 @@
       "parallels": [
         "helios"
       ],
-      "description": "Roman sun-god. Later elevated as Sol Invictus, state-sponsored from the 3rd century CE until displaced by Christianity."
+      "description": "Roman sun-god. Later elevated as Sol Invictus, state-sponsored from the 3rd century CE until displaced by Christianity.",
+      "wiki_title": "Sol (mythology)"
     },
     {
       "id": "luna",
@@ -14504,7 +14675,8 @@
       "parallels": [
         "selene"
       ],
-      "description": "Roman moon-goddess."
+      "description": "Roman moon-goddess.",
+      "wiki_title": "Luna (goddess)"
     },
     {
       "id": "rhea-silvia",
@@ -14594,7 +14766,8 @@
         "tyche",
         "lakshmi"
       ],
-      "description": "Goddess of luck. Blindfolded; turns the wheel of fortune. Oracle at Praeneste."
+      "description": "Goddess of luck. Blindfolded; turns the wheel of fortune. Oracle at Praeneste.",
+      "wiki_title": "Fortuna"
     },
     {
       "id": "bona-dea",
@@ -14678,7 +14851,8 @@
       "parallels": [
         "mithra"
       ],
-      "description": "Roman mystery-god derived (loosely) from Iranian Mithra. Popular among Roman soldiers; worshipped in underground mithraea. Tauroctony (bull-slaying) is the core icon."
+      "description": "Roman mystery-god derived (loosely) from Iranian Mithra. Popular among Roman soldiers; worshipped in underground mithraea. Tauroctony (bull-slaying) is the core icon.",
+      "wiki_title": "Mithras"
     },
     {
       "id": "dioscuri",
@@ -14779,7 +14953,8 @@
       ],
       "archetype": null,
       "parallels": [],
-      "description": "Only mortal of the three Gorgons. Slain by Perseus; her severed head retained its petrifying gaze."
+      "description": "Only mortal of the three Gorgons. Slain by Perseus; her severed head retained its petrifying gaze.",
+      "wiki_title": "Medusa"
     },
     {
       "id": "melinoe",
@@ -16358,7 +16533,8 @@
       "children": [],
       "archetype": null,
       "parallels": [],
-      "description": "Chief god of the West Slavs at the great temple of Arkona on Rügen. Four-headed; worshipped until Christian destruction of his idol in 1168."
+      "description": "Chief god of the West Slavs at the great temple of Arkona on Rügen. Four-headed; worshipped until Christian destruction of his idol in 1168.",
+      "wiki_title": "Svetovid"
     },
     {
       "id": "stribog",
@@ -16377,7 +16553,8 @@
       ],
       "archetype": null,
       "parallels": [],
-      "description": "Wind-god of Vladimir's pantheon; ancestor of the winds. Mentioned in The Tale of Igor's Campaign."
+      "description": "Wind-god of Vladimir's pantheon; ancestor of the winds. Mentioned in The Tale of Igor's Campaign.",
+      "wiki_title": "Stribog"
     },
     {
       "id": "khors",
@@ -16597,7 +16774,8 @@
         "dan",
         "jormungandr"
       ],
-      "description": "Widely shared creator-figure across Aboriginal Australia, known by many names (Ngalyod, Wagyl, Yingarna, Wollunqua). Shaped the landscape moving through it; lives in waterholes."
+      "description": "Widely shared creator-figure across Aboriginal Australia, known by many names (Ngalyod, Wagyl, Yingarna, Wollunqua). Shaped the landscape moving through it; lives in waterholes.",
+      "wiki_title": "Rainbow Serpent"
     },
     {
       "id": "baiame",
@@ -16619,7 +16797,8 @@
       ],
       "archetype": "sky-father",
       "parallels": [],
-      "description": "Sky-father of the Kamilaroi, Wiradjuri, and other southeastern groups. Shaped mountains and rivers; gave ritual law."
+      "description": "Sky-father of the Kamilaroi, Wiradjuri, and other southeastern groups. Shaped mountains and rivers; gave ritual law.",
+      "wiki_title": "Baiame"
     },
     {
       "id": "bunjil",
@@ -16637,7 +16816,8 @@
       "children": [],
       "archetype": "creator",
       "parallels": [],
-      "description": "Wedge-tailed eagle creator of the Kulin nations around Melbourne. Made the first humans from clay."
+      "description": "Wedge-tailed eagle creator of the Kulin nations around Melbourne. Made the first humans from clay.",
+      "wiki_title": "Bunjil"
     },
     {
       "id": "yhi",
@@ -16655,7 +16835,8 @@
       "children": [],
       "archetype": "sun-god",
       "parallels": [],
-      "description": "Karraur sun-goddess. Awoke the sleeping Earth into the Dreaming; first of the Spirits."
+      "description": "Karraur sun-goddess. Awoke the sleeping Earth into the Dreaming; first of the Spirits.",
+      "wiki_title": "Yhi"
     },
     {
       "id": "bahloo",
@@ -16689,7 +16870,8 @@
       "children": [],
       "archetype": "sky-father",
       "parallels": [],
-      "description": "Arrernte remote sky-father. Created the Earth then withdrew; the word Altjira also means 'Dreamtime' itself."
+      "description": "Arrernte remote sky-father. Created the Earth then withdrew; the word Altjira also means 'Dreamtime' itself.",
+      "wiki_title": "Altjira"
     },
     {
       "id": "namarrgon",
@@ -16884,7 +17066,8 @@
         "eshu",
         "hermes"
       ],
-      "description": "Old man at the crossroads; first lwa invoked in every ceremony. Opens the gate between the human and spirit worlds. Derived from Fon Legba."
+      "description": "Old man at the crossroads; first lwa invoked in every ceremony. Opens the gate between the human and spirit worlds. Derived from Fon Legba.",
+      "wiki_title": "Papa Legba"
     },
     {
       "id": "baron-samedi",
@@ -16905,7 +17088,8 @@
       "children": [],
       "archetype": "underworld-ruler",
       "parallels": [],
-      "description": "Top-hatted, sunglass-wearing lord of the Gede (spirits of the dead). Digs every grave; can refuse to accept a soul and return it to life. Both somber and lewd."
+      "description": "Top-hatted, sunglass-wearing lord of the Gede (spirits of the dead). Digs every grave; can refuse to accept a soul and return it to life. Both somber and lewd.",
+      "wiki_title": "Baron Samedi"
     },
     {
       "id": "erzulie",
@@ -16930,7 +17114,8 @@
         "aphrodite",
         "oshun"
       ],
-      "description": "Rada lwa of romantic love and luxury. Famous for her tears — she weeps because the world falls short of her vision of beauty."
+      "description": "Rada lwa of romantic love and luxury. Famous for her tears — she weeps because the world falls short of her vision of beauty.",
+      "wiki_title": "Erzulie"
     },
     {
       "id": "damballa",
@@ -16953,7 +17138,8 @@
       "parallels": [
         "dan"
       ],
-      "description": "Great white serpent lwa; father of all lwa. Ancient and peaceful. Derived from Fon Dan."
+      "description": "Great white serpent lwa; father of all lwa. Ancient and peaceful. Derived from Fon Dan.",
+      "wiki_title": "Damballa"
     },
     {
       "id": "ogou-haitian",
@@ -17121,7 +17307,8 @@
         "zeus",
         "dionysus"
       ],
-      "description": "Thracian-Phrygian sky/horseman god. Identified by Greeks sometimes with Zeus, sometimes with Dionysus. His ecstatic cult reached Athens."
+      "description": "Thracian-Phrygian sky/horseman god. Identified by Greeks sometimes with Zeus, sometimes with Dionysus. His ecstatic cult reached Athens.",
+      "wiki_title": "Sabazios"
     },
     {
       "id": "bendis",
@@ -17140,7 +17327,8 @@
       "parallels": [
         "artemis"
       ],
-      "description": "Huntress-goddess. Her cult was officially adopted in Athens in 429 BCE (the Bendideia festival)."
+      "description": "Huntress-goddess. Her cult was officially adopted in Athens in 429 BCE (the Bendideia festival).",
+      "wiki_title": "Bendis"
     },
     {
       "id": "zalmoxis",
@@ -17158,7 +17346,8 @@
       "children": [],
       "archetype": "dying-rising",
       "parallels": [],
-      "description": "Getic religious founder said by Herodotus to have been a slave of Pythagoras. Taught his people that they would not die but go to live with him; disappeared into an underground chamber for three years, then reappeared."
+      "description": "Getic religious founder said by Herodotus to have been a slave of Pythagoras. Taught his people that they would not die but go to live with him; disappeared into an underground chamber for three years, then reappeared.",
+      "wiki_title": "Zalmoxis"
     },
     {
       "id": "kotys-thr",
@@ -17216,7 +17405,8 @@
       ],
       "archetype": null,
       "parallels": [],
-      "description": "Sea-nymph whom Zeus and Poseidon both desired — until a prophecy said her son would surpass his father. Married off to mortal Peleus; bore Achilles."
+      "description": "Sea-nymph whom Zeus and Poseidon both desired — until a prophecy said her son would surpass his father. Married off to mortal Peleus; bore Achilles.",
+      "wiki_title": "Thetis"
     },
     {
       "id": "achilles",
@@ -17241,7 +17431,8 @@
       ],
       "archetype": null,
       "parallels": [],
-      "description": "Greatest Greek warrior at Troy. Dipped in the Styx as an infant — invulnerable except for the heel his mother held him by."
+      "description": "Greatest Greek warrior at Troy. Dipped in the Styx as an infant — invulnerable except for the heel his mother held him by.",
+      "wiki_title": "Achilles"
     },
     {
       "id": "odysseus",
@@ -17269,7 +17460,8 @@
       ],
       "archetype": "trickster",
       "parallels": [],
-      "description": "King of Ithaca; devised the Trojan Horse. Took ten years to return home — subject of the Odyssey."
+      "description": "King of Ithaca; devised the Trojan Horse. Took ten years to return home — subject of the Odyssey.",
+      "wiki_title": "Odysseus"
     },
     {
       "id": "jason",
@@ -17291,7 +17483,8 @@
       "children": [],
       "archetype": null,
       "parallels": [],
-      "description": "Leader of the Argonauts; retrieved the Golden Fleece with Medea's help. Later abandoned her; died alone beneath the rotting Argo."
+      "description": "Leader of the Argonauts; retrieved the Golden Fleece with Medea's help. Later abandoned her; died alone beneath the rotting Argo.",
+      "wiki_title": "Jason"
     },
     {
       "id": "medea",
@@ -17316,7 +17509,8 @@
       ],
       "archetype": null,
       "parallels": [],
-      "description": "Colchian sorceress; granddaughter of Helios via Aeetes. Helped Jason win the Fleece; when abandoned, killed their children in vengeance."
+      "description": "Colchian sorceress; granddaughter of Helios via Aeetes. Helped Jason win the Fleece; when abandoned, killed their children in vengeance.",
+      "wiki_title": "Medea"
     },
     {
       "id": "orpheus",
@@ -17339,7 +17533,8 @@
       "children": [],
       "archetype": null,
       "parallels": [],
-      "description": "Divine musician. Descended to retrieve his dead bride Eurydice; lost her by looking back. Orphic mystery religion traced itself to him."
+      "description": "Divine musician. Descended to retrieve his dead bride Eurydice; lost her by looking back. Orphic mystery religion traced itself to him.",
+      "wiki_title": "Orpheus"
     },
     {
       "id": "cadmus",
@@ -17366,7 +17561,8 @@
       ],
       "archetype": null,
       "parallels": [],
-      "description": "Phoenician prince who founded Thebes. Sowed dragon's teeth that grew into warriors; brought writing to Greece."
+      "description": "Phoenician prince who founded Thebes. Sowed dragon's teeth that grew into warriors; brought writing to Greece.",
+      "wiki_title": "Cadmus"
     },
     {
       "id": "bhudevi",
@@ -17411,7 +17607,8 @@
       "parallels": [
         "chandra"
       ],
-      "description": "Personified sacred drink of the Vedic sacrifice. Merged with Chandra (moon) in later tradition. Cognate with Iranian Haoma."
+      "description": "Personified sacred drink of the Vedic sacrifice. Merged with Chandra (moon) in later tradition. Cognate with Iranian Haoma.",
+      "wiki_title": "Soma (deity)"
     },
     {
       "id": "rudra",
@@ -17434,7 +17631,8 @@
       ],
       "archetype": null,
       "parallels": [],
-      "description": "Vedic storm/archer god; feared for his arrows of disease. Evolved into Shiva."
+      "description": "Vedic storm/archer god; feared for his arrows of disease. Evolved into Shiva.",
+      "wiki_title": "Rudra"
     },
     {
       "id": "kubera",
@@ -17456,7 +17654,8 @@
       "children": [],
       "archetype": null,
       "parallels": [],
-      "description": "Plump lord of treasures; king of the yakshas. Rules from Alaka in the Himalayas; guardian of the north."
+      "description": "Plump lord of treasures; king of the yakshas. Rules from Alaka in the Himalayas; guardian of the north.",
+      "wiki_title": "Kubera"
     },
     {
       "id": "balarama",
@@ -17482,7 +17681,8 @@
       ],
       "archetype": null,
       "parallels": [],
-      "description": "Elder brother of Krishna; avatar of Vishnu's serpent Shesha. Wields a plow; sometimes counted as an avatar in his own right."
+      "description": "Elder brother of Krishna; avatar of Vishnu's serpent Shesha. Wields a plow; sometimes counted as an avatar in his own right.",
+      "wiki_title": "Balarama"
     },
     {
       "id": "sif",
@@ -17505,7 +17705,8 @@
       ],
       "archetype": null,
       "parallels": [],
-      "description": "Wife of Thor; famous for her golden hair, which Loki cut off. The dwarves forged replacement hair of real gold."
+      "description": "Wife of Thor; famous for her golden hair, which Loki cut off. The dwarves forged replacement hair of real gold.",
+      "wiki_title": "Sif"
     },
     {
       "id": "ullr",
@@ -17603,7 +17804,8 @@
       "children": [],
       "archetype": null,
       "parallels": [],
-      "description": "God of the Nile's annual inundation. Depicted as androgynous, with a full belly and pendulous breasts — giver of abundance."
+      "description": "God of the Nile's annual inundation. Depicted as androgynous, with a full belly and pendulous breasts — giver of abundance.",
+      "wiki_title": "Hapi (Nile god)"
     },
     {
       "id": "khepri",
@@ -17621,7 +17823,8 @@
       "children": [],
       "archetype": null,
       "parallels": [],
-      "description": "Scarab-headed morning sun; aspect of Ra. Rolled the sun-disk across the sky like the dung-beetle rolls its ball."
+      "description": "Scarab-headed morning sun; aspect of Ra. Rolled the sun-disk across the sky like the dung-beetle rolls its ball.",
+      "wiki_title": "Khepri"
     },
     {
       "id": "satet",
@@ -18018,7 +18221,8 @@
       "parallels": [
         "saraswati"
       ],
-      "description": "Goddess of all that flows — water, music, words, money. Japanese form of Indian Saraswati. One of the Seven Lucky Gods."
+      "description": "Goddess of all that flows — water, music, words, money. Japanese form of Indian Saraswati. One of the Seven Lucky Gods.",
+      "wiki_title": "Benzaiten"
     },
     {
       "id": "jizo",
@@ -18065,6 +18269,575 @@
       "archetype": null,
       "parallels": [],
       "description": "Sister-wife of Manco Cápac; first Coya (queen) of the Incas. Taught Andean women to weave."
+    },
+    {
+      "id": "calliope",
+      "name": "Calliope",
+      "pantheon": "greek",
+      "category": "minor",
+      "gender": "F",
+      "domains": [
+        "epic-poetry",
+        "eloquence"
+      ],
+      "parents": [
+        "zeus",
+        "mnemosyne"
+      ],
+      "consorts": [
+        "apollo",
+        "oeagrus"
+      ],
+      "children": [
+        "orpheus",
+        "linus"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "Eldest of the Muses. Muse of epic poetry; mother of Orpheus."
+    },
+    {
+      "id": "calypso",
+      "name": "Calypso",
+      "pantheon": "greek",
+      "category": "minor",
+      "gender": "F",
+      "domains": [
+        "nymph",
+        "ogygia-island"
+      ],
+      "parents": [
+        "atlas",
+        "pleione"
+      ],
+      "consorts": [
+        "odysseus"
+      ],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Sea-nymph who held Odysseus captive on Ogygia for seven years, offering him immortality. Released him at the gods command."
+    },
+    {
+      "id": "demophon",
+      "name": "Demophon",
+      "pantheon": "greek",
+      "category": "hero",
+      "gender": "M",
+      "domains": [
+        "king-of-athens"
+      ],
+      "parents": [
+        "theseus",
+        "phaedra"
+      ],
+      "consorts": [
+        "phyllis"
+      ],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Athenian king, son of Theseus. Broke his promise to return to the Thracian princess Phyllis, who died of grief."
+    },
+    {
+      "id": "tyche",
+      "name": "Tyche",
+      "pantheon": "greek",
+      "category": "minor",
+      "gender": "F",
+      "domains": [
+        "fortune",
+        "chance",
+        "prosperity-of-cities"
+      ],
+      "parents": [
+        "oceanus",
+        "tethys"
+      ],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [
+        "fortuna",
+        "lakshmi"
+      ],
+      "description": "Greek goddess of fortune and the patron of cities. Often depicted with a mural crown and cornucopia.",
+      "wiki_title": "Tyche"
+    },
+    {
+      "id": "purusha",
+      "name": "Purusha",
+      "pantheon": "hindu",
+      "category": "primordial",
+      "gender": "M",
+      "domains": [
+        "cosmic-being",
+        "sacrifice",
+        "first-man"
+      ],
+      "parents": [],
+      "consorts": [
+        "prakriti"
+      ],
+      "children": [],
+      "archetype": "creator",
+      "parallels": [
+        "ymir",
+        "pangu"
+      ],
+      "description": "Vedic primal man. His self-sacrifice and dismemberment produced the universe and the four varnas — parallel to Ymir and Pangu."
+    },
+    {
+      "id": "thrud",
+      "name": "Þrúðr",
+      "pantheon": "norse",
+      "category": "minor",
+      "gender": "F",
+      "domains": [
+        "strength",
+        "valkyrie"
+      ],
+      "parents": [
+        "thor",
+        "sif"
+      ],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Daughter of Thor and Sif. Name means strength. Counted among the Valkyries in some sources."
+    },
+    {
+      "id": "narfi",
+      "name": "Narfi",
+      "pantheon": "norse",
+      "category": "minor",
+      "gender": "M",
+      "domains": [
+        "son-of-loki"
+      ],
+      "parents": [
+        "loki",
+        "sigyn"
+      ],
+      "consorts": [],
+      "children": [],
+      "siblings": [
+        "vali-loki"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "Son of Loki and Sigyn. Disemboweled by his transformed brother Vali to produce the bonds that chain Loki until Ragnarök."
+    },
+    {
+      "id": "vali-loki",
+      "name": "Váli (son of Loki)",
+      "pantheon": "norse",
+      "category": "minor",
+      "gender": "M",
+      "domains": [
+        "wolf-form",
+        "transformed"
+      ],
+      "parents": [
+        "loki",
+        "sigyn"
+      ],
+      "consorts": [],
+      "children": [],
+      "siblings": [
+        "narfi"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "Son of Loki transformed by the Aesir into a wolf as part of Loki's punishment. Distinct from Odin's son Váli."
+    },
+    {
+      "id": "marichi",
+      "name": "Marichi",
+      "pantheon": "hindu",
+      "category": "minor",
+      "gender": "M",
+      "domains": [
+        "rishi",
+        "mind-born-son-of-brahma"
+      ],
+      "parents": [
+        "brahma"
+      ],
+      "consorts": [
+        "sambhuti"
+      ],
+      "children": [
+        "kashyapa"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "One of the seven great rishis (Saptarishi) born from Brahma's mind. Father of Kashyapa, grandfather of the Devas."
+    },
+    {
+      "id": "atri",
+      "name": "Atri",
+      "pantheon": "hindu",
+      "category": "minor",
+      "gender": "M",
+      "domains": [
+        "rishi",
+        "hospitality"
+      ],
+      "parents": [
+        "brahma"
+      ],
+      "consorts": [
+        "anasuya"
+      ],
+      "children": [
+        "chandra",
+        "datta",
+        "durvasa"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "One of the Saptarishi. Father of the moon-god Chandra and the sage Durvasa."
+    },
+    {
+      "id": "himavan",
+      "name": "Himavan",
+      "pantheon": "hindu",
+      "category": "minor",
+      "gender": "M",
+      "domains": [
+        "himalayas",
+        "mountain-king"
+      ],
+      "parents": [],
+      "consorts": [
+        "mena"
+      ],
+      "children": [
+        "parvati",
+        "ganga"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "Personified king of the Himalaya mountains. Father of Parvati (who married Shiva) and Ganga."
+    },
+    {
+      "id": "anjana",
+      "name": "Anjana",
+      "pantheon": "hindu",
+      "category": "minor",
+      "gender": "F",
+      "domains": [
+        "apsara",
+        "mother-of-hanuman"
+      ],
+      "parents": [
+        "kunjara"
+      ],
+      "consorts": [
+        "kesari",
+        "vayu"
+      ],
+      "children": [
+        "hanuman"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "Apsara cursed to earthly form. Conceived Hanuman by the wind-god Vayu."
+    },
+    {
+      "id": "lava",
+      "name": "Lava",
+      "pantheon": "hindu",
+      "category": "hero",
+      "gender": "M",
+      "domains": [
+        "warrior-twin"
+      ],
+      "parents": [
+        "rama",
+        "sita"
+      ],
+      "consorts": [],
+      "children": [],
+      "siblings": [
+        "kusha"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "Elder twin son of Rama and Sita, born in Valmikis hermitage after Sitas exile."
+    },
+    {
+      "id": "kusha",
+      "name": "Kusha",
+      "pantheon": "hindu",
+      "category": "hero",
+      "gender": "M",
+      "domains": [
+        "warrior-twin"
+      ],
+      "parents": [
+        "rama",
+        "sita"
+      ],
+      "consorts": [],
+      "children": [],
+      "siblings": [
+        "lava"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "Younger twin of Lava. Ancestor of the Kushvansha dynasty."
+    },
+    {
+      "id": "vasudeva",
+      "name": "Vasudeva",
+      "pantheon": "hindu",
+      "category": "hero",
+      "gender": "M",
+      "domains": [
+        "yadava-prince",
+        "father-of-krishna"
+      ],
+      "parents": [
+        "shurasena"
+      ],
+      "consorts": [
+        "devaki",
+        "rohini"
+      ],
+      "children": [
+        "krishna",
+        "balarama"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "Earthly father of Krishna. Carried the infant Krishna across the Yamuna to safety from Kamsa."
+    },
+    {
+      "id": "devaki",
+      "name": "Devaki",
+      "pantheon": "hindu",
+      "category": "hero",
+      "gender": "F",
+      "domains": [
+        "mother-of-krishna"
+      ],
+      "parents": [
+        "devaka"
+      ],
+      "consorts": [
+        "vasudeva"
+      ],
+      "children": [
+        "krishna",
+        "balarama"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "Mother of Krishna. Imprisoned by her brother Kamsa after a prophecy that her eighth son would kill him."
+    },
+    {
+      "id": "ninsar",
+      "name": "Ninsar",
+      "pantheon": "mesopotamian",
+      "category": "minor",
+      "gender": "F",
+      "domains": [
+        "plants",
+        "emergence"
+      ],
+      "parents": [
+        "enki",
+        "ninhursag"
+      ],
+      "consorts": [
+        "enki"
+      ],
+      "children": [
+        "ninkurra"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "Goddess of plants, born from Enki and Ninhursag after a nine-day divine gestation. Part of a four-generation Enki-daughter chain."
+    },
+    {
+      "id": "ninkurra",
+      "name": "Ninkurra",
+      "pantheon": "mesopotamian",
+      "category": "minor",
+      "gender": "F",
+      "domains": [
+        "meadow",
+        "mountain-pastures"
+      ],
+      "parents": [
+        "enki",
+        "ninsar"
+      ],
+      "consorts": [
+        "enki"
+      ],
+      "children": [
+        "uttu"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "Pasture-goddess, daughter-granddaughter of Enki via Ninsar."
+    },
+    {
+      "id": "uttu",
+      "name": "Uttu",
+      "pantheon": "mesopotamian",
+      "category": "minor",
+      "gender": "F",
+      "domains": [
+        "weaving",
+        "spider"
+      ],
+      "parents": [
+        "enki",
+        "ninkurra"
+      ],
+      "consorts": [
+        "enki"
+      ],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Weaver-goddess, last of the Enki-daughter chain. Advised by Ninhursag to refuse Enki's advances, setting off his eating of the forbidden plants."
+    },
+    {
+      "id": "cermait",
+      "name": "Cermait",
+      "pantheon": "celtic-irish",
+      "category": "minor",
+      "gender": "M",
+      "domains": [
+        "honey",
+        "eloquence"
+      ],
+      "parents": [
+        "dagda"
+      ],
+      "consorts": [],
+      "children": [
+        "mac-cuill",
+        "mac-cecht",
+        "mac-greine"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "Son of the Dagda, father of the last three Tuatha Dé Danann kings of Ireland."
+    },
+    {
+      "id": "ernmas",
+      "name": "Ernmas",
+      "pantheon": "celtic-irish",
+      "category": "minor",
+      "gender": "F",
+      "domains": [
+        "mother-of-war-goddesses"
+      ],
+      "parents": [],
+      "consorts": [
+        "delbaeth"
+      ],
+      "children": [
+        "morrigan",
+        "badb",
+        "macha",
+        "banba",
+        "fodla",
+        "eriu"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "Mother-figure of Tuatha Dé Danann genealogies. Mother of the war triad (Morrígan, Badb, Macha) and the three sovereignty-goddesses of Ireland."
+    },
+    {
+      "id": "ruadan",
+      "name": "Ruadán",
+      "pantheon": "celtic-irish",
+      "category": "hero",
+      "gender": "M",
+      "domains": [
+        "warrior"
+      ],
+      "parents": [
+        "bres",
+        "brigid"
+      ],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Son of Bres and Brigid. Killed attempting to assassinate Goibniu the smith at the second Battle of Moytura. Brigids lament over him invented keening."
+    },
+    {
+      "id": "dylan",
+      "name": "Dylan Ail Don",
+      "pantheon": "celtic-welsh",
+      "category": "minor",
+      "gender": "M",
+      "domains": [
+        "sea"
+      ],
+      "parents": [
+        "arianrhod",
+        "gwydion-or-gilfaethwy"
+      ],
+      "consorts": [],
+      "children": [],
+      "siblings": [
+        "lleu"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "Sea-being twin of Lleu in the Fourth Branch of the Mabinogi. Plunged into the sea at birth and swam like a fish."
+    },
+    {
+      "id": "pwyll",
+      "name": "Pwyll",
+      "pantheon": "celtic-welsh",
+      "category": "hero",
+      "gender": "M",
+      "domains": [
+        "prince-of-dyfed",
+        "otherworld-traveler"
+      ],
+      "parents": [],
+      "consorts": [
+        "rhiannon"
+      ],
+      "children": [
+        "pryderi"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "Prince of Dyfed and hero of the First Branch of the Mabinogi. Swapped realms with Arawn of Annwn for a year; married Rhiannon."
+    },
+    {
+      "id": "pohjolan-tytar",
+      "name": "Pohjan neiti",
+      "pantheon": "finnish",
+      "category": "minor",
+      "gender": "F",
+      "domains": [
+        "northland-maid",
+        "beauty"
+      ],
+      "parents": [
+        "louhi"
+      ],
+      "consorts": [
+        "ilmarinen"
+      ],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Daughter of Louhi. The beauty whose hand both Väinämöinen and Ilmarinen sought; Ilmarinen won her by forging the Sampo."
     }
   ]
 }

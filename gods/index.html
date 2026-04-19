@@ -398,6 +398,19 @@ main p { line-height:1.7; }
 @media (max-width: 840px) {
   .focus-main-row { grid-template-columns:1fr; }
   .focus-side h4 { margin-top:20px; }
+  .archetype-grid { grid-template-columns:1fr; }
+  .pantheon-group-grid { grid-template-columns:repeat(auto-fill, minmax(180px, 1fr)); }
+  .focus-center-card { padding:18px 20px; }
+  .focus-center-card .fname-main { font-size:22px; }
+  .focus-view { padding:18px 14px 16px; }
+  .focus-controls { padding:12px 14px; gap:8px; }
+  .focus-controls label { font-size:10px; }
+  .focus-controls select { min-width:160px; font-size:12px; padding:7px 10px; }
+  .focus-controls .count { font-size:11px; }
+  nav button { padding:8px 14px; letter-spacing:1.5px; }
+  .modal { padding:22px 22px; }
+  .modal-head .god-image, .modal-head .god-glyph { width:100px; height:100px; }
+  .modal-head .god-glyph { font-size:44px; }
 }
 
 .timeline {
@@ -546,12 +559,51 @@ main p { line-height:1.7; }
 footer { text-align:center; color:var(--muted); font-size:12px; padding:28px 20px 40px; border-top:1px solid var(--line); margin-top:40px; letter-spacing:1px; }
 footer a { color:var(--gold); text-decoration:none; }
 
+/* Accessibility: visible keyboard focus */
+a:focus-visible, button:focus-visible, select:focus-visible,
+input:focus-visible, [tabindex]:focus-visible,
+.pantheon-card:focus-visible, .focus-card:focus-visible,
+.arch-chip:focus-visible, .full-tree-node:focus-visible,
+.tab-btn:focus-visible, .god-card:focus-visible {
+  outline:2px solid var(--gold);
+  outline-offset:2px;
+  border-radius:4px;
+}
+.tab-btn:focus-visible { outline-offset:1px; }
+/* Don't show outline on mouse clicks (webkit default), only on keyboard */
+button:focus:not(:focus-visible),
+select:focus:not(:focus-visible),
+.pantheon-card:focus:not(:focus-visible) { outline:none; }
+.visually-hidden {
+  position:absolute; width:1px; height:1px; padding:0; margin:-1px;
+  overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;
+}
+
 @media (max-width: 700px) {
   header h1 { font-size:22px; letter-spacing:4px; }
-  main { padding:16px 14px; }
+  header h1::before, header h1::after { margin:0 10px; }
+  header p { font-size:11px; letter-spacing:0.8px; }
+  main { padding:16px 12px; }
+  h2 { font-size:18px; letter-spacing:2px; }
   .filters input { min-width:0; width:100%; }
-  .tl-label { width:130px; font-size:11px; }
-  .tl-track { left:140px; }
+  .tl-label { width:110px; font-size:10px; padding-right:8px; }
+  .pantheon-group-grid { grid-template-columns:1fr; }
+  .focus-center-card .focus-header { flex-direction:column; gap:12px; align-items:flex-start; }
+  .god-image, .god-glyph { width:80px; height:80px; }
+  .god-glyph { font-size:36px; }
+  .focus-children { grid-template-columns:repeat(auto-fill, minmax(130px, 1fr)); }
+  .pantheon-card { padding:10px 12px 10px 15px; }
+  .pantheon-card h4 { font-size:14px; }
+  .archetype-nav { padding:10px 12px; gap:4px; }
+  .archetype-nav a { font-size:10px; padding:3px 8px; letter-spacing:1px; }
+  .modal { padding:20px 18px; max-height:92vh; }
+  .modal-head { flex-direction:column; gap:14px; align-items:flex-start; }
+  .modal h2 { font-size:20px; }
+  .god-grid { grid-template-columns:repeat(auto-fill, minmax(160px, 1fr)); }
+  nav { padding:8px 14px; gap:4px; }
+  nav button { padding:7px 12px; font-size:11px; letter-spacing:1px; }
+  .pantheon-group-head { flex-wrap:wrap; gap:6px; }
+  .pantheon-group-head .group-era { margin-left:0; }
 }
 </style>
 </head>
@@ -561,18 +613,18 @@ footer a { color:var(--gold); text-decoration:none; }
   <p>A cross-cultural temporal map of the divine</p>
 </header>
 
-<nav>
-  <button class="tab-btn active" data-tab="overview">Pantheons</button>
-  <button class="tab-btn" data-tab="trees">Family Trees</button>
-  <button class="tab-btn" data-tab="timeline">Timeline</button>
-  <button class="tab-btn" data-tab="archetypes">Archetypes</button>
-  <button class="tab-btn" data-tab="deified">Deified Humans</button>
-  <button class="tab-btn" data-tab="browse">Browse All</button>
+<nav role="tablist" aria-label="Main sections">
+  <button class="tab-btn active" data-tab="overview" role="tab" aria-selected="true" aria-controls="tab-overview">Pantheons</button>
+  <button class="tab-btn" data-tab="trees" role="tab" aria-selected="false" aria-controls="tab-trees">Family Trees</button>
+  <button class="tab-btn" data-tab="timeline" role="tab" aria-selected="false" aria-controls="tab-timeline">Timeline</button>
+  <button class="tab-btn" data-tab="archetypes" role="tab" aria-selected="false" aria-controls="tab-archetypes">Archetypes</button>
+  <button class="tab-btn" data-tab="deified" role="tab" aria-selected="false" aria-controls="tab-deified">Deified Humans</button>
+  <button class="tab-btn" data-tab="browse" role="tab" aria-selected="false" aria-controls="tab-browse">Browse All</button>
 </nav>
 
 <main>
 
-<section id="tab-overview" class="tab active">
+<section id="tab-overview" class="tab active" role="tabpanel" aria-labelledby="tab-btn-overview">
   <h2>Pantheons</h2>
   <p class="intro">
     Dozens of traditions spanning sixty thousand years — from Aboriginal Australian Dreamings and the
@@ -584,7 +636,7 @@ footer a { color:var(--gold); text-decoration:none; }
   <div id="pantheonGroups"></div>
 </section>
 
-<section id="tab-trees" class="tab">
+<section id="tab-trees" class="tab" role="tabpanel">
   <h2>Family Trees</h2>
   <p class="intro">
     One figure at a time — parents above, siblings and consorts to the sides, children below, cross-cultural
@@ -615,7 +667,7 @@ footer a { color:var(--gold); text-decoration:none; }
   </div>
 </section>
 
-<section id="tab-timeline" class="tab">
+<section id="tab-timeline" class="tab" role="tabpanel">
   <h2>Temporal Map</h2>
   <p class="intro">
     Each bar shows a tradition's active span; the darker inner bar marks its peak of influence.
@@ -627,7 +679,7 @@ footer a { color:var(--gold); text-decoration:none; }
   </div>
 </section>
 
-<section id="tab-archetypes" class="tab">
+<section id="tab-archetypes" class="tab" role="tabpanel">
   <h2>Cross-Cultural Archetypes</h2>
   <p class="intro">
     Many roles — sky-father, storm-serpent-slayer, dying-and-rising god, trickster — recur with striking consistency across
@@ -638,7 +690,7 @@ footer a { color:var(--gold); text-decoration:none; }
   <div id="archetypeList" class="archetype-grid"></div>
 </section>
 
-<section id="tab-deified" class="tab">
+<section id="tab-deified" class="tab" role="tabpanel">
   <h2>Deified Humans</h2>
   <p class="intro">
     Historical persons elevated to divine status — whether by state decree, posthumous cult, or folk veneration.
@@ -648,7 +700,7 @@ footer a { color:var(--gold); text-decoration:none; }
   <div id="deifiedGrid" class="god-grid"></div>
 </section>
 
-<section id="tab-browse" class="tab">
+<section id="tab-browse" class="tab" role="tabpanel">
   <h2>Browse All Gods</h2>
   <div class="filters">
     <input type="text" id="searchInput" placeholder="Search by name, domain, or description…">
@@ -671,9 +723,9 @@ footer a { color:var(--gold); text-decoration:none; }
 
 </main>
 
-<div class="modal-bg" id="modalBg">
+<div class="modal-bg" id="modalBg" role="dialog" aria-modal="true" aria-labelledby="modalContent">
   <div class="modal" id="modal">
-    <button class="close" id="modalClose">×</button>
+    <button class="close" id="modalClose" aria-label="Close details">×</button>
     <div id="modalContent"></div>
   </div>
 </div>
@@ -689,6 +741,40 @@ let PANTHEONS_BY_ID = {};
 
 /* ---------- God image (Wikipedia + glyph fallback) ---------- */
 const WIKI_IMAGE_CACHE = new Map(); // godId -> { url: string|null, loading: boolean }
+const WIKI_LS_KEY = 'gods-wiki-images-v1';
+const WIKI_LS_TTL_MS = 30 * 24 * 60 * 60 * 1000; // 30 days
+
+// Load persistent cache from localStorage (skip expired entries)
+(function loadPersistentCache() {
+  try {
+    const raw = localStorage.getItem(WIKI_LS_KEY);
+    if (!raw) return;
+    const parsed = JSON.parse(raw);
+    const now = Date.now();
+    for (const id in parsed) {
+      const entry = parsed[id];
+      if (entry && (now - (entry.t || 0)) < WIKI_LS_TTL_MS) {
+        WIKI_IMAGE_CACHE.set(id, { url: entry.u, loading: false });
+      }
+    }
+  } catch (e) { /* corrupt cache — ignore */ }
+})();
+
+let lsSaveTimer = null;
+function schedulePersistCache() {
+  // Debounce writes so we don't hammer localStorage on bursts of fetches
+  if (lsSaveTimer) return;
+  lsSaveTimer = setTimeout(() => {
+    lsSaveTimer = null;
+    try {
+      const out = {};
+      WIKI_IMAGE_CACHE.forEach((v, k) => {
+        if (!v.loading) out[k] = { u: v.url, t: v.t || Date.now() };
+      });
+      localStorage.setItem(WIKI_LS_KEY, JSON.stringify(out));
+    } catch (e) { /* quota exceeded — drop silently */ }
+  }, 800);
+}
 
 // Domain → symbolic glyph (used when Wikipedia has no image)
 const DOMAIN_GLYPHS = [
@@ -726,17 +812,18 @@ function glyphForGod(g) {
 // otherwise show glyph + fire async fetch that will replace when ready.
 function godImageHtml(g, size = 'focus') {
   const cached = WIKI_IMAGE_CACHE.get(g.id);
+  const altText = (g.domains && g.domains.length)
+    ? `${g.name} — depiction from Wikipedia`
+    : `${g.name} — depiction`;
   if (cached && cached.url) {
     return `<div class="god-image" data-gid="${g.id}">
-      <img src="${cached.url}" alt="${g.name}" onerror="this.parentElement.outerHTML = godGlyphHtml(GODS_BY_ID['${g.id}'])">
-      <div class="god-image-caption">Wikipedia</div>
+      <img src="${cached.url}" alt="${escapeAttr(altText)}" onerror="this.parentElement.outerHTML = godGlyphHtml(GODS_BY_ID['${g.id}'])">
+      <div class="god-image-caption" aria-hidden="true">Wikipedia</div>
     </div>`;
   }
   if (cached && cached.url === null) {
-    // Known to have no image — show glyph
     return godGlyphHtml(g);
   }
-  // Not yet fetched: show glyph now + trigger fetch that will swap in
   scheduleImageFetch(g);
   return godGlyphHtml(g, true);
 }
@@ -752,7 +839,8 @@ function scheduleImageFetch(g) {
   if (prior && prior.loading) return;
   WIKI_IMAGE_CACHE.set(g.id, { url: null, loading: true });
   fetchWikipediaImage(g).then(url => {
-    WIKI_IMAGE_CACHE.set(g.id, { url, loading: false });
+    WIKI_IMAGE_CACHE.set(g.id, { url, loading: false, t: Date.now() });
+    schedulePersistCache();
     // Replace any pending glyphs for this god currently in the DOM
     document.querySelectorAll(`[data-pending-gid="${g.id}"]`).forEach(el => {
       if (url) {
@@ -766,7 +854,8 @@ function scheduleImageFetch(g) {
       }
     });
   }).catch(() => {
-    WIKI_IMAGE_CACHE.set(g.id, { url: null, loading: false });
+    WIKI_IMAGE_CACHE.set(g.id, { url: null, loading: false, t: Date.now() });
+    schedulePersistCache();
   });
 }
 
@@ -781,23 +870,25 @@ async function fetchWikipediaImage(g) {
 }
 
 function wikipediaTitleCandidates(g) {
-  const raw = g.name;
-  // Strip trailing parenthetical qualifier if present
-  const noParen = raw.replace(/\s*\([^)]*\)\s*$/, '').trim();
-  // Replace slashes (e.g. "Inanna / Ishtar") with underscore and also try individual parts
   const candidates = [];
-  if (raw !== noParen) candidates.push(raw);
-  candidates.push(noParen);
+  // Authored override wins
+  if (g.wiki_title) candidates.push(g.wiki_title);
+
+  const raw = g.name;
+  const noParen = raw.replace(/\s*\([^)]*\)\s*$/, '').trim();
+  if (raw !== noParen && !candidates.includes(raw)) candidates.push(raw);
+  if (!candidates.includes(noParen)) candidates.push(noParen);
   if (noParen.includes('/')) {
     noParen.split('/').forEach(p => {
       const t = p.trim();
       if (t && !candidates.includes(t)) candidates.push(t);
     });
   }
-  // Pantheon-qualified fallback for ambiguous cases (Rama (Hindu), etc.)
+  // Pantheon-qualified fallback for ambiguous cases (Rama (Hindu mythology), etc.)
   const p = PANTHEONS_BY_ID[g.pantheon];
   if (p && !noParen.includes('(')) {
-    candidates.push(`${noParen} (${p.name.split(' ')[0]} mythology)`);
+    const qualified = `${noParen} (${p.name.split(' ')[0]} mythology)`;
+    if (!candidates.includes(qualified)) candidates.push(qualified);
   }
   return candidates;
 }
@@ -861,9 +952,15 @@ function selectTab(tabId, { skipHash = false } = {}) {
   const btn = document.querySelector(`[data-tab="${tabId}"]`);
   const panel = document.getElementById('tab-' + tabId);
   if (!btn || !panel) return;
-  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => {
+    b.classList.remove('active');
+    b.setAttribute('aria-selected', 'false');
+    b.setAttribute('tabindex', '-1');
+  });
   document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
   btn.classList.add('active');
+  btn.setAttribute('aria-selected', 'true');
+  btn.setAttribute('tabindex', '0');
   panel.classList.add('active');
   if (!skipHash) updateHash('tab/' + tabId);
 }
@@ -938,6 +1035,17 @@ function wireModal() {
   document.getElementById('modalBg').addEventListener('click', e => { if (e.target.id === 'modalBg') closeModal(); });
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 }
+
+// Keyboard: Enter/Space on role=button elements triggers click
+document.addEventListener('keydown', e => {
+  if (e.key !== 'Enter' && e.key !== ' ') return;
+  const t = e.target;
+  if (!t || !(t instanceof HTMLElement)) return;
+  if (t.getAttribute('role') === 'button' && !t.matches('button, a, input, select, textarea')) {
+    e.preventDefault();
+    t.click();
+  }
+});
 function closeModal() { document.getElementById('modalBg').classList.remove('open'); }
 
 function openGod(id) {
@@ -1038,7 +1146,7 @@ function renderPantheonGrid() {
     const cards = members.map(p => {
       const n = counts[p.id] || 0;
       return `
-        <div class="pantheon-card" style="--pantheon-color:${p.color}" data-pid="${p.id}" title="${escapeAttr(p.description)}">
+        <div class="pantheon-card" style="--pantheon-color:${p.color}" data-pid="${p.id}" title="${escapeAttr(p.description)}" role="button" tabindex="0" aria-label="Open ${escapeAttr(p.name)} family tree">
           <div class="card-head">
             <h4>${p.name}</h4>
             <span class="count-chip">${n}</span>
@@ -1268,7 +1376,7 @@ function renderFocusView(g) {
 function relCard(id, size) {
   const g = GODS_BY_ID[id];
   if (!g) {
-    return `<div class="focus-card missing" title="Not yet catalogued">
+    return `<div class="focus-card missing" title="Not yet catalogued" aria-label="${escapeAttr(formatStubName(id))} — not yet catalogued">
       <div class="fname">${formatStubName(id)}</div>
       <div class="fmeta">not yet catalogued</div>
     </div>`;
@@ -1276,7 +1384,7 @@ function relCard(id, size) {
   const p = PANTHEONS_BY_ID[g.pantheon];
   const doms = (g.domains || []).slice(0, 2).map(d => d.replace(/-/g,' ')).join(' · ');
   const meta = `${(g.category||'').replace(/-/g,' ')}${genderSymbol(g.gender)}`;
-  return `<div class="focus-card" style="--pantheon-color:${p ? p.color : 'var(--gold)'}" onclick="setFocus('${id}')">
+  return `<div class="focus-card" style="--pantheon-color:${p ? p.color : 'var(--gold)'}" onclick="setFocus('${id}')" role="button" tabindex="0" aria-label="Open ${escapeAttr(g.name)}">
     <div class="fname">${g.name}</div>
     <div class="fmeta">${meta}</div>
     ${doms ? `<div class="fdom">${doms}</div>` : ''}
@@ -1336,6 +1444,8 @@ function renderFullTree(pantheonId) {
         <div class="full-tree-node ${g.id === currentFocusId ? 'focused' : ''}"
              style="--pantheon-color:${p.color}"
              data-gid="${g.id}"
+             role="button" tabindex="0"
+             aria-label="Focus on ${escapeAttr(g.name)}"
              title="${escapeAttr((g.domains || []).slice(0,3).join(' · '))}">
           <div class="tn-name">${g.name}</div>
           <div class="tn-meta">${(g.category||'').replace(/-/g,' ')}${genderSymbol(g.gender)}</div>
