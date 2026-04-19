@@ -439,7 +439,8 @@
       "meta": "c. 1480–1510 · Chalk, ink, and silverpoint on paper",
       "desc": "The Louvre holds over twenty sheets by Leonardo — studies of hands, horses, the tilt of a woman's head, the flow of water. A single silverpoint line, set down and never corrected.",
       "image": "media/leonardo_drawing.jpg",
-      "year": 1495
+      "year": 1495,
+      "artist": "Leonardo da Vinci"
     },
     {
       "title": "Knight, Death and the Devil",
@@ -454,7 +455,8 @@
       "meta": "17th century · Etching",
       "desc": "Rembrandt made over forty etched self-portraits across his lifetime. The Louvre holds a remarkable set. In ink on paper he is looser and more playful than in his painted selves — pulling faces, squinting, trying on hats.",
       "image": "media/rembrandt_self.jpg",
-      "year": 1650
+      "year": 1650,
+      "artist": "Rembrandt"
     }
   ]
 }
