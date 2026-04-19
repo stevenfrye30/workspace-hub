@@ -420,42 +420,27 @@ body{background:var(--bg);color:var(--text);font-family:"Segoe UI",Arial,sans-se
 .sm-stat-sub{color:var(--muted);font-size:11px;margin-top:4px;font-style:italic}
 .sm-stat-section{background:var(--surf);border:1px solid var(--bdr);border-radius:var(--radius);padding:14px 16px}
 .sm-stat-section-title{color:var(--gold);font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px;padding-bottom:6px;border-bottom:1px solid var(--bdr)}
-.sm-bar-row{display:grid;grid-template-columns:120px 1fr 60px;gap:10px;align-items:center;margin-bottom:6px;font-size:12px}
-.sm-bar-label{color:var(--text);text-transform:capitalize}
-.sm-bar-track{height:14px;background:var(--surf2);border-radius:3px;position:relative;overflow:hidden}
-.sm-bar-fill{height:100%;background:var(--gold);border-radius:3px;transition:width .3s}
-.sm-bar-fill.place-bilabial{background:#f5a5c9}
-.sm-bar-fill.place-labiodental{background:#f5b58a}
-.sm-bar-fill.place-dental{background:#f0d860}
-.sm-bar-fill.place-alveolar{background:#9fdc9f}
-.sm-bar-fill.place-postalveolar{background:#7cd0ce}
-.sm-bar-fill.place-palatal{background:#9bbde0}
-.sm-bar-fill.place-velar{background:#b9a0db}
-.sm-bar-fill.place-glottal{background:#bbbbbb}
-.sm-bar-fill.place-front-vowel{background:#f7cf74}
-.sm-bar-fill.place-central-vowel{background:#d2c0a5}
-.sm-bar-fill.place-back-vowel{background:#b499d9}
-.sm-bar-fill.place-diphthong{background:linear-gradient(90deg,#f7cf74,#b499d9)}
-.sm-bar-count{color:var(--muted);font-family:var(--mono);font-size:11px;text-align:right}
+/* Vertical-bar charts (consolidated Stats layout) */
+.sm-stat-pair{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start}
+.sm-vbar-chart{display:flex;gap:3px;align-items:flex-end;padding:10px 8px 4px;background:var(--bg);border-radius:var(--radius);border:1px solid var(--bdr);overflow-x:auto}
+.sm-vbar-col{display:flex;flex-direction:column;align-items:center;flex:1 1 0;min-width:30px;cursor:help}
+.sm-vbar-bars{display:flex;align-items:flex-end;justify-content:center;height:80px;width:100%;padding:0 1px;border-bottom:1px solid var(--bdr)}
+.sm-vbar-bar{width:18px;border-radius:2px 2px 0 0;min-height:1px;transition:height .35s,filter .12s}
+.sm-vbar-col:hover .sm-vbar-bar{filter:brightness(1.25)}
+.sm-vbar-count{font-family:var(--mono);font-size:9px;color:var(--gold);font-weight:700;margin-top:3px;letter-spacing:0}
+.sm-vbar-label{font-size:9px;color:var(--muted);margin-top:3px;text-align:center;line-height:1.15;max-width:60px;text-transform:lowercase;letter-spacing:.01em;word-break:break-word;min-height:22px}
+.sm-vbar-label.mono{font-family:var(--mono);color:var(--gold);font-size:11px;text-transform:none;font-weight:700;letter-spacing:0}
+.sm-vbar-label.mono.tier-rare{color:#e85050}
+.sm-vbar-label.mono.tier-uncommon{color:#e8c840}
+.sm-vbar-label.mono.tier-common{color:#50d090}
+@media(max-width:720px){
+  .sm-stat-pair{grid-template-columns:1fr;gap:10px}
+  .sm-vbar-bars{height:64px}
+  .sm-vbar-bar{width:14px}
+}
 .sm-stat-empty{color:var(--muted);font-style:italic;font-size:13px;padding:10px 0}
 
 /* Global rarity (Phase 4c) */
-.sm-rarity-intro{color:var(--muted);font-size:12px;line-height:1.55;margin-bottom:10px;max-width:720px}
-.sm-rarity-intro strong{color:var(--text)}
-.sm-rarity-row{display:grid;grid-template-columns:60px 1fr 110px;gap:10px;align-items:center;font-size:12px;padding:5px 8px;border-radius:4px;transition:background .12s}
-.sm-rarity-row:hover{background:var(--surf2)}
-.sm-rarity-phon{font-family:var(--mono);font-size:16px;font-weight:700;color:var(--gold);text-align:center}
-.sm-rarity-track{height:12px;background:var(--surf2);border-radius:2px;position:relative;overflow:hidden}
-.sm-rarity-fill{height:100%;border-radius:2px;transition:width .3s}
-.sm-rarity-fill.rare{background:#e85050}
-.sm-rarity-fill.uncommon{background:#e8c840}
-.sm-rarity-fill.common{background:#50d090}
-.sm-rarity-count{color:var(--muted);font-family:var(--mono);font-size:11px;text-align:right;white-space:nowrap}
-.sm-rarity-count .tag{display:inline-block;padding:1px 6px;border-radius:8px;font-size:9px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;margin-right:4px}
-.sm-rarity-count .tag.rare{background:#e85050;color:#111}
-.sm-rarity-count .tag.uncommon{background:#e8c840;color:#111}
-.sm-rarity-count .tag.common{background:#50d090;color:#111}
-.sm-rarity-langlist{color:var(--muted);font-size:10px;font-style:italic;grid-column:1 / -1;padding:2px 8px 6px 70px;margin-top:-4px}
 
 /* Syllable fit (Phase 5a) */
 .sm-syl-intro{color:var(--muted);font-size:12px;line-height:1.55;margin-bottom:10px;max-width:720px}
@@ -684,7 +669,6 @@ body{background:var(--bg);color:var(--text);font-family:"Segoe UI",Arial,sans-se
   #sm-tl-tract{flex:1 1 100%}
   #sm-tl-side{flex:1 1 100%;min-width:0}
   .sm-tl-speed input[type=range]{width:90px}
-  .sm-bar-row{grid-template-columns:90px 1fr 50px;gap:6px;font-size:11px}
 }
 
 #sm-similar-title{color:var(--gold);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
@@ -1955,80 +1939,171 @@ function smRenderStats(processed, byLine) {
   // Cross-language similarity + overlay (Phase 2)
   smLangRenderSection(view, allPhons);
 
-  // Place-of-articulation histogram
-  const placeOrder = [
-    "bilabial","labiodental","dental","alveolar","postalveolar",
-    "palatal","velar","glottal",
-    "front-vowel","central-vowel","back-vowel","diphthong"
-  ];
-  const placeMax = Math.max(...Object.values(placeCount), 1);
-  const placeSec = document.createElement("div");
-  placeSec.className = "sm-stat-section";
-  placeSec.innerHTML = `<div class="sm-stat-section-title">Where it's made in the mouth</div>`;
-  for (const place of placeOrder) {
-    const n = placeCount[place] || 0;
-    if (!n && place !== "alveolar") continue;
-    const pct = Math.round(n / placeMax * 100);
-    const row = document.createElement("div");
-    row.className = "sm-bar-row";
-    row.innerHTML = `
-      <div class="sm-bar-label">${place.replace("-vowel"," vowel")}</div>
-      <div class="sm-bar-track"><div class="sm-bar-fill place-${place}" style="width:${pct}%"></div></div>
-      <div class="sm-bar-count">${n} · ${Math.round(n/allPhons.length*100)}%</div>`;
-    placeSec.appendChild(row);
-  }
-  view.appendChild(placeSec);
+  // Pair 1 — Place-of-articulation + Manner (categorical breakdowns, both small)
+  const pair1 = document.createElement("div");
+  pair1.className = "sm-stat-pair";
+  pair1.appendChild(smBuildPlaceVBar(placeCount, allPhons.length));
+  if (cons > 0) pair1.appendChild(smBuildMannerVBar(mannerCount, cons));
+  view.appendChild(pair1);
 
-  // Manner histogram (consonants only)
-  const mannerOrder = ["stop","fricative","affricate","nasal","approximant"];
-  if (cons > 0) {
-    const mannerMax = Math.max(...Object.values(mannerCount), 1);
-    const mannerSec = document.createElement("div");
-    mannerSec.className = "sm-stat-section";
-    mannerSec.innerHTML = `<div class="sm-stat-section-title">How consonants are made</div>`;
-    for (const m of mannerOrder) {
-      const n = mannerCount[m] || 0;
-      if (!n) continue;
-      const pct = Math.round(n / mannerMax * 100);
-      const row = document.createElement("div");
-      row.className = "sm-bar-row";
-      row.innerHTML = `
-        <div class="sm-bar-label">${m}</div>
-        <div class="sm-bar-track"><div class="sm-bar-fill" style="width:${pct}%"></div></div>
-        <div class="sm-bar-count">${n} · ${Math.round(n/cons*100)}%</div>`;
-      mannerSec.appendChild(row);
-    }
-    view.appendChild(mannerSec);
-  }
-
-  // Global rarity — how many of the 15 languages contain each phoneme the user used.
-  smRenderRarity(view, phonCount);
+  // Pair 2 — Top phonemes + Global rarity (per-phoneme bars)
+  const pair2 = document.createElement("div");
+  pair2.className = "sm-stat-pair";
+  pair2.appendChild(smBuildTopPhonemesVBar(phonCount));
+  const rarityNode = smBuildRarityVBar(phonCount);
+  if (rarityNode) pair2.appendChild(rarityNode);
+  view.appendChild(pair2);
 
   // Syllable fit — which languages could pronounce these shapes as-is.
   smRenderSyllableFit(view, processed);
 
   // Translate by sound — map each phoneme to the nearest equivalent in a target lang.
   smRenderTranslate(view, processed);
+}
 
-  // Top phonemes
-  const topPhons = Object.entries(phonCount).sort((a,b) => b[1]-a[1]).slice(0, 12);
-  const topMax = topPhons[0] ? topPhons[0][1] : 1;
-  const topSec = document.createElement("div");
-  topSec.className = "sm-stat-section";
-  topSec.innerHTML = `<div class="sm-stat-section-title">Most frequent phonemes</div>`;
-  for (const [p, n] of topPhons) {
-    const f = SM_FEATS[p];
-    const placeClass = f ? `place-${f.place}` : "";
-    const pct = Math.round(n / topMax * 100);
-    const row = document.createElement("div");
-    row.className = "sm-bar-row";
-    row.innerHTML = `
-      <div class="sm-bar-label" style="font-family:var(--mono);color:var(--gold)">/${p}/</div>
-      <div class="sm-bar-track"><div class="sm-bar-fill ${placeClass}" style="width:${pct}%"></div></div>
-      <div class="sm-bar-count">${n}</div>`;
-    topSec.appendChild(row);
+// ── Vertical-bar section builders (consolidated Stats layout) ──────────
+const SM_PLACE_ORDER = [
+  "bilabial","labiodental","dental","alveolar","postalveolar",
+  "palatal","velar","glottal",
+  "front-vowel","central-vowel","back-vowel","diphthong"
+];
+const SM_PLACE_BG = {
+  bilabial:"#f5a5c9", labiodental:"#f5b58a", dental:"#f0d860",
+  alveolar:"#9fdc9f", postalveolar:"#7cd0ce", palatal:"#9bbde0",
+  velar:"#b9a0db", glottal:"#bbbbbb",
+  "front-vowel":"#f7cf74", "central-vowel":"#d2c0a5",
+  "back-vowel":"#b499d9", diphthong:"linear-gradient(180deg,#f7cf74,#b499d9)"
+};
+
+function smBuildVBarSection({ title, sub, items, getLabel, getCount, getColor, getTooltip, labelClass }) {
+  const section = document.createElement("div");
+  section.className = "sm-stat-section";
+  section.innerHTML = `<div class="sm-stat-section-title">${title}${sub ? `<span class="sm-stat-section-sub">${sub}</span>` : ""}</div>`;
+  const chart = document.createElement("div");
+  chart.className = "sm-vbar-chart";
+  const counts = items.map(getCount);
+  const max = Math.max(1, ...counts);
+  items.forEach(item => {
+    const col = document.createElement("div");
+    col.className = "sm-vbar-col";
+    const tt = getTooltip ? getTooltip(item) : "";
+    if (tt) col.title = tt;
+    const barsBox = document.createElement("div");
+    barsBox.className = "sm-vbar-bars";
+    const bar = document.createElement("div");
+    bar.className = "sm-vbar-bar";
+    const n = getCount(item);
+    bar.style.height = Math.max(1, Math.round(n / max * 76)) + "px";
+    const colorVal = getColor(item);
+    if (colorVal && colorVal.startsWith("linear-gradient")) bar.style.background = colorVal;
+    else bar.style.background = colorVal || "#999";
+    barsBox.appendChild(bar);
+    col.appendChild(barsBox);
+    const cnt = document.createElement("div");
+    cnt.className = "sm-vbar-count";
+    cnt.textContent = n;
+    col.appendChild(cnt);
+    const lbl = document.createElement("div");
+    lbl.className = "sm-vbar-label" + (labelClass ? " " + labelClass(item) : "");
+    lbl.innerHTML = getLabel(item);
+    col.appendChild(lbl);
+    chart.appendChild(col);
+  });
+  section.appendChild(chart);
+  return section;
+}
+
+function smBuildPlaceVBar(placeCount, totalPhonemes) {
+  const items = SM_PLACE_ORDER
+    .map(p => ({ place: p, n: placeCount[p] || 0 }))
+    .filter(it => it.n > 0 || it.place === "alveolar");
+  return smBuildVBarSection({
+    title: "Place of articulation",
+    sub: "where the sound is made",
+    items,
+    getLabel: it => it.place.replace("-vowel"," vowel").replace("postalveolar","post-alv."),
+    getCount: it => it.n,
+    getColor: it => SM_PLACE_BG[it.place] || "#999",
+    getTooltip: it => `${it.place.replace("-"," ")} · ${it.n} of ${totalPhonemes} phonemes (${Math.round(it.n/totalPhonemes*100)}%)`
+  });
+}
+
+function smBuildMannerVBar(mannerCount, totalCons) {
+  const order = ["stop","fricative","affricate","nasal","approximant"];
+  const items = order
+    .map(m => ({ manner: m, n: mannerCount[m] || 0 }))
+    .filter(it => it.n > 0);
+  return smBuildVBarSection({
+    title: "Manner of articulation",
+    sub: "consonants only",
+    items,
+    getLabel: it => it.manner,
+    getCount: it => it.n,
+    getColor: () => "var(--gold)",
+    getTooltip: it => `${it.manner} · ${it.n} of ${totalCons} consonants (${Math.round(it.n/totalCons*100)}%)`
+  });
+}
+
+function smBuildTopPhonemesVBar(phonCount) {
+  const top = Object.entries(phonCount).sort((a,b) => b[1]-a[1]).slice(0, 12)
+    .map(([p, n]) => ({ p, n, feat: SM_FEATS[p] }));
+  return smBuildVBarSection({
+    title: "Most frequent phonemes",
+    sub: top.length ? `top ${top.length}` : "",
+    items: top,
+    getLabel: it => `/${it.p}/`,
+    getCount: it => it.n,
+    getColor: it => it.feat ? (SM_PLACE_BG[it.feat.place] || "#999") : "#999",
+    getTooltip: it => `/${it.p}/ · ${it.n} occurrence${it.n!==1?"s":""}` + (it.feat ? ` · ${it.feat.place.replace("-"," ")}` : ""),
+    labelClass: () => "mono"
+  });
+}
+
+function smBuildRarityVBar(phonCount) {
+  if (typeof LANG_PHONEMES === "undefined") return null;
+  const idx = smRarityIndex();
+  const totalLangs = Object.keys(LANG_PHONEMES).length;
+  const rows = Object.entries(phonCount)
+    .filter(([p]) => SM_FEATS[p])
+    .map(([p, n]) => {
+      const langs = idx[p] || new Set();
+      return { p, n, langs, langCount: langs.size };
+    })
+    .sort((a, b) => a.langCount - b.langCount || b.n - a.n)
+    .slice(0, 12);
+  if (!rows.length) return null;
+
+  const tierOf = lc => lc <= 3 ? "rare" : lc <= 9 ? "uncommon" : "common";
+  const tierColor = { rare: "#e85050", uncommon: "#e8c840", common: "#50d090" };
+
+  const section = smBuildVBarSection({
+    title: "Global rarity",
+    sub: `× / ${totalLangs} reference languages`,
+    items: rows,
+    getLabel: it => `/${it.p}/`,
+    getCount: it => it.langCount,
+    getColor: it => tierColor[tierOf(it.langCount)],
+    getTooltip: it => {
+      const tier = tierOf(it.langCount);
+      const langNames = Array.from(it.langs).map(c => LANG_INVENTORIES[c].name).sort().join(", ");
+      return `/${it.p}/ · ${tier} · ${it.langCount}/${totalLangs}` + (langNames ? `\nFound in: ${langNames}` : "");
+    },
+    labelClass: it => "mono tier-" + tierOf(it.langCount)
+  });
+
+  // For rare phonemes (≤3 langs), spell out the language sources inline so
+  // the rarity story lands without requiring a hover.
+  const rare = rows.filter(r => r.langCount > 0 && r.langCount <= 3);
+  if (rare.length) {
+    const note = document.createElement("div");
+    note.style.cssText = "color:var(--muted);font-size:10px;font-style:italic;margin-top:8px;line-height:1.5";
+    note.innerHTML = rare.map(r => {
+      const langs = Array.from(r.langs).map(c => LANG_INVENTORIES[c].name).sort().join(", ");
+      return `<span style="color:#e85050;font-family:var(--mono)">/${r.p}/</span> in ${langs}`;
+    }).join(" · ");
+    section.appendChild(note);
   }
-  view.appendChild(topSec);
+  return section;
 }
 
 // ══════════════════════════════════
@@ -2058,59 +2133,6 @@ function smRarityIndex() {
     });
   }
   return SM_RARITY_INDEX;
-}
-
-function smRenderRarity(view, phonCount) {
-  if (typeof LANG_PHONEMES === "undefined") return;
-  const idx = smRarityIndex();
-  const totalLangs = Object.keys(LANG_PHONEMES).length;
-
-  const rows = Object.entries(phonCount).map(([p, n]) => {
-    const langs = idx[p] || new Set();
-    return { p, count: n, langs, langCount: langs.size };
-  }).filter(r => SM_FEATS[r.p]); // ignore unknowns
-  if (!rows.length) return;
-
-  // Sort: rarest first; tie-break by most-used in user's text
-  rows.sort((a, b) => a.langCount - b.langCount || b.count - a.count);
-
-  const section = document.createElement("div");
-  section.className = "sm-stat-section";
-  section.innerHTML = `<div class="sm-stat-section-title">Global rarity</div>`;
-
-  const intro = document.createElement("div");
-  intro.className = "sm-rarity-intro";
-  intro.innerHTML = `How many of the <strong>${totalLangs} reference languages</strong>
-    have each of your phonemes in their inventory. Sounds tagged <strong>rare</strong>
-    are in ≤3 of them — distinctive fingerprints of your language. Common ones (≥10)
-    are near-universal. Rarest first.`;
-  section.appendChild(intro);
-
-  // Show top ~15 rows; if you have fewer unique phonemes, all of them.
-  const display = rows.slice(0, 15);
-  display.forEach(r => {
-    const row = document.createElement("div");
-    row.className = "sm-rarity-row";
-    const ratio = r.langCount / totalLangs;
-    const tag = r.langCount <= 3 ? "rare" : r.langCount <= 9 ? "uncommon" : "common";
-    const fillPct = Math.max(4, Math.round(ratio * 100));
-    const langNames = Array.from(r.langs).map(c => LANG_INVENTORIES[c].name).sort().join(", ");
-    row.innerHTML = `
-      <div class="sm-rarity-phon">/${r.p}/</div>
-      <div class="sm-rarity-track"><div class="sm-rarity-fill ${tag}" style="width:${fillPct}%"></div></div>
-      <div class="sm-rarity-count"><span class="tag ${tag}">${tag}</span>${r.langCount}/${totalLangs}</div>`;
-    row.title = langNames ? `Found in: ${langNames}` : "Not in any reference language";
-    section.appendChild(row);
-    // For rare phonemes, also show the list inline so the user doesn't have to hover.
-    if (r.langCount > 0 && r.langCount <= 3) {
-      const ll = document.createElement("div");
-      ll.className = "sm-rarity-langlist";
-      ll.textContent = `found in: ${langNames}`;
-      section.appendChild(ll);
-    }
-  });
-
-  view.appendChild(section);
 }
 
 // ══════════════════════════════════
