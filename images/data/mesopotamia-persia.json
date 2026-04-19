@@ -233,6 +233,20 @@
       "desc": "From the palace of Darius the Great at Susa. A procession of the king's elite guard — the \"Immortals\" — in brilliantly colored glazed brick. Each carries a spear, bow, and quiver; each face is subtly different from the next.",
       "image": "media/archers.jpg",
       "year": -510
+    },
+    {
+      "title": "Statue of Gudea",
+      "meta": "Neo-Sumerian · c. 2120 BCE · Lagash",
+      "desc": "More than twenty small diorite statues of the prince of Lagash survive, each showing him at prayer. The diorite was hauled from the Sinai; carving it took tools that barely existed.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Gudea_of_Lagash_Girsu.jpg/960px-Gudea_of_Lagash_Girsu.jpg",
+      "year": -2120
+    },
+    {
+      "title": "Petra — Al-Khazneh",
+      "meta": "Nabataean · 1st c. BCE – 1st c. CE · Jordan",
+      "desc": "The \"Treasury\" — a 40-meter temple-facade carved directly into the rose-red sandstone cliff. Bedouin shot at the urn at the top, hoping to spill hidden pharaoh's gold.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Treasury_petra_crop.jpeg/960px-Treasury_petra_crop.jpeg",
+      "year": 0
     }
   ]
 }

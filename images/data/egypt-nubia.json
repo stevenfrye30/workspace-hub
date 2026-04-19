@@ -247,6 +247,13 @@
       "desc": "Over 5,000 years old — from the very dawn of writing. A serpent (the king's name) stands above the serekh, the palace façade, topped by Horus the falcon. This is what Egyptian writing looked like before it became hieroglyphs.",
       "image": "media/stele_djet.jpg",
       "year": -3000
+    },
+    {
+      "title": "Amarna Letters",
+      "meta": "New Kingdom · 14th c. BCE",
+      "desc": "Clay tablets of diplomatic correspondence between Egypt and its neighbors — Babylonia, Assyria, the Hittites, Canaanite city-states. Written in Akkadian, the lingua franca of the Bronze Age.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Five_Amarna_letters_on_display_at_the_British_Museum%2C_LondonA.jpg/960px-Five_Amarna_letters_on_display_at_the_British_Museum%2C_LondonA.jpg",
+      "year": -1350
     }
   ]
 }

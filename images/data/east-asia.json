@@ -271,6 +271,27 @@
       "image": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Toshusai_Sharaku-_Otani_Oniji%2C_1794.jpg",
       "artist": "Tōshūsai Sharaku",
       "year": 1794
+    },
+    {
+      "title": "Haniwa",
+      "meta": "Kofun period · 3rd–6th c. CE · Japan",
+      "desc": "Hollow terracotta cylinders and figures set in rings around imperial tumuli. Armored warriors, horses, dancers, shrine maidens — the only accessible record of pre-literate Japanese dress.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Warrior_in_Keiko_Armor%2C_National_Treasure%2C_Kofun_period%2C_6th_century%2C_haniwa_%28terracotta_tomb_figurine%29_from_Iizuka-machi%2C_Ota-shi%2C_Gunma_-_Tokyo_National_Museum_-_DSC06425.JPG/960px-thumbnail.jpg",
+      "year": 500
+    },
+    {
+      "title": "Kakiemon Porcelain",
+      "meta": "Edo Japan · 17th c. onward · Arita",
+      "desc": "Overglaze enamels on a milk-white ground. The Kakiemon workshop at Arita invented a palette — iron red, green, yellow, blue — that Meissen and Chantilly spent decades trying to copy.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Hexagonal_Jar%2C_Imari_ware%2C_Kakiemon_type%2C_Edo_period%2C_17th_century%2C_flowering_plant_and_phoenix_design_in_overglaze_enamel_-_Tokyo_National_Museum_-_DSC05329_%28retouched%29.jpg/960px-thumbnail.jpg",
+      "year": 1670
+    },
+    {
+      "title": "Katsura Imperial Villa",
+      "meta": "Edo Japan · 1620 onward · Kyoto",
+      "desc": "A villa and garden considered one of the finest masterpieces of Japanese architecture. Shoin-zukuri precision: every plank, every sight-line from every veranda, deliberately aligned.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Katsura_Rikyu_%283264799678%29.jpg/960px-Katsura_Rikyu_%283264799678%29.jpg",
+      "year": 1620
     }
   ]
 }

@@ -457,6 +457,30 @@
       "image": "media/rembrandt_self.jpg",
       "year": 1650,
       "artist": "Rembrandt"
+    },
+    {
+      "title": "Composition VII",
+      "meta": "Abstract · 1913",
+      "desc": "Kandinsky called it the most complex work he ever painted — over thirty preparatory studies. Motifs of resurrection, flood, and last judgment dissolve into color and line.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Composition_VII_-_Wassily_Kandinsky%2C_GAC.jpg/960px-Composition_VII_-_Wassily_Kandinsky%2C_GAC.jpg",
+      "artist": "Wassily Kandinsky",
+      "year": 1913
+    },
+    {
+      "title": "Composition with Red, Blue and Yellow",
+      "meta": "De Stijl · 1930",
+      "desc": "Black lines, three primary colors, white negative space, canvas flat as the grid itself. Mondrian believed he had found the underlying logic of visible reality.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Piet_Mondriaan%2C_1930_-_Mondrian_Composition_II_in_Red%2C_Blue%2C_and_Yellow.jpg/960px-Piet_Mondriaan%2C_1930_-_Mondrian_Composition_II_in_Red%2C_Blue%2C_and_Yellow.jpg",
+      "artist": "Piet Mondrian",
+      "year": 1930
+    },
+    {
+      "title": "I and the Village",
+      "meta": "Cubist / Expressionist · 1911",
+      "desc": "A green-faced peasant and a white goat exchange a look across a village that floats and spins. Chagall's memory of his hometown of Vitebsk, filtered through Paris.",
+      "image": "https://upload.wikimedia.org/wikipedia/en/thumb/e/e7/Chagall_IandTheVillage.jpg/960px-Chagall_IandTheVillage.jpg",
+      "artist": "Marc Chagall",
+      "year": 1911
     }
   ]
 }

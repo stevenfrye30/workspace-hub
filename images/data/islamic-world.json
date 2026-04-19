@@ -262,6 +262,20 @@
       "desc": "A Mamluk basin made in Egypt or Syria, covered in inlaid scenes of hunters, courtiers, and animals. At some point it entered the French royal treasury, and by tradition — probably invented — it was used for the baptism of royal children, including the future Louis XIII.",
       "image": "media/baptistery.jpg",
       "year": 1330
+    },
+    {
+      "title": "Naqsh-e Jahan Square",
+      "meta": "Safavid · 1598 onward · Isfahan",
+      "desc": "One of the largest squares in the world. Built by Shah Abbas to stage polo, military reviews, and the stateliness of a capital — framed on four sides by a mosque, a palace, a bazaar, and a private chapel.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Naqsh-i_Jahan_Square%2C_Jan._2018.jpg/960px-Naqsh-i_Jahan_Square%2C_Jan._2018.jpg",
+      "year": 1598
+    },
+    {
+      "title": "Shah Cheragh",
+      "meta": "Qajar · 14th c. onward · Shiraz",
+      "desc": "A Shia shrine covered inside floor to ceiling in thousands of shards of mirror. Candlelight becomes a galaxy. Pilgrims hold a finger against the wall and watch their reflection splinter.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Mausoleo_de_Shah_Cheragh%2C_Shiraz%2C_Ir%C3%A1n%2C_2016-09-24%2C_DD_32.jpg/960px-Mausoleo_de_Shah_Cheragh%2C_Shiraz%2C_Ir%C3%A1n%2C_2016-09-24%2C_DD_32.jpg",
+      "year": 1350
     }
   ]
 }

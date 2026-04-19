@@ -280,6 +280,21 @@
       "desc": "From one angle, a sleeping woman. Walk around to the other side: the body is both. The mattress beneath — realistic enough that you want to touch it — was carved by Bernini in 1619 when the statue was restored.",
       "image": "media/hermaphroditus.jpg",
       "year": 150
+    },
+    {
+      "title": "House of the Faun",
+      "meta": "Roman · 2nd c. BCE · Pompeii",
+      "desc": "One of the largest residences in Pompeii, three acres across. Its atrium held the bronze dancing faun that gave it the name; the floor held the Alexander Mosaic.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/House_of_the_Faun_%28Pompeii%29.jpg/960px-House_of_the_Faun_%28Pompeii%29.jpg",
+      "year": -150
+    },
+    {
+      "title": "Nike of Paionios",
+      "meta": "Classical Greek · Paionios · c. 420 BCE · Olympia",
+      "desc": "The Messenians and Naupactians dedicated her at Olympia after a victory over Sparta. Nike lands on a plinth, wind pressing drapery against her body — 170 years before the Winged Victory of Samothrace.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Nike_of_Paionios%2C_Olympia_Archaeological_Museum_%2816309967616%29.jpg/960px-Nike_of_Paionios%2C_Olympia_Archaeological_Museum_%2816309967616%29.jpg",
+      "artist": "Paionios",
+      "year": -420
     }
   ]
 }

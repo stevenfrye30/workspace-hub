@@ -1,256 +1,191 @@
 #!/usr/bin/env python3
-"""Append Louvre works to data/*.json, using local image paths under media/."""
+"""Append a curated batch of new works to data/*.json.
+
+Safe to rerun: skips entries whose title already exists in the target region.
+"""
 import json
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 DATA = HERE / "data"
 
-NEW_WORKS = {
-    "europe": [
+NEW_WORKS: dict[str, list[dict]] = {
+    "africa": [
         {
-            "title": "Mona Lisa (La Joconde)",
-            "artist": "Leonardo da Vinci",
-            "meta": "c. 1503\u20131519 \u00b7 Oil on poplar \u00b7 Salle des \u00c9tats",
-            "desc": "Probably a portrait of Lisa Gherardini, wife of a Florentine merchant. Leonardo carried it with him for years, reworking it endlessly, and it never left his side until his death in France. Her fame owes as much to theft as to genius: when Vincenzo Peruggia stole her in 1911 and kept her in a Paris apartment for two years, the empty wall drew larger crowds than the painting ever had.",
-            "image": "media/mona_lisa.jpg",
-            "year": 1510,
+            "title": "Red Bird",
+            "meta": "Contemporary · c. 2000s · United Kingdom / Nigeria",
+            "desc": "Chris Ofili's paintings layer resin-coated elephant dung onto glittering collage. His work interrogates Black identity and the politics of representation in Britain.",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Red_Bird_Chris_Ofili.jpg",
+            "artist": "Chris Ofili",
+            "year": 2005,
         },
         {
-            "title": "Liberty Leading the People",
-            "artist": "Eug\u00e8ne Delacroix",
-            "meta": "1830 \u00b7 Oil on canvas \u00b7 Denon Wing",
-            "desc": "Painted in the aftermath of the July Revolution that overthrew Charles X. Liberty \u2014 bare-breasted, tricolor raised, bayonet in hand \u2014 strides over the barricades and the dead. The man in the top hat beside her is often read as a self-portrait. The boy with pistols would later inspire Gavroche in Hugo's Les Mis\u00e9rables.",
-            "image": "media/liberty.jpg",
-            "year": 1830,
-        },
-        {
-            "title": "The Raft of the Medusa",
-            "artist": "Th\u00e9odore G\u00e9ricault",
-            "meta": "1818\u20131819 \u00b7 Oil on canvas \u00b7 Denon Wing",
-            "desc": "A real and recent disaster: the French frigate M\u00e9duse ran aground off Senegal in 1816. The captain and officers took the lifeboats; 147 men were cut loose on a raft. Fifteen survived, after mutiny, thirst, and cannibalism. G\u00e9ricault interviewed survivors, visited morgues to study dead flesh, and built a scale model of the raft in his studio. The scandal reached the throne \u2014 the captain had been appointed through political favor.",
-            "image": "media/medusa.jpg",
-            "year": 1818,
-        },
-        {
-            "title": "The Coronation of Napoleon",
-            "artist": "Jacques-Louis David",
-            "meta": "1805\u20131807 \u00b7 Oil on canvas \u00b7 Denon Wing",
-            "desc": "Nearly 10 meters wide. Napoleon, having just placed the crown on his own head, is shown about to crown Jos\u00e9phine. The Pope, summoned from Rome, sits behind \u2014 reduced to witness. David inserted Napoleon's mother into the grandstand though she refused to attend. Painters, like emperors, revise history.",
-            "image": "media/coronation.jpg",
-            "year": 1806,
-        },
-        {
-            "title": "The Wedding at Cana",
-            "artist": "Paolo Veronese",
-            "meta": "1563 \u00b7 Oil on canvas \u00b7 Salle des \u00c9tats",
-            "desc": "The largest painting in the Louvre, at nearly 70 square meters. Commissioned for the refectory of a Benedictine monastery in Venice. Napoleon's troops took it in 1797 and cut it in half to transport it. It hangs directly across from the Mona Lisa \u2014 and is almost entirely ignored by the crowds facing the other way.",
-            "image": "media/cana.jpg",
-            "year": 1563,
-        },
-        {
-            "title": "The Lacemaker",
-            "artist": "Johannes Vermeer",
-            "meta": "c. 1669\u20131670 \u00b7 Oil on canvas on panel \u00b7 Richelieu Wing",
-            "desc": "One of Vermeer's smallest works \u2014 only about 24 centimeters tall. A young woman bends over her bobbins with the intense near-vision of close handwork. Salvador Dal\u00ed obsessed over it. He was once allowed to set up an easel in the Louvre to copy it, and produced a small canvas covered in rhinoceros horns instead.",
-            "image": "media/lacemaker.jpg",
-            "year": 1669,
-        },
-        {
-            "title": "La Grande Odalisque",
-            "artist": "Jean-Auguste-Dominique Ingres",
-            "meta": "1814 \u00b7 Oil on canvas \u00b7 Denon Wing",
-            "desc": "Commissioned by Napoleon's sister, Caroline Murat, Queen of Naples. Ingres gave his odalisque two or three extra vertebrae \u2014 anatomically impossible, visually ideal. Critics howled; the distortion is now the point.",
-            "image": "media/odalisque.jpg",
-            "year": 1814,
-        },
-        {
-            "title": "The Cheat with the Ace of Diamonds",
-            "artist": "Georges de La Tour",
-            "meta": "c. 1636\u20131638 \u00b7 Oil on canvas \u00b7 Sully Wing",
-            "desc": "Four figures, four glances, one con. A na\u00efve young nobleman is about to lose his fortune to the cheat on the left, who has pulled an ace from his belt. The courtesan and her servant are in on it; only the young man isn't looking at anyone.",
-            "image": "media/cheat.jpg",
-            "year": 1637,
-        },
-        {
-            "title": "Psyche Revived by Cupid's Kiss",
-            "artist": "Antonio Canova",
-            "meta": "1787\u20131793 \u00b7 Marble \u00b7 Denon Wing",
-            "desc": "Cupid bends over Psyche, who has fallen into a death-like sleep. Her arms reach up to draw him in. The composition forms a perfect X \u2014 walk around it and the two bodies rotate through a dance.",
-            "image": "media/psyche.jpg",
-            "year": 1790,
-        },
-        {
-            "title": "The Dying Slave",
-            "artist": "Michelangelo Buonarroti",
-            "meta": "c. 1513\u20131515 \u00b7 Marble \u00b7 Denon Wing",
-            "desc": "Intended for the tomb of Pope Julius II, a project that consumed Michelangelo for forty years and was never finished as planned. The figure is not dying but \u2014 perhaps \u2014 falling asleep, or surrendering to ecstasy. Michelangelo left the back deliberately rough.",
-            "image": "media/dying_slave.jpg",
-            "year": 1514,
-        },
-        {
-            "title": "The Marly Horses",
-            "artist": "Guillaume Coustou",
-            "meta": "1739\u20131745 \u00b7 Marble \u00b7 Cour Marly",
-            "desc": "Commissioned for the royal estate of Marly, where Louis XV wanted rearing horses at the entrance to his watering pond. Each is over 3.5 meters tall. They stood outdoors for nearly two centuries before being brought inside in 1984.",
-            "image": "media/marly_horses.jpg",
-            "year": 1742,
-        },
-        {
-            "title": "Crown of Louis XV",
-            "meta": "1722 \u00b7 Silver gilt, originally set with the crown jewels \u00b7 Galerie d'Apollon",
-            "desc": "Made for the coronation of the twelve-year-old Louis XV at Reims. The original diamonds \u2014 including the R\u00e9gent, now displayed nearby \u2014 were removed after the ceremony and replaced with paste copies, which are what you see today.",
-            "image": "media/crown_louis.jpg",
-            "year": 1722,
-        },
-        {
-            "title": "The Napoleon III Apartments",
-            "meta": "1861 \u00b7 Richelieu Wing",
-            "desc": "Not a single object but an entire suite of state rooms \u2014 crimson silk, gilded stucco, chandeliers heavy enough to frighten the ceiling. These were the ceremonial apartments of the Minister of State under the Second Empire. Walk in and the museum disappears.",
-            "image": "media/napoleon_apartments.jpg",
-            "year": 1861,
-        },
-        {
-            "title": "The R\u00e9gent Diamond",
-            "meta": "140.64 carats \u00b7 Galerie d'Apollon",
-            "desc": "Found in India around 1698, smuggled by a slave who hid it in a wound in his leg, sold to Thomas Pitt (grandfather of William Pitt the Elder), and eventually bought by the French crown. Worn by Louis XV, Louis XVI, and set into Napoleon's sword. Still considered the most perfectly cut historical diamond in the world.",
-            "image": "media/regent_diamond.jpg",
-            "year": 1698,
-        },
-        {
-            "title": "Drawings by Leonardo da Vinci",
-            "meta": "c. 1480\u20131510 \u00b7 Chalk, ink, and silverpoint on paper",
-            "desc": "The Louvre holds over twenty sheets by Leonardo \u2014 studies of hands, horses, the tilt of a woman's head, the flow of water. A single silverpoint line, set down and never corrected.",
-            "image": "media/leonardo_drawing.jpg",
-            "year": 1495,
-        },
-        {
-            "title": "Knight, Death and the Devil",
-            "artist": "Albrecht D\u00fcrer",
-            "meta": "1513 \u00b7 Engraving",
-            "desc": "One of D\u00fcrer's three \"Master Engravings.\" A Christian knight rides impassively through a desolate gorge, unmoved by the hourglass-bearing Death beside him or the goat-headed Devil behind. The technical summit of Renaissance printmaking.",
-            "image": "media/durer_knight.jpg",
-            "year": 1513,
-        },
-        {
-            "title": "Self-Portraits by Rembrandt",
-            "meta": "17th century \u00b7 Etching",
-            "desc": "Rembrandt made over forty etched self-portraits across his lifetime. The Louvre holds a remarkable set. In ink on paper he is looser and more playful than in his painted selves \u2014 pulling faces, squinting, trying on hats.",
-            "image": "media/rembrandt_self.jpg",
-            "year": 1650,
+            "title": "Shona Stone Sculpture",
+            "meta": "Shona · 20th c. onward · Zimbabwe",
+            "desc": "A post-colonial sculptural tradition carved from serpentine and springstone. Figures of spirits and ancestors, often semi-abstracted — now Zimbabwe's most recognized art export.",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Zimbabwe_sculpture_at_Atlanta_airport.JPG/960px-Zimbabwe_sculpture_at_Atlanta_airport.JPG",
+            "year": 1980,
         },
     ],
     "egypt-nubia": [
         {
-            "title": "The Seated Scribe",
-            "meta": "c. 2600\u20132350 BCE \u00b7 Painted limestone, inlaid eyes \u00b7 Sully Wing",
-            "desc": "Roughly 4,500 years old. His eyes \u2014 rock crystal set in copper \u2014 are what stop you: unnervingly alive, tracking you as you move. His name and title are lost. He holds a papyrus roll, alert, waiting for dictation to begin.",
-            "image": "media/scribe.jpg",
-            "year": -2475,
-        },
-        {
-            "title": "Great Sphinx of Tanis",
-            "meta": "c. 2600 BCE \u00b7 Pink granite \u00b7 Sully Wing",
-            "desc": "Discovered in 1825 in the ruins of the temple of Amun at Tanis. Over 4,500 years old and carved from a single block of granite. The names of at least four pharaohs \u2014 each claiming it for themselves \u2014 are carved on it.",
-            "image": "media/sphinx.jpg",
-            "year": -2600,
-        },
-        {
-            "title": "Reliefs from the Tomb of Seti I",
-            "meta": "c. 1290 BCE \u00b7 Painted limestone \u00b7 Sully Wing",
-            "desc": "The goddess Hathor welcomes Seti I into the afterlife. Cut from the walls of KV17 in the Valley of the Kings in the 19th century \u2014 a practice we now consider vandalism, but which saved this relief from the flooding that ravaged the tomb.",
-            "image": "media/seti_relief.jpg",
-            "year": -1290,
-        },
-        {
-            "title": "Stele of King Djet (The Serpent King)",
-            "meta": "c. 3000 BCE \u00b7 Limestone \u00b7 Sully Wing",
-            "desc": "Over 5,000 years old \u2014 from the very dawn of writing. A serpent (the king's name) stands above the serekh, the palace fa\u00e7ade, topped by Horus the falcon. This is what Egyptian writing looked like before it became hieroglyphs.",
-            "image": "media/stele_djet.jpg",
-            "year": -3000,
-        },
-    ],
-    "mediterranean": [
-        {
-            "title": "Winged Victory of Samothrace",
-            "meta": "c. 200\u2013190 BCE \u00b7 Parian marble \u00b7 Daru Staircase",
-            "desc": "She stands at the top of the grand Daru staircase, wings flung back, drapery soaked and clinging as if she has just alighted on the prow of a ship. The ship itself is carved too \u2014 she came mounted on a stone warship in a pool of water on the sanctuary of Samothrace. Discovered in 1863 in more than 100 fragments. Her head and arms have never been found.",
-            "image": "media/winged_victory.jpg",
-            "year": -195,
-        },
-        {
-            "title": "Venus de Milo",
-            "meta": "c. 150\u2013125 BCE \u00b7 Parian marble \u00b7 Sully Wing",
-            "desc": "Found in 1820 by a peasant on the Aegean island of Milos. France acquired her quickly \u2014 and when Louis XVIII presented her to the Louvre, the fact that her arms were missing was treated as accidental rather than a flaw. She was almost certainly holding an apple, referencing the Judgment of Paris. Her missing arms let every viewer imagine her gesture.",
-            "image": "media/venus_milo.jpg",
-            "year": -137,
-        },
-        {
-            "title": "Borghese Gladiator",
-            "artist": "Agasias of Ephesus",
-            "meta": "c. 100 BCE \u00b7 Marble \u00b7 Sully Wing",
-            "desc": "Not actually a gladiator \u2014 a warrior fighting a mounted opponent, arm raised with a (lost) shield. A tour de force of anatomical study; every muscle is taut with the effort of the moment before impact.",
-            "image": "media/gladiator.jpg",
-            "year": -100,
-        },
-        {
-            "title": "Sleeping Hermaphroditus",
-            "meta": "Roman copy of a Greek original \u00b7 2nd century CE \u00b7 Sully Wing",
-            "desc": "From one angle, a sleeping woman. Walk around to the other side: the body is both. The mattress beneath \u2014 realistic enough that you want to touch it \u2014 was carved by Bernini in 1619 when the statue was restored.",
-            "image": "media/hermaphroditus.jpg",
-            "year": 150,
-        },
-        {
-            "title": "Sarcophagus of the Spouses",
-            "meta": "c. 520 BCE \u00b7 Etruscan terracotta \u00b7 Denon Wing",
-            "desc": "A husband and wife recline together on a banquet couch for eternity. Painted terracotta, made in four pieces. The Etruscans, unlike the Greeks and Romans, gave women equal place at the feast \u2014 and in the tomb.",
-            "image": "media/spouses.jpg",
-            "year": -520,
+            "title": "Amarna Letters",
+            "meta": "New Kingdom · 14th c. BCE",
+            "desc": "Clay tablets of diplomatic correspondence between Egypt and its neighbors — Babylonia, Assyria, the Hittites, Canaanite city-states. Written in Akkadian, the lingua franca of the Bronze Age.",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Five_Amarna_letters_on_display_at_the_British_Museum%2C_LondonA.jpg/960px-Five_Amarna_letters_on_display_at_the_British_Museum%2C_LondonA.jpg",
+            "year": -1350,
         },
     ],
     "mesopotamia-persia": [
         {
-            "title": "Code of Hammurabi",
-            "meta": "c. 1754 BCE \u00b7 Basalt stele \u00b7 Richelieu Wing",
-            "desc": "A pillar of black basalt, 2.25 meters tall, covered in cuneiform. At the top: King Hammurabi of Babylon receives the laws from the sun god Shamash. Below: 282 laws \u2014 among the oldest written in the world. \"If a man puts out the eye of another man, his eye shall be put out.\" The logic of lex talionis, set in stone before Moses was born.",
-            "image": "media/hammurabi.jpg",
-            "year": -1754,
+            "title": "Statue of Gudea",
+            "meta": "Neo-Sumerian · c. 2120 BCE · Lagash",
+            "desc": "More than twenty small diorite statues of the prince of Lagash survive, each showing him at prayer. The diorite was hauled from the Sinai; carving it took tools that barely existed.",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Gudea_of_Lagash_Girsu.jpg/960px-Gudea_of_Lagash_Girsu.jpg",
+            "year": -2120,
         },
         {
-            "title": "Lamassu of Khorsabad",
-            "meta": "c. 713\u2013706 BCE \u00b7 Gypsum alabaster \u00b7 Richelieu Wing",
-            "desc": "Human-headed winged bulls, each over 4 meters tall. They guarded the gates of Sargon II's palace in what is now northern Iraq. Carved with five legs so that they appear to be standing still when seen from the front, and striding forward when seen from the side.",
-            "image": "media/lamassu.jpg",
-            "year": -709,
+            "title": "Petra — Al-Khazneh",
+            "meta": "Nabataean · 1st c. BCE – 1st c. CE · Jordan",
+            "desc": "The \"Treasury\" — a 40-meter temple-facade carved directly into the rose-red sandstone cliff. Bedouin shot at the urn at the top, hoping to spill hidden pharaoh's gold.",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Treasury_petra_crop.jpeg/960px-Treasury_petra_crop.jpeg",
+            "year": 0,
+        },
+    ],
+    "mediterranean": [
+        {
+            "title": "House of the Faun",
+            "meta": "Roman · 2nd c. BCE · Pompeii",
+            "desc": "One of the largest residences in Pompeii, three acres across. Its atrium held the bronze dancing faun that gave it the name; the floor held the Alexander Mosaic.",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/House_of_the_Faun_%28Pompeii%29.jpg/960px-House_of_the_Faun_%28Pompeii%29.jpg",
+            "year": -150,
         },
         {
-            "title": "Frieze of the Archers of Darius I",
-            "meta": "c. 510 BCE \u00b7 Glazed brick \u00b7 Richelieu Wing",
-            "desc": "From the palace of Darius the Great at Susa. A procession of the king's elite guard \u2014 the \"Immortals\" \u2014 in brilliantly colored glazed brick. Each carries a spear, bow, and quiver; each face is subtly different from the next.",
-            "image": "media/archers.jpg",
-            "year": -510,
+            "title": "Nike of Paionios",
+            "meta": "Classical Greek · Paionios · c. 420 BCE · Olympia",
+            "desc": "The Messenians and Naupactians dedicated her at Olympia after a victory over Sparta. Nike lands on a plinth, wind pressing drapery against her body — 170 years before the Winged Victory of Samothrace.",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Nike_of_Paionios%2C_Olympia_Archaeological_Museum_%2816309967616%29.jpg/960px-Nike_of_Paionios%2C_Olympia_Archaeological_Museum_%2816309967616%29.jpg",
+            "artist": "Paionios",
+            "year": -420,
+        },
+    ],
+    "europe": [
+        {
+            "title": "Composition VII",
+            "meta": "Abstract · 1913",
+            "desc": "Kandinsky called it the most complex work he ever painted — over thirty preparatory studies. Motifs of resurrection, flood, and last judgment dissolve into color and line.",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Composition_VII_-_Wassily_Kandinsky%2C_GAC.jpg/960px-Composition_VII_-_Wassily_Kandinsky%2C_GAC.jpg",
+            "artist": "Wassily Kandinsky",
+            "year": 1913,
+        },
+        {
+            "title": "Composition with Red, Blue and Yellow",
+            "meta": "De Stijl · 1930",
+            "desc": "Black lines, three primary colors, white negative space, canvas flat as the grid itself. Mondrian believed he had found the underlying logic of visible reality.",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Piet_Mondriaan%2C_1930_-_Mondrian_Composition_II_in_Red%2C_Blue%2C_and_Yellow.jpg/960px-Piet_Mondriaan%2C_1930_-_Mondrian_Composition_II_in_Red%2C_Blue%2C_and_Yellow.jpg",
+            "artist": "Piet Mondrian",
+            "year": 1930,
+        },
+        {
+            "title": "I and the Village",
+            "meta": "Cubist / Expressionist · 1911",
+            "desc": "A green-faced peasant and a white goat exchange a look across a village that floats and spins. Chagall's memory of his hometown of Vitebsk, filtered through Paris.",
+            "image": "https://upload.wikimedia.org/wikipedia/en/thumb/e/e7/Chagall_IandTheVillage.jpg/960px-Chagall_IandTheVillage.jpg",
+            "artist": "Marc Chagall",
+            "year": 1911,
         },
     ],
     "islamic-world": [
         {
-            "title": "Pyxis of al-Mughira",
-            "meta": "968 CE \u00b7 Carved ivory \u00b7 Cour Visconti",
-            "desc": "A small ivory box made in C\u00f3rdoba for a teenage Umayyad prince. Every surface is carved with figures \u2014 musicians, lions, lovers, a man stealing eggs from an eagle's nest. The inscriptions include barely-veiled warnings about the instability of royal succession. Al-Mughira was executed by strangulation eight years later.",
-            "image": "media/pyxis.jpg",
-            "year": 968,
+            "title": "Naqsh-e Jahan Square",
+            "meta": "Safavid · 1598 onward · Isfahan",
+            "desc": "One of the largest squares in the world. Built by Shah Abbas to stage polo, military reviews, and the stateliness of a capital — framed on four sides by a mosque, a palace, a bazaar, and a private chapel.",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Naqsh-i_Jahan_Square%2C_Jan._2018.jpg/960px-Naqsh-i_Jahan_Square%2C_Jan._2018.jpg",
+            "year": 1598,
         },
         {
-            "title": "Baptistery of Saint Louis",
-            "meta": "c. 1320\u20131340 \u00b7 Hammered brass inlaid with silver and gold \u00b7 Cour Visconti",
-            "desc": "A Mamluk basin made in Egypt or Syria, covered in inlaid scenes of hunters, courtiers, and animals. At some point it entered the French royal treasury, and by tradition \u2014 probably invented \u2014 it was used for the baptism of royal children, including the future Louis XIII.",
-            "image": "media/baptistery.jpg",
-            "year": 1330,
+            "title": "Shah Cheragh",
+            "meta": "Qajar · 14th c. onward · Shiraz",
+            "desc": "A Shia shrine covered inside floor to ceiling in thousands of shards of mirror. Candlelight becomes a galaxy. Pilgrims hold a finger against the wall and watch their reflection splinter.",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Mausoleo_de_Shah_Cheragh%2C_Shiraz%2C_Ir%C3%A1n%2C_2016-09-24%2C_DD_32.jpg/960px-Mausoleo_de_Shah_Cheragh%2C_Shiraz%2C_Ir%C3%A1n%2C_2016-09-24%2C_DD_32.jpg",
+            "year": 1350,
+        },
+    ],
+    "south-asia": [
+        {
+            "title": "Amaravati Stupa Reliefs",
+            "meta": "Satavahana · 2nd c. BCE – 3rd c. CE · Andhra Pradesh",
+            "desc": "A Buddhist stupa whose limestone casing was carved with some of the earliest Buddha figures in India. Most pieces are now in the British Museum and the Chennai Government Museum.",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/British_Museum_Asia_14.jpg/960px-British_Museum_Asia_14.jpg",
+            "year": 0,
+        },
+        {
+            "title": "Karla Caves",
+            "meta": "Early Buddhist · 1st c. BCE · Maharashtra",
+            "desc": "The largest rock-cut chaitya hall in India — a barrel-vaulted cave church with a lantern roof carved in stone to mimic wood beams it never had.",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Karla_caves_Chaitya.jpg/960px-Karla_caves_Chaitya.jpg",
+            "year": -50,
+        },
+        {
+            "title": "Mathura Bodhisattva",
+            "meta": "Kushan · 1st–3rd c. CE · Uttar Pradesh",
+            "desc": "Red sandstone figures in a distinctly Indian idiom — broad-shouldered, loose-robed, flatter and more frontal than the Greco-Buddhist Gandhara school evolving to the northwest.",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Amohaasi_Bodhisattva%2C_Mathura.jpg/960px-Amohaasi_Bodhisattva%2C_Mathura.jpg",
+            "year": 150,
+        },
+        {
+            "title": "Rampurva Bull Capital",
+            "meta": "Mauryan · 3rd c. BCE · Bihar",
+            "desc": "An Ashokan pillar capital: a single polished Chunar sandstone bull, so highly burnished it was mistaken for metal. One of the finest survivals of the Mauryan court style.",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Rampurva_bull_in_Presidential_Palace_high_closeup.jpg",
+            "year": -250,
+        },
+    ],
+    "east-asia": [
+        {
+            "title": "Haniwa",
+            "meta": "Kofun period · 3rd–6th c. CE · Japan",
+            "desc": "Hollow terracotta cylinders and figures set in rings around imperial tumuli. Armored warriors, horses, dancers, shrine maidens — the only accessible record of pre-literate Japanese dress.",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Warrior_in_Keiko_Armor%2C_National_Treasure%2C_Kofun_period%2C_6th_century%2C_haniwa_%28terracotta_tomb_figurine%29_from_Iizuka-machi%2C_Ota-shi%2C_Gunma_-_Tokyo_National_Museum_-_DSC06425.JPG/960px-thumbnail.jpg",
+            "year": 500,
+        },
+        {
+            "title": "Kakiemon Porcelain",
+            "meta": "Edo Japan · 17th c. onward · Arita",
+            "desc": "Overglaze enamels on a milk-white ground. The Kakiemon workshop at Arita invented a palette — iron red, green, yellow, blue — that Meissen and Chantilly spent decades trying to copy.",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Hexagonal_Jar%2C_Imari_ware%2C_Kakiemon_type%2C_Edo_period%2C_17th_century%2C_flowering_plant_and_phoenix_design_in_overglaze_enamel_-_Tokyo_National_Museum_-_DSC05329_%28retouched%29.jpg/960px-thumbnail.jpg",
+            "year": 1670,
+        },
+        {
+            "title": "Katsura Imperial Villa",
+            "meta": "Edo Japan · 1620 onward · Kyoto",
+            "desc": "A villa and garden considered one of the finest masterpieces of Japanese architecture. Shoin-zukuri precision: every plank, every sight-line from every veranda, deliberately aligned.",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Katsura_Rikyu_%283264799678%29.jpg/960px-Katsura_Rikyu_%283264799678%29.jpg",
+            "year": 1620,
+        },
+    ],
+    "southeast-asia-oceania": [
+        {
+            "title": "Ban Chiang",
+            "meta": "Bronze Age · 1500 BCE – 300 CE · Thailand",
+            "desc": "Painted red-on-buff pottery from a prehistoric village in northeast Thailand — swirling spirals and concentric whorls. Bronze was cast here earlier than the textbooks once allowed.",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Ban_Chiang_Museum_Excavation.JPG/960px-Ban_Chiang_Museum_Excavation.JPG",
+            "year": -600,
+        },
+    ],
+    "americas": [
+        {
+            "title": "Crooked Beak of Heaven Mask",
+            "meta": "Kwakwaka'wakw · 19th c. · Pacific Northwest",
+            "desc": "A transformation mask from the Hamatsa winter dance. The outer \"cannibal bird\" beak opens with strings during the dance to reveal a human face within — the return of the initiate.",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Crooked_Beak_of_Heaven_Mask.jpg/960px-Crooked_Beak_of_Heaven_Mask.jpg",
+            "year": 1870,
         },
     ],
 }
 
 
-def main():
+def main() -> None:
     added_total = 0
     for slug, new_works in NEW_WORKS.items():
         path = DATA / f"{slug}.json"
@@ -266,7 +201,7 @@ def main():
         path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         print(f"  {slug}: +{added} (now {len(data['works'])})")
         added_total += added
-    print(f"\nAdded {added_total} works.")
+    print(f"\nAdded {added_total} works. Run `python build.py` to regenerate HTML.")
 
 
 if __name__ == "__main__":
