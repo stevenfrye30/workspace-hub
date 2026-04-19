@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Gods — A Cross-Cultural Temporal Map</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+<style>
+:root {
+  --bg:#0a0b1a; --panel:#141829; --panel2:#1d2238; --ink:#e8ddc3; --muted:#8a91b0;
+  --gold:#e5c158; --gold-deep:#b8901f; --blood:#a03040; --blood-deep:#701828;
+  --violet:#7a5ea8; --cyan:#5c9bc7; --silver:#c5c9d9;
+  --line:#2a2f4a; --gold-soft:rgba(229,193,88,0.4); --gold-faint:rgba(229,193,88,0.1);
+  --star-tint:rgba(197,201,217,0.04);
+}
+* { box-sizing:border-box; }
+html, body { margin:0; padding:0; }
+body {
+  font-family: 'Iowan Old Style', Georgia, 'Hoefler Text', serif;
+  background:var(--bg);
+  background-image:
+    radial-gradient(ellipse at 15% 10%, rgba(122,94,168,0.10), transparent 55%),
+    radial-gradient(ellipse at 85% 85%, rgba(160,48,64,0.08), transparent 55%),
+    radial-gradient(1px 1px at 20% 30%, var(--star-tint), transparent 50%),
+    radial-gradient(1px 1px at 70% 80%, var(--star-tint), transparent 50%),
+    radial-gradient(1px 1px at 40% 70%, var(--star-tint), transparent 50%);
+  color:var(--ink); line-height:1.6; min-height:100vh;
+}
+header {
+  padding:30px 28px 22px; text-align:center;
+  background:linear-gradient(180deg, #0e1024 0%, #0a0b1a 100%);
+  border-bottom:3px double var(--gold-soft); position:relative;
+}
+header::before, header::after {
+  content:''; position:absolute; left:28px; right:28px; height:1px;
+  background:linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+header::before { top:8px; }
+header::after  { bottom:-1px; opacity:0.45; }
+header h1 {
+  margin:0; font-size:32px; letter-spacing:8px; font-weight:normal;
+  color:var(--gold); font-variant:small-caps;
+  text-shadow:0 1px 0 #000, 0 0 28px rgba(229,193,88,0.18);
+}
+header h1::before { content:'☾'; color:var(--silver); margin-right:22px; font-size:0.9em; opacity:0.9; }
+header h1::after  { content:'☉'; color:var(--gold); margin-left:22px; font-size:0.9em; opacity:0.9; }
+header p {
+  margin:8px 0 0; color:var(--muted); font-style:italic; font-size:13px; letter-spacing:1.2px;
+}
+header p::before { content:'❋  '; color:var(--gold-deep); font-style:normal; }
+header p::after  { content:'  ❋'; color:var(--gold-deep); font-style:normal; }
+nav {
+  display:flex; gap:6px; padding:12px 28px; background:#07081a;
+  border-bottom:1px solid var(--line); flex-wrap:wrap;
+  justify-content:center;
+}
+nav button {
+  background:linear-gradient(180deg, var(--panel), var(--panel2));
+  border:1px solid var(--line); color:var(--muted);
+  padding:9px 18px; font-family:inherit; font-size:12px; letter-spacing:2px;
+  cursor:pointer; text-transform:uppercase; white-space:nowrap;
+  border-radius:14px / 50%;
+  transition: color .15s, border-color .15s, background .15s;
+}
+nav button:hover { color:var(--gold); border-color:var(--gold-soft); }
+nav button.active {
+  color:#0a0b1a;
+  background:linear-gradient(180deg, var(--gold), var(--gold-deep));
+  border-color:var(--gold); font-weight:bold;
+}
+main { padding:26px 28px; max-width:1400px; margin:0 auto; }
+.tab { display:none; }
+.tab.active { display:block; }
+h2 {
+  color:var(--gold); font-weight:normal; letter-spacing:3px; font-variant:small-caps;
+  font-size:24px; margin-top:0; padding-bottom:12px; position:relative;
+}
+h2::after {
+  content:''; position:absolute; left:0; right:0; bottom:4px; height:2px;
+  background:linear-gradient(90deg, var(--gold) 0%, var(--gold) 28%, transparent 28.5%, transparent 30%, var(--gold-deep) 30.5%, var(--gold-deep) 100%);
+  opacity:0.5;
+}
+h3 { color:var(--cyan); font-weight:normal; margin-top:24px; margin-bottom:10px; letter-spacing:0.8px; font-size:17px; }
+p { margin:10px 0; }
+main p { line-height:1.7; }
+
+.intro { color:var(--muted); font-style:italic; margin-bottom:24px; line-height:1.7; }
+
+.grid { display:grid; gap:16px; }
+.grid-pantheons { grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); }
+.pantheon-card {
+  background:var(--panel); border:1px solid var(--line); border-radius:10px;
+  padding:18px 22px; cursor:pointer; position:relative; overflow:hidden;
+  transition:border-color .25s, transform .2s, box-shadow .25s, background .25s;
+}
+.pantheon-card::before {
+  content:''; position:absolute; left:0; top:0; bottom:0; width:4px;
+  background:var(--pantheon-color, var(--gold));
+}
+.pantheon-card:hover {
+  border-color:var(--gold-soft); transform:translateY(-2px);
+  box-shadow:0 8px 22px rgba(0,0,0,0.45), 0 0 0 1px var(--gold-faint);
+  background:linear-gradient(180deg, var(--panel), var(--panel2));
+}
+.pantheon-card h3 { margin:0 0 6px; color:var(--gold); }
+.pantheon-card .region { color:var(--cyan); font-size:12px; font-style:italic; margin-bottom:6px; }
+.pantheon-card .span { color:var(--muted); font-size:12px; margin-bottom:8px; font-variant:small-caps; letter-spacing:1px; }
+.pantheon-card .count { color:var(--gold-deep); font-size:11px; font-variant:small-caps; letter-spacing:1.5px; margin-bottom:10px; }
+.pantheon-card .desc { color:var(--ink); font-size:13px; line-height:1.55; }
+
+.filters { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:20px; align-items:center; }
+.filters input, .filters select {
+  background:var(--panel2); color:var(--ink); border:1px solid var(--line);
+  padding:9px 14px; border-radius:6px; font-family:inherit; font-size:13px;
+  transition:border-color .2s, box-shadow .2s;
+}
+.filters input:focus, .filters select:focus {
+  outline:none; border-color:var(--gold); box-shadow:0 0 0 3px var(--gold-faint);
+}
+.filters input { min-width:220px; }
+.filters .count { color:var(--muted); font-size:12px; font-style:italic; margin-left:auto; }
+
+.god-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:12px; }
+.god-card {
+  background:var(--panel); border:1px solid var(--line); border-radius:8px;
+  padding:12px 16px; cursor:pointer; outline:none; position:relative;
+  transition:border-color .2s, transform .2s, box-shadow .25s, background .2s;
+}
+.god-card::before {
+  content:''; position:absolute; left:0; top:0; bottom:0; width:3px; border-radius:8px 0 0 8px;
+  background:var(--pantheon-color, var(--gold));
+}
+.god-card:hover, .god-card:focus {
+  border-color:var(--gold-soft); transform:translateY(-2px);
+  box-shadow:0 6px 18px rgba(0,0,0,0.4);
+  background:linear-gradient(180deg, var(--panel), var(--panel2));
+}
+.god-card .name { font-size:15px; color:var(--ink); font-weight:bold; letter-spacing:0.3px; }
+.god-card .pantheon { color:var(--gold); font-size:11px; font-variant:small-caps; letter-spacing:1.2px; margin-top:2px; }
+.god-card .cat { color:var(--cyan); font-size:11px; margin-top:2px; font-style:italic; }
+.god-card .domains { color:var(--muted); font-size:11px; margin-top:6px; }
+
+.tree-container {
+  background:var(--panel); border:1px solid var(--line); border-radius:10px;
+  margin-top:16px; position:relative;
+}
+#familyTree { width:100%; height:70vh; min-height:560px; background:#0d0f22; border-radius:10px; }
+.tree-controls { padding:12px 16px; display:flex; flex-wrap:wrap; gap:10px; align-items:center; border-bottom:1px solid var(--line); }
+.tree-controls select { min-width:220px; }
+.tree-legend { padding:10px 16px; display:flex; flex-wrap:wrap; gap:16px; font-size:12px; color:var(--muted); border-top:1px solid var(--line); background:#0a0c1e; border-radius:0 0 10px 10px; }
+.legend-item { display:flex; align-items:center; gap:6px; }
+.legend-dot { width:10px; height:10px; border-radius:50%; display:inline-block; }
+.legend-line { width:18px; height:2px; display:inline-block; }
+
+.timeline {
+  background:var(--panel); border:1px solid var(--line); border-radius:10px;
+  padding:20px 24px; margin-top:16px; overflow-x:auto;
+}
+.timeline-scale { display:flex; justify-content:space-between; color:var(--muted); font-size:11px; margin-bottom:8px; padding:0 2px; font-variant:small-caps; letter-spacing:1px; position:sticky; top:0; }
+.timeline-rows { position:relative; }
+.timeline-row { position:relative; height:36px; margin-bottom:6px; cursor:pointer; }
+.timeline-row:hover .tl-bar { filter:brightness(1.25); }
+.tl-track { position:absolute; left:200px; right:0; top:16px; height:2px; background:var(--line); }
+.tl-label { position:absolute; left:0; top:8px; width:190px; font-size:13px; color:var(--ink); text-align:right; padding-right:12px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.tl-bar { position:absolute; top:8px; height:18px; border-radius:9px; opacity:0.85; transition:filter .2s; }
+.tl-peak { position:absolute; top:12px; height:10px; border-radius:5px; opacity:0.95; box-shadow:inset 0 0 0 1px rgba(255,255,255,0.2); }
+.tl-gridline { position:absolute; top:0; bottom:0; width:1px; background:rgba(255,255,255,0.04); }
+.tl-gridline.bce-ce { background:rgba(229,193,88,0.25); }
+
+.archetype-card {
+  background:var(--panel); border:1px solid var(--line); border-radius:10px;
+  padding:18px 22px; margin-bottom:14px; transition:border-color .25s, background .25s;
+}
+.archetype-card:hover { border-color:var(--gold-soft); background:linear-gradient(180deg, var(--panel), var(--panel2)); }
+.archetype-card h3 { margin:0 0 6px; color:var(--gold); }
+.archetype-card .desc { color:var(--ink); margin:8px 0 14px; font-size:14px; line-height:1.6; }
+.archetype-examples { display:flex; flex-wrap:wrap; gap:6px; }
+.arch-chip {
+  background:var(--panel2); border:1px solid var(--line); color:var(--ink);
+  padding:4px 12px; border-radius:14px; font-size:12px; cursor:pointer;
+  transition:all .2s;
+}
+.arch-chip:hover { border-color:var(--gold); color:var(--gold); background:rgba(229,193,88,0.06); transform:translateY(-1px); }
+.arch-chip .p { color:var(--muted); font-size:10px; margin-left:5px; font-style:italic; }
+
+.modal-bg { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.85); backdrop-filter:blur(2px); z-index:100; align-items:center; justify-content:center; padding:24px; }
+.modal-bg.open { display:flex; animation:fadeIn .25s ease; }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+.modal { background:var(--panel); border:1px solid var(--gold-soft); border-radius:12px; max-width:720px; width:100%; max-height:88vh; overflow-y:auto; padding:28px 34px; box-shadow:0 24px 60px rgba(0,0,0,0.6), 0 0 0 1px var(--gold-faint); position:relative; }
+.modal h2 { color:var(--gold); margin-top:0; padding-bottom:12px; font-size:22px; }
+.modal .close { position:absolute; right:20px; top:16px; background:none; border:0; color:var(--muted); font-size:28px; cursor:pointer; line-height:1; transition:color .2s, transform .2s; }
+.modal .close:hover { color:var(--gold); transform:rotate(90deg); }
+.modal .pantheon-label { color:var(--gold-deep); font-size:12px; font-variant:small-caps; letter-spacing:2px; margin-bottom:4px; }
+.modal .epithets { color:var(--cyan); font-size:13px; font-style:italic; margin-top:4px; margin-bottom:14px; }
+.modal .desc { line-height:1.7; margin:14px 0; font-size:15px; }
+.modal .section-label { color:var(--gold-deep); font-size:11px; text-transform:uppercase; letter-spacing:1.8px; margin:18px 0 6px; font-weight:bold; }
+.modal .domains { display:flex; flex-wrap:wrap; gap:6px; }
+.modal .domain-tag { background:var(--panel2); border:1px solid var(--line); color:var(--ink); padding:3px 10px; border-radius:11px; font-size:12px; }
+.modal .rel-row { margin:4px 0; font-size:14px; }
+.modal .rel-row .rel-label { color:var(--muted); display:inline-block; min-width:100px; font-variant:small-caps; letter-spacing:1px; font-size:12px; }
+.modal a.god-link, .modal span.god-link {
+  color:var(--gold); cursor:pointer; border-bottom:1px dotted var(--gold);
+  transition:color .2s, border-color .2s;
+}
+.modal .god-link:hover { color:var(--ink); border-bottom-color:var(--ink); }
+.modal .god-link.missing { color:var(--muted); cursor:default; border-bottom:1px dotted var(--muted); opacity:0.6; }
+
+.empty { color:var(--muted); font-style:italic; padding:40px; text-align:center; }
+
+footer { text-align:center; color:var(--muted); font-size:12px; padding:28px 20px 40px; border-top:1px solid var(--line); margin-top:40px; letter-spacing:1px; }
+footer a { color:var(--gold); text-decoration:none; }
+
+@media (max-width: 700px) {
+  header h1 { font-size:22px; letter-spacing:4px; }
+  main { padding:16px 14px; }
+  .filters input { min-width:0; width:100%; }
+  .tl-label { width:130px; font-size:11px; }
+  .tl-track { left:140px; }
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>GODS</h1>
+  <p>A cross-cultural temporal map of the divine</p>
+</header>
+
+<nav>
+  <button class="tab-btn active" data-tab="overview">Pantheons</button>
+  <button class="tab-btn" data-tab="trees">Family Trees</button>
+  <button class="tab-btn" data-tab="timeline">Timeline</button>
+  <button class="tab-btn" data-tab="archetypes">Archetypes</button>
+  <button class="tab-btn" data-tab="deified">Deified Humans</button>
+  <button class="tab-btn" data-tab="browse">Browse All</button>
+</nav>
+
+<main>
+
+<section id="tab-overview" class="tab active">
+  <h2>Pantheons</h2>
+  <p class="intro">
+    Twenty-seven traditions spanning six thousand years — from the reconstructed sky-fathers of the Proto-Indo-European steppe
+    to living religions. Click a pantheon to see its family tree, or skim the cards for the shape of each tradition.
+    Abrahamic traditions and deified humans are catalogued separately: Christianity, Judaism, and Islam are monotheistic
+    (not pantheons); their catalogues list angels, prophets, and opposing figures for cross-cultural comparison.
+  </p>
+  <div id="pantheonGrid" class="grid grid-pantheons"></div>
+</section>
+
+<section id="tab-trees" class="tab">
+  <h2>Family Trees</h2>
+  <p class="intro">
+    Interactive genealogies of each pantheon. Solid gold lines are parent-to-child. Rose lines are consort pairings.
+    Drag nodes to rearrange; click any figure for details.
+  </p>
+  <div class="tree-container">
+    <div class="tree-controls">
+      <label style="color:var(--muted); font-size:12px; letter-spacing:1.5px; font-variant:small-caps;">Pantheon:</label>
+      <select id="treeSelect"></select>
+      <button id="fitTree" style="background:var(--panel2); border:1px solid var(--line); color:var(--ink); padding:8px 14px; border-radius:6px; cursor:pointer; font-family:inherit; font-size:12px; letter-spacing:1px; font-variant:small-caps;">Fit to screen</button>
+      <span id="treeCount" style="color:var(--muted); font-size:12px; margin-left:auto; font-style:italic;"></span>
+    </div>
+    <div id="familyTree"></div>
+    <div class="tree-legend">
+      <div class="legend-item"><span class="legend-line" style="background:var(--gold);"></span> parent → child</div>
+      <div class="legend-item"><span class="legend-line" style="background:var(--blood);"></span> consort</div>
+      <div class="legend-item"><span class="legend-dot" style="background:var(--gold);"></span> major</div>
+      <div class="legend-item"><span class="legend-dot" style="background:var(--violet);"></span> primordial / titan</div>
+      <div class="legend-item"><span class="legend-dot" style="background:var(--cyan);"></span> minor</div>
+      <div class="legend-item"><span class="legend-dot" style="background:var(--blood);"></span> monster</div>
+      <div class="legend-item"><span class="legend-dot" style="background:var(--silver);"></span> hero</div>
+    </div>
+  </div>
+</section>
+
+<section id="tab-timeline" class="tab">
+  <h2>Temporal Map</h2>
+  <p class="intro">
+    Each bar shows a tradition's active span; the darker inner bar marks its peak of influence.
+    BCE ↔ CE boundary in gold. Traditions still practiced today extend to the right edge.
+    Click a row to open its family tree.
+  </p>
+  <div class="timeline">
+    <div id="timelineRows" class="timeline-rows"></div>
+  </div>
+</section>
+
+<section id="tab-archetypes" class="tab">
+  <h2>Cross-Cultural Archetypes</h2>
+  <p class="intro">
+    Many roles — sky-father, storm-serpent-slayer, dying-and-rising god, trickster — recur with striking consistency across
+    unrelated cultures. Some reflect shared Indo-European inheritance (Zeus ≈ Jupiter ≈ Indra from *Dyēus Phter); others are
+    independent convergences on universal human experiences. Click any example to open that god.
+  </p>
+  <div id="archetypeList"></div>
+</section>
+
+<section id="tab-deified" class="tab">
+  <h2>Deified Humans</h2>
+  <p class="intro">
+    Historical persons elevated to divine status — whether by state decree, posthumous cult, or folk veneration.
+    Rome institutionalized it with the imperial cult; East Asia routinely enshrined sage-kings, generals, and scholars;
+    Egypt deified the architect Imhotep two millennia after his death. The line between "great ancestor" and "god" is porous.
+  </p>
+  <div id="deifiedGrid" class="god-grid"></div>
+</section>
+
+<section id="tab-browse" class="tab">
+  <h2>Browse All Gods</h2>
+  <div class="filters">
+    <input type="text" id="searchInput" placeholder="Search by name, domain, or description…">
+    <select id="pantheonFilter"><option value="">All pantheons</option></select>
+    <select id="categoryFilter">
+      <option value="">All categories</option>
+      <option value="major">Major</option>
+      <option value="minor">Minor</option>
+      <option value="primordial">Primordial</option>
+      <option value="titan">Titan</option>
+      <option value="hero">Hero / demigod</option>
+      <option value="monster">Monster</option>
+      <option value="deified-human">Deified human</option>
+      <option value="abrahamic">Abrahamic</option>
+    </select>
+    <span class="count" id="browseCount"></span>
+  </div>
+  <div id="browseGrid" class="god-grid"></div>
+</section>
+
+</main>
+
+<div class="modal-bg" id="modalBg">
+  <div class="modal" id="modal">
+    <button class="close" id="modalClose">×</button>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+<footer>
+  Data is a seed — living, incomplete, and meant to grow. Corrections and additions welcome.
+</footer>
+
+<script>
+let DATA = null;
+let GODS_BY_ID = {};
+let PANTHEONS_BY_ID = {};
+let treeNetwork = null;
+
+fetch('data.json').then(r => r.json()).then(d => { DATA = d; init(); });
+
+function init() {
+  DATA.pantheons.forEach(p => PANTHEONS_BY_ID[p.id] = p);
+  DATA.gods.forEach(g => GODS_BY_ID[g.id] = g);
+
+  renderPantheonGrid();
+  renderTreeSelect();
+  renderTimeline();
+  renderArchetypes();
+  renderDeified();
+  renderBrowseFilters();
+  renderBrowse();
+  wireTabs();
+  wireModal();
+  wireBrowse();
+
+  // Auto-select first pantheon in tree tab so it's not blank if user clicks in
+  if (DATA.pantheons.length) loadTree(DATA.pantheons.find(p => p.id === 'greek')?.id || DATA.pantheons[0].id);
+}
+
+function wireTabs() {
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+      // Fit tree on switch to trees tab (vis-network sizes itself based on container)
+      if (btn.dataset.tab === 'trees' && treeNetwork) {
+        setTimeout(() => treeNetwork.fit(), 60);
+      }
+    });
+  });
+}
+
+function wireModal() {
+  document.getElementById('modalClose').addEventListener('click', closeModal);
+  document.getElementById('modalBg').addEventListener('click', e => { if (e.target.id === 'modalBg') closeModal(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+}
+function closeModal() { document.getElementById('modalBg').classList.remove('open'); }
+
+function openGod(id) {
+  const g = GODS_BY_ID[id];
+  if (!g) return;
+  const p = PANTHEONS_BY_ID[g.pantheon];
+  const parents = (g.parents || []).map(renderGodLink).filter(Boolean);
+  const consorts = (g.consorts || []).map(renderGodLink).filter(Boolean);
+  const children = (g.children || []).map(renderGodLink).filter(Boolean);
+  const siblings = (g.siblings || []).map(renderGodLink).filter(Boolean);
+  const parallels = (g.parallels || []).map(renderGodLink).filter(Boolean);
+
+  const rel = [];
+  if (parents.length) rel.push(`<div class="rel-row"><span class="rel-label">Parents</span>${parents.join(', ')}</div>`);
+  if (consorts.length) rel.push(`<div class="rel-row"><span class="rel-label">Consorts</span>${consorts.join(', ')}</div>`);
+  if (children.length) rel.push(`<div class="rel-row"><span class="rel-label">Children</span>${children.join(', ')}</div>`);
+  if (siblings.length) rel.push(`<div class="rel-row"><span class="rel-label">Siblings</span>${siblings.join(', ')}</div>`);
+  if (parallels.length) rel.push(`<div class="rel-row"><span class="rel-label">Parallels</span>${parallels.join(', ')}</div>`);
+
+  const archetype = g.archetype ? (DATA.archetypes.find(a => a.id === g.archetype)?.name || g.archetype) : null;
+
+  document.getElementById('modalContent').innerHTML = `
+    <div class="pantheon-label">${p ? p.name : g.pantheon}</div>
+    <h2>${g.name}</h2>
+    ${g.epithets && g.epithets.length ? `<div class="epithets">"${g.epithets.join(' · ')}"</div>` : ''}
+    <div class="desc">${g.description || ''}</div>
+    ${g.domains && g.domains.length ? `
+      <div class="section-label">Domains</div>
+      <div class="domains">${g.domains.map(d => `<span class="domain-tag">${d.replace(/-/g, ' ')}</span>`).join('')}</div>
+    ` : ''}
+    ${archetype ? `<div class="section-label" style="margin-top:14px;">Archetype</div><div style="color:var(--ink); font-size:14px;">${archetype}</div>` : ''}
+    ${rel.length ? `<div class="section-label" style="margin-top:18px;">Relations</div>${rel.join('')}` : ''}
+    <div class="section-label" style="margin-top:18px;">Category</div>
+    <div style="color:var(--ink); font-size:14px; text-transform:capitalize;">${(g.category || '').replace(/-/g, ' ')} · ${g.gender === 'M' ? 'masculine' : g.gender === 'F' ? 'feminine' : 'non-gendered / other'}</div>
+  `;
+  document.getElementById('modalBg').classList.add('open');
+  document.getElementById('modal').scrollTop = 0;
+}
+
+function renderGodLink(id) {
+  const g = GODS_BY_ID[id];
+  if (g) return `<span class="god-link" onclick="openGod('${id}')">${g.name}</span>`;
+  // Missing relation — show stub name derived from id
+  return `<span class="god-link missing" title="Not yet catalogued">${formatStubName(id)}</span>`;
+}
+function formatStubName(id) {
+  return id.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+}
+
+/* ---------- Pantheons tab ---------- */
+function renderPantheonGrid() {
+  const counts = {};
+  DATA.gods.forEach(g => counts[g.pantheon] = (counts[g.pantheon] || 0) + 1);
+  document.getElementById('pantheonGrid').innerHTML = DATA.pantheons.map(p => {
+    const n = counts[p.id] || 0;
+    return `
+      <div class="pantheon-card" style="--pantheon-color:${p.color}" data-pid="${p.id}">
+        <h3>${p.name}</h3>
+        <div class="region">${p.region}</div>
+        <div class="span">${fmtYears(p.active_from, p.active_to)}</div>
+        <div class="count">${n} figure${n === 1 ? '' : 's'} catalogued</div>
+        <div class="desc">${p.description}</div>
+      </div>
+    `;
+  }).join('');
+  document.querySelectorAll('.pantheon-card').forEach(el => {
+    el.addEventListener('click', () => {
+      const pid = el.dataset.pid;
+      document.querySelector('[data-tab="trees"]').click();
+      document.getElementById('treeSelect').value = pid;
+      loadTree(pid);
+    });
+  });
+}
+
+function fmtYear(y) {
+  if (y === undefined || y === null) return '';
+  if (y >= 2020) return 'present';
+  if (y < 0) return `${Math.abs(y)} BCE`;
+  if (y === 0) return '0';
+  return `${y} CE`;
+}
+function fmtYears(from, to) {
+  return `${fmtYear(from)} – ${fmtYear(to)}`;
+}
+
+/* ---------- Family Trees tab ---------- */
+function renderTreeSelect() {
+  const sel = document.getElementById('treeSelect');
+  sel.innerHTML = DATA.pantheons.map(p => `<option value="${p.id}">${p.name}</option>`).join('');
+  sel.value = 'greek';
+  sel.addEventListener('change', e => loadTree(e.target.value));
+  document.getElementById('fitTree').addEventListener('click', () => { if (treeNetwork) treeNetwork.fit({animation:true}); });
+}
+
+function loadTree(pantheonId) {
+  const pantheon = PANTHEONS_BY_ID[pantheonId];
+  if (!pantheon) return;
+  const pgods = DATA.gods.filter(g => g.pantheon === pantheonId);
+  document.getElementById('treeCount').textContent = `${pgods.length} figures`;
+
+  const nodes = pgods.map(g => ({
+    id: g.id,
+    label: g.name.length > 20 ? g.name.slice(0, 18) + '…' : g.name,
+    title: (g.domains || []).slice(0, 3).join(', '),
+    color: categoryColor(g.category),
+    shape: g.gender === 'F' ? 'ellipse' : g.gender === 'M' ? 'box' : 'diamond',
+    font: { color:'#e8ddc3', face:'Georgia, serif', size:14 },
+    borderWidth: 1,
+    margin: 8
+  }));
+
+  const edges = [];
+  const seen = new Set();
+  pgods.forEach(g => {
+    (g.children || []).forEach(cid => {
+      if (GODS_BY_ID[cid] && GODS_BY_ID[cid].pantheon === pantheonId) {
+        const key = `p-${g.id}-${cid}`;
+        if (!seen.has(key)) {
+          seen.add(key);
+          edges.push({ from: g.id, to: cid, arrows:'to', color:{ color:'#b8901f', opacity:0.8 }, width:1.4 });
+        }
+      }
+    });
+    (g.consorts || []).forEach(sid => {
+      if (GODS_BY_ID[sid] && GODS_BY_ID[sid].pantheon === pantheonId) {
+        const pair = [g.id, sid].sort().join('|');
+        const key = `c-${pair}`;
+        if (!seen.has(key)) {
+          seen.add(key);
+          edges.push({ from: g.id, to: sid, dashes:[4,4], color:{ color:'#a03040', opacity:0.7 }, width:1, smooth:{ type:'curvedCW', roundness:0.15 } });
+        }
+      }
+    });
+  });
+
+  const container = document.getElementById('familyTree');
+  if (treeNetwork) treeNetwork.destroy();
+  treeNetwork = new vis.Network(container, { nodes, edges }, {
+    layout: {
+      hierarchical: {
+        direction: 'UD',
+        sortMethod: 'directed',
+        levelSeparation: 120,
+        nodeSpacing: 140,
+        treeSpacing: 180
+      }
+    },
+    physics: { enabled: false },
+    interaction: { hover:true, tooltipDelay:180 },
+    edges: { smooth: { type:'cubicBezier', forceDirection:'vertical', roundness:0.3 } }
+  });
+  treeNetwork.on('click', params => {
+    if (params.nodes.length) openGod(params.nodes[0]);
+  });
+}
+
+function categoryColor(c) {
+  const map = {
+    'major':       { background:'#2a3356', border:'#e5c158', highlight:{ background:'#3c4672', border:'#e5c158' } },
+    'primordial':  { background:'#3a2e52', border:'#7a5ea8', highlight:{ background:'#4b3d68', border:'#7a5ea8' } },
+    'titan':       { background:'#3a2e52', border:'#7a5ea8', highlight:{ background:'#4b3d68', border:'#7a5ea8' } },
+    'minor':       { background:'#1f3b52', border:'#5c9bc7', highlight:{ background:'#2c4e6b', border:'#5c9bc7' } },
+    'monster':     { background:'#4a1e28', border:'#a03040', highlight:{ background:'#5f2a34', border:'#a03040' } },
+    'hero':        { background:'#2d313d', border:'#c5c9d9', highlight:{ background:'#40454f', border:'#c5c9d9' } },
+    'deified-human': { background:'#3a2a1a', border:'#c08040', highlight:{ background:'#503a26', border:'#c08040' } },
+    'abrahamic':   { background:'#222a44', border:'#6a7aa0', highlight:{ background:'#2e385a', border:'#6a7aa0' } }
+  };
+  return map[c] || map.minor;
+}
+
+/* ---------- Timeline tab ---------- */
+function renderTimeline() {
+  const rowsContainer = document.getElementById('timelineRows');
+  const minYear = -5000, maxYear = 2100;
+  const range = maxYear - minYear;
+  const labelWidth = 200;
+  const chartWidth = 1100;
+
+  const gridlines = [-5000, -4000, -3000, -2000, -1000, 0, 1000, 2000].map(y => {
+    const cls = y === 0 ? 'tl-gridline bce-ce' : 'tl-gridline';
+    const x = labelWidth + ((y - minYear) / range) * chartWidth;
+    return `<div class="${cls}" style="left:${x}px;"></div>
+            <div style="position:absolute; left:${x}px; top:-14px; font-size:10px; color:var(--muted); transform:translateX(-50%);">${fmtYear(y)}</div>`;
+  }).join('');
+
+  const sorted = DATA.pantheons.slice().sort((a,b) => a.active_from - b.active_from);
+  const rows = sorted.map(p => {
+    const x = labelWidth + ((p.active_from - minYear) / range) * chartWidth;
+    const w = ((p.active_to - p.active_from) / range) * chartWidth;
+    const px = labelWidth + (((p.peak_from || p.active_from) - minYear) / range) * chartWidth;
+    const pw = (((p.peak_to || p.active_to) - (p.peak_from || p.active_from)) / range) * chartWidth;
+    return `
+      <div class="timeline-row" data-pid="${p.id}" title="${p.region} · ${fmtYears(p.active_from, p.active_to)}">
+        <div class="tl-label">${p.name}</div>
+        <div class="tl-track" style="width:${chartWidth}px; left:${labelWidth}px;"></div>
+        <div class="tl-bar" style="left:${x}px; width:${w}px; background:${p.color};"></div>
+        <div class="tl-peak" style="left:${px}px; width:${pw}px; background:${p.color}; filter:brightness(1.3);"></div>
+      </div>
+    `;
+  }).join('');
+  rowsContainer.style.width = (labelWidth + chartWidth + 20) + 'px';
+  rowsContainer.style.paddingTop = '24px';
+  rowsContainer.innerHTML = gridlines + rows;
+
+  rowsContainer.querySelectorAll('.timeline-row').forEach(el => {
+    el.addEventListener('click', () => {
+      const pid = el.dataset.pid;
+      document.querySelector('[data-tab="trees"]').click();
+      document.getElementById('treeSelect').value = pid;
+      loadTree(pid);
+    });
+  });
+}
+
+/* ---------- Archetypes tab ---------- */
+function renderArchetypes() {
+  document.getElementById('archetypeList').innerHTML = DATA.archetypes.map(a => `
+    <div class="archetype-card">
+      <h3>${a.name}</h3>
+      <div class="desc">${a.description}</div>
+      <div class="archetype-examples">
+        ${(a.examples || []).map(id => {
+          const g = GODS_BY_ID[id];
+          if (g) {
+            const p = PANTHEONS_BY_ID[g.pantheon];
+            return `<span class="arch-chip" onclick="openGod('${id}')">${g.name}<span class="p">${p ? p.name : ''}</span></span>`;
+          }
+          return `<span class="arch-chip" style="opacity:0.5;" title="Not yet catalogued">${formatStubName(id)}</span>`;
+        }).join('')}
+      </div>
+    </div>
+  `).join('');
+}
+
+/* ---------- Deified Humans tab ---------- */
+function renderDeified() {
+  const list = DATA.gods.filter(g => g.category === 'deified-human');
+  document.getElementById('deifiedGrid').innerHTML = list.length
+    ? list.map(renderGodCard).join('')
+    : '<div class="empty">No deified humans catalogued yet.</div>';
+  document.querySelectorAll('#deifiedGrid .god-card').forEach(el => {
+    el.addEventListener('click', () => openGod(el.dataset.gid));
+  });
+}
+
+/* ---------- Browse tab ---------- */
+function renderBrowseFilters() {
+  const sel = document.getElementById('pantheonFilter');
+  sel.innerHTML = '<option value="">All pantheons</option>' +
+    DATA.pantheons.map(p => `<option value="${p.id}">${p.name}</option>`).join('');
+}
+
+function renderBrowse() {
+  const q = document.getElementById('searchInput').value.toLowerCase().trim();
+  const pfilter = document.getElementById('pantheonFilter').value;
+  const cfilter = document.getElementById('categoryFilter').value;
+  let list = DATA.gods.slice();
+  if (pfilter) list = list.filter(g => g.pantheon === pfilter);
+  if (cfilter) list = list.filter(g => g.category === cfilter);
+  if (q) {
+    list = list.filter(g => {
+      const hay = [
+        g.name, g.description || '',
+        (g.domains || []).join(' '),
+        (g.epithets || []).join(' '),
+        PANTHEONS_BY_ID[g.pantheon]?.name || ''
+      ].join(' ').toLowerCase();
+      return hay.includes(q);
+    });
+  }
+  document.getElementById('browseCount').textContent = `${list.length} of ${DATA.gods.length}`;
+  document.getElementById('browseGrid').innerHTML = list.length
+    ? list.map(renderGodCard).join('')
+    : '<div class="empty">No matches.</div>';
+  document.querySelectorAll('#browseGrid .god-card').forEach(el => {
+    el.addEventListener('click', () => openGod(el.dataset.gid));
+  });
+}
+
+function renderGodCard(g) {
+  const p = PANTHEONS_BY_ID[g.pantheon];
+  const domains = (g.domains || []).slice(0, 3).map(d => d.replace(/-/g,' ')).join(' · ');
+  return `
+    <div class="god-card" style="--pantheon-color:${p ? p.color : 'var(--gold)'}" data-gid="${g.id}" tabindex="0">
+      <div class="name">${g.name}</div>
+      <div class="pantheon">${p ? p.name : g.pantheon}</div>
+      <div class="cat">${(g.category || '').replace(/-/g,' ')}</div>
+      ${domains ? `<div class="domains">${domains}</div>` : ''}
+    </div>
+  `;
+}
+
+function wireBrowse() {
+  document.getElementById('searchInput').addEventListener('input', renderBrowse);
+  document.getElementById('pantheonFilter').addEventListener('change', renderBrowse);
+  document.getElementById('categoryFilter').addEventListener('change', renderBrowse);
+}
+</script>
+</body>
+</html>
