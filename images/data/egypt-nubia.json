@@ -152,6 +152,30 @@
       "meta": "18th Dynasty · c. 1323 BCE · Valley of the Kings",
       "desc": "A small, hastily decorated tomb, overlooked by thieves for three thousand years. Howard Carter opened it in 1922 and the world went Egyptomaniac again.",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Inside_Pharaoh_Tutankhamun%27s_tomb%2C_18th_dynasty.jpg/960px-Inside_Pharaoh_Tutankhamun%27s_tomb%2C_18th_dynasty.jpg"
+    },
+    {
+      "title": "The Seated Scribe",
+      "meta": "Old Kingdom · c. 2620–2500 BCE · Saqqara",
+      "desc": "Painted limestone, eyes inlaid with crystal and copper. Alert and ready, reed in hand — the realist portrait of a bureaucrat, 4,500 years ago.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Le_Scribe_accroupi_-_Mus%C3%A9e_du_Louvre_Antiquit%C3%A9s_%C3%A9gyptiennes_E_3023.jpg/960px-Le_Scribe_accroupi_-_Mus%C3%A9e_du_Louvre_Antiquit%C3%A9s_%C3%A9gyptiennes_E_3023.jpg"
+    },
+    {
+      "title": "Khafre Enthroned",
+      "meta": "Old Kingdom · c. 2570 BCE · Giza",
+      "desc": "Diorite portrait of the pharaoh who built the second pyramid. Horus the falcon wraps his wings around the back of the king's head — divine kingship locked in stone.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Kairo_Museum_Sitzstatue_Chephren_06.jpg/960px-Kairo_Museum_Sitzstatue_Chephren_06.jpg"
+    },
+    {
+      "title": "Pyramid of Meidum",
+      "meta": "Old Kingdom · c. 2600 BCE",
+      "desc": "A failed smooth-sided pyramid whose outer casing collapsed. What survives is the blunt tower at the core — an architectural experiment that taught the builders of Giza.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Meidoum03.jpg/960px-Meidoum03.jpg"
+    },
+    {
+      "title": "Sphinx of Taharqa",
+      "meta": "Nubian Kush · 25th Dynasty · c. 680 BCE",
+      "desc": "A Nubian pharaoh in the form of an Egyptian sphinx, carrying a double crown he had earned as conqueror. Now in the British Museum.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Sphinx_of_Taharqo.jpg/960px-Sphinx_of_Taharqo.jpg"
     }
   ]
 }

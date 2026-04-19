@@ -158,6 +158,36 @@
       "meta": "Iron Age · 500 BCE – 500 CE · Laos",
       "desc": "Thousands of carved stone jars scattered across a plateau. Probably funerary; ground-truth research has been slow because the plain is still littered with unexploded American bombs.",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Plainofjars_2.jpg/960px-Plainofjars_2.jpg"
+    },
+    {
+      "title": "Shwedagon Pagoda",
+      "meta": "Mon → Burmese · 6th–11th c. onward · Yangon",
+      "desc": "A gilded stupa 325 feet tall, covered in gold leaf and crowned with 4,000 diamonds. Said to enshrine hairs of the Buddha.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Shwedagon_Pagoda_2017.jpg/960px-Shwedagon_Pagoda_2017.jpg"
+    },
+    {
+      "title": "Banteay Srei",
+      "meta": "Khmer Empire · 967 · Cambodia",
+      "desc": "\"Citadel of Women\" — a small temple of pink sandstone carved with almost impossibly fine reliefs. Malraux tried to steal four figures in 1923 and was arrested.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Banteay_Srei_full2.jpg/960px-Banteay_Srei_full2.jpg"
+    },
+    {
+      "title": "Tongkonan",
+      "meta": "Toraja · centuries old · Sulawesi, Indonesia",
+      "desc": "Ancestral houses with boat-shaped roofs soaring up at both ends. Each is built facing north, aligned to the cosmos of the Torajan dead.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Tongkonan_-_South_Sulawesi_Pavilion_TMII_%282025%29_-_img_01.jpg/960px-Tongkonan_-_South_Sulawesi_Pavilion_TMII_%282025%29_-_img_01.jpg"
+    },
+    {
+      "title": "Hei-tiki",
+      "meta": "Māori · pre-European onward · New Zealand",
+      "desc": "Nephrite pendants of a human figure worn around the neck, passed down through generations. Each is named; each gains mana from the people who wear it.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Hinepare.jpg"
+    },
+    {
+      "title": "Rongorongo",
+      "meta": "Rapa Nui · pre-contact? · Easter Island",
+      "desc": "Glyphs carved onto wooden tablets — one of the few independent writing systems in human history. Still undeciphered; most tablets were burned by missionaries.",
+      "image": "https://upload.wikimedia.org/wikipedia/en/2/2d/Rongorongo_B-v_Aruku-Kurenga_%28color%29_edit1.jpg"
     }
   ]
 }
