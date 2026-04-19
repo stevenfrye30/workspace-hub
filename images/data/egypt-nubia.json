@@ -68,6 +68,30 @@
       "meta": "Kingdom of Kush · 300 BCE – 300 CE · Sudan",
       "desc": "Over 200 pyramids, steeper and smaller than Egypt's, built for Nubian royalty. Sudan has more pyramids than Egypt — about twice as many.",
       "image": "https://upload.wikimedia.org/wikipedia/commons/5/53/Sudan_Meroe_Pyramids_2001.JPG"
+    },
+    {
+      "title": "Book of the Dead",
+      "meta": "New Kingdom onward · 1550 BCE – 50 BCE",
+      "desc": "Spells written on papyrus to guide the deceased through the Duat. The Weighing of the Heart against a feather is its most famous scene.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/El_pesado_del_coraz%C3%B3n_en_el_Papiro_de_Hunefer.jpg/960px-El_pesado_del_coraz%C3%B3n_en_el_Papiro_de_Hunefer.jpg"
+    },
+    {
+      "title": "Colossi of Memnon",
+      "meta": "New Kingdom · c. 1350 BCE · Luxor",
+      "desc": "Twin seated statues of Amenhotep III, sixty feet tall. After an earthquake cracked one, it \"sang\" at dawn for two centuries — until Romans repaired it.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Colossi_of_Memnon_May_2015_2.JPG/960px-Colossi_of_Memnon_May_2015_2.JPG"
+    },
+    {
+      "title": "Fayum Mummy Portraits",
+      "meta": "Roman Egypt · 1st–3rd c. CE",
+      "desc": "Encaustic panels placed over the faces of mummies. The most personal, most realistic portraits to survive from the ancient world — they still look you in the eye.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/c/c6/Fayum-34.jpg"
+    },
+    {
+      "title": "Temple of Dendur",
+      "meta": "Roman Egypt · 15 BCE",
+      "desc": "A small sandstone temple given to the United States in 1965 when Lake Nasser was about to drown it. Reassembled stone by stone inside the Met.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/The_Temple_of_Dendur_MET_DT563.jpg/960px-The_Temple_of_Dendur_MET_DT563.jpg"
     }
   ]
 }

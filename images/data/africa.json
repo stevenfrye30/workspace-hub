@@ -62,6 +62,36 @@
       "meta": "Asante & Ewe · 17th c. onward · Ghana",
       "desc": "Hand-woven silk and cotton strips sewn together into royal cloth. Each pattern has a name and a proverb behind it.",
       "image": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Kent_wove.jpg"
+    },
+    {
+      "title": "Obelisks of Aksum",
+      "meta": "Aksumite kingdom · 4th c. · Ethiopia",
+      "desc": "Granite stelae marking royal graves; the tallest once stood nearly a hundred feet high. One was looted by Mussolini, returned in 2005.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Rome_Stele.jpg/960px-Rome_Stele.jpg"
+    },
+    {
+      "title": "Nkisi Power Figure",
+      "meta": "Kongo · 19th–20th c. · Central Africa",
+      "desc": "Wooden figures bristling with nails and blades. Each nail driven in activated a pledge, a curse, or a contract witnessed by the spirit inside.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/0/0e/WLA_metmuseum_Power_Figure_Male_Nkisi.jpg"
+    },
+    {
+      "title": "Senufo Sculpture",
+      "meta": "Senufo · West Africa",
+      "desc": "Elongated female figures and carved divination stools used by the Poro and Sandogo societies in Côte d'Ivoire and Mali.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/2/23/Belle_femme_senoufo.jpg"
+    },
+    {
+      "title": "Fang Reliquary (Byeri)",
+      "meta": "Fang · 19th–20th c. · Gabon / Cameroon",
+      "desc": "Carved guardian heads placed atop boxes of ancestral bones. Picasso saw one in 1907 and the Demoiselles d'Avignon followed.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Ngontang_helmet_mask_with_four_faces_-_Fang_people%2C_Gazbon_-_Royal_Museum_for_Central_Africa_-_DSC06615.JPG/960px-Ngontang_helmet_mask_with_four_faces_-_Fang_people%2C_Gazbon_-_Royal_Museum_for_Central_Africa_-_DSC06615.JPG"
+    },
+    {
+      "title": "Akan Goldweights",
+      "meta": "Asante / Akan · 15th–19th c. · Ghana",
+      "desc": "Brass figurines used to weigh gold dust. Each one is also a proverb — the weight you balance against is a riddle.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Ashanti_goldweights.JPG/960px-Ashanti_goldweights.JPG"
     }
   ]
 }

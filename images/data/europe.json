@@ -68,6 +68,48 @@
       "meta": "Expressionism · Edvard Munch · 1893",
       "desc": "Munch wrote in his diary: \"I sensed an infinite scream passing through nature.\" The sky's red may be from the Krakatoa eruption ten years earlier.",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Edvard_Munch%2C_1893%2C_The_Scream%2C_oil%2C_tempera_and_pastel_on_cardboard%2C_91_x_73_cm%2C_National_Gallery_of_Norway.jpg/960px-Edvard_Munch%2C_1893%2C_The_Scream%2C_oil%2C_tempera_and_pastel_on_cardboard%2C_91_x_73_cm%2C_National_Gallery_of_Norway.jpg"
+    },
+    {
+      "title": "Bayeux Tapestry",
+      "meta": "Norman · c. 1070 · France",
+      "desc": "Seventy meters of embroidered linen telling the Norman conquest of England. Probably stitched by English nuns for the new conqueror's half-brother.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Odo_bayeux_tapestry.png/960px-Odo_bayeux_tapestry.png"
+    },
+    {
+      "title": "Ghent Altarpiece",
+      "meta": "Early Netherlandish · Jan van Eyck · 1432 · Belgium",
+      "desc": "Twelve folding panels of unmatched detail. Stolen seven times across its history; the Just Judges panel has been missing since 1934.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Lamgods_open.jpg/960px-Lamgods_open.jpg"
+    },
+    {
+      "title": "The Birth of Venus",
+      "meta": "Early Renaissance · Botticelli · c. 1485 · Florence",
+      "desc": "Venus rises from the sea on a shell, blown to shore by wind-gods. Painted on canvas when fresco was still the fashion — and kept hidden from Savonarola's fires.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Sandro_Botticelli_-_La_nascita_di_Venere_-_Google_Art_Project_-_edited.jpg/960px-Sandro_Botticelli_-_La_nascita_di_Venere_-_Google_Art_Project_-_edited.jpg"
+    },
+    {
+      "title": "The Last Supper",
+      "meta": "High Renaissance · Leonardo · 1495–1498 · Milan",
+      "desc": "Painted on a refectory wall in an experimental technique that began flaking within decades. The fragility is part of the legend.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/The_Last_Supper_-_Leonardo_Da_Vinci_-_High_Resolution_32x16.jpg/960px-The_Last_Supper_-_Leonardo_Da_Vinci_-_High_Resolution_32x16.jpg"
+    },
+    {
+      "title": "The Garden of Earthly Delights",
+      "meta": "Early Netherlandish · Bosch · c. 1500 · Spain",
+      "desc": "A triptych of Eden, excess, and hell. The right panel is crowded with monsters nobody has fully decoded — including one with sheet music tattooed on a buttock.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/The_Garden_of_earthly_delights.jpg/960px-The_Garden_of_earthly_delights.jpg"
+    },
+    {
+      "title": "Impression, Sunrise",
+      "meta": "Impressionism · Monet · 1872 · Le Havre",
+      "desc": "The painting that gave a movement its name — a hostile critic meant \"impression\" as an insult. Hazy harbor, red sun, no detail that isn't a brushstroke.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Monet_-_Impression%2C_Sunrise.jpg/960px-Monet_-_Impression%2C_Sunrise.jpg"
+    },
+    {
+      "title": "The Kiss",
+      "meta": "Vienna Secession · Klimt · 1907–1908",
+      "desc": "Gold leaf and oil on canvas. A couple fused inside a shimmering shroud of pattern — Klimt's answer to the new century.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/The_Kiss_-_Gustav_Klimt_-_Google_Cultural_Institute.jpg/960px-The_Kiss_-_Gustav_Klimt_-_Google_Cultural_Institute.jpg"
     }
   ]
 }

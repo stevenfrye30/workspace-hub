@@ -68,6 +68,36 @@
       "meta": "Aboriginal Australian · up to 20,000 years old · Kakadu",
       "desc": "One of the oldest continuous art traditions on earth. Later paintings show fish anatomy so precisely that species are still identifiable.",
       "image": "https://upload.wikimedia.org/wikipedia/commons/c/c9/Ubirr_rock_art.JPG"
+    },
+    {
+      "title": "Mỹ Sơn",
+      "meta": "Champa Kingdom · 4th–14th c. · Vietnam",
+      "desc": "Brick Hindu temples in a jungle valley. Seventy stood before American bombs in 1969; twenty survive, still slowly giving up their secrets.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/2024_-_M%E1%BB%B9_S%C6%A1n_Group_B%2C_C_and_D_-_img_23.jpg/960px-2024_-_M%E1%BB%B9_S%C6%A1n_Group_B%2C_C_and_D_-_img_23.jpg"
+    },
+    {
+      "title": "Ayutthaya",
+      "meta": "Ayutthaya Kingdom · 14th–18th c. · Thailand",
+      "desc": "The Thai capital before the Burmese sacked it in 1767. Brick prangs lean at odd angles around the old moated island.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Ayutthaya_World_Heritage_sign.jpg/960px-Ayutthaya_World_Heritage_sign.jpg"
+    },
+    {
+      "title": "Sukhothai",
+      "meta": "Sukhothai Kingdom · 13th–15th c. · Thailand",
+      "desc": "Serene standing Buddhas in the \"walking\" pose invented here — one hand raised, the other swinging at the hip, fabric flowing forward.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Wat_srichum_03.jpg/960px-Wat_srichum_03.jpg"
+    },
+    {
+      "title": "Wayang Kulit",
+      "meta": "Java · 9th c. onward · Indonesia",
+      "desc": "Flat leather shadow puppets of the Ramayana and Mahabharata, manipulated against a backlit screen. A traditional performance runs all night.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Dalang_cilik_di_Pasar_Malam_Semawis%2C_Semarang.jpg/960px-Dalang_cilik_di_Pasar_Malam_Semawis%2C_Semarang.jpg"
+    },
+    {
+      "title": "Đông Sơn Culture",
+      "meta": "Bronze Age · 700 BCE – 100 CE · Vietnam",
+      "desc": "Bronze drums cast with spiral patterns and concentric bird-men. Traded across mainland Southeast Asia — a pre-Indic shared world.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Dong_Son_axe.JPG/960px-Dong_Son_axe.JPG"
     }
   ]
 }

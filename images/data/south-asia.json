@@ -68,6 +68,30 @@
       "meta": "Mughal · 1632–1653 · Agra",
       "desc": "A tomb Shah Jahan built for his wife Mumtaz Mahal, who died in childbirth. The marble is inlaid with 28 kinds of gem and stone.",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Taj_Mahal_%28Edited%29.jpeg/960px-Taj_Mahal_%28Edited%29.jpeg"
+    },
+    {
+      "title": "Sigiriya",
+      "meta": "Anuradhapura period · 477 CE · Sri Lanka",
+      "desc": "A palace on top of a 660-foot granite plug. Its western face once carried 500 paintings of celestial women; twenty-one still survive.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Sigiriya_%28141688197%29.jpeg/960px-Sigiriya_%28141688197%29.jpeg"
+    },
+    {
+      "title": "Bhimbetka Rock Shelters",
+      "meta": "Mesolithic onward · 30,000 BCE – historical · India",
+      "desc": "Painted caves with some of the oldest hunting scenes on earth — a human riding a gigantic red animal, drawn in ochre and charcoal.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Rock_Shelter_8%2C_Bhimbetka_02.jpg/960px-Rock_Shelter_8%2C_Bhimbetka_02.jpg"
+    },
+    {
+      "title": "Fatehpur Sikri",
+      "meta": "Mughal · Akbar · 1571 · Uttar Pradesh",
+      "desc": "A red sandstone capital built and abandoned in fifteen years when the water ran out. The ghost city of the greatest of the Mughals.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Fatehput_Sikiri_Buland_Darwaza_gate_2010.jpg/960px-Fatehput_Sikiri_Buland_Darwaza_gate_2010.jpg"
+    },
+    {
+      "title": "Dilwara Temples",
+      "meta": "Jain · 11th–13th c. · Mount Abu",
+      "desc": "White marble carved so finely the columns look more like lace than stone. Every surface is covered — floor, ceiling, arch.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/8/81/Delwada.jpg"
     }
   ]
 }

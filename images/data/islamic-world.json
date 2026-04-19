@@ -68,6 +68,36 @@
       "meta": "Ottoman · 15th–17th c. · Anatolia",
       "desc": "The workshop town that supplied tiles for mosques from Istanbul to Damascus. The signature tomato-red slip was a short-lived chemical triumph.",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Turkey%3B_Iznik_-_Two_Tiles_-_Google_Art_Project.jpg/960px-Turkey%3B_Iznik_-_Two_Tiles_-_Google_Art_Project.jpg"
+    },
+    {
+      "title": "Great Mosque of Kairouan",
+      "meta": "Aghlabid · 836 · Tunisia",
+      "desc": "The oldest purpose-built mosque still standing. Its square minaret became the model for North African and Andalusi mosques for a thousand years.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Great_Mosque_of_Kairouan_Panorama_-_Grande_Mosqu%C3%A9e_de_Kairouan_Panorama.jpg/960px-Great_Mosque_of_Kairouan_Panorama_-_Grande_Mosqu%C3%A9e_de_Kairouan_Panorama.jpg"
+    },
+    {
+      "title": "Umayyad Mosque of Damascus",
+      "meta": "Umayyad · 715 · Syria",
+      "desc": "Built on a site already sacred to Jupiter, John the Baptist, and Mary. Byzantine mosaicists were brought in to lay the gold-ground interior.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Umayyad_Mosque%2C_Damascus.jpg/960px-Umayyad_Mosque%2C_Damascus.jpg"
+    },
+    {
+      "title": "Qutb Minar",
+      "meta": "Delhi Sultanate · 1192–1220 · Delhi",
+      "desc": "The tallest brick minaret in the world — 238 feet of red sandstone, carved with Qur'anic calligraphy as deeply as architecture.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Qutb_Minar_2022.jpg/960px-Qutb_Minar_2022.jpg"
+    },
+    {
+      "title": "Mosque of Ibn Tulun",
+      "meta": "Tulunid · 879 · Cairo",
+      "desc": "The oldest mosque in Cairo still in its original form. A vast brick courtyard under a spiral minaret — a shape borrowed from Samarra.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Kairo_Ibn_Tulun_Moschee_BW_4.jpg/960px-Kairo_Ibn_Tulun_Moschee_BW_4.jpg"
+    },
+    {
+      "title": "Po-i-Kalyan",
+      "meta": "Timurid · 12th–16th c. · Bukhara",
+      "desc": "A minaret, mosque, and madrasa across one square. Tradition says Genghis Khan spared the minaret because his hat fell off as he looked up at it.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Poi_Kalon.jpg/960px-Poi_Kalon.jpg"
     }
   ]
 }

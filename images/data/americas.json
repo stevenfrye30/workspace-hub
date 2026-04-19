@@ -68,6 +68,42 @@
       "meta": "Inca · 15th c. · Peru",
       "desc": "A royal estate on a knife-edged ridge. The stones of its walls are cut so precisely that no mortar holds them — and they have survived five centuries of earthquakes.",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Machu_Picchu%2C_2023_%28012%29.jpg/960px-Machu_Picchu%2C_2023_%28012%29.jpg"
+    },
+    {
+      "title": "Monte Albán",
+      "meta": "Zapotec · 500 BCE – 850 CE · Oaxaca",
+      "desc": "A leveled mountaintop city with one of the earliest writing systems in the Americas. Its danzantes reliefs show contorted, stripped captives.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Monte_Alban_West_Side_Platform.jpg/960px-Monte_Alban_West_Side_Platform.jpg"
+    },
+    {
+      "title": "Copán",
+      "meta": "Classic Maya · 400–820 CE · Honduras",
+      "desc": "A small Maya kingdom with the finest stone sculpture in the Americas. Stelae-portraits of kings carved nearly in the round.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Copan_sculpture.jpg/960px-Copan_sculpture.jpg"
+    },
+    {
+      "title": "Mesa Verde Cliff Palace",
+      "meta": "Ancestral Pueblo · 12th–13th c. · Colorado",
+      "desc": "Villages tucked under sandstone overhangs. The Ancestral Puebloans built, lived in, and abandoned them in a little over a century.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Cliff_Palace-Colorado-Mesa_Verde_NP.jpg/960px-Cliff_Palace-Colorado-Mesa_Verde_NP.jpg"
+    },
+    {
+      "title": "Tiwanaku",
+      "meta": "Tiwanaku · 500–1000 CE · Bolivia",
+      "desc": "A highland capital on the shore of Lake Titicaca. Its Gate of the Sun — cut from a single stone — faces the point where the sun rises at equinox.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/PUERTA_DEL_SOL_TIWANAKU.jpg/960px-PUERTA_DEL_SOL_TIWANAKU.jpg"
+    },
+    {
+      "title": "Chavín de Huántar",
+      "meta": "Chavín · 900–200 BCE · Peru",
+      "desc": "A mountain temple with underground galleries and the Lanzón, a carved granite blade — Peru's oldest pan-Andean god, still in his original chamber.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Chav%C3%ADn_de_Hu%C3%A1ntar_-_51149086708.jpg/960px-Chav%C3%ADn_de_Hu%C3%A1ntar_-_51149086708.jpg"
+    },
+    {
+      "title": "Chan Chan",
+      "meta": "Chimú · 900–1470 CE · Peru",
+      "desc": "The largest adobe city in the Americas. Twelve miles of mud-brick walls carved with rows of seabirds, fish, and waves.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Chan_chan_view1.jpg/960px-Chan_chan_view1.jpg"
     }
   ]
 }
