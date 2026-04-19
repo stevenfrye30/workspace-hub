@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <title>Gods — A Cross-Cultural Temporal Map</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
 <style>
 :root {
   --bg:#0a0b1a; --panel:#141829; --panel2:#1d2238; --ink:#e8ddc3; --muted:#8a91b0;
@@ -140,17 +139,123 @@ main p { line-height:1.7; }
 .god-card .cat { color:var(--cyan); font-size:11px; margin-top:2px; font-style:italic; }
 .god-card .domains { color:var(--muted); font-size:11px; margin-top:6px; }
 
-.tree-container {
+.focus-container {
   background:var(--panel); border:1px solid var(--line); border-radius:10px;
   margin-top:16px; position:relative;
 }
-#familyTree { width:100%; height:70vh; min-height:560px; background:#0d0f22; border-radius:10px; }
-.tree-controls { padding:12px 16px; display:flex; flex-wrap:wrap; gap:10px; align-items:center; border-bottom:1px solid var(--line); }
-.tree-controls select { min-width:220px; }
-.tree-legend { padding:10px 16px; display:flex; flex-wrap:wrap; gap:16px; font-size:12px; color:var(--muted); border-top:1px solid var(--line); background:#0a0c1e; border-radius:0 0 10px 10px; }
-.legend-item { display:flex; align-items:center; gap:6px; }
-.legend-dot { width:10px; height:10px; border-radius:50%; display:inline-block; }
-.legend-line { width:18px; height:2px; display:inline-block; }
+.focus-controls { padding:14px 18px; display:flex; flex-wrap:wrap; gap:10px; align-items:center; border-bottom:1px solid var(--line); }
+.focus-controls label { color:var(--muted); font-size:11px; letter-spacing:1.8px; font-variant:small-caps; font-weight:bold; }
+.focus-controls select { min-width:200px; }
+.focus-controls button {
+  background:var(--panel2); border:1px solid var(--line); color:var(--ink);
+  padding:8px 14px; border-radius:6px; cursor:pointer; font-family:inherit; font-size:12px;
+  letter-spacing:1px; font-variant:small-caps; transition:all .15s;
+}
+.focus-controls button:hover:not(:disabled) { border-color:var(--gold-soft); color:var(--gold); }
+.focus-controls button:disabled { opacity:0.4; cursor:not-allowed; }
+.focus-controls .count { color:var(--muted); font-size:12px; margin-left:auto; font-style:italic; }
+
+.focus-view { padding:28px 22px 22px; }
+.focus-section-label {
+  text-align:center; font-variant:small-caps; letter-spacing:3px;
+  color:var(--gold-deep); font-size:11px; font-weight:bold;
+  margin:20px 0 12px; position:relative;
+}
+.focus-section-label::before, .focus-section-label::after {
+  content:''; position:absolute; top:50%; width:30%; height:1px;
+  background:linear-gradient(90deg, transparent, var(--line));
+}
+.focus-section-label::before { left:0; background:linear-gradient(90deg, transparent, var(--line)); }
+.focus-section-label::after  { right:0; background:linear-gradient(90deg, var(--line), transparent); }
+
+.focus-row { display:flex; flex-wrap:wrap; gap:10px; justify-content:center; }
+.focus-row.small-row { gap:6px; }
+.focus-main-row {
+  display:grid; grid-template-columns: 1fr minmax(260px, 360px) 1fr;
+  gap:24px; align-items:start; margin-top:8px;
+}
+.focus-side { min-width:0; }
+.focus-side h4 {
+  margin:0 0 10px; font-variant:small-caps; letter-spacing:2px;
+  color:var(--cyan); font-size:12px; font-weight:normal; text-align:center;
+}
+.focus-side-list { display:flex; flex-direction:column; gap:8px; }
+
+.focus-card {
+  background:var(--panel2); border:1px solid var(--line); border-radius:8px;
+  padding:12px 16px; cursor:pointer; text-align:left; position:relative;
+  transition:border-color .2s, transform .2s, box-shadow .2s, background .2s;
+}
+.focus-card::before {
+  content:''; position:absolute; left:0; top:0; bottom:0; width:3px;
+  background:var(--pantheon-color, var(--gold)); border-radius:8px 0 0 8px;
+}
+.focus-card:hover {
+  border-color:var(--gold-soft); transform:translateY(-2px);
+  box-shadow:0 6px 16px rgba(0,0,0,0.4); background:linear-gradient(180deg, var(--panel2), var(--panel));
+}
+.focus-card .fname { font-size:14px; color:var(--ink); font-weight:bold; letter-spacing:0.3px; }
+.focus-card .fmeta { font-size:11px; color:var(--muted); margin-top:3px; font-style:italic; }
+.focus-card .fdom { font-size:11px; color:var(--gold); margin-top:4px; }
+.focus-card.missing {
+  opacity:0.5; cursor:default; font-style:italic;
+  background:var(--panel); border-style:dashed;
+}
+.focus-card.missing:hover { transform:none; border-color:var(--line); box-shadow:none; background:var(--panel); }
+.focus-card.missing .fname { color:var(--muted); font-weight:normal; }
+.focus-card.missing .fmeta { color:var(--muted); }
+
+.focus-center-card {
+  background:linear-gradient(180deg, var(--tint) 0%, var(--panel2) 100%);
+  border:2px solid var(--gold); border-radius:12px;
+  padding:24px 26px; position:relative; overflow:hidden;
+  box-shadow:0 0 0 1px var(--gold-faint), 0 12px 32px rgba(0,0,0,0.4);
+}
+.focus-center-card::before {
+  content:''; position:absolute; left:0; top:0; bottom:0; width:4px;
+  background:var(--pantheon-color, var(--gold));
+}
+.focus-center-card .fpantheon {
+  color:var(--gold-deep); font-size:11px; font-variant:small-caps; letter-spacing:2px; font-weight:bold;
+  margin-bottom:6px;
+}
+.focus-center-card .fname-main {
+  font-size:26px; color:var(--gold); font-weight:normal; margin:0 0 4px;
+  letter-spacing:0.3px;
+}
+.focus-center-card .fepithets { color:var(--cyan); font-size:13px; font-style:italic; margin:4px 0 12px; }
+.focus-center-card .fdomains { display:flex; flex-wrap:wrap; gap:5px; margin:8px 0 12px; }
+.focus-center-card .fdom-tag { background:var(--panel); border:1px solid var(--line); color:var(--ink); padding:3px 10px; border-radius:10px; font-size:11px; }
+.focus-center-card .fcat { color:var(--muted); font-size:11px; font-variant:small-caps; letter-spacing:1.5px; margin-bottom:10px; }
+.focus-center-card .fdesc { color:var(--ink); font-size:13px; line-height:1.55; }
+.focus-center-card .fdetails-btn {
+  margin-top:14px; background:none; border:1px solid var(--gold-soft); color:var(--gold);
+  padding:6px 14px; border-radius:16px; cursor:pointer; font-family:inherit; font-size:11px;
+  letter-spacing:1.2px; font-variant:small-caps; transition:all .15s;
+}
+.focus-center-card .fdetails-btn:hover { background:var(--gold); color:var(--bg); }
+
+.focus-empty { text-align:center; color:var(--muted); font-style:italic; padding:14px; font-size:12px; }
+.focus-more-hint { text-align:center; color:var(--muted); font-size:11px; font-style:italic; margin-top:6px; }
+
+.focus-children { display:grid; grid-template-columns:repeat(auto-fill,minmax(160px,1fr)); gap:10px; }
+.focus-parallels { display:flex; flex-wrap:wrap; gap:6px; justify-content:center; }
+.focus-parallel-chip {
+  background:var(--panel2); border:1px solid var(--line); color:var(--ink);
+  padding:5px 13px; border-radius:14px; font-size:12px; cursor:pointer;
+  transition:all .2s;
+}
+.focus-parallel-chip:hover { border-color:var(--gold); color:var(--gold); transform:translateY(-1px); }
+.focus-parallel-chip .pan { color:var(--muted); font-size:10px; font-style:italic; margin-left:5px; }
+.focus-parallel-chip.missing { opacity:0.4; cursor:default; }
+.focus-parallel-chip.missing:hover { border-color:var(--line); color:var(--muted); transform:none; }
+
+.gender-symbol { font-size:12px; margin-left:5px; opacity:0.7; }
+
+@media (max-width: 840px) {
+  .focus-main-row { grid-template-columns:1fr; }
+  .focus-side h4 { margin-top:20px; }
+}
 
 .timeline {
   background:var(--panel); border:1px solid var(--line); border-radius:10px;
@@ -239,10 +344,11 @@ footer a { color:var(--gold); text-decoration:none; }
 <section id="tab-overview" class="tab active">
   <h2>Pantheons</h2>
   <p class="intro">
-    Twenty-seven traditions spanning six thousand years — from the reconstructed sky-fathers of the Proto-Indo-European steppe
-    to living religions. Click a pantheon to see its family tree, or skim the cards for the shape of each tradition.
-    Abrahamic traditions and deified humans are catalogued separately: Christianity, Judaism, and Islam are monotheistic
-    (not pantheons); their catalogues list angels, prophets, and opposing figures for cross-cultural comparison.
+    Dozens of traditions spanning sixty thousand years — from Aboriginal Australian Dreamings and the
+    reconstructed sky-fathers of the Proto-Indo-European steppe to living religions. Click a pantheon to
+    open its family tree. Abrahamic traditions and deified humans are catalogued separately: Christianity,
+    Judaism, and Islam are monotheistic (not pantheons); their catalogues list angels, prophets, and opposing
+    figures for cross-cultural comparison.
   </p>
   <div id="pantheonGrid" class="grid grid-pantheons"></div>
 </section>
@@ -250,26 +356,19 @@ footer a { color:var(--gold); text-decoration:none; }
 <section id="tab-trees" class="tab">
   <h2>Family Trees</h2>
   <p class="intro">
-    Interactive genealogies of each pantheon. Solid gold lines are parent-to-child. Rose lines are consort pairings.
-    Drag nodes to rearrange; click any figure for details.
+    One figure at a time — parents above, siblings and consorts to the sides, children below, cross-cultural
+    parallels at the bottom. Click any connected figure to make them the new focus. Use Back to retrace.
   </p>
-  <div class="tree-container">
-    <div class="tree-controls">
-      <label style="color:var(--muted); font-size:12px; letter-spacing:1.5px; font-variant:small-caps;">Pantheon:</label>
+  <div class="focus-container">
+    <div class="focus-controls">
+      <label>Pantheon</label>
       <select id="treeSelect"></select>
-      <button id="fitTree" style="background:var(--panel2); border:1px solid var(--line); color:var(--ink); padding:8px 14px; border-radius:6px; cursor:pointer; font-family:inherit; font-size:12px; letter-spacing:1px; font-variant:small-caps;">Fit to screen</button>
-      <span id="treeCount" style="color:var(--muted); font-size:12px; margin-left:auto; font-style:italic;"></span>
+      <label>Figure</label>
+      <select id="focusSelect"></select>
+      <button id="focusBack" disabled>← Back</button>
+      <span class="count" id="treeCount"></span>
     </div>
-    <div id="familyTree"></div>
-    <div class="tree-legend">
-      <div class="legend-item"><span class="legend-line" style="background:var(--gold);"></span> parent → child</div>
-      <div class="legend-item"><span class="legend-line" style="background:var(--blood);"></span> consort</div>
-      <div class="legend-item"><span class="legend-dot" style="background:var(--gold);"></span> major</div>
-      <div class="legend-item"><span class="legend-dot" style="background:var(--violet);"></span> primordial / titan</div>
-      <div class="legend-item"><span class="legend-dot" style="background:var(--cyan);"></span> minor</div>
-      <div class="legend-item"><span class="legend-dot" style="background:var(--blood);"></span> monster</div>
-      <div class="legend-item"><span class="legend-dot" style="background:var(--silver);"></span> hero</div>
-    </div>
+    <div class="focus-view" id="focusView"></div>
   </div>
 </section>
 
@@ -343,7 +442,6 @@ footer a { color:var(--gold); text-decoration:none; }
 let DATA = null;
 let GODS_BY_ID = {};
 let PANTHEONS_BY_ID = {};
-let treeNetwork = null;
 
 fetch('data.json').then(r => r.json()).then(d => { DATA = d; init(); });
 
@@ -373,10 +471,6 @@ function wireTabs() {
       document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
       btn.classList.add('active');
       document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
-      // Fit tree on switch to trees tab (vis-network sizes itself based on container)
-      if (btn.dataset.tab === 'trees' && treeNetwork) {
-        setTimeout(() => treeNetwork.fit(), 60);
-      }
     });
   });
 }
@@ -472,89 +566,164 @@ function fmtYears(from, to) {
   return `${fmtYear(from)} – ${fmtYear(to)}`;
 }
 
-/* ---------- Family Trees tab ---------- */
+/* ---------- Family Trees (focus view) ---------- */
+let focusHistory = [];
+
 function renderTreeSelect() {
-  const sel = document.getElementById('treeSelect');
-  sel.innerHTML = DATA.pantheons.map(p => `<option value="${p.id}">${p.name}</option>`).join('');
-  sel.value = 'greek';
-  sel.addEventListener('change', e => loadTree(e.target.value));
-  document.getElementById('fitTree').addEventListener('click', () => { if (treeNetwork) treeNetwork.fit({animation:true}); });
+  const pSel = document.getElementById('treeSelect');
+  pSel.innerHTML = DATA.pantheons.map(p => `<option value="${p.id}">${p.name}</option>`).join('');
+  pSel.value = 'greek';
+  pSel.addEventListener('change', e => {
+    // Jump to first notable figure of new pantheon
+    const pid = e.target.value;
+    const gods = DATA.gods.filter(g => g.pantheon === pid);
+    const pick = gods.find(g => g.category === 'major') || gods[0];
+    if (pick) { focusHistory = []; updateBackButton(); setFocus(pick.id, false); }
+  });
+
+  const fSel = document.getElementById('focusSelect');
+  fSel.addEventListener('change', e => setFocus(e.target.value));
+
+  document.getElementById('focusBack').addEventListener('click', () => {
+    if (focusHistory.length > 1) {
+      focusHistory.pop(); // current
+      const prev = focusHistory.pop();
+      setFocus(prev, false);
+    }
+  });
+}
+
+function updateBackButton() {
+  document.getElementById('focusBack').disabled = focusHistory.length <= 1;
 }
 
 function loadTree(pantheonId) {
-  const pantheon = PANTHEONS_BY_ID[pantheonId];
-  if (!pantheon) return;
-  const pgods = DATA.gods.filter(g => g.pantheon === pantheonId);
-  document.getElementById('treeCount').textContent = `${pgods.length} figures`;
-
-  const nodes = pgods.map(g => ({
-    id: g.id,
-    label: g.name.length > 20 ? g.name.slice(0, 18) + '…' : g.name,
-    title: (g.domains || []).slice(0, 3).join(', '),
-    color: categoryColor(g.category),
-    shape: g.gender === 'F' ? 'ellipse' : g.gender === 'M' ? 'box' : 'diamond',
-    font: { color:'#e8ddc3', face:'Georgia, serif', size:14 },
-    borderWidth: 1,
-    margin: 8
-  }));
-
-  const edges = [];
-  const seen = new Set();
-  pgods.forEach(g => {
-    (g.children || []).forEach(cid => {
-      if (GODS_BY_ID[cid] && GODS_BY_ID[cid].pantheon === pantheonId) {
-        const key = `p-${g.id}-${cid}`;
-        if (!seen.has(key)) {
-          seen.add(key);
-          edges.push({ from: g.id, to: cid, arrows:'to', color:{ color:'#b8901f', opacity:0.8 }, width:1.4 });
-        }
-      }
-    });
-    (g.consorts || []).forEach(sid => {
-      if (GODS_BY_ID[sid] && GODS_BY_ID[sid].pantheon === pantheonId) {
-        const pair = [g.id, sid].sort().join('|');
-        const key = `c-${pair}`;
-        if (!seen.has(key)) {
-          seen.add(key);
-          edges.push({ from: g.id, to: sid, dashes:[4,4], color:{ color:'#a03040', opacity:0.7 }, width:1, smooth:{ type:'curvedCW', roundness:0.15 } });
-        }
-      }
-    });
-  });
-
-  const container = document.getElementById('familyTree');
-  if (treeNetwork) treeNetwork.destroy();
-  treeNetwork = new vis.Network(container, { nodes, edges }, {
-    layout: {
-      hierarchical: {
-        direction: 'UD',
-        sortMethod: 'directed',
-        levelSeparation: 120,
-        nodeSpacing: 140,
-        treeSpacing: 180
-      }
-    },
-    physics: { enabled: false },
-    interaction: { hover:true, tooltipDelay:180 },
-    edges: { smooth: { type:'cubicBezier', forceDirection:'vertical', roundness:0.3 } }
-  });
-  treeNetwork.on('click', params => {
-    if (params.nodes.length) openGod(params.nodes[0]);
-  });
+  // Called from pantheon card or timeline click — set pantheon dropdown then pick major figure
+  const gods = DATA.gods.filter(g => g.pantheon === pantheonId);
+  document.getElementById('treeSelect').value = pantheonId;
+  const pick = gods.find(g => g.category === 'major') || gods[0];
+  if (pick) { focusHistory = []; updateBackButton(); setFocus(pick.id, false); }
 }
 
-function categoryColor(c) {
-  const map = {
-    'major':       { background:'#2a3356', border:'#e5c158', highlight:{ background:'#3c4672', border:'#e5c158' } },
-    'primordial':  { background:'#3a2e52', border:'#7a5ea8', highlight:{ background:'#4b3d68', border:'#7a5ea8' } },
-    'titan':       { background:'#3a2e52', border:'#7a5ea8', highlight:{ background:'#4b3d68', border:'#7a5ea8' } },
-    'minor':       { background:'#1f3b52', border:'#5c9bc7', highlight:{ background:'#2c4e6b', border:'#5c9bc7' } },
-    'monster':     { background:'#4a1e28', border:'#a03040', highlight:{ background:'#5f2a34', border:'#a03040' } },
-    'hero':        { background:'#2d313d', border:'#c5c9d9', highlight:{ background:'#40454f', border:'#c5c9d9' } },
-    'deified-human': { background:'#3a2a1a', border:'#c08040', highlight:{ background:'#503a26', border:'#c08040' } },
-    'abrahamic':   { background:'#222a44', border:'#6a7aa0', highlight:{ background:'#2e385a', border:'#6a7aa0' } }
-  };
-  return map[c] || map.minor;
+function setFocus(godId, pushHistory = true) {
+  const g = GODS_BY_ID[godId];
+  if (!g) return;
+  if (pushHistory && focusHistory[focusHistory.length - 1] !== godId) {
+    focusHistory.push(godId);
+  } else if (!pushHistory) {
+    focusHistory.push(godId);
+  }
+  updateBackButton();
+
+  // Sync pantheon dropdown if different
+  const pSel = document.getElementById('treeSelect');
+  if (pSel.value !== g.pantheon) pSel.value = g.pantheon;
+
+  // Populate focus dropdown with same-pantheon gods
+  const pgods = DATA.gods.filter(x => x.pantheon === g.pantheon);
+  const fSel = document.getElementById('focusSelect');
+  fSel.innerHTML = pgods.map(x => `<option value="${x.id}">${x.name}</option>`).join('');
+  fSel.value = godId;
+
+  document.getElementById('treeCount').textContent = `${pgods.length} in pantheon`;
+
+  renderFocusView(g);
+}
+
+function renderFocusView(g) {
+  const p = PANTHEONS_BY_ID[g.pantheon];
+  const pColor = p ? p.color : 'var(--gold)';
+
+  const parentCards = (g.parents || []).map(id => relCard(id, 'small')).join('') || emptyNote('No parents recorded');
+
+  const siblingCards = (g.siblings || []).map(id => relCard(id, 'side')).join('') || emptyNote('No siblings recorded');
+
+  const consortCards = (g.consorts || []).map(id => relCard(id, 'side')).join('') || emptyNote('No consorts recorded');
+
+  const childrenIds = g.children || [];
+  const CHILD_LIMIT = 24;
+  const shownChildren = childrenIds.slice(0, CHILD_LIMIT);
+  const childCards = shownChildren.map(id => relCard(id, 'grid')).join('') || emptyNote('No children recorded');
+  const childHint = childrenIds.length > CHILD_LIMIT
+    ? `<div class="focus-more-hint">+ ${childrenIds.length - CHILD_LIMIT} more children not shown (see Details)</div>` : '';
+
+  const parallelChips = (g.parallels || []).map(id => {
+    const pg = GODS_BY_ID[id];
+    if (!pg) return `<span class="focus-parallel-chip missing" title="Not yet catalogued">${formatStubName(id)}</span>`;
+    const pp = PANTHEONS_BY_ID[pg.pantheon];
+    return `<span class="focus-parallel-chip" onclick="setFocus('${id}')">${pg.name}<span class="pan">${pp ? pp.name : ''}</span></span>`;
+  }).join('');
+
+  const epithets = g.epithets && g.epithets.length ? `<div class="fepithets">"${g.epithets.join(' · ')}"</div>` : '';
+  const domains = (g.domains || []).length
+    ? `<div class="fdomains">${g.domains.map(d => `<span class="fdom-tag">${d.replace(/-/g,' ')}</span>`).join('')}</div>` : '';
+  const catLabel = `${(g.category || '').replace(/-/g,' ')}${genderSymbol(g.gender)}`;
+
+  document.getElementById('focusView').innerHTML = `
+    <div class="focus-section-label">Parents</div>
+    <div class="focus-row">${parentCards}</div>
+
+    <div class="focus-main-row" style="margin-top:22px;">
+      <div class="focus-side">
+        <h4>Siblings</h4>
+        <div class="focus-side-list">${siblingCards}</div>
+      </div>
+      <div class="focus-center-card" style="--pantheon-color:${pColor}">
+        <div class="fpantheon">${p ? p.name : g.pantheon}</div>
+        <h3 class="fname-main">${g.name}</h3>
+        ${epithets}
+        <div class="fcat">${catLabel}</div>
+        ${domains}
+        <div class="fdesc">${g.description || ''}</div>
+        <button class="fdetails-btn" onclick="openGod('${g.id}')">Full details</button>
+      </div>
+      <div class="focus-side">
+        <h4>Consorts</h4>
+        <div class="focus-side-list">${consortCards}</div>
+      </div>
+    </div>
+
+    <div class="focus-section-label">Children${childrenIds.length ? ` (${childrenIds.length})` : ''}</div>
+    <div class="focus-children">${childCards}</div>
+    ${childHint}
+
+    ${parallelChips ? `
+      <div class="focus-section-label">Cross-Cultural Parallels</div>
+      <div class="focus-parallels">${parallelChips}</div>
+    ` : ''}
+  `;
+
+  // Scroll the focus-view into top of its container on navigation (but not page jump)
+  const fv = document.getElementById('focusView');
+  fv.scrollTop = 0;
+}
+
+function relCard(id, size) {
+  const g = GODS_BY_ID[id];
+  if (!g) {
+    return `<div class="focus-card missing" title="Not yet catalogued">
+      <div class="fname">${formatStubName(id)}</div>
+      <div class="fmeta">not yet catalogued</div>
+    </div>`;
+  }
+  const p = PANTHEONS_BY_ID[g.pantheon];
+  const doms = (g.domains || []).slice(0, 2).map(d => d.replace(/-/g,' ')).join(' · ');
+  const meta = `${(g.category||'').replace(/-/g,' ')}${genderSymbol(g.gender)}`;
+  return `<div class="focus-card" style="--pantheon-color:${p ? p.color : 'var(--gold)'}" onclick="setFocus('${id}')">
+    <div class="fname">${g.name}</div>
+    <div class="fmeta">${meta}</div>
+    ${doms ? `<div class="fdom">${doms}</div>` : ''}
+  </div>`;
+}
+
+function emptyNote(text) {
+  return `<div class="focus-empty">${text}</div>`;
+}
+
+function genderSymbol(gender) {
+  if (gender === 'M') return ' <span class="gender-symbol">♂</span>';
+  if (gender === 'F') return ' <span class="gender-symbol">♀</span>';
+  return '';
 }
 
 /* ---------- Timeline tab ---------- */
