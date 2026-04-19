@@ -92,6 +92,36 @@
       "meta": "Roman Egypt · 15 BCE",
       "desc": "A small sandstone temple given to the United States in 1965 when Lake Nasser was about to drown it. Reassembled stone by stone inside the Met.",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/The_Temple_of_Dendur_MET_DT563.jpg/960px-The_Temple_of_Dendur_MET_DT563.jpg"
+    },
+    {
+      "title": "Pyramid of Djoser",
+      "meta": "Old Kingdom · c. 2670 BCE · Saqqara",
+      "desc": "The first pyramid in Egypt — six stacked mastabas designed by the architect Imhotep, later deified as a god of wisdom and medicine.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Saqqara_pyramid_ver_2.jpg/960px-Saqqara_pyramid_ver_2.jpg"
+    },
+    {
+      "title": "Luxor Temple",
+      "meta": "New Kingdom · Amenhotep III / Ramesses II · c. 1400–1250 BCE",
+      "desc": "Every year during the Opet Festival, statues of the gods were carried in boats from Karnak to here. A Roman camp, Christian church, and mosque all followed.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Templo_de_Luxor%2C_Luxor%2C_Egipto%2C_2022-04-01%2C_DD_01.jpg/960px-Templo_de_Luxor%2C_Luxor%2C_Egipto%2C_2022-04-01%2C_DD_01.jpg"
+    },
+    {
+      "title": "Temple of Edfu",
+      "meta": "Ptolemaic · 237–57 BCE",
+      "desc": "The best-preserved temple in Egypt, because it was buried in desert sand for centuries. Dedicated to Horus, with reliefs of his battle against Seth.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Temple_Edfou_Egypte.jpg/960px-Temple_Edfou_Egypte.jpg"
+    },
+    {
+      "title": "Tomb of Seti I",
+      "meta": "19th Dynasty · c. 1279 BCE · Valley of the Kings",
+      "desc": "The longest, deepest, and most richly painted tomb in the valley. Every wall is covered in funerary texts; ceilings map the stars.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/KV17%2C_the_tomb_of_Pharaoh_Seti_I_of_the_Nineteenth_Dynasty%2C_Valley_of_the_Kings%2C_Egypt_%2849846343021%29.jpg/960px-KV17%2C_the_tomb_of_Pharaoh_Seti_I_of_the_Nineteenth_Dynasty%2C_Valley_of_the_Kings%2C_Egypt_%2849846343021%29.jpg"
+    },
+    {
+      "title": "Colossal Statue of Akhenaten",
+      "meta": "Amarna period · c. 1350 BCE",
+      "desc": "The heretic pharaoh depicted with a long face, wide hips, and swollen belly — a deliberate break from centuries of idealized royal portraiture.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/GD-EG-Caire-Mus%C3%A9e061.JPG/960px-GD-EG-Caire-Mus%C3%A9e061.JPG"
     }
   ]
 }

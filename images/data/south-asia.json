@@ -92,6 +92,42 @@
       "meta": "Jain · 11th–13th c. · Mount Abu",
       "desc": "White marble carved so finely the columns look more like lace than stone. Every surface is covered — floor, ceiling, arch.",
       "image": "https://upload.wikimedia.org/wikipedia/commons/8/81/Delwada.jpg"
+    },
+    {
+      "title": "Elephanta Caves",
+      "meta": "Kalachuri / Chalukya · 5th–8th c. · Mumbai",
+      "desc": "Rock-cut Shiva temple on an island. The Trimurti — Shiva as creator, preserver, and destroyer — emerges twenty feet tall from the living stone.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Elephanta_Caves_Trimurti.jpg/960px-Elephanta_Caves_Trimurti.jpg"
+    },
+    {
+      "title": "Shore Temple of Mahabalipuram",
+      "meta": "Pallava · c. 725 CE · Tamil Nadu",
+      "desc": "One of the earliest stone temples in South India. It stands on the Bay of Bengal; the 2004 tsunami briefly receded far enough to reveal more submerged temples.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Shore_Temple_-Mamallapuram_-Tamil_Nadu_-N-TN-C55.jpg/960px-Shore_Temple_-Mamallapuram_-Tamil_Nadu_-N-TN-C55.jpg"
+    },
+    {
+      "title": "Pattadakal",
+      "meta": "Chalukya dynasty · 7th–8th c. · Karnataka",
+      "desc": "A proving ground for Indian temple architecture — northern and southern styles built side by side for direct comparison before being exported across the subcontinent.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Pattadakal_000.JPG/960px-Pattadakal_000.JPG"
+    },
+    {
+      "title": "Ranakpur Jain Temple",
+      "meta": "Jain · 15th c. · Rajasthan",
+      "desc": "1,444 carved marble columns, no two alike. The complex is aligned so that the sun reaches the central sanctum for only a few days a year.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Chaumukha_Jain_temple_at_Ranakpur_in_Aravalli_range_near_Udaipur_Rajasthan_India.jpg/960px-Chaumukha_Jain_temple_at_Ranakpur_in_Aravalli_range_near_Udaipur_Rajasthan_India.jpg"
+    },
+    {
+      "title": "Humayun's Tomb",
+      "meta": "Mughal · 1570 · Delhi",
+      "desc": "The first garden tomb of the Mughals and the prototype for the Taj Mahal eighty years later. A red sandstone dome in a four-quartered paradise garden.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Tomb_of_Humayun%2C_Delhi.jpg/960px-Tomb_of_Humayun%2C_Delhi.jpg"
+    },
+    {
+      "title": "Golden Temple",
+      "meta": "Sikh · 16th–19th c. · Amritsar",
+      "desc": "The holiest site of Sikhism. Marble walls inlaid with gemstone, upper floors covered in gold leaf, the whole thing floating on a sacred pool.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/The_Golden_Temple_of_Amrithsar_7.jpg/960px-The_Golden_Temple_of_Amrithsar_7.jpg"
     }
   ]
 }

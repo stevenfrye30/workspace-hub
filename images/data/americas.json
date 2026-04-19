@@ -104,6 +104,42 @@
       "meta": "Chimú · 900–1470 CE · Peru",
       "desc": "The largest adobe city in the Americas. Twelve miles of mud-brick walls carved with rows of seabirds, fish, and waves.",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Chan_chan_view1.jpg/960px-Chan_chan_view1.jpg"
+    },
+    {
+      "title": "Atlantean Figures of Tula",
+      "meta": "Toltec · 10th–12th c. · Mexico",
+      "desc": "Fifteen-foot basalt warriors in feathered headdresses on top of Pyramid B. They held up the roof of a temple that is long gone.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Telamones_Tula.jpg/960px-Telamones_Tula.jpg"
+    },
+    {
+      "title": "Cueva de las Manos",
+      "meta": "Patagonian hunter-gatherers · 7300–700 BCE · Argentina",
+      "desc": "A cave with hundreds of human hand stencils, mostly left hands — because the artists were holding the bone tube of pigment in the right, blowing around it.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/SantaCruz-CuevaManos-P2210651b.jpg/960px-SantaCruz-CuevaManos-P2210651b.jpg"
+    },
+    {
+      "title": "Cahokia Mounds",
+      "meta": "Mississippian · 1050–1350 · Illinois",
+      "desc": "The largest city in North America before Europeans arrived — bigger than London in its day. Monks Mound alone is a hundred feet tall, built of earth by hand.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Monks_Mound_-_Summer_2024.jpg/960px-Monks_Mound_-_Summer_2024.jpg"
+    },
+    {
+      "title": "Serpent Mound",
+      "meta": "Fort Ancient or Adena · c. 1070 CE · Ohio",
+      "desc": "A quarter-mile-long effigy mound of a snake swallowing an egg. The head aligns with sunset at the summer solstice; the coils seem to encode lunar cycles.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/The_Great_Serpent_Mound.jpg/960px-The_Great_Serpent_Mound.jpg"
+    },
+    {
+      "title": "Northwest Coast Totem Poles",
+      "meta": "Haida, Tlingit, Kwakwaka'wakw · 18th–20th c.",
+      "desc": "Cedar poles carved with family lineage, clan animals, and narrated stories. Each is a library — readable top to bottom by those who know the figures.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Totem_RMBC_1.jpg/960px-Totem_RMBC_1.jpg"
+    },
+    {
+      "title": "Navajo Weaving",
+      "meta": "Diné · 17th c. onward · American Southwest",
+      "desc": "Tightly woven wool rugs and wearing blankets — the weaver puts a deliberate flaw into each one, a ch'į́įdii line, so the spirit of the piece has a way out.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/1/14/Navajo_rug.jpg"
     }
   ]
 }

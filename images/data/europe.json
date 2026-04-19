@@ -110,6 +110,48 @@
       "meta": "Vienna Secession · Klimt · 1907–1908",
       "desc": "Gold leaf and oil on canvas. A couple fused inside a shimmering shroud of pattern — Klimt's answer to the new century.",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/The_Kiss_-_Gustav_Klimt_-_Google_Cultural_Institute.jpg/960px-The_Kiss_-_Gustav_Klimt_-_Google_Cultural_Institute.jpg"
+    },
+    {
+      "title": "Notre-Dame de Paris",
+      "meta": "Gothic · 1163–1345 · Paris",
+      "desc": "Cathedral of the kings of France. Half the fabric is original medieval, half is Viollet-le-Duc's 19th-century reimagining. The 2019 fire took the spire.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Notre-Dame_de_Paris%2C_4_October_2017.jpg/960px-Notre-Dame_de_Paris%2C_4_October_2017.jpg"
+    },
+    {
+      "title": "The Isenheim Altarpiece",
+      "meta": "Northern Renaissance · Grünewald · 1512–1516 · Alsace",
+      "desc": "Painted for a hospital for plague and ergotism. Christ's body on the cross is covered in exactly the sores the patients saw on their own.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Chapel_of_Unterlinden_Museum_with_Isenheim_altarpiece.jpg/960px-Chapel_of_Unterlinden_Museum_with_Isenheim_altarpiece.jpg"
+    },
+    {
+      "title": "Primavera",
+      "meta": "Early Renaissance · Botticelli · c. 1480 · Florence",
+      "desc": "Venus in a grove of citrus. The three Graces, Mercury, and the story of Chloris turning into Flora — a Medici wedding gift, decoded differently in every generation.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Botticelli-primavera.jpg/960px-Botticelli-primavera.jpg"
+    },
+    {
+      "title": "Pietà",
+      "meta": "High Renaissance · Michelangelo · 1498–1499 · Vatican",
+      "desc": "Carved by a 24-year-old. Mary is impossibly young — younger than her son — because, Michelangelo said, virtue preserves her. His only signed work.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Pieta_de_Michelangelo_-_Vaticano.jpg/960px-Pieta_de_Michelangelo_-_Vaticano.jpg"
+    },
+    {
+      "title": "A Sunday on La Grande Jatte",
+      "meta": "Post-Impressionism · Seurat · 1884–1886",
+      "desc": "Pointillism's founding canvas — ten feet wide, built entirely from tiny dots. Parisians on a Sunday afternoon, rendered like nothing before.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/A_Sunday_on_La_Grande_Jatte%2C_Georges_Seurat%2C_1884.jpg/960px-A_Sunday_on_La_Grande_Jatte%2C_Georges_Seurat%2C_1884.jpg"
+    },
+    {
+      "title": "Water Lilies",
+      "meta": "Impressionism · Monet · 1896–1926 · Giverny",
+      "desc": "Two hundred and fifty paintings of the pond in his garden, late in life, eyes failing. The largest canvases wrap around the room at the Orangerie.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Reflections_of_Clouds_on_the_Water-Lily_Pond.jpg/960px-Reflections_of_Clouds_on_the_Water-Lily_Pond.jpg"
+    },
+    {
+      "title": "The Thinker",
+      "meta": "Modern · Rodin · 1880–1904",
+      "desc": "Originally a small figure above The Gates of Hell — Dante, looking down at his Inferno. Enlarged and cast on its own, it became a universal emblem of thought.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Le_Penseur_by_Rodin_%28Kunsthalle_Bielefeld%29_2014-04-10.JPG/960px-Le_Penseur_by_Rodin_%28Kunsthalle_Bielefeld%29_2014-04-10.JPG"
     }
   ]
 }

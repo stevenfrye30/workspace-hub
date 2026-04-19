@@ -98,6 +98,36 @@
       "meta": "Bronze Age · 700 BCE – 100 CE · Vietnam",
       "desc": "Bronze drums cast with spiral patterns and concentric bird-men. Traded across mainland Southeast Asia — a pre-Indic shared world.",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Dong_Son_axe.JPG/960px-Dong_Son_axe.JPG"
+    },
+    {
+      "title": "Bayon",
+      "meta": "Khmer Empire · late 12th c. · Cambodia",
+      "desc": "The last great temple of Angkor — 200 serene faces carved into its towers, likely portraits of Jayavarman VII himself, watching from every direction.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Bayon%2C_Angkor_Thom%2C_Camboya%2C_2013-08-17%2C_DD_37.JPG/960px-Bayon%2C_Angkor_Thom%2C_Camboya%2C_2013-08-17%2C_DD_37.JPG"
+    },
+    {
+      "title": "Preah Vihear",
+      "meta": "Khmer Empire · 9th–11th c. · Cambodia",
+      "desc": "A cliff-top temple on the Thai border — 800 meters of causeway climbing to a sanctuary looking out over the plain. Thailand and Cambodia fought over its ownership in 2011.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/03_Prasat_Preah_Vihear-nX-06478.jpg/960px-03_Prasat_Preah_Vihear-nX-06478.jpg"
+    },
+    {
+      "title": "Balinese Temples",
+      "meta": "Balinese Hindu · 9th c. onward · Bali",
+      "desc": "Every village has at least three: for the ancestors, for daily life, for the dead. Split gates, black palm-fiber roofs, statues wrapped in checkered cloth.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Pura_Dalem_Agung_Padantegal_200507.jpg/960px-Pura_Dalem_Agung_Padantegal_200507.jpg"
+    },
+    {
+      "title": "Indigenous Australian Art",
+      "meta": "Aboriginal · millennia to present · Australia",
+      "desc": "Bradshaw paintings (Gwion Gwion) in the Kimberley, possibly 20,000 years old — elongated figures painted with pigment that has bonded permanently with the rock surface.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Bradshaw_rock_paintings.jpg/960px-Bradshaw_rock_paintings.jpg"
+    },
+    {
+      "title": "Uluru",
+      "meta": "Aṉangu · sacred site · Australia",
+      "desc": "A sandstone monolith rising 1,100 feet out of the center of the continent. For the Aṉangu it is the physical record of ancestral beings' creation journeys.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/ULURU.jpg/960px-ULURU.jpg"
     }
   ]
 }

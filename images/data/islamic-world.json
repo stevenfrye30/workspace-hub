@@ -98,6 +98,36 @@
       "meta": "Timurid · 12th–16th c. · Bukhara",
       "desc": "A minaret, mosque, and madrasa across one square. Tradition says Genghis Khan spared the minaret because his hat fell off as he looked up at it.",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Poi_Kalon.jpg/960px-Poi_Kalon.jpg"
+    },
+    {
+      "title": "Al-Azhar Mosque",
+      "meta": "Fatimid · 972 · Cairo",
+      "desc": "The mosque and university that became the intellectual center of the Sunni world. Continuously teaching since the tenth century.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Mosqu%C3%A9e_Al-Azhar.jpg/960px-Mosqu%C3%A9e_Al-Azhar.jpg"
+    },
+    {
+      "title": "Kutubiyya Mosque",
+      "meta": "Almohad · 1150s · Marrakech",
+      "desc": "A red sandstone minaret 250 feet tall — the template for the Giralda of Seville and the Hassan Tower of Rabat. Named for the booksellers who clustered at its base.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Marokko0112_%28retouched%29.jpg/960px-Marokko0112_%28retouched%29.jpg"
+    },
+    {
+      "title": "Jameh Mosque of Isfahan",
+      "meta": "Seljuq onward · 8th c. – modern · Iran",
+      "desc": "A thousand years of Iranian architecture layered in one building — two of the greatest domes in Islamic history stand a few meters apart.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/20180301124354_IMG_4179And6more_Interior_3.jpg/960px-20180301124354_IMG_4179And6more_Interior_3.jpg"
+    },
+    {
+      "title": "Nasir al-Mulk Mosque",
+      "meta": "Qajar · 1888 · Shiraz",
+      "desc": "The \"Pink Mosque\" — stained-glass windows scatter colored light across Persian carpets every morning. Built late in the Islamic architectural tradition, as a kind of summary.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Nasir_ol_Molk_Mosque_%2831233739431%29.jpg/960px-Nasir_ol_Molk_Mosque_%2831233739431%29.jpg"
+    },
+    {
+      "title": "Gur-e Amir",
+      "meta": "Timurid · 1403 · Samarkand",
+      "desc": "The tomb of Timur under a ribbed turquoise dome. The grave was opened in 1941 with a curse; Germany invaded the USSR three days later.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/ShrineofAmirTimur.jpg/960px-ShrineofAmirTimur.jpg"
     }
   ]
 }
