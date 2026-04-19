@@ -7,211 +7,246 @@
       "title": "Mohenjo-daro",
       "meta": "Indus Valley Civilization · c. 2500 BCE · Pakistan",
       "desc": "A Bronze Age city with grid streets, covered drains, and a Great Bath. Its script is still undeciphered.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Mohenjodaro_-_view_of_the_stupa_mound.JPG/960px-Mohenjodaro_-_view_of_the_stupa_mound.JPG"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Mohenjodaro_-_view_of_the_stupa_mound.JPG/960px-Mohenjodaro_-_view_of_the_stupa_mound.JPG",
+      "year": -2500
     },
     {
       "title": "Great Stupa at Sanchi",
       "meta": "Mauryan → Shunga · 3rd c. BCE onward",
       "desc": "A hemispherical mound containing relics of the Buddha. The four carved gateways around it narrate his life without ever depicting him directly.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/East_Gateway_-_Stupa_1_-_Sanchi_Hill_2013-02-21_4398.JPG/960px-East_Gateway_-_Stupa_1_-_Sanchi_Hill_2013-02-21_4398.JPG"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/East_Gateway_-_Stupa_1_-_Sanchi_Hill_2013-02-21_4398.JPG/960px-East_Gateway_-_Stupa_1_-_Sanchi_Hill_2013-02-21_4398.JPG",
+      "year": -250
     },
     {
       "title": "Gandhara Buddha",
       "meta": "Greco-Buddhist · 1st–5th c. CE · Pakistan/Afghanistan",
       "desc": "The first sculptural images of the Buddha, made in schist and draped in togas. A crossroads style born from Alexander's successors.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Gandhara_Buddha_%28tnm%29.jpeg/960px-Gandhara_Buddha_%28tnm%29.jpeg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Gandhara_Buddha_%28tnm%29.jpeg/960px-Gandhara_Buddha_%28tnm%29.jpeg",
+      "year": 250
     },
     {
       "title": "Ajanta Caves",
       "meta": "Buddhist · 2nd c. BCE – 6th c. CE · Maharashtra",
       "desc": "Thirty rock-cut monasteries with surviving murals of the Buddha's past lives. Abandoned, forgotten, and rediscovered by a tiger-hunting British officer in 1819.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Ajanta_%2863%29.jpg/960px-Ajanta_%2863%29.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Ajanta_%2863%29.jpg/960px-Ajanta_%2863%29.jpg",
+      "year": -150
     },
     {
       "title": "Nataraja (Shiva as Lord of Dance)",
       "meta": "Chola dynasty · 10th–11th c. · Tamil Nadu",
       "desc": "Shiva dances the universe into being and out of it again, surrounded by a ring of flame, trampling the demon of ignorance.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Shiva_as_the_Lord_of_Dance_LACMA_edit.jpg/960px-Shiva_as_the_Lord_of_Dance_LACMA_edit.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Shiva_as_the_Lord_of_Dance_LACMA_edit.jpg/960px-Shiva_as_the_Lord_of_Dance_LACMA_edit.jpg",
+      "year": 1000
     },
     {
       "title": "Brihadeeswarar Temple",
       "meta": "Chola dynasty · 1010 · Thanjavur",
       "desc": "A granite tower 216 feet high, capped with a single 80-ton stone. A thousand years old and still in daily ritual use.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Brihadisvara_Temple_during_Maha_Shivaratri-WUS03611_%28edit%29.jpg/960px-Brihadisvara_Temple_during_Maha_Shivaratri-WUS03611_%28edit%29.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Brihadisvara_Temple_during_Maha_Shivaratri-WUS03611_%28edit%29.jpg/960px-Brihadisvara_Temple_during_Maha_Shivaratri-WUS03611_%28edit%29.jpg",
+      "year": 1010
     },
     {
       "title": "Khajuraho Temples",
       "meta": "Chandela dynasty · 950–1050 · Madhya Pradesh",
       "desc": "Hindu and Jain temples covered in dense sculpture — gods, battles, and the frank erotic scenes the site is best known for.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/1_Khajuraho.jpg/960px-1_Khajuraho.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/1_Khajuraho.jpg/960px-1_Khajuraho.jpg",
+      "year": 1000
     },
     {
       "title": "Konark Sun Temple",
       "meta": "Eastern Ganga dynasty · 13th c. · Odisha",
       "desc": "A massive stone chariot for the sun god, pulled by seven horses, wheels carved to tell the time from their shadows.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Konarka_Temple.jpg/960px-Konarka_Temple.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Konarka_Temple.jpg/960px-Konarka_Temple.jpg",
+      "year": 1250
     },
     {
       "title": "Hampi (Vijayanagara)",
       "meta": "Vijayanagara Empire · 14th–16th c. · Karnataka",
       "desc": "Capital of the last great Hindu empire in the south. Sacked in 1565; the boulder-strewn ruins sprawl over 16 square miles.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Wide_angle_of_Galigopuram_of_Virupaksha_Temple%2C_Hampi_%2804%29_%28cropped%29.jpg/960px-Wide_angle_of_Galigopuram_of_Virupaksha_Temple%2C_Hampi_%2804%29_%28cropped%29.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Wide_angle_of_Galigopuram_of_Virupaksha_Temple%2C_Hampi_%2804%29_%28cropped%29.jpg/960px-Wide_angle_of_Galigopuram_of_Virupaksha_Temple%2C_Hampi_%2804%29_%28cropped%29.jpg",
+      "year": 1450
     },
     {
       "title": "Meenakshi Temple",
       "meta": "Nayak period · 16th–17th c. · Madurai",
       "desc": "Fourteen gateway towers covered in thousands of painted figures. The whole complex is repainted every twelve years.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/An_aerial_view_of_Madurai_city_from_atop_of_Meenakshi_Amman_temple.jpg/960px-An_aerial_view_of_Madurai_city_from_atop_of_Meenakshi_Amman_temple.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/An_aerial_view_of_Madurai_city_from_atop_of_Meenakshi_Amman_temple.jpg/960px-An_aerial_view_of_Madurai_city_from_atop_of_Meenakshi_Amman_temple.jpg",
+      "year": 1600
     },
     {
       "title": "Taj Mahal",
       "meta": "Mughal · 1632–1653 · Agra",
       "desc": "A tomb Shah Jahan built for his wife Mumtaz Mahal, who died in childbirth. The marble is inlaid with 28 kinds of gem and stone.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Taj_Mahal_%28Edited%29.jpeg/960px-Taj_Mahal_%28Edited%29.jpeg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Taj_Mahal_%28Edited%29.jpeg/960px-Taj_Mahal_%28Edited%29.jpeg",
+      "year": 1642
     },
     {
       "title": "Sigiriya",
       "meta": "Anuradhapura period · 477 CE · Sri Lanka",
       "desc": "A palace on top of a 660-foot granite plug. Its western face once carried 500 paintings of celestial women; twenty-one still survive.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Sigiriya_%28141688197%29.jpeg/960px-Sigiriya_%28141688197%29.jpeg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Sigiriya_%28141688197%29.jpeg/960px-Sigiriya_%28141688197%29.jpeg",
+      "year": 477
     },
     {
       "title": "Bhimbetka Rock Shelters",
       "meta": "Mesolithic onward · 30,000 BCE – historical · India",
       "desc": "Painted caves with some of the oldest hunting scenes on earth — a human riding a gigantic red animal, drawn in ochre and charcoal.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Rock_Shelter_8%2C_Bhimbetka_02.jpg/960px-Rock_Shelter_8%2C_Bhimbetka_02.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Rock_Shelter_8%2C_Bhimbetka_02.jpg/960px-Rock_Shelter_8%2C_Bhimbetka_02.jpg",
+      "year": 0
     },
     {
       "title": "Fatehpur Sikri",
       "meta": "Mughal · Akbar · 1571 · Uttar Pradesh",
       "desc": "A red sandstone capital built and abandoned in fifteen years when the water ran out. The ghost city of the greatest of the Mughals.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Fatehput_Sikiri_Buland_Darwaza_gate_2010.jpg/960px-Fatehput_Sikiri_Buland_Darwaza_gate_2010.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Fatehput_Sikiri_Buland_Darwaza_gate_2010.jpg/960px-Fatehput_Sikiri_Buland_Darwaza_gate_2010.jpg",
+      "year": 1571
     },
     {
       "title": "Dilwara Temples",
       "meta": "Jain · 11th–13th c. · Mount Abu",
       "desc": "White marble carved so finely the columns look more like lace than stone. Every surface is covered — floor, ceiling, arch.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/8/81/Delwada.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/8/81/Delwada.jpg",
+      "year": 1150
     },
     {
       "title": "Elephanta Caves",
       "meta": "Kalachuri / Chalukya · 5th–8th c. · Mumbai",
       "desc": "Rock-cut Shiva temple on an island. The Trimurti — Shiva as creator, preserver, and destroyer — emerges twenty feet tall from the living stone.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Elephanta_Caves_Trimurti.jpg/960px-Elephanta_Caves_Trimurti.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Elephanta_Caves_Trimurti.jpg/960px-Elephanta_Caves_Trimurti.jpg",
+      "year": 600
     },
     {
       "title": "Shore Temple of Mahabalipuram",
       "meta": "Pallava · c. 725 CE · Tamil Nadu",
       "desc": "One of the earliest stone temples in South India. It stands on the Bay of Bengal; the 2004 tsunami briefly receded far enough to reveal more submerged temples.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Shore_Temple_-Mamallapuram_-Tamil_Nadu_-N-TN-C55.jpg/960px-Shore_Temple_-Mamallapuram_-Tamil_Nadu_-N-TN-C55.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Shore_Temple_-Mamallapuram_-Tamil_Nadu_-N-TN-C55.jpg/960px-Shore_Temple_-Mamallapuram_-Tamil_Nadu_-N-TN-C55.jpg",
+      "year": 725
     },
     {
       "title": "Pattadakal",
       "meta": "Chalukya dynasty · 7th–8th c. · Karnataka",
       "desc": "A proving ground for Indian temple architecture — northern and southern styles built side by side for direct comparison before being exported across the subcontinent.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Pattadakal_000.JPG/960px-Pattadakal_000.JPG"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Pattadakal_000.JPG/960px-Pattadakal_000.JPG",
+      "year": 700
     },
     {
       "title": "Ranakpur Jain Temple",
       "meta": "Jain · 15th c. · Rajasthan",
       "desc": "1,444 carved marble columns, no two alike. The complex is aligned so that the sun reaches the central sanctum for only a few days a year.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Chaumukha_Jain_temple_at_Ranakpur_in_Aravalli_range_near_Udaipur_Rajasthan_India.jpg/960px-Chaumukha_Jain_temple_at_Ranakpur_in_Aravalli_range_near_Udaipur_Rajasthan_India.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Chaumukha_Jain_temple_at_Ranakpur_in_Aravalli_range_near_Udaipur_Rajasthan_India.jpg/960px-Chaumukha_Jain_temple_at_Ranakpur_in_Aravalli_range_near_Udaipur_Rajasthan_India.jpg",
+      "year": 1450
     },
     {
       "title": "Humayun's Tomb",
       "meta": "Mughal · 1570 · Delhi",
       "desc": "The first garden tomb of the Mughals and the prototype for the Taj Mahal eighty years later. A red sandstone dome in a four-quartered paradise garden.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Tomb_of_Humayun%2C_Delhi.jpg/960px-Tomb_of_Humayun%2C_Delhi.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Tomb_of_Humayun%2C_Delhi.jpg/960px-Tomb_of_Humayun%2C_Delhi.jpg",
+      "year": 1570
     },
     {
       "title": "Golden Temple",
       "meta": "Sikh · 16th–19th c. · Amritsar",
       "desc": "The holiest site of Sikhism. Marble walls inlaid with gemstone, upper floors covered in gold leaf, the whole thing floating on a sacred pool.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/The_Golden_Temple_of_Amrithsar_7.jpg/960px-The_Golden_Temple_of_Amrithsar_7.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/The_Golden_Temple_of_Amrithsar_7.jpg/960px-The_Golden_Temple_of_Amrithsar_7.jpg",
+      "year": 1700
     },
     {
       "title": "Hawa Mahal",
       "meta": "Rajput · 1799 · Jaipur",
       "desc": "The \"Palace of Winds\" — a honeycomb facade of 953 latticed windows, built so the women of the court could watch the street without being seen.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/East_facade_Hawa_Mahal_Jaipur_from_ground_level_%28July_2022%29_-_img_01.jpg/960px-East_facade_Hawa_Mahal_Jaipur_from_ground_level_%28July_2022%29_-_img_01.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/East_facade_Hawa_Mahal_Jaipur_from_ground_level_%28July_2022%29_-_img_01.jpg/960px-East_facade_Hawa_Mahal_Jaipur_from_ground_level_%28July_2022%29_-_img_01.jpg",
+      "year": 1799
     },
     {
       "title": "Amber Fort",
       "meta": "Rajput · 16th–18th c. · Jaipur",
       "desc": "Hilltop fort-palace of the Kachhwaha dynasty. The Hall of Mirrors inside glitters with thousands of convex glass inlays; a single candle lights the whole room.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/20191219_Fort_Amber%2C_Amer%2C_Jaipur_0955_9481.jpg/960px-20191219_Fort_Amber%2C_Amer%2C_Jaipur_0955_9481.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/20191219_Fort_Amber%2C_Amer%2C_Jaipur_0955_9481.jpg/960px-20191219_Fort_Amber%2C_Amer%2C_Jaipur_0955_9481.jpg",
+      "year": 1650
     },
     {
       "title": "Jantar Mantar",
       "meta": "Rajput · Jai Singh II · 1734 · Jaipur",
       "desc": "An observatory of huge masonry instruments — sundials ninety feet tall, instruments to locate any star. Built to correct the drifting calendars of Mughal India.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Jantar_Mantar_at_Jaipur.jpg/960px-Jantar_Mantar_at_Jaipur.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Jantar_Mantar_at_Jaipur.jpg/960px-Jantar_Mantar_at_Jaipur.jpg",
+      "year": 1734
     },
     {
       "title": "Victoria Memorial",
       "meta": "British Raj · 1906–1921 · Kolkata",
       "desc": "A white marble domed memorial to Queen Victoria, built at the height of imperial self-regard. Now a museum of the Raj and the nationalism that ended it.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Victoria_Memorial_situated_in_Kolkata.jpg/960px-Victoria_Memorial_situated_in_Kolkata.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Victoria_Memorial_situated_in_Kolkata.jpg/960px-Victoria_Memorial_situated_in_Kolkata.jpg",
+      "year": 1913
     },
     {
       "title": "Mughal Miniature Painting",
       "meta": "Mughal · 16th–18th c. · North India",
       "desc": "Album leaves commissioned by the Mughal emperors — historical chronicles, portraits, and natural history drawn with jeweller's precision.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Govardhan._Jahangir_Visiting_the_Ascetic_Jadrup._ca._1616-20%2C_Musee_Guimet%2C_Paris.jpg/960px-Govardhan._Jahangir_Visiting_the_Ascetic_Jadrup._ca._1616-20%2C_Musee_Guimet%2C_Paris.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Govardhan._Jahangir_Visiting_the_Ascetic_Jadrup._ca._1616-20%2C_Musee_Guimet%2C_Paris.jpg/960px-Govardhan._Jahangir_Visiting_the_Ascetic_Jadrup._ca._1616-20%2C_Musee_Guimet%2C_Paris.jpg",
+      "year": 1650
     },
     {
       "title": "Lion Capital of Ashoka",
       "meta": "Mauryan · c. 250 BCE · Sarnath",
       "desc": "Four back-to-back lions atop a polished sandstone column, once topped by a wheel. Adopted as the national emblem of India in 1950.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Sarnath_capital.jpg/960px-Sarnath_capital.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Sarnath_capital.jpg/960px-Sarnath_capital.jpg",
+      "year": -250
     },
     {
       "title": "Gal Vihara",
       "meta": "Polonnaruwa · 12th c. · Sri Lanka",
       "desc": "Four colossal Buddhas carved from a single granite wall — seated, standing, reclining, meditating. The face of the reclining Buddha is nine meters long.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/%E0%B6%8B%E0%B6%AD%E0%B7%8A%E0%B6%AD%E0%B6%BB%E0%B7%8F%E0%B6%BB%E0%B7%8F%E0%B6%B8%E0%B6%BA_%E0%B6%9A%E0%B7%85%E0%B7%94_%E0%B6%9C%E0%B6%BD_%E0%B6%B1%E0%B7%99%E0%B6%BD%E0%B7%8F.jpg/960px-%E0%B6%8B%E0%B6%AD%E0%B7%8A%E0%B6%AD%E0%B6%BB%E0%B7%8F%E0%B6%BB%E0%B7%8F%E0%B6%B8%E0%B6%BA_%E0%B6%9A%E0%B7%85%E0%B7%94_%E0%B6%9C%E0%B6%BD_%E0%B6%B1%E0%B7%99%E0%B6%BD%E0%B7%8F.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/%E0%B6%8B%E0%B6%AD%E0%B7%8A%E0%B6%AD%E0%B6%BB%E0%B7%8F%E0%B6%BB%E0%B7%8F%E0%B6%B8%E0%B6%BA_%E0%B6%9A%E0%B7%85%E0%B7%94_%E0%B6%9C%E0%B6%BD_%E0%B6%B1%E0%B7%99%E0%B6%BD%E0%B7%8F.jpg/960px-%E0%B6%8B%E0%B6%AD%E0%B7%8A%E0%B6%AD%E0%B6%BB%E0%B7%8F%E0%B6%BB%E0%B7%8F%E0%B6%B8%E0%B6%BA_%E0%B6%9A%E0%B7%85%E0%B7%94_%E0%B6%9C%E0%B6%BD_%E0%B6%B1%E0%B7%99%E0%B6%BD%E0%B7%8F.jpg",
+      "year": 1150
     },
     {
       "title": "Gol Gumbaz",
       "meta": "Adil Shahi · 1656 · Bijapur",
       "desc": "Tomb of Mohammed Adil Shah. The dome is the second-largest in the world, and the whispering gallery underneath it repeats a voice seven times.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Gol_Gumbaj2.JPG/960px-Gol_Gumbaj2.JPG"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Gol_Gumbaj2.JPG/960px-Gol_Gumbaj2.JPG",
+      "year": 1656
     },
     {
       "title": "Red Fort",
       "meta": "Mughal · Shah Jahan · 1648 · Delhi",
       "desc": "Red sandstone walls two kilometers around. Inside, the Diwan-i-Khas held the Peacock Throne until Nadir Shah of Persia took it to Isfahan in 1739.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Delhi_fort.jpg/960px-Delhi_fort.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Delhi_fort.jpg/960px-Delhi_fort.jpg",
+      "year": 1648
     },
     {
       "title": "Jama Masjid, Delhi",
       "meta": "Mughal · Shah Jahan · 1656 · Delhi",
       "desc": "The largest mosque in India — a red sandstone and marble courtyard for 25,000. Built in the same decade as the Taj Mahal, by the same emperor.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Jama_Masjid_-_In_the_Noon.jpg/960px-Jama_Masjid_-_In_the_Noon.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Jama_Masjid_-_In_the_Noon.jpg/960px-Jama_Masjid_-_In_the_Noon.jpg",
+      "year": 1656
     },
     {
       "title": "Pancha Rathas",
       "meta": "Pallava · 7th c. · Mahabalipuram",
       "desc": "Five monolithic shrines carved from a single granite ridge in the shape of temple chariots. Each is a different architectural experiment — the prototypes for a millennium of South Indian temples.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Five_Rathas_at_Mahaballipuram%2CTamil_Nadu.jpg/960px-Five_Rathas_at_Mahaballipuram%2CTamil_Nadu.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Five_Rathas_at_Mahaballipuram%2CTamil_Nadu.jpg/960px-Five_Rathas_at_Mahaballipuram%2CTamil_Nadu.jpg",
+      "year": 650
     },
     {
       "title": "Nalanda Mahavihara",
       "meta": "Pala dynasty · 5th–12th c. · Bihar",
       "desc": "A Buddhist university that drew ten thousand monks from across Asia. Burned by Bakhtiyar Khalji around 1193; the library, they say, smoked for months.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Temple_No.-_3%2C_Nalanda_Archaeological_Site.jpg/960px-Temple_No.-_3%2C_Nalanda_Archaeological_Site.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Temple_No.-_3%2C_Nalanda_Archaeological_Site.jpg/960px-Temple_No.-_3%2C_Nalanda_Archaeological_Site.jpg",
+      "year": 800
     },
     {
       "title": "Mahabodhi Temple",
       "meta": "Gupta → restored 19th c. · Bodh Gaya",
       "desc": "Built at the spot the Buddha attained enlightenment under a Bodhi tree. A direct descendant of that tree still grows beside the temple.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Mahabodhitemple.jpg/960px-Mahabodhitemple.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Mahabodhitemple.jpg/960px-Mahabodhitemple.jpg",
+      "year": 1850
     },
     {
       "title": "Akbar's Tomb",
       "meta": "Mughal · 1605–1613 · Sikandra, Agra",
       "desc": "A five-story mausoleum on a platform in a paradise garden. Akbar designed much of it himself; Jahangir's later changes produced the strange tiered result.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Akbar%27s_Tomb_in_Sikandra_15.jpg/960px-Akbar%27s_Tomb_in_Sikandra_15.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Akbar%27s_Tomb_in_Sikandra_15.jpg/960px-Akbar%27s_Tomb_in_Sikandra_15.jpg",
+      "year": 1609
     }
   ]
 }

@@ -31,6 +31,8 @@ h2.section:first-of-type { margin-top: 0; }
 h2.section .count { color: var(--muted); font-size: 12px; font-style: italic; text-transform: none; letter-spacing: normal; font-weight: normal; margin-left: 8px; }
 h3.continent { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.14em; font-weight: 600; margin: 18px 0 10px; }
 h3.continent:first-child { margin-top: 0; }
+h3.era { font-size: 13px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.14em; font-weight: 600; margin: 36px 0 14px; padding-bottom: 6px; border-bottom: 1px solid var(--border); }
+h3.era:first-of-type { margin-top: 4px; }
 
 /* Text card grid — used on landing for region/artist/museum cards */
 .card-grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); margin-bottom: 10px; }

@@ -7,187 +7,232 @@
       "title": "Warka Vase",
       "meta": "Uruk period · c. 3200 BCE · Sumer",
       "desc": "One of the earliest known narrative reliefs — a procession to the goddess Inanna. Looted from the Iraq Museum in 2003 and later recovered, broken.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Warka_vase_%28background_retouched%29.jpg/960px-Warka_vase_%28background_retouched%29.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Warka_vase_%28background_retouched%29.jpg/960px-Warka_vase_%28background_retouched%29.jpg",
+      "year": -3200
     },
     {
       "title": "Standard of Ur",
       "meta": "Sumerian · c. 2600 BCE",
       "desc": "A wooden box inlaid with lapis, shell, and red limestone. One side shows war; the other, a banquet after the victory.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Denis_Bourez_-_British_Museum%2C_London_%288747049029%29_%282%29.jpg/960px-Denis_Bourez_-_British_Museum%2C_London_%288747049029%29_%282%29.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Denis_Bourez_-_British_Museum%2C_London_%288747049029%29_%282%29.jpg/960px-Denis_Bourez_-_British_Museum%2C_London_%288747049029%29_%282%29.jpg",
+      "year": -2600
     },
     {
       "title": "Ziggurat of Ur",
       "meta": "Neo-Sumerian · c. 2100 BCE · Iraq",
       "desc": "A stepped temple-platform to the moon god Nanna. Its baked-brick facade has been partly restored; the core is as old as the pyramids.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Ziggarat_of_Ur_001.jpg/960px-Ziggarat_of_Ur_001.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Ziggarat_of_Ur_001.jpg/960px-Ziggarat_of_Ur_001.jpg",
+      "year": -2100
     },
     {
       "title": "Code of Hammurabi",
       "meta": "Old Babylonian · c. 1754 BCE",
       "desc": "Diorite stele, seven feet tall. 282 laws in cuneiform — \"an eye for an eye\" comes from here. Now in the Louvre.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/P1050763_Louvre_code_Hammurabi_face_rwk.JPG/960px-P1050763_Louvre_code_Hammurabi_face_rwk.JPG"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/P1050763_Louvre_code_Hammurabi_face_rwk.JPG/960px-P1050763_Louvre_code_Hammurabi_face_rwk.JPG",
+      "year": -1754
     },
     {
       "title": "Lamassu",
       "meta": "Neo-Assyrian · 9th–7th c. BCE",
       "desc": "Winged bulls with human heads, guarding palace gates at Nineveh and Nimrud. Carved with five legs so they look correct from front and side.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Iraqi_Museum.jpg/960px-Iraqi_Museum.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Iraqi_Museum.jpg/960px-Iraqi_Museum.jpg",
+      "year": -750
     },
     {
       "title": "Lion Hunt of Ashurbanipal",
       "meta": "Neo-Assyrian · c. 645 BCE · Nineveh",
       "desc": "Alabaster reliefs from the king's palace. A dying lioness drags paralyzed hind legs — one of the most unnervingly precise animal studies in ancient art.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Exhibition_I_am_Ashurbanipal_king_of_the_world%2C_king_of_Assyria%2C_British_Museum_%2845972455081%29.jpg/960px-Exhibition_I_am_Ashurbanipal_king_of_the_world%2C_king_of_Assyria%2C_British_Museum_%2845972455081%29.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Exhibition_I_am_Ashurbanipal_king_of_the_world%2C_king_of_Assyria%2C_British_Museum_%2845972455081%29.jpg/960px-Exhibition_I_am_Ashurbanipal_king_of_the_world%2C_king_of_Assyria%2C_British_Museum_%2845972455081%29.jpg",
+      "year": -645
     },
     {
       "title": "Ishtar Gate",
       "meta": "Neo-Babylonian · c. 575 BCE",
       "desc": "Glazed brick gate to Babylon under Nebuchadnezzar II. Dragons and bulls in cobalt blue. Reconstructed in Berlin's Pergamon Museum.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Berl%C3%ADn%2C_Museo_de_P%C3%A9rgamo_05.jpg/960px-Berl%C3%ADn%2C_Museo_de_P%C3%A9rgamo_05.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Berl%C3%ADn%2C_Museo_de_P%C3%A9rgamo_05.jpg/960px-Berl%C3%ADn%2C_Museo_de_P%C3%A9rgamo_05.jpg",
+      "year": -575
     },
     {
       "title": "Cyrus Cylinder",
       "meta": "Achaemenid Persia · c. 539 BCE",
       "desc": "A clay cylinder inscribed after Cyrus took Babylon. Often called the first charter of human rights — a claim the British Museum treats with more caution.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Cyrus_Cylinder_front.jpg/960px-Cyrus_Cylinder_front.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Cyrus_Cylinder_front.jpg/960px-Cyrus_Cylinder_front.jpg",
+      "year": -539
     },
     {
       "title": "Persepolis",
       "meta": "Achaemenid Persia · 518 BCE onward · Iran",
       "desc": "Ceremonial capital of Darius and Xerxes. Reliefs show envoys from every corner of the empire bringing tribute. Burned by Alexander in 330 BCE.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/3/39/Gate_of_All_Nations%2C_Persepolis.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/3/39/Gate_of_All_Nations%2C_Persepolis.jpg",
+      "year": -518
     },
     {
       "title": "Naqsh-e Rustam",
       "meta": "Achaemenid & Sasanian · 5th c. BCE – 3rd c. CE · Iran",
       "desc": "Cruciform tombs cut high into a cliff for Darius the Great and his heirs. Centuries later the Sasanians carved their own triumphs below.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Naqsh-e_Rustam_necropolis_in_Iran.jpg/960px-Naqsh-e_Rustam_necropolis_in_Iran.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Naqsh-e_Rustam_necropolis_in_Iran.jpg/960px-Naqsh-e_Rustam_necropolis_in_Iran.jpg",
+      "year": -450
     },
     {
       "title": "Mask of Warka",
       "meta": "Uruk · c. 3100 BCE · Sumer",
       "desc": "The first known naturalistic human face in art — a white marble mask, probably of the goddess Inanna. Looted in 2003, recovered in a farmer's garden.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Warka_mask_%28cropped%29.jpg/960px-Warka_mask_%28cropped%29.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Warka_mask_%28cropped%29.jpg/960px-Warka_mask_%28cropped%29.jpg",
+      "year": -3100
     },
     {
       "title": "Chogha Zanbil",
       "meta": "Elamite · c. 1250 BCE · Iran",
       "desc": "The best-preserved ziggurat in the world — five stepped stages of mud brick, built for the god Inshushinak and abandoned when the city fell.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Choqa_Zanbil_Darafsh_1_%2836%29.JPG/960px-Choqa_Zanbil_Darafsh_1_%2836%29.JPG"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Choqa_Zanbil_Darafsh_1_%2836%29.JPG/960px-Choqa_Zanbil_Darafsh_1_%2836%29.JPG",
+      "year": -1250
     },
     {
       "title": "Behistun Inscription",
       "meta": "Achaemenid Persia · 520 BCE · Iran",
       "desc": "Darius the Great's autobiography carved three hundred feet up a cliff, in three languages. The trilingual key that let Rawlinson decipher cuneiform.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/%DA%A9%D8%AA%DB%8C%D8%A8%D9%87_%D8%AF%D8%A7%D8%B1%DB%8C%D9%88%D8%B4_%28_%D8%A8%DB%8C%D8%B3%D8%AA%D9%88%D9%86%28.jpg/960px-%DA%A9%D8%AA%DB%8C%D8%A8%D9%87_%D8%AF%D8%A7%D8%B1%DB%8C%D9%88%D8%B4_%28_%D8%A8%DB%8C%D8%B3%D8%AA%D9%88%D9%86%28.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/%DA%A9%D8%AA%DB%8C%D8%A8%D9%87_%D8%AF%D8%A7%D8%B1%DB%8C%D9%88%D8%B4_%28_%D8%A8%DB%8C%D8%B3%D8%AA%D9%88%D9%86%28.jpg/960px-%DA%A9%D8%AA%DB%8C%D8%A8%D9%87_%D8%AF%D8%A7%D8%B1%DB%8C%D9%88%D8%B4_%28_%D8%A8%DB%8C%D8%B3%D8%AA%D9%88%D9%86%28.jpg",
+      "year": -520
     },
     {
       "title": "Tomb of Cyrus at Pasargadae",
       "meta": "Achaemenid Persia · c. 530 BCE · Iran",
       "desc": "A simple stepped stone tomb for the founder of the empire. Alexander, visiting 200 years later, found it looted and ordered it restored.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Pasargad_Tomb_Cyrus3.jpg/960px-Pasargad_Tomb_Cyrus3.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Pasargad_Tomb_Cyrus3.jpg/960px-Pasargad_Tomb_Cyrus3.jpg",
+      "year": -530
     },
     {
       "title": "Oxus Treasure",
       "meta": "Achaemenid Persia · 5th–4th c. BCE · Tajikistan",
       "desc": "180 gold and silver objects washed out of a riverbed — chariots, lions, votive plaques. The British Museum's greatest hoard of Achaemenid metalwork.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/The_Oxus_Treasure_at_the_British_Museum%2C_London._From_Takht-i_Kuwad%2C_Tajikistan._Achaemenid_period%2C_5th-4th_century_BCE.jpg/960px-The_Oxus_Treasure_at_the_British_Museum%2C_London._From_Takht-i_Kuwad%2C_Tajikistan._Achaemenid_period%2C_5th-4th_century_BCE.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/The_Oxus_Treasure_at_the_British_Museum%2C_London._From_Takht-i_Kuwad%2C_Tajikistan._Achaemenid_period%2C_5th-4th_century_BCE.jpg/960px-The_Oxus_Treasure_at_the_British_Museum%2C_London._From_Takht-i_Kuwad%2C_Tajikistan._Achaemenid_period%2C_5th-4th_century_BCE.jpg",
+      "year": -400
     },
     {
       "title": "Naqsh-e Rajab",
       "meta": "Sasanian · 3rd c. CE · Iran",
       "desc": "Rock reliefs near Persepolis celebrating the founder of the Sasanian empire. Ardashir receives the crown directly from Ahura Mazda — politics cast as theology.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Naqshe_Rajab_Darafsh_Ordibehesht_93_%282%29.JPG/960px-Naqshe_Rajab_Darafsh_Ordibehesht_93_%282%29.JPG"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Naqshe_Rajab_Darafsh_Ordibehesht_93_%282%29.JPG/960px-Naqshe_Rajab_Darafsh_Ordibehesht_93_%282%29.JPG",
+      "year": 250
     },
     {
       "title": "Taq Kasra",
       "meta": "Sasanian · 3rd–6th c. CE · Iraq",
       "desc": "The largest single-span brick vault in the ancient world — the throne hall of the Sasanian palace at Ctesiphon. It still stands, barely.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/001125-TaqKasra-Iraq-IMG_7914-2.jpg/960px-001125-TaqKasra-Iraq-IMG_7914-2.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/001125-TaqKasra-Iraq-IMG_7914-2.jpg/960px-001125-TaqKasra-Iraq-IMG_7914-2.jpg",
+      "year": 400
     },
     {
       "title": "Ram in a Thicket",
       "meta": "Sumerian · c. 2500 BCE · Royal Cemetery of Ur",
       "desc": "A goat rearing against a golden bush, made of wood, gold leaf, silver, lapis, and shell. Leonard Woolley named it for Abraham's offering in Genesis.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Raminathicket2.jpg/960px-Raminathicket2.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Raminathicket2.jpg/960px-Raminathicket2.jpg",
+      "year": -2500
     },
     {
       "title": "Apadana Reliefs",
       "meta": "Achaemenid Persia · c. 500 BCE · Persepolis",
       "desc": "The great staircase of the audience hall. Subject peoples from 23 nations process forward with tribute — Ethiopians with ivory, Lydians with bowls, Bactrian camels.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Persepolis001.jpg/960px-Persepolis001.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Persepolis001.jpg/960px-Persepolis001.jpg",
+      "year": -500
     },
     {
       "title": "Nimrud",
       "meta": "Neo-Assyrian · 879 BCE onward · Iraq",
       "desc": "Ashurnasirpal II's Northwest Palace, once lined with alabaster reliefs of hunt and war. ISIS dynamited the site in 2015; much had already been moved to museums.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Iraq%3B_Nimrud_-_Assyria%2C_Lamassu%27s_Guarding_Palace_Entrance.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Iraq%3B_Nimrud_-_Assyria%2C_Lamassu%27s_Guarding_Palace_Entrance.jpg",
+      "year": -879
     },
     {
       "title": "Babylon",
       "meta": "Old Babylonian → Neo-Babylonian · 18th c. BCE – 6th c. BCE",
       "desc": "Capital of Hammurabi, Nebuchadnezzar, and Cyrus. Reconstructed in the 1980s by Saddam Hussein with bricks stamped in his own name.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Ishtar_Gate.jpg/960px-Ishtar_Gate.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Ishtar_Gate.jpg/960px-Ishtar_Gate.jpg",
+      "year": -1750
     },
     {
       "title": "Mesopotamian Cylinder Seals",
       "meta": "Sumerian onward · 4th millennium BCE onward",
       "desc": "Tiny carved stone cylinders rolled across clay to sign a document. Each person owned one — an identity card and an art form at once.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Cylinder_seal_king_Louvre_AO6620.jpg/960px-Cylinder_seal_king_Louvre_AO6620.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Cylinder_seal_king_Louvre_AO6620.jpg/960px-Cylinder_seal_king_Louvre_AO6620.jpg",
+      "year": -3500
     },
     {
       "title": "Statue of Ebih-Il",
       "meta": "Sumerian · c. 2400 BCE · Mari",
       "desc": "An administrator from Mari, seated with hands folded in prayer, dressed in a tufted skirt. Lapis and shell eyes still stare from a white gypsum face.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Ebih-ii_en_priere.jpg/960px-Ebih-ii_en_priere.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Ebih-ii_en_priere.jpg/960px-Ebih-ii_en_priere.jpg",
+      "year": -2400
     },
     {
       "title": "Victory Stele of Naram-Sin",
       "meta": "Akkadian · c. 2250 BCE",
       "desc": "The king climbs a mountain over dying enemies, horned helmet marking him as divine. The first ruler in history to have himself depicted as a god.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Stele_Naram_Sim_Sb4.jpg/960px-Stele_Naram_Sim_Sb4.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Stele_Naram_Sim_Sb4.jpg/960px-Stele_Naram_Sim_Sb4.jpg",
+      "year": -2250
     },
     {
       "title": "Burney Relief",
       "meta": "Old Babylonian · c. 1800 BCE",
       "desc": "A nude winged goddess standing on two lions, flanked by owls. Most likely Ereshkigal, queen of the underworld — or Inanna, descending into it.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/British_Museum_Queen_of_the_Night.jpg/960px-British_Museum_Queen_of_the_Night.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/British_Museum_Queen_of_the_Night.jpg/960px-British_Museum_Queen_of_the_Night.jpg",
+      "year": -1800
     },
     {
       "title": "Black Obelisk of Shalmaneser III",
       "meta": "Neo-Assyrian · c. 825 BCE",
       "desc": "A tribute list in stone — foreign kings bringing gifts to Shalmaneser. One is Jehu of Israel, bowing to kiss the ground. The earliest known image of an Israelite.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/The_Black_Obelisk_of_Shalmaneser_III.jpg/960px-The_Black_Obelisk_of_Shalmaneser_III.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/The_Black_Obelisk_of_Shalmaneser_III.jpg/960px-The_Black_Obelisk_of_Shalmaneser_III.jpg",
+      "year": -825
     },
     {
       "title": "Hatra",
       "meta": "Parthian · 1st–3rd c. CE · Iraq",
       "desc": "A desert caravan city whose kings commissioned limestone statues fusing Hellenistic drapery with Parthian dress. Destroyed by ISIS in 2015.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/ISIL_video_Hatra.jpg/960px-ISIL_video_Hatra.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/ISIL_video_Hatra.jpg/960px-ISIL_video_Hatra.jpg",
+      "year": 150
     },
     {
       "title": "Stele of the Vultures",
       "meta": "Sumerian · c. 2450 BCE · Lagash",
       "desc": "The earliest known battle monument. King Eannatum's army marches in lockstep behind their shields; on the other side, vultures carry off the heads of the defeated.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Stele_of_the_Vultures_in_the_Louvre_Museum_%28enhanced_composite%29.jpg/960px-Stele_of_the_Vultures_in_the_Louvre_Museum_%28enhanced_composite%29.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Stele_of_the_Vultures_in_the_Louvre_Museum_%28enhanced_composite%29.jpg/960px-Stele_of_the_Vultures_in_the_Louvre_Museum_%28enhanced_composite%29.jpg",
+      "year": -2450
     },
     {
       "title": "Queen Puabi's Headdress",
       "meta": "Sumerian · c. 2600 BCE · Ur",
       "desc": "Gold leaves, lapis lazuli pendants, carnelian beads, tied with ribbon hair-wire. Queen Puabi went to her grave wearing this, attended by 23 servants — also buried.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Queen_Puabi_with_attendants.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Queen_Puabi_with_attendants.jpg",
+      "year": -2600
     },
     {
       "title": "Royal Cemetery of Ur",
       "meta": "Sumerian · c. 2600 BCE · Iraq",
       "desc": "Sixteen royal graves, each with servants, soldiers, and musicians sacrificed and buried beside the king. Out came the Standard of Ur, Queen Puabi's headdress, and the Ram in the Thicket.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Royal_Cemetery_of_Ur_excavations_%28B%26W%29.jpg/960px-Royal_Cemetery_of_Ur_excavations_%28B%26W%29.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Royal_Cemetery_of_Ur_excavations_%28B%26W%29.jpg/960px-Royal_Cemetery_of_Ur_excavations_%28B%26W%29.jpg",
+      "year": -2600
     },
     {
       "title": "Yazılıkaya",
       "meta": "Hittite · 13th c. BCE · Turkey",
       "desc": "An open-air rock sanctuary near Hattusa. Sixty-six gods and goddesses walk in procession along the cliff face — the full Hittite pantheon gathered in stone.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Yazilikaya_Kammer_A.jpg/960px-Yazilikaya_Kammer_A.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Yazilikaya_Kammer_A.jpg/960px-Yazilikaya_Kammer_A.jpg",
+      "year": -1250
+    },
+    {
+      "title": "Lamassu of Khorsabad",
+      "meta": "c. 713–706 BCE · Gypsum alabaster · Richelieu Wing",
+      "desc": "Human-headed winged bulls, each over 4 meters tall. They guarded the gates of Sargon II's palace in what is now northern Iraq. Carved with five legs so that they appear to be standing still when seen from the front, and striding forward when seen from the side.",
+      "image": "media/lamassu.jpg",
+      "year": -709
+    },
+    {
+      "title": "Frieze of the Archers of Darius I",
+      "meta": "c. 510 BCE · Glazed brick · Richelieu Wing",
+      "desc": "From the palace of Darius the Great at Susa. A procession of the king's elite guard — the \"Immortals\" — in brilliantly colored glazed brick. Each carries a spear, bow, and quiver; each face is subtly different from the next.",
+      "image": "media/archers.jpg",
+      "year": -510
     }
   ]
 }

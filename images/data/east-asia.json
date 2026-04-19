@@ -7,233 +7,270 @@
       "title": "Terracotta Army",
       "meta": "Qin dynasty · 210 BCE · Xi'an, China",
       "desc": "Over 8,000 soldiers, each with a different face, buried with the first emperor of China to guard him after death. Farmers digging a well found them in 1974.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/51714-Terracota-Army.jpg/960px-51714-Terracota-Army.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/51714-Terracota-Army.jpg/960px-51714-Terracota-Army.jpg",
+      "year": -210
     },
     {
       "title": "Great Wall of China",
       "meta": "Ming (current form) · 14th–17th c.",
       "desc": "Not one wall but many, rebuilt across dynasties. The Ming sections visitors see today are a fraction of a system that once stretched over 13,000 miles.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/The_Great_Wall_of_China_at_Jinshanling-edit.jpg/960px-The_Great_Wall_of_China_at_Jinshanling-edit.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/The_Great_Wall_of_China_at_Jinshanling-edit.jpg/960px-The_Great_Wall_of_China_at_Jinshanling-edit.jpg",
+      "year": 1500
     },
     {
       "title": "Mogao Caves (Dunhuang)",
       "meta": "Silk Road Buddhist · 4th–14th c. · Gansu",
       "desc": "492 caves carved into cliff face, filled with murals and gilded clay Buddhas. One sealed chamber held 50,000 manuscripts — the largest trove of its kind.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Mogao_Caves_%2854376969262%29.jpg/960px-Mogao_Caves_%2854376969262%29.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Mogao_Caves_%2854376969262%29.jpg/960px-Mogao_Caves_%2854376969262%29.jpg",
+      "year": 850
     },
     {
       "title": "Hōryū-ji",
       "meta": "Asuka period · c. 607 CE · Nara, Japan",
       "desc": "Among the oldest wooden buildings still standing anywhere in the world. Built when Buddhism had only recently reached Japan.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Horyu-ji11s3200.jpg/960px-Horyu-ji11s3200.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Horyu-ji11s3200.jpg/960px-Horyu-ji11s3200.jpg",
+      "year": 607
     },
     {
       "title": "Goryeo Celadon",
       "meta": "Goryeo dynasty · 10th–14th c. · Korea",
       "desc": "Stoneware with a jade-green glaze so admired that Song-dynasty Chinese called Korean celadon the \"first under heaven.\"",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Korea_-_Seoul_-_National_Museum_-_Incense_Burner_0252-06a.jpg/960px-Korea_-_Seoul_-_National_Museum_-_Incense_Burner_0252-06a.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Korea_-_Seoul_-_National_Museum_-_Incense_Burner_0252-06a.jpg/960px-Korea_-_Seoul_-_National_Museum_-_Incense_Burner_0252-06a.jpg",
+      "year": 1150
     },
     {
       "title": "Along the River During Qingming",
       "meta": "Northern Song · Zhang Zeduan · 12th c.",
       "desc": "A five-meter handscroll showing hundreds of people in the Song capital on a spring festival day. Read right to left — it unfolds as you walk past.",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Bianjing_city_gate.JPG/960px-Bianjing_city_gate.JPG",
-      "artist": "Zhang Zeduan"
+      "artist": "Zhang Zeduan",
+      "year": 1150
     },
     {
       "title": "Forbidden City",
       "meta": "Ming & Qing · 1406–1420 onward · Beijing",
       "desc": "980 buildings on 180 acres. For five centuries, commoners who entered uninvited were executed. It is now the world's most-visited museum.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/The_Forbidden_City_-_View_from_Coal_Hill.jpg/960px-The_Forbidden_City_-_View_from_Coal_Hill.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/The_Forbidden_City_-_View_from_Coal_Hill.jpg/960px-The_Forbidden_City_-_View_from_Coal_Hill.jpg",
+      "year": 1413
     },
     {
       "title": "Kinkaku-ji (Golden Pavilion)",
       "meta": "Muromachi · 1397, rebuilt 1955 · Kyoto",
       "desc": "A retirement villa turned Zen temple, its top two floors wrapped in gold leaf. Burned down by a young monk in 1950 — rebuilt in facsimile.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Golden_Pavilion_Kinkaku-ji_water_mirror_2024.jpg/960px-Golden_Pavilion_Kinkaku-ji_water_mirror_2024.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Golden_Pavilion_Kinkaku-ji_water_mirror_2024.jpg/960px-Golden_Pavilion_Kinkaku-ji_water_mirror_2024.jpg",
+      "year": 1397
     },
     {
       "title": "Ryōan-ji Rock Garden",
       "meta": "Muromachi · late 15th c. · Kyoto",
       "desc": "Fifteen stones in raked gravel. From no single vantage can you see all fifteen at once — you're always one short of a complete view.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Kare-sansui_zen_garden%2C_Ry%C5%8Dan-ji%2C_Kyoto_20190416_1.jpg/960px-Kare-sansui_zen_garden%2C_Ry%C5%8Dan-ji%2C_Kyoto_20190416_1.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Kare-sansui_zen_garden%2C_Ry%C5%8Dan-ji%2C_Kyoto_20190416_1.jpg/960px-Kare-sansui_zen_garden%2C_Ry%C5%8Dan-ji%2C_Kyoto_20190416_1.jpg",
+      "year": 1450
     },
     {
       "title": "Himeji Castle",
       "meta": "Edo period · 1609 · Hyōgo, Japan",
       "desc": "The finest surviving Japanese castle, nicknamed \"White Heron\" for its white plaster. Its winding approach was designed to confuse besiegers.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Himeji_castle_in_may_2015.jpg/960px-Himeji_castle_in_may_2015.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Himeji_castle_in_may_2015.jpg/960px-Himeji_castle_in_may_2015.jpg",
+      "year": 1609
     },
     {
       "title": "The Great Wave off Kanagawa",
       "meta": "Edo Japan · Hokusai · c. 1831",
       "desc": "A woodblock print sold for the price of a bowl of noodles. Mount Fuji sits small and steady under the claw of the wave. Hokusai was in his seventies.",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Tsunami_by_hokusai_19th_century.jpg/960px-Tsunami_by_hokusai_19th_century.jpg",
-      "artist": "Katsushika Hokusai"
+      "artist": "Katsushika Hokusai",
+      "year": 1831
     },
     {
       "title": "Longmen Grottoes",
       "meta": "Northern Wei → Tang · 493 CE onward · Luoyang",
       "desc": "Over 100,000 Buddhas carved into limestone cliffs along the Yi River. The largest is fifty-six feet tall and smiles.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/27427-Luoyang_%2849067744628%29.jpg/960px-27427-Luoyang_%2849067744628%29.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/27427-Luoyang_%2849067744628%29.jpg/960px-27427-Luoyang_%2849067744628%29.jpg",
+      "year": 493
     },
     {
       "title": "Yungang Grottoes",
       "meta": "Northern Wei · 460–525 CE · Datong",
       "desc": "Fifty-three caves with 51,000 statues. The earliest cliff Buddhas in China — faces still showing Indian and Central Asian lineage.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/61292-Yungang-Grottoes_%2828498548881%29.jpg/960px-61292-Yungang-Grottoes_%2828498548881%29.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/61292-Yungang-Grottoes_%2828498548881%29.jpg/960px-61292-Yungang-Grottoes_%2828498548881%29.jpg",
+      "year": 492
     },
     {
       "title": "Dazu Rock Carvings",
       "meta": "Tang to Song · 9th–13th c. · Sichuan",
       "desc": "Buddhist, Daoist, and Confucian figures carved side by side — a rare moment of syncretism preserved in stone.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Dazu_2007_685_full_view.jpg/960px-Dazu_2007_685_full_view.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Dazu_2007_685_full_view.jpg/960px-Dazu_2007_685_full_view.jpg",
+      "year": 1050
     },
     {
       "title": "Crown of Silla",
       "meta": "Silla kingdom · 5th–6th c. · Korea",
       "desc": "Thin gold sheet cut into tree and antler forms, hung with comma-shaped jades and gold spangles. Too fragile to wear — meant for ritual and burial.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/d/df/Korea-Silla_kingdom-Gold_crown_from_Hwangnam_Daechong-No.191-01D.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/d/df/Korea-Silla_kingdom-Gold_crown_from_Hwangnam_Daechong-No.191-01D.jpg",
+      "year": 500
     },
     {
       "title": "Early Spring",
       "meta": "Northern Song · Guo Xi · 1072 · China",
       "desc": "A mountain landscape in ink and subtle color. Guo Xi said a painter should look at nature \"as if going on a journey\" — this scroll is that walk.",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Guo_Xi_-_Early_Spring_%28large%29.jpg/960px-Guo_Xi_-_Early_Spring_%28large%29.jpg",
-      "artist": "Guo Xi"
+      "artist": "Guo Xi",
+      "year": 1072
     },
     {
       "title": "Potala Palace",
       "meta": "Tibetan · 1645 onward · Lhasa",
       "desc": "Thirteen stories of winter residence for the Dalai Lamas — a thousand rooms, ten thousand shrines, two hundred thousand statues. Built where a 7th-century fort once stood.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Potala_Palace_HQ.jpg/960px-Potala_Palace_HQ.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Potala_Palace_HQ.jpg/960px-Potala_Palace_HQ.jpg",
+      "year": 1645
     },
     {
       "title": "Great Buddha of Kamakura",
       "meta": "Kamakura period · 1252 · Japan",
       "desc": "A bronze Amida Buddha originally housed in a great hall — but tsunamis washed the building away in 1498 and left the statue to sit in the open ever since.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/230128_Kamakura_Daibutsu_Japan04s3.jpg/960px-230128_Kamakura_Daibutsu_Japan04s3.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/230128_Kamakura_Daibutsu_Japan04s3.jpg/960px-230128_Kamakura_Daibutsu_Japan04s3.jpg",
+      "year": 1252
     },
     {
       "title": "Tōdai-ji",
       "meta": "Nara period · 752 · Japan",
       "desc": "For a thousand years the largest wooden building in the world. Inside, a 50-foot bronze Buddha, cast in eight pieces, seated in a lotus.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/T%C5%8Ddai-ji_Kon-d%C5%8D.jpg/960px-T%C5%8Ddai-ji_Kon-d%C5%8D.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/T%C5%8Ddai-ji_Kon-d%C5%8D.jpg/960px-T%C5%8Ddai-ji_Kon-d%C5%8D.jpg",
+      "year": 752
     },
     {
       "title": "Byōdō-in",
       "meta": "Late Heian · 1053 · Uji",
       "desc": "The Phoenix Hall — bird-shaped pavilion reflecting in its lotus pond. Built as a noble's villa; converted to a temple when he took the tonsure.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Phoenix_Hall%2C_Byodo-in%2C_November_2016_-01.jpg/960px-Phoenix_Hall%2C_Byodo-in%2C_November_2016_-01.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Phoenix_Hall%2C_Byodo-in%2C_November_2016_-01.jpg/960px-Phoenix_Hall%2C_Byodo-in%2C_November_2016_-01.jpg",
+      "year": 1053
     },
     {
       "title": "Sanjūsangen-dō",
       "meta": "Kamakura period · 1266 · Kyoto",
       "desc": "A 390-foot hall holding 1,001 gilded statues of the thousand-armed Kannon. Each face is different; pilgrims look for their own.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Sanjusangendo_2022.jpg/960px-Sanjusangendo_2022.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Sanjusangendo_2022.jpg/960px-Sanjusangendo_2022.jpg",
+      "year": 1266
     },
     {
       "title": "Nikkō Tōshō-gū",
       "meta": "Early Edo · 1617 · Japan",
       "desc": "The mausoleum of Tokugawa Ieyasu, built with the lavish polychrome carving the Tokugawa banned elsewhere. The three wise monkeys are here, above a stable.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/200801_Nikko_Tosho-gu_Nikko_Japan03s3.jpg/960px-200801_Nikko_Tosho-gu_Nikko_Japan03s3.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/200801_Nikko_Tosho-gu_Nikko_Japan03s3.jpg/960px-200801_Nikko_Tosho-gu_Nikko_Japan03s3.jpg",
+      "year": 1617
     },
     {
       "title": "Summer Palace",
       "meta": "Qing dynasty · 1750 onward · Beijing",
       "desc": "Three square kilometres of gardens and pavilions around Kunming Lake. Sacked by Anglo-French forces in 1860, looted again by Boxer-era troops in 1900.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Longevity_Hill_of_the_Summer_Palace.jpg/960px-Longevity_Hill_of_the_Summer_Palace.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Longevity_Hill_of_the_Summer_Palace.jpg/960px-Longevity_Hill_of_the_Summer_Palace.jpg",
+      "year": 1750
     },
     {
       "title": "Chinese Ritual Bronzes",
       "meta": "Shang–Zhou · 16th–3rd c. BCE",
       "desc": "Tripod cauldrons, wine vessels, and axes cast for ancestor worship. Each is wrapped in a monster mask (taotie) staring from every surface.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/MET_DP219959.jpg/960px-MET_DP219959.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/MET_DP219959.jpg/960px-MET_DP219959.jpg",
+      "year": -900
     },
     {
       "title": "Blue and White Porcelain",
       "meta": "Yuan → Qing · 14th–19th c. · Jingdezhen",
       "desc": "Cobalt under a clear glaze, fired to translucence. China's most-exported art form — copied in Iran, Turkey, Netherlands, and eventually the world.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/%E6%B8%85%E5%BA%B7%E7%86%99_%E6%99%AF%E5%BE%B7%E9%8E%AE%E7%AA%AF%E9%9D%92%E8%8A%B1%E4%BA%94%E5%80%AB%E5%9C%96%E7%85%A8%E7%93%B7%E7%93%B6-Vase_with_auspicious_animals_MET_DP-14359-001.jpg/960px-%E6%B8%85%E5%BA%B7%E7%86%99_%E6%99%AF%E5%BE%B7%E9%8E%AE%E7%AA%AF%E9%9D%92%E8%8A%B1%E4%BA%94%E5%80%AB%E5%9C%96%E7%85%A8%E7%93%B7%E7%93%B6-Vase_with_auspicious_animals_MET_DP-14359-001.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/%E6%B8%85%E5%BA%B7%E7%86%99_%E6%99%AF%E5%BE%B7%E9%8E%AE%E7%AA%AF%E9%9D%92%E8%8A%B1%E4%BA%94%E5%80%AB%E5%9C%96%E7%85%A8%E7%93%B7%E7%93%B6-Vase_with_auspicious_animals_MET_DP-14359-001.jpg/960px-%E6%B8%85%E5%BA%B7%E7%86%99_%E6%99%AF%E5%BE%B7%E9%8E%AE%E7%AA%AF%E9%9D%92%E8%8A%B1%E4%BA%94%E5%80%AB%E5%9C%96%E7%85%A8%E7%93%B7%E7%93%B6-Vase_with_auspicious_animals_MET_DP-14359-001.jpg",
+      "year": 1600
     },
     {
       "title": "Prints of Kitagawa Utamaro",
       "meta": "Edo Japan · 1790s",
       "desc": "Utamaro specialized in the bijin-ga — studies of beautiful women — often just head and shoulders, in close-up. Scandalously intimate for the time.",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Kitagawa_Utamaro_portrait_%28cropped%29.jpg/960px-Kitagawa_Utamaro_portrait_%28cropped%29.jpg",
-      "artist": "Kitagawa Utamaro"
+      "artist": "Kitagawa Utamaro",
+      "year": 1790
     },
     {
       "title": "Netsuke",
       "meta": "Edo Japan · 17th–19th c.",
       "desc": "Miniature ivory or wood toggles that held purses to kimono sashes. Frogs, rats, mythic beasts — detailed enough to demand a magnifying glass.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Ivory_netsuke_of_the_Hare_with_Amber_Eyes_2.JPG/960px-Ivory_netsuke_of_the_Hare_with_Amber_Eyes_2.JPG"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Ivory_netsuke_of_the_Hare_with_Amber_Eyes_2.JPG/960px-Ivory_netsuke_of_the_Hare_with_Amber_Eyes_2.JPG",
+      "year": 1750
     },
     {
       "title": "Admonitions Scroll",
       "meta": "Six Dynasties · Gu Kaizhi (copy) · c. 380 CE",
       "desc": "A handscroll of court ladies illustrating a Confucian poem of proper conduct. Probably the oldest surviving Chinese narrative painting, preserved in a Tang-era copy.",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Ku_K%27ai-chih_001.jpg/960px-Ku_K%27ai-chih_001.jpg",
-      "artist": "Gu Kaizhi"
+      "artist": "Gu Kaizhi",
+      "year": 380
     },
     {
       "title": "Sanxingdui Bronze Masks",
       "meta": "Sanxingdui culture · c. 1200 BCE · Sichuan",
       "desc": "Hollow bronze and gold masks with protruding eyes and ears that fan outward. An entirely unknown civilization contemporary with Shang, found in two sacrificial pits in 1986.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Gold_Mask_%28%E9%BB%84%E9%87%91%E9%9D%A2%E7%BD%A9%29.jpg/960px-Gold_Mask_%28%E9%BB%84%E9%87%91%E9%9D%A2%E7%BD%A9%29.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Gold_Mask_%28%E9%BB%84%E9%87%91%E9%9D%A2%E7%BD%A9%29.jpg/960px-Gold_Mask_%28%E9%BB%84%E9%87%91%E9%9D%A2%E7%BD%A9%29.jpg",
+      "year": -1200
     },
     {
       "title": "Temple of Heaven",
       "meta": "Ming · 1420 · Beijing",
       "desc": "A round blue-roofed temple on a square base — heaven over earth. Every winter solstice for five centuries, the emperor prayed here for the harvest.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Temple_of_Heaven_20160323_01.jpg/960px-Temple_of_Heaven_20160323_01.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Temple_of_Heaven_20160323_01.jpg/960px-Temple_of_Heaven_20160323_01.jpg",
+      "year": 1420
     },
     {
       "title": "Kōfuku-ji",
       "meta": "Nara period onward · 710 · Japan",
       "desc": "One of Nara's four great monasteries. Its treasure hall holds the Asura statue — a three-faced, six-armed youth with an achingly thoughtful face.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Kofukuji12st5s3200.jpg/960px-Kofukuji12st5s3200.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Kofukuji12st5s3200.jpg/960px-Kofukuji12st5s3200.jpg",
+      "year": 710
     },
     {
       "title": "Seokguram Grotto",
       "meta": "Unified Silla · 774 · Korea",
       "desc": "A domed granite chamber holding a single seated Buddha, two and a half meters tall. The walls are carved with bodhisattvas and disciples — a sculptural mandala.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Front_view_of_Seokguram_from_front_chamber.jpg/960px-Front_view_of_Seokguram_from_front_chamber.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Front_view_of_Seokguram_from_front_chamber.jpg/960px-Front_view_of_Seokguram_from_front_chamber.jpg",
+      "year": 774
     },
     {
       "title": "Night-Shining White",
       "meta": "Tang dynasty · Han Gan · c. 750 · China",
       "desc": "A tethered stallion struggling at the post — snorting, hooves kicking. The emperor Xuanzong's favorite horse, painted in ink so alive it almost leaves the silk.",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Palefrenier_menant_deux_chevaux_par_Han_Gan.jpg/960px-Palefrenier_menant_deux_chevaux_par_Han_Gan.jpg",
-      "artist": "Han Gan"
+      "artist": "Han Gan",
+      "year": 750
     },
     {
       "title": "Red and White Plum Blossoms",
       "meta": "Edo Japan · Ogata Kōrin · early 18th c.",
       "desc": "A pair of folding screens: two plum trees, red and white, lean toward a stylized silver river of whorls. Rinpa-school decorative painting at its most distilled.",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Ogata_Korin_-_RED_AND_WHITE_PLUM_BLOSSOMS_%28National_Treasure%29_-_Google_Art_Project.jpg/960px-Ogata_Korin_-_RED_AND_WHITE_PLUM_BLOSSOMS_%28National_Treasure%29_-_Google_Art_Project.jpg",
-      "artist": "Ogata Kōrin"
+      "artist": "Ogata Kōrin",
+      "year": 1750
     },
     {
       "title": "Fine Wind, Clear Morning (Red Fuji)",
       "meta": "Edo Japan · Hokusai · c. 1830–1832",
       "desc": "Hokusai's other famous Fuji — a single triangular form lit crimson by morning sun, clouds streaming off the summit. From the same series as the Great Wave.",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/%E3%80%8C%E5%AF%8C%E5%B6%BD%E4%B8%89%E5%8D%81%E5%85%AD%E6%99%AF_%E5%87%B1%E9%A2%A8%E5%BF%AB%E6%99%B4%E3%80%8D-South_Wind%2C_Clear_Sky_%28Gaif%C5%AB_kaisei%29%2C_also_known_as_Red_Fuji%2C_from_the_series_Thirty-six_Views_of_Mount_Fuji_%28Fugaku_sanj%C5%ABrokkei%29_MET_DP141062.jpg/960px-thumbnail.jpg",
-      "artist": "Katsushika Hokusai"
+      "artist": "Katsushika Hokusai",
+      "year": 1831
     },
     {
       "title": "Cypress Trees",
       "meta": "Momoyama Japan · Kanō Eitoku · 1590",
       "desc": "An eight-panel folding screen with a single enormous cypress sprawling across gold leaf. The Kano school's monumental court style at its peak.",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/%E7%8B%A9%E9%87%8E%E6%B0%B8%E5%BE%B3%E3%80%8A%E6%AA%9C%E5%9B%B3%E5%B1%8F%E9%A2%A8%E3%80%8B1590%E5%B9%B4%E3%80%8116%E4%B8%96%E7%B4%80%E3%80%81%E6%A1%83%E5%B1%B1%E6%99%82%E4%BB%A3%E3%80%81%E6%9D%B1%E4%BA%AC%E5%9B%BD%E7%AB%8B%E5%8D%9A%E7%89%A9%E9%A4%A8.jpg/960px-%E7%8B%A9%E9%87%8E%E6%B0%B8%E5%BE%B3%E3%80%8A%E6%AA%9C%E5%9B%B3%E5%B1%8F%E9%A2%A8%E3%80%8B1590%E5%B9%B4%E3%80%8116%E4%B8%96%E7%B4%80%E3%80%81%E6%A1%83%E5%B1%B1%E6%99%82%E4%BB%A3%E3%80%81%E6%9D%B1%E4%BA%AC%E5%9B%BD%E7%AB%8B%E5%8D%9A%E7%89%A4%E9%A4%A8.jpg",
-      "artist": "Kanō Eitoku"
+      "artist": "Kanō Eitoku",
+      "year": 1590
     },
     {
       "title": "Actor Prints of Sharaku",
       "meta": "Edo Japan · Tōshūsai Sharaku · 1794–1795",
       "desc": "Kabuki actors caught mid-gesture, their exaggerated faces rendered in crisp black outline against mica backgrounds. Sharaku worked for ten months and then vanished.",
       "image": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Toshusai_Sharaku-_Otani_Oniji%2C_1794.jpg",
-      "artist": "Tōshūsai Sharaku"
+      "artist": "Tōshūsai Sharaku",
+      "year": 1794
     }
   ]
 }

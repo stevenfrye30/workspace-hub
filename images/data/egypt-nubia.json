@@ -7,199 +7,246 @@
       "title": "Great Pyramid of Giza",
       "meta": "Old Kingdom · c. 2560 BCE",
       "desc": "Tomb of Khufu. 2.3 million stone blocks, averaging 2.5 tons each. The tallest human-made structure on earth for 3,800 years.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Great_Pyramid_of_Giza_-_Pyramid_of_Khufu.jpg/960px-Great_Pyramid_of_Giza_-_Pyramid_of_Khufu.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Great_Pyramid_of_Giza_-_Pyramid_of_Khufu.jpg/960px-Great_Pyramid_of_Giza_-_Pyramid_of_Khufu.jpg",
+      "year": -2560
     },
     {
       "title": "Great Sphinx of Giza",
       "meta": "Old Kingdom · c. 2500 BCE",
       "desc": "Carved from a single limestone outcrop, the oldest known monumental sculpture. Its nose was already missing before Napoleon arrived.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Sphinx_with_the_third_pyramid.jpg/960px-Sphinx_with_the_third_pyramid.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Sphinx_with_the_third_pyramid.jpg/960px-Sphinx_with_the_third_pyramid.jpg",
+      "year": -2500
     },
     {
       "title": "Narmer Palette",
       "meta": "Early Dynastic · c. 3100 BCE",
       "desc": "A ceremonial siltstone palette showing a king smiting an enemy — one of the earliest monuments of unified Egypt, with its conventions already fully formed.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Narmer_Palette.jpg/960px-Narmer_Palette.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Narmer_Palette.jpg/960px-Narmer_Palette.jpg",
+      "year": -3100
     },
     {
       "title": "Bust of Nefertiti",
       "meta": "Amarna period · c. 1345 BCE",
       "desc": "Painted limestone, found in the workshop of the sculptor Thutmose at Amarna. Still in Berlin; Egypt has asked for it back for a century.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Nofretete_Neues_Museum.jpg/960px-Nofretete_Neues_Museum.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Nofretete_Neues_Museum.jpg/960px-Nofretete_Neues_Museum.jpg",
+      "year": -1345
     },
     {
       "title": "Mask of Tutankhamun",
       "meta": "New Kingdom · c. 1323 BCE",
       "desc": "Eleven kilograms of solid gold, inlaid with lapis, carnelian, and obsidian. The funerary mask of a boy-king who died at nineteen.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Golden_mask_of_Tutankhamun.jpg/960px-Golden_mask_of_Tutankhamun.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Golden_mask_of_Tutankhamun.jpg/960px-Golden_mask_of_Tutankhamun.jpg",
+      "year": -1323
     },
     {
       "title": "Karnak Temple Complex",
       "meta": "New Kingdom onward · 2000 BCE – 100 CE",
       "desc": "A city of temples at Thebes, built and rebuilt by thirty dynasties. The hypostyle hall alone has 134 columns.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Temple_de_Louxor_68.jpg/960px-Temple_de_Louxor_68.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Temple_de_Louxor_68.jpg/960px-Temple_de_Louxor_68.jpg",
+      "year": -2000
     },
     {
       "title": "Temple of Hatshepsut",
       "meta": "New Kingdom · c. 1470 BCE · Deir el-Bahari",
       "desc": "Three stacked colonnaded terraces built into a cliff for Egypt's longest-reigning female pharaoh. Her successor tried to erase her — and failed.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Templo_funerario_de_Hatshepsut%2C_Luxor%2C_Egipto%2C_2022-04-03%2C_DD_13.jpg/960px-Templo_funerario_de_Hatshepsut%2C_Luxor%2C_Egipto%2C_2022-04-03%2C_DD_13.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Templo_funerario_de_Hatshepsut%2C_Luxor%2C_Egipto%2C_2022-04-03%2C_DD_13.jpg/960px-Templo_funerario_de_Hatshepsut%2C_Luxor%2C_Egipto%2C_2022-04-03%2C_DD_13.jpg",
+      "year": -1470
     },
     {
       "title": "Tomb of Nefertari",
       "meta": "19th dynasty · c. 1255 BCE · Valley of the Queens",
       "desc": "Painted for Ramesses II's favorite wife — the queen walks through the underworld, plays the board game Senet, and greets the gods. Colors still vivid.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Queen_Nefertari_Playing_Senet_MET_DT11770.jpg/960px-Queen_Nefertari_Playing_Senet_MET_DT11770.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Queen_Nefertari_Playing_Senet_MET_DT11770.jpg/960px-Queen_Nefertari_Playing_Senet_MET_DT11770.jpg",
+      "year": -1255
     },
     {
       "title": "Abu Simbel",
       "meta": "Reign of Ramesses II · c. 1264 BCE",
       "desc": "Four colossal statues guard the temple front. In the 1960s the whole complex was cut apart and moved 200 feet up to escape Lake Nasser.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Ramsis%2C_Aswan_Governorate%2C_Egypt_-_panoramio.jpg/960px-Ramsis%2C_Aswan_Governorate%2C_Egypt_-_panoramio.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Ramsis%2C_Aswan_Governorate%2C_Egypt_-_panoramio.jpg/960px-Ramsis%2C_Aswan_Governorate%2C_Egypt_-_panoramio.jpg",
+      "year": -1264
     },
     {
       "title": "Rosetta Stone",
       "meta": "Ptolemaic · 196 BCE",
       "desc": "A decree written three times — in hieroglyphs, Demotic, and Greek — that became the key to reading Egyptian. Champollion cracked it in 1822.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Rosetta_Stone.JPG/960px-Rosetta_Stone.JPG"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Rosetta_Stone.JPG/960px-Rosetta_Stone.JPG",
+      "year": -196
     },
     {
       "title": "Pyramids of Meroë",
       "meta": "Kingdom of Kush · 300 BCE – 300 CE · Sudan",
       "desc": "Over 200 pyramids, steeper and smaller than Egypt's, built for Nubian royalty. Sudan has more pyramids than Egypt — about twice as many.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/5/53/Sudan_Meroe_Pyramids_2001.JPG"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/5/53/Sudan_Meroe_Pyramids_2001.JPG",
+      "year": -300
     },
     {
       "title": "Book of the Dead",
       "meta": "New Kingdom onward · 1550 BCE – 50 BCE",
       "desc": "Spells written on papyrus to guide the deceased through the Duat. The Weighing of the Heart against a feather is its most famous scene.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/El_pesado_del_coraz%C3%B3n_en_el_Papiro_de_Hunefer.jpg/960px-El_pesado_del_coraz%C3%B3n_en_el_Papiro_de_Hunefer.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/El_pesado_del_coraz%C3%B3n_en_el_Papiro_de_Hunefer.jpg/960px-El_pesado_del_coraz%C3%B3n_en_el_Papiro_de_Hunefer.jpg",
+      "year": -1550
     },
     {
       "title": "Colossi of Memnon",
       "meta": "New Kingdom · c. 1350 BCE · Luxor",
       "desc": "Twin seated statues of Amenhotep III, sixty feet tall. After an earthquake cracked one, it \"sang\" at dawn for two centuries — until Romans repaired it.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Colossi_of_Memnon_May_2015_2.JPG/960px-Colossi_of_Memnon_May_2015_2.JPG"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Colossi_of_Memnon_May_2015_2.JPG/960px-Colossi_of_Memnon_May_2015_2.JPG",
+      "year": -1350
     },
     {
       "title": "Fayum Mummy Portraits",
       "meta": "Roman Egypt · 1st–3rd c. CE",
       "desc": "Encaustic panels placed over the faces of mummies. The most personal, most realistic portraits to survive from the ancient world — they still look you in the eye.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/c/c6/Fayum-34.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/c/c6/Fayum-34.jpg",
+      "year": 150
     },
     {
       "title": "Temple of Dendur",
       "meta": "Roman Egypt · 15 BCE",
       "desc": "A small sandstone temple given to the United States in 1965 when Lake Nasser was about to drown it. Reassembled stone by stone inside the Met.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/The_Temple_of_Dendur_MET_DT563.jpg/960px-The_Temple_of_Dendur_MET_DT563.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/The_Temple_of_Dendur_MET_DT563.jpg/960px-The_Temple_of_Dendur_MET_DT563.jpg",
+      "year": -15
     },
     {
       "title": "Pyramid of Djoser",
       "meta": "Old Kingdom · c. 2670 BCE · Saqqara",
       "desc": "The first pyramid in Egypt — six stacked mastabas designed by the architect Imhotep, later deified as a god of wisdom and medicine.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Saqqara_pyramid_ver_2.jpg/960px-Saqqara_pyramid_ver_2.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Saqqara_pyramid_ver_2.jpg/960px-Saqqara_pyramid_ver_2.jpg",
+      "year": -2670
     },
     {
       "title": "Luxor Temple",
       "meta": "New Kingdom · Amenhotep III / Ramesses II · c. 1400–1250 BCE",
       "desc": "Every year during the Opet Festival, statues of the gods were carried in boats from Karnak to here. A Roman camp, Christian church, and mosque all followed.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Templo_de_Luxor%2C_Luxor%2C_Egipto%2C_2022-04-01%2C_DD_01.jpg/960px-Templo_de_Luxor%2C_Luxor%2C_Egipto%2C_2022-04-01%2C_DD_01.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Templo_de_Luxor%2C_Luxor%2C_Egipto%2C_2022-04-01%2C_DD_01.jpg/960px-Templo_de_Luxor%2C_Luxor%2C_Egipto%2C_2022-04-01%2C_DD_01.jpg",
+      "year": -1325
     },
     {
       "title": "Temple of Edfu",
       "meta": "Ptolemaic · 237–57 BCE",
       "desc": "The best-preserved temple in Egypt, because it was buried in desert sand for centuries. Dedicated to Horus, with reliefs of his battle against Seth.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Temple_Edfou_Egypte.jpg/960px-Temple_Edfou_Egypte.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Temple_Edfou_Egypte.jpg/960px-Temple_Edfou_Egypte.jpg",
+      "year": 237
     },
     {
       "title": "Tomb of Seti I",
       "meta": "19th Dynasty · c. 1279 BCE · Valley of the Kings",
       "desc": "The longest, deepest, and most richly painted tomb in the valley. Every wall is covered in funerary texts; ceilings map the stars.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/KV17%2C_the_tomb_of_Pharaoh_Seti_I_of_the_Nineteenth_Dynasty%2C_Valley_of_the_Kings%2C_Egypt_%2849846343021%29.jpg/960px-KV17%2C_the_tomb_of_Pharaoh_Seti_I_of_the_Nineteenth_Dynasty%2C_Valley_of_the_Kings%2C_Egypt_%2849846343021%29.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/KV17%2C_the_tomb_of_Pharaoh_Seti_I_of_the_Nineteenth_Dynasty%2C_Valley_of_the_Kings%2C_Egypt_%2849846343021%29.jpg/960px-KV17%2C_the_tomb_of_Pharaoh_Seti_I_of_the_Nineteenth_Dynasty%2C_Valley_of_the_Kings%2C_Egypt_%2849846343021%29.jpg",
+      "year": -1279
     },
     {
       "title": "Colossal Statue of Akhenaten",
       "meta": "Amarna period · c. 1350 BCE",
       "desc": "The heretic pharaoh depicted with a long face, wide hips, and swollen belly — a deliberate break from centuries of idealized royal portraiture.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/GD-EG-Caire-Mus%C3%A9e061.JPG/960px-GD-EG-Caire-Mus%C3%A9e061.JPG"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/GD-EG-Caire-Mus%C3%A9e061.JPG/960px-GD-EG-Caire-Mus%C3%A9e061.JPG",
+      "year": -1350
     },
     {
       "title": "Ramesseum",
       "meta": "New Kingdom · Ramesses II · 13th c. BCE · Thebes",
       "desc": "Memorial temple of Ramesses II. A collapsed colossus here inspired Shelley's \"Ozymandias\" — though Shelley never saw it.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/SFEC_AEH_-ThebesNecropolis-2010-RamsesII-021.jpg/960px-SFEC_AEH_-ThebesNecropolis-2010-RamsesII-021.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/SFEC_AEH_-ThebesNecropolis-2010-RamsesII-021.jpg/960px-SFEC_AEH_-ThebesNecropolis-2010-RamsesII-021.jpg",
+      "year": -1250
     },
     {
       "title": "Medinet Habu",
       "meta": "New Kingdom · Ramesses III · c. 1150 BCE · Thebes",
       "desc": "The fortress-temple of the last great warrior pharaoh. Its walls narrate the repulse of the Sea Peoples — history preserved because the victor carved it.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Templo_funerario_de_Rams%C3%A9s_III%2C_Luxor%2C_Egipto%2C_2022-04-03%2C_DD_22.jpg/960px-Templo_funerario_de_Rams%C3%A9s_III%2C_Luxor%2C_Egipto%2C_2022-04-03%2C_DD_22.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Templo_funerario_de_Rams%C3%A9s_III%2C_Luxor%2C_Egipto%2C_2022-04-03%2C_DD_22.jpg/960px-Templo_funerario_de_Rams%C3%A9s_III%2C_Luxor%2C_Egipto%2C_2022-04-03%2C_DD_22.jpg",
+      "year": -1150
     },
     {
       "title": "Dendera Temple",
       "meta": "Ptolemaic → Roman · 54 BCE – 20 CE",
       "desc": "Temple of Hathor. Its astronomical ceilings include the only known circular zodiac from ancient Egypt — now a replica; the original is in the Louvre.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Dendera_7_977.PNG/960px-Dendera_7_977.PNG"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Dendera_7_977.PNG/960px-Dendera_7_977.PNG",
+      "year": -54
     },
     {
       "title": "Kom Ombo",
       "meta": "Ptolemaic · 2nd c. BCE",
       "desc": "A rare double temple — one half for the crocodile god Sobek, the other for Horus the Elder. Mummified crocodiles still fill a side chamber.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Kom_Ombo_Portal_04.jpg/960px-Kom_Ombo_Portal_04.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Kom_Ombo_Portal_04.jpg/960px-Kom_Ombo_Portal_04.jpg",
+      "year": -150
     },
     {
       "title": "Tomb of Tutankhamun",
       "meta": "18th Dynasty · c. 1323 BCE · Valley of the Kings",
       "desc": "A small, hastily decorated tomb, overlooked by thieves for three thousand years. Howard Carter opened it in 1922 and the world went Egyptomaniac again.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Inside_Pharaoh_Tutankhamun%27s_tomb%2C_18th_dynasty.jpg/960px-Inside_Pharaoh_Tutankhamun%27s_tomb%2C_18th_dynasty.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Inside_Pharaoh_Tutankhamun%27s_tomb%2C_18th_dynasty.jpg/960px-Inside_Pharaoh_Tutankhamun%27s_tomb%2C_18th_dynasty.jpg",
+      "year": -1323
     },
     {
       "title": "The Seated Scribe",
       "meta": "Old Kingdom · c. 2620–2500 BCE · Saqqara",
       "desc": "Painted limestone, eyes inlaid with crystal and copper. Alert and ready, reed in hand — the realist portrait of a bureaucrat, 4,500 years ago.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Le_Scribe_accroupi_-_Mus%C3%A9e_du_Louvre_Antiquit%C3%A9s_%C3%A9gyptiennes_E_3023.jpg/960px-Le_Scribe_accroupi_-_Mus%C3%A9e_du_Louvre_Antiquit%C3%A9s_%C3%A9gyptiennes_E_3023.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Le_Scribe_accroupi_-_Mus%C3%A9e_du_Louvre_Antiquit%C3%A9s_%C3%A9gyptiennes_E_3023.jpg/960px-Le_Scribe_accroupi_-_Mus%C3%A9e_du_Louvre_Antiquit%C3%A9s_%C3%A9gyptiennes_E_3023.jpg",
+      "year": -2560
     },
     {
       "title": "Khafre Enthroned",
       "meta": "Old Kingdom · c. 2570 BCE · Giza",
       "desc": "Diorite portrait of the pharaoh who built the second pyramid. Horus the falcon wraps his wings around the back of the king's head — divine kingship locked in stone.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Kairo_Museum_Sitzstatue_Chephren_06.jpg/960px-Kairo_Museum_Sitzstatue_Chephren_06.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Kairo_Museum_Sitzstatue_Chephren_06.jpg/960px-Kairo_Museum_Sitzstatue_Chephren_06.jpg",
+      "year": -2570
     },
     {
       "title": "Pyramid of Meidum",
       "meta": "Old Kingdom · c. 2600 BCE",
       "desc": "A failed smooth-sided pyramid whose outer casing collapsed. What survives is the blunt tower at the core — an architectural experiment that taught the builders of Giza.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Meidoum03.jpg/960px-Meidoum03.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Meidoum03.jpg/960px-Meidoum03.jpg",
+      "year": -2600
     },
     {
       "title": "Sphinx of Taharqa",
       "meta": "Nubian Kush · 25th Dynasty · c. 680 BCE",
       "desc": "A Nubian pharaoh in the form of an Egyptian sphinx, carrying a double crown he had earned as conqueror. Now in the British Museum.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Sphinx_of_Taharqo.jpg/960px-Sphinx_of_Taharqo.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Sphinx_of_Taharqo.jpg/960px-Sphinx_of_Taharqo.jpg",
+      "year": -680
     },
     {
       "title": "Great Sphinx of Tanis",
       "meta": "Old to Middle Kingdom · c. 2600–1800 BCE",
       "desc": "One of the largest sphinxes outside Giza — reused and re-inscribed by pharaoh after pharaoh. Now guards the entrance of the Louvre's Egyptian galleries.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Grand_sphinx_de_Tanis_-_Mus%C3%A9e_du_Louvre_Antiquit%C3%A9s_%C3%A9gyptiennes_N_23_%3B_A_23_%3B_Salt_3837.jpg/960px-Grand_sphinx_de_Tanis_-_Mus%C3%A9e_du_Louvre_Antiquit%C3%A9s_%C3%A9gyptiennes_N_23_%3B_A_23_%3B_Salt_3837.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Grand_sphinx_de_Tanis_-_Mus%C3%A9e_du_Louvre_Antiquit%C3%A9s_%C3%A9gyptiennes_N_23_%3B_A_23_%3B_Salt_3837.jpg/960px-Grand_sphinx_de_Tanis_-_Mus%C3%A9e_du_Louvre_Antiquit%C3%A9s_%C3%A9gyptiennes_N_23_%3B_A_23_%3B_Salt_3837.jpg",
+      "year": -2200
     },
     {
       "title": "Mastaba of Ti",
       "meta": "Old Kingdom · c. 2400 BCE · Saqqara",
       "desc": "The tomb of a minor royal official, painted inside with daily-life scenes — farming, fishing, ships under sail — and regarded as the high point of Old Kingdom relief.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Mastaba_Ti_07.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Mastaba_Ti_07.jpg",
+      "year": -2400
     },
     {
       "title": "Dendera Zodiac",
       "meta": "Ptolemaic · c. 50 BCE",
       "desc": "A circular sandstone relief of the night sky carried off from the ceiling of Dendera temple by a French explorer in 1821. Now in the Louvre; a replica hangs in the original.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Zodiaque_de_Dend%C3%A9ra_-_Mus%C3%A9e_du_Louvre_Antiquit%C3%A9s_Egyptiennes_D_38_%3B_E_13482.jpg/960px-Zodiaque_de_Dend%C3%A9ra_-_Mus%C3%A9e_du_Louvre_Antiquit%C3%A9s_Egyptiennes_D_38_%3B_E_13482.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Zodiaque_de_Dend%C3%A9ra_-_Mus%C3%A9e_du_Louvre_Antiquit%C3%A9s_Egyptiennes_D_38_%3B_E_13482.jpg/960px-Zodiaque_de_Dend%C3%A9ra_-_Mus%C3%A9e_du_Louvre_Antiquit%C3%A9s_Egyptiennes_D_38_%3B_E_13482.jpg",
+      "year": -50
     },
     {
       "title": "Prisse Papyrus",
       "meta": "Middle Kingdom · c. 1900 BCE",
       "desc": "The oldest literary book in existence. Two teachings of wisdom — \"the Instructions of Kagemni\" and \"of Ptahhotep\" — carefully written in cursive hieroglyphs.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Papyrus_Prisse_part_I._Kagemni-bibliotekNF.tif/lossy-page1-960px-Papyrus_Prisse_part_I._Kagemni-bibliotekNF.tif.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Papyrus_Prisse_part_I._Kagemni-bibliotekNF.tif/lossy-page1-960px-Papyrus_Prisse_part_I._Kagemni-bibliotekNF.tif.jpg",
+      "year": -1900
+    },
+    {
+      "title": "Reliefs from the Tomb of Seti I",
+      "meta": "c. 1290 BCE · Painted limestone · Sully Wing",
+      "desc": "The goddess Hathor welcomes Seti I into the afterlife. Cut from the walls of KV17 in the Valley of the Kings in the 19th century — a practice we now consider vandalism, but which saved this relief from the flooding that ravaged the tomb.",
+      "image": "media/seti_relief.jpg",
+      "year": -1290
+    },
+    {
+      "title": "Stele of King Djet (The Serpent King)",
+      "meta": "c. 3000 BCE · Limestone · Sully Wing",
+      "desc": "Over 5,000 years old — from the very dawn of writing. A serpent (the king's name) stands above the serekh, the palace façade, topped by Horus the falcon. This is what Egyptian writing looked like before it became hieroglyphs.",
+      "image": "media/stele_djet.jpg",
+      "year": -3000
     }
   ]
 }

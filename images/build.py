@@ -6,9 +6,9 @@ Reads:
     data/<slug>.json        — per-region content (title, subtitle, intro, works)
 
 Writes:
-    index.html              — landing page (regions grouped by continent,
-                              artists with 2+ works, museums)
-    regions/<slug>.html     — one page per region (with prev/next footer)
+    index.html              — landing page (regions by continent + artists)
+    regions/<slug>.html     — one page per region, works bucketed by era,
+                              with prev/next footer
     artists.html            — works grouped by named artist
     all.html                — every work on one page, live search filter
 
@@ -49,6 +49,39 @@ def normalize_search(s: str) -> str:
         c for c in unicodedata.normalize("NFKD", s)
         if not unicodedata.combining(c)
     )
+
+
+def resolve_image(url: str, prefix: str = "") -> str:
+    """Prepend `prefix` to relative image paths (e.g. `media/foo.jpg` on
+    region pages, which live one directory below the media folder).
+    Absolute URLs (http, https, /) pass through unchanged."""
+    if url.startswith(("http://", "https://", "/")):
+        return url
+    return prefix + url
+
+
+# Era buckets used to sub-group works inside region pages.
+ERAS = [
+    (-10**9, -1000, "Before 1000 BCE"),
+    (-1000, 0, "1000 BCE \u2013 0"),
+    (0, 500, "0 \u2013 500 CE"),
+    (500, 1000, "500 \u2013 1000"),
+    (1000, 1500, "1000 \u2013 1500"),
+    (1500, 1800, "1500 \u2013 1800"),
+    (1800, 10**9, "1800 onward"),
+]
+
+
+def bucket_by_era(works: list[dict]) -> list[tuple[str, list[dict]]]:
+    """Return works grouped by era label, preserving the ERAS order.
+    Only returns buckets that have at least one work."""
+    blocks = []
+    for lo, hi, label in ERAS:
+        era_works = [w for w in works if lo <= w.get("year", 0) < hi]
+        if era_works:
+            era_works.sort(key=lambda w: w.get("year", 0))
+            blocks.append((label, era_works))
+    return blocks
 
 
 _SURNAME_OVERRIDES = {
@@ -123,9 +156,9 @@ ALL_WORK_TPL = """    <article class="work" data-search="{search}">
 """
 
 
-def render_work(w: dict) -> str:
+def render_work(w: dict, image_prefix: str = "") -> str:
     return WORK_TPL.format(
-        image=w["image"],
+        image=resolve_image(w["image"], image_prefix),
         alt=h(w["title"]),
         title=h(w["title"]),
         meta=h(w["meta"]),
@@ -137,7 +170,7 @@ def render_all_work(w: dict, region_title: str) -> str:
     tokens = [w["title"], w["meta"], w.get("desc", ""), w.get("artist", ""), region_title]
     search = normalize_search(" ".join(t for t in tokens if t))
     return ALL_WORK_TPL.format(
-        image=w["image"],
+        image=resolve_image(w["image"]),
         alt=h(w["title"]),
         title=h(w["title"]),
         meta=h(w["meta"]),
@@ -173,9 +206,7 @@ REGION_TPL = """<!DOCTYPE html>
     {intro}
   </p>
   <div class="hint">Click any image to enlarge. Use &larr; &rarr; or close with Esc.</div>
-  <div class="grid">
 {works}
-  </div>
   <footer class="region-footer">
     <a href="{prev_href}"><span class="arrow">&larr;</span>{prev_title}</a>
     <a href="{next_href}">{next_title}<span class="arrow">&rarr;</span></a>
@@ -191,7 +222,16 @@ REGION_TPL = """<!DOCTYPE html>
 
 
 def build_region(slug: str, data: dict, neighbors: tuple[dict, dict]) -> int:
-    works_html = "".join(render_work(w) for w in data["works"]).rstrip()
+    blocks = bucket_by_era(data["works"])
+    parts = []
+    for label, era_works in blocks:
+        parts.append(f'  <h3 class="era">{h(label)}</h3>')
+        parts.append('  <div class="grid">')
+        for w in era_works:
+            parts.append(render_work(w, image_prefix="../").rstrip("\n"))
+        parts.append("  </div>")
+    works_html = "\n".join(parts)
+
     prev, next_ = neighbors
     html_out = REGION_TPL.format(
         slug=slug,
@@ -426,11 +466,6 @@ INDEX_TPL = """<!DOCTYPE html>
   <div class="card-grid">
 @@ARTIST_CARDS@@
   </div>
-
-  <h2 class="section">Museums</h2>
-  <div class="card-grid">
-@@MUSEUM_CARDS@@
-  </div>
   <footer class="page-footer">
     Images via <a href="https://commons.wikimedia.org/" target="_blank" rel="noopener">Wikimedia Commons</a>. Click any image to open it and see its source.
   </footer>
@@ -500,22 +535,12 @@ def build_index(meta: dict, counts: dict[str, int], artists: dict[str, list[dict
     )
     artist_cards = artist_cards.rstrip()
 
-    museum_cards = "".join(
-        CARD_TPL.format(
-            href=m["href"],
-            title=h(m["title"]),
-            blurb=h(m["blurb"]),
-        )
-        for m in meta["museums"]
-    ).rstrip()
-
     total = sum(counts.values())
     html_out = (
         INDEX_TPL
         .replace("@@NAV@@", make_nav("regions"))
         .replace("@@REGION_GROUPS@@", region_groups_html.rstrip())
         .replace("@@ARTIST_CARDS@@", artist_cards)
-        .replace("@@MUSEUM_CARDS@@", museum_cards)
         .replace("@@TOTAL_COUNT@@", str(total))
         .replace("@@REGION_COUNT@@", str(len(meta["regions"])))
         .replace("@@ARTIST_COUNT@@", str(len(artists)))

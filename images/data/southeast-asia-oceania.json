@@ -7,206 +7,240 @@
       "title": "Borobudur",
       "meta": "Sailendra dynasty · 9th c. · Java, Indonesia",
       "desc": "A stone mandala you walk. Climbing its nine terraces takes you through 2,672 relief panels and 504 Buddhas to the empty stupa at the top.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Pradaksina.jpg/960px-Pradaksina.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Pradaksina.jpg/960px-Pradaksina.jpg",
+      "year": 850
     },
     {
       "title": "Prambanan",
       "meta": "Medang Kingdom · 9th c. · Java, Indonesia",
       "desc": "The Hindu counterpart to Borobudur a few miles away — a cluster of tall, sharp-edged temples to the Trimurti, walls carved with the Ramayana.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Prambanan_Temple_Yogyakarta_Indonesia.jpg/960px-Prambanan_Temple_Yogyakarta_Indonesia.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Prambanan_Temple_Yogyakarta_Indonesia.jpg/960px-Prambanan_Temple_Yogyakarta_Indonesia.jpg",
+      "year": 850
     },
     {
       "title": "Angkor Wat",
       "meta": "Khmer Empire · 12th c. · Cambodia",
       "desc": "The largest religious monument on earth. Built as a Hindu temple to Vishnu, converted to Buddhist use, and never fully abandoned.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Buddhist_monks_in_front_of_the_Angkor_Wat.jpg/960px-Buddhist_monks_in_front_of_the_Angkor_Wat.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Buddhist_monks_in_front_of_the_Angkor_Wat.jpg/960px-Buddhist_monks_in_front_of_the_Angkor_Wat.jpg",
+      "year": 1150
     },
     {
       "title": "Bagan",
       "meta": "Pagan Kingdom · 11th–13th c. · Myanmar",
       "desc": "More than 2,000 Buddhist temples and stupas on a plain by the Irrawaddy. At dawn hot air balloons drift over a landscape of brick towers.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Bagan%2C_Burma.jpg/960px-Bagan%2C_Burma.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Bagan%2C_Burma.jpg/960px-Bagan%2C_Burma.jpg",
+      "year": 1150
     },
     {
       "title": "Wat Phra Kaew",
       "meta": "Rattanakosin · 1782 onward · Bangkok",
       "desc": "The royal temple inside the Grand Palace, home to the Emerald Buddha — carved from a single block of jade, robed differently for each season.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Wat_Phra_Kaew_by_Ninara_TSP_edit_crop.jpg/960px-Wat_Phra_Kaew_by_Ninara_TSP_edit_crop.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Wat_Phra_Kaew_by_Ninara_TSP_edit_crop.jpg/960px-Wat_Phra_Kaew_by_Ninara_TSP_edit_crop.jpg",
+      "year": 1782
     },
     {
       "title": "Nan Madol",
       "meta": "Saudeleur dynasty · 12th–17th c. · Pohnpei",
       "desc": "A city of 92 artificial islets built from hexagonal basalt logs, laid across a lagoon. The \"Venice of the Pacific\" — and a place no one has fully explained.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Nan_madol.jpg/960px-Nan_madol.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Nan_madol.jpg/960px-Nan_madol.jpg",
+      "year": 1400
     },
     {
       "title": "Moai",
       "meta": "Rapa Nui · 1250–1500 · Easter Island",
       "desc": "Nearly 900 stone figures, carved and moved miles from the quarry. They face inland — watching over the villages, not out to sea.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/5/50/AhuTongariki.JPG"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/5/50/AhuTongariki.JPG",
+      "year": 1375
     },
     {
       "title": "Asmat Carving",
       "meta": "Asmat people · Papua, Indonesia",
       "desc": "Bisj poles and shields carved from mangrove with sharpened bone. Each pole commemorates a death and demands it be avenged.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/9/99/Orang_Asmat.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/9/99/Orang_Asmat.jpg",
+      "year": 1900
     },
     {
       "title": "Māori Wharenui",
       "meta": "Aotearoa · 18th c. onward · New Zealand",
       "desc": "A carved meeting house represents an ancestor's body — ridgepole as spine, rafters as ribs. Every panel tells a story in whakairo carving.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/TamatekapuaMeetingHouse.jpg/960px-TamatekapuaMeetingHouse.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/TamatekapuaMeetingHouse.jpg/960px-TamatekapuaMeetingHouse.jpg",
+      "year": 1750
     },
     {
       "title": "Tā Moko",
       "meta": "Māori · pre-European onward · New Zealand",
       "desc": "Tattoos chiseled (not punctured) into the skin, carrying genealogy and rank. Each design is unique to the person who wears it.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/MaoriChief1784.jpg/960px-MaoriChief1784.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/MaoriChief1784.jpg/960px-MaoriChief1784.jpg",
+      "year": 1700
     },
     {
       "title": "Ubirr Rock Art",
       "meta": "Aboriginal Australian · up to 20,000 years old · Kakadu",
       "desc": "One of the oldest continuous art traditions on earth. Later paintings show fish anatomy so precisely that species are still identifiable.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/c/c9/Ubirr_rock_art.JPG"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/c/c9/Ubirr_rock_art.JPG",
+      "year": 0
     },
     {
       "title": "Mỹ Sơn",
       "meta": "Champa Kingdom · 4th–14th c. · Vietnam",
       "desc": "Brick Hindu temples in a jungle valley. Seventy stood before American bombs in 1969; twenty survive, still slowly giving up their secrets.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/2024_-_M%E1%BB%B9_S%C6%A1n_Group_B%2C_C_and_D_-_img_23.jpg/960px-2024_-_M%E1%BB%B9_S%C6%A1n_Group_B%2C_C_and_D_-_img_23.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/2024_-_M%E1%BB%B9_S%C6%A1n_Group_B%2C_C_and_D_-_img_23.jpg/960px-2024_-_M%E1%BB%B9_S%C6%A1n_Group_B%2C_C_and_D_-_img_23.jpg",
+      "year": 850
     },
     {
       "title": "Ayutthaya",
       "meta": "Ayutthaya Kingdom · 14th–18th c. · Thailand",
       "desc": "The Thai capital before the Burmese sacked it in 1767. Brick prangs lean at odd angles around the old moated island.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Ayutthaya_World_Heritage_sign.jpg/960px-Ayutthaya_World_Heritage_sign.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Ayutthaya_World_Heritage_sign.jpg/960px-Ayutthaya_World_Heritage_sign.jpg",
+      "year": 1550
     },
     {
       "title": "Sukhothai",
       "meta": "Sukhothai Kingdom · 13th–15th c. · Thailand",
       "desc": "Serene standing Buddhas in the \"walking\" pose invented here — one hand raised, the other swinging at the hip, fabric flowing forward.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Wat_srichum_03.jpg/960px-Wat_srichum_03.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Wat_srichum_03.jpg/960px-Wat_srichum_03.jpg",
+      "year": 1350
     },
     {
       "title": "Wayang Kulit",
       "meta": "Java · 9th c. onward · Indonesia",
       "desc": "Flat leather shadow puppets of the Ramayana and Mahabharata, manipulated against a backlit screen. A traditional performance runs all night.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Dalang_cilik_di_Pasar_Malam_Semawis%2C_Semarang.jpg/960px-Dalang_cilik_di_Pasar_Malam_Semawis%2C_Semarang.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Dalang_cilik_di_Pasar_Malam_Semawis%2C_Semarang.jpg/960px-Dalang_cilik_di_Pasar_Malam_Semawis%2C_Semarang.jpg",
+      "year": 850
     },
     {
       "title": "Đông Sơn Culture",
       "meta": "Bronze Age · 700 BCE – 100 CE · Vietnam",
       "desc": "Bronze drums cast with spiral patterns and concentric bird-men. Traded across mainland Southeast Asia — a pre-Indic shared world.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Dong_Son_axe.JPG/960px-Dong_Son_axe.JPG"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Dong_Son_axe.JPG/960px-Dong_Son_axe.JPG",
+      "year": -700
     },
     {
       "title": "Bayon",
       "meta": "Khmer Empire · late 12th c. · Cambodia",
       "desc": "The last great temple of Angkor — 200 serene faces carved into its towers, likely portraits of Jayavarman VII himself, watching from every direction.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Bayon%2C_Angkor_Thom%2C_Camboya%2C_2013-08-17%2C_DD_37.JPG/960px-Bayon%2C_Angkor_Thom%2C_Camboya%2C_2013-08-17%2C_DD_37.JPG"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Bayon%2C_Angkor_Thom%2C_Camboya%2C_2013-08-17%2C_DD_37.JPG/960px-Bayon%2C_Angkor_Thom%2C_Camboya%2C_2013-08-17%2C_DD_37.JPG",
+      "year": 1150
     },
     {
       "title": "Preah Vihear",
       "meta": "Khmer Empire · 9th–11th c. · Cambodia",
       "desc": "A cliff-top temple on the Thai border — 800 meters of causeway climbing to a sanctuary looking out over the plain. Thailand and Cambodia fought over its ownership in 2011.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/03_Prasat_Preah_Vihear-nX-06478.jpg/960px-03_Prasat_Preah_Vihear-nX-06478.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/03_Prasat_Preah_Vihear-nX-06478.jpg/960px-03_Prasat_Preah_Vihear-nX-06478.jpg",
+      "year": 950
     },
     {
       "title": "Balinese Temples",
       "meta": "Balinese Hindu · 9th c. onward · Bali",
       "desc": "Every village has at least three: for the ancestors, for daily life, for the dead. Split gates, black palm-fiber roofs, statues wrapped in checkered cloth.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Pura_Dalem_Agung_Padantegal_200507.jpg/960px-Pura_Dalem_Agung_Padantegal_200507.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Pura_Dalem_Agung_Padantegal_200507.jpg/960px-Pura_Dalem_Agung_Padantegal_200507.jpg",
+      "year": 850
     },
     {
       "title": "Indigenous Australian Art",
       "meta": "Aboriginal · millennia to present · Australia",
       "desc": "Bradshaw paintings (Gwion Gwion) in the Kimberley, possibly 20,000 years old — elongated figures painted with pigment that has bonded permanently with the rock surface.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Bradshaw_rock_paintings.jpg/960px-Bradshaw_rock_paintings.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Bradshaw_rock_paintings.jpg/960px-Bradshaw_rock_paintings.jpg",
+      "year": -15000
     },
     {
       "title": "Uluru",
       "meta": "Aṉangu · sacred site · Australia",
       "desc": "A sandstone monolith rising 1,100 feet out of the center of the continent. For the Aṉangu it is the physical record of ancestral beings' creation journeys.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/ULURU.jpg/960px-ULURU.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/ULURU.jpg/960px-ULURU.jpg",
+      "year": -30000
     },
     {
       "title": "Angkor Thom",
       "meta": "Khmer Empire · late 12th c. · Cambodia",
       "desc": "The last capital of the Khmer Empire — nine square kilometers walled in laterite. At its heart, the Bayon; at its gates, giants pulling serpents in cosmic tug-of-war.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Angkor_Thom_%28II%29.jpg/960px-Angkor_Thom_%28II%29.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Angkor_Thom_%28II%29.jpg/960px-Angkor_Thom_%28II%29.jpg",
+      "year": 1150
     },
     {
       "title": "Ananda Temple",
       "meta": "Pagan Kingdom · 1105 · Myanmar",
       "desc": "A cruciform white temple with four standing Buddhas, each eighteen feet tall. From a distance the gold umbrella on its stupa is the last thing to disappear.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Bagan%2C_Myanmar%2C_Ananda_Temple.jpg/960px-Bagan%2C_Myanmar%2C_Ananda_Temple.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Bagan%2C_Myanmar%2C_Ananda_Temple.jpg/960px-Bagan%2C_Myanmar%2C_Ananda_Temple.jpg",
+      "year": 1105
     },
     {
       "title": "Besakih Temple",
       "meta": "Balinese Hindu · 14th c. onward · Bali",
       "desc": "The Mother Temple of Bali — 23 linked sanctuaries up the slope of Mount Agung. When Agung erupted in 1963, lava stopped meters from its gates.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Besakih_Bali_Indonesia_Pura-Besakih-02.jpg/960px-Besakih_Bali_Indonesia_Pura-Besakih-02.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Besakih_Bali_Indonesia_Pura-Besakih-02.jpg/960px-Besakih_Bali_Indonesia_Pura-Besakih-02.jpg",
+      "year": 1350
     },
     {
       "title": "Banaue Rice Terraces",
       "meta": "Ifugao · 2000+ years old · Philippines",
       "desc": "Stone-walled terraces climbing the mountainside. Built without wheeled carts, draft animals, or cement. If unwrapped they'd circle half the globe.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Banaue-terrace.JPG/960px-Banaue-terrace.JPG"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Banaue-terrace.JPG/960px-Banaue-terrace.JPG",
+      "year": 2000
     },
     {
       "title": "Plain of Jars",
       "meta": "Iron Age · 500 BCE – 500 CE · Laos",
       "desc": "Thousands of carved stone jars scattered across a plateau. Probably funerary; ground-truth research has been slow because the plain is still littered with unexploded American bombs.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Plainofjars_2.jpg/960px-Plainofjars_2.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Plainofjars_2.jpg/960px-Plainofjars_2.jpg",
+      "year": -500
     },
     {
       "title": "Shwedagon Pagoda",
       "meta": "Mon → Burmese · 6th–11th c. onward · Yangon",
       "desc": "A gilded stupa 325 feet tall, covered in gold leaf and crowned with 4,000 diamonds. Said to enshrine hairs of the Buddha.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Shwedagon_Pagoda_2017.jpg/960px-Shwedagon_Pagoda_2017.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Shwedagon_Pagoda_2017.jpg/960px-Shwedagon_Pagoda_2017.jpg",
+      "year": 800
     },
     {
       "title": "Banteay Srei",
       "meta": "Khmer Empire · 967 · Cambodia",
       "desc": "\"Citadel of Women\" — a small temple of pink sandstone carved with almost impossibly fine reliefs. Malraux tried to steal four figures in 1923 and was arrested.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Banteay_Srei_full2.jpg/960px-Banteay_Srei_full2.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Banteay_Srei_full2.jpg/960px-Banteay_Srei_full2.jpg",
+      "year": 967
     },
     {
       "title": "Tongkonan",
       "meta": "Toraja · centuries old · Sulawesi, Indonesia",
       "desc": "Ancestral houses with boat-shaped roofs soaring up at both ends. Each is built facing north, aligned to the cosmos of the Torajan dead.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Tongkonan_-_South_Sulawesi_Pavilion_TMII_%282025%29_-_img_01.jpg/960px-Tongkonan_-_South_Sulawesi_Pavilion_TMII_%282025%29_-_img_01.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Tongkonan_-_South_Sulawesi_Pavilion_TMII_%282025%29_-_img_01.jpg/960px-Tongkonan_-_South_Sulawesi_Pavilion_TMII_%282025%29_-_img_01.jpg",
+      "year": 1600
     },
     {
       "title": "Hei-tiki",
       "meta": "Māori · pre-European onward · New Zealand",
       "desc": "Nephrite pendants of a human figure worn around the neck, passed down through generations. Each is named; each gains mana from the people who wear it.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Hinepare.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Hinepare.jpg",
+      "year": 1700
     },
     {
       "title": "Rongorongo",
       "meta": "Rapa Nui · pre-contact? · Easter Island",
       "desc": "Glyphs carved onto wooden tablets — one of the few independent writing systems in human history. Still undeciphered; most tablets were burned by missionaries.",
-      "image": "https://upload.wikimedia.org/wikipedia/en/2/2d/Rongorongo_B-v_Aruku-Kurenga_%28color%29_edit1.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/en/2/2d/Rongorongo_B-v_Aruku-Kurenga_%28color%29_edit1.jpg",
+      "year": 1700
     },
     {
       "title": "Candi Sukuh",
       "meta": "Majapahit · 15th c. · Java",
       "desc": "A Hindu temple built as a truncated stone pyramid — closer to Maya than to Angkor. Its reliefs are frank about fertility; the statues at the gate tell you what they're for.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Candi_Sukuh_2007.JPG/960px-Candi_Sukuh_2007.JPG"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Candi_Sukuh_2007.JPG/960px-Candi_Sukuh_2007.JPG",
+      "year": 1450
     },
     {
       "title": "Moon of Pejeng",
       "meta": "Dong Son tradition · c. 300 BCE · Bali",
       "desc": "The largest bronze kettledrum in the world — almost two meters across. In Balinese legend it's the fallen wheel of a chariot of the moon.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Moon_of_Pejeng%2C_Pura_Penataran_Sasih_1463.jpg/960px-Moon_of_Pejeng%2C_Pura_Penataran_Sasih_1463.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Moon_of_Pejeng%2C_Pura_Penataran_Sasih_1463.jpg/960px-Moon_of_Pejeng%2C_Pura_Penataran_Sasih_1463.jpg",
+      "year": -300
     },
     {
       "title": "Wat Rong Khun (White Temple)",
       "meta": "Contemporary Thai Buddhist · Chalermchai Kositpipat · 1997 onward · Chiang Rai",
       "desc": "An entire temple sculpted white, glittering with shards of mirror. The artist intends it to take centuries to complete; hands rise from hell at the entrance.",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Wat_Rong_Khun_-_Chiang_Rai.jpg/960px-Wat_Rong_Khun_-_Chiang_Rai.jpg",
-      "artist": "Chalermchai Kositpipat"
+      "artist": "Chalermchai Kositpipat",
+      "year": 1997
     }
   ]
 }

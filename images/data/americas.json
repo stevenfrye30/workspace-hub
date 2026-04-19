@@ -7,207 +7,241 @@
       "title": "Olmec Colossal Heads",
       "meta": "Olmec · 1200–400 BCE · Gulf coast, Mexico",
       "desc": "Seventeen basalt heads, up to ten feet tall, each with a distinct face. Carved with stone tools and floated on rafts from the quarry, 60 miles away.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/3/31/San_Lorenzo_Monument_4_crop.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/3/31/San_Lorenzo_Monument_4_crop.jpg",
+      "year": -800
     },
     {
       "title": "Teotihuacan",
       "meta": "Pre-Aztec · 100 BCE – 550 CE · Mexico",
       "desc": "A city of over 100,000 at its peak — larger than Rome at the same time. Already abandoned when the Aztecs found it and named it \"the place where gods were born.\"",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Teotihuac%C3%A1n-5973.JPG/960px-Teotihuac%C3%A1n-5973.JPG"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Teotihuac%C3%A1n-5973.JPG/960px-Teotihuac%C3%A1n-5973.JPG",
+      "year": -100
     },
     {
       "title": "Tikal",
       "meta": "Classic Maya · 400 BCE – 900 CE · Guatemala",
       "desc": "Step pyramids rising above the rainforest canopy. A Maya superpower that swallowed rival cities until a long drought took it down.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Tikal_3.jpg/960px-Tikal_3.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Tikal_3.jpg/960px-Tikal_3.jpg",
+      "year": -400
     },
     {
       "title": "Palenque",
       "meta": "Classic Maya · 226 BCE – 799 CE · Chiapas",
       "desc": "A small Maya kingdom with exquisite stucco portraits and one of the most carefully decoded royal tombs in the Americas — that of Pakal the Great.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/9/90/Palenque_Collage.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/9/90/Palenque_Collage.jpg",
+      "year": -226
     },
     {
       "title": "Moche Culture",
       "meta": "Moche · 100–700 CE · Northern Peru",
       "desc": "Before the Inca, the Moche built painted pyramids and made portrait pots so individual you can tell one person from another across fifteen hundred years.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/H_Luna_Frisorestaurado_lou.jpg/960px-H_Luna_Frisorestaurado_lou.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/H_Luna_Frisorestaurado_lou.jpg/960px-H_Luna_Frisorestaurado_lou.jpg",
+      "year": 400
     },
     {
       "title": "Nazca Lines",
       "meta": "Nazca culture · 500 BCE – 500 CE · Peru",
       "desc": "Hummingbirds, monkeys, and spiders drawn at the scale of football fields by clearing pebbles from the desert floor. Visible only from the air.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/L%C3%ADneas_de_Nazca%2C_Nazca%2C_Per%C3%BA%2C_2015-07-29%2C_DD_49.JPG/960px-L%C3%ADneas_de_Nazca%2C_Nazca%2C_Per%C3%BA%2C_2015-07-29%2C_DD_49.JPG"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/L%C3%ADneas_de_Nazca%2C_Nazca%2C_Per%C3%BA%2C_2015-07-29%2C_DD_49.JPG/960px-L%C3%ADneas_de_Nazca%2C_Nazca%2C_Per%C3%BA%2C_2015-07-29%2C_DD_49.JPG",
+      "year": -500
     },
     {
       "title": "Chichen Itza",
       "meta": "Post-Classic Maya · 600–1200 CE · Yucatán",
       "desc": "On the spring equinox, sunlight strikes the pyramid's stairway to form a serpent that seems to slither down the temple of Kukulkan.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Chichen_Itza_3.jpg/960px-Chichen_Itza_3.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Chichen_Itza_3.jpg/960px-Chichen_Itza_3.jpg",
+      "year": 900
     },
     {
       "title": "Coatlicue",
       "meta": "Mexica · late 15th c. · Tenochtitlan",
       "desc": "\"She of the Serpent Skirt\" — the earth goddess, severed neck bleeding two snakes, wearing a necklace of hands and hearts. Found under Mexico City in 1790.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Coatlicue.png/960px-Coatlicue.png"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Coatlicue.png/960px-Coatlicue.png",
+      "year": 1450
     },
     {
       "title": "Aztec Sun Stone",
       "meta": "Mexica · late 15th c. · Tenochtitlan",
       "desc": "A basalt disk over three meters across, carving the five successive suns of Aztec cosmology. Buried under the Zócalo in Mexico City until 1790.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Monolito_de_la_Piedra_del_Sol.jpg/960px-Monolito_de_la_Piedra_del_Sol.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Monolito_de_la_Piedra_del_Sol.jpg/960px-Monolito_de_la_Piedra_del_Sol.jpg",
+      "year": 1450
     },
     {
       "title": "Sacsayhuamán",
       "meta": "Inca · 15th c. · Cusco, Peru",
       "desc": "A fortress-temple above Cusco built from stones weighing up to 200 tons, fitted so precisely a sheet of paper won't pass between them.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Sacsayhuamán%2C_Cusco%2C_Perú%2C_2015-07-31%2C_DD_27.JPG/960px-Sacsayhuamán%2C_Cusco%2C_Perú%2C_2015-07-31%2C_DD_27.JPG"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Sacsayhuamán%2C_Cusco%2C_Perú%2C_2015-07-31%2C_DD_27.JPG/960px-Sacsayhuamán%2C_Cusco%2C_Perú%2C_2015-07-31%2C_DD_27.JPG",
+      "year": 1450
     },
     {
       "title": "Machu Picchu",
       "meta": "Inca · 15th c. · Peru",
       "desc": "A royal estate on a knife-edged ridge. The stones of its walls are cut so precisely that no mortar holds them — and they have survived five centuries of earthquakes.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Machu_Picchu%2C_2023_%28012%29.jpg/960px-Machu_Picchu%2C_2023_%28012%29.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Machu_Picchu%2C_2023_%28012%29.jpg/960px-Machu_Picchu%2C_2023_%28012%29.jpg",
+      "year": 1450
     },
     {
       "title": "Monte Albán",
       "meta": "Zapotec · 500 BCE – 850 CE · Oaxaca",
       "desc": "A leveled mountaintop city with one of the earliest writing systems in the Americas. Its danzantes reliefs show contorted, stripped captives.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Monte_Alban_West_Side_Platform.jpg/960px-Monte_Alban_West_Side_Platform.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Monte_Alban_West_Side_Platform.jpg/960px-Monte_Alban_West_Side_Platform.jpg",
+      "year": -500
     },
     {
       "title": "Copán",
       "meta": "Classic Maya · 400–820 CE · Honduras",
       "desc": "A small Maya kingdom with the finest stone sculpture in the Americas. Stelae-portraits of kings carved nearly in the round.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Copan_sculpture.jpg/960px-Copan_sculpture.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Copan_sculpture.jpg/960px-Copan_sculpture.jpg",
+      "year": 610
     },
     {
       "title": "Mesa Verde Cliff Palace",
       "meta": "Ancestral Pueblo · 12th–13th c. · Colorado",
       "desc": "Villages tucked under sandstone overhangs. The Ancestral Puebloans built, lived in, and abandoned them in a little over a century.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Cliff_Palace-Colorado-Mesa_Verde_NP.jpg/960px-Cliff_Palace-Colorado-Mesa_Verde_NP.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Cliff_Palace-Colorado-Mesa_Verde_NP.jpg/960px-Cliff_Palace-Colorado-Mesa_Verde_NP.jpg",
+      "year": 1200
     },
     {
       "title": "Tiwanaku",
       "meta": "Tiwanaku · 500–1000 CE · Bolivia",
       "desc": "A highland capital on the shore of Lake Titicaca. Its Gate of the Sun — cut from a single stone — faces the point where the sun rises at equinox.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/PUERTA_DEL_SOL_TIWANAKU.jpg/960px-PUERTA_DEL_SOL_TIWANAKU.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/PUERTA_DEL_SOL_TIWANAKU.jpg/960px-PUERTA_DEL_SOL_TIWANAKU.jpg",
+      "year": 750
     },
     {
       "title": "Chavín de Huántar",
       "meta": "Chavín · 900–200 BCE · Peru",
       "desc": "A mountain temple with underground galleries and the Lanzón, a carved granite blade — Peru's oldest pan-Andean god, still in his original chamber.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Chav%C3%ADn_de_Hu%C3%A1ntar_-_51149086708.jpg/960px-Chav%C3%ADn_de_Hu%C3%A1ntar_-_51149086708.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Chav%C3%ADn_de_Hu%C3%A1ntar_-_51149086708.jpg/960px-Chav%C3%ADn_de_Hu%C3%A1ntar_-_51149086708.jpg",
+      "year": -550
     },
     {
       "title": "Chan Chan",
       "meta": "Chimú · 900–1470 CE · Peru",
       "desc": "The largest adobe city in the Americas. Twelve miles of mud-brick walls carved with rows of seabirds, fish, and waves.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Chan_chan_view1.jpg/960px-Chan_chan_view1.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Chan_chan_view1.jpg/960px-Chan_chan_view1.jpg",
+      "year": 1185
     },
     {
       "title": "Atlantean Figures of Tula",
       "meta": "Toltec · 10th–12th c. · Mexico",
       "desc": "Fifteen-foot basalt warriors in feathered headdresses on top of Pyramid B. They held up the roof of a temple that is long gone.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Telamones_Tula.jpg/960px-Telamones_Tula.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Telamones_Tula.jpg/960px-Telamones_Tula.jpg",
+      "year": 1050
     },
     {
       "title": "Cueva de las Manos",
       "meta": "Patagonian hunter-gatherers · 7300–700 BCE · Argentina",
       "desc": "A cave with hundreds of human hand stencils, mostly left hands — because the artists were holding the bone tube of pigment in the right, blowing around it.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/SantaCruz-CuevaManos-P2210651b.jpg/960px-SantaCruz-CuevaManos-P2210651b.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/SantaCruz-CuevaManos-P2210651b.jpg/960px-SantaCruz-CuevaManos-P2210651b.jpg",
+      "year": -4000
     },
     {
       "title": "Cahokia Mounds",
       "meta": "Mississippian · 1050–1350 · Illinois",
       "desc": "The largest city in North America before Europeans arrived — bigger than London in its day. Monks Mound alone is a hundred feet tall, built of earth by hand.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Monks_Mound_-_Summer_2024.jpg/960px-Monks_Mound_-_Summer_2024.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Monks_Mound_-_Summer_2024.jpg/960px-Monks_Mound_-_Summer_2024.jpg",
+      "year": 1200
     },
     {
       "title": "Serpent Mound",
       "meta": "Fort Ancient or Adena · c. 1070 CE · Ohio",
       "desc": "A quarter-mile-long effigy mound of a snake swallowing an egg. The head aligns with sunset at the summer solstice; the coils seem to encode lunar cycles.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/The_Great_Serpent_Mound.jpg/960px-The_Great_Serpent_Mound.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/The_Great_Serpent_Mound.jpg/960px-The_Great_Serpent_Mound.jpg",
+      "year": 1070
     },
     {
       "title": "Northwest Coast Totem Poles",
       "meta": "Haida, Tlingit, Kwakwaka'wakw · 18th–20th c.",
       "desc": "Cedar poles carved with family lineage, clan animals, and narrated stories. Each is a library — readable top to bottom by those who know the figures.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Totem_RMBC_1.jpg/960px-Totem_RMBC_1.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Totem_RMBC_1.jpg/960px-Totem_RMBC_1.jpg",
+      "year": 1850
     },
     {
       "title": "Navajo Weaving",
       "meta": "Diné · 17th c. onward · American Southwest",
       "desc": "Tightly woven wool rugs and wearing blankets — the weaver puts a deliberate flaw into each one, a ch'į́įdii line, so the spirit of the piece has a way out.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/1/14/Navajo_rug.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/1/14/Navajo_rug.jpg",
+      "year": 1650
     },
     {
       "title": "Chaco Canyon",
       "meta": "Ancestral Pueblo · 850–1250 · New Mexico",
       "desc": "A ceremonial center of \"great houses\" — multi-story sandstone buildings in a treeless canyon. Roads radiate out straight for sixty miles, aligned to the sky.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Chaco_Culture_NHP_%288023723138%29.jpg/960px-Chaco_Culture_NHP_%288023723138%29.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Chaco_Culture_NHP_%288023723138%29.jpg/960px-Chaco_Culture_NHP_%288023723138%29.jpg",
+      "year": 1050
     },
     {
       "title": "Taos Pueblo",
       "meta": "Tiwa · 1000+ years continuous · New Mexico",
       "desc": "Adobe pueblos stacked five stories high. Continuously inhabited longer than any community in the U.S. — the family on the top floor climbs ladders up and down.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Taos_Pueblo_2017-05-05.jpg/960px-Taos_Pueblo_2017-05-05.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Taos_Pueblo_2017-05-05.jpg/960px-Taos_Pueblo_2017-05-05.jpg",
+      "year": 1000
     },
     {
       "title": "Quimbaya Goldwork",
       "meta": "Quimbaya · 300–1550 CE · Colombia",
       "desc": "Cast gold figures of caciques, poporos, and seated shamans. In 1892 a diplomat gave 122 of them to Spain — one of the largest pre-Columbian collections anywhere.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Cacique_Quimbaya_de_oro_%28M._Am%C3%A9rica%2C_Madrid%29_01.jpg/960px-Cacique_Quimbaya_de_oro_%28M._Am%C3%A9rica%2C_Madrid%29_01.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Cacique_Quimbaya_de_oro_%28M._Am%C3%A9rica%2C_Madrid%29_01.jpg/960px-Cacique_Quimbaya_de_oro_%28M._Am%C3%A9rica%2C_Madrid%29_01.jpg",
+      "year": 925
     },
     {
       "title": "Lord of Sipán Tomb",
       "meta": "Moche · c. 290 CE · Peru",
       "desc": "The intact grave of a Moche warrior-priest, draped in gold, silver, turquoise, and Spondylus. Discovered in 1987 moments ahead of looters.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Se%C3%B1or_de_S%C3%ADpan_-_Reconstrucci%C3%B3n_Facial_Forense.jpg/960px-Se%C3%B1or_de_S%C3%ADpan_-_Reconstrucci%C3%B3n_Facial_Forense.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Se%C3%B1or_de_S%C3%ADpan_-_Reconstrucci%C3%B3n_Facial_Forense.jpg/960px-Se%C3%B1or_de_S%C3%ADpan_-_Reconstrucci%C3%B3n_Facial_Forense.jpg",
+      "year": 290
     },
     {
       "title": "Spirit of Haida Gwaii",
       "meta": "Haida · Bill Reid · 1986–1991",
       "desc": "A bronze canoe filled with thirteen mythic figures paddling together — Raven, Bear, Eagle, Wolf, and others. Reid worked on it for five years while Parkinson's overtook him.",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Bill_Reid_Haida_Gail_01.jpg/960px-Bill_Reid_Haida_Gail_01.jpg",
-      "artist": "Bill Reid"
+      "artist": "Bill Reid",
+      "year": 1988
     },
     {
       "title": "Maria Martinez Blackware",
       "meta": "San Ildefonso Pueblo · 20th c. · New Mexico",
       "desc": "Maria and her husband Julian revived and reinvented matte-on-black pueblo pottery. Their pots sit in every major American museum — and still on shelves at San Ildefonso.",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Maria_Martinez%2C_San_Ildefonso_pottery_maker.jpg/960px-Maria_Martinez%2C_San_Ildefonso_pottery_maker.jpg",
-      "artist": "Maria Martinez"
+      "artist": "Maria Martinez",
+      "year": 1950
     },
     {
       "title": "Ghost Dance Shirt",
       "meta": "Lakota · 1890 · Great Plains",
       "desc": "Hide shirts painted with stars and eagles, worn in the Ghost Dance — believed to turn aside bullets. Shirts were collected from the dead at Wounded Knee.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Ghost_Dance_shirt.jpg/960px-Ghost_Dance_shirt.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Ghost_Dance_shirt.jpg/960px-Ghost_Dance_shirt.jpg",
+      "year": 1890
     },
     {
       "title": "Pyramid of the Magician",
       "meta": "Late Classic Maya · 600–900 CE · Uxmal",
       "desc": "An oval-based pyramid whose legend says it was built in one night by a dwarf magician. Every stone is carved; the central doorway is a monster's open mouth.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Pyramid_of_the_Magician_%288264902976%29.jpg/960px-Pyramid_of_the_Magician_%288264902976%29.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Pyramid_of_the_Magician_%288264902976%29.jpg/960px-Pyramid_of_the_Magician_%288264902976%29.jpg",
+      "year": 750
     },
     {
       "title": "Tumi Ceremonial Knife",
       "meta": "Lambayeque · 900–1100 · Northern Peru",
       "desc": "A gold sacrificial knife topped with the long-eared god Naylamp, eyes inlaid with turquoise. Used for ritual decapitation; now a symbol of Peru on souvenir shelves everywhere.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Ceremonial_Knife_%28Tumi%29_MET_DP215693.jpg/960px-Ceremonial_Knife_%28Tumi%29_MET_DP215693.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Ceremonial_Knife_%28Tumi%29_MET_DP215693.jpg/960px-Ceremonial_Knife_%28Tumi%29_MET_DP215693.jpg",
+      "year": 1000
     },
     {
       "title": "Coyolxāuhqui Stone",
       "meta": "Mexica · late 15th c. · Tenochtitlan",
       "desc": "A twelve-foot disk of the moon goddess, dismembered by her brother Huitzilopochtli. Found by electric-company workers in Mexico City in 1978 — it launched modern excavation of the Templo Mayor.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Mexico-3980_-_Coyolxauhqui_Stone_%282508259597%29.jpg/960px-Mexico-3980_-_Coyolxauhqui_Stone_%282508259597%29.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Mexico-3980_-_Coyolxauhqui_Stone_%282508259597%29.jpg/960px-Mexico-3980_-_Coyolxauhqui_Stone_%282508259597%29.jpg",
+      "year": 1450
     },
     {
       "title": "Paquimé (Casas Grandes)",
       "meta": "Mogollon · 13th–14th c. · Chihuahua, Mexico",
       "desc": "Multi-story adobe pueblos north of the Maya world but connected to them — Paquimé traded in parrots, copper bells, and turquoise. Burned and abandoned before the Spanish arrived.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Paquime1.jpg/960px-Paquime1.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Paquime1.jpg/960px-Paquime1.jpg",
+      "year": 1300
     }
   ]
 }

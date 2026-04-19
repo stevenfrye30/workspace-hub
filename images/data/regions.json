@@ -60,13 +60,5 @@
       "blurb": "Teotihuacan, Palenque, Sun Stone, Machu Picchu, Nazca.",
       "continent": "Americas"
     }
-  ],
-  "museums": [
-    {
-      "slug": "louvre",
-      "title": "The Louvre",
-      "blurb": "Wings, history, and selected works. Paris, France.",
-      "href": "louvre/"
-    }
   ]
 }

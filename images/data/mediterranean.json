@@ -7,227 +7,279 @@
       "title": "Palace of Knossos",
       "meta": "Minoan · c. 1900 BCE · Crete",
       "desc": "A sprawling Bronze Age palace with running water, frescoes of dolphins and bull-leapers, and a storage maze that may be the origin of the Minotaur myth.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Knossos_-_North_Portico_02.jpg/960px-Knossos_-_North_Portico_02.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Knossos_-_North_Portico_02.jpg/960px-Knossos_-_North_Portico_02.jpg",
+      "year": -1900
     },
     {
       "title": "The Parthenon",
       "meta": "Classical Greek · 447–432 BCE · Athens",
       "desc": "Temple to Athena on the Acropolis. The columns lean inward and swell slightly in the middle — optical corrections so they look perfectly straight.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/The_Parthenon_in_Athens.jpg/960px-The_Parthenon_in_Athens.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/The_Parthenon_in_Athens.jpg/960px-The_Parthenon_in_Athens.jpg",
+      "year": -439
     },
     {
       "title": "Charioteer of Delphi",
       "meta": "Early Classical · c. 478 BCE",
       "desc": "One of the few surviving Greek bronzes. His calm expression, inset with glass and copper eyes, is a moment in a victory lap — all force held still.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Vognstyreren-fra_Delfi2.jpg/960px-Vognstyreren-fra_Delfi2.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Vognstyreren-fra_Delfi2.jpg/960px-Vognstyreren-fra_Delfi2.jpg",
+      "year": -478
     },
     {
       "title": "Discobolus",
       "meta": "Classical Greek · c. 450 BCE (Roman copy)",
       "desc": "Myron's discus thrower — the original bronze is lost; only Roman marble copies survive. A moment just before release, coiled and still.",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Roman_bronze_copy_of_Myron%E2%80%99s_Discobolos%2C_2nd_century_CE_%28Glyptothek_Munich%29.jpg/960px-Roman_bronze_copy_of_Myron%E2%80%99s_Discobolos%2C_2nd_century_CE_%28Glyptothek_Munich%29.jpg",
-      "artist": "Myron"
+      "artist": "Myron",
+      "year": -450
     },
     {
       "title": "Venus de Milo",
       "meta": "Hellenistic Greek · c. 130–100 BCE",
       "desc": "Marble Aphrodite found on the island of Milos in 1820. The missing arms are part of her fame — we don't know what she was doing.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Front_views_of_the_Venus_de_Milo.jpg/960px-Front_views_of_the_Venus_de_Milo.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Front_views_of_the_Venus_de_Milo.jpg/960px-Front_views_of_the_Venus_de_Milo.jpg",
+      "year": -115
     },
     {
       "title": "Winged Victory of Samothrace",
       "meta": "Hellenistic · c. 200 BCE",
       "desc": "Nike landing on the prow of a ship, wind pressing her drapery against her body. One of the most physically dynamic pieces of ancient sculpture.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Victoire_de_Samothrace_-_Musee_du_Louvre_-_20190812.jpg/960px-Victoire_de_Samothrace_-_Musee_du_Louvre_-_20190812.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Victoire_de_Samothrace_-_Musee_du_Louvre_-_20190812.jpg/960px-Victoire_de_Samothrace_-_Musee_du_Louvre_-_20190812.jpg",
+      "year": -200
     },
     {
       "title": "Laocoön and His Sons",
       "meta": "Hellenistic · 1st c. BCE – 1st c. CE",
       "desc": "A Trojan priest and his sons strangled by sea serpents. Dug up in a vineyard in 1506 and hauled to the Vatican. Michelangelo studied it for weeks.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Laoco%C3%B6n_and_his_sons_group.jpg/960px-Laoco%C3%B6n_and_his_sons_group.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Laoco%C3%B6n_and_his_sons_group.jpg/960px-Laoco%C3%B6n_and_his_sons_group.jpg",
+      "year": -50
     },
     {
       "title": "Augustus of Prima Porta",
       "meta": "Early Roman Empire · c. 15 CE",
       "desc": "The emperor posed as a general, barefoot like a god. The breastplate shows the return of captured Roman standards — a diplomatic win dressed as conquest.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Augustus_of_Prima_Porta.jpg/960px-Augustus_of_Prima_Porta.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Augustus_of_Prima_Porta.jpg/960px-Augustus_of_Prima_Porta.jpg",
+      "year": 15
     },
     {
       "title": "The Colosseum",
       "meta": "Flavian · 70–80 CE · Rome",
       "desc": "An elliptical amphitheater for 50,000 spectators. The underground hypogeum ran elevators, flooded the floor for sea battles, and housed wild animals.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Colosseo_2020.jpg/960px-Colosseo_2020.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Colosseo_2020.jpg/960px-Colosseo_2020.jpg",
+      "year": 75
     },
     {
       "title": "Trajan's Column",
       "meta": "Imperial Roman · 113 CE",
       "desc": "A 100-foot marble column whose spiral frieze narrates the Dacian Wars in 155 continuous scenes — history carved as a comic strip.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Trajan%27s_Column_HD.jpg/960px-Trajan%27s_Column_HD.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Trajan%27s_Column_HD.jpg/960px-Trajan%27s_Column_HD.jpg",
+      "year": 113
     },
     {
       "title": "Pompeii",
       "meta": "Roman · buried 79 CE",
       "desc": "Vesuvius sealed a whole Roman town in volcanic ash. Frescoes, bread loaves, graffiti, and the shapes of bodies all survived — daily life frozen.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Theathres_of_Pompeii.jpg/960px-Theathres_of_Pompeii.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Theathres_of_Pompeii.jpg/960px-Theathres_of_Pompeii.jpg",
+      "year": 79
     },
     {
       "title": "Riace Bronzes",
       "meta": "Classical Greek · c. 460–450 BCE · Italy",
       "desc": "Two life-size bronze warriors pulled from the sea off Calabria in 1972. Their teeth are silver, their eyelashes hammered copper.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/9/96/Reggio_calabria_museo_nazionale_bronzi_di_riace.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/9/96/Reggio_calabria_museo_nazionale_bronzi_di_riace.jpg",
+      "year": -455
     },
     {
       "title": "Aphrodite of Knidos",
       "meta": "Classical Greek · Praxiteles · c. 360 BCE",
       "desc": "The first free-standing nude female figure in Greek sculpture — scandalous enough that men climbed her sanctuary walls at night. Only copies survive.",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Cnidus_Aphrodite_Altemps_Inv8619.jpg/960px-Cnidus_Aphrodite_Altemps_Inv8619.jpg",
-      "artist": "Praxiteles"
+      "artist": "Praxiteles",
+      "year": -360
     },
     {
       "title": "Kroisos Kouros",
       "meta": "Archaic Greek · c. 530 BCE",
       "desc": "A young man stepping forward, hands at his sides, slight smile — the archaic formula. Found on a grave at Anavyssos, one leg at a time.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Kouros_anavissos.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Kouros_anavissos.jpg",
+      "year": -530
     },
     {
       "title": "Ara Pacis",
       "meta": "Augustan Rome · 13–9 BCE",
       "desc": "The Altar of Peace. The imperial family processes in carved marble, framed by acanthus tendrils. Augustus inserts himself into the mythic past.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Ara_Pacis_%28SW%29.jpg/960px-Ara_Pacis_%28SW%29.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Ara_Pacis_%28SW%29.jpg/960px-Ara_Pacis_%28SW%29.jpg",
+      "year": -11
     },
     {
       "title": "Pantheon",
       "meta": "Roman Imperial · 126 CE · Rome",
       "desc": "The largest unreinforced concrete dome ever built. The oculus at its center has been open to the sky for nineteen centuries — rain falls through it into drains in the floor.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Pantheon_%28Rome%29_-_Right_side_and_front.jpg/960px-Pantheon_%28Rome%29_-_Right_side_and_front.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Pantheon_%28Rome%29_-_Right_side_and_front.jpg/960px-Pantheon_%28Rome%29_-_Right_side_and_front.jpg",
+      "year": 126
     },
     {
       "title": "Apoxyomenos",
       "meta": "Classical Greek · Lysippos · c. 330 BCE",
       "desc": "An athlete scraping oil from his arm. The Roman marble copy stands in for a lost bronze original by Alexander the Great's favorite sculptor.",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Apoxyomenos_Pio-Clementino_Inv1185_n2.jpg/960px-Apoxyomenos_Pio-Clementino_Inv1185_n2.jpg",
-      "artist": "Lysippos"
+      "artist": "Lysippos",
+      "year": -330
     },
     {
       "title": "Sarcophagus of the Spouses",
       "meta": "Etruscan · c. 520 BCE · Italy",
       "desc": "A painted terracotta couple reclining together on their tomb lid — smiling, touching, treated as equals. Unthinkable in contemporary Greek or Egyptian funerary art.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Sarcophagus_of_the_Spouses_from_Villa_Giulia_in_Rome.jpg/960px-Sarcophagus_of_the_Spouses_from_Villa_Giulia_in_Rome.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Sarcophagus_of_the_Spouses_from_Villa_Giulia_in_Rome.jpg/960px-Sarcophagus_of_the_Spouses_from_Villa_Giulia_in_Rome.jpg",
+      "year": -520
     },
     {
       "title": "Doryphoros",
       "meta": "Classical Greek · Polykleitos · c. 440 BCE",
       "desc": "The \"Spear Bearer\" — a treatise on ideal human proportion made in marble. Polykleitos wrote a book called the Canon about it; only this statue survives.",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/02_10_2024_Photo_Paolo_Villa-Napoli-mann-Museo_Archeologico-FO232526tris-Arte_Greca_copia_romana-Policleto_Doriforo_Polykleitos_Doryphoros_from_Pompeii-marmo_marble_carrara.jpg/960px-thumbnail.jpg",
-      "artist": "Polykleitos"
+      "artist": "Polykleitos",
+      "year": -440
     },
     {
       "title": "Dying Gaul",
       "meta": "Hellenistic · c. 230–220 BCE (Roman copy)",
       "desc": "A defeated Celt collapsing on his shield, wound dripping. Pergamene art showed the enemy as human — a compliment paid in marble, after the kill.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Dying_gaul.jpg/960px-Dying_gaul.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Dying_gaul.jpg/960px-Dying_gaul.jpg",
+      "year": -225
     },
     {
       "title": "Boxer at Rest",
       "meta": "Hellenistic · c. 100 BCE",
       "desc": "A bronze boxer after a fight — cauliflower ears, bloodied lip, exhausted. One of the few surviving Greek originals, not a later copy.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/P%C3%BAgil_en_rep%C3%B2s_%28s._IV_a.C.%29%2C_Museu_Nacional_Rom%C3%A0_%28Palau_Massimo%29%2C_Roma_%28Vista_general%29.jpg/960px-P%C3%BAgil_en_rep%C3%B2s_%28s._IV_a.C.%29%2C_Museu_Nacional_Rom%C3%A0_%28Palau_Massimo%29%2C_Roma_%28Vista_general%29.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/P%C3%BAgil_en_rep%C3%B2s_%28s._IV_a.C.%29%2C_Museu_Nacional_Rom%C3%A0_%28Palau_Massimo%29%2C_Roma_%28Vista_general%29.jpg/960px-P%C3%BAgil_en_rep%C3%B2s_%28s._IV_a.C.%29%2C_Museu_Nacional_Rom%C3%A0_%28Palau_Massimo%29%2C_Roma_%28Vista_general%29.jpg",
+      "year": -100
     },
     {
       "title": "Boy with Thorn",
       "meta": "Hellenistic → Roman · 1st c. BCE (later copies)",
       "desc": "A boy pulling a thorn from his foot, head bent in total concentration. One of the first ancient bronzes to be widely copied in the Renaissance.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Lo_Spinario.JPG/960px-Lo_Spinario.JPG"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Lo_Spinario.JPG/960px-Lo_Spinario.JPG",
+      "year": -50
     },
     {
       "title": "Hadrian's Villa",
       "meta": "Roman Imperial · 117–138 CE · Tivoli",
       "desc": "A 250-acre retreat where the emperor built scale models of the sights from his tour of the empire — a Nile canal, an Athenian stoa, a Canopus.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Villa_Hadriana_%28Villa_Adriana_Tivoli%29_1000_03.jpg/960px-Villa_Hadriana_%28Villa_Adriana_Tivoli%29_1000_03.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Villa_Hadriana_%28Villa_Adriana_Tivoli%29_1000_03.jpg/960px-Villa_Hadriana_%28Villa_Adriana_Tivoli%29_1000_03.jpg",
+      "year": 127
     },
     {
       "title": "Kritios Boy",
       "meta": "Early Classical Greek · c. 480 BCE",
       "desc": "The hinge between Archaic and Classical — the first marble body where weight shifts onto one leg (contrapposto), giving the figure life.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/9/94/009MA_Kritios.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/9/94/009MA_Kritios.jpg",
+      "year": -480
     },
     {
       "title": "Artemision Bronze",
       "meta": "Classical Greek · c. 460 BCE",
       "desc": "Pulled from a Roman shipwreck off Cape Artemision. Either Zeus throwing a thunderbolt or Poseidon throwing a trident — his missing weapon makes it impossible to say.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Artemision_in_Museum.jpg/960px-Artemision_in_Museum.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Artemision_in_Museum.jpg/960px-Artemision_in_Museum.jpg",
+      "year": -460
     },
     {
       "title": "Erechtheion",
       "meta": "Classical Greek · 421–406 BCE · Athens",
       "desc": "Temple on the sacred north side of the Acropolis. Six marble maidens (the Caryatids) hold up the porch in place of columns.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Erechtheum_Acropolis_Athens.jpg/960px-Erechtheum_Acropolis_Athens.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Erechtheum_Acropolis_Athens.jpg/960px-Erechtheum_Acropolis_Athens.jpg",
+      "year": -413
     },
     {
       "title": "Alexander Mosaic",
       "meta": "Roman copy of Hellenistic painting · c. 100 BCE · Pompeii",
       "desc": "Alexander charging Darius at Issus, rendered in a million tiny tesserae. The lost original oil painting was probably by Philoxenos of Eretria.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Battle_of_Issus_mosaic_-_Museo_Archeologico_Nazionale_-_Naples_2013-05-16_16-25-06_BW.jpg/960px-Battle_of_Issus_mosaic_-_Museo_Archeologico_Nazionale_-_Naples_2013-05-16_16-25-06_BW.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Battle_of_Issus_mosaic_-_Museo_Archeologico_Nazionale_-_Naples_2013-05-16_16-25-06_BW.jpg/960px-Battle_of_Issus_mosaic_-_Museo_Archeologico_Nazionale_-_Naples_2013-05-16_16-25-06_BW.jpg",
+      "year": -100
     },
     {
       "title": "Lady of Elche",
       "meta": "Iberian · c. 4th c. BCE · Spain",
       "desc": "A limestone bust with enormous spoked headdress-wheels over the ears. Iberian, not Greek — the style belongs to a world that left no writing to explain itself.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Dama_de_Elche_-_MAN_-_20241220e.jpg/960px-Dama_de_Elche_-_MAN_-_20241220e.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Dama_de_Elche_-_MAN_-_20241220e.jpg/960px-Dama_de_Elche_-_MAN_-_20241220e.jpg",
+      "year": -350
     },
     {
       "title": "Mask of Agamemnon",
       "meta": "Mycenaean · c. 1550 BCE",
       "desc": "A beaten-gold funerary mask from Grave Circle A at Mycenae. Schliemann announced he had \"looked upon the face of Agamemnon\" — though this mask is 300 years too early.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Athens_%E2%80%94_Mask_of_Agamemnon.jpg/960px-Athens_%E2%80%94_Mask_of_Agamemnon.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Athens_%E2%80%94_Mask_of_Agamemnon.jpg/960px-Athens_%E2%80%94_Mask_of_Agamemnon.jpg",
+      "year": -1550
     },
     {
       "title": "Capitoline Wolf",
       "meta": "Etruscan or Medieval bronze · 5th c. BCE or 13th c. CE",
       "desc": "The she-wolf nursing Romulus and Remus — emblem of Rome. Once thought ancient Etruscan; recent analysis suggests a medieval re-casting.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Capitoline_Wolf_of_Rome.jpg/960px-Capitoline_Wolf_of_Rome.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Capitoline_Wolf_of_Rome.jpg/960px-Capitoline_Wolf_of_Rome.jpg",
+      "year": -450
     },
     {
       "title": "Chimera of Arezzo",
       "meta": "Etruscan · c. 400 BCE",
       "desc": "Bronze of the mythical lion-goat-snake beast, wounded and snarling. Found in 1553 and immediately cleaned up by Cellini; the inscription on its leg is Etruscan, not Latin.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Chimera_d%27arezzo%2C_fi%2C_04.JPG/960px-Chimera_d%27arezzo%2C_fi%2C_04.JPG"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Chimera_d%27arezzo%2C_fi%2C_04.JPG/960px-Chimera_d%27arezzo%2C_fi%2C_04.JPG",
+      "year": -400
     },
     {
       "title": "Pergamon Altar",
       "meta": "Hellenistic · c. 180–160 BCE · Pergamon",
       "desc": "A colossal marble frieze of the gods fighting the giants — deep-cut writhing bodies that may have inspired Michelangelo. The whole structure was hauled to Berlin in 1880.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Pergamon_Museum_in_Berlin.jpg/960px-Pergamon_Museum_in_Berlin.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Pergamon_Museum_in_Berlin.jpg/960px-Pergamon_Museum_in_Berlin.jpg",
+      "year": -170
     },
     {
       "title": "Barberini Faun",
       "meta": "Hellenistic · c. 220 BCE",
       "desc": "A sleeping satyr sprawled drunk on a rock, legs splayed, utterly without dignity. Excavated from Hadrian's mausoleum moat — perhaps thrown over the walls during a siege.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Barberini_Faun_front_Glyptothek_Munich_218_n2.jpg/960px-Barberini_Faun_front_Glyptothek_Munich_218_n2.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Barberini_Faun_front_Glyptothek_Munich_218_n2.jpg/960px-Barberini_Faun_front_Glyptothek_Munich_218_n2.jpg",
+      "year": -220
     },
     {
       "title": "Portland Vase",
       "meta": "Roman cameo glass · c. 1–25 CE",
       "desc": "A cobalt-blue glass vase dipped in white and carved back through the outer layer. One of the finest surviving pieces of Roman cameo glass — and inspiration for Wedgwood's first portraits.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Portland_Vase_BM_Gem4036_n1.jpg/960px-Portland_Vase_BM_Gem4036_n1.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Portland_Vase_BM_Gem4036_n1.jpg/960px-Portland_Vase_BM_Gem4036_n1.jpg",
+      "year": 13
     },
     {
       "title": "Equestrian Statue of Marcus Aurelius",
       "meta": "Roman Imperial · c. 175 CE",
       "desc": "The only surviving large Roman bronze equestrian. It lived because Christians mistook it for Constantine. Now replaced by a copy in the Campidoglio; the original is inside.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Equestrian_statue_of_Marcus_Aurelius_%28Rome%29.jpg/960px-Equestrian_statue_of_Marcus_Aurelius_%28Rome%29.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Equestrian_statue_of_Marcus_Aurelius_%28Rome%29.jpg/960px-Equestrian_statue_of_Marcus_Aurelius_%28Rome%29.jpg",
+      "year": 175
     },
     {
       "title": "Parthenon Frieze",
       "meta": "Classical Greek · Pheidias workshop · c. 440 BCE",
       "desc": "A continuous band 160 meters long, showing the Panathenaic procession — horses, musicians, elders, gods receiving the city's tribute. Half survives in the British Museum, half in Athens.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Cavalcade_west_frieze_Parthenon_BM.jpg/960px-Cavalcade_west_frieze_Parthenon_BM.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Cavalcade_west_frieze_Parthenon_BM.jpg/960px-Cavalcade_west_frieze_Parthenon_BM.jpg",
+      "year": -440
     },
     {
       "title": "Herculaneum",
       "meta": "Roman · buried 79 CE · Italy",
       "desc": "Pompeii's smaller, richer neighbor. Volcanic mud sealed it instead of ash, so wooden beams, baby cradles, and carbonized scrolls all survived.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Antigua_ciudad_de_Herculano%2C_Italia%2C_2023-03-27%2C_DD_135-138_PAN.jpg/960px-Antigua_ciudad_de_Herculano%2C_Italia%2C_2023-03-27%2C_DD_135-138_PAN.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Antigua_ciudad_de_Herculano%2C_Italia%2C_2023-03-27%2C_DD_135-138_PAN.jpg/960px-Antigua_ciudad_de_Herculano%2C_Italia%2C_2023-03-27%2C_DD_135-138_PAN.jpg",
+      "year": 79
+    },
+    {
+      "title": "Borghese Gladiator",
+      "artist": "Agasias of Ephesus",
+      "meta": "c. 100 BCE · Marble · Sully Wing",
+      "desc": "Not actually a gladiator — a warrior fighting a mounted opponent, arm raised with a (lost) shield. A tour de force of anatomical study; every muscle is taut with the effort of the moment before impact.",
+      "image": "media/gladiator.jpg",
+      "year": -100
+    },
+    {
+      "title": "Sleeping Hermaphroditus",
+      "meta": "Roman copy of a Greek original · 2nd century CE · Sully Wing",
+      "desc": "From one angle, a sleeping woman. Walk around to the other side: the body is both. The mattress beneath — realistic enough that you want to touch it — was carved by Bernini in 1619 when the statue was restored.",
+      "image": "media/hermaphroditus.jpg",
+      "year": 150
     }
   ]
 }

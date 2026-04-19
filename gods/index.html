@@ -298,6 +298,63 @@ main p { line-height:1.7; }
 
 .gender-symbol { font-size:12px; margin-left:5px; opacity:0.7; }
 
+/* Overall pantheon tree */
+.tree-view-toggle { display:flex; gap:6px; margin-left:10px; }
+.tree-view-toggle button {
+  background:var(--panel2); border:1px solid var(--line); color:var(--muted);
+  padding:8px 12px; border-radius:6px; cursor:pointer; font-family:inherit; font-size:11px;
+  letter-spacing:1.2px; font-variant:small-caps; transition:all .15s;
+}
+.tree-view-toggle button.active {
+  color:var(--bg); background:linear-gradient(180deg, var(--gold), var(--gold-deep));
+  border-color:var(--gold); font-weight:bold;
+}
+.tree-view-toggle button:hover:not(.active) { color:var(--gold); border-color:var(--gold-soft); }
+
+.full-tree-container {
+  overflow:auto; padding:24px 20px 30px; position:relative;
+  background:#0d0f22; border-radius:0 0 10px 10px; max-height:80vh;
+}
+.full-tree-inner { position:relative; min-height:400px; }
+.full-tree-svg { position:absolute; inset:0; pointer-events:none; z-index:0; }
+.full-tree-gen {
+  position:relative; display:flex; flex-wrap:nowrap; gap:14px;
+  margin-bottom:36px; z-index:1; align-items:flex-start;
+}
+.full-tree-gen-label {
+  position:absolute; left:-6px; top:4px; transform:translateX(-100%);
+  color:var(--muted); font-size:10px; font-variant:small-caps; letter-spacing:1.5px;
+  padding-right:14px; white-space:nowrap; opacity:0.8;
+}
+.full-tree-node {
+  background:var(--panel); border:1px solid var(--line); border-radius:6px;
+  padding:7px 11px; cursor:pointer; position:relative; flex-shrink:0;
+  min-width:120px; max-width:170px; text-align:center;
+  transition:border-color .15s, transform .15s, box-shadow .15s;
+  z-index:1;
+}
+.full-tree-node::before {
+  content:''; position:absolute; left:0; top:0; bottom:0; width:3px;
+  background:var(--pantheon-color, var(--gold)); border-radius:6px 0 0 6px;
+}
+.full-tree-node:hover {
+  border-color:var(--gold); transform:translateY(-1px);
+  box-shadow:0 4px 14px rgba(0,0,0,0.4);
+}
+.full-tree-node.focused {
+  border-color:var(--gold); box-shadow:0 0 0 1px var(--gold),0 0 20px rgba(229,193,88,0.2);
+  background:var(--tint);
+}
+.full-tree-node .tn-name { font-size:12px; color:var(--ink); font-weight:bold; }
+.full-tree-node .tn-meta { font-size:10px; color:var(--muted); margin-top:2px; font-style:italic; }
+
+.full-tree-legend {
+  display:flex; gap:14px; flex-wrap:wrap; font-size:11px; color:var(--muted);
+  padding:10px 18px; border-top:1px solid var(--line); background:#0a0c1e;
+  border-radius:0 0 10px 10px;
+}
+.tl-line { display:inline-block; width:18px; height:2px; vertical-align:middle; margin-right:5px; }
+
 @media (max-width: 840px) {
   .focus-main-row { grid-template-columns:1fr; }
   .focus-side h4 { margin-top:20px; }
@@ -305,34 +362,114 @@ main p { line-height:1.7; }
 
 .timeline {
   background:var(--panel); border:1px solid var(--line); border-radius:10px;
-  padding:20px 24px; margin-top:16px; overflow-x:auto;
+  padding:22px 26px 28px; margin-top:16px; overflow-x:auto;
 }
-.timeline-scale { display:flex; justify-content:space-between; color:var(--muted); font-size:11px; margin-bottom:8px; padding:0 2px; font-variant:small-caps; letter-spacing:1px; position:sticky; top:0; }
 .timeline-rows { position:relative; }
-.timeline-row { position:relative; height:36px; margin-bottom:6px; cursor:pointer; }
-.timeline-row:hover .tl-bar { filter:brightness(1.25); }
-.tl-track { position:absolute; left:200px; right:0; top:16px; height:2px; background:var(--line); }
-.tl-label { position:absolute; left:0; top:8px; width:190px; font-size:13px; color:var(--ink); text-align:right; padding-right:12px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
-.tl-bar { position:absolute; top:8px; height:18px; border-radius:9px; opacity:0.85; transition:filter .2s; }
-.tl-peak { position:absolute; top:12px; height:10px; border-radius:5px; opacity:0.95; box-shadow:inset 0 0 0 1px rgba(255,255,255,0.2); }
-.tl-gridline { position:absolute; top:0; bottom:0; width:1px; background:rgba(255,255,255,0.04); }
-.tl-gridline.bce-ce { background:rgba(229,193,88,0.25); }
 
+.tl-group-head {
+  position:relative; display:flex; align-items:baseline; gap:12px;
+  padding:18px 0 6px; margin-top:8px;
+  border-bottom:1px solid rgba(229,193,88,0.12);
+}
+.tl-group-head:first-child { padding-top:4px; }
+.tl-group-head .tl-group-name {
+  color:var(--gold); font-variant:small-caps; letter-spacing:2.5px;
+  font-size:12px; font-weight:bold;
+}
+.tl-group-head .tl-group-count { color:var(--muted); font-size:11px; font-style:italic; }
+
+.timeline-row {
+  position:relative; height:28px; margin:4px 0; cursor:pointer;
+  transition:background .15s;
+}
+.timeline-row:hover { background:rgba(229,193,88,0.04); border-radius:4px; }
+.timeline-row:hover .tl-bar { filter:brightness(1.25); box-shadow:0 0 18px rgba(229,193,88,0.15); }
+.timeline-row:hover .tl-label { color:var(--gold); }
+
+.tl-label {
+  position:absolute; left:0; top:6px; width:180px;
+  font-size:12px; color:var(--ink); text-align:right; padding-right:14px;
+  overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+  transition:color .15s;
+}
+.tl-bar {
+  position:absolute; top:8px; height:12px; border-radius:2px;
+  opacity:0.7;
+  background-image:linear-gradient(180deg, rgba(255,255,255,0.12) 0%, rgba(0,0,0,0.12) 100%);
+  transition:filter .2s, box-shadow .2s;
+}
+.tl-peak {
+  position:absolute; top:6px; height:16px; border-radius:3px;
+  opacity:1;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,0.2);
+  background-image:linear-gradient(180deg, rgba(255,255,255,0.25) 0%, rgba(0,0,0,0.1) 100%);
+}
+
+.tl-gridline {
+  position:absolute; top:0; bottom:0; width:1px; background:rgba(197,201,217,0.04);
+  pointer-events:none;
+}
+.tl-gridline.bce-ce { background:rgba(229,193,88,0.28); width:1px; }
+.tl-gridline.major { background:rgba(197,201,217,0.07); }
+
+.tl-year-label {
+  position:absolute; top:-16px; font-size:10px; color:var(--muted);
+  transform:translateX(-50%); font-variant:small-caps; letter-spacing:1px;
+  white-space:nowrap; pointer-events:none;
+}
+.tl-year-label.bce-ce { color:var(--gold); font-weight:bold; letter-spacing:1.5px; }
+
+.tl-era-band {
+  position:absolute; top:0; height:18px;
+  background:rgba(197,201,217,0.03); border-bottom:1px dashed rgba(197,201,217,0.08);
+  pointer-events:none; z-index:0;
+}
+.tl-era-label {
+  position:absolute; top:2px; color:var(--muted); font-size:9px;
+  font-variant:small-caps; letter-spacing:1.5px;
+  text-align:center; opacity:0.7; pointer-events:none;
+}
+
+/* Archetypes — jump nav + 2-col grid */
+.archetype-nav {
+  display:flex; flex-wrap:wrap; gap:5px;
+  padding:12px 14px; margin-bottom:22px;
+  background:var(--panel); border:1px solid var(--line); border-radius:8px;
+}
+.archetype-nav a {
+  color:var(--muted); font-size:11px; letter-spacing:1.2px; font-variant:small-caps;
+  padding:4px 10px; border-radius:12px; border:1px solid transparent;
+  text-decoration:none; cursor:pointer; transition:all .15s;
+  white-space:nowrap;
+}
+.archetype-nav a:hover { color:var(--gold); border-color:var(--gold-soft); background:rgba(229,193,88,0.05); }
+
+.archetype-grid {
+  display:grid; grid-template-columns:repeat(auto-fill, minmax(380px, 1fr));
+  gap:12px;
+}
 .archetype-card {
-  background:var(--panel); border:1px solid var(--line); border-radius:10px;
-  padding:18px 22px; margin-bottom:14px; transition:border-color .25s, background .25s;
+  background:var(--panel); border:1px solid var(--line); border-radius:8px;
+  padding:14px 16px; transition:border-color .2s, background .2s;
+  scroll-margin-top:12px;
 }
 .archetype-card:hover { border-color:var(--gold-soft); background:linear-gradient(180deg, var(--panel), var(--panel2)); }
-.archetype-card h3 { margin:0 0 6px; color:var(--gold); }
-.archetype-card .desc { color:var(--ink); margin:8px 0 14px; font-size:14px; line-height:1.6; }
-.archetype-examples { display:flex; flex-wrap:wrap; gap:6px; }
+.archetype-card h3 {
+  margin:0 0 4px; color:var(--gold); font-size:15px; font-weight:normal;
+  letter-spacing:0.5px; font-variant:small-caps;
+}
+.archetype-card .desc {
+  color:var(--ink); margin:0 0 10px; font-size:12.5px; line-height:1.5;
+  opacity:0.85;
+}
+.archetype-examples { display:flex; flex-wrap:wrap; gap:4px; }
 .arch-chip {
   background:var(--panel2); border:1px solid var(--line); color:var(--ink);
-  padding:4px 12px; border-radius:14px; font-size:12px; cursor:pointer;
-  transition:all .2s;
+  padding:2px 9px; border-radius:11px; font-size:11px; cursor:pointer;
+  transition:all .15s; line-height:1.5; display:inline-flex; align-items:baseline; gap:4px;
 }
-.arch-chip:hover { border-color:var(--gold); color:var(--gold); background:rgba(229,193,88,0.06); transform:translateY(-1px); }
-.arch-chip .p { color:var(--muted); font-size:10px; margin-left:5px; font-style:italic; }
+.arch-chip:hover { border-color:var(--gold); color:var(--gold); background:rgba(229,193,88,0.06); }
+.arch-chip .p { color:var(--muted); font-size:9px; font-style:italic; letter-spacing:0.5px; }
 
 .modal-bg { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.85); backdrop-filter:blur(2px); z-index:100; align-items:center; justify-content:center; padding:24px; }
 .modal-bg.open { display:flex; animation:fadeIn .25s ease; }
@@ -412,9 +549,21 @@ footer a { color:var(--gold); text-decoration:none; }
       <label>Figure</label>
       <select id="focusSelect"></select>
       <button id="focusBack" disabled>← Back</button>
+      <div class="tree-view-toggle">
+        <button id="viewFocusBtn" class="active">Focus</button>
+        <button id="viewFullBtn">Full tree</button>
+      </div>
       <span class="count" id="treeCount"></span>
     </div>
     <div class="focus-view" id="focusView"></div>
+    <div class="full-tree-container" id="fullTreeView" style="display:none;">
+      <div class="full-tree-inner" id="fullTreeInner"></div>
+    </div>
+    <div class="full-tree-legend" id="fullTreeLegend" style="display:none;">
+      <span><span class="tl-line" style="background:var(--gold);"></span> parent → child</span>
+      <span><span class="tl-line" style="background:var(--blood); border-top:1px dashed var(--blood);"></span> consort</span>
+      <span style="margin-left:auto; font-style:italic;">Click any figure to return to Focus view.</span>
+    </div>
   </div>
 </section>
 
@@ -437,7 +586,8 @@ footer a { color:var(--gold); text-decoration:none; }
     unrelated cultures. Some reflect shared Indo-European inheritance (Zeus ≈ Jupiter ≈ Indra from *Dyēus Phter); others are
     independent convergences on universal human experiences. Click any example to open that god.
   </p>
-  <div id="archetypeList"></div>
+  <nav class="archetype-nav" id="archetypeNav"></nav>
+  <div id="archetypeList" class="archetype-grid"></div>
 </section>
 
 <section id="tab-deified" class="tab">
@@ -675,15 +825,16 @@ function fmtYears(from, to) {
   return `${fmtYear(from)} – ${fmtYear(to)}`;
 }
 
-/* ---------- Family Trees (focus view) ---------- */
+/* ---------- Family Trees (focus view + full tree) ---------- */
 let focusHistory = [];
+let currentFocusId = null;
+let currentTreeMode = 'focus'; // 'focus' | 'full'
 
 function renderTreeSelect() {
   const pSel = document.getElementById('treeSelect');
   pSel.innerHTML = DATA.pantheons.map(p => `<option value="${p.id}">${p.name}</option>`).join('');
   pSel.value = 'greek';
   pSel.addEventListener('change', e => {
-    // Jump to first notable figure of new pantheon
     const pid = e.target.value;
     const gods = DATA.gods.filter(g => g.pantheon === pid);
     const pick = gods.find(g => g.category === 'major') || gods[0];
@@ -695,12 +846,40 @@ function renderTreeSelect() {
 
   document.getElementById('focusBack').addEventListener('click', () => {
     if (focusHistory.length > 1) {
-      focusHistory.pop(); // current
+      focusHistory.pop();
       const prev = focusHistory.pop();
       setFocus(prev, false);
     }
   });
+
+  document.getElementById('viewFocusBtn').addEventListener('click', () => setTreeMode('focus'));
+  document.getElementById('viewFullBtn').addEventListener('click', () => setTreeMode('full'));
 }
+
+function setTreeMode(mode) {
+  currentTreeMode = mode;
+  document.getElementById('viewFocusBtn').classList.toggle('active', mode === 'focus');
+  document.getElementById('viewFullBtn').classList.toggle('active', mode === 'full');
+  document.getElementById('focusView').style.display = mode === 'focus' ? '' : 'none';
+  document.getElementById('fullTreeView').style.display = mode === 'full' ? 'block' : 'none';
+  document.getElementById('fullTreeLegend').style.display = mode === 'full' ? '' : 'none';
+  if (mode === 'full' && currentFocusId) {
+    const g = GODS_BY_ID[currentFocusId];
+    if (g) renderFullTree(g.pantheon);
+  }
+}
+
+// Redraw connectors on resize when full tree is visible
+window.addEventListener('resize', () => {
+  if (currentTreeMode === 'full' && currentFocusId) {
+    const g = GODS_BY_ID[currentFocusId];
+    if (g) {
+      const pgods = DATA.gods.filter(x => x.pantheon === g.pantheon);
+      const byId = Object.fromEntries(pgods.map(x => [x.id, x]));
+      drawFullTreeConnectors(pgods, byId);
+    }
+  }
+});
 
 function updateBackButton() {
   document.getElementById('focusBack').disabled = focusHistory.length <= 1;
@@ -722,6 +901,7 @@ function setFocus(godId, pushHistory = true) {
   } else if (!pushHistory) {
     focusHistory.push(godId);
   }
+  currentFocusId = godId;
   updateBackButton();
 
   // Sync pantheon dropdown if different
@@ -736,7 +916,13 @@ function setFocus(godId, pushHistory = true) {
 
   document.getElementById('treeCount').textContent = `${pgods.length} in pantheon`;
 
+  // Clicking a god from full tree → flip back to focus
+  if (currentTreeMode === 'full') setTreeMode('focus');
+
   renderFocusView(g);
+
+  // Keep full tree data current for quick toggle
+  if (currentTreeMode === 'full') renderFullTree(g.pantheon);
 }
 
 function renderFocusView(g) {
@@ -835,45 +1021,213 @@ function genderSymbol(gender) {
   return '';
 }
 
+function renderFullTree(pantheonId) {
+  const p = PANTHEONS_BY_ID[pantheonId];
+  if (!p) return;
+  const pgods = DATA.gods.filter(g => g.pantheon === pantheonId);
+  const byId = Object.fromEntries(pgods.map(g => [g.id, g]));
+
+  // Compute generation for each god via longest-path from roots
+  const gen = {};
+  const getGen = (id, visited = new Set()) => {
+    if (gen[id] !== undefined) return gen[id];
+    if (visited.has(id)) return 0; // cycle protection
+    visited.add(id);
+    const g = byId[id];
+    if (!g) return 0;
+    const inPantheonParents = (g.parents || []).filter(pid => byId[pid]);
+    if (inPantheonParents.length === 0) { gen[id] = 0; return 0; }
+    const maxParent = Math.max(...inPantheonParents.map(pid => getGen(pid, visited)));
+    gen[id] = maxParent + 1;
+    return gen[id];
+  };
+  pgods.forEach(g => getGen(g.id));
+
+  // Group by generation
+  const byGen = {};
+  pgods.forEach(g => {
+    (byGen[gen[g.id]] = byGen[gen[g.id]] || []).push(g);
+  });
+  const generations = Object.keys(byGen).map(Number).sort((a,b) => a-b);
+
+  // Sort each generation: primordial/titan first, major next, then by name
+  const catOrder = {primordial:0, titan:1, major:2, minor:3, hero:4, monster:5, 'deified-human':6, abrahamic:7};
+  generations.forEach(gn => {
+    byGen[gn].sort((a,b) => (catOrder[a.category]||9) - (catOrder[b.category]||9) || a.name.localeCompare(b.name));
+  });
+
+  // Render HTML for all generations
+  const html = generations.map(gn => `
+    <div class="full-tree-gen" data-gen="${gn}">
+      <div class="full-tree-gen-label">Gen ${gn + 1}</div>
+      ${byGen[gn].map(g => `
+        <div class="full-tree-node ${g.id === currentFocusId ? 'focused' : ''}"
+             style="--pantheon-color:${p.color}"
+             data-gid="${g.id}"
+             title="${escapeAttr((g.domains || []).slice(0,3).join(' · '))}">
+          <div class="tn-name">${g.name}</div>
+          <div class="tn-meta">${(g.category||'').replace(/-/g,' ')}${genderSymbol(g.gender)}</div>
+        </div>
+      `).join('')}
+    </div>
+  `).join('');
+
+  const inner = document.getElementById('fullTreeInner');
+  inner.innerHTML = html + '<svg class="full-tree-svg" id="fullTreeSvg"></svg>';
+
+  inner.querySelectorAll('.full-tree-node').forEach(el => {
+    el.addEventListener('click', () => setFocus(el.dataset.gid));
+  });
+
+  // Draw connector SVG after DOM is laid out
+  requestAnimationFrame(() => drawFullTreeConnectors(pgods, byId));
+}
+
+function drawFullTreeConnectors(pgods, byId) {
+  const svg = document.getElementById('fullTreeSvg');
+  const inner = document.getElementById('fullTreeInner');
+  if (!svg || !inner) return;
+  const ibox = inner.getBoundingClientRect();
+  svg.setAttribute('width', ibox.width);
+  svg.setAttribute('height', ibox.height);
+  svg.style.width = ibox.width + 'px';
+  svg.style.height = ibox.height + 'px';
+
+  const nodes = {};
+  inner.querySelectorAll('.full-tree-node').forEach(el => {
+    const r = el.getBoundingClientRect();
+    nodes[el.dataset.gid] = {
+      top: r.top - ibox.top,
+      bottom: r.bottom - ibox.top,
+      left: r.left - ibox.left,
+      right: r.right - ibox.left,
+      cx: r.left - ibox.left + r.width / 2,
+      cy: r.top - ibox.top + r.height / 2,
+    };
+  });
+
+  const lines = [];
+  const seen = new Set();
+  pgods.forEach(g => {
+    // Parent → child lines (gold, solid)
+    (g.children || []).forEach(cid => {
+      if (!byId[cid] || !nodes[g.id] || !nodes[cid]) return;
+      const key = 'p-' + g.id + '-' + cid;
+      if (seen.has(key)) return;
+      seen.add(key);
+      const a = nodes[g.id], b = nodes[cid];
+      // If child is below parent (normal), draw a bezier from parent-bottom to child-top
+      if (b.cy > a.cy) {
+        const x1 = a.cx, y1 = a.bottom;
+        const x2 = b.cx, y2 = b.top;
+        const dy = y2 - y1;
+        const cy1 = y1 + dy * 0.5;
+        const cy2 = y1 + dy * 0.5;
+        lines.push(`<path d="M ${x1} ${y1} C ${x1} ${cy1}, ${x2} ${cy2}, ${x2} ${y2}" stroke="#b8901f" stroke-width="1.2" fill="none" opacity="0.6"/>`);
+      } else {
+        // Same-gen or reverse (rare) — straight line
+        lines.push(`<line x1="${a.cx}" y1="${a.cy}" x2="${b.cx}" y2="${b.cy}" stroke="#b8901f" stroke-width="1" fill="none" opacity="0.4" stroke-dasharray="3,3"/>`);
+      }
+    });
+    // Consort lines (rose, dashed) — only in same generation or adjacent
+    (g.consorts || []).forEach(sid => {
+      if (!byId[sid] || !nodes[g.id] || !nodes[sid]) return;
+      const pair = [g.id, sid].sort().join('|');
+      const key = 'c-' + pair;
+      if (seen.has(key)) return;
+      seen.add(key);
+      const a = nodes[g.id], b = nodes[sid];
+      // Only draw if reasonably close vertically (same generation typically)
+      if (Math.abs(a.cy - b.cy) < 80) {
+        lines.push(`<line x1="${a.right}" y1="${a.cy}" x2="${b.left}" y2="${b.cy}" stroke="#a03040" stroke-width="1" fill="none" opacity="0.5" stroke-dasharray="4,3"/>`);
+      }
+    });
+  });
+
+  svg.innerHTML = lines.join('');
+}
+
 /* ---------- Timeline tab ---------- */
 function renderTimeline() {
   const rowsContainer = document.getElementById('timelineRows');
   const minYear = -5000, maxYear = 2100;
   const range = maxYear - minYear;
-  const labelWidth = 200;
-  const chartWidth = 1100;
+  const labelWidth = 190;
+  const chartWidth = 1150;
+  const xOf = y => labelWidth + ((y - minYear) / range) * chartWidth;
 
-  const gridlines = [-5000, -4000, -3000, -2000, -1000, 0, 1000, 2000].map(y => {
-    const cls = y === 0 ? 'tl-gridline bce-ce' : 'tl-gridline';
-    const x = labelWidth + ((y - minYear) / range) * chartWidth;
-    return `<div class="${cls}" style="left:${x}px;"></div>
-            <div style="position:absolute; left:${x}px; top:-14px; font-size:10px; color:var(--muted); transform:translateX(-50%);">${fmtYear(y)}</div>`;
+  // Historical era bands
+  const eras = [
+    { from:-5000, to:-3300, name:'Neolithic' },
+    { from:-3300, to:-1200, name:'Bronze Age' },
+    { from:-1200, to:-500,  name:'Iron Age' },
+    { from:-500,  to:500,   name:'Classical' },
+    { from:500,   to:1500,  name:'Medieval' },
+    { from:1500,  to:2100,  name:'Modern' },
+  ];
+  const eraBands = eras.map((e,i) => {
+    const x = xOf(e.from);
+    const w = xOf(e.to) - x;
+    return `<div class="tl-era-label" style="left:${x + w/2}px; width:${w}px; top:2px;">${e.name}</div>`;
   }).join('');
 
-  const sorted = DATA.pantheons.slice().sort((a,b) => a.active_from - b.active_from);
-  const rows = sorted.map(p => {
-    const x = labelWidth + ((p.active_from - minYear) / range) * chartWidth;
-    const w = ((p.active_to - p.active_from) / range) * chartWidth;
-    const px = labelWidth + (((p.peak_from || p.active_from) - minYear) / range) * chartWidth;
-    const pw = (((p.peak_to || p.active_to) - (p.peak_from || p.active_from)) / range) * chartWidth;
+  // Gridlines — every 1000y + BCE/CE line
+  const majorYears = [-5000,-4000,-3000,-2000,-1000,0,1000,2000];
+  const gridlines = majorYears.map(y => {
+    const cls = y === 0 ? 'tl-gridline bce-ce' : 'tl-gridline major';
+    const lblCls = y === 0 ? 'tl-year-label bce-ce' : 'tl-year-label';
+    return `<div class="${cls}" style="left:${xOf(y)}px;"></div>
+            <div class="${lblCls}" style="left:${xOf(y)}px;">${fmtYear(y)}</div>`;
+  }).join('');
+
+  // Render by pantheon group (same groups as Pantheons tab)
+  const byId = {};
+  DATA.pantheons.forEach(p => byId[p.id] = p);
+  const grouped = new Set(PANTHEON_GROUPS.flatMap(g => g.ids));
+  const orphans = DATA.pantheons.filter(p => !grouped.has(p.id)).map(p => p.id);
+  const allGroups = orphans.length
+    ? [...PANTHEON_GROUPS, { id:'other', name:'Other', ids:orphans }]
+    : PANTHEON_GROUPS;
+
+  const renderRow = p => {
+    const x = xOf(p.active_from);
+    const w = Math.max(4, xOf(p.active_to) - x);
+    const px = xOf(p.peak_from || p.active_from);
+    const pw = Math.max(2, xOf(p.peak_to || p.active_to) - px);
     return `
-      <div class="timeline-row" data-pid="${p.id}" title="${p.region} · ${fmtYears(p.active_from, p.active_to)}">
+      <div class="timeline-row" data-pid="${p.id}" title="${escapeAttr(p.name + ' · ' + p.region + ' · ' + fmtYears(p.active_from, p.active_to))}">
         <div class="tl-label">${p.name}</div>
-        <div class="tl-track" style="width:${chartWidth}px; left:${labelWidth}px;"></div>
         <div class="tl-bar" style="left:${x}px; width:${w}px; background:${p.color};"></div>
-        <div class="tl-peak" style="left:${px}px; width:${pw}px; background:${p.color}; filter:brightness(1.3);"></div>
+        <div class="tl-peak" style="left:${px}px; width:${pw}px; background:${p.color};"></div>
       </div>
     `;
+  };
+
+  const groupedHtml = allGroups.map(grp => {
+    const members = grp.ids.map(id => byId[id]).filter(Boolean)
+      .sort((a,b) => a.active_from - b.active_from);
+    if (!members.length) return '';
+    return `
+      <div class="tl-group-head">
+        <span class="tl-group-name">${grp.name}</span>
+        <span class="tl-group-count">${members.length} tradition${members.length === 1 ? '' : 's'}</span>
+      </div>
+      ${members.map(renderRow).join('')}
+    `;
   }).join('');
+
   rowsContainer.style.width = (labelWidth + chartWidth + 20) + 'px';
-  rowsContainer.style.paddingTop = '24px';
-  rowsContainer.innerHTML = gridlines + rows;
+  rowsContainer.style.paddingTop = '28px';
+  rowsContainer.innerHTML = `
+    <div style="position:absolute; left:${labelWidth}px; top:-4px; width:${chartWidth}px; height:18px; pointer-events:none;">${eraBands}</div>
+    ${gridlines}
+    ${groupedHtml}
+  `;
 
   rowsContainer.querySelectorAll('.timeline-row').forEach(el => {
     el.addEventListener('click', () => {
       const pid = el.dataset.pid;
       document.querySelector('[data-tab="trees"]').click();
-      document.getElementById('treeSelect').value = pid;
       loadTree(pid);
     });
   });
@@ -881,22 +1235,38 @@ function renderTimeline() {
 
 /* ---------- Archetypes tab ---------- */
 function renderArchetypes() {
+  // Jump-nav
+  document.getElementById('archetypeNav').innerHTML = DATA.archetypes.map(a =>
+    `<a href="#arch-${a.id}" onclick="jumpToArchetype('${a.id}'); return false;">${a.name}</a>`
+  ).join('');
+
   document.getElementById('archetypeList').innerHTML = DATA.archetypes.map(a => `
-    <div class="archetype-card">
-      <h3>${a.name}</h3>
+    <div class="archetype-card" id="arch-${a.id}">
+      <h3>${a.name} <span style="color:var(--muted);font-size:11px;font-style:italic;font-variant:normal;letter-spacing:0.5px;">· ${(a.examples||[]).filter(id=>GODS_BY_ID[id]).length} gods</span></h3>
       <div class="desc">${a.description}</div>
       <div class="archetype-examples">
         ${(a.examples || []).map(id => {
           const g = GODS_BY_ID[id];
           if (g) {
             const p = PANTHEONS_BY_ID[g.pantheon];
-            return `<span class="arch-chip" onclick="openGod('${id}')">${g.name}<span class="p">${p ? p.name : ''}</span></span>`;
+            return `<span class="arch-chip" onclick="focusFromArchetype('${id}')">${g.name}<span class="p">${p ? p.name : ''}</span></span>`;
           }
-          return `<span class="arch-chip" style="opacity:0.5;" title="Not yet catalogued">${formatStubName(id)}</span>`;
+          return `<span class="arch-chip" style="opacity:0.5;cursor:default;" title="Not yet catalogued">${formatStubName(id)}</span>`;
         }).join('')}
       </div>
     </div>
   `).join('');
+}
+
+function jumpToArchetype(id) {
+  const el = document.getElementById('arch-' + id);
+  if (el) el.scrollIntoView({ behavior:'smooth', block:'start' });
+}
+
+function focusFromArchetype(godId) {
+  const btn = document.querySelector('[data-tab="trees"]');
+  if (btn) btn.click();
+  setFocus(godId);
 }
 
 /* ---------- Deified Humans tab ---------- */
