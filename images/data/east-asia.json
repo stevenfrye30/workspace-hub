@@ -1,0 +1,73 @@
+{
+  "title": "East Asia",
+  "subtitle": "China, Japan, Korea — from terracotta armies to woodblock waves.",
+  "intro": "East Asian art has a long memory. Forms travel — from Chinese brushwork to Japanese ukiyo-e, from Tang Buddhism to Korean celadon — and each reinvention carries the earlier one inside it.",
+  "works": [
+    {
+      "title": "Terracotta Army",
+      "meta": "Qin dynasty · 210 BCE · Xi'an, China",
+      "desc": "Over 8,000 soldiers, each with a different face, buried with the first emperor of China to guard him after death. Farmers digging a well found them in 1974.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/51714-Terracota-Army.jpg/960px-51714-Terracota-Army.jpg"
+    },
+    {
+      "title": "Great Wall of China",
+      "meta": "Ming (current form) · 14th–17th c.",
+      "desc": "Not one wall but many, rebuilt across dynasties. The Ming sections visitors see today are a fraction of a system that once stretched over 13,000 miles.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/The_Great_Wall_of_China_at_Jinshanling-edit.jpg/960px-The_Great_Wall_of_China_at_Jinshanling-edit.jpg"
+    },
+    {
+      "title": "Mogao Caves (Dunhuang)",
+      "meta": "Silk Road Buddhist · 4th–14th c. · Gansu",
+      "desc": "492 caves carved into cliff face, filled with murals and gilded clay Buddhas. One sealed chamber held 50,000 manuscripts — the largest trove of its kind.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Mogao_Caves_%2854376969262%29.jpg/960px-Mogao_Caves_%2854376969262%29.jpg"
+    },
+    {
+      "title": "Hōryū-ji",
+      "meta": "Asuka period · c. 607 CE · Nara, Japan",
+      "desc": "Among the oldest wooden buildings still standing anywhere in the world. Built when Buddhism had only recently reached Japan.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Horyu-ji11s3200.jpg/960px-Horyu-ji11s3200.jpg"
+    },
+    {
+      "title": "Goryeo Celadon",
+      "meta": "Goryeo dynasty · 10th–14th c. · Korea",
+      "desc": "Stoneware with a jade-green glaze so admired that Song-dynasty Chinese called Korean celadon the \"first under heaven.\"",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Korea_-_Seoul_-_National_Museum_-_Incense_Burner_0252-06a.jpg/960px-Korea_-_Seoul_-_National_Museum_-_Incense_Burner_0252-06a.jpg"
+    },
+    {
+      "title": "Along the River During Qingming",
+      "meta": "Northern Song · Zhang Zeduan · 12th c.",
+      "desc": "A five-meter handscroll showing hundreds of people in the Song capital on a spring festival day. Read right to left — it unfolds as you walk past.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Bianjing_city_gate.JPG/960px-Bianjing_city_gate.JPG"
+    },
+    {
+      "title": "Forbidden City",
+      "meta": "Ming & Qing · 1406–1420 onward · Beijing",
+      "desc": "980 buildings on 180 acres. For five centuries, commoners who entered uninvited were executed. It is now the world's most-visited museum.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/The_Forbidden_City_-_View_from_Coal_Hill.jpg/960px-The_Forbidden_City_-_View_from_Coal_Hill.jpg"
+    },
+    {
+      "title": "Kinkaku-ji (Golden Pavilion)",
+      "meta": "Muromachi · 1397, rebuilt 1955 · Kyoto",
+      "desc": "A retirement villa turned Zen temple, its top two floors wrapped in gold leaf. Burned down by a young monk in 1950 — rebuilt in facsimile.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Golden_Pavilion_Kinkaku-ji_water_mirror_2024.jpg/960px-Golden_Pavilion_Kinkaku-ji_water_mirror_2024.jpg"
+    },
+    {
+      "title": "Ryōan-ji Rock Garden",
+      "meta": "Muromachi · late 15th c. · Kyoto",
+      "desc": "Fifteen stones in raked gravel. From no single vantage can you see all fifteen at once — you're always one short of a complete view.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Kare-sansui_zen_garden%2C_Ry%C5%8Dan-ji%2C_Kyoto_20190416_1.jpg/960px-Kare-sansui_zen_garden%2C_Ry%C5%8Dan-ji%2C_Kyoto_20190416_1.jpg"
+    },
+    {
+      "title": "Himeji Castle",
+      "meta": "Edo period · 1609 · Hyōgo, Japan",
+      "desc": "The finest surviving Japanese castle, nicknamed \"White Heron\" for its white plaster. Its winding approach was designed to confuse besiegers.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Himeji_castle_in_may_2015.jpg/960px-Himeji_castle_in_may_2015.jpg"
+    },
+    {
+      "title": "The Great Wave off Kanagawa",
+      "meta": "Edo Japan · Hokusai · c. 1831",
+      "desc": "A woodblock print sold for the price of a bowl of noodles. Mount Fuji sits small and steady under the claw of the wave. Hokusai was in his seventies.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Tsunami_by_hokusai_19th_century.jpg/960px-Tsunami_by_hokusai_19th_century.jpg"
+    }
+  ]
+}

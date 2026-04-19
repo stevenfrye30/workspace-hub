@@ -1,0 +1,73 @@
+{
+  "title": "Egypt & Nubia",
+  "subtitle": "Three thousand years along the Nile.",
+  "intro": "Pharaonic Egypt and its southern rival Kush left monuments and portraits of startling precision. The pyramids alone span a thousand years — and Nubia built more of them than Egypt did.",
+  "works": [
+    {
+      "title": "Great Pyramid of Giza",
+      "meta": "Old Kingdom · c. 2560 BCE",
+      "desc": "Tomb of Khufu. 2.3 million stone blocks, averaging 2.5 tons each. The tallest human-made structure on earth for 3,800 years.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Great_Pyramid_of_Giza_-_Pyramid_of_Khufu.jpg/960px-Great_Pyramid_of_Giza_-_Pyramid_of_Khufu.jpg"
+    },
+    {
+      "title": "Great Sphinx of Giza",
+      "meta": "Old Kingdom · c. 2500 BCE",
+      "desc": "Carved from a single limestone outcrop, the oldest known monumental sculpture. Its nose was already missing before Napoleon arrived.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Sphinx_with_the_third_pyramid.jpg/960px-Sphinx_with_the_third_pyramid.jpg"
+    },
+    {
+      "title": "Narmer Palette",
+      "meta": "Early Dynastic · c. 3100 BCE",
+      "desc": "A ceremonial siltstone palette showing a king smiting an enemy — one of the earliest monuments of unified Egypt, with its conventions already fully formed.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Narmer_Palette.jpg/960px-Narmer_Palette.jpg"
+    },
+    {
+      "title": "Bust of Nefertiti",
+      "meta": "Amarna period · c. 1345 BCE",
+      "desc": "Painted limestone, found in the workshop of the sculptor Thutmose at Amarna. Still in Berlin; Egypt has asked for it back for a century.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Nofretete_Neues_Museum.jpg/960px-Nofretete_Neues_Museum.jpg"
+    },
+    {
+      "title": "Mask of Tutankhamun",
+      "meta": "New Kingdom · c. 1323 BCE",
+      "desc": "Eleven kilograms of solid gold, inlaid with lapis, carnelian, and obsidian. The funerary mask of a boy-king who died at nineteen.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Golden_mask_of_Tutankhamun.jpg/960px-Golden_mask_of_Tutankhamun.jpg"
+    },
+    {
+      "title": "Karnak Temple Complex",
+      "meta": "New Kingdom onward · 2000 BCE – 100 CE",
+      "desc": "A city of temples at Thebes, built and rebuilt by thirty dynasties. The hypostyle hall alone has 134 columns.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Temple_de_Louxor_68.jpg/960px-Temple_de_Louxor_68.jpg"
+    },
+    {
+      "title": "Temple of Hatshepsut",
+      "meta": "New Kingdom · c. 1470 BCE · Deir el-Bahari",
+      "desc": "Three stacked colonnaded terraces built into a cliff for Egypt's longest-reigning female pharaoh. Her successor tried to erase her — and failed.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Templo_funerario_de_Hatshepsut%2C_Luxor%2C_Egipto%2C_2022-04-03%2C_DD_13.jpg/960px-Templo_funerario_de_Hatshepsut%2C_Luxor%2C_Egipto%2C_2022-04-03%2C_DD_13.jpg"
+    },
+    {
+      "title": "Tomb of Nefertari",
+      "meta": "19th dynasty · c. 1255 BCE · Valley of the Queens",
+      "desc": "Painted for Ramesses II's favorite wife — the queen walks through the underworld, plays the board game Senet, and greets the gods. Colors still vivid.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Queen_Nefertari_Playing_Senet_MET_DT11770.jpg/960px-Queen_Nefertari_Playing_Senet_MET_DT11770.jpg"
+    },
+    {
+      "title": "Abu Simbel",
+      "meta": "Reign of Ramesses II · c. 1264 BCE",
+      "desc": "Four colossal statues guard the temple front. In the 1960s the whole complex was cut apart and moved 200 feet up to escape Lake Nasser.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Ramsis%2C_Aswan_Governorate%2C_Egypt_-_panoramio.jpg/960px-Ramsis%2C_Aswan_Governorate%2C_Egypt_-_panoramio.jpg"
+    },
+    {
+      "title": "Rosetta Stone",
+      "meta": "Ptolemaic · 196 BCE",
+      "desc": "A decree written three times — in hieroglyphs, Demotic, and Greek — that became the key to reading Egyptian. Champollion cracked it in 1822.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Rosetta_Stone.JPG/960px-Rosetta_Stone.JPG"
+    },
+    {
+      "title": "Pyramids of Meroë",
+      "meta": "Kingdom of Kush · 300 BCE – 300 CE · Sudan",
+      "desc": "Over 200 pyramids, steeper and smaller than Egypt's, built for Nubian royalty. Sudan has more pyramids than Egypt — about twice as many.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/5/53/Sudan_Meroe_Pyramids_2001.JPG"
+    }
+  ]
+}

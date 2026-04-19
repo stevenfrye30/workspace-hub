@@ -1,0 +1,73 @@
+{
+  "title": "Southeast Asia & Oceania",
+  "subtitle": "Temple cities, island stone, and the deepest-time painting tradition on earth.",
+  "intro": "From the sandstone temple-mountains of Angkor and Borobudur to basalt moai on Easter Island and rock shelters in northern Australia where painting has gone on for 20,000 years.",
+  "works": [
+    {
+      "title": "Borobudur",
+      "meta": "Sailendra dynasty · 9th c. · Java, Indonesia",
+      "desc": "A stone mandala you walk. Climbing its nine terraces takes you through 2,672 relief panels and 504 Buddhas to the empty stupa at the top.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Pradaksina.jpg/960px-Pradaksina.jpg"
+    },
+    {
+      "title": "Prambanan",
+      "meta": "Medang Kingdom · 9th c. · Java, Indonesia",
+      "desc": "The Hindu counterpart to Borobudur a few miles away — a cluster of tall, sharp-edged temples to the Trimurti, walls carved with the Ramayana.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Prambanan_Temple_Yogyakarta_Indonesia.jpg/960px-Prambanan_Temple_Yogyakarta_Indonesia.jpg"
+    },
+    {
+      "title": "Angkor Wat",
+      "meta": "Khmer Empire · 12th c. · Cambodia",
+      "desc": "The largest religious monument on earth. Built as a Hindu temple to Vishnu, converted to Buddhist use, and never fully abandoned.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Buddhist_monks_in_front_of_the_Angkor_Wat.jpg/960px-Buddhist_monks_in_front_of_the_Angkor_Wat.jpg"
+    },
+    {
+      "title": "Bagan",
+      "meta": "Pagan Kingdom · 11th–13th c. · Myanmar",
+      "desc": "More than 2,000 Buddhist temples and stupas on a plain by the Irrawaddy. At dawn hot air balloons drift over a landscape of brick towers.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Bagan%2C_Burma.jpg/960px-Bagan%2C_Burma.jpg"
+    },
+    {
+      "title": "Wat Phra Kaew",
+      "meta": "Rattanakosin · 1782 onward · Bangkok",
+      "desc": "The royal temple inside the Grand Palace, home to the Emerald Buddha — carved from a single block of jade, robed differently for each season.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Wat_Phra_Kaew_by_Ninara_TSP_edit_crop.jpg/960px-Wat_Phra_Kaew_by_Ninara_TSP_edit_crop.jpg"
+    },
+    {
+      "title": "Nan Madol",
+      "meta": "Saudeleur dynasty · 12th–17th c. · Pohnpei",
+      "desc": "A city of 92 artificial islets built from hexagonal basalt logs, laid across a lagoon. The \"Venice of the Pacific\" — and a place no one has fully explained.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Nan_madol.jpg/960px-Nan_madol.jpg"
+    },
+    {
+      "title": "Moai",
+      "meta": "Rapa Nui · 1250–1500 · Easter Island",
+      "desc": "Nearly 900 stone figures, carved and moved miles from the quarry. They face inland — watching over the villages, not out to sea.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/5/50/AhuTongariki.JPG"
+    },
+    {
+      "title": "Asmat Carving",
+      "meta": "Asmat people · Papua, Indonesia",
+      "desc": "Bisj poles and shields carved from mangrove with sharpened bone. Each pole commemorates a death and demands it be avenged.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/9/99/Orang_Asmat.jpg"
+    },
+    {
+      "title": "Māori Wharenui",
+      "meta": "Aotearoa · 18th c. onward · New Zealand",
+      "desc": "A carved meeting house represents an ancestor's body — ridgepole as spine, rafters as ribs. Every panel tells a story in whakairo carving.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/TamatekapuaMeetingHouse.jpg/960px-TamatekapuaMeetingHouse.jpg"
+    },
+    {
+      "title": "Tā Moko",
+      "meta": "Māori · pre-European onward · New Zealand",
+      "desc": "Tattoos chiseled (not punctured) into the skin, carrying genealogy and rank. Each design is unique to the person who wears it.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/MaoriChief1784.jpg/960px-MaoriChief1784.jpg"
+    },
+    {
+      "title": "Ubirr Rock Art",
+      "meta": "Aboriginal Australian · up to 20,000 years old · Kakadu",
+      "desc": "One of the oldest continuous art traditions on earth. Later paintings show fish anatomy so precisely that species are still identifiable.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/c/c9/Ubirr_rock_art.JPG"
+    }
+  ]
+}

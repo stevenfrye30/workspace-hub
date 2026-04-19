@@ -1,0 +1,73 @@
+{
+  "title": "Europe",
+  "subtitle": "Post-Roman — illuminated manuscripts to post-impressionism.",
+  "intro": "A thousand years of churches, altarpieces, and — eventually — secular portraits, landscapes, and the individual human strangeness at the turn of the 20th century.",
+  "works": [
+    {
+      "title": "Book of Kells",
+      "meta": "Insular Celtic · c. 800 CE · Ireland",
+      "desc": "A Latin gospel book from monks on Iona and Kells. The ornament is so intricate that Gerald of Wales thought it \"the work of an angel, not of a man.\"",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/KellsFol032vChristEnthroned.jpg/960px-KellsFol032vChristEnthroned.jpg"
+    },
+    {
+      "title": "Chartres Cathedral",
+      "meta": "High Gothic · 1194–1220 · France",
+      "desc": "Rebuilt in 26 years after a fire. Its stained glass — especially the \"Chartres blue\" — has never been matched; the recipe was lost.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Notre_Dame_de_Chartres.jpg/960px-Notre_Dame_de_Chartres.jpg"
+    },
+    {
+      "title": "The Arnolfini Portrait",
+      "meta": "Early Netherlandish · Jan van Eyck · 1434",
+      "desc": "A merchant and his wife in a Bruges interior. The convex mirror on the back wall reflects two more figures — one of them possibly the painter.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/The_Arnolfini_portrait_%281434%29.jpg/960px-The_Arnolfini_portrait_%281434%29.jpg"
+    },
+    {
+      "title": "The School of Athens",
+      "meta": "High Renaissance · Raphael · 1509–1511",
+      "desc": "Plato and Aristotle at the center, surrounded by the Greek philosophical tradition. Raphael slipped portraits of himself and Michelangelo into the crowd.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/%22The_School_of_Athens%22_by_Raffaello_Sanzio_da_Urbino.jpg/960px-%22The_School_of_Athens%22_by_Raffaello_Sanzio_da_Urbino.jpg"
+    },
+    {
+      "title": "David",
+      "meta": "High Renaissance · Michelangelo · 1501–1504",
+      "desc": "Seventeen feet of marble carved from a block others had given up on. David faces Goliath before the stone flies — tense, not triumphant.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/%27David%27_by_Michelangelo_Fir_JBU004.jpg/960px-%27David%27_by_Michelangelo_Fir_JBU004.jpg"
+    },
+    {
+      "title": "Sistine Chapel Ceiling",
+      "meta": "High Renaissance · Michelangelo · 1508–1512",
+      "desc": "Four years, mostly alone, on scaffolding. Michelangelo considered himself a sculptor, not a painter, and complained about the job the whole way through.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Sistine_Chapel_ceiling_02_%28brightened%29.jpg/960px-Sistine_Chapel_ceiling_02_%28brightened%29.jpg"
+    },
+    {
+      "title": "The Night Watch",
+      "meta": "Dutch Golden Age · Rembrandt · 1642",
+      "desc": "A militia portrait transformed into a theatrical scene — figures stepping forward, a drumbeat, a girl glowing in the crowd. Not actually set at night.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/La_ronda_de_noche%2C_por_Rembrandt_van_Rijn.jpg/960px-La_ronda_de_noche%2C_por_Rembrandt_van_Rijn.jpg"
+    },
+    {
+      "title": "Las Meninas",
+      "meta": "Spanish Golden Age · Velázquez · 1656",
+      "desc": "The Infanta and her attendants — but who is the painting for? The king and queen appear only in the mirror. Foucault wrote an essay on that mirror.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Las_Meninas%2C_by_Diego_Vel%C3%A1zquez%2C_from_Prado_in_Google_Earth.jpg/960px-Las_Meninas%2C_by_Diego_Vel%C3%A1zquez%2C_from_Prado_in_Google_Earth.jpg"
+    },
+    {
+      "title": "Girl with a Pearl Earring",
+      "meta": "Dutch Golden Age · Vermeer · c. 1665",
+      "desc": "Not a portrait but a \"tronie\" — a study of an imagined figure. The pearl itself is two quick strokes of white paint. We don't know who she was.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/1665_Girl_with_a_Pearl_Earring.jpg/960px-1665_Girl_with_a_Pearl_Earring.jpg"
+    },
+    {
+      "title": "The Starry Night",
+      "meta": "Post-Impressionism · Van Gogh · 1889",
+      "desc": "Painted from the window of his asylum room at Saint-Rémy, from memory. The village below is imagined; the swirling sky he said he could actually see.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg/960px-Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg"
+    },
+    {
+      "title": "The Scream",
+      "meta": "Expressionism · Edvard Munch · 1893",
+      "desc": "Munch wrote in his diary: \"I sensed an infinite scream passing through nature.\" The sky's red may be from the Krakatoa eruption ten years earlier.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Edvard_Munch%2C_1893%2C_The_Scream%2C_oil%2C_tempera_and_pastel_on_cardboard%2C_91_x_73_cm%2C_National_Gallery_of_Norway.jpg/960px-Edvard_Munch%2C_1893%2C_The_Scream%2C_oil%2C_tempera_and_pastel_on_cardboard%2C_91_x_73_cm%2C_National_Gallery_of_Norway.jpg"
+    }
+  ]
+}

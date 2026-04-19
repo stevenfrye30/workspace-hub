@@ -1,0 +1,67 @@
+{
+  "title": "Mesopotamia & Persia",
+  "subtitle": "Cradles of civilization — Sumer, Assyria, Babylon, and the Achaemenids.",
+  "intro": "Between the Tigris and Euphrates, writing, law codes, and the first cities. Further east, the Persian empire spread a visual language of winged kings and processional staircases from Egypt to the Indus.",
+  "works": [
+    {
+      "title": "Warka Vase",
+      "meta": "Uruk period · c. 3200 BCE · Sumer",
+      "desc": "One of the earliest known narrative reliefs — a procession to the goddess Inanna. Looted from the Iraq Museum in 2003 and later recovered, broken.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Warka_vase_%28background_retouched%29.jpg/960px-Warka_vase_%28background_retouched%29.jpg"
+    },
+    {
+      "title": "Standard of Ur",
+      "meta": "Sumerian · c. 2600 BCE",
+      "desc": "A wooden box inlaid with lapis, shell, and red limestone. One side shows war; the other, a banquet after the victory.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Denis_Bourez_-_British_Museum%2C_London_%288747049029%29_%282%29.jpg/960px-Denis_Bourez_-_British_Museum%2C_London_%288747049029%29_%282%29.jpg"
+    },
+    {
+      "title": "Ziggurat of Ur",
+      "meta": "Neo-Sumerian · c. 2100 BCE · Iraq",
+      "desc": "A stepped temple-platform to the moon god Nanna. Its baked-brick facade has been partly restored; the core is as old as the pyramids.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Ziggarat_of_Ur_001.jpg/960px-Ziggarat_of_Ur_001.jpg"
+    },
+    {
+      "title": "Code of Hammurabi",
+      "meta": "Old Babylonian · c. 1754 BCE",
+      "desc": "Diorite stele, seven feet tall. 282 laws in cuneiform — \"an eye for an eye\" comes from here. Now in the Louvre.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/P1050763_Louvre_code_Hammurabi_face_rwk.JPG/960px-P1050763_Louvre_code_Hammurabi_face_rwk.JPG"
+    },
+    {
+      "title": "Lamassu",
+      "meta": "Neo-Assyrian · 9th–7th c. BCE",
+      "desc": "Winged bulls with human heads, guarding palace gates at Nineveh and Nimrud. Carved with five legs so they look correct from front and side.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Iraqi_Museum.jpg/960px-Iraqi_Museum.jpg"
+    },
+    {
+      "title": "Lion Hunt of Ashurbanipal",
+      "meta": "Neo-Assyrian · c. 645 BCE · Nineveh",
+      "desc": "Alabaster reliefs from the king's palace. A dying lioness drags paralyzed hind legs — one of the most unnervingly precise animal studies in ancient art.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Exhibition_I_am_Ashurbanipal_king_of_the_world%2C_king_of_Assyria%2C_British_Museum_%2845972455081%29.jpg/960px-Exhibition_I_am_Ashurbanipal_king_of_the_world%2C_king_of_Assyria%2C_British_Museum_%2845972455081%29.jpg"
+    },
+    {
+      "title": "Ishtar Gate",
+      "meta": "Neo-Babylonian · c. 575 BCE",
+      "desc": "Glazed brick gate to Babylon under Nebuchadnezzar II. Dragons and bulls in cobalt blue. Reconstructed in Berlin's Pergamon Museum.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Berl%C3%ADn%2C_Museo_de_P%C3%A9rgamo_05.jpg/960px-Berl%C3%ADn%2C_Museo_de_P%C3%A9rgamo_05.jpg"
+    },
+    {
+      "title": "Cyrus Cylinder",
+      "meta": "Achaemenid Persia · c. 539 BCE",
+      "desc": "A clay cylinder inscribed after Cyrus took Babylon. Often called the first charter of human rights — a claim the British Museum treats with more caution.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Cyrus_Cylinder_front.jpg/960px-Cyrus_Cylinder_front.jpg"
+    },
+    {
+      "title": "Persepolis",
+      "meta": "Achaemenid Persia · 518 BCE onward · Iran",
+      "desc": "Ceremonial capital of Darius and Xerxes. Reliefs show envoys from every corner of the empire bringing tribute. Burned by Alexander in 330 BCE.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/3/39/Gate_of_All_Nations%2C_Persepolis.jpg"
+    },
+    {
+      "title": "Naqsh-e Rustam",
+      "meta": "Achaemenid & Sasanian · 5th c. BCE – 3rd c. CE · Iran",
+      "desc": "Cruciform tombs cut high into a cliff for Darius the Great and his heirs. Centuries later the Sasanians carved their own triumphs below.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Naqsh-e_Rustam_necropolis_in_Iran.jpg/960px-Naqsh-e_Rustam_necropolis_in_Iran.jpg"
+    }
+  ]
+}

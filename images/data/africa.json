@@ -1,0 +1,67 @@
+{
+  "title": "Africa",
+  "subtitle": "Bronze, stone, cloth, and mud — craft from across the continent.",
+  "intro": "Africa's art tradition is vast and old. These pieces range from 9th-century Igbo bronzes to the largest mud-brick building in the world.",
+  "works": [
+    {
+      "title": "Bronze Head from Ife",
+      "meta": "Yoruba · 12th–15th c. · Nigeria",
+      "desc": "Naturalistic portraits cast in brass with lost-wax technique. When first seen in Europe they were disbelieved as African work.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Arte_yoruba%2C_nigeria%2C_testa_da_ife%2C_12-15mo_secolo.JPG/960px-Arte_yoruba%2C_nigeria%2C_testa_da_ife%2C_12-15mo_secolo.JPG"
+    },
+    {
+      "title": "Benin Bronzes",
+      "meta": "Edo kingdom · 16th–17th c. · Nigeria",
+      "desc": "Plaques that once covered pillars of the royal palace in Benin City. Looted in 1897; still being repatriated today.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Benin_brass_plaque_03_%28cropped%29.jpg/960px-Benin_brass_plaque_03_%28cropped%29.jpg"
+    },
+    {
+      "title": "Bronze Head of Queen Idia",
+      "meta": "Benin kingdom · 16th c. · Nigeria",
+      "desc": "Portrait of the first Queen Mother of Benin, cast to sit on an ancestral altar. One of the most famous of the Benin bronzes.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Bronze_queen_head.jpg/960px-Bronze_queen_head.jpg"
+    },
+    {
+      "title": "Igbo-Ukwu Bronze",
+      "meta": "Igbo · 9th c. · Nigeria",
+      "desc": "Lost-wax castings of startling delicacy — three centuries before Ife, and predating most European bronzework of the same technical sophistication.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Bronze_ornamental_staff_head%2C_9th_century%2C_Igbo-Ukwu.JPG/960px-Bronze_ornamental_staff_head%2C_9th_century%2C_Igbo-Ukwu.JPG"
+    },
+    {
+      "title": "Great Zimbabwe",
+      "meta": "Shona · 11th–15th c. · Zimbabwe",
+      "desc": "Dry-stone walls built without mortar, enclosing a trade capital that controlled the gold road to the Indian Ocean.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Conical_Tower_-_Great_Enclosure_III_%2833736918448%29.jpg/960px-Conical_Tower_-_Great_Enclosure_III_%2833736918448%29.jpg"
+    },
+    {
+      "title": "Great Mosque of Kilwa",
+      "meta": "Swahili coast · 11th–14th c. · Tanzania",
+      "desc": "Coral-stone mosque on an island that dominated Indian Ocean trade. Ibn Battuta called Kilwa \"one of the most beautiful cities in the world.\"",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Great_Mosque_Kilwa_Interior.jpg/960px-Great_Mosque_Kilwa_Interior.jpg"
+    },
+    {
+      "title": "Rock-Hewn Churches of Lalibela",
+      "meta": "Zagwe dynasty · 12th–13th c. · Ethiopia",
+      "desc": "Eleven churches carved downward into solid rock. Meant as a new Jerusalem after pilgrimage routes were cut off.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Lalibela%2C_san_giorgio%2C_esterno_24.jpg/960px-Lalibela%2C_san_giorgio%2C_esterno_24.jpg"
+    },
+    {
+      "title": "Great Mosque of Djenné",
+      "meta": "Mali · rebuilt 1907 (earlier mosque 13th c.)",
+      "desc": "The world's largest mud-brick building. Every spring the whole town replasters it by hand in a single day.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Djenne_great_mud_mosque.jpg/960px-Djenne_great_mud_mosque.jpg"
+    },
+    {
+      "title": "Dogon Cliff Villages",
+      "meta": "Dogon · 14th c. onward · Mali",
+      "desc": "Mud granaries and shrines stacked along the Bandiagara Escarpment. The Dogon moved here fleeing forced conversion and stayed half a millennium.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Dogon12.jpg/960px-Dogon12.jpg"
+    },
+    {
+      "title": "Kente Cloth",
+      "meta": "Asante & Ewe · 17th c. onward · Ghana",
+      "desc": "Hand-woven silk and cotton strips sewn together into royal cloth. Each pattern has a name and a proverb behind it.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Kent_wove.jpg"
+    }
+  ]
+}

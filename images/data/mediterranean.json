@@ -1,0 +1,73 @@
+{
+  "title": "Mediterranean",
+  "subtitle": "Greek and Roman antiquity — the classical forms that Europe keeps returning to.",
+  "intro": "The classical world's obsession with the human body, proportion, and idealized form shaped every European revival that came after — Renaissance, Neoclassical, and on. Much of it survives only in fragments.",
+  "works": [
+    {
+      "title": "Palace of Knossos",
+      "meta": "Minoan · c. 1900 BCE · Crete",
+      "desc": "A sprawling Bronze Age palace with running water, frescoes of dolphins and bull-leapers, and a storage maze that may be the origin of the Minotaur myth.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Knossos_-_North_Portico_02.jpg/960px-Knossos_-_North_Portico_02.jpg"
+    },
+    {
+      "title": "The Parthenon",
+      "meta": "Classical Greek · 447–432 BCE · Athens",
+      "desc": "Temple to Athena on the Acropolis. The columns lean inward and swell slightly in the middle — optical corrections so they look perfectly straight.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/The_Parthenon_in_Athens.jpg/960px-The_Parthenon_in_Athens.jpg"
+    },
+    {
+      "title": "Charioteer of Delphi",
+      "meta": "Early Classical · c. 478 BCE",
+      "desc": "One of the few surviving Greek bronzes. His calm expression, inset with glass and copper eyes, is a moment in a victory lap — all force held still.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Vognstyreren-fra_Delfi2.jpg/960px-Vognstyreren-fra_Delfi2.jpg"
+    },
+    {
+      "title": "Discobolus",
+      "meta": "Classical Greek · c. 450 BCE (Roman copy)",
+      "desc": "Myron's discus thrower — the original bronze is lost; only Roman marble copies survive. A moment just before release, coiled and still.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Roman_bronze_copy_of_Myron%E2%80%99s_Discobolos%2C_2nd_century_CE_%28Glyptothek_Munich%29.jpg/960px-Roman_bronze_copy_of_Myron%E2%80%99s_Discobolos%2C_2nd_century_CE_%28Glyptothek_Munich%29.jpg"
+    },
+    {
+      "title": "Venus de Milo",
+      "meta": "Hellenistic Greek · c. 130–100 BCE",
+      "desc": "Marble Aphrodite found on the island of Milos in 1820. The missing arms are part of her fame — we don't know what she was doing.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Front_views_of_the_Venus_de_Milo.jpg/960px-Front_views_of_the_Venus_de_Milo.jpg"
+    },
+    {
+      "title": "Winged Victory of Samothrace",
+      "meta": "Hellenistic · c. 200 BCE",
+      "desc": "Nike landing on the prow of a ship, wind pressing her drapery against her body. One of the most physically dynamic pieces of ancient sculpture.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Victoire_de_Samothrace_-_Musee_du_Louvre_-_20190812.jpg/960px-Victoire_de_Samothrace_-_Musee_du_Louvre_-_20190812.jpg"
+    },
+    {
+      "title": "Laocoön and His Sons",
+      "meta": "Hellenistic · 1st c. BCE – 1st c. CE",
+      "desc": "A Trojan priest and his sons strangled by sea serpents. Dug up in a vineyard in 1506 and hauled to the Vatican. Michelangelo studied it for weeks.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Laoco%C3%B6n_and_his_sons_group.jpg/960px-Laoco%C3%B6n_and_his_sons_group.jpg"
+    },
+    {
+      "title": "Augustus of Prima Porta",
+      "meta": "Early Roman Empire · c. 15 CE",
+      "desc": "The emperor posed as a general, barefoot like a god. The breastplate shows the return of captured Roman standards — a diplomatic win dressed as conquest.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Augustus_of_Prima_Porta.jpg/960px-Augustus_of_Prima_Porta.jpg"
+    },
+    {
+      "title": "The Colosseum",
+      "meta": "Flavian · 70–80 CE · Rome",
+      "desc": "An elliptical amphitheater for 50,000 spectators. The underground hypogeum ran elevators, flooded the floor for sea battles, and housed wild animals.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Colosseo_2020.jpg/960px-Colosseo_2020.jpg"
+    },
+    {
+      "title": "Trajan's Column",
+      "meta": "Imperial Roman · 113 CE",
+      "desc": "A 100-foot marble column whose spiral frieze narrates the Dacian Wars in 155 continuous scenes — history carved as a comic strip.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Trajan%27s_Column_HD.jpg/960px-Trajan%27s_Column_HD.jpg"
+    },
+    {
+      "title": "Pompeii",
+      "meta": "Roman · buried 79 CE",
+      "desc": "Vesuvius sealed a whole Roman town in volcanic ash. Frescoes, bread loaves, graffiti, and the shapes of bodies all survived — daily life frozen.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Theathres_of_Pompeii.jpg/960px-Theathres_of_Pompeii.jpg"
+    }
+  ]
+}

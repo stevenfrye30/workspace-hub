@@ -1,0 +1,73 @@
+{
+  "title": "Americas",
+  "subtitle": "Pre-Columbian builders, painters, and potters — Mexico to the Andes.",
+  "intro": "Cities larger than any in contemporary Europe, pyramid complexes aligned to the stars, and some of the finest portrait pottery ever made — all built without iron, wheel, or draft animals.",
+  "works": [
+    {
+      "title": "Olmec Colossal Heads",
+      "meta": "Olmec · 1200–400 BCE · Gulf coast, Mexico",
+      "desc": "Seventeen basalt heads, up to ten feet tall, each with a distinct face. Carved with stone tools and floated on rafts from the quarry, 60 miles away.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/3/31/San_Lorenzo_Monument_4_crop.jpg"
+    },
+    {
+      "title": "Teotihuacan",
+      "meta": "Pre-Aztec · 100 BCE – 550 CE · Mexico",
+      "desc": "A city of over 100,000 at its peak — larger than Rome at the same time. Already abandoned when the Aztecs found it and named it \"the place where gods were born.\"",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Teotihuac%C3%A1n-5973.JPG/960px-Teotihuac%C3%A1n-5973.JPG"
+    },
+    {
+      "title": "Tikal",
+      "meta": "Classic Maya · 400 BCE – 900 CE · Guatemala",
+      "desc": "Step pyramids rising above the rainforest canopy. A Maya superpower that swallowed rival cities until a long drought took it down.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Tikal_3.jpg/960px-Tikal_3.jpg"
+    },
+    {
+      "title": "Palenque",
+      "meta": "Classic Maya · 226 BCE – 799 CE · Chiapas",
+      "desc": "A small Maya kingdom with exquisite stucco portraits and one of the most carefully decoded royal tombs in the Americas — that of Pakal the Great.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/9/90/Palenque_Collage.jpg"
+    },
+    {
+      "title": "Moche Culture",
+      "meta": "Moche · 100–700 CE · Northern Peru",
+      "desc": "Before the Inca, the Moche built painted pyramids and made portrait pots so individual you can tell one person from another across fifteen hundred years.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/H_Luna_Frisorestaurado_lou.jpg/960px-H_Luna_Frisorestaurado_lou.jpg"
+    },
+    {
+      "title": "Nazca Lines",
+      "meta": "Nazca culture · 500 BCE – 500 CE · Peru",
+      "desc": "Hummingbirds, monkeys, and spiders drawn at the scale of football fields by clearing pebbles from the desert floor. Visible only from the air.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/L%C3%ADneas_de_Nazca%2C_Nazca%2C_Per%C3%BA%2C_2015-07-29%2C_DD_49.JPG/960px-L%C3%ADneas_de_Nazca%2C_Nazca%2C_Per%C3%BA%2C_2015-07-29%2C_DD_49.JPG"
+    },
+    {
+      "title": "Chichen Itza",
+      "meta": "Post-Classic Maya · 600–1200 CE · Yucatán",
+      "desc": "On the spring equinox, sunlight strikes the pyramid's stairway to form a serpent that seems to slither down the temple of Kukulkan.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Chichen_Itza_3.jpg/960px-Chichen_Itza_3.jpg"
+    },
+    {
+      "title": "Coatlicue",
+      "meta": "Mexica · late 15th c. · Tenochtitlan",
+      "desc": "\"She of the Serpent Skirt\" — the earth goddess, severed neck bleeding two snakes, wearing a necklace of hands and hearts. Found under Mexico City in 1790.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Coatlicue.png/960px-Coatlicue.png"
+    },
+    {
+      "title": "Aztec Sun Stone",
+      "meta": "Mexica · late 15th c. · Tenochtitlan",
+      "desc": "A basalt disk over three meters across, carving the five successive suns of Aztec cosmology. Buried under the Zócalo in Mexico City until 1790.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Monolito_de_la_Piedra_del_Sol.jpg/960px-Monolito_de_la_Piedra_del_Sol.jpg"
+    },
+    {
+      "title": "Sacsayhuamán",
+      "meta": "Inca · 15th c. · Cusco, Peru",
+      "desc": "A fortress-temple above Cusco built from stones weighing up to 200 tons, fitted so precisely a sheet of paper won't pass between them.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Sacsayhuamán%2C_Cusco%2C_Perú%2C_2015-07-31%2C_DD_27.JPG/960px-Sacsayhuamán%2C_Cusco%2C_Perú%2C_2015-07-31%2C_DD_27.JPG"
+    },
+    {
+      "title": "Machu Picchu",
+      "meta": "Inca · 15th c. · Peru",
+      "desc": "A royal estate on a knife-edged ridge. The stones of its walls are cut so precisely that no mortar holds them — and they have survived five centuries of earthquakes.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Machu_Picchu%2C_2023_%28012%29.jpg/960px-Machu_Picchu%2C_2023_%28012%29.jpg"
+    }
+  ]
+}
