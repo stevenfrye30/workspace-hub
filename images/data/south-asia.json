@@ -303,6 +303,41 @@
       "desc": "Devotional paintings built up in gesso, then layered in gold leaf, semi-precious stones, and mirrored glass. Surface so encrusted the figures seem to float off the board.",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Thanjavur_art_from_south_India.jpg/960px-Thanjavur_art_from_south_India.jpg",
       "year": 1700
+    },
+    {
+      "title": "Harappa",
+      "meta": "Indus Valley Civilization · c. 2600–1900 BCE · Pakistan",
+      "desc": "One of the two great Indus cities, grid-planned like Mohenjo-daro. Its granary, citadel, and burial mounds lie under centuries of British railway ballast quarried from the ruins.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/View_of_Granary_and_Great_Hall_on_Mound_F_-_Archaeological_site_of_Harappa.jpg/960px-View_of_Granary_and_Great_Hall_on_Mound_F_-_Archaeological_site_of_Harappa.jpg",
+      "year": -2500
+    },
+    {
+      "title": "Priest-King of Mohenjo-daro",
+      "meta": "Indus Valley · c. 2000 BCE · Pakistan",
+      "desc": "A small bearded steatite bust, head-band and trefoil-patterned robe. Its title is a guess: we don't know if Mohenjo-daro had priests, kings, or this man at all.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/d/df/Mohenjo-daro_Priesterk%C3%B6nig.jpeg",
+      "year": -2000
+    },
+    {
+      "title": "Pashupati Seal",
+      "meta": "Indus Valley · c. 2350–2000 BCE",
+      "desc": "A steatite seal of a seated, horned figure surrounded by animals — sometimes read as a proto-Shiva, sometimes a shaman. We can't read the script that runs along the top.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Shiva_Pashupati.jpg",
+      "year": -2175
+    },
+    {
+      "title": "Buddhas of Bamiyan",
+      "meta": "Greco-Buddhist · 6th c. · Afghanistan",
+      "desc": "Two standing Buddhas, 38 and 55 meters tall, carved into a sandstone cliff on the Silk Road. The Taliban dynamited them in 2001; projection mapping now fills the empty niches on quiet nights.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/4/46/Buddha_of_Bamiyan.jpg",
+      "year": 570
+    },
+    {
+      "title": "Dhamek Stupa",
+      "meta": "Gupta era · 500 CE · Sarnath",
+      "desc": "Solid brick stupa marking the spot of the Buddha's first sermon. Its upper band of geometric floral carving is some of the finest Gupta ornament anywhere.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Dhamek_Stupa%2C_Sarnath.jpg/960px-Dhamek_Stupa%2C_Sarnath.jpg",
+      "year": 500
     }
   ]
 }

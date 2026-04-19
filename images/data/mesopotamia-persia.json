@@ -261,6 +261,48 @@
       "desc": "Four-winged protective spirits carved in alabaster lining Ashurnasirpal II's palace. They lift a pine cone and a bucket — a gesture of ritual purification never fully decoded.",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Genien%2C_Nimrud_870_v._Chr._Aegyptisches_Museum%2C_Muenchen-4.jpg/960px-Genien%2C_Nimrud_870_v._Chr._Aegyptisches_Museum%2C_Muenchen-4.jpg",
       "year": -870
+    },
+    {
+      "title": "Code of Ur-Nammu",
+      "meta": "Neo-Sumerian · c. 2100 BCE",
+      "desc": "The oldest known written law code, predating Hammurabi by three centuries. The laws are oddly lenient — mostly fines, only occasional death.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/7/71/Ur_Nammu_code_Istanbul.jpg",
+      "year": -2100
+    },
+    {
+      "title": "Ebla",
+      "meta": "Early Bronze Age · c. 2500–1600 BCE · Syria",
+      "desc": "A Syrian city-state whose palace archive held 20,000 cuneiform tablets in a previously unknown Semitic language. Discovered in the 1970s — changed the textbook on the Bronze Age Levant.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/HPIM3078_1.JPG/960px-HPIM3078_1.JPG",
+      "year": -2300
+    },
+    {
+      "title": "Mari Ziggurat",
+      "meta": "Early Dynastic → Old Babylonian · c. 2500–1750 BCE · Syria",
+      "desc": "A trading capital on the middle Euphrates. Its palace mural of a royal investiture is one of the oldest paintings on plaster to survive.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/MariZiggurat.jpg/960px-MariZiggurat.jpg",
+      "year": -2200
+    },
+    {
+      "title": "Tell Halaf",
+      "meta": "Early Iron Age · 10th c. BCE · Syria",
+      "desc": "Aramean palace built of basalt orthostats — grim, angular statues of gods, scorpions, and lions. Bombed to rubble in Berlin in 1943; a team spent decades reassembling 27,000 fragments.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/TellHalaf%2CNE-palace1.jpg/960px-TellHalaf%2CNE-palace1.jpg",
+      "year": -900
+    },
+    {
+      "title": "Dur-Sharrukin (Khorsabad)",
+      "meta": "Neo-Assyrian · Sargon II · 713–706 BCE",
+      "desc": "The capital Sargon II built from scratch and moved into — only to be killed on campaign and abandoned by his heir. Its 40-ton alabaster lamassus now guard the Louvre and the Oriental Institute.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Lammasu.jpg/960px-Lammasu.jpg",
+      "year": -710
+    },
+    {
+      "title": "Hittite Seated Deity",
+      "meta": "Hittite Empire · 13th c. BCE · Anatolia",
+      "desc": "A cast bronze figure in a high conical headdress. The lost Hittite pantheon ran to thousands of names — only a handful survive in objects like this one.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/c/c1/HittiteSeatedDeityAnatolia13thCenturyBCE.jpg",
+      "year": -1250
     }
   ]
 }

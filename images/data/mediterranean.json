@@ -323,6 +323,63 @@
       "desc": "A marble copy of a lost Greek bronze, long considered the pinnacle of male beauty. Winckelmann helped launch Neoclassicism by writing about this single statue.",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Apollo_del_Belvedere.jpg/960px-Apollo_del_Belvedere.jpg",
       "year": 130
+    },
+    {
+      "title": "Antikythera Mechanism",
+      "meta": "Hellenistic · c. 150–100 BCE · Greece",
+      "desc": "A corroded bronze device pulled from a Roman shipwreck in 1901. CT scans finally revealed: a geared orrery predicting sun, moon, and five planets. No surviving match until the Renaissance.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Antikythera_Fragment_A_%28Front%29.webp/960px-Antikythera_Fragment_A_%28Front%29.webp.png",
+      "year": -120
+    },
+    {
+      "title": "Dipylon Amphora",
+      "meta": "Geometric Greek · c. 750 BCE",
+      "desc": "A grave marker nearly five feet tall, painted with stylized mourners in a prothesis scene. The moment figurative imagery returns to Greek pottery after five centuries of pure geometry.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Grave_amphora._8th_cent._B.C.jpg/960px-Grave_amphora._8th_cent._B.C.jpg",
+      "year": -750
+    },
+    {
+      "title": "Treasury of Atreus",
+      "meta": "Mycenaean · c. 1250 BCE · Mycenae",
+      "desc": "A tholos tomb — a stone beehive thirteen meters high, held up only by its own corbelled weight. For fifteen centuries, the largest dome in the world.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Treasury_of_Atreus_Mycenae.jpg/960px-Treasury_of_Atreus_Mycenae.jpg",
+      "year": -1250
+    },
+    {
+      "title": "Arch of Titus",
+      "meta": "Roman Imperial · 81 CE · Rome",
+      "desc": "Triumphal arch for the sack of Jerusalem. Its inner relief shows the Menorah and other temple spoils being carried in procession — our earliest image of the Second Temple's contents.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Arch_Titus%2C_Forum_Romanum%2C_Rome%2C_Italy.jpg/960px-Arch_Titus%2C_Forum_Romanum%2C_Rome%2C_Italy.jpg",
+      "year": 81
+    },
+    {
+      "title": "Library of Celsus at Ephesus",
+      "meta": "Roman Imperial · 110–135 CE · Turkey",
+      "desc": "Two-story facade of a library that held 12,000 scrolls and the sarcophagus of its founder in a chamber behind the wall — a library as a tomb.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Ephesus_Celsus_Library_Fa%C3%A7ade.jpg/960px-Ephesus_Celsus_Library_Fa%C3%A7ade.jpg",
+      "year": 125
+    },
+    {
+      "title": "Mausoleum at Halicarnassus",
+      "meta": "Greek · c. 350 BCE · Turkey",
+      "desc": "Tomb of the Carian satrap Mausolus, so grand that his name became the word for any lavish tomb. Wonder of the ancient world; shaken down by earthquakes; its fragments in the British Museum.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Mausoleum_at_Halicarnassus_at_the_Bodrum_Museum_of_Underwater_Archaeology.jpg",
+      "year": -350
+    },
+    {
+      "title": "Phaistos Disc",
+      "meta": "Minoan · c. 1700 BCE · Crete",
+      "desc": "A fired clay disk stamped with 241 signs in a spiral. Still undeciphered. One of the earliest known uses of movable type — by more than 2,500 years.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Phaistos_Disc_%E2%80%94_Side_A.jpg/960px-Phaistos_Disc_%E2%80%94_Side_A.jpg",
+      "year": -1700
+    },
+    {
+      "title": "Euphronios Krater",
+      "meta": "Archaic Greek · Euphronios &amp; Euxitheos · c. 515 BCE",
+      "desc": "A red-figure calyx-krater showing Hypnos and Thanatos carrying Sarpedon's body. Looted from an Etruscan tomb; caught up in a 30-year dispute; finally returned to Italy in 2008.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Eufronio%2C_cratere_modellato_da_euxitheos_con_morte_di_sarpedone%2C_520-510_ac_ca.%2C_dalla_necropoli_di_greppe_sant%27angelo_01.jpg/960px-Eufronio%2C_cratere_modellato_da_euxitheos_con_morte_di_sarpedone%2C_520-510_ac_ca.%2C_dalla_necropoli_di_greppe_sant%27angelo_01.jpg",
+      "artist": "Euphronios",
+      "year": -515
     }
   ]
 }

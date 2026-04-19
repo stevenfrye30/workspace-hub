@@ -277,6 +277,62 @@
       "desc": "Black shale carvings only the Haida may quarry, developed as a trade art for European sailors. Ship figureheads, pipes, and eventually complex narrative panels.",
       "image": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Haida_argillite_carving_BC_1850_nmai13-1875.jpg",
       "year": 1850
+    },
+    {
+      "title": "Bonampak Murals",
+      "meta": "Classic Maya · c. 790 CE · Chiapas",
+      "desc": "Three rooms painted wall to ceiling: a royal presentation, a battle, a victory dance ending in the torture of captives. The most complete Maya narrative painting to survive.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Zona_arqueologica_Bonampak_01_ID_ZA30_DBannasch.jpg/960px-Zona_arqueologica_Bonampak_01_ID_ZA30_DBannasch.jpg",
+      "year": 790
+    },
+    {
+      "title": "Dresden Codex",
+      "meta": "Late Post-Classic Maya · 11th–12th c.",
+      "desc": "One of only four surviving Maya codices — 39 sheets of bark paper folded like a screen. Astronomical tables of Venus cycles, eclipses, and the rains. Almost everything else was burned by Spanish friars.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Dresden_Codex_pp.58-62_78.jpg/960px-Dresden_Codex_pp.58-62_78.jpg",
+      "year": 1150
+    },
+    {
+      "title": "Ollantaytambo",
+      "meta": "Inca · 15th c. · Sacred Valley",
+      "desc": "Fortress and town at the end of the Sacred Valley. Its huge terrace walls are fitted together in the same mortarless style as Machu Picchu — and in 1537 its defenders held off Pizarro's cavalry from them.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Ollantaytambo_-_Heiliges_Tal.jpg/960px-Ollantaytambo_-_Heiliges_Tal.jpg",
+      "year": 1450
+    },
+    {
+      "title": "Paracas Textile",
+      "meta": "Paracas · c. 300–200 BCE · Peru",
+      "desc": "Embroidered mummy bundles wrapped in layer after layer of cotton and camelid fiber — winged shamans, deities, severed heads — colors still bright after two millennia in the Paracas desert.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Paracas_textile%2C_British_Museum.jpg/960px-Paracas_textile%2C_British_Museum.jpg",
+      "year": -250
+    },
+    {
+      "title": "Codex Mendoza",
+      "meta": "Early colonial Mexican · 1541–1542",
+      "desc": "Aztec tribute lists and imperial history commissioned for Charles V. Captured by French pirates en route to Spain, ended up in Oxford's Bodleian. The most detailed document we have of Aztec administration.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/CodexMendoza01.jpg/960px-CodexMendoza01.jpg",
+      "year": 1542
+    },
+    {
+      "title": "Calakmul",
+      "meta": "Classic Maya · 5th–8th c. · Campeche",
+      "desc": "One of the two great Maya superpowers (with Tikal). A kingdom of 50,000 in a rainforest, its two largest pyramids rise 45 meters above the canopy.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Pir%C3%A1mides_de_Calakmul.JPG/960px-Pir%C3%A1mides_de_Calakmul.JPG",
+      "year": 700
+    },
+    {
+      "title": "Hiawatha Belt",
+      "meta": "Haudenosaunee · c. 1500 · Northeast Woodlands",
+      "desc": "A wampum belt recording the founding of the Iroquois Confederacy: five nations joined by a central tree. Belts were both treaty and record — texts read by running fingers across the beads.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Outdoor_life_and_Indian_stories_-_making_open_air_life_attractive_to_young_Americans_by_telling_them_all_about_woodcraft%2C_signs_and_signaling%2C_the_stars%2C_fishing%2C_camping_-_also_stories_of_noted_%2814566539269%29_%28cropped%29.jpg/960px-thumbnail.jpg",
+      "year": 1500
+    },
+    {
+      "title": "San Agustín Stone Figures",
+      "meta": "San Agustín culture · 100 BCE – 800 CE · Colombia",
+      "desc": "Over 500 monolithic statues of guardians, jaguar-men, and birth scenes, scattered across an Andean plateau. Who the carvers were, or why they stopped, remains unknown.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/San_Agustin_%28Huila%29_Village.JPG/960px-San_Agustin_%28Huila%29_Village.JPG",
+      "year": 100
     }
   ]
 }

@@ -255,6 +255,48 @@
       "desc": "A Mentawai sikerei (shaman) in full body tattoo. Designs carry rank and history; the practice is said to be one of the oldest continuous tattoo traditions on earth.",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Sikerei_Dukun_Mentawai.jpg/960px-Sikerei_Dukun_Mentawai.jpg",
       "year": 1900
+    },
+    {
+      "title": "Waka (Māori War Canoe)",
+      "meta": "Māori · 18th–19th c. · Aotearoa New Zealand",
+      "desc": "Large war canoes carved from a single tōtara trunk. Prows and sternposts carved with ancestors; the hull painted ochre. Rowed by eighty paddlers, two drummers, a chief at the stern.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/c/ce/EarleWarSpeech.jpg",
+      "year": 1835
+    },
+    {
+      "title": "Kris",
+      "meta": "Malay Archipelago · 13th c. onward",
+      "desc": "An asymmetric wavy dagger with nickel-iron pattern welding. Considered an heirloom with a spirit of its own — some can be named, inherited, or banned from leaving an island.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/4/4d/COLLECTIE_TROPENMUSEUM_Kris_met_schede_TMnr_A-1448.jpg",
+      "year": 1700
+    },
+    {
+      "title": "Thai Silk",
+      "meta": "Thai · 13th c. onward",
+      "desc": "Hand-reeled mulberry silk dyed and woven into patterned sashes, sarongs, and court textiles. Nearly extinct by 1945; an American expatriate named Jim Thompson revived the industry before vanishing in Malaysia.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Thai_Silk_Cloth_-_Ban_Tha_Sawang.jpg/960px-Thai_Silk_Cloth_-_Ban_Tha_Sawang.jpg",
+      "year": 1900
+    },
+    {
+      "title": "Hmong Textile",
+      "meta": "Hmong · traditional · SE Asia",
+      "desc": "Reverse-appliqué and cross-stitch panels in jewel colors — \"flower cloth\" (paj ntaub). Often incorporates figures and stories; since the 1970s used to document Hmong migration and war.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Hmong_women_at_Coc_Ly_market%2C_Sapa%2C_Vietnam.jpg/960px-Hmong_women_at_Coc_Ly_market%2C_Sapa%2C_Vietnam.jpg",
+      "year": 1900
+    },
+    {
+      "title": "Batik",
+      "meta": "Javanese · traditional · Indonesia",
+      "desc": "Patterns drawn in hot wax on cotton, then dyed — the wax resisting the color. Javanese court batiks reserved some motifs for royalty on pain of death.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Batik_Trusmi_Cirebon_%2823%29.jpg/960px-Batik_Trusmi_Cirebon_%2823%29.jpg",
+      "year": 1800
+    },
+    {
+      "title": "Wayang Golek",
+      "meta": "Sundanese · 17th c. onward · West Java",
+      "desc": "Carved wooden rod puppets, fully dressed in miniature batik. Performed in all-night epics of the Ramayana and Mahabharata — the dalang puppeteer plays every voice.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Wayang_golek_SF_Asian_Art_Museum.JPG/960px-Wayang_golek_SF_Asian_Art_Museum.JPG",
+      "year": 1850
     }
   ]
 }

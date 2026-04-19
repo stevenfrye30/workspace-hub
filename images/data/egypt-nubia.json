@@ -261,6 +261,62 @@
       "desc": "Sneferu's second pyramid — the angle changes partway up, either to prevent collapse or because ambition had to meet physics. A crucial step between stepped and smooth pyramids.",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Bent_Pyramid_%E6%9B%B2%E6%8A%98%E9%87%91%E5%AD%97%E5%A1%94_-_panoramio.jpg/960px-Bent_Pyramid_%E6%9B%B2%E6%8A%98%E9%87%91%E5%AD%97%E5%A1%94_-_panoramio.jpg",
       "year": -2600
+    },
+    {
+      "title": "Temple of Seti I at Abydos",
+      "meta": "New Kingdom · c. 1290 BCE",
+      "desc": "An L-shaped temple with seven chapels. Its Abydos King List carved on one corridor became a key scholarly tool — naming 76 pharaohs back to the First Dynasty.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/3/33/AbydosFacade.jpg",
+      "year": -1290
+    },
+    {
+      "title": "Beni Hasan",
+      "meta": "Middle Kingdom · c. 1900 BCE",
+      "desc": "Thirty-nine rock-cut tombs of provincial governors, walls painted with daily life — wrestling matches, bakers, looms, dancers — a rare survival of Middle Kingdom domestic art.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Exterior_view_of_tombs_of_Khety_and_Barquet_III.JPG/960px-Exterior_view_of_tombs_of_Khety_and_Barquet_III.JPG",
+      "year": -1900
+    },
+    {
+      "title": "Merneptah Stele",
+      "meta": "New Kingdom · 1208 BCE",
+      "desc": "Black granite stele listing the pharaoh's victories. Line 27 contains the earliest known mention of \"Israel\" in any historical record.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Merneptah_Steli_%28cropped%29.jpg/960px-Merneptah_Steli_%28cropped%29.jpg",
+      "year": -1208
+    },
+    {
+      "title": "Red Pyramid",
+      "meta": "Old Kingdom · Sneferu · c. 2575 BCE · Dahshur",
+      "desc": "Sneferu's third pyramid — the first true smooth-sided pyramid to work. Named for the reddish limestone exposed after the original white casing was stripped for later buildings.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Rote_Pyramide_%28Dahschur%29_04.jpg/960px-Rote_Pyramide_%28Dahschur%29_04.jpg",
+      "year": -2575
+    },
+    {
+      "title": "Valley of the Kings",
+      "meta": "New Kingdom · c. 1550–1070 BCE · West Bank, Thebes",
+      "desc": "Sixty-five painted tombs cut into the limestone valley. The pharaohs chose it for its isolation — looters found everything anyway, except Tutankhamun.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Luxor%2C_Tal_der_K%C3%B6nige_%281995%2C_860x605%29.jpg",
+      "year": -1300
+    },
+    {
+      "title": "White Chapel of Senusret I",
+      "meta": "Middle Kingdom · c. 1950 BCE · Karnak",
+      "desc": "A small bark chapel of fine white limestone. Torn down as filler in a later pylon; found reassembled piece by piece and reconstructed in the 1930s.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/White_Chapel.jpg/960px-White_Chapel.jpg",
+      "year": -1950
+    },
+    {
+      "title": "Younger Memnon (Ramesses II)",
+      "meta": "New Kingdom · c. 1250 BCE",
+      "desc": "A granite colossus of Ramesses II. Belzoni dragged it out of the Ramesseum in 1816 and shipped it to the British Museum. Shelley saw it — and wrote Ozymandias.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Ramses_II_British_Museum.jpg/960px-Ramses_II_British_Museum.jpg",
+      "year": -1250
+    },
+    {
+      "title": "Colossal Statue of Ramesses II",
+      "meta": "New Kingdom · c. 1250 BCE · Grand Egyptian Museum",
+      "desc": "Eleven meters of carved granite, 83 tons. Moved from downtown Cairo to the Grand Egyptian Museum in a 2006 road spectacle so large they had to raise bridges.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Grand_Egyptian_Museum_2019-11-07d.jpg/960px-Grand_Egyptian_Museum_2019-11-07d.jpg",
+      "year": -1250
     }
   ]
 }

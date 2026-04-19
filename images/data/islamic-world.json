@@ -297,6 +297,62 @@
       "desc": "Jahangir — Akbar's son, Shah Jahan's father — lies under white marble inlaid with pietra dura flowers, in a garden tomb of red sandstone. The minarets at the corners rise but never touch the roof.",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Tomb_of_Emperor_Jahangir.jpg/960px-Tomb_of_Emperor_Jahangir.jpg",
       "year": 1637
+    },
+    {
+      "title": "Aljafería Palace",
+      "meta": "Taifa · 11th c. · Zaragoza",
+      "desc": "A fortified palace of the Banu Hud dynasty with a surviving Islamic core — interlaced polylobed arches, stucco arabesques. Now shares a building with the regional parliament.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Aljafer%C3%ADa_Palace.jpg/960px-Aljafer%C3%ADa_Palace.jpg",
+      "year": 1070
+    },
+    {
+      "title": "Faisal Mosque",
+      "meta": "Modern Islamic · 1986 · Islamabad",
+      "desc": "A Turkish architect's vision of a Bedouin tent rendered in reinforced concrete and granite. One of the largest mosques in the world; a sharp-edged rejection of dome-and-minaret convention.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Ali_Mujtaba_WLM2017_FAISAL_MOSQUE_019.jpg/960px-Ali_Mujtaba_WLM2017_FAISAL_MOSQUE_019.jpg",
+      "year": 1986
+    },
+    {
+      "title": "Hassan II Mosque",
+      "meta": "Modern Moroccan · 1986–1993 · Casablanca",
+      "desc": "Built out over the Atlantic on the king's sixtieth birthday. Its minaret is 210 meters — the second-tallest in the world. The hall's retractable roof opens to the sky.",
+      "image": "https://upload.wikimedia.org/wikipedia/en/thumb/c/ce/Hassan_II_mosque%2C_Casablanca_2.jpg/960px-Hassan_II_mosque%2C_Casablanca_2.jpg",
+      "year": 1993
+    },
+    {
+      "title": "Mausoleum of Khoja Ahmed Yasawi",
+      "meta": "Timurid · 1389–1405 · Turkistan, Kazakhstan",
+      "desc": "Commissioned by Timur for a Sufi poet's tomb. Left unfinished when Timur died; the scaffolding on the portal front is six centuries old.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/%D0%9C%D0%B0%D1%83%D0%B7%D0%BE%D0%BB%D0%B5%D1%98_%D0%A5%D0%BE%D0%B4%D0%B6%D0%B5_%D0%90%D1%85%D0%BC%D0%B5%D0%B4%D0%B0_%D0%88%D0%B0%D1%81%D0%B0%D0%B2%D0%B8%D1%98%D0%B0_%28%D0%B3%D1%80%D0%B0%D0%B4_%D0%A2%D1%83%D1%80%D0%BA%D0%B5%D1%81%D1%82%D0%B0%D0%BD%2C_%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD%29.jpg/960px-%D0%9C%D0%B0%D1%83%D0%B7%D0%BE%D0%BB%D0%B5%D1%98_%D0%A5%D0%BE%D0%B4%D0%B6%D0%B5_%D0%90%D1%85%D0%BC%D0%B5%D0%B4%D0%B0_%D0%88%D0%B0%D1%81%D0%B0%D0%B2%D0%B8%D1%98%D0%B0_%28%D0%B3%D1%80%D0%B0%D0%B4_%D0%A2%D1%83%D1%80%D0%BA%D0%B5%D1%81%D1%82%D0%B0%D0%BD%2C_%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD%29.jpg",
+      "year": 1400
+    },
+    {
+      "title": "Mshatta Facade",
+      "meta": "Umayyad · 743–744 · Jordan",
+      "desc": "A desert palace facade dismantled and shipped to Berlin in 1903 as a diplomatic gift. Carved rosettes and winged lions in the softest yellow sandstone; too brittle to move today.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Mschatta-Fassade_%28Pergamonmuseum%29.jpg/960px-Mschatta-Fassade_%28Pergamonmuseum%29.jpg",
+      "year": 743
+    },
+    {
+      "title": "Qusayr 'Amra",
+      "meta": "Umayyad · c. 723 · Jordan",
+      "desc": "A desert bath complex covered inside with frescoes of wrestlers, bathing women, and the six kings of the world — Caesar, Negus, Khosrow — defeated or soon to be defeated by Islam.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Qusayr_Amra.jpg/960px-Qusayr_Amra.jpg",
+      "year": 723
+    },
+    {
+      "title": "Shalamar Gardens",
+      "meta": "Mughal · Shah Jahan · 1641 · Lahore",
+      "desc": "Three terraces of Persian-style paradise garden, 400 fountains fed by a canal that once ran from the Himalayas. Listed in danger after colonial-era road-widening destroyed the outer walls.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Reflection_of_Farah_Baksh_Terrace_%28Upper_Terrace%29_main_building.jpg/960px-Reflection_of_Farah_Baksh_Terrace_%28Upper_Terrace%29_main_building.jpg",
+      "year": 1641
+    },
+    {
+      "title": "Tomb of I'timād-ud-Daulah",
+      "meta": "Mughal · 1622–1628 · Agra",
+      "desc": "\"The Baby Taj\" — the first Mughal tomb clad entirely in white marble and inlaid with pietra dura. Built by Nur Jahan for her father; the stylistic prototype for the Taj Mahal eight years later.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/I%27tim%C4%81d-ud-Daulah%2C_Agra.jpg/960px-I%27tim%C4%81d-ud-Daulah%2C_Agra.jpg",
+      "year": 1625
     }
   ]
 }

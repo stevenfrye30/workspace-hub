@@ -227,6 +227,62 @@
       "desc": "A system of visual proverbs stamped or woven into cloth — each glyph carrying a name and an aphorism. Worn at funerals; later embraced globally as a Pan-African vocabulary.",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Gyaman_Adinkra_Symbols.jpg/960px-Gyaman_Adinkra_Symbols.jpg",
       "year": 1750
+    },
+    {
+      "title": "Great Mosque of Kano",
+      "meta": "Hausa · 15th c. onward · Nigeria",
+      "desc": "A mud-and-stick Friday mosque rebuilt many times across six centuries. The current building rose after a 1937 fire; minarets slender as reeds above a walled city.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Kano_Mosque_in_1960.jpg/960px-Kano_Mosque_in_1960.jpg",
+      "year": 1500
+    },
+    {
+      "title": "Kuba Appliqué Textiles",
+      "meta": "Kuba Kingdom · 17th c. onward · DR Congo",
+      "desc": "Raffia cloth embroidered with cut-pile geometrics. Men weave the base; women embroider. No two patterns repeat — each is a one-time composition.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/6/6c/COLLECTIE_TROPENMUSEUM_Een_Bakuba_vrouw_met_scarificaties_op_haar_buik_borduurt_een_mat_Congo_TMnr_60033932.jpg",
+      "year": 1800
+    },
+    {
+      "title": "Tuareg Metalwork",
+      "meta": "Tuareg · 18th c. onward · Sahara",
+      "desc": "Silver crosses, amulet cases, saddle fittings. Each Tuareg town has a signature cross shape; the Agadez cross is the most widely reproduced.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Homme_toureg.jpg/960px-Homme_toureg.jpg",
+      "year": 1850
+    },
+    {
+      "title": "Akuaba",
+      "meta": "Akan · traditional · Ghana",
+      "desc": "Wooden fertility figures carried by women hoping to conceive. Small, abstracted, round-faced. Carved also now for collectors; the sacred ones are never sold.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Akuaba.jpg",
+      "year": 1900
+    },
+    {
+      "title": "Djinguereber Mosque",
+      "meta": "Mali Empire · 1327 · Timbuktu",
+      "desc": "Commissioned by Mansa Musa after his pilgrimage to Mecca. An Andalusian architect built it in earth and fossil limestone — one of three medieval mosques still standing in Timbuktu.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Djingareiber_cour.jpg/960px-Djingareiber_cour.jpg",
+      "year": 1327
+    },
+    {
+      "title": "Sowei Helmet Mask",
+      "meta": "Mende · 19th c. onward · Sierra Leone",
+      "desc": "A black helmet mask worn in the Sande women's society initiation — the only African mask tradition danced exclusively by women, representing ideals of beauty and comportment.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Brooklyn_Museum_69.39.2_Helmet_Mask_ndoli_jowei_for_Sande_Society_%282%29.jpg/960px-Brooklyn_Museum_69.39.2_Helmet_Mask_ndoli_jowei_for_Sande_Society_%282%29.jpg",
+      "year": 1870
+    },
+    {
+      "title": "Zulu Beadwork",
+      "meta": "Zulu · 19th c. onward · South Africa",
+      "desc": "Glass trade beads sewn onto leather and cotton in geometric patterns — colors and combinations encoding courtship messages (\"love letters\" in bead).",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Zulu_Culture%2C_KwaZulu-Natal%2C_South_Africa_%2820325329170%29.jpg/960px-Zulu_Culture%2C_KwaZulu-Natal%2C_South_Africa_%2820325329170%29.jpg",
+      "year": 1880
+    },
+    {
+      "title": "Fasil Ghebbi",
+      "meta": "Ethiopian · 17th c. · Gondar",
+      "desc": "A fortress-city of stone castles built by a succession of Solomonic emperors. The European-looking keeps are misleading — they're Ethiopian invention, not import.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Fasilides_Palace_01.jpg/960px-Fasilides_Palace_01.jpg",
+      "year": 1640
     }
   ]
 }
