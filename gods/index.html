@@ -9,6 +9,7 @@
 <meta property="og:description" content="750+ deities, spirits, and deified humans across 48 traditions, with interactive family trees, a 7000-year timeline, and cross-cultural archetypes.">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%230a0b1a' stroke='%23e5c158' stroke-width='2'/%3E%3Ctext x='32' y='44' font-family='Georgia' font-size='38' fill='%23e5c158' text-anchor='middle'%3E%E2%98%89%3C/text%3E%3C/svg%3E">
 <style>
 :root {
   --bg:#0a0b1a; --panel:#141829; --panel2:#1d2238; --ink:#e8ddc3; --muted:#8a91b0;
@@ -579,6 +580,24 @@ select:focus:not(:focus-visible),
   overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;
 }
 
+/* Initial loading state */
+#loading {
+  position:fixed; inset:0; display:flex; flex-direction:column;
+  align-items:center; justify-content:center; gap:18px;
+  background:var(--bg); z-index:1000;
+  color:var(--muted); font-style:italic; letter-spacing:1.5px;
+  font-variant:small-caps; font-size:13px;
+}
+#loading .spinner {
+  width:44px; height:44px; border-radius:50%;
+  border:2px solid var(--line); border-top-color:var(--gold);
+  animation:spin 0.9s linear infinite;
+}
+#loading.error .spinner { display:none; }
+#loading .err-msg { color:var(--blood); max-width:360px; text-align:center; line-height:1.6; }
+#loading.fade-out { opacity:0; pointer-events:none; transition:opacity .35s ease; }
+@keyframes spin { to { transform:rotate(360deg); } }
+
 @media (max-width: 700px) {
   header h1 { font-size:22px; letter-spacing:4px; }
   header h1::before, header h1::after { margin:0 10px; }
@@ -608,6 +627,10 @@ select:focus:not(:focus-visible),
 </style>
 </head>
 <body>
+<div id="loading" role="status" aria-live="polite">
+  <div class="spinner" aria-hidden="true"></div>
+  <div id="loadingMsg">Summoning the gods…</div>
+</div>
 <header>
   <h1>GODS</h1>
   <p>A cross-cultural temporal map of the divine</p>
@@ -914,7 +937,28 @@ async function fetchPageImage(title) {
 }
 
 
-fetch('data.json').then(r => r.json()).then(d => { DATA = d; init(); });
+fetch('data.json')
+  .then(r => {
+    if (!r.ok) throw new Error(`HTTP ${r.status} loading data.json`);
+    return r.json();
+  })
+  .then(d => {
+    DATA = d;
+    init();
+    const el = document.getElementById('loading');
+    if (el) {
+      el.classList.add('fade-out');
+      setTimeout(() => el.remove(), 400);
+    }
+  })
+  .catch(err => {
+    const el = document.getElementById('loading');
+    if (el) {
+      el.classList.add('error');
+      el.innerHTML = `<div class="err-msg">Could not load the pantheon. (${(err && err.message) || err})<br><br>If you're viewing a local copy, serve it via an HTTP server — browsers block fetch() on file:// URLs.</div>`;
+    }
+    console.error('data.json load failed:', err);
+  });
 
 function init() {
   DATA.pantheons.forEach(p => PANTHEONS_BY_ID[p.id] = p);
@@ -1109,15 +1153,15 @@ const PANTHEON_GROUPS = [
   { id:'europe', name:'Pagan Europe',
     ids:['norse','celtic-irish','celtic-welsh','slavic','baltic','finnish','sami','armenian'] },
   { id:'asia', name:'Asia',
-    ids:['hindu','chinese','japanese','korean','vietnamese','tibetan-bon','tengri','ainu'] },
+    ids:['hindu','chinese','japanese','korean','vietnamese','tagalog','tibetan-bon','tengri','ainu'] },
   { id:'africa', name:'Sub-Saharan Africa',
-    ids:['yoruba','fon','zulu'] },
+    ids:['yoruba','akan','fon','zulu'] },
   { id:'americas', name:'Indigenous Americas',
-    ids:['aztec','mayan','inca','taino','lakota','navajo','iroquois','guarani','mapuche'] },
-  { id:'oceania', name:'Oceania & Australia',
-    ids:['aboriginal','polynesian'] },
+    ids:['aztec','mayan','inca','taino','lakota','navajo','iroquois','pacific-nw','guarani','mapuche'] },
+  { id:'arctic-oceania', name:'Arctic & Oceania',
+    ids:['inuit','aboriginal','polynesian'] },
   { id:'abrahamic', name:'Abrahamic & Adjacent',
-    ids:['judaism','christianity','islam','kabbalistic','gnostic'] },
+    ids:['judaism','christianity','islam','kabbalistic','gnostic','manichaean'] },
   { id:'diaspora', name:'Diaspora & Syncretic',
     ids:['haitian-vodou'] },
   { id:'human', name:'Elevated Humans',

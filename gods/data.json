@@ -522,6 +522,61 @@
       "description": "Religion of the Thracians (and related Dacians and Getae). Influenced Greek mystery religions via cults of Sabazios and Dionysus. Zalmoxis promised immortality to his followers."
     },
     {
+      "id": "inuit",
+      "name": "Inuit",
+      "region": "Arctic (Greenland / Canada / Alaska)",
+      "active_from": -2500,
+      "active_to": 2025,
+      "peak_from": 1,
+      "peak_to": 1900,
+      "color": "#6a98b8",
+      "description": "Religion of the Inuit peoples. Animistic — animals and landscapes have inua (spirits). Shamans (angakkuit) travel to the sea-mother Sedna to ensure hunting success."
+    },
+    {
+      "id": "akan",
+      "name": "Akan",
+      "region": "West Africa (Ghana / Ivory Coast)",
+      "active_from": 1000,
+      "active_to": 2025,
+      "peak_from": 1400,
+      "peak_to": 1900,
+      "color": "#b05030",
+      "description": "Religion of the Akan peoples (Ashanti, Fante, and others). Supreme god Nyame is remote; lesser abosom handle most affairs. Ancestor spirits (nsamanfo) are actively involved in family life."
+    },
+    {
+      "id": "tagalog",
+      "name": "Tagalog",
+      "region": "Philippines (Luzon)",
+      "active_from": 900,
+      "active_to": 1600,
+      "peak_from": 1200,
+      "peak_to": 1560,
+      "color": "#8b7040",
+      "description": "Pre-Hispanic Tagalog religion of Luzon. Supreme Bathala ruled a pantheon of anito (spirits) and abstract forces. Largely suppressed by Spanish Catholicism from 1565 onward."
+    },
+    {
+      "id": "manichaean",
+      "name": "Manichaean",
+      "region": "Persia / Silk Road / Roman Empire",
+      "active_from": 240,
+      "active_to": 1400,
+      "peak_from": 300,
+      "peak_to": 900,
+      "color": "#7a5c90",
+      "description": "Dualist religion founded by Mani (216–276 CE). At its peak rivalled Christianity; stretched from the Atlantic to China. Ruthlessly suppressed; the last community (Cathars in France, Uyghurs in Central Asia) vanished by ~1400."
+    },
+    {
+      "id": "pacific-nw",
+      "name": "Pacific Northwest",
+      "region": "Haida / Tlingit / Kwakwaka'wakw (NW coast)",
+      "active_from": -500,
+      "active_to": 2025,
+      "peak_from": 1,
+      "peak_to": 1850,
+      "color": "#4a7060",
+      "description": "Religion of the Pacific Northwest peoples. Raven is the great trickster-culture-hero. Totemic animals have supernatural counterparts; the Thunderbird is cosmic guardian."
+    },
+    {
       "id": "deified-humans",
       "name": "Deified Humans",
       "region": "Various",
@@ -554,7 +609,9 @@
         "aramazd",
         "baiame",
         "altjira",
-        "sabazios"
+        "sabazios",
+        "nyame",
+        "bathala"
       ]
     },
     {
@@ -576,7 +633,8 @@
         "zemyna",
         "atabey",
         "bhudevi",
-        "anjea"
+        "anjea",
+        "asase-ya"
       ]
     },
     {
@@ -601,7 +659,8 @@
         "xevioso",
         "guabancex",
         "horagalles",
-        "namarrgon"
+        "namarrgon",
+        "thunderbird"
       ]
     },
     {
@@ -623,7 +682,9 @@
         "chup-kamuy",
         "wi",
         "yhi",
-        "beaivi"
+        "beaivi",
+        "apolaki",
+        "malina"
       ]
     },
     {
@@ -641,7 +702,10 @@
         "coyolxauhqui",
         "bahloo",
         "metztli",
-        "inyanga"
+        "inyanga",
+        "mayari",
+        "igaluk",
+        "tecciztecatl"
       ]
     },
     {
@@ -661,7 +725,8 @@
         "ilmatar",
         "anahit-arm",
         "mattarahkka",
-        "atabey"
+        "atabey",
+        "sedna"
       ]
     },
     {
@@ -697,7 +762,9 @@
         "susanoo",
         "iktomi",
         "legba",
-        "papa-legba"
+        "papa-legba",
+        "raven",
+        "kwaku-anansi"
       ]
     },
     {
@@ -719,7 +786,9 @@
         "erlik",
         "baron-samedi",
         "maketaori",
-        "arawn"
+        "arawn",
+        "anguta",
+        "owuo"
       ]
     },
     {
@@ -741,7 +810,9 @@
         "tu",
         "nane",
         "ogou-haitian",
-        "agreskwe"
+        "agreskwe",
+        "bishamonten",
+        "buluc-chabtan"
       ]
     },
     {
@@ -786,7 +857,11 @@
         "bunjil",
         "yucahu",
         "radien",
-        "altjira"
+        "altjira",
+        "nyame",
+        "bathala",
+        "father-of-greatness",
+        "raven"
       ]
     },
     {
@@ -821,7 +896,8 @@
         "valkyries",
         "azrael",
         "jeoseung-saja",
-        "baron-samedi"
+        "baron-samedi",
+        "anguta"
       ]
     },
     {
@@ -839,7 +915,9 @@
         "tir",
         "orunmila",
         "kvasir",
-        "wenchang"
+        "wenchang",
+        "brihaspati",
+        "fukurokuju"
       ]
     },
     {
@@ -18838,6 +18916,1498 @@
       "archetype": null,
       "parallels": [],
       "description": "Daughter of Louhi. The beauty whose hand both Väinämöinen and Ilmarinen sought; Ilmarinen won her by forging the Sampo."
+    },
+    {
+      "id": "sedna",
+      "name": "Sedna",
+      "pantheon": "inuit",
+      "category": "major",
+      "gender": "F",
+      "domains": [
+        "sea",
+        "marine-animals",
+        "mother-of-sea-creatures"
+      ],
+      "parents": [
+        "anguta"
+      ],
+      "consorts": [],
+      "children": [],
+      "archetype": "mother-goddess",
+      "parallels": [],
+      "description": "Sea-mother. Thrown from her father's boat; her severed fingers became the whales, seals, and walruses. Angakkuit (shamans) descend to comb her hair to free marine animals for hunters.",
+      "wiki_title": "Sedna (mythology)"
+    },
+    {
+      "id": "anguta",
+      "name": "Anguta",
+      "pantheon": "inuit",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "underworld",
+        "psychopomp",
+        "father-of-sedna"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [
+        "sedna"
+      ],
+      "archetype": "psychopomp",
+      "parallels": [],
+      "description": "Psychopomp who gathers the souls of the dead and leads them to Adlivun, the underworld beneath the ocean."
+    },
+    {
+      "id": "nanook",
+      "name": "Nanook",
+      "pantheon": "inuit",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "bears",
+        "hunting"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Master of bears; decided whether hunters deserved success. Observed tabus were essential — he took personal offence at breaches."
+    },
+    {
+      "id": "pinga",
+      "name": "Pinga",
+      "pantheon": "inuit",
+      "category": "major",
+      "gender": "F",
+      "domains": [
+        "hunt",
+        "fertility",
+        "medicine",
+        "afterlife"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Caretaker of living things. Received the souls of the dead to wait for reincarnation."
+    },
+    {
+      "id": "tekkeitsertok",
+      "name": "Tekkeitsertok",
+      "pantheon": "inuit",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "caribou",
+        "land-hunt"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Master of caribou; received offerings from land-hunters."
+    },
+    {
+      "id": "silla",
+      "name": "Silla",
+      "pantheon": "inuit",
+      "category": "major",
+      "gender": "N",
+      "domains": [
+        "air",
+        "breath",
+        "consciousness",
+        "life-force"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Cosmic breath pervading all living things. When silla leaves a body, death comes. Not anthropomorphized."
+    },
+    {
+      "id": "malina",
+      "name": "Malina",
+      "pantheon": "inuit",
+      "category": "major",
+      "gender": "F",
+      "domains": [
+        "sun"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "siblings": [
+        "igaluk"
+      ],
+      "archetype": "sun-god",
+      "parallels": [],
+      "description": "Sun-goddess. Pursued through the sky by her brother Igaluk (moon) after an incestuous encounter in the dark."
+    },
+    {
+      "id": "igaluk",
+      "name": "Igaluk",
+      "pantheon": "inuit",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "moon"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "siblings": [
+        "malina"
+      ],
+      "archetype": "moon-deity",
+      "parallels": [],
+      "description": "Moon-man eternally chasing his sister Malina across the sky."
+    },
+    {
+      "id": "nyame",
+      "name": "Nyame",
+      "pantheon": "akan",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "sky",
+        "supreme-god",
+        "creator"
+      ],
+      "parents": [],
+      "consorts": [
+        "asase-ya"
+      ],
+      "children": [
+        "abosom"
+      ],
+      "archetype": "sky-father",
+      "parallels": [
+        "olodumare"
+      ],
+      "description": "Supreme sky-god of the Akan. Creator, remote but ultimate; delegates daily affairs to the abosom (lesser gods)."
+    },
+    {
+      "id": "asase-ya",
+      "name": "Asase Yaa",
+      "pantheon": "akan",
+      "category": "major",
+      "gender": "F",
+      "domains": [
+        "earth",
+        "truth",
+        "fertility"
+      ],
+      "parents": [],
+      "consorts": [
+        "nyame"
+      ],
+      "children": [],
+      "archetype": "earth-mother",
+      "parallels": [],
+      "description": "Earth-mother; wife of Nyame. Oaths were sworn by her; Thursday is her day (no farming)."
+    },
+    {
+      "id": "kwaku-anansi",
+      "name": "Kwaku Anansi",
+      "pantheon": "akan",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "trickster",
+        "stories",
+        "wisdom",
+        "spider"
+      ],
+      "parents": [
+        "nyame",
+        "asase-ya"
+      ],
+      "consorts": [
+        "aso"
+      ],
+      "children": [],
+      "archetype": "trickster",
+      "parallels": [
+        "anansi",
+        "eshu",
+        "loki"
+      ],
+      "description": "Son of Nyame. Bought all the world's stories from his father. Ancestor of storytelling itself; survived slavery as Aunt Nancy and Brer Rabbit."
+    },
+    {
+      "id": "bia",
+      "name": "Bia",
+      "pantheon": "akan",
+      "category": "minor",
+      "gender": "M",
+      "domains": [
+        "river",
+        "forests"
+      ],
+      "parents": [
+        "nyame"
+      ],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "River-spirit god. Tricked out of prime lands by his brother Tano, leaving Bia with dense forests."
+    },
+    {
+      "id": "tano",
+      "name": "Tano",
+      "pantheon": "akan",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "river",
+        "war",
+        "protection"
+      ],
+      "parents": [
+        "nyame"
+      ],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "River-god of the Tano river. Older brother Bia's rival. Second-most powerful after Nyame."
+    },
+    {
+      "id": "owuo",
+      "name": "Owuo",
+      "pantheon": "akan",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "death"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": "psychopomp",
+      "parallels": [
+        "yama",
+        "mot"
+      ],
+      "description": "Death personified. Rules the afterlife; all Akan eventually come to him."
+    },
+    {
+      "id": "bathala",
+      "name": "Bathala",
+      "pantheon": "tagalog",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "supreme",
+        "sky",
+        "creator"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [
+        "mayari",
+        "apolaki",
+        "tala"
+      ],
+      "archetype": "creator",
+      "parallels": [],
+      "description": "Supreme Tagalog god. Created the first man and woman; ruler of gods and mortals before Spanish missionaries replaced his name with the Christian God in Tagalog translations."
+    },
+    {
+      "id": "apolaki",
+      "name": "Apolaki",
+      "pantheon": "tagalog",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "sun",
+        "war"
+      ],
+      "parents": [
+        "bathala"
+      ],
+      "consorts": [],
+      "children": [],
+      "siblings": [
+        "mayari",
+        "tala"
+      ],
+      "archetype": "sun-god",
+      "parallels": [],
+      "description": "Sun-god. Fought his sister Mayari for rulership after Bathala's departure; lost an eye. They agreed to share — he rules day, she rules night."
+    },
+    {
+      "id": "mayari",
+      "name": "Mayari",
+      "pantheon": "tagalog",
+      "category": "major",
+      "gender": "F",
+      "domains": [
+        "moon",
+        "beauty",
+        "night"
+      ],
+      "parents": [
+        "bathala"
+      ],
+      "consorts": [],
+      "children": [],
+      "siblings": [
+        "apolaki",
+        "tala"
+      ],
+      "archetype": "moon-deity",
+      "parallels": [],
+      "description": "One-eyed moon-goddess. Split rulership with her brother Apolaki after their duel."
+    },
+    {
+      "id": "tala",
+      "name": "Tala",
+      "pantheon": "tagalog",
+      "category": "minor",
+      "gender": "F",
+      "domains": [
+        "stars",
+        "morning-star",
+        "evening-star"
+      ],
+      "parents": [
+        "bathala"
+      ],
+      "consorts": [],
+      "children": [],
+      "siblings": [
+        "apolaki",
+        "mayari"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "Star-goddess. Third sibling; brighter appearances of Venus as morning and evening star."
+    },
+    {
+      "id": "amihan",
+      "name": "Amihan",
+      "pantheon": "tagalog",
+      "category": "major",
+      "gender": "N",
+      "domains": [
+        "wind",
+        "first-bird",
+        "creation"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Primordial bird. Struck the bamboo that produced the first humans, Malakas and Maganda."
+    },
+    {
+      "id": "lakapati",
+      "name": "Lakapati",
+      "pantheon": "tagalog",
+      "category": "major",
+      "gender": "N",
+      "domains": [
+        "agriculture",
+        "fertility",
+        "rice-fields"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Hermaphrodite fertility deity of the rice fields. Prayed to before planting; one of the kindest deities."
+    },
+    {
+      "id": "amanikable",
+      "name": "Amanikable",
+      "pantheon": "tagalog",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "sea",
+        "storms",
+        "wrath"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Sea-god. Angry and ill-tempered; drowned ships of those who failed to propitiate him. Rejected by a mortal he loved, Maganda."
+    },
+    {
+      "id": "father-of-greatness",
+      "name": "Father of Greatness",
+      "pantheon": "manichaean",
+      "category": "primordial",
+      "gender": "M",
+      "domains": [
+        "supreme-light",
+        "remote-deity"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [
+        "mother-of-life",
+        "primal-man"
+      ],
+      "archetype": "creator",
+      "parallels": [
+        "monad",
+        "ahura-mazda",
+        "yhwh"
+      ],
+      "description": "Supreme deity of Light in Manichaean cosmology. Pre-eternal; dwells in the Paradise of Light. Emanates the aeons that battle Darkness."
+    },
+    {
+      "id": "mother-of-life",
+      "name": "Mother of Life",
+      "pantheon": "manichaean",
+      "category": "major",
+      "gender": "F",
+      "domains": [
+        "first-emanation",
+        "mother-aeon"
+      ],
+      "parents": [
+        "father-of-greatness"
+      ],
+      "consorts": [],
+      "children": [
+        "primal-man"
+      ],
+      "archetype": "mother-goddess",
+      "parallels": [
+        "barbelo"
+      ],
+      "description": "First emanation of the Father of Greatness. Brought forth Primal Man to battle Darkness."
+    },
+    {
+      "id": "primal-man",
+      "name": "Primal Man",
+      "pantheon": "manichaean",
+      "category": "hero",
+      "gender": "M",
+      "domains": [
+        "champion",
+        "sent-to-fight-darkness"
+      ],
+      "parents": [
+        "father-of-greatness",
+        "mother-of-life"
+      ],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "First champion against the Prince of Darkness. Captured; his light was swallowed and dispersed into matter — the cosmic origin of the human soul's imprisonment."
+    },
+    {
+      "id": "living-spirit",
+      "name": "Living Spirit",
+      "pantheon": "manichaean",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "rescue",
+        "cosmos-builder"
+      ],
+      "parents": [
+        "father-of-greatness"
+      ],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Second emanation. Rescued Primal Man and built the visible cosmos from the slain demons' corpses — its purpose is to gradually extract the trapped light."
+    },
+    {
+      "id": "jesus-splendor",
+      "name": "Jesus the Splendor",
+      "pantheon": "manichaean",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "awakener",
+        "savior-figure"
+      ],
+      "parents": [
+        "father-of-greatness"
+      ],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [
+        "christ-aeon"
+      ],
+      "description": "Not the historical Jesus of orthodox Christianity, but a luminous aeon who awakens Adam to gnosis. Distinct from 'Jesus the Messiah' (a prophet in Manichaean scheme)."
+    },
+    {
+      "id": "prince-of-darkness",
+      "name": "Prince of Darkness",
+      "pantheon": "manichaean",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "evil",
+        "matter",
+        "chaos"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [
+        "angra-mainyu",
+        "yaldabaoth"
+      ],
+      "description": "Ruler of the Kingdom of Darkness, co-eternal with the Father of Greatness. Source of matter, desire, and all evil. Will be finally defeated when the last light-particle is extracted."
+    },
+    {
+      "id": "raven",
+      "name": "Raven",
+      "pantheon": "pacific-nw",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "trickster",
+        "creator",
+        "stealer-of-light"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": "trickster",
+      "parallels": [
+        "coyote-dine",
+        "iktomi",
+        "kwaku-anansi",
+        "loki"
+      ],
+      "description": "Great trickster-creator of the Pacific Northwest. Stole the sun, moon, and stars from the Sky Chief and released them into the world. Transforms between bird and man."
+    },
+    {
+      "id": "thunderbird",
+      "name": "Thunderbird",
+      "pantheon": "pacific-nw",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "thunder",
+        "storms",
+        "sky"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": "storm-god",
+      "parallels": [],
+      "description": "Enormous cosmic bird. Wings beat thunder; eyes flash lightning. Carries whales from the sea in its talons."
+    },
+    {
+      "id": "nass-shakee-yeil",
+      "name": "Nass-Shaki-Yeil",
+      "pantheon": "pacific-nw",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "sky-chief",
+        "keeper-of-light"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Tlingit Sky Chief ('Old Raven at the Head of the Nass'). Kept the sun, moon, and stars in cedar boxes until Raven stole them."
+    },
+    {
+      "id": "komogwa",
+      "name": "Komogwa",
+      "pantheon": "pacific-nw",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "undersea-kingdom",
+        "wealth",
+        "copper"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Kwakwaka'wakw god of the undersea kingdom. Rules over submerged wealth — copper sheets were gifts from him."
+    },
+    {
+      "id": "dzunukwa",
+      "name": "Dzunukwa",
+      "pantheon": "pacific-nw",
+      "category": "monster",
+      "gender": "F",
+      "domains": [
+        "forest-ogress",
+        "child-snatcher",
+        "wealth-bringer"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Giant wild woman of the Kwakwaka'wakw woods. Snatches children but also bestows wealth — her cries give away her approach: 'Hu! Hu!'"
+    },
+    {
+      "id": "mangala",
+      "name": "Mangala",
+      "pantheon": "hindu",
+      "category": "minor",
+      "gender": "M",
+      "domains": [
+        "mars-planet",
+        "war",
+        "anger"
+      ],
+      "parents": [
+        "bhumi"
+      ],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Personified Mars in the Navagraha. Red-skinned, weapon-armed; inauspicious placement brings martial misfortune.",
+      "wiki_title": "Mangala"
+    },
+    {
+      "id": "budha",
+      "name": "Budha",
+      "pantheon": "hindu",
+      "category": "minor",
+      "gender": "M",
+      "domains": [
+        "mercury-planet",
+        "intelligence",
+        "merchants"
+      ],
+      "parents": [
+        "chandra",
+        "tara"
+      ],
+      "consorts": [
+        "ila"
+      ],
+      "children": [
+        "pururavas"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "Personified Mercury. Son of the moon-god Chandra. Not to be confused with the Buddha.",
+      "wiki_title": "Budha"
+    },
+    {
+      "id": "brihaspati",
+      "name": "Brihaspati",
+      "pantheon": "hindu",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "jupiter-planet",
+        "wisdom",
+        "teacher-of-gods"
+      ],
+      "parents": [
+        "angiras"
+      ],
+      "consorts": [
+        "tara"
+      ],
+      "children": [
+        "kacha"
+      ],
+      "archetype": "wisdom-god",
+      "parallels": [],
+      "description": "Teacher of the Devas; personified Jupiter in the Navagraha. Spiritual counterweight to Shukra, teacher of the Asuras.",
+      "wiki_title": "Brihaspati"
+    },
+    {
+      "id": "shukra",
+      "name": "Shukra",
+      "pantheon": "hindu",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "venus-planet",
+        "teacher-of-asuras",
+        "resurrection"
+      ],
+      "parents": [
+        "bhrigu"
+      ],
+      "consorts": [
+        "jayanti"
+      ],
+      "children": [
+        "devayani"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "Teacher of the Asuras; personified Venus. Knew the mantra of resurrection — kept his students returning to life through countless battles.",
+      "wiki_title": "Shukra"
+    },
+    {
+      "id": "shani",
+      "name": "Shani",
+      "pantheon": "hindu",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "saturn-planet",
+        "karma",
+        "discipline"
+      ],
+      "parents": [
+        "surya",
+        "chhaya"
+      ],
+      "consorts": [
+        "dhamini",
+        "neelima"
+      ],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Saturn. Strict enforcer of karmic law; his gaze can destroy, but his favor brings deep discipline.",
+      "wiki_title": "Shani"
+    },
+    {
+      "id": "rahu",
+      "name": "Rahu",
+      "pantheon": "hindu",
+      "category": "minor",
+      "gender": "M",
+      "domains": [
+        "lunar-north-node",
+        "eclipses",
+        "deception"
+      ],
+      "parents": [
+        "viprachitti",
+        "simhika"
+      ],
+      "consorts": [],
+      "children": [],
+      "siblings": [
+        "ketu"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "Severed head of the asura Svarbhanu. Swallows the sun and moon, causing eclipses. One of the nine grahas.",
+      "wiki_title": "Rahu"
+    },
+    {
+      "id": "ketu",
+      "name": "Ketu",
+      "pantheon": "hindu",
+      "category": "minor",
+      "gender": "M",
+      "domains": [
+        "lunar-south-node",
+        "karma",
+        "moksha"
+      ],
+      "parents": [
+        "viprachitti",
+        "simhika"
+      ],
+      "consorts": [],
+      "children": [],
+      "siblings": [
+        "rahu"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "Headless body of Svarbhanu. Paired with Rahu; together they complete the nine grahas.",
+      "wiki_title": "Ketu (mythology)"
+    },
+    {
+      "id": "nirriti",
+      "name": "Nirriti",
+      "pantheon": "hindu",
+      "category": "minor",
+      "gender": "F",
+      "domains": [
+        "decay",
+        "destruction",
+        "southwest-direction"
+      ],
+      "parents": [],
+      "consorts": [
+        "adharma"
+      ],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Goddess of decay and misfortune; guardian of the southwest direction in the Dikpalas.",
+      "wiki_title": "Nirṛti"
+    },
+    {
+      "id": "ravana",
+      "name": "Ravana",
+      "pantheon": "hindu",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "rakshasa-king",
+        "lanka",
+        "devotion-to-shiva",
+        "antagonist"
+      ],
+      "parents": [
+        "vishrava",
+        "kaikasi"
+      ],
+      "consorts": [
+        "mandodari"
+      ],
+      "children": [
+        "indrajit",
+        "meghanada"
+      ],
+      "siblings": [
+        "kubera",
+        "vibhishana",
+        "kumbhakarna"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "Ten-headed Rakshasa king of Lanka. Kidnapping Sita precipitated the Ramayana war in which he was slain by Rama. A devoted Shiva-worshipper and accomplished scholar despite his villainy.",
+      "wiki_title": "Ravana"
+    },
+    {
+      "id": "mahishasura",
+      "name": "Mahishasura",
+      "pantheon": "hindu",
+      "category": "monster",
+      "gender": "M",
+      "domains": [
+        "buffalo-demon",
+        "conqueror-of-heaven"
+      ],
+      "parents": [
+        "rambha"
+      ],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Buffalo-demon who briefly conquered the three worlds. Slain by Durga across a nine-day battle — the basis of Navaratri.",
+      "wiki_title": "Mahishasura"
+    },
+    {
+      "id": "hiranyakashipu",
+      "name": "Hiranyakashipu",
+      "pantheon": "hindu",
+      "category": "monster",
+      "gender": "M",
+      "domains": [
+        "asura-king",
+        "invulnerability",
+        "antagonist-of-vishnu"
+      ],
+      "parents": [
+        "kashyapa",
+        "diti"
+      ],
+      "consorts": [
+        "kayadhu"
+      ],
+      "children": [
+        "prahlada"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "Asura who obtained near-total invulnerability from Brahma. Slain by Vishnu's Narasimha avatar, who exploited every loophole of the boon.",
+      "wiki_title": "Hiranyakashipu"
+    },
+    {
+      "id": "prahlada",
+      "name": "Prahlada",
+      "pantheon": "hindu",
+      "category": "hero",
+      "gender": "M",
+      "domains": [
+        "devotion",
+        "child-saint"
+      ],
+      "parents": [
+        "hiranyakashipu",
+        "kayadhu"
+      ],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Child devotee of Vishnu. His father Hiranyakashipu's efforts to kill him for apostasy all failed — until Vishnu appeared as Narasimha.",
+      "wiki_title": "Prahlada"
+    },
+    {
+      "id": "vayu-dikpala",
+      "name": "Vayu (direction)",
+      "pantheon": "hindu",
+      "category": "minor",
+      "gender": "M",
+      "domains": [
+        "northwest-direction",
+        "wind-dikpala"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Placeholder — see main Vayu. As a Dikpala he guards the northwest."
+    },
+    {
+      "id": "ebisu",
+      "name": "Ebisu",
+      "pantheon": "japanese",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "fishermen",
+        "luck",
+        "commerce"
+      ],
+      "parents": [
+        "izanagi",
+        "izanami"
+      ],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Laughing patron of fishermen and good luck. Only native Japanese member of the Seven Lucky Gods.",
+      "wiki_title": "Ebisu (mythology)"
+    },
+    {
+      "id": "daikokuten",
+      "name": "Daikokuten",
+      "pantheon": "japanese",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "wealth",
+        "kitchen",
+        "commerce",
+        "farmers"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Great black god of wealth and the kitchen. Derived from the Hindu Mahakala but thoroughly Japanized.",
+      "wiki_title": "Daikokuten"
+    },
+    {
+      "id": "bishamonten",
+      "name": "Bishamonten",
+      "pantheon": "japanese",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "warriors",
+        "protection",
+        "wealth"
+      ],
+      "parents": [],
+      "consorts": [
+        "kichijouten"
+      ],
+      "children": [],
+      "archetype": "war-god",
+      "parallels": [],
+      "description": "Armored protector of warriors. One of the Seven Lucky Gods; guardian of the north.",
+      "wiki_title": "Bishamonten"
+    },
+    {
+      "id": "kichijouten",
+      "name": "Kichijōten",
+      "pantheon": "japanese",
+      "category": "minor",
+      "gender": "F",
+      "domains": [
+        "beauty",
+        "luck",
+        "fertility"
+      ],
+      "parents": [],
+      "consorts": [
+        "bishamonten"
+      ],
+      "children": [],
+      "archetype": null,
+      "parallels": [
+        "lakshmi"
+      ],
+      "description": "Goddess of beauty and fortune. Japanese form of Lakshmi.",
+      "wiki_title": "Kichijōten"
+    },
+    {
+      "id": "fukurokuju",
+      "name": "Fukurokuju",
+      "pantheon": "japanese",
+      "category": "minor",
+      "gender": "M",
+      "domains": [
+        "wisdom",
+        "longevity",
+        "popularity"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Long-headed god of wisdom and long life. Once a Chinese Taoist sage.",
+      "wiki_title": "Fukurokuju"
+    },
+    {
+      "id": "jurojin",
+      "name": "Jurōjin",
+      "pantheon": "japanese",
+      "category": "minor",
+      "gender": "M",
+      "domains": [
+        "longevity",
+        "old-age",
+        "sake"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Old-man god of long life. Accompanied by a deer said to be 1,500 years old.",
+      "wiki_title": "Jurōjin"
+    },
+    {
+      "id": "hotei",
+      "name": "Hotei",
+      "pantheon": "japanese",
+      "category": "minor",
+      "gender": "M",
+      "domains": [
+        "contentment",
+        "abundance",
+        "children"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Fat laughing monk. God of contentment; based on the Chinese Chan monk Budai. The Seven Lucky Gods' cheerful face.",
+      "wiki_title": "Budai"
+    },
+    {
+      "id": "anuket",
+      "name": "Anuket",
+      "pantheon": "egyptian",
+      "category": "minor",
+      "gender": "F",
+      "domains": [
+        "nile",
+        "aswan",
+        "cataracts"
+      ],
+      "parents": [
+        "khnum",
+        "satet"
+      ],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Gazelle-headed goddess of the Nile at Aswan. Third of the Elephantine triad with Khnum and Satet.",
+      "wiki_title": "Anuket"
+    },
+    {
+      "id": "mafdet",
+      "name": "Mafdet",
+      "pantheon": "egyptian",
+      "category": "minor",
+      "gender": "F",
+      "domains": [
+        "execution",
+        "snakes",
+        "scorpions"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Feline goddess of executions. Older than Bastet; slayer of venomous creatures on behalf of the pharaoh.",
+      "wiki_title": "Mafdet"
+    },
+    {
+      "id": "renenutet",
+      "name": "Renenutet",
+      "pantheon": "egyptian",
+      "category": "minor",
+      "gender": "F",
+      "domains": [
+        "harvest",
+        "nursing",
+        "fortune",
+        "true-name"
+      ],
+      "parents": [],
+      "consorts": [
+        "geb"
+      ],
+      "children": [
+        "nepri"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "Cobra-goddess of the harvest and of the 'true name' given to each newborn.",
+      "wiki_title": "Renenutet"
+    },
+    {
+      "id": "bennu",
+      "name": "Bennu",
+      "pantheon": "egyptian",
+      "category": "minor",
+      "gender": "M",
+      "domains": [
+        "rebirth",
+        "sun",
+        "heron"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Purple heron of creation and cyclical rebirth; Egyptian prototype of the Greek phoenix.",
+      "wiki_title": "Bennu"
+    },
+    {
+      "id": "apis",
+      "name": "Apis",
+      "pantheon": "egyptian",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "bull",
+        "kingship",
+        "ptah-incarnate"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Sacred bull of Memphis; living incarnation of Ptah. Only one Apis lived at a time; when he died, he was mummified and a new bull found.",
+      "wiki_title": "Apis (deity)"
+    },
+    {
+      "id": "thrym",
+      "name": "Þrymr",
+      "pantheon": "norse",
+      "category": "monster",
+      "gender": "M",
+      "domains": [
+        "giant-king",
+        "stole-mjolnir"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Jötunn king who stole Mjölnir. Thor (dressed as bride Freyja) killed him at the wedding feast and recovered the hammer.",
+      "wiki_title": "Þrymr"
+    },
+    {
+      "id": "surtr",
+      "name": "Surtr",
+      "pantheon": "norse",
+      "category": "monster",
+      "gender": "M",
+      "domains": [
+        "fire-giant",
+        "muspelheim",
+        "ragnarok"
+      ],
+      "parents": [],
+      "consorts": [
+        "sinmara"
+      ],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Fire-giant of Muspelheim. At Ragnarök he leads his sons against the gods and burns the world with his flaming sword.",
+      "wiki_title": "Surtr"
+    },
+    {
+      "id": "suttung",
+      "name": "Suttungr",
+      "pantheon": "norse",
+      "category": "minor",
+      "gender": "M",
+      "domains": [
+        "jotunn",
+        "mead-of-poetry"
+      ],
+      "parents": [
+        "gillingr"
+      ],
+      "consorts": [],
+      "children": [
+        "gunnlod"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "Jötunn who obtained the mead of poetry as blood-price for his father. Odin seduced his daughter Gunnlöð and stole the mead.",
+      "wiki_title": "Suttungr"
+    },
+    {
+      "id": "hermod",
+      "name": "Hermóðr",
+      "pantheon": "norse",
+      "category": "minor",
+      "gender": "M",
+      "domains": [
+        "messenger",
+        "courage"
+      ],
+      "parents": [
+        "odin"
+      ],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Brave messenger of Odin. Rode to Hel to plead for Baldr's return — Hel granted it on a condition that Loki sabotaged.",
+      "wiki_title": "Hermóðr"
+    },
+    {
+      "id": "njord-mimir-kvasir-alt",
+      "name": "Suttung's father Gillingr",
+      "pantheon": "norse",
+      "category": "minor",
+      "gender": "M",
+      "domains": [
+        "giant",
+        "murdered-by-dwarves"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [
+        "suttung"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "Jötunn father of Suttungr. Drowned by the dwarf brothers Fjalar and Galar; his son's blood-price was the mead of poetry."
+    },
+    {
+      "id": "namtar",
+      "name": "Namtar",
+      "pantheon": "mesopotamian",
+      "category": "minor",
+      "gender": "M",
+      "domains": [
+        "fate",
+        "plague",
+        "vizier-of-underworld"
+      ],
+      "parents": [
+        "enlil",
+        "ereshkigal"
+      ],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Vizier of Ereshkigal in the underworld. Brought disease and fate to mortals.",
+      "wiki_title": "Namtar"
+    },
+    {
+      "id": "geshtinanna",
+      "name": "Geshtinanna",
+      "pantheon": "mesopotamian",
+      "category": "minor",
+      "gender": "F",
+      "domains": [
+        "grapevines",
+        "winter-underworld",
+        "sister-of-dumuzi"
+      ],
+      "parents": [
+        "enki",
+        "duttur"
+      ],
+      "consorts": [
+        "ningishzida"
+      ],
+      "children": [],
+      "siblings": [
+        "dumuzi"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "Sister of Dumuzi. Offered to spend half each year in the underworld so he could return for the other half — the seasonal cycle.",
+      "wiki_title": "Geshtinanna"
+    },
+    {
+      "id": "goibniu",
+      "name": "Goibniu",
+      "pantheon": "celtic-irish",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "smithing",
+        "brewing",
+        "healing-ale"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "siblings": [
+        "credne",
+        "luchta"
+      ],
+      "archetype": "smith-god",
+      "parallels": [
+        "hephaestus",
+        "weyland"
+      ],
+      "description": "Divine smith of the Tuatha Dé Danann. Forged weapons that never missed, and brewed the ale of immortality.",
+      "wiki_title": "Goibniu"
+    },
+    {
+      "id": "dian-cecht",
+      "name": "Dian Cécht",
+      "pantheon": "celtic-irish",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "healing",
+        "physicians"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [
+        "miach",
+        "airmed"
+      ],
+      "archetype": null,
+      "parallels": [
+        "asclepius"
+      ],
+      "description": "God of healing and surgery. Forged Nuada's silver arm; later killed his own more talented son Miach in jealousy.",
+      "wiki_title": "Dian Cécht"
+    },
+    {
+      "id": "tecciztecatl",
+      "name": "Tecciztecatl",
+      "pantheon": "aztec",
+      "category": "minor",
+      "gender": "M",
+      "domains": [
+        "moon",
+        "shell",
+        "cowardice"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": "moon-deity",
+      "parallels": [],
+      "description": "Hesitant moon-god. At the world-creation bonfire, he flinched; the braver Nanahuatzin jumped first to become the sun.",
+      "wiki_title": "Tecciztecatl"
+    },
+    {
+      "id": "centzon-totochtin",
+      "name": "Centzon Totochtin",
+      "pantheon": "aztec",
+      "category": "minor",
+      "gender": "M",
+      "domains": [
+        "four-hundred-rabbits",
+        "drunkenness",
+        "pulque"
+      ],
+      "parents": [
+        "patecatl",
+        "mayahuel"
+      ],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "The 400 rabbits — gods of drunkenness. Variously numbered excess — 'as drunk as 400 rabbits' is an Aztec idiom.",
+      "wiki_title": "Centzon Totochtin"
+    },
+    {
+      "id": "buluc-chabtan",
+      "name": "Buluc Chabtan",
+      "pantheon": "mayan",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "war",
+        "violent-death",
+        "sacrifice"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": "war-god",
+      "parallels": [],
+      "description": "War-god of violent and sudden death. Accompanied by Ah Puch (underworld) in depictions of sacrifice.",
+      "wiki_title": "Buluc Chabtan"
+    },
+    {
+      "id": "rishabhanatha",
+      "name": "Rishabhanatha",
+      "pantheon": "hindu",
+      "category": "deified-human",
+      "gender": "M",
+      "domains": [
+        "first-tirthankara",
+        "jainism",
+        "liberation"
+      ],
+      "parents": [
+        "nabhiraja",
+        "marudevi"
+      ],
+      "consorts": [
+        "sunanda",
+        "sumangala"
+      ],
+      "children": [
+        "bharata",
+        "bahubali"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "First of 24 Jain Tirthankaras. In Jain cosmology he discovered agriculture, law, and kingship before renouncing all; in later Hindu scripture he was absorbed as an avatar of Vishnu.",
+      "wiki_title": "Rishabhanatha"
     }
   ]
 }
