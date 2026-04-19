@@ -4,6 +4,11 @@
 <meta charset="UTF-8">
 <title>Gods — A Cross-Cultural Temporal Map</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="A cross-cultural temporal map of the divine — 750+ figures across 48 traditions, from Proto-Indo-European reconstructions to living religions. Family trees, timelines, and archetypes.">
+<meta property="og:title" content="Gods — A Cross-Cultural Temporal Map">
+<meta property="og:description" content="750+ deities, spirits, and deified humans across 48 traditions, with interactive family trees, a 7000-year timeline, and cross-cultural archetypes.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
 <style>
 :root {
   --bg:#0a0b1a; --panel:#141829; --panel2:#1d2238; --ink:#e8ddc3; --muted:#8a91b0;
@@ -834,19 +839,97 @@ function init() {
   wireTabs();
   wireModal();
   wireBrowse();
+  wireHashRouter();
 
-  // Auto-select first pantheon in tree tab so it's not blank if user clicks in
-  if (DATA.pantheons.length) loadTree(DATA.pantheons.find(p => p.id === 'greek')?.id || DATA.pantheons[0].id);
+  // Initialize Family Trees tab to Zeus (won't update hash since skipHash)
+  if (DATA.pantheons.length) {
+    loadTree(DATA.pantheons.find(p => p.id === 'greek')?.id || DATA.pantheons[0].id, { skipHash: true });
+  }
+
+  // If URL has a hash, honor it; otherwise default to Pantheons tab
+  if (location.hash) applyHashFromURL();
+  else selectTab('overview', { skipHash: true });
 }
 
 function wireTabs() {
   document.querySelectorAll('.tab-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-      btn.classList.add('active');
-      document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
-    });
+    btn.addEventListener('click', () => selectTab(btn.dataset.tab));
+  });
+}
+
+function selectTab(tabId, { skipHash = false } = {}) {
+  const btn = document.querySelector(`[data-tab="${tabId}"]`);
+  const panel = document.getElementById('tab-' + tabId);
+  if (!btn || !panel) return;
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  panel.classList.add('active');
+  if (!skipHash) updateHash('tab/' + tabId);
+}
+
+/* ---------- URL hash router ---------- */
+let suppressHashUpdate = false;
+
+function updateHash(newFragment) {
+  if (suppressHashUpdate) return;
+  const target = '#' + newFragment;
+  if (location.hash === target) return;
+  // Use history.pushState so no 'jump' from anchor behavior, and back-button works
+  history.pushState(null, '', target);
+}
+
+function applyHashFromURL() {
+  const h = location.hash.replace(/^#/, '');
+  if (!h) { selectTab('overview', { skipHash: true }); return; }
+
+  const parts = h.split('/');
+  const type = parts[0];
+  const id = parts.slice(1).join('/');
+
+  switch (type) {
+    case 'tab':
+      if (document.getElementById('tab-' + id)) selectTab(id, { skipHash: true });
+      else selectTab('overview', { skipHash: true });
+      break;
+    case 'god':
+      if (GODS_BY_ID[id]) {
+        selectTab('trees', { skipHash: true });
+        setFocus(id, false, { skipHash: true });
+      } else {
+        selectTab('overview', { skipHash: true });
+      }
+      break;
+    case 'pantheon':
+      if (PANTHEONS_BY_ID[id]) {
+        selectTab('trees', { skipHash: true });
+        loadTree(id, { skipHash: true });
+      } else {
+        selectTab('overview', { skipHash: true });
+      }
+      break;
+    case 'archetype':
+      selectTab('archetypes', { skipHash: true });
+      if (DATA.archetypes.find(a => a.id === id)) {
+        // Slight delay so the tab is displayed before scrolling
+        setTimeout(() => jumpToArchetype(id), 30);
+      }
+      break;
+    default:
+      selectTab('overview', { skipHash: true });
+  }
+}
+
+function wireHashRouter() {
+  window.addEventListener('popstate', () => {
+    suppressHashUpdate = true;
+    applyHashFromURL();
+    suppressHashUpdate = false;
+  });
+  window.addEventListener('hashchange', () => {
+    suppressHashUpdate = true;
+    applyHashFromURL();
+    suppressHashUpdate = false;
   });
 }
 
@@ -982,7 +1065,7 @@ function renderPantheonGrid() {
   document.querySelectorAll('.pantheon-card').forEach(el => {
     el.addEventListener('click', () => {
       const pid = el.dataset.pid;
-      document.querySelector('[data-tab="trees"]').click();
+      selectTab('trees', { skipHash: true });
       loadTree(pid);
     });
   });
@@ -1069,20 +1152,18 @@ function updateBackButton() {
   document.getElementById('focusBack').disabled = focusHistory.length <= 1;
 }
 
-function loadTree(pantheonId) {
+function loadTree(pantheonId, { skipHash = false } = {}) {
   // Called from pantheon card or timeline click — set pantheon dropdown then pick major figure
   const gods = DATA.gods.filter(g => g.pantheon === pantheonId);
   document.getElementById('treeSelect').value = pantheonId;
   const pick = gods.find(g => g.category === 'major') || gods[0];
-  if (pick) { focusHistory = []; updateBackButton(); setFocus(pick.id, false); }
+  if (pick) { focusHistory = []; updateBackButton(); setFocus(pick.id, false, { skipHash }); }
 }
 
-function setFocus(godId, pushHistory = true) {
+function setFocus(godId, pushHistory = true, { skipHash = false } = {}) {
   const g = GODS_BY_ID[godId];
   if (!g) return;
-  if (pushHistory && focusHistory[focusHistory.length - 1] !== godId) {
-    focusHistory.push(godId);
-  } else if (!pushHistory) {
+  if (focusHistory[focusHistory.length - 1] !== godId) {
     focusHistory.push(godId);
   }
   currentFocusId = godId;
@@ -1107,6 +1188,8 @@ function setFocus(godId, pushHistory = true) {
 
   // Keep full tree data current for quick toggle
   if (currentTreeMode === 'full') renderFullTree(g.pantheon);
+
+  if (!skipHash) updateHash('god/' + godId);
 }
 
 function renderFocusView(g) {
@@ -1416,7 +1499,7 @@ function renderTimeline() {
   rowsContainer.querySelectorAll('.timeline-row').forEach(el => {
     el.addEventListener('click', () => {
       const pid = el.dataset.pid;
-      document.querySelector('[data-tab="trees"]').click();
+      selectTab('trees', { skipHash: true });
       loadTree(pid);
     });
   });
@@ -1449,13 +1532,15 @@ function renderArchetypes() {
 
 function jumpToArchetype(id) {
   const el = document.getElementById('arch-' + id);
-  if (el) el.scrollIntoView({ behavior:'smooth', block:'start' });
+  if (el) {
+    el.scrollIntoView({ behavior:'smooth', block:'start' });
+    updateHash('archetype/' + id);
+  }
 }
 
 function focusFromArchetype(godId) {
-  const btn = document.querySelector('[data-tab="trees"]');
-  if (btn) btn.click();
-  setFocus(godId);
+  selectTab('trees', { skipHash: true });
+  setFocus(godId); // updates hash to god/<id>
 }
 
 /* ---------- Deified Humans tab ---------- */
