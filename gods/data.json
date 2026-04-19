@@ -467,6 +467,61 @@
       "category": "abrahamic"
     },
     {
+      "id": "aboriginal",
+      "name": "Aboriginal Australian",
+      "region": "Australia",
+      "active_from": -60000,
+      "active_to": 2025,
+      "peak_from": -10000,
+      "peak_to": 1788,
+      "color": "#a06040",
+      "description": "Religions of the Aboriginal Australians — the oldest continuous living traditions on Earth. Hundreds of distinct Dreamings (Altjeringa) belong to different language groups; a few figures are widely shared."
+    },
+    {
+      "id": "taino",
+      "name": "Taíno",
+      "region": "Caribbean",
+      "active_from": 800,
+      "active_to": 1550,
+      "peak_from": 1200,
+      "peak_to": 1492,
+      "color": "#3a9090",
+      "description": "Religion of the Taíno peoples of the Greater Antilles. Systematically destroyed within 50 years of European contact; reconstructed from early chroniclers (Pané, Las Casas)."
+    },
+    {
+      "id": "haitian-vodou",
+      "name": "Haitian Vodou",
+      "region": "Haiti / Diaspora",
+      "active_from": 1700,
+      "active_to": 2025,
+      "peak_from": 1800,
+      "peak_to": 2025,
+      "color": "#a04070",
+      "description": "Syncretic religion of Haiti. Fon/Dahomean and Kongo roots fused with Catholic saints under slavery. Lwa (spirits) are grouped into 'nations' (Rada, Petwo, Gede)."
+    },
+    {
+      "id": "sami",
+      "name": "Sámi",
+      "region": "Sápmi (Arctic Scandinavia)",
+      "active_from": -500,
+      "active_to": 1900,
+      "peak_from": 1,
+      "peak_to": 1700,
+      "color": "#5880a0",
+      "description": "Indigenous religion of the Sámi people of northern Scandinavia. Shamanic; noaidi drummed visions. Suppressed by Lutheran missionaries from the 17th century but partially preserved."
+    },
+    {
+      "id": "thracian",
+      "name": "Thracian",
+      "region": "Balkans / SE Europe",
+      "active_from": -1500,
+      "active_to": 400,
+      "peak_from": -500,
+      "peak_to": 100,
+      "color": "#904030",
+      "description": "Religion of the Thracians (and related Dacians and Getae). Influenced Greek mystery religions via cults of Sabazios and Dionysus. Zalmoxis promised immortality to his followers."
+    },
+    {
       "id": "deified-humans",
       "name": "Deified Humans",
       "region": "Various",
@@ -496,7 +551,10 @@
         "anu",
         "ukko",
         "dievas",
-        "aramazd"
+        "aramazd",
+        "baiame",
+        "altjira",
+        "sabazios"
       ]
     },
     {
@@ -515,7 +573,10 @@
         "pachamama",
         "fjorgyn",
         "maka",
-        "zemyna"
+        "zemyna",
+        "atabey",
+        "bhudevi",
+        "anjea"
       ]
     },
     {
@@ -537,7 +598,10 @@
         "perkunas",
         "vahagn",
         "illapa",
-        "xevioso"
+        "xevioso",
+        "guabancex",
+        "horagalles",
+        "namarrgon"
       ]
     },
     {
@@ -557,7 +621,9 @@
         "kun",
         "khors",
         "chup-kamuy",
-        "wi"
+        "wi",
+        "yhi",
+        "beaivi"
       ]
     },
     {
@@ -572,7 +638,10 @@
         "nanna",
         "tsukuyomi",
         "menulis",
-        "coyolxauhqui"
+        "coyolxauhqui",
+        "bahloo",
+        "metztli",
+        "inyanga"
       ]
     },
     {
@@ -590,7 +659,9 @@
         "haumea",
         "umay",
         "ilmatar",
-        "anahit-arm"
+        "anahit-arm",
+        "mattarahkka",
+        "atabey"
       ]
     },
     {
@@ -607,7 +678,8 @@
         "xochiquetzal",
         "oshun",
         "astghik",
-        "al-uzza"
+        "al-uzza",
+        "erzulie"
       ]
     },
     {
@@ -624,7 +696,8 @@
         "maui",
         "susanoo",
         "iktomi",
-        "legba"
+        "legba",
+        "papa-legba"
       ]
     },
     {
@@ -643,7 +716,10 @@
         "izanami",
         "tuonetar",
         "ah-puch",
-        "erlik"
+        "erlik",
+        "baron-samedi",
+        "maketaori",
+        "arawn"
       ]
     },
     {
@@ -663,7 +739,9 @@
         "guan-yu",
         "vahagn",
         "tu",
-        "nane"
+        "nane",
+        "ogou-haitian",
+        "agreskwe"
       ]
     },
     {
@@ -676,7 +754,8 @@
         "ptah",
         "ilmarinen",
         "tvashtr",
-        "ogun"
+        "ogun",
+        "kothar"
       ]
     },
     {
@@ -702,7 +781,12 @@
         "kayra",
         "nana-buluku",
         "elchen",
-        "unkulunkulu"
+        "unkulunkulu",
+        "baiame",
+        "bunjil",
+        "yucahu",
+        "radien",
+        "altjira"
       ]
     },
     {
@@ -719,7 +803,8 @@
         "jesus",
         "baldr",
         "persephone",
-        "quetzalcoatl"
+        "quetzalcoatl",
+        "zalmoxis"
       ]
     },
     {
@@ -735,7 +820,8 @@
         "odin",
         "valkyries",
         "azrael",
-        "jeoseung-saja"
+        "jeoseung-saja",
+        "baron-samedi"
       ]
     },
     {
@@ -750,7 +836,10 @@
         "odin",
         "ogma",
         "quetzalcoatl",
-        "tir"
+        "tir",
+        "orunmila",
+        "kvasir",
+        "wenchang"
       ]
     },
     {
@@ -766,7 +855,9 @@
         "leviathan",
         "yamata-no-orochi",
         "illuyanka",
-        "kay-kay-vilu"
+        "kay-kay-vilu",
+        "rainbow-serpent",
+        "damballa"
       ]
     }
   ],
@@ -16484,6 +16575,1496 @@
       "archetype": null,
       "parallels": [],
       "description": "Rope Woman. Escorted the souls of those who hanged themselves directly to paradise — suicide was honorably regarded in certain contexts."
+    },
+    {
+      "id": "rainbow-serpent",
+      "name": "Rainbow Serpent",
+      "pantheon": "aboriginal",
+      "category": "major",
+      "gender": "N",
+      "domains": [
+        "water",
+        "creation",
+        "fertility",
+        "sky-earth-bridge"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": "serpent-dragon",
+      "parallels": [
+        "quetzalcoatl",
+        "dan",
+        "jormungandr"
+      ],
+      "description": "Widely shared creator-figure across Aboriginal Australia, known by many names (Ngalyod, Wagyl, Yingarna, Wollunqua). Shaped the landscape moving through it; lives in waterholes."
+    },
+    {
+      "id": "baiame",
+      "name": "Baiame",
+      "pantheon": "aboriginal",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "sky-father",
+        "creator",
+        "law-giver"
+      ],
+      "parents": [],
+      "consorts": [
+        "birrahgnooloo"
+      ],
+      "children": [
+        "daramulum"
+      ],
+      "archetype": "sky-father",
+      "parallels": [],
+      "description": "Sky-father of the Kamilaroi, Wiradjuri, and other southeastern groups. Shaped mountains and rivers; gave ritual law."
+    },
+    {
+      "id": "bunjil",
+      "name": "Bunjil",
+      "pantheon": "aboriginal",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "creator",
+        "eaglehawk",
+        "culture-hero"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": "creator",
+      "parallels": [],
+      "description": "Wedge-tailed eagle creator of the Kulin nations around Melbourne. Made the first humans from clay."
+    },
+    {
+      "id": "yhi",
+      "name": "Yhi",
+      "pantheon": "aboriginal",
+      "category": "major",
+      "gender": "F",
+      "domains": [
+        "sun",
+        "awakening",
+        "light"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": "sun-god",
+      "parallels": [],
+      "description": "Karraur sun-goddess. Awoke the sleeping Earth into the Dreaming; first of the Spirits."
+    },
+    {
+      "id": "bahloo",
+      "name": "Bahloo",
+      "pantheon": "aboriginal",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "moon"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": "moon-deity",
+      "parallels": [],
+      "description": "Moon-man of the Kamilaroi. Wanders the night with his three dogs."
+    },
+    {
+      "id": "altjira",
+      "name": "Altjira",
+      "pantheon": "aboriginal",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "sky",
+        "dreamtime",
+        "remote"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": "sky-father",
+      "parallels": [],
+      "description": "Arrernte remote sky-father. Created the Earth then withdrew; the word Altjira also means 'Dreamtime' itself."
+    },
+    {
+      "id": "namarrgon",
+      "name": "Namarrgon",
+      "pantheon": "aboriginal",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "lightning",
+        "storms"
+      ],
+      "parents": [],
+      "consorts": [
+        "barrginj"
+      ],
+      "children": [],
+      "archetype": "storm-god",
+      "parallels": [],
+      "description": "'Lightning Man' of the Kunwinjku (western Arnhem Land). Depicted in Kakadu rock art with stone axes on his head and elbows."
+    },
+    {
+      "id": "anjea",
+      "name": "Anjea",
+      "pantheon": "aboriginal",
+      "category": "major",
+      "gender": "F",
+      "domains": [
+        "fertility",
+        "birth"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Queensland fertility spirit. Placed infant souls in newborns at birth; returned them to clay mounds at death for the next cycle."
+    },
+    {
+      "id": "wawalag",
+      "name": "Wawalag Sisters",
+      "pantheon": "aboriginal",
+      "category": "hero",
+      "gender": "F",
+      "domains": [
+        "first-menstruation",
+        "ritual-origin"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Two ancestral sisters of the Yolŋu. Swallowed by the python Yurlunggur — origin of initiation rites."
+    },
+    {
+      "id": "yucahu",
+      "name": "Yúcahu",
+      "pantheon": "taino",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "supreme",
+        "manioc",
+        "sea"
+      ],
+      "parents": [
+        "atabey"
+      ],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Supreme male deity; god of manioc (the Taíno staple) and the sea. Mother-borne rather than fathered."
+    },
+    {
+      "id": "atabey",
+      "name": "Atabey",
+      "pantheon": "taino",
+      "category": "major",
+      "gender": "F",
+      "domains": [
+        "fresh-water",
+        "fertility",
+        "motherhood",
+        "moon"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [
+        "yucahu"
+      ],
+      "archetype": "mother-goddess",
+      "parallels": [],
+      "description": "Primordial mother-goddess. Self-generative; mother of Yúcahu. Five names across five aspects."
+    },
+    {
+      "id": "guabancex",
+      "name": "Guabancex",
+      "pantheon": "taino",
+      "category": "major",
+      "gender": "F",
+      "domains": [
+        "hurricanes",
+        "storms",
+        "destruction"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": "storm-god",
+      "parallels": [],
+      "description": "Storm-goddess; source of the word 'hurricane'. Attended by Guatauba (thunder) and Coatrisquie (rain)."
+    },
+    {
+      "id": "boinayel",
+      "name": "Boinayel",
+      "pantheon": "taino",
+      "category": "minor",
+      "gender": "M",
+      "domains": [
+        "rain",
+        "weeping-clouds"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "siblings": [
+        "marohu"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "Rain-god; his tears fertilize the land. Twin of Márohu."
+    },
+    {
+      "id": "marohu",
+      "name": "Márohu",
+      "pantheon": "taino",
+      "category": "minor",
+      "gender": "M",
+      "domains": [
+        "dry-weather",
+        "clear-skies"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "siblings": [
+        "boinayel"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "Dry-weather twin of Boinayel; the sunshine that follows the rain."
+    },
+    {
+      "id": "maketaori",
+      "name": "Maketaori Guayaba",
+      "pantheon": "taino",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "underworld",
+        "dead",
+        "coaybay"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": "underworld-ruler",
+      "parallels": [
+        "hades",
+        "mictlantecuhtli"
+      ],
+      "description": "Lord of Coaybay, the Taíno underworld. The opia (souls of the dead) dwelt there by day and emerged at night."
+    },
+    {
+      "id": "papa-legba",
+      "name": "Papa Legba",
+      "pantheon": "haitian-vodou",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "crossroads",
+        "first-lwa-invoked",
+        "gatekeeper"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": "trickster",
+      "parallels": [
+        "legba",
+        "eshu",
+        "hermes"
+      ],
+      "description": "Old man at the crossroads; first lwa invoked in every ceremony. Opens the gate between the human and spirit worlds. Derived from Fon Legba."
+    },
+    {
+      "id": "baron-samedi",
+      "name": "Baron Samedi",
+      "pantheon": "haitian-vodou",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "dead",
+        "cemeteries",
+        "resurrection",
+        "sex"
+      ],
+      "parents": [],
+      "consorts": [
+        "maman-brigitte"
+      ],
+      "children": [],
+      "archetype": "underworld-ruler",
+      "parallels": [],
+      "description": "Top-hatted, sunglass-wearing lord of the Gede (spirits of the dead). Digs every grave; can refuse to accept a soul and return it to life. Both somber and lewd."
+    },
+    {
+      "id": "erzulie",
+      "name": "Erzulie Freda",
+      "pantheon": "haitian-vodou",
+      "category": "major",
+      "gender": "F",
+      "domains": [
+        "love",
+        "beauty",
+        "luxury",
+        "tears"
+      ],
+      "parents": [],
+      "consorts": [
+        "ogou-haitian",
+        "damballa"
+      ],
+      "children": [],
+      "archetype": "love-goddess",
+      "parallels": [
+        "aphrodite",
+        "oshun"
+      ],
+      "description": "Rada lwa of romantic love and luxury. Famous for her tears — she weeps because the world falls short of her vision of beauty."
+    },
+    {
+      "id": "damballa",
+      "name": "Damballa",
+      "pantheon": "haitian-vodou",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "serpent",
+        "wisdom",
+        "ancestors",
+        "skies"
+      ],
+      "parents": [],
+      "consorts": [
+        "ayida-wedo"
+      ],
+      "children": [],
+      "archetype": "serpent-dragon",
+      "parallels": [
+        "dan"
+      ],
+      "description": "Great white serpent lwa; father of all lwa. Ancient and peaceful. Derived from Fon Dan."
+    },
+    {
+      "id": "ogou-haitian",
+      "name": "Ogou",
+      "pantheon": "haitian-vodou",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "iron",
+        "war",
+        "politics",
+        "revolution"
+      ],
+      "parents": [],
+      "consorts": [
+        "erzulie"
+      ],
+      "children": [],
+      "archetype": "war-god",
+      "parallels": [
+        "ogun",
+        "gu"
+      ],
+      "description": "Lwa of iron, war, and revolution. Invoked in the 1791 Bois Caïman ceremony that sparked the Haitian Revolution."
+    },
+    {
+      "id": "maman-brigitte",
+      "name": "Maman Brigitte",
+      "pantheon": "haitian-vodou",
+      "category": "major",
+      "gender": "F",
+      "domains": [
+        "dead",
+        "cemeteries",
+        "vengeance"
+      ],
+      "parents": [],
+      "consorts": [
+        "baron-samedi"
+      ],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Fierce wife of Baron Samedi. Possibly derived from Irish Brigid brought by Celtic indentured servants to the Caribbean."
+    },
+    {
+      "id": "radien",
+      "name": "Raðien",
+      "pantheon": "sami",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "supreme",
+        "remote-creator"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": "creator",
+      "parallels": [],
+      "description": "Remote supreme god; delegated action to other deities. The highest of the Sámi upper-world."
+    },
+    {
+      "id": "beaivi",
+      "name": "Beaivi",
+      "pantheon": "sami",
+      "category": "major",
+      "gender": "F",
+      "domains": [
+        "sun",
+        "reindeer",
+        "sanity"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [
+        "beaivi-nieida"
+      ],
+      "archetype": "sun-god",
+      "parallels": [],
+      "description": "Sun-mother. Brought reindeer to her people; her return after the polar night was marked by offerings of white animals."
+    },
+    {
+      "id": "horagalles",
+      "name": "Horagalles",
+      "pantheon": "sami",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "thunder",
+        "storms",
+        "protection"
+      ],
+      "parents": [],
+      "consorts": [
+        "ravdna"
+      ],
+      "children": [],
+      "archetype": "storm-god",
+      "parallels": [
+        "thor",
+        "perun",
+        "perkwunos"
+      ],
+      "description": "Thunder-god. Name likely borrowed from 'Old Man Thor' (Tor karl). Wields a stone hammer."
+    },
+    {
+      "id": "mattarahkka",
+      "name": "Máttaráhkká",
+      "pantheon": "sami",
+      "category": "major",
+      "gender": "F",
+      "domains": [
+        "great-grandmother",
+        "birth",
+        "ancestor"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [
+        "sarahkka",
+        "juksahkka",
+        "uksahkka"
+      ],
+      "archetype": "mother-goddess",
+      "parallels": [],
+      "description": "Great ancestress. Her three daughters each oversee a phase of human development: Sáráhkká (birth), Juoksáhkká (boys), Uksáhkká (door/protection)."
+    },
+    {
+      "id": "leib-olmai",
+      "name": "Leib-olmai",
+      "pantheon": "sami",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "bears",
+        "hunters",
+        "forest"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [
+        "kim-un-kamuy"
+      ],
+      "description": "'Alder-man' — master of bears. Bear-hunters sprinkled themselves with alder-bark juice in his honor."
+    },
+    {
+      "id": "sabazios",
+      "name": "Sabazios",
+      "pantheon": "thracian",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "sky",
+        "horseman",
+        "kingship"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": "sky-father",
+      "parallels": [
+        "zeus",
+        "dionysus"
+      ],
+      "description": "Thracian-Phrygian sky/horseman god. Identified by Greeks sometimes with Zeus, sometimes with Dionysus. His ecstatic cult reached Athens."
+    },
+    {
+      "id": "bendis",
+      "name": "Bendis",
+      "pantheon": "thracian",
+      "category": "major",
+      "gender": "F",
+      "domains": [
+        "hunt",
+        "moon"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [
+        "artemis"
+      ],
+      "description": "Huntress-goddess. Her cult was officially adopted in Athens in 429 BCE (the Bendideia festival)."
+    },
+    {
+      "id": "zalmoxis",
+      "name": "Zalmoxis",
+      "pantheon": "thracian",
+      "category": "deified-human",
+      "gender": "M",
+      "domains": [
+        "immortality",
+        "underworld",
+        "philosophy"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": "dying-rising",
+      "parallels": [],
+      "description": "Getic religious founder said by Herodotus to have been a slave of Pythagoras. Taught his people that they would not die but go to live with him; disappeared into an underground chamber for three years, then reappeared."
+    },
+    {
+      "id": "kotys-thr",
+      "name": "Kotys",
+      "pantheon": "thracian",
+      "category": "major",
+      "gender": "F",
+      "domains": [
+        "ecstatic-rites",
+        "fertility"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Goddess of ecstatic rites. Her mysteries spread to Corinth and became bywords for excess."
+    },
+    {
+      "id": "darzalas",
+      "name": "Darzalas",
+      "pantheon": "thracian",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "underworld",
+        "great-god-of-odessos"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": "underworld-ruler",
+      "parallels": [],
+      "description": "'Great God' of Odessos (modern Varna). Chthonic; widely depicted on Black Sea coinage."
+    },
+    {
+      "id": "thetis",
+      "name": "Thetis",
+      "pantheon": "greek",
+      "category": "minor",
+      "gender": "F",
+      "domains": [
+        "sea-nymph",
+        "mother-of-achilles"
+      ],
+      "parents": [
+        "nereus",
+        "doris"
+      ],
+      "consorts": [
+        "peleus"
+      ],
+      "children": [
+        "achilles"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "Sea-nymph whom Zeus and Poseidon both desired — until a prophecy said her son would surpass his father. Married off to mortal Peleus; bore Achilles."
+    },
+    {
+      "id": "achilles",
+      "name": "Achilles",
+      "pantheon": "greek",
+      "category": "hero",
+      "gender": "M",
+      "domains": [
+        "warrior",
+        "trojan-war",
+        "rage"
+      ],
+      "parents": [
+        "peleus",
+        "thetis"
+      ],
+      "consorts": [
+        "briseis"
+      ],
+      "children": [
+        "neoptolemus"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "Greatest Greek warrior at Troy. Dipped in the Styx as an infant — invulnerable except for the heel his mother held him by."
+    },
+    {
+      "id": "odysseus",
+      "name": "Odysseus",
+      "pantheon": "greek",
+      "category": "hero",
+      "gender": "M",
+      "domains": [
+        "cunning",
+        "wandering",
+        "kingship"
+      ],
+      "parents": [
+        "laertes",
+        "anticleia"
+      ],
+      "consorts": [
+        "penelope",
+        "circe",
+        "calypso"
+      ],
+      "children": [
+        "telemachus",
+        "telegonus"
+      ],
+      "archetype": "trickster",
+      "parallels": [],
+      "description": "King of Ithaca; devised the Trojan Horse. Took ten years to return home — subject of the Odyssey."
+    },
+    {
+      "id": "jason",
+      "name": "Jason",
+      "pantheon": "greek",
+      "category": "hero",
+      "gender": "M",
+      "domains": [
+        "golden-fleece",
+        "argonauts"
+      ],
+      "parents": [
+        "aeson"
+      ],
+      "consorts": [
+        "medea",
+        "glauce"
+      ],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Leader of the Argonauts; retrieved the Golden Fleece with Medea's help. Later abandoned her; died alone beneath the rotting Argo."
+    },
+    {
+      "id": "medea",
+      "name": "Medea",
+      "pantheon": "greek",
+      "category": "hero",
+      "gender": "F",
+      "domains": [
+        "sorcery",
+        "vengeance",
+        "betrayal"
+      ],
+      "parents": [
+        "aeetes"
+      ],
+      "consorts": [
+        "jason",
+        "aegeus"
+      ],
+      "children": [
+        "medus"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "Colchian sorceress; granddaughter of Helios via Aeetes. Helped Jason win the Fleece; when abandoned, killed their children in vengeance."
+    },
+    {
+      "id": "orpheus",
+      "name": "Orpheus",
+      "pantheon": "greek",
+      "category": "hero",
+      "gender": "M",
+      "domains": [
+        "music",
+        "descent-to-underworld",
+        "mystery-cult"
+      ],
+      "parents": [
+        "apollo",
+        "calliope"
+      ],
+      "consorts": [
+        "eurydice"
+      ],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Divine musician. Descended to retrieve his dead bride Eurydice; lost her by looking back. Orphic mystery religion traced itself to him."
+    },
+    {
+      "id": "cadmus",
+      "name": "Cadmus",
+      "pantheon": "greek",
+      "category": "hero",
+      "gender": "M",
+      "domains": [
+        "founder-of-thebes",
+        "phoenician"
+      ],
+      "parents": [
+        "agenor",
+        "telephassa"
+      ],
+      "consorts": [
+        "harmonia"
+      ],
+      "children": [
+        "semele",
+        "ino",
+        "agave",
+        "polydorus"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "Phoenician prince who founded Thebes. Sowed dragon's teeth that grew into warriors; brought writing to Greece."
+    },
+    {
+      "id": "bhudevi",
+      "name": "Bhudevi",
+      "pantheon": "hindu",
+      "category": "major",
+      "gender": "F",
+      "domains": [
+        "earth",
+        "patience"
+      ],
+      "parents": [],
+      "consorts": [
+        "vishnu",
+        "varaha"
+      ],
+      "children": [
+        "sita",
+        "narakasura"
+      ],
+      "archetype": "earth-mother",
+      "parallels": [
+        "prithvi"
+      ],
+      "description": "Earth-goddess; second consort of Vishnu. Rescued from the flood by the boar-avatar Varaha."
+    },
+    {
+      "id": "soma",
+      "name": "Soma",
+      "pantheon": "hindu",
+      "category": "minor",
+      "gender": "M",
+      "domains": [
+        "ritual-drink",
+        "moon",
+        "ecstasy"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [
+        "chandra"
+      ],
+      "description": "Personified sacred drink of the Vedic sacrifice. Merged with Chandra (moon) in later tradition. Cognate with Iranian Haoma."
+    },
+    {
+      "id": "rudra",
+      "name": "Rudra",
+      "pantheon": "hindu",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "howling",
+        "storms",
+        "disease",
+        "healing"
+      ],
+      "parents": [],
+      "consorts": [
+        "prithvi"
+      ],
+      "children": [
+        "maruts"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "Vedic storm/archer god; feared for his arrows of disease. Evolved into Shiva."
+    },
+    {
+      "id": "kubera",
+      "name": "Kubera",
+      "pantheon": "hindu",
+      "category": "minor",
+      "gender": "M",
+      "domains": [
+        "wealth",
+        "treasures",
+        "yaksha-king"
+      ],
+      "parents": [
+        "vishrava"
+      ],
+      "consorts": [
+        "bhadra"
+      ],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Plump lord of treasures; king of the yakshas. Rules from Alaka in the Himalayas; guardian of the north."
+    },
+    {
+      "id": "balarama",
+      "name": "Balarama",
+      "pantheon": "hindu",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "strength",
+        "agriculture",
+        "plow"
+      ],
+      "parents": [
+        "vasudeva",
+        "devaki"
+      ],
+      "consorts": [
+        "revati"
+      ],
+      "children": [],
+      "siblings": [
+        "krishna"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "Elder brother of Krishna; avatar of Vishnu's serpent Shesha. Wields a plow; sometimes counted as an avatar in his own right."
+    },
+    {
+      "id": "sif",
+      "name": "Sif",
+      "pantheon": "norse",
+      "category": "major",
+      "gender": "F",
+      "domains": [
+        "harvest",
+        "golden-hair",
+        "wife-of-thor"
+      ],
+      "parents": [],
+      "consorts": [
+        "thor"
+      ],
+      "children": [
+        "ullr",
+        "thrud"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "Wife of Thor; famous for her golden hair, which Loki cut off. The dwarves forged replacement hair of real gold."
+    },
+    {
+      "id": "ullr",
+      "name": "Ullr",
+      "pantheon": "norse",
+      "category": "minor",
+      "gender": "M",
+      "domains": [
+        "winter",
+        "skiing",
+        "archery",
+        "single-combat"
+      ],
+      "parents": [
+        "sif"
+      ],
+      "consorts": [
+        "skadi"
+      ],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Winter god of skiers and archers. Named in more Scandinavian place-names than almost any other god — suggesting a bygone major cult."
+    },
+    {
+      "id": "kvasir",
+      "name": "Kvasir",
+      "pantheon": "norse",
+      "category": "minor",
+      "gender": "M",
+      "domains": [
+        "wisdom",
+        "mead-of-poetry-origin"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": "wisdom-god",
+      "parallels": [],
+      "description": "Wisest being, born from the spittle of Aesir and Vanir ending their war. Murdered by dwarves, who brewed the mead of poetry from his blood."
+    },
+    {
+      "id": "gefjon",
+      "name": "Gefjon",
+      "pantheon": "norse",
+      "category": "minor",
+      "gender": "F",
+      "domains": [
+        "plowing",
+        "virginity",
+        "foreknowledge"
+      ],
+      "parents": [],
+      "consorts": [
+        "skjold"
+      ],
+      "children": [
+        "four-oxen"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "Plowed away the island of Zealand from Sweden with four oxen — her sons by a giant. Sometimes counted among the Vanir."
+    },
+    {
+      "id": "eir",
+      "name": "Eir",
+      "pantheon": "norse",
+      "category": "minor",
+      "gender": "F",
+      "domains": [
+        "healing",
+        "mercy"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Goddess of healing. May be counted as a Valkyrie, an Asynja, or a handmaiden of Frigg — sources disagree."
+    },
+    {
+      "id": "hapi",
+      "name": "Hapi",
+      "pantheon": "egyptian",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "nile-flood",
+        "fertility"
+      ],
+      "parents": [],
+      "consorts": [
+        "meret"
+      ],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "God of the Nile's annual inundation. Depicted as androgynous, with a full belly and pendulous breasts — giver of abundance."
+    },
+    {
+      "id": "khepri",
+      "name": "Khepri",
+      "pantheon": "egyptian",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "morning-sun",
+        "rebirth",
+        "scarab"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Scarab-headed morning sun; aspect of Ra. Rolled the sun-disk across the sky like the dung-beetle rolls its ball."
+    },
+    {
+      "id": "satet",
+      "name": "Satet",
+      "pantheon": "egyptian",
+      "category": "minor",
+      "gender": "F",
+      "domains": [
+        "nile-source",
+        "purification",
+        "archery"
+      ],
+      "parents": [],
+      "consorts": [
+        "khnum"
+      ],
+      "children": [
+        "anuket"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "Goddess of Aswan cataract — where the Nile was believed to emerge from the underworld. Consort of Khnum."
+    },
+    {
+      "id": "tlazolteotl",
+      "name": "Tlazolteotl",
+      "pantheon": "aztec",
+      "category": "major",
+      "gender": "F",
+      "domains": [
+        "filth",
+        "purification",
+        "forgiveness",
+        "midwifery"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [
+        "centeotl"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "'Filth-eater'. Consumed confessions of sexual misdeeds, transforming sin to purity. Patron of midwives."
+    },
+    {
+      "id": "metztli",
+      "name": "Metztli",
+      "pantheon": "aztec",
+      "category": "minor",
+      "gender": "F",
+      "domains": [
+        "moon",
+        "night"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": "moon-deity",
+      "parallels": [
+        "coyolxauhqui"
+      ],
+      "description": "Moon-goddess; often identified with Coyolxauhqui or as a separate aspect."
+    },
+    {
+      "id": "arawn",
+      "name": "Arawn",
+      "pantheon": "celtic-welsh",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "underworld-annwn",
+        "hunt"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": "underworld-ruler",
+      "parallels": [
+        "hades"
+      ],
+      "description": "King of Annwn (the Welsh otherworld). Traded realms for a year with Pwyll; his wife remained faithful to Arawn in his form."
+    },
+    {
+      "id": "math",
+      "name": "Math fab Mathonwy",
+      "pantheon": "celtic-welsh",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "magic",
+        "kingship-of-gwynedd"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Magician-king of Gwynedd in the Fourth Branch. Unless at war, had to keep his feet in the lap of a virgin. Created Blodeuwedd from flowers with Gwydion."
+    },
+    {
+      "id": "orunmila",
+      "name": "Orunmila",
+      "pantheon": "yoruba",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "wisdom",
+        "divination",
+        "ifa-oracle"
+      ],
+      "parents": [
+        "olodumare"
+      ],
+      "consorts": [],
+      "children": [],
+      "archetype": "wisdom-god",
+      "parallels": [],
+      "description": "Orisha of divination. Witnessed creation and knows the destiny of every soul. The Ifá oracle belongs to him."
+    },
+    {
+      "id": "olokun",
+      "name": "Olokun",
+      "pantheon": "yoruba",
+      "category": "major",
+      "gender": "N",
+      "domains": [
+        "ocean-depths",
+        "wealth",
+        "mysteries"
+      ],
+      "parents": [],
+      "consorts": [
+        "yemaya"
+      ],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Orisha of the ocean depths. Gender-variable across traditions. Shackled on the ocean floor to prevent flooding the world."
+    },
+    {
+      "id": "agreskwe",
+      "name": "Agreskwe",
+      "pantheon": "iroquois",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "war",
+        "hunt"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": "war-god",
+      "parallels": [],
+      "description": "Huron war and hunting god. Prayed to before battle and the fall hunt."
+    },
+    {
+      "id": "hahgwehdiyu",
+      "name": "Hahgwehdiyu",
+      "pantheon": "iroquois",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "good-creator"
+      ],
+      "parents": [
+        "lynx-daughter"
+      ],
+      "consorts": [],
+      "children": [],
+      "siblings": [
+        "hahgwehdaetgah"
+      ],
+      "archetype": null,
+      "parallels": [
+        "sapling"
+      ],
+      "description": "Alternate name for the Good Twin (Sapling) in some Seneca traditions."
+    },
+    {
+      "id": "mamlambo",
+      "name": "Mamlambo",
+      "pantheon": "zulu",
+      "category": "major",
+      "gender": "F",
+      "domains": [
+        "rivers",
+        "wealth",
+        "serpent"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "River-serpent goddess. Grants wealth to those who serve her — but demands blood in exchange."
+    },
+    {
+      "id": "inyanga",
+      "name": "Inyanga",
+      "pantheon": "zulu",
+      "category": "minor",
+      "gender": "F",
+      "domains": [
+        "moon"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": "moon-deity",
+      "parallels": [],
+      "description": "Moon-goddess. The word 'inyanga' also means 'month' and 'traditional healer'."
+    },
+    {
+      "id": "shahar",
+      "name": "Shahar",
+      "pantheon": "canaanite",
+      "category": "minor",
+      "gender": "M",
+      "domains": [
+        "dawn"
+      ],
+      "parents": [
+        "el-canaanite",
+        "athirat"
+      ],
+      "consorts": [],
+      "children": [],
+      "siblings": [
+        "shalim"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "'Dawn' — twin of Shalim. Both gods are likely reflected in the biblical Morning and Evening."
+    },
+    {
+      "id": "shalim",
+      "name": "Shalim",
+      "pantheon": "canaanite",
+      "category": "minor",
+      "gender": "M",
+      "domains": [
+        "dusk",
+        "peace"
+      ],
+      "parents": [
+        "el-canaanite",
+        "athirat"
+      ],
+      "consorts": [],
+      "children": [],
+      "siblings": [
+        "shahar"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "'Dusk' — twin of Shahar. His name survives in Jerusalem ('Yeru-Shalim', city of Shalim)."
+    },
+    {
+      "id": "kothar",
+      "name": "Kothar-wa-Khasis",
+      "pantheon": "canaanite",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "craftsmanship",
+        "smithing",
+        "magic"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": "smith-god",
+      "parallels": [
+        "hephaestus",
+        "ptah"
+      ],
+      "description": "Divine craftsman. Forged Baal's mace; his name means 'Skillful-and-Wise'."
+    },
+    {
+      "id": "aruru",
+      "name": "Aruru",
+      "pantheon": "mesopotamian",
+      "category": "minor",
+      "gender": "F",
+      "domains": [
+        "birth",
+        "clay-forming",
+        "creation-of-humans"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [
+        "enkidu"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "Mother-goddess of birth. Shaped the first humans from clay; later created Enkidu as a rival to Gilgamesh."
+    },
+    {
+      "id": "siduri",
+      "name": "Siduri",
+      "pantheon": "mesopotamian",
+      "category": "minor",
+      "gender": "F",
+      "domains": [
+        "brewer",
+        "alewife",
+        "wisdom"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Alewife at the edge of the world. Advised Gilgamesh to accept mortality and enjoy life."
+    },
+    {
+      "id": "wenchang",
+      "name": "Wenchang",
+      "pantheon": "chinese",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "literature",
+        "imperial-exams",
+        "scholars"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": "wisdom-god",
+      "parallels": [],
+      "description": "Stellar god of literature; patron of scholars preparing for imperial examinations."
+    },
+    {
+      "id": "zhinu",
+      "name": "Zhinu",
+      "pantheon": "chinese",
+      "category": "minor",
+      "gender": "F",
+      "domains": [
+        "weaving",
+        "stars",
+        "tragic-love"
+      ],
+      "parents": [
+        "yu-huang",
+        "wangmu"
+      ],
+      "consorts": [
+        "niulang"
+      ],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Weaver-girl (the star Vega). Separated from her mortal husband Niulang by the Milky Way; reunited once a year on Qixi."
+    },
+    {
+      "id": "tudi-gong",
+      "name": "Tudi Gong",
+      "pantheon": "chinese",
+      "category": "minor",
+      "gender": "M",
+      "domains": [
+        "local-earth",
+        "neighborhood"
+      ],
+      "parents": [],
+      "consorts": [
+        "tudi-po"
+      ],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "'Earth grandfather' — a local earth-god with a small shrine in each neighborhood. Part of the celestial bureaucracy's lowest tier."
+    },
+    {
+      "id": "benzaiten",
+      "name": "Benzaiten",
+      "pantheon": "japanese",
+      "category": "major",
+      "gender": "F",
+      "domains": [
+        "music",
+        "eloquence",
+        "water",
+        "wealth"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [
+        "saraswati"
+      ],
+      "description": "Goddess of all that flows — water, music, words, money. Japanese form of Indian Saraswati. One of the Seven Lucky Gods."
+    },
+    {
+      "id": "jizo",
+      "name": "Jizō",
+      "pantheon": "japanese",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "travelers",
+        "children",
+        "unborn-souls"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Bodhisattva-kami hybrid. Protector of travelers, children, and souls of the unborn. Small stone statues of him line roads and cemeteries."
+    },
+    {
+      "id": "mama-ocllo",
+      "name": "Mama Ocllo",
+      "pantheon": "inca",
+      "category": "deified-human",
+      "gender": "F",
+      "domains": [
+        "weaving",
+        "teaching",
+        "first-queen"
+      ],
+      "parents": [
+        "inti",
+        "mama-killa"
+      ],
+      "consorts": [
+        "manco-capac"
+      ],
+      "children": [
+        "sinchi-roca"
+      ],
+      "siblings": [
+        "manco-capac"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "Sister-wife of Manco Cápac; first Coya (queen) of the Incas. Taught Andean women to weave."
     }
   ]
 }
