@@ -589,6 +589,42 @@
       "category": "abrahamic"
     },
     {
+      "id": "rastafari",
+      "name": "Rastafari",
+      "region": "Caribbean / Diaspora",
+      "active_from": 1930,
+      "active_to": 2025,
+      "peak_from": 1970,
+      "peak_to": 2025,
+      "color": "#6a9050",
+      "description": "Religion emerging from 1930s Jamaica. Identifies Haile Selassie I of Ethiopia (crowned 1930) as the Second Coming of Christ / manifestation of Jah. Afrocentric; influential on reggae and Caribbean political thought.",
+      "category": "abrahamic"
+    },
+    {
+      "id": "bahai",
+      "name": "Bahá'í",
+      "region": "Persia / Global",
+      "active_from": 1844,
+      "active_to": 2025,
+      "peak_from": 1950,
+      "peak_to": 2025,
+      "color": "#8a7ca0",
+      "description": "Monotheistic religion founded by Bahá'u'lláh (1817–1892). Central figures here are 'Manifestations of God', not deities — but are treated as divine mediators by Bahá'ís. Now practiced in over 200 countries.",
+      "category": "abrahamic"
+    },
+    {
+      "id": "caodai",
+      "name": "Cao Đài",
+      "region": "Vietnam",
+      "active_from": 1926,
+      "active_to": 2025,
+      "peak_from": 1930,
+      "peak_to": 1975,
+      "color": "#b0a050",
+      "description": "Syncretic Vietnamese religion founded 1926. Fuses Buddhism, Taoism, Confucianism, Christianity, and Islam under a single Supreme Being. At one point the third-largest religion in Vietnam.",
+      "category": "abrahamic"
+    },
+    {
       "id": "deified-humans",
       "name": "Deified Humans",
       "region": "Various",
@@ -21641,6 +21677,2547 @@
       "parallels": [],
       "description": "Child-sage who sprang from a plowed furrow. Dictated the Etruscan Discipline — haruspicy, lightning-reading, and ritual.",
       "wiki_title": "Tages"
+    },
+    {
+      "id": "clio",
+      "name": "Clio",
+      "pantheon": "greek",
+      "category": "minor",
+      "gender": "F",
+      "domains": [
+        "history",
+        "memory"
+      ],
+      "parents": [
+        "zeus",
+        "mnemosyne"
+      ],
+      "consorts": [],
+      "children": [
+        "hyacinth"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "Muse of history. Carries a scroll.",
+      "wiki_title": "Clio"
+    },
+    {
+      "id": "erato",
+      "name": "Erato",
+      "pantheon": "greek",
+      "category": "minor",
+      "gender": "F",
+      "domains": [
+        "love-poetry"
+      ],
+      "parents": [
+        "zeus",
+        "mnemosyne"
+      ],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Muse of lyric and erotic poetry. Patron of wedding songs.",
+      "wiki_title": "Erato"
+    },
+    {
+      "id": "euterpe",
+      "name": "Euterpe",
+      "pantheon": "greek",
+      "category": "minor",
+      "gender": "F",
+      "domains": [
+        "music",
+        "flute"
+      ],
+      "parents": [
+        "zeus",
+        "mnemosyne"
+      ],
+      "consorts": [],
+      "children": [
+        "rhesus"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "Muse of music and lyric poetry. Carries a double-flute.",
+      "wiki_title": "Euterpe"
+    },
+    {
+      "id": "melpomene",
+      "name": "Melpomene",
+      "pantheon": "greek",
+      "category": "minor",
+      "gender": "F",
+      "domains": [
+        "tragedy"
+      ],
+      "parents": [
+        "zeus",
+        "mnemosyne"
+      ],
+      "consorts": [],
+      "children": [
+        "sirens"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "Muse of tragedy. Carries the tragic mask.",
+      "wiki_title": "Melpomene"
+    },
+    {
+      "id": "polyhymnia",
+      "name": "Polyhymnia",
+      "pantheon": "greek",
+      "category": "minor",
+      "gender": "F",
+      "domains": [
+        "sacred-poetry",
+        "hymns",
+        "rhetoric"
+      ],
+      "parents": [
+        "zeus",
+        "mnemosyne"
+      ],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Muse of sacred song and pantomime. Often veiled and pensive.",
+      "wiki_title": "Polyhymnia"
+    },
+    {
+      "id": "terpsichore",
+      "name": "Terpsichore",
+      "pantheon": "greek",
+      "category": "minor",
+      "gender": "F",
+      "domains": [
+        "dance",
+        "choral-song"
+      ],
+      "parents": [
+        "zeus",
+        "mnemosyne"
+      ],
+      "consorts": [],
+      "children": [
+        "sirens"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "Muse of dance. Carries a lyre and plectrum.",
+      "wiki_title": "Terpsichore"
+    },
+    {
+      "id": "thalia-muse",
+      "name": "Thalia (Muse)",
+      "pantheon": "greek",
+      "category": "minor",
+      "gender": "F",
+      "domains": [
+        "comedy",
+        "idyllic-poetry"
+      ],
+      "parents": [
+        "zeus",
+        "mnemosyne"
+      ],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Muse of comedy. Carries the comic mask. Distinct from Thalia the Grace.",
+      "wiki_title": "Thalia (Muse)"
+    },
+    {
+      "id": "urania",
+      "name": "Urania",
+      "pantheon": "greek",
+      "category": "minor",
+      "gender": "F",
+      "domains": [
+        "astronomy",
+        "cosmology"
+      ],
+      "parents": [
+        "zeus",
+        "mnemosyne"
+      ],
+      "consorts": [],
+      "children": [
+        "hymenaeus"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "Muse of astronomy. Carries a globe and compass.",
+      "wiki_title": "Urania"
+    },
+    {
+      "id": "hector",
+      "name": "Hector",
+      "pantheon": "greek",
+      "category": "hero",
+      "gender": "M",
+      "domains": [
+        "trojan-prince",
+        "defender-of-troy"
+      ],
+      "parents": [
+        "priam",
+        "hecuba"
+      ],
+      "consorts": [
+        "andromache-troj"
+      ],
+      "children": [
+        "astyanax"
+      ],
+      "siblings": [
+        "paris",
+        "cassandra",
+        "helenus"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "Firstborn Trojan prince and greatest Trojan warrior. Slain by Achilles after killing Patroclus; his body dragged behind Achilles's chariot.",
+      "wiki_title": "Hector"
+    },
+    {
+      "id": "priam",
+      "name": "Priam",
+      "pantheon": "greek",
+      "category": "hero",
+      "gender": "M",
+      "domains": [
+        "king-of-troy"
+      ],
+      "parents": [
+        "laomedon"
+      ],
+      "consorts": [
+        "hecuba"
+      ],
+      "children": [
+        "hector",
+        "paris",
+        "cassandra",
+        "helenus",
+        "troilus"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "Aged king of Troy. Went alone to Achilles's tent to ransom Hector's body. Killed at the altar when the city fell.",
+      "wiki_title": "Priam"
+    },
+    {
+      "id": "hecuba",
+      "name": "Hecuba",
+      "pantheon": "greek",
+      "category": "hero",
+      "gender": "F",
+      "domains": [
+        "queen-of-troy"
+      ],
+      "parents": [
+        "dymas"
+      ],
+      "consorts": [
+        "priam"
+      ],
+      "children": [
+        "hector",
+        "paris",
+        "cassandra"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "Queen of Troy. Bore nineteen children; most perished in the war. Ended as a slave of the Greeks.",
+      "wiki_title": "Hecuba"
+    },
+    {
+      "id": "paris",
+      "name": "Paris",
+      "pantheon": "greek",
+      "category": "hero",
+      "gender": "M",
+      "domains": [
+        "judgment",
+        "abduction-of-helen"
+      ],
+      "parents": [
+        "priam",
+        "hecuba"
+      ],
+      "consorts": [
+        "helen",
+        "oenone"
+      ],
+      "children": [],
+      "siblings": [
+        "hector",
+        "cassandra"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "Trojan prince who judged the golden apple contest in favor of Aphrodite, earning Helen as reward — and a ten-year siege for Troy.",
+      "wiki_title": "Paris (mythology)"
+    },
+    {
+      "id": "menelaus",
+      "name": "Menelaus",
+      "pantheon": "greek",
+      "category": "hero",
+      "gender": "M",
+      "domains": [
+        "king-of-sparta",
+        "wronged-husband"
+      ],
+      "parents": [
+        "atreus",
+        "aerope"
+      ],
+      "consorts": [
+        "helen"
+      ],
+      "children": [
+        "hermione"
+      ],
+      "siblings": [
+        "agamemnon"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "Husband of Helen; his honor required the Trojan War. Reclaimed her after the fall of Troy.",
+      "wiki_title": "Menelaus"
+    },
+    {
+      "id": "agamemnon",
+      "name": "Agamemnon",
+      "pantheon": "greek",
+      "category": "hero",
+      "gender": "M",
+      "domains": [
+        "king-of-mycenae",
+        "commander-of-achaeans"
+      ],
+      "parents": [
+        "atreus",
+        "aerope"
+      ],
+      "consorts": [
+        "clytemnestra"
+      ],
+      "children": [
+        "iphigenia",
+        "electra",
+        "orestes"
+      ],
+      "siblings": [
+        "menelaus"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "Supreme commander of the Greek army at Troy. Sacrificed his daughter Iphigenia for favorable winds. Murdered on homecoming by his wife Clytemnestra.",
+      "wiki_title": "Agamemnon"
+    },
+    {
+      "id": "patroclus",
+      "name": "Patroclus",
+      "pantheon": "greek",
+      "category": "hero",
+      "gender": "M",
+      "domains": [
+        "companion-of-achilles"
+      ],
+      "parents": [
+        "menoitios"
+      ],
+      "consorts": [
+        "achilles"
+      ],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Beloved companion of Achilles. Wore his armor into battle; killed by Hector. His death brought Achilles back to the war.",
+      "wiki_title": "Patroclus"
+    },
+    {
+      "id": "ajax",
+      "name": "Ajax",
+      "pantheon": "greek",
+      "category": "hero",
+      "gender": "M",
+      "domains": [
+        "warrior",
+        "enormous-shield"
+      ],
+      "parents": [
+        "telamon"
+      ],
+      "consorts": [
+        "tecmessa"
+      ],
+      "children": [
+        "eurysaces"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "Second-mightiest Greek at Troy after Achilles. Killed himself after Achilles's armor was awarded to Odysseus instead of him.",
+      "wiki_title": "Ajax the Great"
+    },
+    {
+      "id": "penelope",
+      "name": "Penelope",
+      "pantheon": "greek",
+      "category": "hero",
+      "gender": "F",
+      "domains": [
+        "queen-of-ithaca",
+        "faithfulness",
+        "weaving"
+      ],
+      "parents": [
+        "icarius"
+      ],
+      "consorts": [
+        "odysseus"
+      ],
+      "children": [
+        "telemachus"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "Wife of Odysseus. Waited twenty years, putting off suitors by weaving a shroud she unravelled every night.",
+      "wiki_title": "Penelope"
+    },
+    {
+      "id": "telemachus",
+      "name": "Telemachus",
+      "pantheon": "greek",
+      "category": "hero",
+      "gender": "M",
+      "domains": [
+        "son-of-odysseus"
+      ],
+      "parents": [
+        "odysseus",
+        "penelope"
+      ],
+      "consorts": [
+        "polycaste"
+      ],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Son of Odysseus. Came of age searching for his father; helped him slaughter the suitors on his return.",
+      "wiki_title": "Telemachus"
+    },
+    {
+      "id": "oedipus",
+      "name": "Oedipus",
+      "pantheon": "greek",
+      "category": "hero",
+      "gender": "M",
+      "domains": [
+        "theban-king",
+        "tragic-fate"
+      ],
+      "parents": [
+        "laius",
+        "jocasta"
+      ],
+      "consorts": [
+        "jocasta"
+      ],
+      "children": [
+        "antigone",
+        "ismene",
+        "eteocles",
+        "polyneices"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "Fulfilled the prophecy he fled: killed his father Laius and married his mother Jocasta. Blinded himself in horror.",
+      "wiki_title": "Oedipus"
+    },
+    {
+      "id": "antigone",
+      "name": "Antigone",
+      "pantheon": "greek",
+      "category": "hero",
+      "gender": "F",
+      "domains": [
+        "daughter-of-oedipus",
+        "defiance"
+      ],
+      "parents": [
+        "oedipus",
+        "jocasta"
+      ],
+      "consorts": [
+        "haemon"
+      ],
+      "children": [],
+      "siblings": [
+        "ismene",
+        "eteocles",
+        "polyneices"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "Defied King Creon to bury her brother Polyneices. Entombed alive; hanged herself before rescue.",
+      "wiki_title": "Antigone"
+    },
+    {
+      "id": "daedalus",
+      "name": "Daedalus",
+      "pantheon": "greek",
+      "category": "hero",
+      "gender": "M",
+      "domains": [
+        "craftsman",
+        "labyrinth-architect"
+      ],
+      "parents": [],
+      "consorts": [
+        "naucrate"
+      ],
+      "children": [
+        "icarus"
+      ],
+      "archetype": "smith-god",
+      "parallels": [],
+      "description": "Master craftsman and architect of the Labyrinth. Built wings of feathers and wax to escape Crete with his son Icarus.",
+      "wiki_title": "Daedalus"
+    },
+    {
+      "id": "icarus",
+      "name": "Icarus",
+      "pantheon": "greek",
+      "category": "hero",
+      "gender": "M",
+      "domains": [
+        "fallen-son",
+        "hubris"
+      ],
+      "parents": [
+        "daedalus",
+        "naucrate"
+      ],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Flew too close to the sun. The wax melted, the wings failed, and he drowned in the sea that bears his name.",
+      "wiki_title": "Icarus"
+    },
+    {
+      "id": "pomona",
+      "name": "Pomona",
+      "pantheon": "roman",
+      "category": "minor",
+      "gender": "F",
+      "domains": [
+        "orchards",
+        "fruit"
+      ],
+      "parents": [],
+      "consorts": [
+        "vertumnus"
+      ],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Purely Latin goddess of fruit trees and orchards — no Greek counterpart.",
+      "wiki_title": "Pomona (mythology)"
+    },
+    {
+      "id": "terminus",
+      "name": "Terminus",
+      "pantheon": "roman",
+      "category": "minor",
+      "gender": "M",
+      "domains": [
+        "boundaries",
+        "property-lines"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "God of boundary markers. So old that when the Capitoline was rebuilt, Jupiter allowed Terminus alone to remain — the Roman state's boundary was sacred.",
+      "wiki_title": "Terminus (god)"
+    },
+    {
+      "id": "montu",
+      "name": "Montu",
+      "pantheon": "egyptian",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "war",
+        "falcons",
+        "sun-in-battle"
+      ],
+      "parents": [],
+      "consorts": [
+        "tjenenet"
+      ],
+      "children": [],
+      "archetype": "war-god",
+      "parallels": [],
+      "description": "Falcon-headed war-god of Thebes. Patron of pharaohs in battle before the New Kingdom elevated Amun.",
+      "wiki_title": "Montu"
+    },
+    {
+      "id": "min",
+      "name": "Min",
+      "pantheon": "egyptian",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "fertility",
+        "sexuality",
+        "desert-roads"
+      ],
+      "parents": [],
+      "consorts": [
+        "qadesh"
+      ],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Ithyphallic fertility god of Coptos. Protector of caravan routes to the Red Sea.",
+      "wiki_title": "Min (god)"
+    },
+    {
+      "id": "heket",
+      "name": "Heket",
+      "pantheon": "egyptian",
+      "category": "minor",
+      "gender": "F",
+      "domains": [
+        "frogs",
+        "childbirth",
+        "final-breath-of-newborn"
+      ],
+      "parents": [],
+      "consorts": [
+        "khnum"
+      ],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Frog-goddess of childbirth. Gave the final breath of life to the clay bodies Khnum shaped.",
+      "wiki_title": "Heqet"
+    },
+    {
+      "id": "sopdu",
+      "name": "Sopdu",
+      "pantheon": "egyptian",
+      "category": "minor",
+      "gender": "M",
+      "domains": [
+        "eastern-frontier",
+        "falcon"
+      ],
+      "parents": [],
+      "consorts": [
+        "sopdet"
+      ],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Falcon-god of the eastern Sinai frontier. Guardian of the eastern desert and the approach to Punt.",
+      "wiki_title": "Sopdu"
+    },
+    {
+      "id": "nidhogg",
+      "name": "Níðhǫggr",
+      "pantheon": "norse",
+      "category": "monster",
+      "gender": "M",
+      "domains": [
+        "dragon",
+        "yggdrasil-roots",
+        "corpses"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": "serpent-dragon",
+      "parallels": [
+        "apep",
+        "jormungandr"
+      ],
+      "description": "Dragon gnawing at the roots of Yggdrasil. Eats the corpses of oath-breakers and murderers.",
+      "wiki_title": "Níðhöggr"
+    },
+    {
+      "id": "ratatoskr",
+      "name": "Ratatoskr",
+      "pantheon": "norse",
+      "category": "minor",
+      "gender": "M",
+      "domains": [
+        "squirrel",
+        "messenger",
+        "gossip"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Squirrel running up and down Yggdrasil, carrying insults between the eagle at the top and Níðhǫggr at the roots.",
+      "wiki_title": "Ratatoskr"
+    },
+    {
+      "id": "audumbla",
+      "name": "Auðumbla",
+      "pantheon": "norse",
+      "category": "primordial",
+      "gender": "F",
+      "domains": [
+        "primordial-cow",
+        "nurturer"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Primordial cow formed from the rime of Ginnungagap. Her four rivers of milk fed Ymir; she licked Buri free from the ice.",
+      "wiki_title": "Auðumbla"
+    },
+    {
+      "id": "huginn-muninn",
+      "name": "Huginn and Muninn",
+      "pantheon": "norse",
+      "category": "minor",
+      "gender": "M",
+      "domains": [
+        "ravens",
+        "thought-memory",
+        "odins-spies"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Odin's two ravens — Thought and Memory. Fly out each day across the world and report back each evening.",
+      "wiki_title": "Huginn and Muninn"
+    },
+    {
+      "id": "gullinbursti",
+      "name": "Gullinbursti",
+      "pantheon": "norse",
+      "category": "minor",
+      "gender": "M",
+      "domains": [
+        "golden-boar",
+        "freyrs-mount"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Golden-bristled boar forged by the dwarves for Freyr. Faster than any horse, his bristles illuminate the darkness.",
+      "wiki_title": "Gullinbursti"
+    },
+    {
+      "id": "snotra",
+      "name": "Snotra",
+      "pantheon": "norse",
+      "category": "minor",
+      "gender": "F",
+      "domains": [
+        "wisdom",
+        "prudence",
+        "self-discipline"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Goddess of wise self-control. Her name became the Old Norse adjective for a 'wise, courteous' woman.",
+      "wiki_title": "Snotra"
+    },
+    {
+      "id": "ninazu",
+      "name": "Ninazu",
+      "pantheon": "mesopotamian",
+      "category": "minor",
+      "gender": "M",
+      "domains": [
+        "healing",
+        "underworld",
+        "serpents"
+      ],
+      "parents": [
+        "enlil",
+        "ninlil"
+      ],
+      "consorts": [
+        "ningirida"
+      ],
+      "children": [
+        "ningishzida"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "Chthonic healing-god. Father of Ningishzida; his serpent-staff is an ancestor of the medical caduceus.",
+      "wiki_title": "Ninazu"
+    },
+    {
+      "id": "gibil",
+      "name": "Gibil",
+      "pantheon": "mesopotamian",
+      "category": "minor",
+      "gender": "M",
+      "domains": [
+        "fire",
+        "smithing",
+        "purification"
+      ],
+      "parents": [
+        "anu",
+        "ninhursag"
+      ],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Sumerian fire-god. Called on to purify — his flame was invoked over defendants to determine truth.",
+      "wiki_title": "Gibil"
+    },
+    {
+      "id": "geshtu-e",
+      "name": "Geshtu-e",
+      "pantheon": "mesopotamian",
+      "category": "minor",
+      "gender": "M",
+      "domains": [
+        "intelligence",
+        "sacrifice-for-humanity"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Lesser god whose blood and divine intelligence were mixed with clay to create humans in the Atrahasis narrative.",
+      "wiki_title": "Geshtu-e"
+    },
+    {
+      "id": "garuda",
+      "name": "Garuda",
+      "pantheon": "hindu",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "divine-eagle",
+        "mount-of-vishnu",
+        "enemy-of-serpents"
+      ],
+      "parents": [
+        "kashyapa",
+        "vinata"
+      ],
+      "consorts": [
+        "unnati"
+      ],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Enormous eagle-man who bears Vishnu. Sworn enemy of the nagas. National symbols of Indonesia and Thailand.",
+      "wiki_title": "Garuda"
+    },
+    {
+      "id": "nandi",
+      "name": "Nandi",
+      "pantheon": "hindu",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "bull-mount-of-shiva",
+        "gatekeeper"
+      ],
+      "parents": [
+        "shilada"
+      ],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Bull mount of Shiva. A Nandi statue reclines facing every Shiva sanctum; devotees whisper wishes into his ear.",
+      "wiki_title": "Nandi (Hinduism)"
+    },
+    {
+      "id": "shesha",
+      "name": "Shesha",
+      "pantheon": "hindu",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "cosmic-serpent",
+        "remainder",
+        "supports-vishnu"
+      ],
+      "parents": [
+        "kashyapa",
+        "kadru"
+      ],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Thousand-headed cosmic serpent. Vishnu reclines on him between world-cycles; he supports the earth on one of his hoods.",
+      "wiki_title": "Shesha"
+    },
+    {
+      "id": "vasuki",
+      "name": "Vasuki",
+      "pantheon": "hindu",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "king-of-nagas",
+        "churning-of-ocean"
+      ],
+      "parents": [
+        "kashyapa",
+        "kadru"
+      ],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Serpent-king used as the churning-rope at the Samudra Manthan. Worn by Shiva around his neck.",
+      "wiki_title": "Vasuki"
+    },
+    {
+      "id": "sugriva",
+      "name": "Sugriva",
+      "pantheon": "hindu",
+      "category": "hero",
+      "gender": "M",
+      "domains": [
+        "vanara-king",
+        "kishkindha",
+        "ally-of-rama"
+      ],
+      "parents": [
+        "surya"
+      ],
+      "consorts": [
+        "ruma",
+        "tara-ramayana"
+      ],
+      "children": [],
+      "siblings": [
+        "vali-vanara"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "Monkey-king of Kishkindha. Allied with Rama to defeat his tyrannical brother Vali; his army searched for Sita.",
+      "wiki_title": "Sugriva"
+    },
+    {
+      "id": "jambavan",
+      "name": "Jambavan",
+      "pantheon": "hindu",
+      "category": "hero",
+      "gender": "M",
+      "domains": [
+        "bear-king",
+        "elder-vanara",
+        "wisdom"
+      ],
+      "parents": [
+        "brahma"
+      ],
+      "consorts": [],
+      "children": [
+        "jambavati"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "Ancient bear-king, born from Brahma's yawn. Helped Rama against Ravana and later fought Krishna over the Syamantaka jewel.",
+      "wiki_title": "Jambavan"
+    },
+    {
+      "id": "kamsa",
+      "name": "Kamsa",
+      "pantheon": "hindu",
+      "category": "monster",
+      "gender": "M",
+      "domains": [
+        "tyrant",
+        "antagonist-of-krishna"
+      ],
+      "parents": [
+        "ugrasena",
+        "padmavati"
+      ],
+      "consorts": [
+        "asti",
+        "prapti"
+      ],
+      "children": [],
+      "siblings": [
+        "devaki"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "Tyrant-king of Mathura who imprisoned his sister Devaki and killed her first six children. Slain by his eighth nephew, Krishna.",
+      "wiki_title": "Kamsa"
+    },
+    {
+      "id": "bhishma",
+      "name": "Bhishma",
+      "pantheon": "hindu",
+      "category": "hero",
+      "gender": "M",
+      "domains": [
+        "vow-of-celibacy",
+        "grand-patriarch",
+        "mahabharata"
+      ],
+      "parents": [
+        "shantanu",
+        "ganga"
+      ],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Eighth son of Ganga, uncle of the Kauravas and Pandavas. Took a vow of lifelong celibacy; died on a bed of arrows in the Mahabharata war.",
+      "wiki_title": "Bhishma"
+    },
+    {
+      "id": "draupadi",
+      "name": "Draupadi",
+      "pantheon": "hindu",
+      "category": "hero",
+      "gender": "F",
+      "domains": [
+        "common-wife-of-pandavas",
+        "dignity"
+      ],
+      "parents": [
+        "drupada"
+      ],
+      "consorts": [
+        "yudhishthira",
+        "bhima",
+        "arjuna",
+        "nakula",
+        "sahadeva"
+      ],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Born of fire. Wife to all five Pandava brothers. Her public humiliation in the Kaurava court set off the Mahabharata war.",
+      "wiki_title": "Draupadi"
+    },
+    {
+      "id": "arjuna",
+      "name": "Arjuna",
+      "pantheon": "hindu",
+      "category": "hero",
+      "gender": "M",
+      "domains": [
+        "archer",
+        "third-pandava",
+        "devotee-of-krishna"
+      ],
+      "parents": [
+        "indra",
+        "kunti"
+      ],
+      "consorts": [
+        "draupadi",
+        "subhadra",
+        "ulupi",
+        "chitrangada"
+      ],
+      "children": [
+        "abhimanyu",
+        "iravan"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "Greatest archer of his age. Recipient of the Bhagavad Gita from Krishna on the Kurukshetra battlefield.",
+      "wiki_title": "Arjuna"
+    },
+    {
+      "id": "yudhishthira",
+      "name": "Yudhishthira",
+      "pantheon": "hindu",
+      "category": "hero",
+      "gender": "M",
+      "domains": [
+        "eldest-pandava",
+        "dharma-king"
+      ],
+      "parents": [
+        "yama",
+        "kunti"
+      ],
+      "consorts": [
+        "draupadi",
+        "devika"
+      ],
+      "children": [
+        "prativindhya",
+        "yaudheya"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "Eldest Pandava. Son of Dharma himself. Could never lie — until the one crucial half-truth that killed Drona.",
+      "wiki_title": "Yudhishthira"
+    },
+    {
+      "id": "bhima",
+      "name": "Bhima",
+      "pantheon": "hindu",
+      "category": "hero",
+      "gender": "M",
+      "domains": [
+        "strength",
+        "second-pandava",
+        "club-wielder"
+      ],
+      "parents": [
+        "vayu",
+        "kunti"
+      ],
+      "consorts": [
+        "draupadi",
+        "hidimbi",
+        "balandhara"
+      ],
+      "children": [
+        "ghatotkacha",
+        "sarvaga",
+        "sutasoma"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "Strongest of the Pandavas. Killed all 100 Kauravas in battle, fulfilling his vow after Draupadi's humiliation.",
+      "wiki_title": "Bhima"
+    },
+    {
+      "id": "nakula",
+      "name": "Nakula",
+      "pantheon": "hindu",
+      "category": "hero",
+      "gender": "M",
+      "domains": [
+        "swordsman",
+        "horsemanship",
+        "beauty"
+      ],
+      "parents": [
+        "ashvins",
+        "madri"
+      ],
+      "consorts": [
+        "draupadi",
+        "karenumati"
+      ],
+      "children": [
+        "niramitra"
+      ],
+      "siblings": [
+        "sahadeva"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "Twin son of the Ashvins. Fourth Pandava. Master of horses and the sword.",
+      "wiki_title": "Nakula"
+    },
+    {
+      "id": "sahadeva",
+      "name": "Sahadeva",
+      "pantheon": "hindu",
+      "category": "hero",
+      "gender": "M",
+      "domains": [
+        "astrology",
+        "youngest-pandava",
+        "wisdom"
+      ],
+      "parents": [
+        "ashvins",
+        "madri"
+      ],
+      "consorts": [
+        "draupadi",
+        "vijaya"
+      ],
+      "children": [
+        "suhotra"
+      ],
+      "siblings": [
+        "nakula"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "Twin of Nakula. Youngest Pandava. Knew all that had ever happened and ever would — but was cursed never to speak unasked.",
+      "wiki_title": "Sahadeva"
+    },
+    {
+      "id": "sun-wukong",
+      "name": "Sun Wukong",
+      "pantheon": "chinese",
+      "category": "hero",
+      "gender": "M",
+      "domains": [
+        "monkey-king",
+        "trickster",
+        "immortality",
+        "staff"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": "trickster",
+      "parallels": [
+        "hanuman"
+      ],
+      "description": "Stone monkey who rebelled against heaven, accompanied the monk Xuanzang west, and attained Buddhahood. Star of Journey to the West.",
+      "wiki_title": "Sun Wukong"
+    },
+    {
+      "id": "nezha",
+      "name": "Nezha",
+      "pantheon": "chinese",
+      "category": "hero",
+      "gender": "M",
+      "domains": [
+        "child-warrior",
+        "lotus-reborn",
+        "wind-fire-wheels"
+      ],
+      "parents": [
+        "li-jing",
+        "yin-shi"
+      ],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Child-warrior born as a ball of flesh. Died to save his parents from a Dragon King's vengeance; resurrected from lotus petals by his master.",
+      "wiki_title": "Nezha"
+    },
+    {
+      "id": "erlang-shen",
+      "name": "Erlang Shen",
+      "pantheon": "chinese",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "three-eyed-warrior",
+        "irrigation",
+        "demon-hunting"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Three-eyed warrior-god. His truth-seeing third eye can pierce any illusion. Accompanied by the celestial hound Xiaotian Quan.",
+      "wiki_title": "Erlang Shen"
+    },
+    {
+      "id": "bai-ze",
+      "name": "Bai Ze",
+      "pantheon": "chinese",
+      "category": "minor",
+      "gender": "N",
+      "domains": [
+        "omniscient-beast",
+        "protection",
+        "supernatural-knowledge"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Horned lion-creature who appeared to the Yellow Emperor and dictated the names of 11,520 kinds of supernatural beings.",
+      "wiki_title": "Bai Ze"
+    },
+    {
+      "id": "xuannu",
+      "name": "Jiuqian Xuannü",
+      "pantheon": "chinese",
+      "category": "major",
+      "gender": "F",
+      "domains": [
+        "nine-heavens",
+        "war",
+        "sex",
+        "alchemy"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "'Mysterious Woman of the Nine Heavens'. Taught the Yellow Emperor the art of war; patron of magic and inner alchemy.",
+      "wiki_title": "Jiuqian Xuannü"
+    },
+    {
+      "id": "kannon",
+      "name": "Kannon",
+      "pantheon": "japanese",
+      "category": "major",
+      "gender": "F",
+      "domains": [
+        "compassion",
+        "mercy",
+        "bodhisattva"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [
+        "guanyin"
+      ],
+      "description": "Bodhisattva of compassion. Japanese form of Avalokiteśvara (via Chinese Guanyin). Worshipped at Sensō-ji in Tokyo and Kiyomizu-dera in Kyoto.",
+      "wiki_title": "Kannon"
+    },
+    {
+      "id": "ame-no-uzume",
+      "name": "Ame-no-Uzume",
+      "pantheon": "japanese",
+      "category": "major",
+      "gender": "F",
+      "domains": [
+        "dawn",
+        "mirth",
+        "dance"
+      ],
+      "parents": [],
+      "consorts": [
+        "sarutahiko"
+      ],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Kami whose raucous dance (partly stripping) outside the Heavenly Rock Cave drew Amaterasu out and returned light to the world.",
+      "wiki_title": "Ame-no-Uzume"
+    },
+    {
+      "id": "ninigi",
+      "name": "Ninigi-no-Mikoto",
+      "pantheon": "japanese",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "heavenly-grandson",
+        "rice",
+        "ancestor-of-emperors"
+      ],
+      "parents": [
+        "ame-no-oshihomimi",
+        "takuhadachiji-hime"
+      ],
+      "consorts": [
+        "konohanasakuya"
+      ],
+      "children": [
+        "hoderi",
+        "hosuseri",
+        "hoori"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "Grandson of Amaterasu. Descended from heaven to rule Japan; great-grandfather of the first emperor Jimmu.",
+      "wiki_title": "Ninigi-no-Mikoto"
+    },
+    {
+      "id": "konohanasakuya",
+      "name": "Konohanasakuya-hime",
+      "pantheon": "japanese",
+      "category": "major",
+      "gender": "F",
+      "domains": [
+        "cherry-blossoms",
+        "mount-fuji",
+        "delicate-beauty"
+      ],
+      "parents": [
+        "ōyamatsumi"
+      ],
+      "consorts": [
+        "ninigi"
+      ],
+      "children": [
+        "hoderi",
+        "hosuseri",
+        "hoori"
+      ],
+      "siblings": [
+        "iwanaga-hime"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "Blossom-princess; wife of Ninigi. Her father's curse upon their rejection of her older sister made human life as short as cherry-blossom.",
+      "wiki_title": "Konohanasakuya-hime"
+    },
+    {
+      "id": "toyotama",
+      "name": "Toyotama-hime",
+      "pantheon": "japanese",
+      "category": "major",
+      "gender": "F",
+      "domains": [
+        "sea",
+        "dragon-princess",
+        "childbirth"
+      ],
+      "parents": [
+        "ōwatatsumi"
+      ],
+      "consorts": [
+        "hoori"
+      ],
+      "children": [
+        "ugayafukiaezu"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "Dragon-princess of the sea. Grandmother of the first emperor. Transformed into a sea-creature during childbirth; fled when her husband saw.",
+      "wiki_title": "Toyotama-hime"
+    },
+    {
+      "id": "sukunabikona",
+      "name": "Sukunabikona",
+      "pantheon": "japanese",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "medicine",
+        "hot-springs",
+        "dwarf-kami"
+      ],
+      "parents": [
+        "kamimusubi"
+      ],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Dwarf-kami who arrived by the sea in a pod. Co-creator of Japan with Ōkuninushi; taught medicine and brewing.",
+      "wiki_title": "Sukunabikona"
+    },
+    {
+      "id": "belenus",
+      "name": "Belenus",
+      "pantheon": "celtic-irish",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "sun",
+        "healing",
+        "horses"
+      ],
+      "parents": [],
+      "consorts": [
+        "belisama"
+      ],
+      "children": [],
+      "archetype": "sun-god",
+      "parallels": [
+        "apollo"
+      ],
+      "description": "Gallic sun-god. Most widely attested Celtic deity via Roman-era dedications. May underlie the Beltane fire festival.",
+      "wiki_title": "Belenus"
+    },
+    {
+      "id": "sucellus",
+      "name": "Sucellus",
+      "pantheon": "celtic-irish",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "hammer",
+        "wine",
+        "agriculture"
+      ],
+      "parents": [],
+      "consorts": [
+        "nantosuelta"
+      ],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Bearded Gallic god with a long-handled hammer and an olla. 'The Good Striker'. Patron of agriculture and wine.",
+      "wiki_title": "Sucellus"
+    },
+    {
+      "id": "nantosuelta",
+      "name": "Nantosuelta",
+      "pantheon": "celtic-irish",
+      "category": "minor",
+      "gender": "F",
+      "domains": [
+        "winding-river",
+        "hearth",
+        "prosperity"
+      ],
+      "parents": [],
+      "consorts": [
+        "sucellus"
+      ],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Gallic river and hearth goddess. Her name means 'winding-flowing'. Consort of Sucellus; often depicted with a raven and a house-on-a-pole.",
+      "wiki_title": "Nantosuelta"
+    },
+    {
+      "id": "rosmerta",
+      "name": "Rosmerta",
+      "pantheon": "celtic-irish",
+      "category": "major",
+      "gender": "F",
+      "domains": [
+        "abundance",
+        "commerce",
+        "fertility"
+      ],
+      "parents": [],
+      "consorts": [
+        "mercury"
+      ],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Great Gallic goddess of abundance. Under Roman rule, consort of Gaulish Mercury. 'Great Provider'.",
+      "wiki_title": "Rosmerta"
+    },
+    {
+      "id": "patecatl",
+      "name": "Patecatl",
+      "pantheon": "aztec",
+      "category": "minor",
+      "gender": "M",
+      "domains": [
+        "pulque",
+        "medicine",
+        "peyote"
+      ],
+      "parents": [],
+      "consorts": [
+        "mayahuel"
+      ],
+      "children": [
+        "centzon-totochtin"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "'Medicine Lord' — discoverer of peyote and pulque. Husband of Mayahuel.",
+      "wiki_title": "Patecatl"
+    },
+    {
+      "id": "chicomecoatl",
+      "name": "Chicomecoatl",
+      "pantheon": "aztec",
+      "category": "major",
+      "gender": "F",
+      "domains": [
+        "maize",
+        "agriculture",
+        "sustenance"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [
+        "centeotl"
+      ],
+      "description": "'Seven Serpents' — goddess of maize and agricultural plenty. Female counterpart of Centeotl.",
+      "wiki_title": "Chicomecoatl"
+    },
+    {
+      "id": "ek-chuaj",
+      "name": "Ek Chuaj",
+      "pantheon": "mayan",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "merchants",
+        "cacao",
+        "travelers"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Black-skinned god of merchants and cacao cultivation. Patron of travelers carrying their goods.",
+      "wiki_title": "Ek Chuaj"
+    },
+    {
+      "id": "acan",
+      "name": "Acan",
+      "pantheon": "mayan",
+      "category": "minor",
+      "gender": "M",
+      "domains": [
+        "wine",
+        "balché",
+        "intoxication"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Mayan wine-god of the sacred fermented drink balché.",
+      "wiki_title": "Acan"
+    },
+    {
+      "id": "oba",
+      "name": "Oba",
+      "pantheon": "yoruba",
+      "category": "minor",
+      "gender": "F",
+      "domains": [
+        "oba-river",
+        "third-wife-of-shango",
+        "domestic-devotion"
+      ],
+      "parents": [],
+      "consorts": [
+        "shango"
+      ],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "River-orisha; third wife of Shango. Cut off her own ear trying to win his love; the Oba river carries her grief.",
+      "wiki_title": "Oba (orisha)"
+    },
+    {
+      "id": "iroko",
+      "name": "Iroko",
+      "pantheon": "yoruba",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "iroko-tree",
+        "ancestor",
+        "forest"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Spirit of the mighty iroko tree. Loggers make offerings before felling; the tree is considered haunted.",
+      "wiki_title": "Iroko (mythology)"
+    },
+    {
+      "id": "aganju",
+      "name": "Aganju",
+      "pantheon": "yoruba",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "volcanoes",
+        "wilderness",
+        "father-of-shango"
+      ],
+      "parents": [],
+      "consorts": [
+        "yemaya"
+      ],
+      "children": [
+        "shango"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "Orisha of volcanoes, deserts, and untamed wilderness. In some traditions the father of Shango.",
+      "wiki_title": "Aganju"
+    },
+    {
+      "id": "loko",
+      "name": "Loko",
+      "pantheon": "fon",
+      "category": "minor",
+      "gender": "M",
+      "domains": [
+        "trees",
+        "medicine",
+        "healing-plants"
+      ],
+      "parents": [],
+      "consorts": [
+        "ayizan"
+      ],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Tree spirit, knower of healing plants. Becomes the Haitian Vodou lwa Loco.",
+      "wiki_title": "Loko (Vodou)"
+    },
+    {
+      "id": "mami-wata",
+      "name": "Mami Wata",
+      "pantheon": "fon",
+      "category": "major",
+      "gender": "F",
+      "domains": [
+        "water",
+        "wealth",
+        "seduction"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Water-mother of West and Central African traditions — widespread across the diaspora. Holds a snake and a mirror; brings fortune and madness in equal measure.",
+      "wiki_title": "Mami Wata"
+    },
+    {
+      "id": "agwe",
+      "name": "Agwe",
+      "pantheon": "haitian-vodou",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "sea",
+        "ships",
+        "navigation"
+      ],
+      "parents": [],
+      "consorts": [
+        "la-sirene"
+      ],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Lwa of the sea. Husband of La Sirene (mermaid-lwa). Offerings are cast to the sea in his honor.",
+      "wiki_title": "Agwé"
+    },
+    {
+      "id": "kalfu",
+      "name": "Kalfu",
+      "pantheon": "haitian-vodou",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "dark-crossroads",
+        "chaos",
+        "petwo"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [
+        "papa-legba"
+      ],
+      "description": "Petwo counterpart of Papa Legba — rules the darker crossroads and unpredictable fortune.",
+      "wiki_title": "Kalfu"
+    },
+    {
+      "id": "marinette",
+      "name": "Marinette",
+      "pantheon": "haitian-vodou",
+      "category": "major",
+      "gender": "F",
+      "domains": [
+        "fury",
+        "revolution",
+        "owl"
+      ],
+      "parents": [],
+      "consorts": [
+        "ti-jean-petro"
+      ],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Fierce petwo lwa; owl-woman. Some traditions trace her to the mambo who sacrificed a pig at Bois Caïman to begin the Haitian Revolution.",
+      "wiki_title": "Marinette (lwa)"
+    },
+    {
+      "id": "rongo",
+      "name": "Rongo",
+      "pantheon": "polynesian",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "peace",
+        "agriculture",
+        "kumara"
+      ],
+      "parents": [
+        "rangi",
+        "papa"
+      ],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Maori god of peace and cultivated foods — especially kumara (sweet potato). Offerings of first fruits go to him.",
+      "wiki_title": "Rongo"
+    },
+    {
+      "id": "kanaloa",
+      "name": "Kanaloa",
+      "pantheon": "polynesian",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "sea",
+        "healing",
+        "ocean-depths"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "One of the four great Hawaiian gods. Often paired with Kāne. Ocean-mastery and the healing arts.",
+      "wiki_title": "Kanaloa"
+    },
+    {
+      "id": "hi-iaka",
+      "name": "Hiʻiaka",
+      "pantheon": "polynesian",
+      "category": "major",
+      "gender": "F",
+      "domains": [
+        "hula",
+        "chant",
+        "regenerator",
+        "sister-of-pele"
+      ],
+      "parents": [
+        "haumea"
+      ],
+      "consorts": [],
+      "children": [],
+      "siblings": [
+        "pele"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "Youngest sister of Pele. Patroness of hula. Carried her sleeping sister in an egg from Tahiti to Hawaii.",
+      "wiki_title": "Hiʻiaka"
+    },
+    {
+      "id": "eingana",
+      "name": "Eingana",
+      "pantheon": "aboriginal",
+      "category": "major",
+      "gender": "F",
+      "domains": [
+        "rainbow-serpent",
+        "birth",
+        "death"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": "serpent-dragon",
+      "parallels": [
+        "rainbow-serpent"
+      ],
+      "description": "Djauan Rainbow Serpent variant. Holds the life-sinews of every being; if she lets go, that being dies.",
+      "wiki_title": "Eingana"
+    },
+    {
+      "id": "djanggawul",
+      "name": "Djanggawul",
+      "pantheon": "aboriginal",
+      "category": "major",
+      "gender": "N",
+      "domains": [
+        "creator-ancestors",
+        "yolngu-arnhem-land"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Three Yolŋu ancestors — a brother and two sisters — who traveled from the sunrise island Burralku, creating the landscape and the Yolŋu people.",
+      "wiki_title": "Djanggawul"
+    },
+    {
+      "id": "mimi",
+      "name": "Mimi",
+      "pantheon": "aboriginal",
+      "category": "minor",
+      "gender": "N",
+      "domains": [
+        "thin-spirits",
+        "rock-crevices",
+        "taught-humanity"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Arnhem Land spirits — stick-thin, they live in rock crevices. Taught the ancestors how to hunt and paint.",
+      "wiki_title": "Mimi (folklore)"
+    },
+    {
+      "id": "tate",
+      "name": "Tate",
+      "pantheon": "lakota",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "wind",
+        "four-directions-father"
+      ],
+      "parents": [],
+      "consorts": [
+        "ite"
+      ],
+      "children": [
+        "yata",
+        "eya",
+        "yanpa",
+        "okaga"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "Wind. Father of the Four Winds of the directions. His sons established the sacred directions of the Lakota world.",
+      "wiki_title": "Tate (mythology)"
+    },
+    {
+      "id": "wohpe",
+      "name": "Wohpe",
+      "pantheon": "lakota",
+      "category": "major",
+      "gender": "F",
+      "domains": [
+        "peace",
+        "meditation",
+        "harmony",
+        "falling-star"
+      ],
+      "parents": [
+        "skan"
+      ],
+      "consorts": [
+        "okaga"
+      ],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Falling-star goddess of peace and meditation. Gave the sacred pipe to the Lakota as White Buffalo Calf Woman.",
+      "wiki_title": "Whope"
+    },
+    {
+      "id": "hastseyalti",
+      "name": "Hastseyalti",
+      "pantheon": "navajo",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "dawn",
+        "east",
+        "teacher"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "'Talking God'. Chief of the Diné yei (Holy People). Dawn-god of the east; teacher of the sacred ways.",
+      "wiki_title": "Talking God"
+    },
+    {
+      "id": "gaoh",
+      "name": "Gaoh",
+      "pantheon": "iroquois",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "wind",
+        "four-directions"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "Master of the four winds. Each direction is ruled by one of his animal servants — the bear, panther, moose, and fawn.",
+      "wiki_title": "Gaoh"
+    },
+    {
+      "id": "rod",
+      "name": "Rod",
+      "pantheon": "slavic",
+      "category": "primordial",
+      "gender": "M",
+      "domains": [
+        "primordial-ancestor",
+        "fate",
+        "creator"
+      ],
+      "parents": [],
+      "consorts": [
+        "rozhanitsy"
+      ],
+      "children": [],
+      "archetype": "creator",
+      "parallels": [],
+      "description": "Primordial Slavic ancestor-god; source of being. Accompanied by the Rozhanitsy (birth-fates).",
+      "wiki_title": "Rod (Slavic religion)"
+    },
+    {
+      "id": "belobog",
+      "name": "Belobog",
+      "pantheon": "slavic",
+      "category": "major",
+      "gender": "M",
+      "domains": [
+        "white-god",
+        "good-fortune",
+        "daylight"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "'White God' — hypothetical counterweight to Chernobog. Worship is debated — he may be a post-hoc pairing created by medieval chroniclers.",
+      "wiki_title": "Belobog"
+    },
+    {
+      "id": "jah",
+      "name": "Jah",
+      "pantheon": "rastafari",
+      "category": "abrahamic",
+      "gender": "M",
+      "domains": [
+        "supreme-god",
+        "second-coming"
+      ],
+      "parents": [],
+      "consorts": [],
+      "children": [],
+      "archetype": null,
+      "parallels": [
+        "yhwh"
+      ],
+      "description": "God of Rastafari. A form of 'Yah' (Yahweh) — the same God of Judaism and Christianity, understood to have been manifested in the person of Haile Selassie I.",
+      "wiki_title": "Jah"
+    },
+    {
+      "id": "haile-selassie",
+      "name": "Haile Selassie I",
+      "pantheon": "rastafari",
+      "category": "deified-human",
+      "gender": "M",
+      "domains": [
+        "ethiopian-emperor",
+        "messiah",
+        "lion-of-judah"
+      ],
+      "parents": [
+        "makonnen-woldemikael",
+        "yeshimebet-ali"
+      ],
+      "consorts": [
+        "menen-asfaw"
+      ],
+      "children": [
+        "amha-selassie"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "1892–1975. Emperor of Ethiopia. Worshipped by Rastafari as Jah incarnate and the returned Messiah. Rejected the role in his lifetime; deposed in 1974.",
+      "wiki_title": "Haile Selassie"
+    },
+    {
+      "id": "bahaullah",
+      "name": "Bahá'u'lláh",
+      "pantheon": "bahai",
+      "category": "abrahamic",
+      "gender": "M",
+      "domains": [
+        "founder",
+        "manifestation-of-god"
+      ],
+      "parents": [
+        "mirza-abbas"
+      ],
+      "consorts": [
+        "asiyih-khanum",
+        "fatimih-khanum",
+        "gawhar-khanum"
+      ],
+      "children": [
+        "abdul-baha"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "1817–1892. Founder of the Bahá'í Faith. Held to be the latest in a series of 'Manifestations of God' including Moses, Buddha, Jesus, and Muhammad.",
+      "wiki_title": "Bahá'u'lláh"
+    },
+    {
+      "id": "the-bab",
+      "name": "The Báb",
+      "pantheon": "bahai",
+      "category": "abrahamic",
+      "gender": "M",
+      "domains": [
+        "herald",
+        "gate",
+        "forerunner"
+      ],
+      "parents": [
+        "muhammad-rida",
+        "fatimih-bagum"
+      ],
+      "consorts": [
+        "khadijih-bagum"
+      ],
+      "children": [
+        "ahmad"
+      ],
+      "archetype": null,
+      "parallels": [],
+      "description": "1819–1850. Persian merchant-prophet who declared himself the Gate (Báb) to the coming Manifestation. Executed by Qajar authorities. Herald of Bahá'u'lláh.",
+      "wiki_title": "Báb"
+    },
+    {
+      "id": "caodai-supreme",
+      "name": "Cao Đài",
+      "pantheon": "caodai",
+      "category": "abrahamic",
+      "gender": "M",
+      "domains": [
+        "supreme-being",
+        "eye-of-providence"
+      ],
+      "parents": [],
+      "consorts": [
+        "phat-mau"
+      ],
+      "children": [],
+      "archetype": null,
+      "parallels": [],
+      "description": "'Highest Palace' — the Supreme Being of Cao Đài. Represented by a single eye (the Divine Eye) rather than a figure.",
+      "wiki_title": "Cao Đài"
+    },
+    {
+      "id": "phat-mau",
+      "name": "Diêu Trì Kim Mẫu",
+      "pantheon": "caodai",
+      "category": "abrahamic",
+      "gender": "F",
+      "domains": [
+        "heavenly-mother",
+        "buddha-mother"
+      ],
+      "parents": [],
+      "consorts": [
+        "caodai-supreme"
+      ],
+      "children": [],
+      "archetype": "mother-goddess",
+      "parallels": [
+        "xiwangmu"
+      ],
+      "description": "Heavenly Mother; feminine principle of the divine in Cao Đài. Derived from the Chinese Queen Mother of the West.",
+      "wiki_title": "Diêu Trì Kim Mẫu"
+    }
+  ],
+  "notable_mentions": [
+    {
+      "name": "Aegeus",
+      "pantheon": "greek",
+      "note": "King of Athens. Threw himself into the sea named for him when he wrongly believed Theseus dead."
+    },
+    {
+      "name": "Atalanta",
+      "pantheon": "greek",
+      "note": "Swift huntress. Only woman on the Calydonian Boar hunt; outran every suitor until one dropped golden apples."
+    },
+    {
+      "name": "Ganymede",
+      "pantheon": "greek",
+      "note": "Trojan prince abducted by Zeus to serve as cupbearer of the gods. Immortalized as Aquarius."
+    },
+    {
+      "name": "Narcissus",
+      "pantheon": "greek",
+      "note": "Pined away staring at his own reflection. Became the flower that bears his name."
+    },
+    {
+      "name": "Echo",
+      "pantheon": "greek",
+      "note": "Nymph reduced to repeating others' words. Loved Narcissus from afar until only her voice remained."
+    },
+    {
+      "name": "Pygmalion",
+      "pantheon": "greek",
+      "note": "Sculptor whose ivory statue of Galatea was brought to life by Aphrodite."
+    },
+    {
+      "name": "Midas",
+      "pantheon": "greek",
+      "note": "Phrygian king who asked that all he touched turn to gold — and regretted it."
+    },
+    {
+      "name": "Sarpedon",
+      "pantheon": "greek",
+      "note": "Son of Zeus and Europa. King of Lycia; died at Troy."
+    },
+    {
+      "name": "Meleager",
+      "pantheon": "greek",
+      "note": "Leader of the Calydonian Boar hunt. His life was tied to a log his mother burned."
+    },
+    {
+      "name": "Cadmus",
+      "pantheon": "greek",
+      "note": "Covered in the main Cadmus entry — founder of Thebes."
+    },
+    {
+      "name": "Jocasta",
+      "pantheon": "greek",
+      "note": "Theban queen; Oedipus's mother-wife. Hanged herself on discovering the truth."
+    },
+    {
+      "name": "Creon",
+      "pantheon": "greek",
+      "note": "Theban regent. Forbade burial of Polyneices, setting Antigone's tragedy."
+    },
+    {
+      "name": "Peleus",
+      "pantheon": "greek",
+      "note": "Mortal husband of Thetis; father of Achilles."
+    },
+    {
+      "name": "Rhadamanthus",
+      "pantheon": "greek",
+      "note": "Brother of Minos; second judge of the underworld."
+    },
+    {
+      "name": "Triptolemus",
+      "pantheon": "greek",
+      "note": "Demeter's protégé. Taught humanity agriculture; rode a dragon-drawn chariot."
+    },
+    {
+      "name": "Iris",
+      "pantheon": "greek",
+      "note": "Catalogued separately — rainbow messenger of Hera."
+    },
+    {
+      "name": "Flora",
+      "pantheon": "roman",
+      "note": "Goddess of flowers and spring. Her Floralia festival was famously licentious."
+    },
+    {
+      "name": "Pax",
+      "pantheon": "roman",
+      "note": "Personified peace; cult of the Ara Pacis Augustae."
+    },
+    {
+      "name": "Silvanus",
+      "pantheon": "roman",
+      "note": "God of woods and uncultivated fields."
+    },
+    {
+      "name": "Hygieia",
+      "pantheon": "greek",
+      "note": "Greek/Roman goddess of health — daughter of Asclepius, catalogued in that entry."
+    },
+    {
+      "name": "Vertumnus",
+      "pantheon": "roman",
+      "note": "Shape-shifter god of seasons and plant growth. Wooed Pomona in disguise."
+    },
+    {
+      "name": "Concordia",
+      "pantheon": "roman",
+      "note": "Personified civic harmony."
+    },
+    {
+      "name": "Victoria",
+      "pantheon": "roman",
+      "note": "Roman Nike — goddess of victory."
+    },
+    {
+      "name": "Anhur",
+      "pantheon": "egyptian",
+      "note": "War-god of This and Lower Egypt; 'Skybearer'."
+    },
+    {
+      "name": "Banebdjedet",
+      "pantheon": "egyptian",
+      "note": "Ram-god of Mendes. Souls of Osiris were said to inhabit him."
+    },
+    {
+      "name": "Kuk",
+      "pantheon": "egyptian",
+      "note": "One of the Hermopolitan Ogdoad, personifying primeval darkness."
+    },
+    {
+      "name": "Meskhenet",
+      "pantheon": "egyptian",
+      "note": "Goddess of childbirth bricks — women squatted over her bricks to give birth."
+    },
+    {
+      "name": "Nehebkau",
+      "pantheon": "egyptian",
+      "note": "Two-headed serpent-guardian of the underworld."
+    },
+    {
+      "name": "Pakhet",
+      "pantheon": "egyptian",
+      "note": "Lion-goddess of the eastern desert; 'she who scratches'."
+    },
+    {
+      "name": "Tatenen",
+      "pantheon": "egyptian",
+      "note": "Primordial earth-god; the risen mound of creation at Memphis."
+    },
+    {
+      "name": "Dellingr",
+      "pantheon": "norse",
+      "note": "Personified dawn; father of Dagr (day)."
+    },
+    {
+      "name": "Gefn",
+      "pantheon": "norse",
+      "note": "Alternate name for Freyja as 'giver'."
+    },
+    {
+      "name": "Hlín",
+      "pantheon": "norse",
+      "note": "Guardian-goddess attending Frigg; protects those Frigg wishes to save."
+    },
+    {
+      "name": "Sága",
+      "pantheon": "norse",
+      "note": "Goddess of histories; drinks daily with Odin from golden cups."
+    },
+    {
+      "name": "Þjálfi and Röskva",
+      "pantheon": "norse",
+      "note": "Thor's mortal servants — a brother and sister bonded to him after Thjalfi damaged one of his goats."
+    },
+    {
+      "name": "Haya",
+      "pantheon": "mesopotamian",
+      "note": "Grain-god; husband of Nisaba."
+    },
+    {
+      "name": "Ishum",
+      "pantheon": "mesopotamian",
+      "note": "Mild attendant of Nergal; fire-brother to Gibil."
+    },
+    {
+      "name": "Nungal",
+      "pantheon": "mesopotamian",
+      "note": "Goddess of prisons in Sumerian tradition."
+    },
+    {
+      "name": "Ninisina",
+      "pantheon": "mesopotamian",
+      "note": "Healing-goddess of Isin. Often merged with Gula."
+    },
+    {
+      "name": "Mitra (Vedic)",
+      "pantheon": "hindu",
+      "note": "Vedic god of contracts; cognate with Iranian Mithra."
+    },
+    {
+      "name": "Aryaman",
+      "pantheon": "hindu",
+      "note": "Aditya of hospitality and the milky way."
+    },
+    {
+      "name": "Bhaga",
+      "pantheon": "hindu",
+      "note": "Aditya of wealth and shares."
+    },
+    {
+      "name": "Shantanu",
+      "pantheon": "hindu",
+      "note": "Ancestor-king of the Kurus; father of Bhishma by Ganga."
+    },
+    {
+      "name": "Duryodhana",
+      "pantheon": "hindu",
+      "note": "Eldest Kaurava prince; chief antagonist of the Mahabharata war."
+    },
+    {
+      "name": "Karna (Mahabharata)",
+      "pantheon": "hindu",
+      "note": "Catalogued — son of Surya, tragic Kaurava warrior."
+    },
+    {
+      "name": "Kunti",
+      "pantheon": "hindu",
+      "note": "Mother of the first three Pandavas and Karna."
+    },
+    {
+      "name": "Gandhari",
+      "pantheon": "hindu",
+      "note": "Mother of the Kauravas; blindfolded herself for life to share her blind husband's world."
+    },
+    {
+      "name": "Ao Guang",
+      "pantheon": "chinese",
+      "note": "Dragon King of the Eastern Sea."
+    },
+    {
+      "name": "Bixia Yuanjun",
+      "pantheon": "chinese",
+      "note": "Goddess of Mount Tai, dawn, and childbirth."
+    },
+    {
+      "name": "Cangjie",
+      "pantheon": "chinese",
+      "note": "Four-eyed official credited with inventing Chinese characters."
+    },
+    {
+      "name": "Xuannu",
+      "pantheon": "chinese",
+      "note": "Catalogued as Jiuqian Xuannü above."
+    },
+    {
+      "name": "Omoikane",
+      "pantheon": "japanese",
+      "note": "Kami of wisdom and counsel; advised the other kami during Amaterasu's hiding."
+    },
+    {
+      "name": "Ōwatatsumi",
+      "pantheon": "japanese",
+      "note": "Dragon-king of the sea; father of Toyotama-hime."
+    },
+    {
+      "name": "Sarutahiko",
+      "pantheon": "japanese",
+      "note": "Kami who guided Ninigi's descent to earth."
+    },
+    {
+      "name": "Belisama",
+      "pantheon": "celtic-irish",
+      "note": "Gallic goddess of fire and forge; consort of Belenus."
+    },
+    {
+      "name": "Lenus",
+      "pantheon": "celtic-irish",
+      "note": "Treveran healer-god; equated with Mars."
+    },
+    {
+      "name": "Lugus",
+      "pantheon": "celtic-irish",
+      "note": "Gallic continental form of Lugh; triple-aspected."
+    },
+    {
+      "name": "Epona",
+      "pantheon": "celtic-irish",
+      "note": "Catalogued — Gallic horse-goddess adopted by Roman cavalry."
+    },
+    {
+      "name": "Jarilo (alt)",
+      "pantheon": "slavic",
+      "note": "Catalogued as Yarilo."
+    },
+    {
+      "name": "Rusalki",
+      "pantheon": "slavic",
+      "note": "Water-nymphs — spirits of drowned women."
+    },
+    {
+      "name": "Centeotl",
+      "pantheon": "aztec",
+      "note": "Catalogued — god of maize."
+    },
+    {
+      "name": "Teteo Innan",
+      "pantheon": "aztec",
+      "note": "'Mother of the Gods' — earth aspect of Coatlicue."
+    },
+    {
+      "name": "Tlazolteotl",
+      "pantheon": "aztec",
+      "note": "Catalogued — 'filth-eater' of confession and purification."
+    },
+    {
+      "name": "Orula",
+      "pantheon": "yoruba",
+      "note": "Catalogued as Orunmila."
+    },
+    {
+      "name": "Nana Buluku",
+      "pantheon": "fon",
+      "note": "Catalogued — primordial grandmother of Mawu and Lisa."
+    },
+    {
+      "name": "Laka",
+      "pantheon": "polynesian",
+      "note": "Hawaiian goddess of hula; younger sister of Pele."
+    },
+    {
+      "name": "Kamapua'a",
+      "pantheon": "polynesian",
+      "note": "Hawaiian pig-man demigod; lover of Pele."
+    },
+    {
+      "name": "Pariacaca",
+      "pantheon": "inca",
+      "note": "Pre-Inca mountain-falcon god of Huarochirí."
+    },
+    {
+      "name": "Shekhinah",
+      "pantheon": "judaism",
+      "note": "Catalogued as Malkhut/Shekhinah in the Kabbalistic tree; the indwelling divine presence in Judaism generally."
+    },
+    {
+      "name": "Prometheus (mentioned)",
+      "pantheon": "greek",
+      "note": "Fully catalogued."
+    },
+    {
+      "name": "Wotan",
+      "pantheon": "norse",
+      "note": "Continental Germanic form of Odin; known via Tacitus's Mercury."
+    },
+    {
+      "name": "Donar",
+      "pantheon": "norse",
+      "note": "Continental Germanic form of Thor."
+    },
+    {
+      "name": "Saxnōt",
+      "pantheon": "norse",
+      "note": "Continental Saxon god named alongside Wotan and Donar in Christianization oaths."
+    },
+    {
+      "name": "Nerthus",
+      "pantheon": "norse",
+      "note": "Catalogued — Germanic earth-goddess described by Tacitus."
     }
   ]
 }

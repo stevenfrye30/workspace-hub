@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <title>Gods — A Cross-Cultural Temporal Map</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="A cross-cultural temporal map of the divine — 750+ figures across 48 traditions, from Proto-Indo-European reconstructions to living religions. Family trees, timelines, and archetypes.">
+<meta name="description" content="A cross-cultural temporal map of the divine — 1,000 figures across 57 traditions, from Proto-Indo-European reconstructions to living religions. Family trees, timelines, archetypes, and notable mentions.">
 <meta property="og:title" content="Gods — A Cross-Cultural Temporal Map">
-<meta property="og:description" content="750+ deities, spirits, and deified humans across 48 traditions, with interactive family trees, a 7000-year timeline, and cross-cultural archetypes.">
+<meta property="og:description" content="1,000 deities, spirits, and deified humans across 57 traditions — interactive family trees, a 7,000-year timeline, cross-cultural archetypes, and notable mentions.">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%230a0b1a' stroke='%23e5c158' stroke-width='2'/%3E%3Ctext x='32' y='44' font-family='Georgia' font-size='38' fill='%23e5c158' text-anchor='middle'%3E%E2%98%89%3C/text%3E%3C/svg%3E">
@@ -172,6 +172,27 @@ main p { line-height:1.7; }
 .filters .count { color:var(--muted); font-size:12px; font-style:italic; margin-left:auto; }
 
 .god-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:12px; }
+
+/* Notable Mentions */
+.mentions-group { margin-bottom:26px; }
+.mentions-group-head {
+  display:flex; align-items:baseline; gap:12px;
+  padding:8px 2px 8px; margin-bottom:8px; border-bottom:1px solid var(--line);
+}
+.mentions-group-head h3 {
+  margin:0; color:var(--gold); font-weight:normal; letter-spacing:2px;
+  font-variant:small-caps; font-size:14px;
+}
+.mentions-group-head .mg-count { color:var(--muted); font-size:11px; font-style:italic; }
+.mentions-list { display:flex; flex-direction:column; gap:5px; }
+.mention-item {
+  padding:6px 10px; border-radius:5px; display:flex; gap:10px;
+  align-items:baseline; font-size:13px; line-height:1.5;
+  border-left:2px solid transparent;
+}
+.mention-item:hover { background:rgba(229,193,88,0.03); border-left-color:var(--gold-soft); }
+.mention-item .mn-name { color:var(--gold); font-weight:bold; flex-shrink:0; min-width:160px; }
+.mention-item .mn-note { color:var(--ink); opacity:0.85; }
 .god-card {
   background:var(--panel); border:1px solid var(--line); border-radius:8px;
   padding:12px 16px; cursor:pointer; outline:none; position:relative;
@@ -643,6 +664,7 @@ select:focus:not(:focus-visible),
   <button class="tab-btn" data-tab="archetypes" role="tab" aria-selected="false" aria-controls="tab-archetypes">Archetypes</button>
   <button class="tab-btn" data-tab="deified" role="tab" aria-selected="false" aria-controls="tab-deified">Deified Humans</button>
   <button class="tab-btn" data-tab="browse" role="tab" aria-selected="false" aria-controls="tab-browse">Browse All</button>
+  <button class="tab-btn" data-tab="mentions" role="tab" aria-selected="false" aria-controls="tab-mentions">Notable Mentions</button>
 </nav>
 
 <main>
@@ -721,6 +743,16 @@ select:focus:not(:focus-visible),
     Egypt deified the architect Imhotep two millennia after his death. The line between "great ancestor" and "god" is porous.
   </p>
   <div id="deifiedGrid" class="god-grid"></div>
+</section>
+
+<section id="tab-mentions" class="tab" role="tabpanel">
+  <h2>Notable Mentions</h2>
+  <p class="intro">
+    Figures worth knowing but not included in the main thousand — secondary heroes, regional deities,
+    already-mentioned-in-descriptions characters, and alternate names of catalogued figures. One-line
+    context only; no family trees.
+  </p>
+  <div id="mentionsList"></div>
 </section>
 
 <section id="tab-browse" class="tab" role="tabpanel">
@@ -969,6 +1001,7 @@ function init() {
   renderTimeline();
   renderArchetypes();
   renderDeified();
+  renderMentions();
   renderBrowseFilters();
   renderBrowse();
   wireTabs();
@@ -1191,9 +1224,9 @@ const PANTHEON_GROUPS = [
   { id:'arctic-oceania', name:'Arctic & Oceania',
     ids:['inuit','aboriginal','polynesian'] },
   { id:'abrahamic', name:'Abrahamic & Adjacent',
-    ids:['judaism','christianity','islam','sikh','kabbalistic','gnostic','manichaean'] },
+    ids:['judaism','christianity','islam','sikh','bahai','rastafari','kabbalistic','gnostic','manichaean'] },
   { id:'diaspora', name:'Diaspora & Syncretic',
-    ids:['haitian-vodou'] },
+    ids:['haitian-vodou','caodai'] },
   { id:'human', name:'Elevated Humans',
     ids:['deified-humans'] },
 ];
@@ -1725,6 +1758,52 @@ function jumpToArchetype(id) {
 function focusFromArchetype(godId) {
   selectTab('trees', { skipHash: true });
   setFocus(godId); // updates hash to god/<id>
+}
+
+/* ---------- Notable Mentions tab ---------- */
+function renderMentions() {
+  const list = DATA.notable_mentions || [];
+  const el = document.getElementById('mentionsList');
+  if (!list.length) { el.innerHTML = '<div class="empty">No notable mentions yet.</div>'; return; }
+
+  // Group by pantheon, in the same order as PANTHEON_GROUPS
+  const byPantheon = {};
+  list.forEach(m => {
+    (byPantheon[m.pantheon] = byPantheon[m.pantheon] || []).push(m);
+  });
+
+  const orderedIds = PANTHEON_GROUPS.flatMap(g => g.ids);
+  const seen = new Set();
+  const ordered = [];
+  orderedIds.forEach(pid => {
+    if (byPantheon[pid] && !seen.has(pid)) {
+      seen.add(pid);
+      ordered.push(pid);
+    }
+  });
+  // Any pantheons with mentions but not in groups
+  Object.keys(byPantheon).forEach(pid => { if (!seen.has(pid)) ordered.push(pid); });
+
+  el.innerHTML = ordered.map(pid => {
+    const p = PANTHEONS_BY_ID[pid];
+    const items = byPantheon[pid];
+    return `
+      <section class="mentions-group">
+        <div class="mentions-group-head">
+          <h3>${p ? p.name : pid}</h3>
+          <span class="mg-count">${items.length} mention${items.length === 1 ? '' : 's'}</span>
+        </div>
+        <div class="mentions-list">
+          ${items.map(m => `
+            <div class="mention-item">
+              <span class="mn-name">${m.name}</span>
+              <span class="mn-note">${m.note}</span>
+            </div>
+          `).join('')}
+        </div>
+      </section>
+    `;
+  }).join('');
 }
 
 /* ---------- Deified Humans tab ---------- */
