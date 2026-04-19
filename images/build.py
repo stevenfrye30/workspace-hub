@@ -20,6 +20,7 @@ rerun.
 """
 import json
 import re
+import unicodedata
 from html import escape
 from pathlib import Path
 
@@ -39,6 +40,15 @@ def h_attr(s: str) -> str:
 def slugify(s: str) -> str:
     s = re.sub(r"[^\w\s-]", "", s, flags=re.UNICODE).strip().lower()
     return re.sub(r"[\s_-]+", "-", s)
+
+
+def normalize_search(s: str) -> str:
+    """Lowercase + strip diacritics so searches like 'horyu' match 'Hōryū-ji'."""
+    s = s.lower()
+    return "".join(
+        c for c in unicodedata.normalize("NFKD", s)
+        if not unicodedata.combining(c)
+    )
 
 
 _SURNAME_OVERRIDES = {
@@ -125,7 +135,7 @@ def render_work(w: dict) -> str:
 
 def render_all_work(w: dict, region_title: str) -> str:
     tokens = [w["title"], w["meta"], w.get("desc", ""), w.get("artist", ""), region_title]
-    search = " ".join(tokens).lower()
+    search = normalize_search(" ".join(t for t in tokens if t))
     return ALL_WORK_TPL.format(
         image=w["image"],
         alt=h(w["title"]),
@@ -169,6 +179,9 @@ REGION_TPL = """<!DOCTYPE html>
   <footer class="region-footer">
     <a href="{prev_href}"><span class="arrow">&larr;</span>{prev_title}</a>
     <a href="{next_href}">{next_title}<span class="arrow">&rarr;</span></a>
+  </footer>
+  <footer class="page-footer">
+    Images via <a href="https://commons.wikimedia.org/" target="_blank" rel="noopener">Wikimedia Commons</a>. Click any image to open it and see its source.
   </footer>
 </div>
 <script src="../lightbox.js"></script>
@@ -223,6 +236,9 @@ ARTISTS_TPL = """<!DOCTYPE html>
 @@TOC@@
   </nav>
 @@SECTIONS@@
+  <footer class="page-footer">
+    Images via <a href="https://commons.wikimedia.org/" target="_blank" rel="noopener">Wikimedia Commons</a>. Click any image to open it and see its source.
+  </footer>
 </div>
 <script src="lightbox.js"></script>
 </body>
@@ -324,6 +340,9 @@ ALL_TPL = """<!DOCTYPE html>
 @@WORKS@@
   </div>
   <div class="no-results" id="no-results">No works match that search.</div>
+  <footer class="page-footer">
+    Images via <a href="https://commons.wikimedia.org/" target="_blank" rel="noopener">Wikimedia Commons</a>. Click any image to open it and see its source.
+  </footer>
 </div>
 <script src="lightbox.js"></script>
 <script>
@@ -334,8 +353,11 @@ ALL_TPL = """<!DOCTYPE html>
   const empty = document.getElementById('no-results');
   const total = works.length;
 
+  function normalize(s) {
+    return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  }
   function filter() {
-    const q = input.value.trim().toLowerCase();
+    const q = normalize(input.value.trim());
     let visible = 0;
     for (const w of works) {
       const match = !q || w.dataset.search.includes(q);
@@ -409,6 +431,9 @@ INDEX_TPL = """<!DOCTYPE html>
   <div class="card-grid">
 @@MUSEUM_CARDS@@
   </div>
+  <footer class="page-footer">
+    Images via <a href="https://commons.wikimedia.org/" target="_blank" rel="noopener">Wikimedia Commons</a>. Click any image to open it and see its source.
+  </footer>
 </div>
 </body>
 </html>

@@ -22,6 +22,18 @@
   const countEl = overlay.querySelector('.lb-count');
   let idx = -1;
 
+  // Derive a Wikimedia Commons / Wikipedia "File:" page from an upload URL.
+  // Handles thumb URLs (/commons/thumb/X/XX/FILE/<size>px-FILE) and direct
+  // originals (/commons/X/XX/FILE). Also supports /wikipedia/en/ hosts.
+  function sourceUrl(imgSrc) {
+    const m = imgSrc.match(
+      /^https?:\/\/[^/]+\/wikipedia\/(commons|en)\/(?:thumb\/)?[0-9a-f]\/[0-9a-f]{2}\/([^/]+?)(?:\/[^/]+)?$/
+    );
+    if (!m) return null;
+    const host = m[1] === 'commons' ? 'commons.wikimedia.org' : 'en.wikipedia.org';
+    return 'https://' + host + '/wiki/File:' + m[2];
+  }
+
   function isVisible(el) {
     return el.offsetParent !== null;
   }
@@ -40,10 +52,13 @@
     const desc = w.querySelector('.d')?.textContent || '';
     imgEl.src = src;
     imgEl.alt = alt;
-    capEl.innerHTML = `<span class="lb-t"></span><span class="lb-m"></span><span class="lb-d"></span>`;
+    const source = sourceUrl(src);
+    capEl.innerHTML = `<span class="lb-t"></span><span class="lb-m"></span><span class="lb-d"></span>` +
+      (source ? `<br><a class="lb-src" target="_blank" rel="noopener">View on Wikimedia Commons \u2197</a>` : '');
     capEl.querySelector('.lb-t').textContent = title;
     capEl.querySelector('.lb-m').textContent = meta;
     capEl.querySelector('.lb-d').textContent = desc;
+    if (source) capEl.querySelector('.lb-src').href = source;
     const visible = visibleWorks();
     const visibleIdx = visible.indexOf(w);
     countEl.textContent = visibleIdx >= 0 ? `${visibleIdx + 1} / ${visible.length}` : '';
