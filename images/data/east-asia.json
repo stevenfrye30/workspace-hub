@@ -292,6 +292,36 @@
       "desc": "A villa and garden considered one of the finest masterpieces of Japanese architecture. Shoin-zukuri precision: every plank, every sight-line from every veranda, deliberately aligned.",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Katsura_Rikyu_%283264799678%29.jpg/960px-Katsura_Rikyu_%283264799678%29.jpg",
       "year": 1620
+    },
+    {
+      "title": "Leshan Giant Buddha",
+      "meta": "Tang China · 713–803 · Sichuan",
+      "desc": "A seated Maitreya carved directly into a sandstone cliff at the confluence of three rivers. Seventy-one meters tall; his ears alone are seven meters. Built, a monk said, to calm the waters.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/36275-Leshan_%2849067653383%29.jpg/960px-36275-Leshan_%2849067653383%29.jpg",
+      "year": 713
+    },
+    {
+      "title": "Bulguksa",
+      "meta": "Unified Silla · 751 CE · Gyeongju, Korea",
+      "desc": "A Buddhist temple with twin pagodas (Dabotap and Seokgatap) that encode two sutras in stone form. Burned by the Japanese in 1593, rebuilt in the 1970s on the original foundations.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Lotus_Flower_Bridge_and_Seven_Treasure_Bridge_at_Bulguksa_in_Gyeongju%2C_Korea.jpg/960px-Lotus_Flower_Bridge_and_Seven_Treasure_Bridge_at_Bulguksa_in_Gyeongju%2C_Korea.jpg",
+      "year": 751
+    },
+    {
+      "title": "Lantingji Xu (Preface to the Orchid Pavilion)",
+      "meta": "Eastern Jin · Wang Xizhi · 353 CE · China",
+      "desc": "A drunkenly perfect calligraphic masterpiece, 324 characters describing a riverside gathering of poets. Wang Xizhi tried to rewrite it next day and could not match it. Later buried with an emperor.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/1/1e/XingshuLantingxv.jpg",
+      "artist": "Wang Xizhi",
+      "year": 353
+    },
+    {
+      "title": "Dream of the Red Chamber",
+      "meta": "Qing China · Cao Xueqin · 18th c.",
+      "desc": "A classic Chinese novel in 120 chapters, commonly illustrated from Qing to today — the Jia family's decline rendered in garden pavilions, dying flowers, a jade inscribed with fate.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/7/79/Hongloumeng2.jpg",
+      "artist": "Cao Xueqin",
+      "year": 1760
     }
   ]
 }

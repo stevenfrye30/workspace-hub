@@ -247,6 +247,20 @@
       "desc": "The \"Treasury\" — a 40-meter temple-facade carved directly into the rose-red sandstone cliff. Bedouin shot at the urn at the top, hoping to spill hidden pharaoh's gold.",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Treasury_petra_crop.jpeg/960px-Treasury_petra_crop.jpeg",
       "year": 0
+    },
+    {
+      "title": "Lyres of Ur",
+      "meta": "Sumerian · c. 2500 BCE · Royal Cemetery",
+      "desc": "Wooden lyres covered in gold and lapis, the sound boxes shaped into bulls' heads. Found in Queen Puabi's grave next to the women who played them. The oldest stringed instruments we have.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/The_Queen%27s_gold_lyre_from_the_Royal_Cemetery_at_Ur._C._2500_BCE._Iraq_Museum.jpg/960px-The_Queen%27s_gold_lyre_from_the_Royal_Cemetery_at_Ur._C._2500_BCE._Iraq_Museum.jpg",
+      "year": -2500
+    },
+    {
+      "title": "Assyrian Winged Genii",
+      "meta": "Neo-Assyrian · c. 870 BCE · Nimrud",
+      "desc": "Four-winged protective spirits carved in alabaster lining Ashurnasirpal II's palace. They lift a pine cone and a bucket — a gesture of ritual purification never fully decoded.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Genien%2C_Nimrud_870_v._Chr._Aegyptisches_Museum%2C_Muenchen-4.jpg/960px-Genien%2C_Nimrud_870_v._Chr._Aegyptisches_Museum%2C_Muenchen-4.jpg",
+      "year": -870
     }
   ]
 }

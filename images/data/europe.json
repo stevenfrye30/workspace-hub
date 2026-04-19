@@ -481,6 +481,36 @@
       "image": "https://upload.wikimedia.org/wikipedia/en/thumb/e/e7/Chagall_IandTheVillage.jpg/960px-Chagall_IandTheVillage.jpg",
       "artist": "Marc Chagall",
       "year": 1911
+    },
+    {
+      "title": "The Death of Marat",
+      "meta": "French Neoclassicism · 1793",
+      "desc": "Marat in his bathtub, stabbed by Charlotte Corday, pen still in hand. David painted him as a secular martyr — a revolutionary Pietà for a Republic that had killed its king.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Death_of_Marat_by_David.jpg/960px-Death_of_Marat_by_David.jpg",
+      "artist": "Jacques-Louis David",
+      "year": 1793
+    },
+    {
+      "title": "Les Demoiselles d'Avignon",
+      "meta": "Proto-Cubism · 1907",
+      "desc": "Five Barcelona prostitutes, faces half-African mask, bodies fractured into angular planes. Picasso hid it for years; when it emerged it had already ended the 19th century.",
+      "image": "https://upload.wikimedia.org/wikipedia/en/thumb/4/4c/Les_Demoiselles_d%27Avignon.jpg/960px-Les_Demoiselles_d%27Avignon.jpg",
+      "artist": "Pablo Picasso",
+      "year": 1907
+    },
+    {
+      "title": "Cologne Cathedral",
+      "meta": "High Gothic · 1248–1880 · Germany",
+      "desc": "Started in 1248, stopped in 1473, resumed in 1842, finished with the original medieval drawings in hand. For four years after completion it was the tallest building on earth.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/K%C3%B6lner_Dom_-_Westfassade_2022_ohne_Ger%C3%BCst-0968_b.jpg/960px-K%C3%B6lner_Dom_-_Westfassade_2022_ohne_Ger%C3%BCst-0968_b.jpg",
+      "year": 1250
+    },
+    {
+      "title": "Florence Cathedral (Duomo)",
+      "meta": "Italian Gothic / Renaissance · 1296–1436",
+      "desc": "Brunelleschi's dome, still the largest brick dome ever built. He designed it without drawings, built it without scaffolding, and took the method with him to the grave.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Cattedrale_di_Santa_Maria_del_Fiore_%E2%80%93_Il_Duomo_di_Firenze.jpg/960px-Cattedrale_di_Santa_Maria_del_Fiore_%E2%80%93_Il_Duomo_di_Firenze.jpg",
+      "year": 1300
     }
   ]
 }

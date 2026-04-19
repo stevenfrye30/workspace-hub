@@ -276,6 +276,27 @@
       "desc": "A Shia shrine covered inside floor to ceiling in thousands of shards of mirror. Candlelight becomes a galaxy. Pilgrims hold a finger against the wall and watch their reflection splinter.",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Mausoleo_de_Shah_Cheragh%2C_Shiraz%2C_Ir%C3%A1n%2C_2016-09-24%2C_DD_32.jpg/960px-Mausoleo_de_Shah_Cheragh%2C_Shiraz%2C_Ir%C3%A1n%2C_2016-09-24%2C_DD_32.jpg",
       "year": 1350
+    },
+    {
+      "title": "Al-Aqsa Mosque",
+      "meta": "Umayyad onward · 705 CE · Jerusalem",
+      "desc": "The congregational mosque on the Temple Mount, third holiest site in Islam. Rebuilt repeatedly after earthquakes; the wooden prayer hall facing the qibla dates partly to the 1930s.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Jerusalem-2013-Temple_Mount-Al-Aqsa_Mosque_%28NE_exposure%29.jpg/960px-Jerusalem-2013-Temple_Mount-Al-Aqsa_Mosque_%28NE_exposure%29.jpg",
+      "year": 705
+    },
+    {
+      "title": "Bou Inania Madrasa",
+      "meta": "Marinid · 1350–1355 · Fez",
+      "desc": "A teaching mosque of carved cedar, zellige tile, and stucco so fine it looks punched through paper. The Marinid sultan reportedly said the building cost was so beautiful it didn't matter what it cost.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Bou_Inania_Madrasa_2011.jpg/960px-Bou_Inania_Madrasa_2011.jpg",
+      "year": 1350
+    },
+    {
+      "title": "Tomb of Jahangir",
+      "meta": "Mughal · 1637 · Lahore",
+      "desc": "Jahangir — Akbar's son, Shah Jahan's father — lies under white marble inlaid with pietra dura flowers, in a garden tomb of red sandstone. The minarets at the corners rise but never touch the roof.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Tomb_of_Emperor_Jahangir.jpg/960px-Tomb_of_Emperor_Jahangir.jpg",
+      "year": 1637
     }
   ]
 }

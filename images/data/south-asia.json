@@ -275,6 +275,34 @@
       "desc": "An Ashokan pillar capital: a single polished Chunar sandstone bull, so highly burnished it was mistaken for metal. One of the finest survivals of the Mauryan court style.",
       "image": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Rampurva_bull_in_Presidential_Palace_high_closeup.jpg",
       "year": -250
+    },
+    {
+      "title": "Bhaja Caves",
+      "meta": "Early Buddhist · 2nd c. BCE · Maharashtra",
+      "desc": "Twenty-two rock-cut viharas and a chaitya, with wooden ribs imitated in stone. Reliefs show figures riding elephants, dancing — a rare look at secular imagery in early Buddhist art.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/0/08/The_Bhaje_Caves_05.jpg",
+      "year": -150
+    },
+    {
+      "title": "Jagannath Temple, Puri",
+      "meta": "Eastern Ganga · 12th c. · Odisha",
+      "desc": "Home of the annual Rath Yatra — giant wooden chariots hauled through the streets carrying the three deities. The temple's cooks feed the god daily from one of the largest kitchens in the world.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Shri_Jagannath_temple.jpg/960px-Shri_Jagannath_temple.jpg",
+      "year": 1150
+    },
+    {
+      "title": "Lepakshi Temple",
+      "meta": "Vijayanagara · 16th c. · Andhra Pradesh",
+      "desc": "A granite temple to Shiva whose ceiling holds the largest surviving Vijayanagara mural. One of its columns hangs a fraction of an inch above the floor — pilgrims pass cloth beneath it.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Front_side_of_Veerabhadra_Temple%2C_Lepakshi.jpg/960px-Front_side_of_Veerabhadra_Temple%2C_Lepakshi.jpg",
+      "year": 1540
+    },
+    {
+      "title": "Thanjavur Painting",
+      "meta": "Nayaka / Maratha · 16th–19th c. · Tamil Nadu",
+      "desc": "Devotional paintings built up in gesso, then layered in gold leaf, semi-precious stones, and mirrored glass. Surface so encrusted the figures seem to float off the board.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Thanjavur_art_from_south_India.jpg/960px-Thanjavur_art_from_south_India.jpg",
+      "year": 1700
     }
   ]
 }
