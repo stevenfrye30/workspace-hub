@@ -87,10 +87,35 @@ main p { line-height:1.7; }
 
 .grid { display:grid; gap:16px; }
 .grid-pantheons { grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); }
+
+/* Grouped pantheons overview */
+.pantheon-group { margin-bottom:32px; }
+.pantheon-group-head {
+  display:flex; align-items:baseline; gap:14px;
+  padding:10px 2px 10px; margin-bottom:12px;
+  border-bottom:1px solid var(--line);
+}
+.pantheon-group-head h3 {
+  margin:0; color:var(--gold); font-weight:normal; letter-spacing:2.5px;
+  font-variant:small-caps; font-size:16px;
+}
+.pantheon-group-head .group-count {
+  color:var(--muted); font-size:12px; font-style:italic; letter-spacing:0.5px;
+}
+.pantheon-group-head .group-era {
+  color:var(--cyan); font-size:11px; font-variant:small-caps; letter-spacing:1.5px; margin-left:auto;
+}
+
+.pantheon-group-grid {
+  display:grid; gap:10px;
+  grid-template-columns:repeat(auto-fill, minmax(230px, 1fr));
+}
+
 .pantheon-card {
-  background:var(--panel); border:1px solid var(--line); border-radius:10px;
-  padding:18px 22px; cursor:pointer; position:relative; overflow:hidden;
-  transition:border-color .25s, transform .2s, box-shadow .25s, background .25s;
+  background:var(--panel); border:1px solid var(--line); border-radius:8px;
+  padding:12px 14px 11px 17px; cursor:pointer; position:relative; overflow:hidden;
+  transition:border-color .2s, transform .15s, box-shadow .2s, background .2s;
+  min-height:0;
 }
 .pantheon-card::before {
   content:''; position:absolute; left:0; top:0; bottom:0; width:4px;
@@ -98,14 +123,35 @@ main p { line-height:1.7; }
 }
 .pantheon-card:hover {
   border-color:var(--gold-soft); transform:translateY(-2px);
-  box-shadow:0 8px 22px rgba(0,0,0,0.45), 0 0 0 1px var(--gold-faint);
+  box-shadow:0 6px 18px rgba(0,0,0,0.4), 0 0 0 1px var(--gold-faint);
   background:linear-gradient(180deg, var(--panel), var(--panel2));
 }
-.pantheon-card h3 { margin:0 0 6px; color:var(--gold); }
-.pantheon-card .region { color:var(--cyan); font-size:12px; font-style:italic; margin-bottom:6px; }
-.pantheon-card .span { color:var(--muted); font-size:12px; margin-bottom:8px; font-variant:small-caps; letter-spacing:1px; }
-.pantheon-card .count { color:var(--gold-deep); font-size:11px; font-variant:small-caps; letter-spacing:1.5px; margin-bottom:10px; }
-.pantheon-card .desc { color:var(--ink); font-size:13px; line-height:1.55; }
+.pantheon-card .card-head {
+  display:flex; align-items:baseline; gap:8px; justify-content:space-between;
+  margin-bottom:2px;
+}
+.pantheon-card h4 {
+  margin:0; color:var(--gold); font-size:15px; font-weight:normal;
+  letter-spacing:0.3px; line-height:1.25;
+}
+.pantheon-card .count-chip {
+  color:var(--gold-deep); font-size:10px; font-variant:small-caps; letter-spacing:1.2px;
+  background:var(--panel2); padding:1px 8px; border-radius:10px;
+  border:1px solid var(--line); white-space:nowrap; font-weight:bold;
+}
+.pantheon-card .region {
+  color:var(--cyan); font-size:11px; font-style:italic; margin:1px 0 3px;
+  overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+}
+.pantheon-card .span {
+  color:var(--muted); font-size:10px; font-variant:small-caps; letter-spacing:1.3px;
+  margin-bottom:5px;
+}
+.pantheon-card .desc {
+  color:var(--ink); font-size:12px; line-height:1.45;
+  display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical;
+  overflow:hidden; opacity:0.82;
+}
 
 .filters { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:20px; align-items:center; }
 .filters input, .filters select {
@@ -350,7 +396,7 @@ footer a { color:var(--gold); text-decoration:none; }
     Judaism, and Islam are monotheistic (not pantheons); their catalogues list angels, prophets, and opposing
     figures for cross-cultural comparison.
   </p>
-  <div id="pantheonGrid" class="grid grid-pantheons"></div>
+  <div id="pantheonGroups"></div>
 </section>
 
 <section id="tab-trees" class="tab">
@@ -530,29 +576,92 @@ function formatStubName(id) {
 }
 
 /* ---------- Pantheons tab ---------- */
+const PANTHEON_GROUPS = [
+  { id:'mediterranean', name:'Ancient Mediterranean & Classical',
+    ids:['pie','greek','roman','etruscan','thracian'] },
+  { id:'near-east', name:'Ancient Near East & North Africa',
+    ids:['egyptian','mesopotamian','canaanite','hittite','zoroastrian','arabian'] },
+  { id:'europe', name:'Pagan Europe',
+    ids:['norse','celtic-irish','celtic-welsh','slavic','baltic','finnish','sami','armenian'] },
+  { id:'asia', name:'Asia',
+    ids:['hindu','chinese','japanese','korean','vietnamese','tibetan-bon','tengri','ainu'] },
+  { id:'africa', name:'Sub-Saharan Africa',
+    ids:['yoruba','fon','zulu'] },
+  { id:'americas', name:'Indigenous Americas',
+    ids:['aztec','mayan','inca','taino','lakota','navajo','iroquois','guarani','mapuche'] },
+  { id:'oceania', name:'Oceania & Australia',
+    ids:['aboriginal','polynesian'] },
+  { id:'abrahamic', name:'Abrahamic & Adjacent',
+    ids:['judaism','christianity','islam','kabbalistic','gnostic'] },
+  { id:'diaspora', name:'Diaspora & Syncretic',
+    ids:['haitian-vodou'] },
+  { id:'human', name:'Elevated Humans',
+    ids:['deified-humans'] },
+];
+
 function renderPantheonGrid() {
   const counts = {};
   DATA.gods.forEach(g => counts[g.pantheon] = (counts[g.pantheon] || 0) + 1);
-  document.getElementById('pantheonGrid').innerHTML = DATA.pantheons.map(p => {
-    const n = counts[p.id] || 0;
+
+  // Any pantheons not in a group (safety net if new ones added without updating groups)
+  const grouped = new Set(PANTHEON_GROUPS.flatMap(g => g.ids));
+  const orphans = DATA.pantheons.filter(p => !grouped.has(p.id)).map(p => p.id);
+  const allGroups = orphans.length
+    ? [...PANTHEON_GROUPS, { id:'other', name:'Other', ids:orphans }]
+    : PANTHEON_GROUPS;
+
+  const html = allGroups.map(grp => {
+    const members = grp.ids
+      .map(id => PANTHEONS_BY_ID[id])
+      .filter(Boolean)
+      .sort((a,b) => a.active_from - b.active_from);
+    if (!members.length) return '';
+    const totalFigures = members.reduce((s,p) => s + (counts[p.id] || 0), 0);
+    const era = groupEraLabel(members);
+    const cards = members.map(p => {
+      const n = counts[p.id] || 0;
+      return `
+        <div class="pantheon-card" style="--pantheon-color:${p.color}" data-pid="${p.id}" title="${escapeAttr(p.description)}">
+          <div class="card-head">
+            <h4>${p.name}</h4>
+            <span class="count-chip">${n}</span>
+          </div>
+          <div class="region">${p.region}</div>
+          <div class="span">${fmtYears(p.active_from, p.active_to)}</div>
+          <div class="desc">${p.description}</div>
+        </div>
+      `;
+    }).join('');
     return `
-      <div class="pantheon-card" style="--pantheon-color:${p.color}" data-pid="${p.id}">
-        <h3>${p.name}</h3>
-        <div class="region">${p.region}</div>
-        <div class="span">${fmtYears(p.active_from, p.active_to)}</div>
-        <div class="count">${n} figure${n === 1 ? '' : 's'} catalogued</div>
-        <div class="desc">${p.description}</div>
-      </div>
+      <section class="pantheon-group">
+        <div class="pantheon-group-head">
+          <h3>${grp.name}</h3>
+          <span class="group-count">${members.length} tradition${members.length === 1 ? '' : 's'} · ${totalFigures} figure${totalFigures === 1 ? '' : 's'}</span>
+          <span class="group-era">${era}</span>
+        </div>
+        <div class="pantheon-group-grid">${cards}</div>
+      </section>
     `;
   }).join('');
+
+  document.getElementById('pantheonGroups').innerHTML = html;
   document.querySelectorAll('.pantheon-card').forEach(el => {
     el.addEventListener('click', () => {
       const pid = el.dataset.pid;
       document.querySelector('[data-tab="trees"]').click();
-      document.getElementById('treeSelect').value = pid;
       loadTree(pid);
     });
   });
+}
+
+function groupEraLabel(members) {
+  const from = Math.min(...members.map(p => p.active_from));
+  const to = Math.max(...members.map(p => p.active_to));
+  return `${fmtYear(from)} – ${fmtYear(to)}`;
+}
+
+function escapeAttr(s) {
+  return (s || '').replace(/"/g, '&quot;').replace(/</g, '&lt;');
 }
 
 function fmtYear(y) {
