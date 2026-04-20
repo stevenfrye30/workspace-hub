@@ -753,65 +753,154 @@ INDEX_TPL = """<!DOCTYPE html>
   <h2 class="section">By region</h2>
   @@REGION_TILES@@
 
-  <h2 class="section">By artist <span class="count">featured makers &mdash; see all @@ARTIST_COUNT@@ &rarr;</span></h2>
-  <div class="card-grid">
-@@ARTIST_CARDS@@
+  <h2 class="section">By artist <span class="count">@@ARTIST_COUNT@@ named makers &mdash; filter by region or search</span></h2>
+  <div class="artists-panel">
+    <div class="artists-controls">
+      <input type="text" class="artists-search" id="artist-search" placeholder="Search artist name&hellip;" autocomplete="off">
+      <div class="artists-tabs" id="artist-tabs">
+@@ARTIST_TABS@@
+      </div>
+    </div>
+    <div class="artists-chip-grid" id="artist-grid">
+@@ARTIST_CHIPS@@
+    </div>
+    <div class="artists-empty" id="artist-empty">No artists match that filter.</div>
+    <div class="artists-footer">
+      <span id="artist-count-label">Showing @@FEATURED_COUNT@@ of @@ARTIST_COUNT@@</span>
+      <a href="artists.html">View full artists directory &rarr;</a>
+    </div>
   </div>
+
   <footer class="page-footer">
     Images via <a href="https://commons.wikimedia.org/" target="_blank" rel="noopener">Wikimedia Commons</a>. Click any image to open it and see its source.
   </footer>
 </div>
+<script>
+(function() {
+  const grid = document.getElementById('artist-grid');
+  const chips = Array.from(grid.querySelectorAll('.artist-chip'));
+  const search = document.getElementById('artist-search');
+  const tabs = Array.from(document.querySelectorAll('.artists-tab'));
+  const empty = document.getElementById('artist-empty');
+  const count = document.getElementById('artist-count-label');
+  const total = chips.length;
+  let currentTab = 'all';
+
+  function norm(s) {
+    return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  }
+
+  function apply() {
+    const q = norm(search.value.trim());
+    let visible = 0;
+    for (const c of chips) {
+      const matchRegion = currentTab === 'all' || c.dataset.region === currentTab;
+      const matchSearch = !q || c.dataset.search.includes(q);
+      const show = matchRegion && matchSearch;
+      c.style.display = show ? '' : 'none';
+      if (show) visible++;
+    }
+    empty.classList.toggle('on', visible === 0);
+    count.textContent = (q || currentTab !== 'all')
+      ? ('Showing ' + visible + ' of ' + total)
+      : ('Showing ' + total);
+  }
+
+  search.addEventListener('input', apply);
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      currentTab = tab.dataset.region;
+      apply();
+    });
+  });
+})();
+</script>
 </body>
 </html>
 """
 
-CARD_TPL = """    <a class="card" href="{href}">
-      <div class="t">{title}</div>
-      <div class="d">{blurb}</div>
-    </a>
-"""
+ARTIST_CHIP_TPL = '      <a class="artist-chip" href="artists/{slug}.html" data-region="{region}" data-search="{search}"><span class="n">{name}</span><span class="c">{count}</span></a>\n'
 
-CARD_MORE_TPL = """    <a class="card card-more" href="{href}">
-      <div>
-        <div class="t">{title}</div>
-        <div class="d">{blurb}</div>
-      </div>
-    </a>
-"""
+ARTIST_TAB_TPL = '        <button class="artists-tab{active}" data-region="{region}">{label}<span class="c">{count}</span></button>\n'
+
+
+def _primary_region_for_artists(meta: dict) -> dict[str, tuple[str, str]]:
+    """Map artist name → (region_slug, region_title) by majority of their works."""
+    from collections import Counter
+    per_artist: dict[str, Counter] = {}
+    titles: dict[str, str] = {r["slug"]: r["title"] for r in meta["regions"]}
+    for r in meta["regions"]:
+        data = json.loads((DATA / f"{r['slug']}.json").read_text(encoding="utf-8"))
+        for w in data["works"]:
+            name = w.get("artist")
+            if name:
+                per_artist.setdefault(name, Counter())[r["slug"]] += 1
+    return {
+        name: (slug, titles[slug])
+        for name, ctr in per_artist.items()
+        for slug, _ in [ctr.most_common(1)[0]]
+    }
 
 
 def build_index(meta: dict, counts: dict[str, int], artists: dict[str, list[dict]]) -> None:
     region_tiles_html = build_region_tiles(meta["regions"])
 
-    # Featured artists: those with >= 2 works, sorted by count desc then surname.
+    # Primary region per artist.
+    artist_region = _primary_region_for_artists(meta)
+
+    # Featured first (>=2 works), then everyone with 1 work, alphabetically by surname.
     featured = sorted(
         ((name, works) for name, works in artists.items() if len(works) >= 2),
         key=lambda pair: (-len(pair[1]), artist_sort_key(pair[0])),
     )
-    artist_cards = "".join(
-        CARD_TPL.format(
-            href=f"artists/{slugify(name)}.html",
-            title=h(name),
-            blurb=f"{len(works)} works",
-        )
-        for name, works in featured
+    singles = sorted(
+        ((name, works) for name, works in artists.items() if len(works) == 1),
+        key=lambda pair: artist_sort_key(pair[0]),
     )
-    artist_cards += CARD_MORE_TPL.format(
-        href="artists.html",
-        title=h("View all artists"),
-        blurb=f"{len(artists)} named makers",
-    )
-    artist_cards = artist_cards.rstrip()
+    ordered = featured + singles
+
+    # Chips.
+    chip_lines = []
+    from collections import Counter
+    region_counts: Counter = Counter()
+    for name, works in ordered:
+        slug, _title = artist_region.get(name, ("", ""))
+        region_counts[slug] += 1
+        search = normalize_search(name)
+        chip_lines.append(ARTIST_CHIP_TPL.format(
+            slug=slugify(name),
+            region=slug,
+            search=h_attr(search),
+            name=h(name),
+            count=len(works),
+        ))
+    chips_html = "".join(chip_lines).rstrip("\n")
+
+    # Tabs: All + each region, in regions.json order, only regions that have >=1 artist.
+    tabs = [ARTIST_TAB_TPL.format(active=" active", region="all", label="All", count=f'<span class="c">{len(ordered)}</span>')]
+    # Fix: nest count span into label via the tpl — redo cleanly.
+    tabs = [f'        <button class="artists-tab active" data-region="all">All<span class="c">{len(ordered)}</span></button>\n']
+    for r in meta["regions"]:
+        slug = r["slug"]
+        n = region_counts.get(slug, 0)
+        if n == 0:
+            continue
+        tabs.append(f'        <button class="artists-tab" data-region="{slug}">{h(r["title"])}<span class="c">{n}</span></button>\n')
+    tabs_html = "".join(tabs).rstrip("\n")
 
     total = sum(counts.values())
     html_out = (
         INDEX_TPL
         .replace("@@NAV@@", make_nav("regions"))
         .replace("@@REGION_TILES@@", region_tiles_html)
-        .replace("@@ARTIST_CARDS@@", artist_cards)
+        .replace("@@ARTIST_CHIPS@@", chips_html)
+        .replace("@@ARTIST_TABS@@", tabs_html)
         .replace("@@TOTAL_COUNT@@", str(total))
         .replace("@@REGION_COUNT@@", str(len(meta["regions"])))
         .replace("@@ARTIST_COUNT@@", str(len(artists)))
+        .replace("@@FEATURED_COUNT@@", str(len(ordered)))
     )
     (HERE / "index.html").write_text(html_out, encoding="utf-8")
 
