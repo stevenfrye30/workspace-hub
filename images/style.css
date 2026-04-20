@@ -107,19 +107,42 @@ h3.era:first-of-type { margin-top: 4px; }
 .page-footer a { color: var(--active); text-decoration: none; }
 .page-footer a:hover { text-decoration: underline; }
 
+/* Region tile grid (landing hero) */
+.region-tiles { display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); margin: 0 0 44px; }
+.region-tile { position: relative; display: block; aspect-ratio: 4 / 3; overflow: hidden; border: 1px solid var(--border); background: var(--card); text-decoration: none; color: inherit; transition: border-color 0.18s, transform 0.18s; }
+.region-tile:hover, .region-tile:focus-visible { border-color: var(--active); transform: translateY(-2px); outline: none; }
+.region-tile .tile-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: brightness(0.7) saturate(0.95); transition: filter 0.25s, transform 0.5s ease; }
+.region-tile:hover .tile-img, .region-tile:focus-visible .tile-img { filter: brightness(0.95) saturate(1.05); transform: scale(1.04); }
+.region-tile .tile-overlay { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 18px 20px 20px; background: linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.55) 35%, rgba(0,0,0,0.15) 65%, transparent 100%); }
+.region-tile .tile-title { color: var(--active); font-size: 22px; font-weight: 600; letter-spacing: 0.01em; margin-bottom: 4px; text-shadow: 0 1px 4px rgba(0,0,0,0.75); }
+.region-tile .tile-blurb { color: rgba(255,255,255,0.95); font-size: 13px; line-height: 1.5; text-shadow: 0 1px 3px rgba(0,0,0,0.8); }
+@media (max-width: 640px) {
+  .region-tiles { gap: 12px; grid-template-columns: 1fr; }
+  .region-tile { aspect-ratio: 16 / 9; }
+  .region-tile .tile-title { font-size: 19px; }
+}
+
 /* Lightbox */
-#lightbox { position: fixed; inset: 0; background: rgba(0,0,0,0.94); z-index: 100; display: flex; align-items: center; justify-content: center; padding: 40px 20px; }
+#lightbox { position: fixed; inset: 0; background: rgba(0,0,0,0.94); z-index: 100; }
 #lightbox[hidden] { display: none; }
-#lightbox figure { max-width: 1100px; width: 100%; display: flex; flex-direction: column; align-items: center; gap: 16px; }
+#lightbox .lb-scroll { position: absolute; inset: 0; overflow-y: auto; overflow-x: hidden; }
+#lightbox .lb-scroll-inner { min-height: 100%; box-sizing: border-box; padding: 40px 72px; display: flex; justify-content: center; align-items: center; }
+#lightbox figure { max-width: 1100px; width: 100%; display: flex; flex-direction: column; align-items: center; gap: 16px; margin: 0; }
 #lightbox .lb-img { max-width: 100%; max-height: 76vh; object-fit: contain; background: #111; }
 #lightbox .lb-cap { color: var(--fg); font-size: 14px; line-height: 1.6; max-width: 760px; text-align: center; font-family: Georgia, serif; padding: 0 12px; }
 #lightbox .lb-cap .lb-t { color: var(--active); font-size: 17px; font-weight: 600; display: block; margin-bottom: 4px; }
 #lightbox .lb-cap .lb-m { color: var(--muted); font-style: italic; display: block; margin-bottom: 8px; font-size: 13px; }
-#lightbox button { position: absolute; background: rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.25); color: #fff; width: 44px; height: 44px; cursor: pointer; font-size: 22px; line-height: 1; font-family: Georgia, serif; }
+#lightbox button { position: fixed; background: rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.25); color: #fff; width: 44px; height: 44px; cursor: pointer; font-size: 22px; line-height: 1; font-family: Georgia, serif; z-index: 101; }
 #lightbox button:hover { background: rgba(255,255,255,0.12); border-color: var(--active); }
 #lightbox .lb-close { top: 20px; right: 20px; }
 #lightbox .lb-prev { left: 20px; top: 50%; transform: translateY(-50%); }
 #lightbox .lb-next { right: 20px; top: 50%; transform: translateY(-50%); }
-#lightbox .lb-count { position: absolute; top: 28px; left: 28px; color: var(--muted); font-size: 13px; font-style: italic; }
+#lightbox .lb-count { position: fixed; top: 28px; left: 28px; color: var(--muted); font-size: 13px; font-style: italic; z-index: 101; }
 #lightbox .lb-src { display: inline-block; margin-top: 10px; color: var(--muted); text-decoration: none; font-size: 12px; border-bottom: 1px solid var(--border); padding-bottom: 2px; }
 #lightbox .lb-src:hover { color: var(--active); border-bottom-color: var(--active); }
+@media (max-width: 640px) {
+  #lightbox .lb-scroll-inner { padding: 76px 16px 60px; }
+  #lightbox .lb-prev, #lightbox .lb-next { top: auto; bottom: 16px; transform: none; }
+  #lightbox .lb-prev { left: 16px; }
+  #lightbox .lb-next { right: 16px; }
+}

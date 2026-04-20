@@ -443,6 +443,1283 @@
       "desc": "A caravan-city on the Euphrates whose buried buildings preserved the earliest synagogue murals, the earliest Christian house-church paintings, and Greek, Palmyrene, and Mithraic frescoes — all within blocks of each other.",
       "image": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Dura_Europos_fresco_Sacrifice_of_Conon.jpg",
       "year": 230
+    },
+    {
+      "title": "Statue of Napir-Asu",
+      "meta": "Elamite · c. 1340 BCE",
+      "desc": "Headless queen cast in solid bronze, 1.7 tons of metal. An inscription curses anyone who defaces her: may their descendants be destroyed. Threat held — the head, not the name, is gone.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Statue_de_Napir-Asu_-_Mus%C3%A9e_du_Louvre_-_Antiquit%C3%A9s_orientales_SB_2731_-_photo_2.jpg/960px-Statue_de_Napir-Asu_-_Mus%C3%A9e_du_Louvre_-_Antiquit%C3%A9s_orientales_SB_2731_-_photo_2.jpg",
+      "year": -1340
+    },
+    {
+      "title": "Head of an Akkadian Ruler",
+      "meta": "Akkadian Empire · c. 2250 BCE · Nineveh",
+      "desc": "Bronze portrait head found buried at Nineveh, likely Sargon or Naram-Sin. Eyes once set with precious stones, gouged out in antiquity as an act of symbolic regicide.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Royal_Akkadian_Head_from_Nineveh_%28inv.nr._IM_11331%29.jpg/960px-Royal_Akkadian_Head_from_Nineveh_%28inv.nr._IM_11331%29.jpg",
+      "year": -2250
+    },
+    {
+      "title": "Lion Gate of Hattusa",
+      "meta": "Hittite · c. 1400 BCE · Turkey",
+      "desc": "Two lions carved from the same stone as the gate jambs — one of six ceremonial gates of the Hittite capital. You entered the city through their snarl.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Lion_Gate%2C_Hattusa_13_%28cropped%29.jpg/960px-Lion_Gate%2C_Hattusa_13_%28cropped%29.jpg",
+      "year": -1400
+    },
+    {
+      "title": "Yazılıkaya Reliefs",
+      "meta": "Hittite · 13th c. BCE · Turkey",
+      "desc": "An open-air rock sanctuary above Hattusa: two natural chambers with processions of gods carved into the limestone walls. The Hittite pantheon, arranged as if on parade.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Yazilikaya_Kammer_A.jpg/960px-Yazilikaya_Kammer_A.jpg",
+      "year": -1250
+    },
+    {
+      "title": "Sphinx Gate of Alaca Höyük",
+      "meta": "Hittite · c. 1400 BCE · Turkey",
+      "desc": "A pair of sphinxes guarding the southern entrance to this Hittite sanctuary city, their hair carved into tight curls. Smaller and earlier than the lions at Hattusa — and remained in situ.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Alaca_H%C3%B6y%C3%BCk_01.jpg/960px-Alaca_H%C3%B6y%C3%BCk_01.jpg",
+      "year": -1400
+    },
+    {
+      "title": "Nimrud Ivories",
+      "meta": "Neo-Assyrian · 9th–7th c. BCE · Iraq",
+      "desc": "Thousands of carved ivory plaques — Egyptian, Phoenician, and native Assyrian styles — looted from the palace of Kalhu. Many recovered charred from a well; some destroyed by ISIS in 2015.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Inlaid_and_gilded_panel_-_WA_127412_-_British_Museum.JPG/960px-Inlaid_and_gilded_panel_-_WA_127412_-_British_Museum.JPG",
+      "year": -850
+    },
+    {
+      "title": "Ahiram Sarcophagus",
+      "meta": "Phoenician · c. 1000 BCE · Byblos",
+      "desc": "Limestone sarcophagus of a king of Byblos. Its inscription is among the oldest substantial texts in the Phoenician alphabet — the writing system that would seed Greek, Latin, and most alphabets since.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Ahiram_sarcophag_from_Biblos_XIII-XBC.jpg/960px-Ahiram_sarcophag_from_Biblos_XIII-XBC.jpg",
+      "year": -1000
+    },
+    {
+      "title": "Stele of Ur-Nammu",
+      "meta": "Ur III · c. 2100 BCE",
+      "desc": "A three-meter limestone stele showing Ur-Nammu ascending to a seated moon-god, a temple being measured and built. Smashed in antiquity; reconstructed fragment by fragment.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/a/ab/King_Ur-Nammu.jpg",
+      "year": -2100
+    },
+    {
+      "title": "Lachish Reliefs",
+      "meta": "Neo-Assyrian · c. 700 BCE",
+      "desc": "Gypsum slabs from Sennacherib's palace at Nineveh, documenting his siege of the Judean city of Lachish — siege engines, archers, impaled defenders, prisoners marched into exile. Ancient war journalism.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Lachish_inscription.jpeg/1280px-Lachish_inscription.jpeg",
+      "year": -700
+    },
+    {
+      "title": "Pazyryk Carpet",
+      "meta": "Scytho-Achaemenid · 5th c. BCE",
+      "desc": "The oldest surviving pile carpet in the world, buried in a Scythian chieftain's frozen tomb in the Altai. Horses and deer in rows — nomadic Central Asia meeting Achaemenid design.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Pazyryk_burial_from_Baga_Turgen_Gol_site%2C_Bayan-%C3%96lgiy_province%2C_Western_Mongolia.jpg/1280px-Pazyryk_burial_from_Baga_Turgen_Gol_site%2C_Bayan-%C3%96lgiy_province%2C_Western_Mongolia.jpg",
+      "year": -400
+    },
+    {
+      "title": "Bactrian Gold",
+      "meta": "Kushan era · 1st c. BCE–1st c. CE · Afghanistan",
+      "desc": "20,000 gold artefacts from six nomad graves at Tillya Tepe — Greek and Steppe and Indian motifs fused. Thought lost during the Soviet war; reappeared intact from a vault under the Central Bank in 2003.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Tillya_Tepe_crown.jpg/1280px-Tillya_Tepe_crown.jpg",
+      "year": 0
+    },
+    {
+      "title": "Ziwiye Treasure",
+      "meta": "Median / Mannaean · 7th c. BCE · Iran",
+      "desc": "Gold, silver, and ivory found (or said to have been found) in a bronze coffin at Ziwiye in 1947. Scythian and Assyrian styles alongside — how much is authentic, scholars still argue.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Gold_Rhyton_in_the_form_of_a_Ram%27s_Head_-_Reza_Abbasi_Museum_-_Tehran%2C_Iran.jpg/1280px-Gold_Rhyton_in_the_form_of_a_Ram%27s_Head_-_Reza_Abbasi_Museum_-_Tehran%2C_Iran.jpg",
+      "year": -650
+    },
+    {
+      "title": "Marlik Golden Cup",
+      "meta": "Iron Age Iran · c. 1000 BCE",
+      "desc": "A gold beaker chased with winged bulls, repeating in a frieze. From a cemetery of tribal chiefs excavated near the Caspian coast — a rare glimpse of a culture that left no writing.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/6/66/Marlik_cup_iran.jpg",
+      "year": -1000
+    },
+    {
+      "title": "Tang-e Sarvak Reliefs",
+      "meta": "Elymaid · 2nd c. CE · Iran",
+      "desc": "Rock reliefs in a remote Zagros gorge — kings on horseback, banquet scenes, in a provincial Parthian style that ignores every classical proportion and still somehow works.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/%D9%86%D9%82%D9%88%D8%B4_%D8%A8%D8%AC%D8%B3%D8%AA%D9%87_%D9%87%D8%A7%DB%8C_%D8%AA%D9%86%DA%AF_%D8%B3%D8%B1%D9%88%DA%A9-_%D8%B3%D9%86%DA%AF_%D8%B3%D9%88%D9%85_%D8%AF%D9%88.JPG/1280px-%D9%86%D9%82%D9%88%D8%B4_%D8%A8%D8%AC%D8%B3%D8%AA%D9%87_%D9%87%D8%A7%DB%8C_%D8%AA%D9%86%DA%AF_%D8%B3%D8%B1%D9%88%DA%A9-_%D8%B3%D9%86%DA%AF_%D8%B3%D9%88%D9%85_%D8%AF%D9%88.JPG",
+      "year": 150
+    },
+    {
+      "title": "Sasanian Silver Plate",
+      "meta": "Sasanian · 5th–7th c. CE",
+      "desc": "Hammered silver with gilded highlights — a king hunting lions, or a noble in ceremonial costume on horseback. Sasanian court plates traveled from Iran as far as Viking Scandinavia.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Rider_in_caftan%2C_silver_plate%2C_Sasanian_period.jpg/1280px-Rider_in_caftan%2C_silver_plate%2C_Sasanian_period.jpg",
+      "year": 600
+    },
+    {
+      "title": "Banquet of Ashurbanipal",
+      "meta": "Neo-Assyrian · c. 645 BCE · Nineveh",
+      "desc": "The king reclines in a garden with his queen, a harpist playing — and the severed head of the Elamite king Teumman hangs from a tree branch beside them. Domestic scene as total war.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Assyrian_Relief_of_the_Banquet_of_Ashurbanipal_From_Nineveh_Gypsum_N_Palace_British_Museum_03.jpg/1280px-Assyrian_Relief_of_the_Banquet_of_Ashurbanipal_From_Nineveh_Gypsum_N_Palace_British_Museum_03.jpg",
+      "year": -645
+    },
+    {
+      "title": "Hasanlu Gold Bowl",
+      "meta": "Iron Age · c. 1000 BCE · northwestern Iran",
+      "desc": "A repoussé gold bowl found clutched by three dead men in the ruins of Hasanlu IV, burnt in an attack around 800 BCE. Scenes of gods and chariots — the style pre-Persian, still unnamed.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Hasanlu-gold-cup.jpg",
+      "year": -1000
+    },
+    {
+      "title": "Nisa Rhytons",
+      "meta": "Parthian · 2nd c. BCE · Turkmenistan",
+      "desc": "Carved ivory drinking horns from the Parthian royal residence at Old Nisa, ending in centaurs, griffins, or winged lions. Greek form, Parthian ritual, Central Asian material.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/1/17/Nisa_Rhyton_detail.jpg",
+      "year": -150
+    },
+    {
+      "title": "Balawat Gates",
+      "meta": "Neo-Assyrian · 9th c. BCE",
+      "desc": "Bronze bands that once wrapped the 7-meter-high wooden doors of Shalmaneser III's palace — embossed with tiny scenes of his campaigns. The wood rotted, the bands survived; now reassembled in the British Museum.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Balawat_Gates.jpg/1280px-Balawat_Gates.jpg",
+      "year": -850
+    },
+    {
+      "title": "Statue of Gudea (Met)",
+      "meta": "Neo-Sumerian · c. 2090 BCE",
+      "desc": "One of 27 surviving statues of the ruler of Lagash, diorite hauled by camel from the Gulf. The inscription on his lap reads: \"Gudea, the man who built the temple, may his life be long.\"",
+      "image": "https://images.metmuseum.org/CRDImages/an/original/DP-23786-001.jpg",
+      "year": -2090
+    },
+    {
+      "title": "Akkadian Head of a Ruler",
+      "meta": "Akkadian · c. 2300–2000 BCE",
+      "desc": "A heavy copper head with a beard in small ribbed curls, eyes once inlaid — one of the earliest large-scale cast-copper portraits anywhere. Nose damaged, no identification certain.",
+      "image": "https://images.metmuseum.org/CRDImages/an/original/DP-23662-001.jpg",
+      "year": -2300
+    },
+    {
+      "title": "Achaemenid Lion Rhyton",
+      "meta": "Achaemenid · c. 5th c. BCE",
+      "desc": "A silver drinking horn terminating in the forequarters of a snarling lion with wings — ceremonial tableware for a Persian noble's banquet, found in the graves of Lydia.",
+      "image": "https://images.metmuseum.org/CRDImages/an/original/DP-19135-003.jpg",
+      "year": -450
+    },
+    {
+      "title": "Bes-Head Necklace",
+      "meta": "Achaemenid · 6th–4th c. BCE",
+      "desc": "A gold necklace of linked beads and a central pendant shaped like the head of Bes — the grotesque Egyptian household god, picked up and recirculated through the Persian empire.",
+      "image": "https://images.metmuseum.org/CRDImages/an/original/DP-41780-001.jpg",
+      "year": -500
+    },
+    {
+      "title": "Sasanian Royal Head",
+      "meta": "Sasanian · 4th c. CE",
+      "desc": "A silver-gilt head, perhaps of Shapur II — crown covered in stamped beading, eyes huge and ringed. Sasanian royal portraiture preserved the Achaemenid taste for frontal hierarchy.",
+      "image": "https://images.metmuseum.org/CRDImages/an/original/DT209307-001.jpg",
+      "year": 350
+    },
+    {
+      "title": "Luristan Horned Animal Plaque",
+      "meta": "Luristan · 8th–7th c. BCE · Iran",
+      "desc": "A bronze plaque of a stylized horned beast, part of the distinctive animal metalwork of the Luristan tribes — nomadic mountain dwellers with no cities but a rich bronze tradition.",
+      "image": "https://images.metmuseum.org/CRDImages/an/original/DP-25850-001.jpg",
+      "year": -750
+    },
+    {
+      "title": "Luristan Bull Jug",
+      "meta": "Luristan · 7th–6th c. BCE · Iran",
+      "desc": "A painted ceramic jug shaped as a recumbent bull, spout rising from its back. A domestic vessel that doubled as an animal sculpture — typical of Iron Age Iranian ceramic play.",
+      "image": "https://images.metmuseum.org/CRDImages/an/original/DP-25538-001.jpg",
+      "year": -650
+    },
+    {
+      "title": "Luristan Disc-Headed Pin",
+      "meta": "Luristan · 8th–7th c. BCE · Iran",
+      "desc": "Bronze boss from a large ceremonial pin — a stylized face or sun with radiating ornament. Luristan pins were votive offerings, deposited by the thousands at shrine sites.",
+      "image": "https://images.metmuseum.org/CRDImages/an/original/DP-25848-001.jpg",
+      "year": -750
+    },
+    {
+      "title": "Ashurnasirpal II Relief Panel",
+      "meta": "Neo-Assyrian · c. 880 BCE · Nimrud",
+      "desc": "A gypsum alabaster relief from Ashurnasirpal's Northwest Palace — the king attended by winged apkallu (sages), standard-topped trees between them. Ritual scene carved as wallpaper.",
+      "image": "https://images.metmuseum.org/CRDImages/an/original/DP375420.jpg",
+      "year": -880
+    },
+    {
+      "title": "Assyrian Ivory Plaque with Oryx",
+      "meta": "Neo-Assyrian · 9th–8th c. BCE",
+      "desc": "An openwork ivory plaque — an oryx grazing in a stylized forest, once set as furniture inlay. Phoenician-carved; looted by Assyrians and buried at Nimrud.",
+      "image": "https://images.metmuseum.org/CRDImages/an/original/DP110622.jpg",
+      "year": -800
+    },
+    {
+      "title": "Phoenician Ivory: Man and Griffin",
+      "meta": "Phoenician · 9th c. BCE · Nimrud",
+      "desc": "An ivory plaque of a man combating a griffin — once inlaid in royal furniture in Phoenician cities, looted by Assyrians, buried in the wells of Nimrud as Nineveh fell.",
+      "image": "https://openaccess-cdn.clevelandart.org/1968.45/1968.45_print.jpg",
+      "year": -850
+    },
+    {
+      "title": "Phoenician Ivory: Cow and Calf",
+      "meta": "Phoenician · 9th c. BCE · Nimrud",
+      "desc": "A maternal scene carved into ivory — a cow looking back as her calf nurses. Phoenician carvers worked with a Egyptian eye for landscape, an Near Eastern line.",
+      "image": "https://openaccess-cdn.clevelandart.org/1968.48/1968.48_print.jpg",
+      "year": -850
+    },
+    {
+      "title": "Phoenician Ivory: Winged Sphinx",
+      "meta": "Phoenician · 9th c. BCE · Nimrud",
+      "desc": "A crouching winged sphinx ivory plaque — hybrid mythic form that Phoenician artists traded across the ancient Mediterranean. The sphinxes look Egyptian; their wings, Assyrian; their wedding, Phoenician.",
+      "image": "https://openaccess-cdn.clevelandart.org/1968.46/1968.46_print.jpg",
+      "year": -850
+    },
+    {
+      "title": "Median Ram-Head Rhyton",
+      "meta": "Median · c. 600 BCE · Iran",
+      "desc": "A silver ram-head drinking horn from Median Iran — predecessors to the Achaemenids. Medes dominated the Zagros before Cyrus the Great absorbed them into a larger empire.",
+      "image": "https://openaccess-cdn.clevelandart.org/1963.479/1963.479_print.jpg",
+      "year": -600
+    },
+    {
+      "title": "Urartian Bull-Head Attachment",
+      "meta": "Urartu · 7th c. BCE · eastern Anatolia",
+      "desc": "A bronze bull-head fitting — the clamp for a cauldron rim, or the base of a throne leg. Urartu, the lost Iron Age kingdom around Lake Van, specialized in bronze animal protomes.",
+      "image": "https://openaccess-cdn.clevelandart.org/1942.204/1942.204_print.jpg",
+      "year": -650
+    },
+    {
+      "title": "Scythian Elk Fawn Finial",
+      "meta": "Scythian · 4th c. BCE",
+      "desc": "A small bronze elk-fawn standard top, ears erect — Scythian nomad metalwork from the Pontic steppe. The animal style dominated Scythian visual culture from the Black Sea to Altai.",
+      "image": "https://openaccess-cdn.clevelandart.org/1982.2/1982.2_print.jpg",
+      "year": -400
+    },
+    {
+      "title": "Scythian Stag Plaque",
+      "meta": "Scythian · 4th c. BCE",
+      "desc": "A cast bronze stag curled in the Scythian \"sleeping deer\" pose — legs tucked under, antlers sweeping back along the body. A portable ornament, sewn onto leather or horse gear.",
+      "image": "https://openaccess-cdn.clevelandart.org/1985.77/1985.77_print.jpg",
+      "year": -400
+    },
+    {
+      "title": "Scythian Lion Plaque",
+      "meta": "Scytho-Iranian · 1000–500 BCE",
+      "desc": "A small bronze lion plaque — the \"lion in attack\" pose, angular and compact. Similar forms span the steppe from Iran to Mongolia in the Iron Age.",
+      "image": "https://openaccess-cdn.clevelandart.org/1981.67/1981.67_print.jpg",
+      "year": -700
+    },
+    {
+      "title": "Palmyrene Procession of Nobles",
+      "meta": "Palmyra · 100–150 CE · limestone",
+      "desc": "A relief of robed Palmyrene nobles in frontal procession — the caravan city brokered silk between Rome and Parthia, before Zenobia's revolt brought Aurelian's legions down on it in 272.",
+      "image": "https://openaccess-cdn.clevelandart.org/1970.15/1970.15_print.jpg",
+      "year": 100
+    },
+    {
+      "title": "Parthian Head of a Girl",
+      "meta": "Parthian · 1st–2nd c. CE · terracotta",
+      "desc": "A small terracotta head, broken from a figurine — mass-produced in Parthian workshops between Tigris and Euphrates, where Greek portrait conventions met Iranian faces.",
+      "image": "https://openaccess-cdn.clevelandart.org/1933.167/1933.167_print.jpg",
+      "year": 1
+    },
+    {
+      "title": "Hittite Stag Poletop",
+      "meta": "Anatolia · Hittite · 14th–12th c. BCE · bronze",
+      "desc": "A cast-bronze stag that crowned a wooden standard — the Hittites worshipped a stag-god alongside the storm-god, and metal figurines like this stood on ceremonial carts.",
+      "image": "https://openaccess-cdn.clevelandart.org/1975.13/1975.13_print.jpg",
+      "year": -1400
+    },
+    {
+      "title": "Hittite Relief Vessel with Ritual Scenes",
+      "meta": "Anatolia · Hittite · 14th–12th c. BCE · burnished earthenware",
+      "desc": "An earthenware jar molded in four panels of Hittite ritual scenes — one of only a handful of figurative narrative vessels from the empire that fought Ramesses II at Kadesh.",
+      "image": "https://openaccess-cdn.clevelandart.org/1985.70/1985.70_print.jpg",
+      "year": -1400
+    },
+    {
+      "title": "Sasanian Royal Hunt Dish",
+      "meta": "Sasanian Iran · 5th–6th c. CE · silver gilt",
+      "desc": "King Hormizd on horseback twisting to shoot a lion that has leapt onto his saddle. Sasanian hunt dishes travelled as royal diplomatic gifts, reaching as far as the Volga.",
+      "image": "https://openaccess-cdn.clevelandart.org/1962.150/1962.150_print.jpg",
+      "year": 400
+    },
+    {
+      "title": "Sasanian Water Buffalo Rhyton",
+      "meta": "Sasanian Iran · 6th–7th c. · gilt silver with glass inlay",
+      "desc": "A drinking horn whose spout is a water buffalo, its rider a woman — likely the goddess Anahita, whose cult fused fertility, water, and war in late Sasanian Iran.",
+      "image": "https://openaccess-cdn.clevelandart.org/1964.96/1964.96_print.jpg",
+      "year": 500
+    },
+    {
+      "title": "Sumerian Striding Goat",
+      "meta": "Sumer · c. 3200 BCE · limestone with Egyptian blue inlay",
+      "desc": "A limestone goat with inlaid blue eyes, from the Uruk period just before writing — Sumerian temple workshops fixed the animal forms that would echo through the next three millennia.",
+      "image": "https://openaccess-cdn.clevelandart.org/1984.35/1984.35_print.jpg",
+      "year": -3200
+    },
+    {
+      "title": "Amlash Lion Hunting Cup",
+      "meta": "Amlash (Iran) · 11th c. BCE · silver",
+      "desc": "A raised silver cup from south of the Caspian, showing a hunter driving his spear into a lion. Amlash metalwork surfaces in tombs along a mountain corridor Iranian-speakers followed south into the plateau.",
+      "image": "https://openaccess-cdn.clevelandart.org/1965.25/1965.25_print.jpg",
+      "year": -1100
+    },
+    {
+      "title": "Horse-Shaped Drinking Vessel",
+      "meta": "Iran, Sasanian Empire (224–651 CE) · 200–325 CE · silver, partially gilt",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1964.41/1964.41_print.jpg",
+      "year": 200
+    },
+    {
+      "title": "Bowl",
+      "meta": "Iran, Sasanian Empire (224–651 CE) · 500–700 CE · silver",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1966.369/1966.369_print.jpg",
+      "year": 500
+    },
+    {
+      "title": "Anahita Vessel",
+      "meta": "Iran, Sasanian Empire (224–651 CE) · 300–500 CE · silver, cast, raised, repoussé, chased, and gilted",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1962.294/1962.294_print.jpg",
+      "year": 300
+    },
+    {
+      "title": "Stepped Pitcher",
+      "meta": "Iran, Sasanian Empire (224–651 CE) · 400–600 CE · silver",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1966.21/1966.21_print.jpg",
+      "year": 400
+    },
+    {
+      "title": "Hunt Pitcher",
+      "meta": "Iran, Sasanian Empire (224–651 CE) · 500–600 · silver",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1961.200/1961.200_print.jpg",
+      "year": 500
+    },
+    {
+      "title": "Jar",
+      "meta": "Iran, Sasanian Empire (224–651 CE) · 222–650 CE · earthenware",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1944.459/1944.459_print.jpg",
+      "year": 222
+    },
+    {
+      "title": "Ibex Eating",
+      "meta": "Iran, Sasanian Empire (224–651 CE) · c. 400–600 CE · stucco (gypsum plaster) with traces of paint",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1941.24/1941.24_print.jpg",
+      "year": 395
+    },
+    {
+      "title": "Dish: The Goddess Anahita",
+      "meta": "Iran, Sasanian Empire (224–651 CE) · 400–600 CE · silver gilt",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1962.295/1962.295_print.jpg",
+      "year": 400
+    },
+    {
+      "title": "Sasanian King Hunting Lions",
+      "meta": "Iran, Sasanian Empire (224–651 CE) · late 300s CE · alabaster",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1963.258/1963.258_print.jpg",
+      "year": 375
+    },
+    {
+      "title": "Fire Altar Intaglio",
+      "meta": "Iran, Sasanian Empire (224–651 CE), reign of Hormizd II (303–309) · c. 400 CE · chalcedony",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1954.593/1954.593_print.jpg",
+      "year": 395
+    },
+    {
+      "title": "Feline-Handled Incense Burner",
+      "meta": "Burudjird(?), Parthian Empire (247 BCE–224 CE) · c. 100 CE · bronze, cast",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1961.32/1961.32_print.jpg",
+      "year": 95
+    },
+    {
+      "title": "Peacock Ring",
+      "meta": "Seleucia, Parthian Empire (247 BCE–224 CE) · 1–200 CE · gold and chalcedony",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1933.191/1933.191_print.jpg",
+      "year": 1
+    },
+    {
+      "title": "Pendant Earring",
+      "meta": "Seleucia, Parthian Empire (247 BCE–224 CE) · 1–200 CE · gold with garnet and pearls",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1933.193/1933.193_print.jpg",
+      "year": 1
+    },
+    {
+      "title": "Pendant or Earring",
+      "meta": "Parthian Empire (247 BCE–224 CE) · 1–200 CE · gold",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1933.190/1933.190_print.jpg",
+      "year": 1
+    },
+    {
+      "title": "Draped Figure",
+      "meta": "Parthian Empire (247 BCE–224 CE) · 1–200 CE · terracotta",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1933.173/1933.173_print.jpg",
+      "year": 1
+    },
+    {
+      "title": "Head of a Goddess",
+      "meta": "Parthian Empire (247 BCE–224 CE) · 1–200 CE · terracotta",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1933.168/1933.168_print.jpg",
+      "year": 1
+    },
+    {
+      "title": "Head of a Child",
+      "meta": "Parthian Empire (247 BCE–224 CE) · 1–200 CE · terracotta",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1933.170/1933.170_print.jpg",
+      "year": 1
+    },
+    {
+      "title": "Vase",
+      "meta": "Parthian Empire (247 BCE–224 CE) · 1–200 CE · terracotta",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1933.188/1933.188_print.jpg",
+      "year": 1
+    },
+    {
+      "title": "Figurine",
+      "meta": "Parthian Empire (247 BCE–224 CE) · 1–200 CE · bone",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1933.182/1933.182_print.jpg",
+      "year": 1
+    },
+    {
+      "title": "Head of a Weeping Woman",
+      "meta": "Parthian Empire (247 BCE–224 CE) · 1–200 CE · terracotta",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1933.172/1933.172_print.jpg",
+      "year": 1
+    },
+    {
+      "title": "Garnet",
+      "meta": "Parthian Empire (247 BCE–224 CE) · 1–200 CE · gold and garnet",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1933.192/1933.192_print.jpg",
+      "year": 1
+    },
+    {
+      "title": "Horse Bit with Winged Ibex Cheekpieces",
+      "meta": "Iran, Luristan · 800–600 BCE · bronze, cast and incised",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1980.102/1980.102_print.jpg",
+      "year": -800
+    },
+    {
+      "title": "Master of Animals Cheekpiece",
+      "meta": "Iran, Luristan · c. 700 BCE · bronze, cast and incised",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1961.33/1961.33_print.jpg",
+      "year": -725
+    },
+    {
+      "title": "Votive Pin with Decorated Disc",
+      "meta": "Iran, Luristan · 800–600 BCE · silver, repoussé and incised",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1963.257/1963.257_print.jpg",
+      "year": -800
+    },
+    {
+      "title": "Ibex Standard Finial",
+      "meta": "Iran, Luristan · c. 700–600 BCE · bronze",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1992.246/1992.246_print.jpg",
+      "year": -700
+    },
+    {
+      "title": "Ibex Whetstone Handle",
+      "meta": "Iran, Luristan · 1100–900 BCE · bronze, cast",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1965.554/1965.554_print.jpg",
+      "year": -1100
+    },
+    {
+      "title": "Axel Shaft Cup",
+      "meta": "Iran, Luristan · c. 800–700 BCE · bronze, cast",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1930.729/1930.729_print.jpg",
+      "year": -800
+    },
+    {
+      "title": "Hero and Animal Combat Beaker",
+      "meta": "Iran, Luristan · 900–700 BCE · silver, repoussé, engraved",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1963.95/1963.95_print.jpg",
+      "year": -900
+    },
+    {
+      "title": "Button-Based Situla",
+      "meta": "Iran, Luristan · 900–700 BCE · bronze, repoussé, punched, incised",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1960.35.2/1960.35.2_print.jpg",
+      "year": -900
+    },
+    {
+      "title": "Button-Based Situlas",
+      "meta": "Iran, Luristan · 900–700 BCE · bronze, repoussé, punched, incised",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1960.35/1960.35_print.jpg",
+      "year": -900
+    },
+    {
+      "title": "Three-Part Pitcher",
+      "meta": "Iran, Luristan · c. 800–700 BCE · earthenware, unglazed slip",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1942.1081/1942.1081_print.jpg",
+      "year": -800
+    },
+    {
+      "title": "Sword Blade",
+      "meta": "Iran, Luristan · 2000–1000 BCE · bronze",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1942.553/1942.553_print.jpg",
+      "year": -1999
+    },
+    {
+      "title": "Votive Pin",
+      "meta": "Iran, Luristan · early 1000s BCE · bronze",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1950.580/1950.580_print.jpg",
+      "year": -1000
+    },
+    {
+      "title": "Priest-King or Deity",
+      "meta": "Hittite, North Syria · c. 1600 BCE · basalt with bone eyes (left, ancient; right, restored)",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1971.45/1971.45_print.jpg",
+      "year": -1605
+    },
+    {
+      "title": "Banquet Pyxis",
+      "meta": "Anatolia, Neo-Hittite · 800–750 BCE · steatite",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1973.19/1973.19_print.jpg",
+      "year": -800
+    },
+    {
+      "title": "Libation Dish-Jar Stopper",
+      "meta": "Syria, Hittite (?) or Middle Iron Age, Tell Ahmar, Djezizeh · 1600–700 BCE · stone",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1971.265/1971.265_print.jpg",
+      "year": -1600
+    },
+    {
+      "title": "Bull Calf Polemount",
+      "meta": "Sumerian, Iraq · c. 2700 BCE · basalt",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1970.61/1970.61_print.jpg",
+      "year": -2705
+    },
+    {
+      "title": "Lioness",
+      "meta": "Sumerian, Iraq · c. 2100 BCE · copper alloy, lost-wax cast",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1989.253/1989.253_print.jpg",
+      "year": -2105
+    },
+    {
+      "title": "Bull Procession Cup",
+      "meta": "Sumerian, Iraq · c. 3100–2900 BCE · gray limestone",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1982.1/1982.1_print.jpg",
+      "year": -3100
+    },
+    {
+      "title": "Amulet Seal in the Form of a Bull",
+      "meta": "Mesopotamia, Sumerian, Iraq, Early Bronze Age I (c. 3300–3000 BCE) · c. 3250 BCE · limestone with black stone inlaid eyes",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1981.7/1981.7_print.jpg",
+      "year": -3255
+    },
+    {
+      "title": "Head of a Bull",
+      "meta": "Mesopotamia, Sumerian, Iraq, Tigris-Euphrates valley, Early Bronze Age I (c. 3300–c. 3000 BCE) · 3000–2000 BCE · chalcedony",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1997.51/1997.51_print.jpg",
+      "year": -3000
+    },
+    {
+      "title": "\"Foundation Nail\" of Gudea",
+      "meta": "Mesopotamia, Neo-Sumerian, Iraq, probably Lagash · c. 2100 BCE · copper alloy, lost-wax cast",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1990.31/1990.31_print.jpg",
+      "year": -2105
+    },
+    {
+      "title": "Fragment of a Wall Decoration from the Palace of Xerxes: \"Guardsman\" in Procession",
+      "meta": "Iran, Achaemenid (550–330 BCE), Persepolis · 486–465 BCE · gray limestone",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1943.279/1943.279_print.jpg",
+      "year": -486
+    },
+    {
+      "title": "Ibex-Head Ornament",
+      "meta": "Iran, Achaemenid (550–330 BCE) · c. 525–450 BCE · bronze",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1961.199/1961.199_print.jpg",
+      "year": -525
+    },
+    {
+      "title": "Ibex Bracelet Terminal",
+      "meta": "Iran, Achaemenid (550–330 BCE) · 500–400 BCE · gold, solid cast",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1985.181/1985.181_print.jpg",
+      "year": -500
+    },
+    {
+      "title": "Median Lion Strangler",
+      "meta": "Iran, Achaemenid (550–330 BCE) · 500–450 BCE · lapis lazuli",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1960.175/1960.175_print.jpg",
+      "year": -500
+    },
+    {
+      "title": "Lion's Head",
+      "meta": "Iran, Achaemenid (550–330 BCE) · 500s BCE · marble",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1962.26/1962.26_print.jpg",
+      "year": -500
+    },
+    {
+      "title": "Illuminated Folio from a Gulistan (Rose Garden) of Sa'di (c. 1213–1291)",
+      "meta": "Iran · calligraphy: c. 1475–1500; border: c. 1550 · Gum tempera, ink, gold, and silver on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2006.147/2006.147_print.jpg",
+      "artist": "Sultan 'Ali al-Mashadi",
+      "year": 1465
+    },
+    {
+      "title": "Illuminated folio (verso) from a Gulistan (Rose Garden) of Sa'di (c. 1213–1291)",
+      "meta": "Iran · calligraphy: c. 1475–1500; border: c. 1550 · Gum tempera, ink, gold, and silver on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2006.147.b/2006.147.b_print.jpg",
+      "artist": "Sultan 'Ali al-Mashadi",
+      "year": 1515
+    },
+    {
+      "title": "Ladle",
+      "meta": "Syria(?), Achaemenid (550–330 BCE) · c. 525–450 · silver",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1956.34/1956.34_print.jpg",
+      "year": 525
+    },
+    {
+      "title": "Stater: Baal (obverse); Head of Pharnabazos (reverse)",
+      "meta": "Iran, Achaemenid (550–330 BCE), minted at Tarsos (Kilikia) · 379–374 BCE · silver",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1917.995/1917.995_print.jpg",
+      "year": -379
+    },
+    {
+      "title": "Stater: Ba'al, Seated with Scepter, within Circle (obverse)",
+      "meta": "Iran, Achaemenid (550–330 BCE), minted at Tarsos (Kilikia) · 379–374 BCE · silver",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1917.995.a/1917.995.a_print.jpg",
+      "year": -379
+    },
+    {
+      "title": "Stater: Head of Pharnabazus, Helmeted, within Circle (reverse)",
+      "meta": "Iran, Achaemenid (550–330 BCE), minted at Tarsos (Kilikia) · 379–374 BCE · silver",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1917.995.b/1917.995.b_print.jpg",
+      "year": -379
+    },
+    {
+      "title": "An Episode from the Story of the Sasanian King Khusrau and His Beloved Shirin, from a Khamsa (Quintet) of Nizami (1141–1209) (verso)",
+      "meta": "Iran, probably Shiraz, Safavid period (1501-1722) · 1540–70 · opaque watercolor, ink, gold, and silver on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1947.500.b/1947.500.b_print.jpg",
+      "year": 1540
+    },
+    {
+      "title": "Drachma (Coin) Portraying Chosroes I",
+      "meta": "Iran · sassanian · 531–579 · Silver",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/374b5330-1f3f-c93c-6a3e-3a44398aa0a4/full/843,/0/default.jpg",
+      "year": 531,
+      "artist": "Sasanian; Persia"
+    },
+    {
+      "title": "Woven silk",
+      "meta": "Iran · 700-900",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2010EE7685/full/735,/0/default.jpg",
+      "year": 700
+    },
+    {
+      "title": "Dish",
+      "meta": "Iran · 9th century-10th century",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2012FR2831/full/735,/0/default.jpg"
+    },
+    {
+      "title": "Storage jar",
+      "meta": "Iran · 750-1000",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2006AF6991/full/735,/0/default.jpg",
+      "year": 750
+    },
+    {
+      "title": "Drachm (Coin) Portraying King Gotarzes II",
+      "meta": "Khorasan · parthian · 40–51 · Silver",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/1ab8f25f-7422-dcb5-20cb-e3fdaf2e21e5/full/843,/0/default.jpg",
+      "year": 40,
+      "artist": "Persian; Parthia"
+    },
+    {
+      "title": "Coin Portraying King Sapor II",
+      "meta": "Khorasan · parthian · 309–379 · Silver",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/34f0a2ff-e7b6-1676-2866-f5d2959b9721/full/843,/0/default.jpg",
+      "year": 309,
+      "artist": "Sasanian; Persia"
+    },
+    {
+      "title": "Drachm (Coin) Portraying King Orodes I",
+      "meta": "Khorasan · parthian · -57–-37 · Silver",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/8ee3f542-f46c-fbca-c81d-1cd784ac3b5f/full/843,/0/default.jpg",
+      "year": -57,
+      "artist": "Persian; Parthia"
+    },
+    {
+      "title": "Drachm (Coin) Portraying King Mithridates II the Great of Parthia",
+      "meta": "Khorasan · parthian · -123–-88 · Silver",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/126b5d65-78e5-a5fa-0d2b-2e2beda0c932/full/843,/0/default.jpg",
+      "year": -123,
+      "artist": "Parthian"
+    },
+    {
+      "title": "Drachm (Coin) Portraying King Mithradates IV",
+      "meta": "Khorasan · parthian · 130–147 · Silver",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/c277ace5-05f7-0fe7-2b8a-3e2ea19b6f55/full/843,/0/default.jpg",
+      "year": 130,
+      "artist": "Persian; Parthia"
+    },
+    {
+      "title": "Denarius (Coin) Depicting the God Quirinus",
+      "meta": "Rome · parthian · -60 · Silver",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/ebecf585-df37-af61-4df5-7cb08f739ebb/full/843,/0/default.jpg",
+      "year": -60,
+      "artist": "Roman, minted in Rome"
+    },
+    {
+      "title": "Drachm (Coin) Portraying King Phraates IV",
+      "meta": "Khorasan · parthian · -38–-2 · Silver",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/74a1a4f1-01ad-4285-eb08-3211afeee7db/full/843,/0/default.jpg",
+      "year": -38,
+      "artist": "Persian; Parthia"
+    },
+    {
+      "title": "Tetradrachm (Coin) Portraying Bust of King Volagases IV",
+      "meta": "Iran · 192–193 · Silver",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/1a004fd6-3cf4-4426-7d56-c2549f12e95d/full/843,/0/default.jpg",
+      "year": 192,
+      "artist": "Parthian"
+    },
+    {
+      "title": "Tetradrachm (Coin) Portraying King Gotarzes",
+      "meta": "Iran · 40–51 · Silver",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/d9399e67-208b-ab87-5acc-85c04641fa98/full/843,/0/default.jpg",
+      "year": 40,
+      "artist": "Parthian"
+    },
+    {
+      "title": "Coin Portraying Emperor Hadrian",
+      "meta": "Khorasan · parthian · 133–134 · Bronze",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/963be3ae-0ddb-56ae-eba0-685056340fe3/full/843,/0/default.jpg",
+      "year": 133,
+      "artist": "Roman, minted in Alexandria, Egypt"
+    },
+    {
+      "title": "Beaker",
+      "meta": "Iran, Marlik · 1100–1000 BCE · gold, low relief repoussé and incised",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1965.26/1965.26_print.jpg",
+      "year": -1100
+    },
+    {
+      "title": "The Hittite rock sanctuary of Yazilikaya",
+      "meta": "Turkey · ca. 1830",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2008BU4887/full/735,/0/default.jpg",
+      "year": 1830,
+      "artist": "Taylor, Isidore Justin Severin (Baron)"
+    },
+    {
+      "title": "Saluting Protective Spirit",
+      "meta": "Neo-Assyrian (911–609 BCE), Iraq, Nimrud, Northwest Palace, reign of Ashurnasirpal II (883–859 BCE) · 883–859 BCE · gypsum",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1943.246/1943.246_print.jpg",
+      "year": -883
+    },
+    {
+      "title": "Hand Drummer",
+      "meta": "Assyrian, Iraq or possibly Syria · 900–700 BCE · bronze, solid cast",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1969.67/1969.67_print.jpg",
+      "year": -900
+    },
+    {
+      "title": "Decorative Plaque: Browsing Stag",
+      "meta": "Phoenicia, Iraq, Nimrud · 900–800 BCE · ivory",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1968.49/1968.49_print.jpg",
+      "year": -900
+    },
+    {
+      "title": "Decorative Plaque: Ram-Headed Sphinxes Flanking a Sacred Tree",
+      "meta": "Phoenicia, Iraq, Nimrud · 900–800 BCE · ivory",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1968.47/1968.47_print.jpg",
+      "year": -900
+    },
+    {
+      "title": "Relief Showing the Head of a Winged Genius",
+      "meta": "Nimrud · late assyrian · -883–-859 · Gypsum relief with traces of pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/c78e7b95-0652-a2dd-05f6-f9b1d68ff24d/full/843,/0/default.jpg",
+      "year": -883,
+      "artist": "Mesopotamian, Assyrian"
+    },
+    {
+      "title": "Tomb Relief",
+      "meta": "Syria, Palmyra · 230 CE · limestone",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1964.359/1964.359_print.jpg",
+      "year": 230
+    },
+    {
+      "title": "The Triumphal Arch, Palmyra",
+      "meta": "Syria · 1859",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2008BT7755/full/735,/0/default.jpg",
+      "year": 1859,
+      "artist": "Haag, Carl (R.W.S)"
+    },
+    {
+      "title": "Palmyra (from Kasr el Ain)",
+      "meta": "Syria · 1859",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2008BT7756/full/735,/0/default.jpg",
+      "year": 1859,
+      "artist": "Haag, Carl (R.W.S)"
+    },
+    {
+      "title": "Ruins at Palmyra, Syria",
+      "meta": "Syria · late 19th century",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2020MN4034/full/735,/0/default.jpg"
+    },
+    {
+      "title": "Palmyra",
+      "meta": "Syria · 1837",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2008BU4843/full/735,/0/default.jpg",
+      "year": 1837,
+      "artist": "Schranz, Antonio or Anton (Jr)"
+    },
+    {
+      "title": "Photograph",
+      "meta": "Palmyra · ca. 1929",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2015HN3583/full/735,/0/default.jpg",
+      "year": 1929,
+      "artist": "K.A.C. Creswell"
+    },
+    {
+      "title": "Man's face",
+      "meta": "Iran · 350 BC",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2017JY1762/full/735,/0/default.jpg",
+      "year": -350
+    },
+    {
+      "title": "Head",
+      "meta": "Persepolis · 450 BC",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2012FL1656/full/735,/0/default.jpg",
+      "year": -450
+    },
+    {
+      "title": "C.R. Smith Archive",
+      "meta": "Iran · 1895 - 1900",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2010CT5870/full/735,/0/default.jpg",
+      "year": 1895,
+      "artist": "Antoin Sevruguin"
+    },
+    {
+      "title": "Cattle bell",
+      "meta": "Iran · 1100-1299 AD",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2017KM8904/full/735,/0/default.jpg",
+      "year": 1100
+    },
+    {
+      "title": "Statuette of a Striding Figure",
+      "meta": "Iraq · proto-elamite · -3000–-2800 · Copper",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/cb29f9b8-2955-9c1e-fd52-ccfca730942b/full/843,/0/default.jpg",
+      "year": -3000,
+      "artist": "Mesopotamian or Iranian"
+    },
+    {
+      "title": "Cylinder seal",
+      "meta": "Mesopotamia · c. 20th century bc - c. 18th century BC",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2022ND6559/full/735,/0/default.jpg"
+    },
+    {
+      "title": "Hedgehog Jewelry Element",
+      "meta": "Western Asia, Scythian · 400–200 BCE · gold, soldered or fused with granulation",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1985.180/1985.180_print.jpg",
+      "year": -400
+    },
+    {
+      "title": "Octagonal Mirror Case with Lid",
+      "meta": "Iran, probably Isfahan, Qajar period (1779–1925) · 1800s · Varnished lacquer and opaque watercolor over papier-mâché",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1918.785/1918.785_print.jpg",
+      "year": 1800
+    },
+    {
+      "title": "Mirror Case with Lid",
+      "meta": "Iran, Qajar period (1779-1925) · 1800s · Varnished lacquer and opaque watercolor over papier-mâché",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1932.13/1932.13_print.jpg",
+      "year": 1800
+    },
+    {
+      "title": "Pen and Ink Box",
+      "meta": "Iran, Qajar period (1779-1925) · 1800s · lacquer over papier maché",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1942.854/1942.854_print.jpg",
+      "year": 1800
+    },
+    {
+      "title": "Pen and Ink Box (lid)",
+      "meta": "Iran, Qajar period (1779-1925) · 1800s · lacquer over papier maché",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1942.854.b/1942.854.b_print.jpg",
+      "year": 1800
+    },
+    {
+      "title": "Pen and Ink Box (base)",
+      "meta": "Iran, Qajar period (1779-1925) · 1800s · lacquer over papier maché",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1942.854.a/1942.854.a_print.jpg",
+      "year": 1800
+    },
+    {
+      "title": "Mirror case",
+      "meta": "Iran · ca. 1850",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2016JF3951/full/735,/0/default.jpg",
+      "year": 1850
+    },
+    {
+      "title": "Panel",
+      "meta": "Iran · 1850-1900",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2016JF0645/full/735,/0/default.jpg",
+      "year": 1850
+    },
+    {
+      "title": "Painting",
+      "meta": "Iran · 1850-70",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2006BE7774/full/735,/0/default.jpg",
+      "year": 1850
+    },
+    {
+      "title": "Qur'an stand",
+      "meta": "Iran · 1850-1900",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2016JE7780/full/735,/0/default.jpg",
+      "year": 1850
+    },
+    {
+      "title": "Pen box",
+      "meta": "Iran · 1847",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2006AM1830/full/735,/0/default.jpg",
+      "year": 1847,
+      "artist": "Isfahani, Muhammad Isma'il"
+    },
+    {
+      "title": "An Episode from the Story of the Sasanian King Khusrau and His Beloved Shirin, from a Khamsa (Quintet) of Nizami (1141–1209) (verso); Persian verses from a Haft Awrang (Seven Thrones) of Jami (d. 1492) (recto)",
+      "meta": "Iran, probably Shiraz, Safavid period (1501-1722) · 1540–70 · opaque watercolor, gold, silver, and ink on paper; double-sided",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1947.500/1947.500_print.jpg",
+      "year": 1540
+    },
+    {
+      "title": "Ewer",
+      "meta": "Iran · 7th century",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2006AF6082/full/735,/0/default.jpg"
+    },
+    {
+      "title": "Tetradrachm (Coin) Portraying King Phraates IV",
+      "meta": "Iran · -38–-3 · Silver",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/2e4d126b-a211-2a4b-3bc9-cfcdfdade7ab/full/843,/0/default.jpg",
+      "year": -38,
+      "artist": "Parthian"
+    },
+    {
+      "title": "Cotter Pin for Chariot",
+      "meta": "Iran, Luristan · 2000–1000 BCE · bronze",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1942.548/1942.548_print.jpg",
+      "year": -1999
+    },
+    {
+      "title": "Sword Handle",
+      "meta": "Iran, Luristan · 2000–1000 BCE · bronze",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1942.550/1942.550_print.jpg",
+      "year": -1999
+    },
+    {
+      "title": "Sword",
+      "meta": "Iran, Luristan · 2000–1000 BCE · bronze",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1942.552/1942.552_print.jpg",
+      "year": -1999
+    },
+    {
+      "title": "Pen Box (Qalamdan)",
+      "meta": "Iran · 1701–1900 · Painted and lacquered papier-mâché",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/a44beeb6-aa44-7454-c511-8c0a0eea7e9b/full/843,/0/default.jpg",
+      "year": 1701,
+      "artist": "Iran"
+    },
+    {
+      "title": "Mirror and case",
+      "meta": "Iran · 1850-1900",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2016JF0523/full/735,/0/default.jpg",
+      "year": 1850
+    },
+    {
+      "title": "Silver Dish",
+      "meta": "Iran, Sasanian Empire (224–651 CE) · 226–641 CE · silver",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1945.12/1945.12_print.jpg",
+      "year": 226
+    },
+    {
+      "title": "Head of Gudea, ensi of Lagash",
+      "meta": "Mesopotamia, Iraq, Lagash (Tello) · 2144–2124 BCE · dolerite",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1963.680/1963.680_print.jpg",
+      "year": -2144
+    },
+    {
+      "title": "Turban Helmet",
+      "meta": "Western Iran · Arts of the Islamic World · 1465–1510 · Steel and silver",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/9c7b0976-8396-5a6c-5437-40b83a38f1e7/full/843,/0/default.jpg",
+      "year": 1465,
+      "artist": "Eastern Turkey or Western Iran"
+    },
+    {
+      "title": "Tethering-Ring",
+      "meta": "Iran · 13th century",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2017KM8866/full/735,/0/default.jpg"
+    },
+    {
+      "title": "Indigo crucible",
+      "meta": "Iran · 11th century",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2006BC7770/full/735,/0/default.jpg"
+    },
+    {
+      "title": "Bowl-Stand",
+      "meta": "Iran · 12th century",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2017KM9094/full/735,/0/default.jpg"
+    },
+    {
+      "title": "Pilgrim Flask",
+      "meta": "Parthian Empire (247 BCE–224 CE) · 1–200 CE · terracotta",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1933.201/1933.201_print.jpg",
+      "year": 1
+    },
+    {
+      "title": "Five Burner Lamp",
+      "meta": "Parthian Empire (247 BCE–224 CE) · 1–200 CE · terracotta",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1933.205/1933.205_print.jpg",
+      "year": 1
+    },
+    {
+      "title": "Small Bowl",
+      "meta": "Parthian Empire (247 BCE–224 CE) · 1–200 CE · terracotta",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1933.174/1933.174_print.jpg",
+      "year": 1
+    },
+    {
+      "title": "Lamp",
+      "meta": "Parthian Empire (247 BCE–224 CE) · 1–200 CE · terracotta",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1933.177/1933.177_print.jpg",
+      "year": 1
+    },
+    {
+      "title": "Ovoid Vase",
+      "meta": "Parthian Empire (247 BCE–224 CE) · 1–200 CE · terracotta",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1933.196/1933.196_print.jpg",
+      "year": 1
+    },
+    {
+      "title": "Mina'i Beaker with Seated Princes",
+      "meta": "Iran, Kashan, Seljuq period of Iran (1037–1194) · 1180–1220 · Fritware with overglaze design, mina’i ware",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1917.977/1917.977_print.jpg",
+      "year": 1180
+    },
+    {
+      "title": "Royal Reception in a Landscape, left folio from the double frontispiece of a Shahnama (Book of Kings) of Firdausi (Persian, about 940–1019 or 1025)",
+      "meta": "Iran, Shiraz, Timurid period (1370-1501) · 1444 · Opaque watercolor, ink, gold, and silver on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1956.10.a/1956.10.a_print.jpg",
+      "year": 1444
+    },
+    {
+      "title": "Bowl with Flying Birds",
+      "meta": "Iran, probably Kashan, Ilkhanid period (1256–1353) · 1280–1400 · Fritware with underglaze-painted design, Sultanabad ware",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1915.589/1915.589_print.jpg",
+      "year": 1280
+    },
+    {
+      "title": "Rim Fragment",
+      "meta": "Iran, Sasanian Empire (224–651 CE) · 222–650 CE · earthenware",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1935.243/1935.243_print.jpg",
+      "year": 222
+    },
+    {
+      "title": "Manuscript of Kulliyat (Complete Works) by Sa'di with Lacquered Cover",
+      "meta": "Iran · Islamic (culture or style) · 1600–1700 · Cover: lacquered leather",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/6d216d21-f35a-770a-071c-e0304f23b84f/full/843,/0/default.jpg",
+      "year": 1600,
+      "artist": "Iran"
+    },
+    {
+      "title": "Royal Horse Inspection",
+      "meta": "Iran · safavid · 1650–1675 · Opaque watercolor and gold on paper",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/441ff42f-7329-1179-3735-e68db890c899/full/843,/0/default.jpg",
+      "year": 1650,
+      "artist": "Iran, probably Isfahan"
+    },
+    {
+      "title": "Bottle",
+      "meta": "Iran · 1642-1666",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2006BG5669/full/735,/0/default.jpg",
+      "year": 1642
+    },
+    {
+      "title": "Nishapur Figural Bowl",
+      "meta": "Iran, Nishapur, Samanid period (819–1005) · 900s · Earthenware with underglaze decoration",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1959.249/1959.249_print.jpg",
+      "year": 900
+    },
+    {
+      "title": "Bowl with Two Birds",
+      "meta": "Iran, Nishapur or Central Asia, Samarkand, Samanid Period, 10th century · 900s · earthenware with underglaze slip-painted decoration",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1969.300/1969.300_print.jpg",
+      "year": 900
+    },
+    {
+      "title": "Tombstone",
+      "meta": "Iran, Nishapur, 10th century · 900s · limestone",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1944.59/1944.59_print.jpg",
+      "year": 900
+    },
+    {
+      "title": "Jug",
+      "meta": "Iran, Khurasan, Nishapur, Seljuk Period, 12th century · 1100s · cast brass",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1985.22/1985.22_print.jpg",
+      "year": 1100
+    },
+    {
+      "title": "Bowl with Pseudo Inscription",
+      "meta": "Iran · 899–999 · Earthenware painted in manganese purple with splashes of green on an opaque white glaze",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/91963c82-7338-9c19-c34c-169eee62d0d9/full/843,/0/default.jpg",
+      "year": 899,
+      "artist": "Iran"
+    },
+    {
+      "title": "Star Tile with Lotus Flower",
+      "meta": "Iran · 1101–1200 · Stonepaste with polychrome",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/1c47a57e-1611-42b9-0d11-510659b752bc/full/843,/0/default.jpg",
+      "year": 1101,
+      "artist": "Iran"
+    },
+    {
+      "title": "Bowl with Incised and Splashed Decoration",
+      "meta": "Iran · 901–1000 · Earthenware with incised decorations and splashed with green and brown under transparent glaze",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/7f4e60ed-9ef6-5822-0bf1-47d4995424cf/full/843,/0/default.jpg",
+      "year": 901,
+      "artist": "Iran"
+    },
+    {
+      "title": "Bowl with Incised Decoration",
+      "meta": "Iran · amol · 900–1099 · Earthenware with incised decorations and polychrome painting under transparent glaze",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/fe422015-f022-fb39-dde9-276215c76877/full/843,/0/default.jpg",
+      "year": 900,
+      "artist": "Iran"
+    },
+    {
+      "title": "Flask",
+      "meta": "Iran · 1523-1524",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2007BM1774/full/735,/0/default.jpg",
+      "year": 1523
+    },
+    {
+      "title": "Fragment",
+      "meta": "Iran · 1150-1200",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2009CP5175/full/735,/0/default.jpg",
+      "year": 1150
     }
   ]
 }

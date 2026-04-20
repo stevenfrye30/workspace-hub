@@ -480,6 +480,4280 @@
       "desc": "Red sandstone canyon with cliff-dweller ruins tucked into shadowed overhangs. Later a Navajo stronghold; Kit Carson's 1864 campaign forced the Long Walk from here.",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Canyon_de_Chelly%2C_Navajo.jpg/960px-Canyon_de_Chelly%2C_Navajo.jpg",
       "year": 1100
+    },
+    {
+      "title": "Olmec Wrestler",
+      "meta": "Olmec · c. 1000–400 BCE · Mexico",
+      "desc": "A squat basalt figure of a bearded, bare-chested man in a fighting crouch. A rare free-standing Olmec sculpture — the colossal heads sit on the ground, but this one coils like it could stand up.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/c/c1/The_Wrestler_%28Olmec%29_by_DeLange.jpg",
+      "year": -500
+    },
+    {
+      "title": "Sarcophagus Lid of Pakal",
+      "meta": "Classic Maya · 683 CE · Palenque",
+      "desc": "Carved limestone lid over the tomb of K'inich Janaab' Pakal inside the Temple of the Inscriptions. Pakal falls into the jaws of the underworld at the base of the world-tree — or, to von Däniken, drives a spaceship.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Palenque_-_Grabschmuck_des_Pakal.jpg/960px-Palenque_-_Grabschmuck_des_Pakal.jpg",
+      "year": 683
+    },
+    {
+      "title": "Raven and the First Men",
+      "meta": "Contemporary Haida · 1980",
+      "desc": "Bill Reid's 4-ton yellow cedar sculpture of Raven discovering the first humans huddled inside a clamshell. Haida cosmology carved in a museum rotunda; an emblem of Indigenous art's modern presence.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/The_Raven_and_the_First_Men%2C_Museum_of_Anthropology_%287960613690%29.jpg/960px-The_Raven_and_the_First_Men%2C_Museum_of_Anthropology_%287960613690%29.jpg",
+      "artist": "Bill Reid",
+      "year": 1980
+    },
+    {
+      "title": "Casa Grande Ruins",
+      "meta": "Hohokam · c. 1350 · Arizona",
+      "desc": "A four-story \"great house\" of caliche mud in the Sonoran Desert — the largest prehistoric structure in the American Southwest. Aligned to solstice and lunar events; abandoned before the Spanish arrived.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/CasaGrandeRuin.jpg/960px-CasaGrandeRuin.jpg",
+      "year": 1350
+    },
+    {
+      "title": "Wari Tapestry Tunic",
+      "meta": "Wari · 7th–11th c. · Peru",
+      "desc": "A tightly woven alpaca-wool tunic covered in flattened, abstracted figures and geometric grids. Wari weavers worked at more than 120 weft threads per inch — finer than most European tapestry.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Tapestry_tunic%2C_interlocked%2C_of_camelid_fiber%2C_Wari_style_-_Peruvian_fabric_in_the_American_Museum_of_Natural_History_-_DSC06115.JPG/960px-Tapestry_tunic%2C_interlocked%2C_of_camelid_fiber%2C_Wari_style_-_Peruvian_fabric_in_the_American_Museum_of_Natural_History_-_DSC06115.JPG",
+      "year": 800
+    },
+    {
+      "title": "Lord of Las Limas",
+      "meta": "Olmec · c. 900 BCE · Mexico",
+      "desc": "A greenstone sculpture of an adolescent Olmec youth holding a were-jaguar infant on his lap — found complete by two children playing on a hill in Veracruz in 1965.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Se%C3%B1or_de_Las_Limas_%28cropped%29.jpg/1280px-Se%C3%B1or_de_Las_Limas_%28cropped%29.jpg",
+      "year": -900
+    },
+    {
+      "title": "Feathered Serpent Pyramid, Teotihuacan",
+      "meta": "Teotihuacan · 2nd c. CE · Mexico",
+      "desc": "Third-largest pyramid at the site, facade covered in 260 snake heads alternating with headdress gods — Quetzalcoatl avant la lettre. Built over a mass sacrificial burial of warriors.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Teotihuac%C3%A1n%2C_M%C3%A9xico%2C_2013-10-13%2C_DD_80.JPG/1280px-Teotihuac%C3%A1n%2C_M%C3%A9xico%2C_2013-10-13%2C_DD_80.JPG",
+      "year": 200
+    },
+    {
+      "title": "Yaxchilán Lintel 24",
+      "meta": "Classic Maya · 725 CE · Mexico",
+      "desc": "Lady Xoc draws a rope studded with thorns through her tongue; her husband Shield Jaguar holds a torch over her. A bloodletting ritual carved in limestone with breathtaking fineness.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Yaxchilan_Lintel_24.jpg/1280px-Yaxchilan_Lintel_24.jpg",
+      "year": 725
+    },
+    {
+      "title": "Maya Polychrome Vessel",
+      "meta": "Late Classic Maya · 7th–9th c. CE",
+      "desc": "A cylindrical vase painted with court scenes, Underworld journeys, or god-dialogues in red-orange slips. Maya \"codex-style\" vases are lost books — texts that outlived the paper they were once copied onto.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Sacul_vase.jpg",
+      "year": 750
+    },
+    {
+      "title": "Jaina Island Figurine",
+      "meta": "Late Classic Maya · 7th–9th c. CE",
+      "desc": "Small ceramic figures of warriors, weavers, ballplayers, elite women — excavated from graves on Jaina, a tiny mortuary island off the Campeche coast. Among the liveliest small sculpture the Americas produced.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Jaina_Island_type_figure%2C_Art_Institute.jpg/1280px-Jaina_Island_type_figure%2C_Art_Institute.jpg",
+      "year": 750
+    },
+    {
+      "title": "Codex Zouche-Nuttall",
+      "meta": "Mixtec · 14th c. · Mexico",
+      "desc": "A painted deer-hide screenfold codex reading back-and-forth across panels — the genealogies of the Mixtec kingdom, Lord Eight Deer conquering his rivals. One of the few surviving pre-conquest Mesoamerican books.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/d/d1/Codex_Zouche-Nuttall%2C_page_20.jpg",
+      "year": 1350
+    },
+    {
+      "title": "Diquís Stone Spheres",
+      "meta": "Diquís · 600–1500 CE · Costa Rica",
+      "desc": "Over 300 near-perfect stone spheres up to 2.5 meters across, scattered across the Diquís delta. Made by pecking and polishing gabbro boulders — purpose still debated.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/9/94/Parque_de_las_Esferas_de_Costa_Rica.JPG",
+      "year": 1000
+    },
+    {
+      "title": "Chavín Lanzón",
+      "meta": "Chavín · c. 900 BCE · Peru",
+      "desc": "A 4.5-meter granite spear, carved with a fanged anthropomorphic deity, rising through the floor of a small chamber at the center of Chavín de Huántar. The Andean Pantocrator — still rooted in situ.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/1/10/Chavin_lanzon_stela2_cyark.jpg",
+      "year": -900
+    },
+    {
+      "title": "Moche Portrait Vessel",
+      "meta": "Moche · 100 BCE–500 CE · Peru",
+      "desc": "A stirrup-spout ceramic of an individual man — scarred, aging, recognizably alive. Moche potters made dozens of portraits of the same ruler across his lifetime: a visual biography in clay.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Portrait_Vessel_of_a_Ruler%2C_100_BC_-_500_AD%2C_Moche%2C_north_coast_of_Peru%2C_ceramic_and_pigment_-_Art_Institute_of_Chicago_-_DSC00321.JPG/1280px-Portrait_Vessel_of_a_Ruler%2C_100_BC_-_500_AD%2C_Moche%2C_north_coast_of_Peru%2C_ceramic_and_pigment_-_Art_Institute_of_Chicago_-_DSC00321.JPG",
+      "year": 300
+    },
+    {
+      "title": "Nazca Polychrome Vessel",
+      "meta": "Nazca · 100 BCE–800 CE · Peru",
+      "desc": "Thin-walled clay bowls painted with anthropomorphic fishermen, trophy heads, stylized creatures — the same visual vocabulary as the giant desert Lines, reduced to pot scale.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Nazca_-_Happy_Fisherman_Vessel_-_Walters_482865_-_Profile.jpg/1280px-Nazca_-_Happy_Fisherman_Vessel_-_Walters_482865_-_Profile.jpg",
+      "year": 300
+    },
+    {
+      "title": "Gate of the Sun",
+      "meta": "Tiwanaku · c. 500 CE · Bolivia",
+      "desc": "A monolithic basalt gateway with a central \"Staff God\" figure carved above the doorway, attended by rays of forty winged figures. Broken into three pieces in antiquity; reassembled in situ.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Zonnepoort_tiwanaku.jpg/1280px-Zonnepoort_tiwanaku.jpg",
+      "year": 500
+    },
+    {
+      "title": "Moray Agricultural Terraces",
+      "meta": "Inca · 15th c. · Peru",
+      "desc": "Concentric circular terraces sunk into the earth — each ring a different microclimate, temperatures ranging 15°C between top and bottom. The Inca agricultural laboratory, where crops were tested for alpine adaptation.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Peru_-_Sacred_Valley_%26_Incan_Ruins_279_-_Moray_%288118174960%29.jpg/1280px-Peru_-_Sacred_Valley_%26_Incan_Ruins_279_-_Moray_%288118174960%29.jpg",
+      "year": 1450
+    },
+    {
+      "title": "Cuzco School Painting",
+      "meta": "Colonial Andean · 17th–18th c. · Peru",
+      "desc": "Indigenous and mestizo painters trained by Spanish religious, painting Virgins in tiered skirts that double as mountains (Pachamama), archangels in lace collars carrying muskets. Baroque European form seeded in Andean soil.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Virgin_of_Carmel_Saving_Souls_in_Purgatory_-_Google_Art_Project.jpg/1280px-Virgin_of_Carmel_Saving_Souls_in_Purgatory_-_Google_Art_Project.jpg",
+      "year": 1700
+    },
+    {
+      "title": "Feather Headdress of Moctezuma",
+      "meta": "Aztec · c. 1515 · Mexico",
+      "desc": "Four hundred quetzal feathers and gold discs mounted on a fiber base — long enough to reach a man's heels. Sent from Moctezuma (or his successor) to Charles V, now held in Vienna; Mexican repatriation requests have not yet succeeded.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Moctezuma%27s_feather_headdress%2C_ca._1515%2C_Mexico%3B_Weltmuseum%2C_Vienna_%283%29.jpg/1280px-Moctezuma%27s_feather_headdress%2C_ca._1515%2C_Mexico%3B_Weltmuseum%2C_Vienna_%283%29.jpg",
+      "year": 1515
+    },
+    {
+      "title": "Mixtec Gold of Tomb 7",
+      "meta": "Mixtec · 14th c. · Monte Albán",
+      "desc": "500+ pieces of filigree-cast gold — pectorals, jaw-ornaments, rings — found in a reused Zapotec tomb by Alfonso Caso in 1932. A glimpse of Mesoamerican goldwork largely melted down after the Conquest.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Monte_Alban_-_Goldenes_Ohrgeh%C3%A4nge2.JPG/1280px-Monte_Alban_-_Goldenes_Ohrgeh%C3%A4nge2.JPG",
+      "year": 1400
+    },
+    {
+      "title": "Inca Miniature Llama",
+      "meta": "Inca · 15th c. · Peru",
+      "desc": "Small silver or gold llamas, hollow, hollow-cast — buried in the highest-altitude shrines of the empire as offerings. Each one meticulous to the ear-tassel despite being smaller than a finger.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Llama_MET_1974.271.36.jpg/1280px-Llama_MET_1974.271.36.jpg",
+      "year": 1450
+    },
+    {
+      "title": "Detroit Industry Murals",
+      "meta": "Mexican muralism · 1933",
+      "desc": "Twenty-seven fresco panels wrapping the inner court of the Detroit Institute of Arts — Rivera's homage to the Rouge auto factory, workers at the assembly line deified like Aztec labor gods.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Diego_Rivera_-_Detroit_Industry_Murals.jpg/1280px-Diego_Rivera_-_Detroit_Industry_Murals.jpg",
+      "artist": "Diego Rivera",
+      "year": 1933
+    },
+    {
+      "title": "Prometheus (Pomona College)",
+      "meta": "Mexican muralism · 1930",
+      "desc": "A towering Prometheus bringing fire into Frary Hall, Pomona College. The first significant Mexican mural commissioned in the United States — and the doorway for a wave of muralists who followed.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Prometheus_%281930%29_de_Jos%C3%A9_Clemente_Orozco_en_Pomona_College.jpg/1280px-Prometheus_%281930%29_de_Jos%C3%A9_Clemente_Orozco_en_Pomona_College.jpg",
+      "artist": "José Clemente Orozco",
+      "year": 1930
+    },
+    {
+      "title": "Sandías (Tamayo)",
+      "meta": "Mexican modernist · mid-20th c.",
+      "desc": "Slabs of crimson watermelon arranged as if for a sacrificial altar — Rufino Tamayo returned to the same subject for decades, turning a peasant still life into national emblem.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Sand%C3%ADa_de_Tamayo_en_Oaxaca.jpg/1280px-Sand%C3%ADa_de_Tamayo_en_Oaxaca.jpg",
+      "artist": "Rufino Tamayo",
+      "year": 1950
+    },
+    {
+      "title": "Tlaltecuhtli Monolith",
+      "meta": "Aztec · c. 1500 · Tenochtitlan",
+      "desc": "A pink andesite slab of the Aztec earth-goddess, mouth open, hair writhing with skulls — found in 2006 at Templo Mayor, face down in a ritual burial. 4 meters long, the largest Aztec monolith ever found.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Tlaltecuhtli_monolith.jpg",
+      "year": 1500
+    },
+    {
+      "title": "Olmec Celt-Pendant",
+      "meta": "Olmec · 900–600 BCE · Mexico",
+      "desc": "A polished jade celt — an axe-like form — incised with a were-jaguar mask. Olmec celts were worn as pendants but derived their form from the sharpened agricultural tools of the period.",
+      "image": "https://images.metmuseum.org/CRDImages/ao/original/DP-23470-001.jpg",
+      "year": -800
+    },
+    {
+      "title": "Maya Whistling Vessel",
+      "meta": "Early Classic Maya · 400–500 CE",
+      "desc": "A ceramic vessel shaped as a seated figure — when you tip water out, air passing through a hidden chamber makes the figure whistle. Ritual technology in fired clay.",
+      "image": "https://images.metmuseum.org/CRDImages/ao/original/DP-23468-001.jpg",
+      "year": 450
+    },
+    {
+      "title": "Moche Mountain Sacrifice Bottle",
+      "meta": "Moche · 500–800 CE · Peru",
+      "desc": "A stirrup-spout ceramic modeled into a small mountain with figures being sacrificed at its peaks — a portable vision of the Andean concept that gods lived atop peaks and demanded offerings there.",
+      "image": "https://images.metmuseum.org/CRDImages/ao/original/DP-25548-001.jpg",
+      "year": 650
+    },
+    {
+      "title": "Nayarit House Model",
+      "meta": "West Mexico · 200 BCE–300 CE",
+      "desc": "A ceramic cross-section of a family compound — courtyards, musicians on the roof, a figure sleeping inside. Nayarit tomb models preserve an ethnographic snapshot of a culture with no written record.",
+      "image": "https://images.metmuseum.org/CRDImages/ao/original/DP-23907-001.jpg",
+      "year": 50
+    },
+    {
+      "title": "Andean Processional Cross",
+      "meta": "Colonial Andean · 14th–15th c. attributions contested · Ecuador",
+      "desc": "A silver processional cross worked with Inca-era techniques for a Catholic rite — indigenous silversmiths picking up imported iconography within an unbroken Andean metalworking tradition.",
+      "image": "https://images.metmuseum.org/CRDImages/ao/original/DP100984.jpg",
+      "year": 1400
+    },
+    {
+      "title": "Maya Censer with Seated King",
+      "meta": "Early Classic Maya · 300–400 CE",
+      "desc": "A ceramic censer with a seated king modeled on its lid, his body a hollow for burning copal incense. Smoke rose literally through the figure — embodying divine breath.",
+      "image": "https://images.metmuseum.org/CRDImages/ao/original/DT4512.jpg",
+      "year": 350
+    },
+    {
+      "title": "Maya Mirror-Bearer",
+      "meta": "Classic Maya · 410–650 CE",
+      "desc": "A kneeling court dwarf, arms raised to support a disk of pyrite mirror — the mirror-bearer, a standard position of the Maya court. Status made visible in the carrying.",
+      "image": "https://images.metmuseum.org/CRDImages/ao/original/DP-24340-001.jpg",
+      "year": 550
+    },
+    {
+      "title": "Relief of Enthroned Ruler (Chakalte')",
+      "meta": "Classic Maya · 770 CE",
+      "desc": "A limestone wall relief of a seated king before an attendant, carved and signed by the sculptor Chakalte' — one of the few Maya artists whose name we know, in a culture where authorship was sometimes acknowledged.",
+      "image": "https://images.metmuseum.org/CRDImages/ao/original/DP104826.jpg",
+      "artist": "Chakalte'",
+      "year": 770
+    },
+    {
+      "title": "Chimú Gold Collar",
+      "meta": "Chimú · 1000–1470 CE · Peru",
+      "desc": "A broad gold collar from the kingdom of Chan Chan — the Chimú worked more gold than anyone in the pre-Columbian Americas. Much was melted down after the Spanish conquest; a fraction survives.",
+      "image": "https://images.metmuseum.org/CRDImages/ao/original/DP216742.jpg",
+      "year": 1300
+    },
+    {
+      "title": "Aztec Maize Carrier",
+      "meta": "Aztec · 14th–16th c. · Central Mexico",
+      "desc": "A stone seated male clutching ears of corn — an agricultural offering made concrete, maize as proxy for the god who gave it. Smaller and more intimate than the great Templo Mayor sculptures.",
+      "image": "https://openaccess-cdn.clevelandart.org/1949.555/1949.555_print.jpg",
+      "year": 1400
+    },
+    {
+      "title": "Aztec Gold Warrior",
+      "meta": "Aztec · 14th–16th c. · Tetzcoco",
+      "desc": "A cast gold-silver-copper figure of an armed warrior. Most Aztec metalwork was melted down by the Spanish in 1521; lost-wax gold figures like this one are staggeringly rare.",
+      "image": "https://openaccess-cdn.clevelandart.org/1984.37/1984.37_print.jpg",
+      "year": 1400
+    },
+    {
+      "title": "Macuilxochitl (Aztec Seated Deity)",
+      "meta": "Aztec · 14th–16th c.",
+      "desc": "A volcanic-stone deity, possibly Macuilxochitl (\"Five Flower\"), god of music, games, and excess, red pigment still clinging to the folds of his kilt. One of many minor Aztec gods with specialized domains.",
+      "image": "https://openaccess-cdn.clevelandart.org/1990.136/1990.136_print.jpg",
+      "year": 1400
+    },
+    {
+      "title": "Paracas Mantle",
+      "meta": "Paracas · 300 BCE–200 CE · Peru",
+      "desc": "A full camelid-wool mantle embroidered with tiny figures in repeating rows — some holding trophy heads. Preserved whole in the desert bundles of the Paracas necropolis.",
+      "image": "https://openaccess-cdn.clevelandart.org/1946.226/1946.226_print.jpg",
+      "year": -100
+    },
+    {
+      "title": "Veracruz Palma",
+      "meta": "Classic Veracruz · 800–1100 CE · Mexico",
+      "desc": "A tall, flat stone \"palma\" carved in relief with a figure — worn at the waist as part of Mesoamerican ballgame regalia, symbolic gear rather than literal protective equipment.",
+      "image": "https://images.metmuseum.org/CRDImages/ao/original/DP216441.jpg",
+      "year": 950
+    },
+    {
+      "title": "Veracruz Disk",
+      "meta": "Classic Veracruz · 600–900 CE · Mexico",
+      "desc": "A slate disk with cinnabar-painted relief — probably a mirror-back, worn at the chest as regalia. The iconography mixes Maya imagery with local Veracruz scroll patterns.",
+      "image": "https://images.metmuseum.org/CRDImages/ao/original/DT11605.jpg",
+      "year": 750
+    },
+    {
+      "title": "Veracruz Fish Hacha",
+      "meta": "Classic Veracruz · 600–900 CE · Mexico",
+      "desc": "An \"axe-form\" (hacha) shaped as a fish-head — ballgame regalia worn in the belt. Traces of original plaster and pigment still cling; hachas were as much costume as sport gear.",
+      "image": "https://images.metmuseum.org/CRDImages/ao/original/DP104813.jpg",
+      "year": 750
+    },
+    {
+      "title": "Nasca Trophy-Head Bowl",
+      "meta": "Nasca · 100–650 CE · Peru",
+      "desc": "A polychrome ceramic bowl ringed with rows of severed trophy heads — the Nasca kept actual embalmed heads on cords, carried into ritual. The bowls depicted what the rites required.",
+      "image": "https://openaccess-cdn.clevelandart.org/2009.435/2009.435_print.jpg",
+      "year": 300
+    },
+    {
+      "title": "Nasca Male Effigy Vessel",
+      "meta": "Nasca · 100–650 CE · Peru",
+      "desc": "A stirrup-spout vessel shaped as a seated man — painted face, closed eyes, carrying a cup. Nasca pottery matched its fine textiles in color range, unique in pre-Columbian Peru.",
+      "image": "https://openaccess-cdn.clevelandart.org/2012.116/2012.116_print.jpg",
+      "year": 400
+    },
+    {
+      "title": "Nasca Gold Mouth Mask",
+      "meta": "Nasca · 100 BCE–700 CE · Peru",
+      "desc": "A hammered gold mask with tentacle-like projections — worn in the mouth or nostrils at ritual moments. Gold meant \"the sweat of the sun\" in Andean cosmology.",
+      "image": "https://openaccess-cdn.clevelandart.org/1945.377/1945.377_print.jpg",
+      "year": 300
+    },
+    {
+      "title": "Wari Sacrificer Container",
+      "meta": "Wari · c. 800 CE · Andes",
+      "desc": "A carved wooden vessel of a Wari sacrificer — trophy head in hand, his own face echoing his victim's. The Wari empire stretched south from Ayacucho to Cuzco, preceding the Inca.",
+      "image": "https://openaccess-cdn.clevelandart.org/2007.193/2007.193_print.jpg",
+      "year": 800
+    },
+    {
+      "title": "Northwest Coast Feast Ladle",
+      "meta": "Northwest Coast · late 19th c.",
+      "desc": "A carved wooden ladle for serving communal food at potlatches — the handle a bird or sea-creature, its beak curling up over the bowl. Prestige measured in generosity.",
+      "image": "https://openaccess-cdn.clevelandart.org/1953.386/1953.386_print.jpg",
+      "year": 1880
+    },
+    {
+      "title": "Northwest Coast Mask",
+      "meta": "Northwest Coast · late 19th c.",
+      "desc": "A carved and painted wooden mask — clan crest or shamanic being. Northwest Coast masks often had inner and outer faces; the outer opened to reveal the inner through strings the dancer pulled.",
+      "image": "https://openaccess-cdn.clevelandart.org/1979.83/1979.83_print.jpg",
+      "year": 1880
+    },
+    {
+      "title": "Tairona Double-Bat Bowl",
+      "meta": "Tairona · 10th–16th c. · Colombia",
+      "desc": "A ceramic bowl with twin bat effigies on its rim — the Tairona, ancestors of today's Kogi, made dense zoomorphic pottery that read as sculpture more than tableware.",
+      "image": "https://openaccess-cdn.clevelandart.org/1999.12/1999.12_print.jpg",
+      "year": 1100
+    },
+    {
+      "title": "Tairona Bird Pendant",
+      "meta": "Tairona · 10th–16th c. · Colombia",
+      "desc": "A cast tumbaga (gold-copper alloy) bird pendant — Tairona metalwork was lost-wax cast and polished to a warm gold surface. Worn at the breast of chiefs.",
+      "image": "https://openaccess-cdn.clevelandart.org/1965.466/1965.466_print.jpg",
+      "year": 1100
+    },
+    {
+      "title": "Inca Half Tunic",
+      "meta": "Inca · 16th c. · Peru",
+      "desc": "Half of an Inca unku — tightly woven tapestry with tocapu (small geometric blocks) that encoded social status, ethnic affiliation, or administrative role in ways still imperfectly understood.",
+      "image": "https://openaccess-cdn.clevelandart.org/1951.393/1951.393_print.jpg",
+      "year": 1500
+    },
+    {
+      "title": "Inca Checkerboard Tunic",
+      "meta": "Inca · 15th–16th c. · Peru",
+      "desc": "A full camelid-wool tunic in repeating black-and-white squares — the standard uniform of Inca military officers, recognizable at a distance on the battlefield.",
+      "image": "https://openaccess-cdn.clevelandart.org/1957.136/1957.136_print.jpg",
+      "year": 1450
+    },
+    {
+      "title": "Ica Fragmentary Mantle",
+      "meta": "Ica Valley · 15th c. · Peru",
+      "desc": "A textile fragment from the Ica Valley — the coastal successor culture to Paracas and Nasca, still producing complex figural weavings on the eve of Spanish arrival.",
+      "image": "https://openaccess-cdn.clevelandart.org/1940.497/1940.497_print.jpg",
+      "year": 1450
+    },
+    {
+      "title": "Tlingit Chilkat Blanket",
+      "meta": "Tlingit · Northwest Coast · late 19th c. · cedar bark and mountain goat",
+      "desc": "A ceremonial dance robe of cedar bark and mountain-goat wool — Chilkat weaving draws its formline crest figures freehand rather than on a grid, almost unique among loom traditions.",
+      "image": "https://openaccess-cdn.clevelandart.org/1981.69/1981.69_print.jpg",
+      "year": 1880
+    },
+    {
+      "title": "Tlingit Totem Pole",
+      "meta": "Tlingit · Northwest Coast · c. 1880 · carved and painted cedar",
+      "desc": "A Tlingit cedar totem pole — not religion or writing but lineage heraldry, declaring a clan house's crest animals. Most surviving 19th-century poles were cut down and sold; few stand in place.",
+      "image": "https://openaccess-cdn.clevelandart.org/1989.89/1989.89_print.jpg",
+      "year": 1880
+    },
+    {
+      "title": "Calima Gold Pectoral",
+      "meta": "Calima · Colombia · 1–800 CE · hammered gold",
+      "desc": "A hammered-gold chest ornament worn across the collarbone at full width — Calima lords in the Cauca Valley dressed in pounded gold heavy enough to have been audible as they moved.",
+      "image": "https://openaccess-cdn.clevelandart.org/2015.2/2015.2_print.jpg",
+      "year": 100
+    },
+    {
+      "title": "Sinú Gold Bird Finial",
+      "meta": "Sinú (Zenú) · Colombia · 5th–11th c. · cast gold",
+      "desc": "A cast-gold finial shaped as a long-beaked bird — the Sinú crowned staffs and litter-poles with these, their lost-wax casting so refined the Spanish melted most of it down for bullion.",
+      "image": "https://openaccess-cdn.clevelandart.org/2015.4/2015.4_print.jpg",
+      "year": 400
+    },
+    {
+      "title": "Aztec Tlaloc",
+      "meta": "Aztec · Central Mexico · 13th–16th c. · stone",
+      "desc": "The rain god with his goggle eyes and fanged mouth — Tenochtitlán sat on a lake-surrounded island, and the Aztecs owed their two harvests a year to Tlaloc and his dwarf rain-helpers.",
+      "image": "https://openaccess-cdn.clevelandart.org/1966.361/1966.361_print.jpg",
+      "year": 1300
+    },
+    {
+      "title": "Mimbres Bowl",
+      "meta": "Mimbres · New Mexico · c. 1000–1150 · painted earthenware",
+      "desc": "A black-on-white bowl buried with the dead, its base punctured to release the spirit. The Mimbres abandoned their valley around 1150 and the painting tradition stopped with them.",
+      "image": "https://openaccess-cdn.clevelandart.org/1973.165/1973.165_print.jpg",
+      "year": 1050
+    },
+    {
+      "title": "Panel with Royal Woman",
+      "meta": "Guatemala or Mexico, Usumacinta River region, Maya style · c. 795 · limestone",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1962.32/1962.32_print.jpg",
+      "artist": "K’in Lakam Chahk",
+      "year": 750
+    },
+    {
+      "title": "Front Face of a Stela (Free-standing Stone with Relief)",
+      "meta": "Mesoamerica, Guatemala, Department of the Petén, El Perú (also known as Waka'), Maya (250-900), Classic period (200-1000) · 692 · limestone",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1967.29/1967.29_print.jpg",
+      "year": 692
+    },
+    {
+      "title": "Shell with Seated Noble",
+      "meta": "Mexico or Central America, Maya · 600–900 · conch shell",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1965.550/1965.550_print.jpg",
+      "year": 600
+    },
+    {
+      "title": "Crown Ornament (Hu’unal)",
+      "meta": "Mexico or Central America, Maya · 250–900 CE · jadeite-albitite",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1993.7/1993.7_print.jpg",
+      "year": 250
+    },
+    {
+      "title": "Head from a Building's Façade",
+      "meta": "Mexico, Campeche, Maya style (250-900) · 250–900 CE · stucco, paint",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1990.183/1990.183_print.jpg",
+      "year": 250
+    },
+    {
+      "title": "Vessel with Ballplayer",
+      "meta": "Mexico, Yucatán, Maya (Chocholá) style (250-900) · c. 600–1000 · earthenware, pigment",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1990.180/1990.180_print.jpg",
+      "year": 600
+    },
+    {
+      "title": "Warrior Figurine with Removable Headdress",
+      "meta": "Mexico, Yucatán, Jaina Island region, Campeche, Maya style (250-900) · 600–900 · earthenware with pigment",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1963.93/1963.93_print.jpg",
+      "year": 600
+    },
+    {
+      "title": "Figurine with Back Rack",
+      "meta": "Mexico, Maya, Jaina style · 300–900 CE · molded and modeled pottery with traces of pigment",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1990.172/1990.172_print.jpg",
+      "year": 300
+    },
+    {
+      "title": "Ring-Base Vessel",
+      "meta": "Honduras, Maya, Ulúa Valley · c. 600–1000 · marble",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1990.170/1990.170_print.jpg",
+      "year": 600
+    },
+    {
+      "title": "Artisan",
+      "meta": "Guatemala, Petén region, Maya style (250-900), Maya style (250-900) · 250–600 CE · earthenware with colored slips",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1994.12.1/1994.12.1_print.jpg",
+      "year": 250
+    },
+    {
+      "title": "Bar Bead",
+      "meta": "Mexico or Central America, Maya · 250–550 CE · jadeite-albitite, modern black pigment",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1950.377/1950.377_print.jpg",
+      "year": 250
+    },
+    {
+      "title": "Two Artisans",
+      "meta": "Guatemala, Petén region, Maya style (250-900), Maya style (250-900) · 250–600 CE · earthenware with colored slips",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1994.12/1994.12_print.jpg",
+      "year": 250
+    },
+    {
+      "title": "Carved Vessel",
+      "meta": "Mexico, Campeche, Maya, Chocholá Style · c. 600–1000 · earthenware",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1990.173/1990.173_print.jpg",
+      "year": 600
+    },
+    {
+      "title": "Ornament",
+      "meta": "Mexico or Central America, Maya · 250–550 CE · jadeite",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1972.3/1972.3_print.jpg",
+      "year": 250
+    },
+    {
+      "title": "Feline Vessel",
+      "meta": "Central Andes, North Coast, Moche people · 200–850 CE · ceramic",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2010.4/2010.4_print.jpg",
+      "year": 200
+    },
+    {
+      "title": "Big-Eared Brown Bat Vessel",
+      "meta": "Central Andes, North Coast, Moche people · 200–850 CE · ceramic, slip",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2005.6/2005.6_print.jpg",
+      "year": 200
+    },
+    {
+      "title": "Textile Fragment",
+      "meta": "Peru, Moche, north coast · c. 50–650 CE · cotton and camelid fiber",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2007.2.3/2007.2.3_print.jpg",
+      "year": 50
+    },
+    {
+      "title": "Sea Lion Pup Vessel",
+      "meta": "Central Andes, North Coast, Moche people · 200–850 CE · ceramic and slip",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2014.375/2014.375_print.jpg",
+      "year": 200
+    },
+    {
+      "title": "Textile Fragments",
+      "meta": "Peru, Moche, north coast · c. 50–650 CE · cotton and camelid fiber",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2007.2/2007.2_print.jpg",
+      "year": 50
+    },
+    {
+      "title": "Portrait Head Vessel",
+      "meta": "Peru, North Coast, Moche style · 200–550 CE · earthenware with colored slips",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1930.627/1930.627_print.jpg",
+      "year": 200
+    },
+    {
+      "title": "Portrait Head  Vessel",
+      "meta": "Peru, North Coast, Moche style · c. 200–550 CE · earthenware with colored slips",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1990.227/1990.227_print.jpg",
+      "year": 200
+    },
+    {
+      "title": "Llama Vessel",
+      "meta": "Peru, North Coast, Moche style · c. 200–550 CE · earthenware with colored slips",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1990.128/1990.128_print.jpg",
+      "year": 200
+    },
+    {
+      "title": "Vessel  with Running Figures",
+      "meta": "Peru, North Coast, Moche style · 450–550 · earthenware with colored slips",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1947.172/1947.172_print.jpg",
+      "year": 450
+    },
+    {
+      "title": "Nose Ornament with Human Head and Condors Attacking Humans",
+      "meta": "Peru, North Coast, Moche culture (50–800 CE), early Intermediate Period · c. 100–300 CE · gold alloy",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2005.175/2005.175_print.jpg",
+      "year": 100
+    },
+    {
+      "title": "Forehead Ornament",
+      "meta": "Peru, South Coast, Nasca · 100 BCE–700 CE · hammered gold alloy",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1940.509/1940.509_print.jpg",
+      "year": -100
+    },
+    {
+      "title": "Cloth with Procession of Figures",
+      "meta": "Central Andes, South Coast, Nasca people · 170 BCE–70 CE (radiocarbon date, 95% probability) · cotton and pigment (field); camelid fiber (borders and fringe)",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1940.530/1940.530_print.jpg",
+      "year": -170
+    },
+    {
+      "title": "Bowl with Costumed Being",
+      "meta": "Peru, South Coast, Nasca · 100 BCE–700 CE · earthenware with colored slips",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1949.561/1949.561_print.jpg",
+      "year": -100
+    },
+    {
+      "title": "Vessel with Abstract Heads",
+      "meta": "Peru, South Coast, Nasca · 100 BCE–700 CE · earthenware with colored slips",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1946.279/1946.279_print.jpg",
+      "year": -100
+    },
+    {
+      "title": "Female Figure",
+      "meta": "Peru, South Coast, Nasca · 100 BCE–700 CE · earthenware with colored slips",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1997.184/1997.184_print.jpg",
+      "year": -100
+    },
+    {
+      "title": "Shell with Inlaid Feline",
+      "meta": "Peru, South Coast, Nasca · 100 BCE–700 CE · Spondylus shell with shell, stone, and gold inlay",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1950.567/1950.567_print.jpg",
+      "year": -100
+    },
+    {
+      "title": "Spatula with Carved Lizard",
+      "meta": "Peru, South Coast, Nasca · 100 BCE–700 CE · bone with shell inlay",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1955.83/1955.83_print.jpg",
+      "year": -100
+    },
+    {
+      "title": "Band with Trophy Heads",
+      "meta": "Peru, South Coast, Nasca · 100 BCE–700 CE · interlocking warp and weft, single interlock: wool",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1953.475/1953.475_print.jpg",
+      "year": -100
+    },
+    {
+      "title": "Tunic with Profile Animals and Checkerboards",
+      "meta": "Peru, South Coast, Paracas or Nasca? · 410–540 CE (radiocarbon date, 93% probability) · cotton; dye-patterned plain weave",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2005.16/2005.16_print.jpg",
+      "year": 410
+    },
+    {
+      "title": "Severed Head Effigy Vessel",
+      "meta": "Peru, South Coast, Nasca · c. 100–350 CE · earthenware with colored slips",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1997.2/1997.2_print.jpg",
+      "year": 100
+    },
+    {
+      "title": "Mask",
+      "meta": "Peru, South Coast, Nasca · 100 BCE–700 CE · hammered gold alloy",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1957.26/1957.26_print.jpg",
+      "year": -100
+    },
+    {
+      "title": "Spear Thrower",
+      "meta": "Peru, South Coast, late Paracas or early Nasca style · 200 BCE–200 CE · bone, hematite, cotton thread, sinew",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1940.507/1940.507_print.jpg",
+      "year": -200
+    },
+    {
+      "title": "Cup with Four Faces",
+      "meta": "Central Andes, Wari people · 600–1000 · Stone with shell inlay",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2019.169/2019.169_print.jpg",
+      "year": 600
+    },
+    {
+      "title": "Ornament with Figure",
+      "meta": "Central Andes, Wari style · 600–1000 · shell, stone, and metal (silver?)",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1944.291/1944.291_print.jpg",
+      "year": 600
+    },
+    {
+      "title": "Container in the form of a Sacrificer",
+      "meta": "Peru, Middle Horizon, Wari Culture · 770–890 (radiocarbon date, 95% probability) · wood and red pigment (cinnabar)",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2007.193.a/2007.193.a_print.jpg",
+      "year": 770
+    },
+    {
+      "title": "Vessel with Litter Group",
+      "meta": "Central Andes, central highlands, reportedly Wari Wilka, Wari style, 6th-10th century · 600–1000 · ceramic and slip",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2011.36/2011.36_print.jpg",
+      "year": 600
+    },
+    {
+      "title": "Skull Vessel",
+      "meta": "Wari (Pachacamac) style, Middle Horizon, Epoch 2 · 500–900 · earthenware with colored slips",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1996.292/1996.292_print.jpg",
+      "year": 500
+    },
+    {
+      "title": "Spatula with Carved Head",
+      "meta": "Peru, Wari style (500-900) · 500–900 · bone with shell inlay",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1955.57/1955.57_print.jpg",
+      "year": 500
+    },
+    {
+      "title": "Thumb Rest of a Spear Thrower",
+      "meta": "Andes, Wari people · 600–1000 · Bone",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2017.58/2017.58_print.jpg",
+      "year": 600
+    },
+    {
+      "title": "Container with Deity Head and Winged Attendants",
+      "meta": "Central Andes, central coast, coastal Wari style · 600–1000 (Thermoluminescence date, 730–1190) · ceramic and slip",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1999.2/1999.2_print.jpg",
+      "year": 600
+    },
+    {
+      "title": "Bag with Human Face",
+      "meta": "Andes, Wari, Middle Horizon, 6th-10th century · 600–1000 · alpaca or llama hide, human hair, pigment, cotton; coca leaf contents",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2011.35/2011.35_print.jpg",
+      "year": 600
+    },
+    {
+      "title": "Double-Spouted Vessel",
+      "meta": "Peru, Wari style, 6th-10th century · 500–900 · ceramic, slip",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2002.94/2002.94_print.jpg",
+      "year": 500
+    },
+    {
+      "title": "plug for the bottom of Container in the form of a Sacrificer",
+      "meta": "Peru, Middle Horizon, Wari Culture, 7th -11th century · 770–890 (radiocarbon date, 95% probability) · wood and red pigment (cinnabar)",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2007.193.b/2007.193.b_print.jpg",
+      "year": 770
+    },
+    {
+      "title": "Bird-Shaped Container",
+      "meta": "Peru, Wari style (500-900) · 500–900 · wood",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1989.66/1989.66_print.jpg",
+      "year": 500
+    },
+    {
+      "title": "Figure in a Litter",
+      "meta": "Wari (Pachacamac) style, Middle Horizon, Epoch 2 · 500–900 (Thermoluminescence date, 590–1090) · earthenware with colored slips",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1997.1/1997.1_print.jpg",
+      "year": 500
+    },
+    {
+      "title": "Half of a Sleeved Tunic",
+      "meta": "Central Andes, Middle Horizon, Wari, 6th-11th century · c. 500–1000 · single-interlocked tapestry; cotton warp; camelid fiber weft",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2005.53.a/2005.53.a_print.jpg",
+      "year": 500
+    },
+    {
+      "title": "Llama with Packs",
+      "meta": "Peru, Chimú or Inca · before 1532 · pottery",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1951.182/1951.182_print.jpg",
+      "year": 1
+    },
+    {
+      "title": "Inka Khipu (Fiber Recording Device)",
+      "meta": "Peru, Inca Period, 15th-16th Century · c. 1400–1532 · cords, knotted and twisted; cotton and wool",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1940.469/1940.469_print.jpg",
+      "year": 1400
+    },
+    {
+      "title": "Seated Figurine",
+      "meta": "Peru, Inca, 15th-16th century · c. 1400–1540 · stone",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1945.122/1945.122_print.jpg",
+      "year": 1400
+    },
+    {
+      "title": "Knife",
+      "meta": "Peru, Inca Culture, 15th-16th century · 1400s-1500s · bronze",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1945.180/1945.180_print.jpg",
+      "year": 1400
+    },
+    {
+      "title": "Fragment",
+      "meta": "Peru, Inca, 1400-1532 AD · 1400–1532 · pottery",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1921.1717/1921.1717_print.jpg",
+      "year": 1400
+    },
+    {
+      "title": "Four-Cornered Hat",
+      "meta": "Peru, South Coast, Ica Valley, Inca Culture, 15th-16th century · c. 1400–1532 · camelid fiber",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1949.192/1949.192_print.jpg",
+      "year": 1400
+    },
+    {
+      "title": "Pair of Ear Ornaments",
+      "meta": "Mexico, Guerrero, Ichcatiopan, Mixtec or Aztec · c. 1200–1519 · obsidian, crystal",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1983.191/1983.191_print.jpg",
+      "year": 1200
+    },
+    {
+      "title": "Mother-and-Child Figurine",
+      "meta": "Mexico, Aztec · 1325–1521 · Ceramic, pigment",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1921.1711/1921.1711_print.jpg",
+      "year": 1325
+    },
+    {
+      "title": "Feathered Serpent (Quetzalcoatl)",
+      "meta": "Central Mexico, Aztec or modern, Post-Classic Period or modern · 1325–1521 · stone",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1941.46/1941.46_print.jpg",
+      "year": 1325
+    },
+    {
+      "title": "Female Figurine",
+      "meta": "Central Mexico, Aztec, Post-Classic Period · 1325–1519 · jadeite",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1948.354/1948.354_print.jpg",
+      "year": 1325
+    },
+    {
+      "title": "Pectoral Ornament",
+      "meta": "Mexico, Guerrero, Ichcatiopan, Mixtec or Aztec style · c. 1200–1519 · gold, jadeite",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1983.190/1983.190_print.jpg",
+      "year": 1200
+    },
+    {
+      "title": "Ear Ornament (1 of 2)",
+      "meta": "Mexico, Guerrero, Ichcatiopan, Mixtec or Aztec · c. 1200–1519 · obsidian, crystal",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1983.191.1/1983.191.1_print.jpg",
+      "year": 1200
+    },
+    {
+      "title": "Ear Ornament (2 of 2)",
+      "meta": "Mexico, Guerrero, Ichcatiopan, Mixtec or Aztec · c. 1200–1519 · obsidian, crystal",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1983.191.2/1983.191.2_print.jpg",
+      "year": 1200
+    },
+    {
+      "title": "Goddess Plaque",
+      "meta": "Central Mexico, Aztec, 13th-16th century · c. 1200–1519 · jadeite",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1949.199/1949.199_print.jpg",
+      "year": 1200
+    },
+    {
+      "title": "Figurine",
+      "meta": "Mexico, Aztec · 1325–1521 · pottery",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1921.1699/1921.1699_print.jpg",
+      "year": 1325
+    },
+    {
+      "title": "Feline",
+      "meta": "Central Mexico, Aztec, 13th-16th century · c. 1200–1519 · stone",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1960.264/1960.264_print.jpg",
+      "year": 1200
+    },
+    {
+      "title": "Kneeling Figure",
+      "meta": "Mexico, Guerrero, Olmec · c. 1200–600 BCE · stone",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1951.179/1951.179_print.jpg",
+      "year": -1200
+    },
+    {
+      "title": "Seated Figure",
+      "meta": "Mesoamerica, Mexico, Olmec · c. 900–300 BCE · albitite",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1941.390/1941.390_print.jpg",
+      "year": -900
+    },
+    {
+      "title": "Head Fragment",
+      "meta": "Mesoamerica, Mexico, Olmec · c. 900–300 BCE · jadeite",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1961.31/1961.31_print.jpg",
+      "year": -900
+    },
+    {
+      "title": "Elongated Mask Ornament",
+      "meta": "Mesoamerica, Mexico, Olmec · c. 900–300 BCE · greenstone",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1967.154/1967.154_print.jpg",
+      "year": -900
+    },
+    {
+      "title": "Celt with Deity",
+      "meta": "Mesoamerica, Mexico, Olmec · 1000–300 BCE · stone",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1954.856/1954.856_print.jpg",
+      "year": -1000
+    },
+    {
+      "title": "Vessel with Deity Mask",
+      "meta": "Central Mexico (Las Bocas, Puebla?), Olmec, Formative Period · 1200–900 BCE · ceramic, traces of pigment",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2002.67/2002.67_print.jpg",
+      "year": -1200
+    },
+    {
+      "title": "Standing Figure",
+      "meta": "Mesoamerica, Mexico, Olmec · c. 900–400 BCE · serpentine",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1990.219/1990.219_print.jpg",
+      "year": -900
+    },
+    {
+      "title": "Carved Bowl",
+      "meta": "Mesoamerica, reportedly the Tepecoacuilco River Valley, Guerrero, Olmec style (1200-300 BC), Formative Period · 1200–300 BCE · stone (travertine)",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2013.29/2013.29_print.jpg",
+      "year": -1200
+    },
+    {
+      "title": "Small Mask Ornament",
+      "meta": "Mesoamerica, Mexico, Olmec · c. 900–300 BCE · jadeite",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1949.21/1949.21_print.jpg",
+      "year": -900
+    },
+    {
+      "title": "Miniature Mask",
+      "meta": "Mesoamerica, Mexico, Olmec · c. 900–400 BCE · greenstone",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1951.319/1951.319_print.jpg",
+      "year": -900
+    },
+    {
+      "title": "Figure Fragment",
+      "meta": "Mesoamerica, Mexico, Olmec · c. 900–400 BCE · greenstone",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1949.556/1949.556_print.jpg",
+      "year": -900
+    },
+    {
+      "title": "Head",
+      "meta": "Mesoamerica, Mexico, Olmec · 1200–300 BCE · stone",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1953.369/1953.369_print.jpg",
+      "year": -1200
+    },
+    {
+      "title": "Mask Attachment(?)",
+      "meta": "Mesoamerica, Mexico, Olmec · 900–300 BCE · serpentine",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1990.221/1990.221_print.jpg",
+      "year": -900
+    },
+    {
+      "title": "Ballgame Thin Stone Head (Hacha)",
+      "meta": "Mesoamerica, Classic Veracruz style · 600–900 · stone",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1945.33/1945.33_print.jpg",
+      "year": 600
+    },
+    {
+      "title": "Ballgame Stone Head (Hacha)",
+      "meta": "Mesoamerica, Classic Veracruz style · 450–550 CE · gray volcanic stone",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1945.124/1945.124_print.jpg",
+      "year": 450
+    },
+    {
+      "title": "Standing Female Figure",
+      "meta": "Mesoamerica, Veracruz, Nopiloa style?, 7th-10th century · 600–1000 · ceramic, pigment",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2014.390/2014.390_print.jpg",
+      "year": 600
+    },
+    {
+      "title": "Stela Fragment",
+      "meta": "Mexico, Veracruz?, 600-950 AD · 600–950 · limestone",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1959.334.a/1959.334.a_print.jpg",
+      "year": 600
+    },
+    {
+      "title": "Ballgame Palma",
+      "meta": "Mexico, Gulf Coast, Classic Veracruz style (600-1100) · c. 900–1100 · stone",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1973.3/1973.3_print.jpg",
+      "year": 900
+    },
+    {
+      "title": "Ballgame Hip Protector (Yoke)",
+      "meta": "Mexico, Gulf Coast, Classic Veracruz style (600-1100) · 600–900 · greenstone, pigment",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1973.213/1973.213_print.jpg",
+      "year": 600
+    },
+    {
+      "title": "Bowl",
+      "meta": "Mexico, South-central Veracruz · c. 500–1000 · molded, carved, and burnished pottery",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1990.251/1990.251_print.jpg",
+      "year": 500
+    },
+    {
+      "title": "Seated Male Figurine",
+      "meta": "Mesoamerica, Veracruz, Remojadas Style · 500–900 · ceramic, pigment",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1995.96/1995.96_print.jpg",
+      "year": 500
+    },
+    {
+      "title": "Spoon",
+      "meta": "Native North America, Northwest Coast, Alaska, Tlingit · late 1800s–early 1900s · horn, copper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1924.175/1924.175_print.jpg",
+      "year": 1850
+    },
+    {
+      "title": "Fish or Seal Club (X’ús’)",
+      "meta": "Native North America, Northwest Coast, Alaska, Tlingit · late 1800s–early 1900s · wood",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1921.1580/1921.1580_print.jpg",
+      "year": 1850
+    },
+    {
+      "title": "Dagger (Gwálaa)",
+      "meta": "Native North America, Northwest Coast, Alaska, Tlingit · late 1800s–early 1900s · Metal, shell, leather, fiber, ivory or horn",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1916.719/1916.719_print.jpg",
+      "year": 1850
+    },
+    {
+      "title": "Beaver-Shaped Bowl",
+      "meta": "Native North America, Northwest Coast, Alaska, Tlingit? · c. 1890–1920 · wood",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2009.434/2009.434_print.jpg",
+      "year": 1885
+    },
+    {
+      "title": "Mask: Eagle",
+      "meta": "Native North America, Northwest Coast, British Columbia, Nuxalk (Bella Coola) · 1800s · wood, pigment, restored eye inlays",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1956.547/1956.547_print.jpg",
+      "year": 1800
+    },
+    {
+      "title": "Raven Rattle",
+      "meta": "Native North America, Northwest Coast, British Columbia and Alaska, Haida · late 1800s–early 1900s · wood, pigment",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1921.1577/1921.1577_print.jpg",
+      "year": 1850
+    },
+    {
+      "title": "Covered Basket",
+      "meta": "Northwest Coast, Haida, Unassigned · Unassigned, before 1917 · twilled, imbricated",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1917.434/1917.434_print.jpg",
+      "year": 1850
+    },
+    {
+      "title": "Metate",
+      "meta": "Costa Rica, Guanacaste, northwest coast · 1200–1500 · gray volcanic stone",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1971.165/1971.165_print.jpg",
+      "year": 1200
+    },
+    {
+      "title": "Head Cloth",
+      "meta": "Central Andes, central coast, Chancay people · 1000–1460s · Cotton",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2017.60/2017.60_print.jpg",
+      "year": 1000
+    },
+    {
+      "title": "Vessel in the Shape of a Figure",
+      "meta": "Peru, Central Coast, Chancay sytle, 12th-15th century · 1000–1460s · earthenware with painted slip",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1992.231/1992.231_print.jpg",
+      "year": 1000
+    },
+    {
+      "title": "Sleeved Tunic",
+      "meta": "Central Andes, central coast, Chancay people · 1460s–1532 · Cotton, camelid fiber",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2017.193/2017.193_print.jpg",
+      "year": 1460
+    },
+    {
+      "title": "Tapestry Panel",
+      "meta": "Peru, Central Coast, Chancay-Chimú style, 11th-15th century · 1000–1460s · camelid fiber and cotton, tapestry weave",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1992.103/1992.103_print.jpg",
+      "year": 1000
+    },
+    {
+      "title": "Painted Wrapping for Mummy",
+      "meta": "Peru, Central Coast, Chancay, 12th-15th century · c.1100–1400 A.D. · plain cloth, painted; cotton",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1940.494/1940.494_print.jpg",
+      "year": 1100
+    },
+    {
+      "title": "Male Figure with Modern Additions",
+      "meta": "Peru, Central Coast, Chancay people · 1100–1500 · Original elements include the head and tunic; added elements include the skirt, red fringe, and belt; Cotton, camelid fiber, reeds; Slit tapestry (tunic and face); plain weave with supplementary weft (skirt)",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1991.141/1991.141_print.jpg",
+      "year": 1100
+    },
+    {
+      "title": "Fragment of a Double Cloth",
+      "meta": "Peru, Central Coast, Chancay, 12th-15th century · c. 1100–1400 · tabby weave, double cloth; cotton",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1925.661/1925.661_print.jpg",
+      "year": 1100
+    },
+    {
+      "title": "Textile Bag",
+      "meta": "Peru, Central Coast, Chancay, Pachacamac, 12th-15th century · c. 1100–1400 · tabby weave, warp patterned; wool",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1925.669/1925.669_print.jpg",
+      "year": 1100
+    },
+    {
+      "title": "Three Border Fragments",
+      "meta": "Peru, Central Coast, Chancay, 12th-15th century · c. 1100–1400 · tabby, brocaded; cotton and wool",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1922.397.a/1922.397.a_print.jpg",
+      "year": 1100
+    },
+    {
+      "title": "Three Fragments of a Border",
+      "meta": "Peru, Central Coast, Chancay, 12th-15th century · c. 1100–1400 · tabby with inset border of fancy twill, brocaded; cotton and wool",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1922.396.a/1922.396.a_print.jpg",
+      "year": 1100
+    },
+    {
+      "title": "Four Border Strips",
+      "meta": "Peru, Central Coast, Chancay, 12th-15th century · c. 1100–1400 · plain compound cloth; cotton",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1922.395.b/1922.395.b_print.jpg",
+      "year": 1100
+    },
+    {
+      "title": "Bound Deer Effigy Vessel",
+      "meta": "Andes, North Coast, Chimú people · 1000–1460s · Ceramic",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2017.59/2017.59_print.jpg",
+      "year": 1000
+    },
+    {
+      "title": "Tunic",
+      "meta": "Peru, Chimú or Chimú-Inka, 12th-16th century · 1100–1532 · white cotton; plain weave with supplementary weft brocading",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2011.111.1/2011.111.1_print.jpg",
+      "year": 1100
+    },
+    {
+      "title": "Mantle or Hanging",
+      "meta": "Peru, North Coast, Chimú style, 1200-1460s · 1480–1635 (radiocarbon date, 95.4% probability) · cotton; plain weave, brocaded and complex alternating gauze with 3 or 5 shots of plain weave between gauze shots",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2005.5.1/2005.5.1_print.jpg",
+      "year": 1480
+    },
+    {
+      "title": "Padded Hat",
+      "meta": "Peru, North Coast, Chimú style, 1200-1460s · 1460–1625 (radiocarbon date, 95.4% probability) · cotton; plain weave, brocaded",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2005.5.4/2005.5.4_print.jpg",
+      "year": 1460
+    },
+    {
+      "title": "Backrest of a Litter",
+      "meta": "Central Andes, North Coast, Chimú people, late Intermediate period · 1185–1275 (radiocarbon date, 95.4% probability) · mixed media:  wood, gold alloy, pigment, shell inlay",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1952.233/1952.233_print.jpg",
+      "year": 1185
+    },
+    {
+      "title": "Band with Tassels",
+      "meta": "Peru, North Coast, Chimú style, 1200-1460s · 1455–1625 (radiocarbon date, 95% probability) · cotton; weft-faced plain weave",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2005.5.5/2005.5.5_print.jpg",
+      "year": 1455
+    },
+    {
+      "title": "Peruvian Textiles: Mantle or Hanging, Loincloth, Turban, Padded Hat, Band with Tassels",
+      "meta": "Peru, North Coast, Chimú style, 1200-1460s · 1405–1640 · cotton; plain weave, brocaded and complex alternating gauze with 3 or 5 shots of plain weave between gauze shots",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2005.5/2005.5_print.jpg",
+      "year": 1405
+    },
+    {
+      "title": "Darkware Vessel",
+      "meta": "Peru, North Coast, Chimú style (900-1470) · 900–1470 · black ware",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1951.181/1951.181_print.jpg",
+      "year": 900
+    },
+    {
+      "title": "Tunic and Band",
+      "meta": "Peru, Chimú or Chimú-Inka, 12th-16th century · 1100–1532 · white cotton; plain weave with supplementary weft brocading",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2011.111/2011.111_print.jpg",
+      "year": 1100
+    },
+    {
+      "title": "Double-chambered Vessel with Figures and Camelid",
+      "meta": "Andes, Chimú-Inka, late 15th - mid 16th century · 1470–1532 (Thermoluminescence date, 1310–1610) · ceramic",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2011.112/2011.112_print.jpg",
+      "year": 1470
+    },
+    {
+      "title": "Turban",
+      "meta": "Peru, North Coast, Chimú style · 1485–1640 (radiocarbon date, 95.4% probability) · Cotton; plain weave, brocaded and complex alternating gauze with 5 shots of plain weave between gauze shots",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2005.5.3/2005.5.3_print.jpg",
+      "year": 1485
+    },
+    {
+      "title": "Hunchback Vessel (Aryballos)",
+      "meta": "Central Andes (Peru), Chimú-Inka style, Late Horizon period · 1470–1521 (Thermoluminescence date, 1315–1615) · ceramic",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2015.69/2015.69_print.jpg",
+      "year": 1470
+    },
+    {
+      "title": "Plaque with Figures",
+      "meta": "Peru, North Coast, Chimú style (900-1470) · 900–1470 · hammered gold alloy",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1945.129/1945.129_print.jpg",
+      "year": 900
+    },
+    {
+      "title": "Disk",
+      "meta": "Central Andes, Lambayeque or Chimú people · 850–1460 · Silver",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2019.166/2019.166_print.jpg",
+      "year": 850
+    },
+    {
+      "title": "Finial of a Staff",
+      "meta": "Peru, North Coast, Chimú style (900-1470) · Chimú style (900–1470) · cast copper alloy",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1946.229/1946.229_print.jpg",
+      "year": 900
+    },
+    {
+      "title": "Carved Tube",
+      "meta": "Mexico, Oaxaca, Mixtec, 13th-16th century · c. 1200–1519 · bone",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1949.196/1949.196_print.jpg",
+      "year": 1200
+    },
+    {
+      "title": "Shell Pendant",
+      "meta": "Mexico, Oaxaca, Mixtec style · c. 1200–1519 · gold",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1952.86/1952.86_print.jpg",
+      "year": 1200
+    },
+    {
+      "title": "Eagle Ornament",
+      "meta": "Mexican, Oaxaca, Mixtec style · c. 1200–1519 · silver",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1947.290/1947.290_print.jpg",
+      "year": 1200
+    },
+    {
+      "title": "Figurine Pendant",
+      "meta": "Mexico, Oaxaca, Mixtec style · c. 1200–1519 · jade",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1945.121/1945.121_print.jpg",
+      "year": 1200
+    },
+    {
+      "title": "Drinking Cup",
+      "meta": "Mexico, Cholula(?), Mixteca-Puebla style · 900–1519 · pottery with burnished, colored slips",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1990.212/1990.212_print.jpg",
+      "year": 900
+    },
+    {
+      "title": "Pendant with Scribe Figure",
+      "meta": "Mexico, Mixtec?, 8th-11th Century · c. 700–1000 · jade",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1949.198/1949.198_print.jpg",
+      "year": 700
+    },
+    {
+      "title": "Necklace",
+      "meta": "Mexico, Oaxaca, Mixtec, 13th-16th century · c. 1200–1519 · gold, shell, turquoise",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1945.123/1945.123_print.jpg",
+      "year": 1200
+    },
+    {
+      "title": "Serpent Labret",
+      "meta": "Mexico, Oaxaca, Mixtec · 1350–1519 · rock crystal",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1990.206/1990.206_print.jpg",
+      "year": 1350
+    },
+    {
+      "title": "Serpent-form Fan Handle(?)",
+      "meta": "Central Mexico, Mixtec · 900–1519 · pale green jade",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1990.197/1990.197_print.jpg",
+      "year": 900
+    },
+    {
+      "title": "Axe-shaped Implement",
+      "meta": "Mexico, Oaxaca, Mixtec · 1200–1519 · cast and hammered copper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1990.216/1990.216_print.jpg",
+      "year": 1200
+    },
+    {
+      "title": "Chak Ak’ Paat Kuy (\"Red Turkey\") Playing the Ballgame",
+      "meta": "Guatemala · maya · 650–700 · Limestone",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/21fb136f-402e-1116-4e43-40ac73d3b2e8/full/843,/0/default.jpg",
+      "year": 650,
+      "artist": "Late Classic Maya"
+    },
+    {
+      "title": "Stela",
+      "meta": "Campeche state · maya · 702 · Limestone",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/d03d88d6-78f1-beaf-5e5f-073dbfe2fa81/full/843,/0/default.jpg",
+      "year": 702,
+      "artist": "Maker unknown"
+    },
+    {
+      "title": "Figure of a Standing Warrior",
+      "meta": "Yucatan Peninsula · maya · 650–800 · Ceramic with pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/21110de9-8212-a4a0-2774-63c3bc580844/full/843,/0/default.jpg",
+      "year": 650,
+      "artist": "Late Classic Maya, Jaina"
+    },
+    {
+      "title": "Figure of an Aristocratic Lady",
+      "meta": "Yucatan Peninsula · maya · 650–800 · Earthenware and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/f2fcce48-6190-d04c-ee5d-2ab53f9015a4/full/843,/0/default.jpg",
+      "year": 650,
+      "artist": "Late Classic Maya, Jaina"
+    },
+    {
+      "title": "Covered Vessel with the Principal Bird and Peccary Heads",
+      "meta": "Guatemala · maya · 200–300 · Ceramic and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/0e590bc5-d61d-92e6-4e3f-9d374e9f9438/full/843,/0/default.jpg",
+      "year": 200,
+      "artist": "Early Classic Maya"
+    },
+    {
+      "title": "Vessel Depicting a Sacrificial Ceremony for a Royal Accession",
+      "meta": "Mexico · maya · 753 · Ceramic and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/95831b0f-9e57-2436-04e5-6f51fd4c69b2/full/843,/0/default.jpg",
+      "year": 753,
+      "artist": "Late Classic Maya"
+    },
+    {
+      "title": "Standing Male Figure",
+      "meta": "Campeche state · maya · 650–800 · Ceramic and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/462a7412-74bb-12af-8e44-2be5619d488d/full/843,/0/default.jpg",
+      "year": 650,
+      "artist": "Late Classic Maya, Jaina"
+    },
+    {
+      "title": "Pectoral",
+      "meta": "Mexico · maya · 200–800 · Jadeite",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/61fb4e01-8b60-5703-0e42-5fa95d2967be/full/843,/0/default.jpg",
+      "year": 200,
+      "artist": "Classic Maya"
+    },
+    {
+      "title": "Royal Profile",
+      "meta": "Mexico · maya · 650–800 · Sandstone and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/b44a34c1-2fe7-714f-aeb7-38dddcf37d9d/full/843,/0/default.jpg",
+      "year": 650,
+      "artist": "Late Classic Maya"
+    },
+    {
+      "title": "Hieroglyphic Altar",
+      "meta": "Bonampak · maya · 650–700 · Limestone",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/471f2d10-c1e8-f0f7-2bca-ecadc8caf784/full/843,/0/default.jpg",
+      "year": 650,
+      "artist": "Late Classic Maya"
+    },
+    {
+      "title": "Abstract Portrait Vessel of a Ruler with Painted Face Resting on Feet",
+      "meta": "Peruvian North Coast · moche · -100–500 · Ceramic and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/6545873f-56c1-7192-7332-0c1f3fc50b87/full/843,/0/default.jpg",
+      "year": -100,
+      "artist": "Moche"
+    },
+    {
+      "title": "Stirrup Spout Vessel with Fineline Enthroned Warrior Motif",
+      "meta": "Peruvian North Coast · moche · -100–500 · Ceramic and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/cb340983-cdae-7b8a-0927-2a0aad13318d/full/843,/0/default.jpg",
+      "year": -100,
+      "artist": "Moche"
+    },
+    {
+      "title": "Jar in the Form of a Phallus",
+      "meta": "Peruvian North Coast · moche · -100–500 · Ceramic and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/b13348c3-a27d-356d-8c1b-0b12ea91fcb4/full/843,/0/default.jpg",
+      "year": -100,
+      "artist": "Moche"
+    },
+    {
+      "title": "Portrait Vessel",
+      "meta": "Peruvian North Coast · moche · 600–700 · Earthenware and mineral slips",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/239e0072-de08-cb26-1484-4776fc27b0fb/full/843,/0/default.jpg",
+      "year": 600,
+      "artist": "Ceramist unknown"
+    },
+    {
+      "title": "Jar in the Form of an Abstract Figure with Modeled Head and Wide Collar",
+      "meta": "Peruvian North Coast · moche · -100–500 · Ceramic and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/6175b715-7e70-df08-4eef-d0de4262236e/full/843,/0/default.jpg",
+      "year": -100,
+      "artist": "Moche"
+    },
+    {
+      "title": "Vessel in the Shape of a Bird",
+      "meta": "Trujillo · moche · -100–500 · Ceramic and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/d8a0267f-1923-23a2-d464-f035e4911b27/full/843,/0/default.jpg",
+      "year": -100,
+      "artist": "Moche"
+    },
+    {
+      "title": "Handle Spout Jug with Quadruped Motifs",
+      "meta": "Peruvian North Coast · moche · -100–500 · Ceramic and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/3ae73c1c-5ccb-f5a1-3b17-d00775ecb3de/full/843,/0/default.jpg",
+      "year": -100,
+      "artist": "Moche"
+    },
+    {
+      "title": "Jar in the Form of a Captive with Modeled Head, Rope Encircling Neck, and Tied Hands",
+      "meta": "Peruvian North Coast · moche · -100–500 · Ceramic and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/5d4579b9-eb8f-5afd-3e2e-89443d6e69cd/full/843,/0/default.jpg",
+      "year": -100,
+      "artist": "Moche"
+    },
+    {
+      "title": "Handle Spout Vessel with Relief Depicting a Standing Figure, Holding Farming Tools",
+      "meta": "Peruvian North Coast · moche · -100–500 · Ceramic and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/dd99500f-608a-c658-8747-106df4bc1c88/full/843,/0/default.jpg",
+      "year": -100,
+      "artist": "Moche"
+    },
+    {
+      "title": "Square Handle Spout Vessel with Form of a Bird Eating a Lizard",
+      "meta": "Peruvian North Coast · moche · -100–500 · Ceramic and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/10971180-8352-9a78-cfc5-2259b2f9b36d/full/843,/0/default.jpg",
+      "year": -100,
+      "artist": "Moche"
+    },
+    {
+      "title": "Bottle",
+      "meta": "Peru · ca. 400 - 700",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2010DR2434/full/735,/0/default.jpg",
+      "year": 400
+    },
+    {
+      "title": "Vessel",
+      "meta": "Peru · 100-200",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2008BT0682/full/735,/0/default.jpg",
+      "year": 100
+    },
+    {
+      "title": "Tassels",
+      "meta": "Peru · nazca · 500–900",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/613db21a-2374-30b4-3b2a-1fc1ee4b3795/full/843,/0/default.jpg",
+      "year": 500,
+      "artist": "Nasca"
+    },
+    {
+      "title": "Fragment (Border)",
+      "meta": "Peru · nazca · -100–200",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/077a96b5-3106-e7b7-1d0f-3c024be4f1f3/full/843,/0/default.jpg",
+      "year": -100,
+      "artist": "Nasca"
+    },
+    {
+      "title": "Tapestry Medallion",
+      "meta": "Peru · nazca · 600–700",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/24897d56-c606-e778-629c-23831abd32fa/full/843,/0/default.jpg",
+      "year": 600,
+      "artist": "Nasca"
+    },
+    {
+      "title": "Fragment Displaying Stepped-Fret Motif",
+      "meta": "Peru · nazca · 200–500 · Wool (camelid) and cotton",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/8011b91d-829b-e4ff-6358-c3631b416005/full/843,/0/default.jpg",
+      "year": 200,
+      "artist": "Nasca"
+    },
+    {
+      "title": "Sampler",
+      "meta": "Peru · nazca · 1–200 · Cotton",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/ac436ad7-0d3e-d8f1-11fe-185ce5d6eb07/full/843,/0/default.jpg",
+      "year": 1,
+      "artist": "Nasca"
+    },
+    {
+      "title": "Rounded Jar Depicting Abstract Fish or Sharks",
+      "meta": "Peru · nazca · -180–500 · Ceramic and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/0c948be5-3ea6-2f46-e30a-de864d3c1cc5/full/843,/0/default.jpg",
+      "year": -180,
+      "artist": "Nazca"
+    },
+    {
+      "title": "Vase",
+      "meta": "Peru · 100 BC to 600 AD",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2006AL4629/full/735,/0/default.jpg",
+      "year": -100
+    },
+    {
+      "title": "Pouring vessel",
+      "meta": "Peru · AD 100-400",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2006AL4628/full/735,/0/default.jpg",
+      "year": 100
+    },
+    {
+      "title": "Band",
+      "meta": "Peru",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2011ER9546/full/735,/0/default.jpg"
+    },
+    {
+      "title": "Panel",
+      "meta": "Peru · 900-1400",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2019LX3711/full/735,/0/default.jpg",
+      "year": 900
+    },
+    {
+      "title": "Hat",
+      "meta": "Peru · huari · 600–900 · Wool (camelid)",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/bb23dce6-bea2-6ece-5fe2-2a4bbd20b539/full/843,/0/default.jpg",
+      "year": 600,
+      "artist": "Wari"
+    },
+    {
+      "title": "Fragment (From a Tunic)",
+      "meta": "Peru · Pre-Columbian · 600–800",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/5b6a7aa0-55d9-51cf-5fab-ec098f96fa5a/full/843,/0/default.jpg",
+      "year": 600,
+      "artist": "Wari"
+    },
+    {
+      "title": "Fragment (Band)",
+      "meta": "Peru · huari · 800–1100 · Cotton and wool (camelid)",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/0edca65c-1a16-2c6d-7968-fec50aaa2257/full/843,/0/default.jpg",
+      "year": 800,
+      "artist": "Provincial Wari"
+    },
+    {
+      "title": "Mantle",
+      "meta": "Peru · huari · 600–800 · Wool",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/a6ea2716-94d5-b309-fd69-72aae6601b2e/full/843,/0/default.jpg",
+      "year": 600,
+      "artist": "Wari"
+    },
+    {
+      "title": "Headband",
+      "meta": "Peru · huari · 800–1100 · Cotton and wool (camelid)",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/6f594ea9-376a-d7e2-b867-5082b967ceac/full/843,/0/default.jpg",
+      "year": 800,
+      "artist": "Provincial Wari"
+    },
+    {
+      "title": "Cap (headgear)",
+      "meta": "Peru · 700-900",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2012FT7135/full/735,/0/default.jpg",
+      "year": 700
+    },
+    {
+      "title": "Tunic with Profile Animal and Human Heads",
+      "meta": "Peru, South Coast, Wari Culture, Middle Horizon, 8th-12th Century · c. 700–1100 · tapestry weave: wool",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1949.12/1949.12_print.jpg",
+      "year": 700
+    },
+    {
+      "title": "Minature Handled Bowl with Textile-like Design",
+      "meta": "Southern Peru · inca · 1450–1532 · Ceramic and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/5219a85f-96af-6862-1a46-cde6c4f6538e/full/843,/0/default.jpg",
+      "year": 1450,
+      "artist": "Inca"
+    },
+    {
+      "title": "Drinking Vessel (Kero)",
+      "meta": "Peru · inca · 1100–1200 · Ceramic and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/3459c00e-3452-7140-5158-0bc8c81a8f2b/full/843,/0/default.jpg",
+      "year": 1100,
+      "artist": "Inca"
+    },
+    {
+      "title": "Shawl",
+      "meta": "Peru · inca · Cotton",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/0eca785e-dd02-2a1d-564e-9a8dfb65bc55/full/843,/0/default.jpg",
+      "artist": "Peru"
+    },
+    {
+      "title": "Carrying Cloth",
+      "meta": "Peru · inca · 1476–1532 · Double cloth; edges embroidered with wool yarn; braided straps at each corner ending in tassels",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/1de9688e-5134-f213-f92e-b7e95f3e8fc5/full/843,/0/default.jpg",
+      "year": 1476,
+      "artist": "Provincial Inca"
+    },
+    {
+      "title": "Miniature Single-Handled Jar with Textile-like Pattern",
+      "meta": "Southern Peru · inca · 1450–1532 · Ceramic and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/ad304156-e598-cbdc-6067-f538e59cc0a9/full/843,/0/default.jpg",
+      "year": 1450,
+      "artist": "Inca"
+    },
+    {
+      "title": "Fragment from the Topacu Waistband of a Tunic (Uncu)",
+      "meta": "Peru · inca · 1532–1700 · Cotton and wool (camelid)",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/b14e66c6-5d57-7949-84f4-d55e57e703a6/full/843,/0/default.jpg",
+      "year": 1532,
+      "artist": "Colonial Inca"
+    },
+    {
+      "title": "Fragment from the Shoulder of a Tunic (Uncu)",
+      "meta": "Peru · inca · 1532–1700 · Cotton and wool (camelid)",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/bcfe65d9-5e71-e511-cd46-d9b8053dc418/full/843,/0/default.jpg",
+      "year": 1532,
+      "artist": "Colonial Inca"
+    },
+    {
+      "title": "Old Woman Seated against Ancient Inca Wall in Market at Chinchero, Peru",
+      "meta": "Peru · ca. 1965",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2025PH1303/full/735,/0/default.jpg",
+      "year": 1965,
+      "artist": "Bunzl, George"
+    },
+    {
+      "title": "Coronation Stone of Moctezuma Xocoyotzin",
+      "meta": "Tenochtitlan · mexica (aztec) · 1503 · Basalt",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/ea8c5d62-6ce8-88e8-feb1-e0053cf534c5/full/843,/0/default.jpg",
+      "year": 1503,
+      "artist": "Maker unknown"
+    },
+    {
+      "title": "Ritual Impersonator of the Deity Xipe Totec",
+      "meta": "Veracruz state · aztec · 1450–1500 · Ceramic and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/6ad471c9-4348-0b3e-875a-fbcdb4bddd6b/full/843,/0/default.jpg",
+      "year": 1450,
+      "artist": "Aztec"
+    },
+    {
+      "title": "Head of Xilonen, the Goddess of Young Maize",
+      "meta": "Tenochtitlan · aztec · 1400–1500 · Basalt",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/8a8cd075-d006-6344-178b-7855845bb702/full/843,/0/default.jpg",
+      "year": 1400,
+      "artist": "Aztec"
+    },
+    {
+      "title": "Flower-Shaped Ear Ornaments",
+      "meta": "Mexico · aztec · 1401–1533 · Ceramic and gold foil",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/14d23d30-9ac4-3dc2-9e3e-ccd02d5a7477/full/843,/0/default.jpg",
+      "year": 1401,
+      "artist": "Aztec"
+    },
+    {
+      "title": "Earflare with Flower-like Modeled Relief",
+      "meta": "Valley of Mexico · aztec · 1450–1521 · Ceramic",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/5b7e83f2-e6ee-b6a7-6776-d2d0f216dc9d/full/843,/0/default.jpg",
+      "year": 1450,
+      "artist": "Aztec"
+    },
+    {
+      "title": "Ear Ornament or Spindle Whorl with Modeled Design",
+      "meta": "Valley of Mexico · aztec · 1450–1700 · Ceramic",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/459a1413-9016-f0bd-48a6-c932ed798b2d/full/843,/0/default.jpg",
+      "year": 1450,
+      "artist": "Aztec"
+    },
+    {
+      "title": "Stamp Depicting a Plant-like Motf",
+      "meta": "Mexico · aztec · 1000–1500 · Ceramic with pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/ecbf053a-4a9c-11cb-b1a1-e937d2139cc8/full/843,/0/default.jpg",
+      "year": 1000,
+      "artist": "Possibly Zapotec or Aztec"
+    },
+    {
+      "title": "Ear Ornament or Spindle Whorl with Modeled Frog Motifs",
+      "meta": "Valley of Mexico · aztec · 1450–1521 · Ceramic",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/099beae3-bcd5-a9fe-ed59-fa37b7683e9f/full/843,/0/default.jpg",
+      "year": 1450,
+      "artist": "Aztec"
+    },
+    {
+      "title": "Corn grinder",
+      "meta": "Mexico",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2019MC2882/full/735,/0/default.jpg"
+    },
+    {
+      "title": "Figure",
+      "meta": "Mexico · 15th century-early 16th century?",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2010DR2516/full/735,/0/default.jpg"
+    },
+    {
+      "title": "Standing Figurine",
+      "meta": "Mexico · olmec · -800–-400 · Green hornfels and cinnabar",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/8bbfabad-4bd4-6cc6-daa6-73b59e93117b/full/843,/0/default.jpg",
+      "year": -800,
+      "artist": "Olmec"
+    },
+    {
+      "title": "Cup with Profile Head of the Maize God",
+      "meta": "Valley of Mexico · olmec · -800–-400 · Earthenware with burnished slip",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/92ca6d70-a7a2-fd5b-1c34-6bc698c5ae10/full/843,/0/default.jpg",
+      "year": -800,
+      "artist": "Olmec"
+    },
+    {
+      "title": "Seated Female Figure",
+      "meta": "Mexico · olmec · -800–-400 · Ceramic and pigment with cinnabar",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/8a9e34b7-fbdf-b480-0a9f-1584e3281c6e/full/843,/0/default.jpg",
+      "year": -800,
+      "artist": "Olmec"
+    },
+    {
+      "title": "Spouted Dish with King Vulture Heads",
+      "meta": "Mexico · olmec · -800–-400 · Earthenware with kaolin slip and cinnabar",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/b2a7a4d6-9dba-2336-7dd3-dbdfe9589899/full/843,/0/default.jpg",
+      "year": -800,
+      "artist": "Olmec"
+    },
+    {
+      "title": "Roller Seal",
+      "meta": "Mexico · olmec · -800–-400 · Stone",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/dbc3e771-961c-18be-413c-3a10f00ef8af/full/843,/0/default.jpg",
+      "year": -800,
+      "artist": "Olmec"
+    },
+    {
+      "title": "Figure of a Woman in Ceremonial Dress",
+      "meta": "Southern Veracruz · Nōpiloa · 700–900 · Ceramic",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/0c401d87-c860-17b8-678a-4b9ae85ca758/full/843,/0/default.jpg",
+      "year": 700,
+      "artist": "Possibly Totonac, Nopiloa"
+    },
+    {
+      "title": "Ballplayer Figurine",
+      "meta": "Veracruz state · huastec · 750–1450 · Earthenware and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/ab48fc9a-7881-e616-a812-04b7b26e4bbd/full/843,/0/default.jpg",
+      "year": 750,
+      "artist": "Huaxtec"
+    },
+    {
+      "title": "Ceremonial Ballgame Yoke",
+      "meta": "Veracruz state · totonac · 700–800 · Serpentine",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/37fb6a4a-74ee-f46c-0404-8838c413402a/full/843,/0/default.jpg",
+      "year": 700,
+      "artist": "Totonac"
+    },
+    {
+      "title": "Figure Carried in a Litter",
+      "meta": "Veracruz state · classic veracruz · 600–950 · Earthenware and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/1e3e7a4e-ac4d-fcb9-a54b-90aa2b89053a/full/843,/0/default.jpg",
+      "year": 600,
+      "artist": "Late Classic Veracruz"
+    },
+    {
+      "title": "Dancing Figure Wearing Animal Headdress and Ornate Costume",
+      "meta": "South Central Veracruz · classic veracruz · 600–900 · Ceramic and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/9f57dc3d-61cc-c849-9f3c-7240ede8a59a/full/843,/0/default.jpg",
+      "year": 600,
+      "artist": "Late Classic Veracruz"
+    },
+    {
+      "title": "Tripod Polychrome Bowl Depicting a Serpent with Feathers",
+      "meta": "Southern Veracruz · classic veracruz · 500–750 · Ceramic and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/6765831b-1a81-4848-7127-dcda62dda13d/full/843,/0/default.jpg",
+      "year": 500,
+      "artist": "Classic Veracruz"
+    },
+    {
+      "title": "Heart-Shaped Sculpture",
+      "meta": "Veracruz state · veracruz · 100–1000 · Earthenware and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/31d3f91f-dfe6-9034-d936-a3dac43e488b/full/843,/0/default.jpg",
+      "year": 100,
+      "artist": "Classic Veracruz"
+    },
+    {
+      "title": "Box",
+      "meta": "Mexico · 1700-1750",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2013GV1991/full/735,/0/default.jpg",
+      "year": 1700
+    },
+    {
+      "title": "Mural Fragment with Elite Male and Maguey Cactus Leaves",
+      "meta": "Central Mexico, Tlacuilapaxco apartment compound(?), Teotihuacán style, Classic Period · 500–550 · fresco on wall fragment",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1963.252/1963.252_print.jpg",
+      "year": 500
+    },
+    {
+      "title": "Figurine Head Fragment",
+      "meta": "Central Mexico, Teotihuacán, Classic period · 150–350 CE · ceramic, pigment",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1921.1709/1921.1709_print.jpg",
+      "year": 150
+    },
+    {
+      "title": "Vessel with Butterfly Headdress",
+      "meta": "Central Mexico, Teotihuacán, Classic period · 1–550 CE · ceramic, stucco, pigment",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1990.231/1990.231_print.jpg",
+      "year": 200
+    },
+    {
+      "title": "Necklace and Nose Ornament",
+      "meta": "Central Mexico, Teotihuacán, Classic period · 150–200 CE · jadeite-albitite?, gold",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1990.263/1990.263_print.jpg",
+      "year": 150
+    },
+    {
+      "title": "Butterfly Nose Ornament",
+      "meta": "Central Mexico, Teotihuacán, Classic period · 150–200 CE · jadeite-albitite?",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1990.263.2/1990.263.2_print.jpg",
+      "year": 150
+    },
+    {
+      "title": "Mural Fragment Depicting a Maguey Bloodletting Ritual",
+      "meta": "Valley of Mexico · teotihuacán · 500–600 · Lime plaster with mineral pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/09d2b000-8e44-c735-5099-126d6453aaaa/full/843,/0/default.jpg",
+      "year": 500,
+      "artist": "Teotihuacan"
+    },
+    {
+      "title": "Mask from an Incense Burner Portraying the Old Deity of Fire",
+      "meta": "Valley of Mexico · teotihuacán · 450–750 · Ceramic and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/15da2bf5-9976-06d3-a7e7-0a56446299d2/full/843,/0/default.jpg",
+      "year": 450,
+      "artist": "Teotihuacan"
+    },
+    {
+      "title": "Mirror with Jaguar or Coyote Mosaic",
+      "meta": "Mexico · teotihuacán · 500–600 · Iron pyrite",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/6080deab-bd2b-3896-e711-2a501c8d4d66/full/843,/0/default.jpg",
+      "year": 500,
+      "artist": "Teotihuacan"
+    },
+    {
+      "title": "Bowl Depicting a Female Figure with Shield and Darts Motifs",
+      "meta": "Valley of Mexico · teotihuacán · 300–600 · Ceramic",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/ac08eb6b-a3ac-08de-c33b-075e1c93ca39/full/843,/0/default.jpg",
+      "year": 300,
+      "artist": "Teotihuacan"
+    },
+    {
+      "title": "Tripod Vessel with a Blowgunner Scene",
+      "meta": "Mexico · teotihuacán · 300–500 · Earthenware",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/96900cc1-d9cf-5e6b-ce5b-e5bcc83872d9/full/843,/0/default.jpg",
+      "year": 300,
+      "artist": "Teotihuacan"
+    },
+    {
+      "title": "Box Fragment",
+      "meta": "Valley of Mexico · teotihuacán · 300–750 · Wood",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/eeca3429-0f89-4bb4-311f-01a102abc7c9/full/843,/0/default.jpg",
+      "year": 300,
+      "artist": "Teotihuacan"
+    },
+    {
+      "title": "Ritual Mask",
+      "meta": "Mexico · teotihuacán · 300–750 · Stone",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/bee61f99-0abc-ca3d-e62e-7c9a66475e1d/full/843,/0/default.jpg",
+      "year": 300,
+      "artist": "Teotihuacan"
+    },
+    {
+      "title": "Double-Chambered Vessel",
+      "meta": "Mexico · teotihuacán · 1–700 · Earthenware",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/1ea4fe82-702a-60b2-53de-e70e7e997f1e/full/843,/0/default.jpg",
+      "year": 1,
+      "artist": "Teotihuacan"
+    },
+    {
+      "title": "Basket with Rattle Top",
+      "meta": "Northwest Coast, Tlingit, 20th century · before 1929 · twined",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1929.282/1929.282_print.jpg",
+      "year": 1900
+    },
+    {
+      "title": "Dance Blanket with Diving Whale and Raven Motifs",
+      "meta": "Northwest Coast · chilkat · 1880–1900 · Wool and bark",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/58a44f4c-3d3f-c93a-a4bb-44c68f8b4267/full/843,/0/default.jpg",
+      "year": 1880,
+      "artist": "Chilkat Tlingit"
+    },
+    {
+      "title": "Fragments",
+      "meta": "Peru · chancay · 1000–1476",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/2ccef08d-2a93-1bed-3c7a-a0460f1a8ef7/full/843,/0/default.jpg",
+      "year": 1000,
+      "artist": "Possibly Chancay"
+    },
+    {
+      "title": "Headcloth",
+      "meta": "Peru · chancay · 1000–1476 · Cotton",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/2c686486-1b83-9d72-cd88-1a85a557c41d/full/843,/0/default.jpg",
+      "year": 1000,
+      "artist": "Chancay"
+    },
+    {
+      "title": "Carved Box Incised with Figures, Birds, and Textile Patterns",
+      "meta": "Peru · chancay · 1000–1532 · Wood",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/685580c7-aabb-c241-e56d-761e2eb9dadb/full/843,/0/default.jpg",
+      "year": 1000,
+      "artist": "Chancay"
+    },
+    {
+      "title": "Border",
+      "meta": "Peru · chancay · 1000–1476 · Cotton and wool (camelid)",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/a849ad5b-0588-7984-a9dd-0810bac02797/full/843,/0/default.jpg",
+      "year": 1000,
+      "artist": "Chancay"
+    },
+    {
+      "title": "Dolls",
+      "meta": "Peru · chancay · 1950–1984 · Contemporary assemblage of materials from a variety of past cultures. Cotton and wool",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/8f99b50d-8f2f-fb8f-ba69-12cf240bffb9/full/843,/0/default.jpg",
+      "year": 1950,
+      "artist": "Chancay"
+    },
+    {
+      "title": "Border Fragment",
+      "meta": "Peru · chancay · 1000–1476 · Cotton and wool (camelid)",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/e87f8da5-660c-d7de-354e-9dfefd318895/full/843,/0/default.jpg",
+      "year": 1000,
+      "artist": "Chancay"
+    },
+    {
+      "title": "Amphora",
+      "meta": "Peru · 1100-1440",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2010EB1527/full/735,/0/default.jpg",
+      "year": 1100
+    },
+    {
+      "title": "Set of four dolls",
+      "meta": "Peru · ca. 1900-1985",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2006BC8903/full/735,/0/default.jpg",
+      "year": 1900
+    },
+    {
+      "title": "Cuff band",
+      "meta": "Peru · 1100-1400",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2019LX3810/full/735,/0/default.jpg",
+      "year": 1100
+    },
+    {
+      "title": "Blackware Jar with Single Spout",
+      "meta": "Peruvian North Coast · chimú · 1200–1450 · Ceramic",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/23b4bf92-ef74-b49b-5c3f-6ed8b0798f05/full/843,/0/default.jpg",
+      "year": 1200,
+      "artist": "Chimú"
+    },
+    {
+      "title": "Ceremonial Knife (Tumi)",
+      "meta": "Peruvian North Coast · chimú · 1100–1470 · Gold with turquoise inlay",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/801ac46f-ead4-a77a-8523-34dfade43877/full/843,/0/default.jpg",
+      "year": 1100,
+      "artist": "Chimú"
+    },
+    {
+      "title": "Jar with Relief of Standing Figure with Crescent Headdress, Holding Ritual Objects",
+      "meta": "Peruvian North Coast · chimú · 1200–1450 · Ceramic",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/942186a8-5868-f011-fe47-315f05dfab23/full/843,/0/default.jpg",
+      "year": 1200,
+      "artist": "Chimú"
+    },
+    {
+      "title": "Jar Shaped like an Curling Insect with Single Spout in the Form of a Human Head",
+      "meta": "Peruvian North Coast · chimú · 1200–1450 · Ceramic",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/a7cd147d-2a4d-0720-460c-4a9f9586ec55/full/843,/0/default.jpg",
+      "year": 1200,
+      "artist": "Chimú"
+    },
+    {
+      "title": "Handle Spout Vessel Depicting Seated Figure Drinking from Cup",
+      "meta": "Peruvian North Coast · chimú · 1200–1450 · Ceramic and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/0a28db83-3ddf-130f-1d1a-f7404cc70e20/full/843,/0/default.jpg",
+      "year": 1200,
+      "artist": "Possibly Chimú"
+    },
+    {
+      "title": "Single Spout Blackware Vessel in the Form of a Duck",
+      "meta": "Peruvian North Coast · chimú · 1000–1400 · Ceramic and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/bc262a64-bf94-1a3a-68ba-0ac496940e6b/full/843,/0/default.jpg",
+      "year": 1000,
+      "artist": "Chimú"
+    },
+    {
+      "title": "Feathered Tunic",
+      "meta": "Peru · chimú · 1470–1532 · Cotton",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/ff7bc41b-f7c6-a8fa-553d-00ea8a70bc91/full/843,/0/default.jpg",
+      "year": 1470,
+      "artist": "Chimú"
+    },
+    {
+      "title": "Collar",
+      "meta": "Peruvian North Coast · chimú · 1200–1470 · Gold alloy",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/c0d4307c-c42c-9c0c-57d6-63e2dfdc0b6e/full/843,/0/default.jpg",
+      "year": 1200,
+      "artist": "Metalworker unknown"
+    },
+    {
+      "title": "Double-Chambered Strap Vessel with Sculpted Bird Head",
+      "meta": "Peruvian North Coast · chimú · 1200–1450 · Ceramic",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/154f1603-ee93-af18-bc97-6ec5bc3fcdde/full/843,/0/default.jpg",
+      "year": 1200,
+      "artist": "Chimú"
+    },
+    {
+      "title": "Jar",
+      "meta": "Peru · ca. 1200-1460",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2010DR2442/full/735,/0/default.jpg",
+      "year": 1200
+    },
+    {
+      "title": "Mosaic Disk with a Mythological and Historical Scene",
+      "meta": "Oaxaca state · mixtec · 1401–1500 · Turquoise",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/19443b96-d83b-062c-16bf-a2133a706f15/full/843,/0/default.jpg",
+      "year": 1401,
+      "artist": "Mixtec"
+    },
+    {
+      "title": "Tripod Vessel",
+      "meta": "Oaxaca state · mixtec · 100–300 · Alabaster",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/9a9345a4-b54b-aea3-ce08-d41cc9b5a392/full/843,/0/default.jpg",
+      "year": 100,
+      "artist": "Mixtec"
+    },
+    {
+      "title": "Shell, Possibly an Arm Band, Incised with Profile Head Framed by Geometric Motifs (Fragment)",
+      "meta": "Guerrero state · mixtec · 1200 · Shell",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/a54401db-25c2-f1dd-6b25-50f8c86dfbcc/full/843,/0/default.jpg",
+      "year": 1200,
+      "artist": "Artist unknown"
+    },
+    {
+      "title": "Urn Figure",
+      "meta": "Mexico, Oaxaca, Zapotec · c. 150 BCE–200 CE (thermoluminescence date, 60 BCE–642 CE) · earthenware",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1990.273/1990.273_print.jpg",
+      "year": -155
+    },
+    {
+      "title": "Urn Figure Head Fragment",
+      "meta": "Mexico, Oaxaca, Zapotec · c. 200–500 CE · earthenware",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1990.275/1990.275_print.jpg",
+      "year": 200
+    },
+    {
+      "title": "Architectural Sculpture Fragment",
+      "meta": "Mexico, Oaxaca, Zapotec · c. 700–1000 · unfired clay, covered with painted stucco",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1996.401/1996.401_print.jpg",
+      "year": 700
+    },
+    {
+      "title": "Pendant Plaque",
+      "meta": "Mexico, Oaxaca, Zapotec, 6th-8th Century · c. 500–700 · jade",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1948.358/1948.358_print.jpg",
+      "year": 500
+    },
+    {
+      "title": "Figural Vessel",
+      "meta": "Mexico, Oaxaca, Zapotec · c. 500–150 BCE · earthenware",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1990.276/1990.276_print.jpg",
+      "year": -500
+    },
+    {
+      "title": "Funerary Urn",
+      "meta": "Mexico, Oaxaca, Zapotec · 350–500 CE · terracotta",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1944.78/1944.78_print.jpg",
+      "year": 350
+    },
+    {
+      "title": "Whistle Figure",
+      "meta": "Mexico, Oaxaca, Zapotec, Monte Albáb IIIB · 500–1000 · molded pottery",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1990.274/1990.274_print.jpg",
+      "year": 500
+    },
+    {
+      "title": "Mexico 1968",
+      "meta": "Mexico · ca. 1968",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2009CC0308/full/735,/0/default.jpg",
+      "year": 1968
+    },
+    {
+      "title": "Disc from an Earflare Inscied with a Figure in Contoured Pose",
+      "meta": "Veracruz Llave · huastec · 1200–1500 · Shell with wood",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/e8266735-42e7-bd7a-22f8-54401a4ded81/full/843,/0/default.jpg",
+      "year": 1200,
+      "artist": "Huaxtec"
+    },
+    {
+      "title": "Plate with an Image of a Moth",
+      "meta": "Veracruz state · huastec · 850–1250 · Earthenware and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/76f70cf7-43ea-f5e8-7913-76ee29e5d9b2/full/843,/0/default.jpg",
+      "year": 850,
+      "artist": "Huaxtec"
+    },
+    {
+      "title": "Hubbell Revival-Style Rug with Moki (Moqui) Stripes",
+      "meta": "America, Native North American, Southwest, Navajo (Dine), female artist · c. 1890–1910 · Wool (Germantown): tapestry weave",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1917.62/1917.62_print.jpg",
+      "year": 1890
+    },
+    {
+      "title": "Wearing Blanket",
+      "meta": "Native North American, Southwest, Navajo (Dine), woman artist · late 1800s · Wool (handspun): tapestry weave",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1921.948/1921.948_print.jpg",
+      "year": 1875
+    },
+    {
+      "title": "Fourth-Phase Chief Blanket Style Rug",
+      "meta": "Native North America, Southwest, Diné (Navajo) · c. 1900 · tapestry weave: wool (handspun, Germantown, and bayeta)",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1937.903/1937.903_print.jpg",
+      "year": 1890
+    },
+    {
+      "title": "Woman’s Two-Piece Dress (Biil’éé)",
+      "meta": "Native North America, Southwest, Diné (Navajo) · c. 1880–85 · Wool: tapestry weave",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1929.921/1929.921_print.jpg",
+      "year": 1875
+    },
+    {
+      "title": "\"Navajo Style\" Belt/Sash",
+      "meta": "America, Native North American, Southwest, Navajo, Post-Contact, Early Period · c 1890–1917 · warp face plain weave with supplementary warp float; cotton and wool",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1917.74/1917.74_print.jpg",
+      "year": 1890
+    },
+    {
+      "title": "Wearing Blanket with Moki (Moqui) Stripes",
+      "meta": "America, Native North American, Southwest, (Dine) Navajo or Zuni Pueblo, female artist · 1865–75 · Wool (handspun, Germantown, and bayeta): tapestry weave",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1921.564/1921.564_print.jpg",
+      "year": 1860
+    },
+    {
+      "title": "\"Navajo Style\" Belt/ Sash",
+      "meta": "America, Native North American, Southwest, Navajo, Post-Contact, Early Period · c. 1900–1930 · warp face plain weave with supplementary warp float: wool and cotton",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1937.778/1937.778_print.jpg",
+      "year": 1890
+    },
+    {
+      "title": "Chief Blanket (Third Phase)",
+      "meta": "Navajo · navajo · 1855–1865 · Wool",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/eaf75c38-a467-4408-5276-2c2e21bc8ca9/full/843,/0/default.jpg",
+      "year": 1855,
+      "artist": "Navajo"
+    },
+    {
+      "title": "\"Germantown Eye-Dazzler\" Rug",
+      "meta": "New Mexico · navajo · 1800–1890 · Cotton and wool dovetailed tapestry weave",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/3f96e27c-a75d-af79-1615-252dee332787/full/843,/0/default.jpg",
+      "year": 1800,
+      "artist": "Navajo"
+    },
+    {
+      "title": "Blanket",
+      "meta": "Navajo · navajo · 1880–1899 · Cotton and wool",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/20a3031f-f216-bb02-74f0-ccb547b44644/full/843,/0/default.jpg",
+      "year": 1880,
+      "artist": "Navajo"
+    },
+    {
+      "title": "Wearing Blanket (Phase II)",
+      "meta": "Navajo · navajo · 1850–1865 · Wool; single interlocking tapestry weave; twined edges",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/02cd860f-126b-5e55-080c-cf9c507b8dfb/full/843,/0/default.jpg",
+      "year": 1850,
+      "artist": "Navajo"
+    },
+    {
+      "title": "Blanket or Rug",
+      "meta": "Navajo · navajo · 1895–1905 · Wool",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/2e68055c-ed21-e6ba-e08f-1bda04fe9f87/full/843,/0/default.jpg",
+      "year": 1895,
+      "artist": "Navajo"
+    },
+    {
+      "title": "\"Eye-Dazzler\" Weaving",
+      "meta": "Navajo · navajo · 1880–1900 · Cotton and wool",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/2c02aabf-d2dc-e63a-0a3e-fabb3db7c42c/full/843,/0/default.jpg",
+      "year": 1880,
+      "artist": "Navajo"
+    },
+    {
+      "title": "Concho Belt",
+      "meta": "Arizona · navajo · 1880–1895 · Silver and leather",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/d8072b2a-2415-5f4d-cb94-654264bd3f86/full/843,/0/default.jpg",
+      "year": 1880,
+      "artist": "Navajo"
+    },
+    {
+      "title": "Hair-Pipe Necklace",
+      "meta": "Native North America, Plains, Nakota (Yankton or Yanktonai Sioux)? · early 1900s · Cow-bone hair pipes, glass beads, brass beads, silk ribbon, metal coin, Native-tanned hide or rawhide stringing, vegetable-tanned hide separators",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1932.50/1932.50_print.jpg",
+      "year": 1900
+    },
+    {
+      "title": "Awl Case",
+      "meta": "Native North America, Plains, Gaigwu (Kiowa) · c. 1890 · Native-tanned hide, glass beads, cotton thread",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1934.241/1934.241_print.jpg",
+      "year": 1885
+    },
+    {
+      "title": "Boy's Vest",
+      "meta": "Plains, Lakota (Sioux), 19th century · c. 1880 · beadwork",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1982.62/1982.62_print.jpg",
+      "year": 1875
+    },
+    {
+      "title": "Cradle or Baby Carrier",
+      "meta": "Native North America, Plains, Lakota (Sioux) · c. 1900 · Native-tanned hide, cotton cloth, glass beads, metal beads, brass bell, sinew thread, cotton thread",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1984.1047/1984.1047_print.jpg",
+      "year": 1895
+    },
+    {
+      "title": "Blanket Strip",
+      "meta": "Native North America, Plains, Tsitsistas (Cheyenne) · c. 1900 · Native-tanned hide, glass beads, metal beads, sinew thread",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1937.865/1937.865_print.jpg",
+      "year": 1895
+    },
+    {
+      "title": "Pipe or Tobacco Bag",
+      "meta": "Native North America, Plains, Tsitsistas (Cheyenne) · c. 1870 · Native-tanned hide, yellow pigment, glass beads, red trade cloth, tin cones, sinew thread",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1937.871/1937.871_print.jpg",
+      "year": 1865
+    },
+    {
+      "title": "Bag",
+      "meta": "Plains or Northeastern Woodlands, Nehiyawak (Cree) or Metis People · 1850–1900 · beadwork on cloth",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1956.831/1956.831_print.jpg",
+      "year": 1850
+    },
+    {
+      "title": "Storage Bag",
+      "meta": "Native North America, Plains, Lakota (Sioux) · late 1800s · Native-tanned hide, glass beads, dyed horsehair, tin cones, sinew thread",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1937.850/1937.850_print.jpg",
+      "year": 1880
+    },
+    {
+      "title": "Water Jar (Olla)",
+      "meta": "Southwest, Ancestral Pueblo, Tularosa Black-on-White style · 1150–1325 · Ceramic, slip",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1984.159/1984.159_print.jpg",
+      "year": 1150
+    },
+    {
+      "title": "Jar (Olla)",
+      "meta": "Southwest, Pueblo, Acoma, Laguna, Post- Contact Period,19th century · 1875 · pottery",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1923.1079/1923.1079_print.jpg",
+      "year": 1875
+    },
+    {
+      "title": "Bowl with Large Diamond-Shaped Area Interior with Dotted Lines and Diamonds, and Interlocking Stepped Motifs",
+      "meta": "New Mexico · ancestral pueblo (anasazi) · 900–1450 · Ceramic and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/1aa5f4fd-76df-dc28-0831-be64ba5f5c97/full/843,/0/default.jpg",
+      "year": 900,
+      "artist": "Ancestral Pueblo"
+    },
+    {
+      "title": "Dipper or Ladle with Interlocking Zigzag and Step-Fret Designs",
+      "meta": "New Mexico · ancestral pueblo (anasazi) · 1100–1300 · Ceramic and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/4bc31ff3-7ee1-5d15-aeca-b563e562afa5/full/843,/0/default.jpg",
+      "year": 1100,
+      "artist": "Ancestral Pueblo"
+    },
+    {
+      "title": "Bowl with Bold Black-on-White Diamond and Zizgag Motifs",
+      "meta": "New Mexico · ancestral pueblo (anasazi) · 900–1450 · Ceramic and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/ebb60021-fb7c-907a-b6ec-7cae94d3f555/full/843,/0/default.jpg",
+      "year": 900,
+      "artist": "Ancestral Pueblo"
+    },
+    {
+      "title": "Bowl with Textured Surface Decoration",
+      "meta": "New Mexico · ancestral pueblo (anasazi) · 850–1050 · Ceramic and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/337a610d-4128-a811-7044-82a5ba528dc2/full/843,/0/default.jpg",
+      "year": 850,
+      "artist": "Possibly Ancestral Pueblo"
+    },
+    {
+      "title": "Bowl with Textured Surface Decoration in Basketry-Like Pattern",
+      "meta": "New Mexico · ancestral pueblo (anasazi) · 850–1500 · Ceramic and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/e9b339ba-4bde-337c-936a-77eca92d7ae9/full/843,/0/default.jpg",
+      "year": 850,
+      "artist": "Possibly Ancestral Pueblo"
+    },
+    {
+      "title": "Parrot Olla",
+      "meta": "Pueblo of Acoma · acoma · 1880–1889 · Earthenware and slip",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/b4a219be-d650-106e-d3d7-6de7325dcc50/full/843,/0/default.jpg",
+      "year": 1880,
+      "artist": "Ceramist unknown"
+    },
+    {
+      "title": "Storage Jar with Horizontal Bands of Interlocking Scrolls",
+      "meta": "Southwest · ancestral pueblo (anasazi) · 875–1130 · Ceramic and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/0fa6a777-48eb-b9a1-89ff-5f4104f2490d/full/843,/0/default.jpg",
+      "year": 875,
+      "artist": "Ancestral Pueblo"
+    },
+    {
+      "title": "Plaque",
+      "meta": "Peru, North Coast, Chongoyape(?), Chavín style (900-200 BCE) · c. 500–200 BCE · hammered and cut gold",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1938.431/1938.431_print.jpg",
+      "year": -500
+    },
+    {
+      "title": "Cross-Shaped Ornament",
+      "meta": "Peru, North Highlands, Chavín de Huantar(?), Chavín style · c. 500–200 BCE · hammered and cut gold",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1957.399/1957.399_print.jpg",
+      "year": -500
+    },
+    {
+      "title": "Spoon with Human Figure",
+      "meta": "Peru, North Highlands, Chavín de Huantar(?), Chavín style · c. 500–200 BCE · hammered and cut gold",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1958.177/1958.177_print.jpg",
+      "year": -500
+    },
+    {
+      "title": "Nose Ornament",
+      "meta": "Peru, North Highlands, Chavín de Huantar(?), Chavín style · c. 500–200 BCE · hammered and cut gold",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1958.183/1958.183_print.jpg",
+      "year": -500
+    },
+    {
+      "title": "Spoon with Bird",
+      "meta": "Peru, North Highlands, Chavín de Huantar(?), Chavín style · c. 500–200 BCE · hammered and cut gold",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1958.178/1958.178_print.jpg",
+      "year": -500
+    },
+    {
+      "title": "Flute",
+      "meta": "Peru, Northern Highlands, Chavín de Huantar(?), Chavín style · c. 500–200 BCE · hammered and cut gold",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1957.398/1957.398_print.jpg",
+      "year": -500
+    },
+    {
+      "title": "Ear Ornament",
+      "meta": "Peru, North Highlands, Chavín de Huantar(?), Chavín style · c. 500–200 BCE · hammered and cut gold",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1957.400.1/1957.400.1_print.jpg",
+      "year": -500
+    },
+    {
+      "title": "Two Textile Fragment with Fanged Heads",
+      "meta": "Peru, South Coast, Ica Valley, Chavín style · 500–200 BCE · cotton: plain weave patterned by fiber-wrapped warps and supplementary wefts",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1985.139/1985.139_print.jpg",
+      "year": -500
+    },
+    {
+      "title": "Stirrup-Spout Vessel with Feline and Cactus",
+      "meta": "Peruvian North Coast · cupisnique · -900–-200 · Ceramic",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/615e5a2f-0caa-8828-0647-c463ef9193a1/full/843,/0/default.jpg",
+      "year": -900,
+      "artist": "Chavín"
+    },
+    {
+      "title": "Gold Pectoral with Zoomorphic Face",
+      "meta": "Peruvian North Coast · chavín horizon · -600–-400 · Gold",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/300b8d00-feba-ec4f-f3df-b6fd6fb869d7/full/843,/0/default.jpg",
+      "year": -600,
+      "artist": "Chavín"
+    },
+    {
+      "title": "Stirrup Vessel with Textured Surface",
+      "meta": "Peruvian North Coast · chavín horizon · -850–-750 · Ceramic and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/f8fc90d6-c43b-c8a5-8fb4-57e1aecc7cb9/full/843,/0/default.jpg",
+      "year": -850,
+      "artist": "Chavín"
+    },
+    {
+      "title": "Vessel with Figure Seated Inside a Structure",
+      "meta": "Peruvian North Coast · chavín horizon · -850–-750 · Ceramic and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/cddd8dc1-ec2c-551a-7dad-fe9a36c8607c/full/843,/0/default.jpg",
+      "year": -850,
+      "artist": "Chavín"
+    },
+    {
+      "title": "Stirrup Spout Vessel with Raised Geometric Scroll Motif",
+      "meta": "Peruvian North Coast · chavín horizon · -600–-400 · Ceramic",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/49a89a08-df7a-2116-18cd-15a5a35d7775/full/843,/0/default.jpg",
+      "year": -600,
+      "artist": "Chavín"
+    },
+    {
+      "title": "Divination Mirror",
+      "meta": "Peruvian North Coast · chavín horizon · -900–-600 · Anthracite",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/273ba107-978c-9af3-8685-6562ceced851/full/843,/0/default.jpg",
+      "year": -900,
+      "artist": "Chavín-Cupisnique"
+    },
+    {
+      "title": "Square Bowl with Pampas Cats",
+      "meta": "Central Andes, South Coast, Paracas · 500–400 BCE · Ceramic, post-fire paint",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2021.130/2021.130_print.jpg",
+      "year": -500
+    },
+    {
+      "title": "Turban Band (Llauto)",
+      "meta": "Peru, South Coast, Paracas, Late Period · c. 300–100 BCE · wool and cotton: needle reseau (netting)",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1946.228/1946.228_print.jpg",
+      "year": -300
+    },
+    {
+      "title": "Fragment of Embroidered Cloth",
+      "meta": "Peru, South Coast, Paracas, Late Period · c. 300–100 BCE · embroidery on plain wool ground",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1940.528/1940.528_print.jpg",
+      "year": -300
+    },
+    {
+      "title": "Mummy Bundle \"Mask\"",
+      "meta": "Peru, South Coast, Ica Valley, Ocucaje site, Paracas style · 200–1 BCE · cotton and pigment, plain weave",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1940.516/1940.516_print.jpg",
+      "year": -200
+    },
+    {
+      "title": "Headdress Ornament",
+      "meta": "Peru, South Coast, Paracas · c. 300 BCE–200 CE · hammered and embossed gold-copper alloy",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1940.511/1940.511_print.jpg",
+      "year": -300
+    },
+    {
+      "title": "Vessel with Feline",
+      "meta": "Peru, South Coast, Paracas (Cavernas) style (700 BCE–1 CE) · 700 BCE–1 CE · earthenware, resin-based paint",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1948.477/1948.477_print.jpg",
+      "year": -700
+    },
+    {
+      "title": "Jar with Anthropomorphic Figure",
+      "meta": "Ocucaje · paracas · -650–-150 · Ceramic with resinous postfire paint",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/d2d9cdc4-c03b-8707-d1bd-8339e18cac4b/full/843,/0/default.jpg",
+      "year": -650,
+      "artist": "Paracas"
+    },
+    {
+      "title": "Poncho Displaying Contorted Figures",
+      "meta": "Peru · paracas · -200–-150 · Wool (camelid)",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/ed0f50c5-6e44-c10c-327e-37f21371bb5f/full/843,/0/default.jpg",
+      "year": -200,
+      "artist": "Paracas"
+    },
+    {
+      "title": "Blackware Plate with Fish Incised in Interior",
+      "meta": "Peru · paracas · -500–-150 · Ceramic",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/6309ad21-d869-7db9-3f81-2fec71f55012/full/843,/0/default.jpg",
+      "year": -500,
+      "artist": "Paracas"
+    },
+    {
+      "title": "Funerary Bundle Mask",
+      "meta": "Peru · ocucaje · -200–-100 · Cotton",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/e6c5ebc4-7c7d-a80f-4c4c-1f610ae076b6/full/843,/0/default.jpg",
+      "year": -200,
+      "artist": "Paracas"
+    },
+    {
+      "title": "Bottle with Incised Geometric Figure",
+      "meta": "Ica Valley · paracas · -650–-150 · Ceramic with resinous postfire paint",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/e729f438-b287-765e-d45c-012f7d849d43/full/843,/0/default.jpg",
+      "year": -650,
+      "artist": "Paracas"
+    },
+    {
+      "title": "Vessel with Abstract Feline and Falcon-Head Spout",
+      "meta": "Ocucaje · paracas · -650–-150 · Ceramic with resinous postfire paint",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/b2bba004-fd5b-0a1f-9394-5f5d6cb8be9b/full/843,/0/default.jpg",
+      "year": -650,
+      "artist": "Paracas"
+    },
+    {
+      "title": "Bowl with Anthropomorphic Figure",
+      "meta": "Peru · paracas · -650–-150 · Ceramic and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/ad795d75-b39c-1ac1-f4ef-e2e11162b034/full/843,/0/default.jpg",
+      "year": -650,
+      "artist": "Paracas"
+    },
+    {
+      "title": "Embroidered panel",
+      "meta": "Peru · 500-100 BC",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2006AU6989/full/735,/0/default.jpg",
+      "year": -500
+    },
+    {
+      "title": "Embroidered picture",
+      "meta": "Peru · 100-600",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2019LX3743/full/735,/0/default.jpg",
+      "year": 100
+    },
+    {
+      "title": "Embroidery",
+      "meta": "Peru · 100-600",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2019LX3691/full/735,/0/default.jpg",
+      "year": 100
+    },
+    {
+      "title": "Lime Dipper",
+      "meta": "Colombia, Calima region, Yotoco style · c. 1–800 CE · gold",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1947.30/1947.30_print.jpg",
+      "year": 1
+    },
+    {
+      "title": "Lime Dipper or Pin with Owl",
+      "meta": "Isthmian Region (Colombia), Calima, Yotoco period · 1–800 CE · gold, cast",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2015.10/2015.10_print.jpg",
+      "year": 1
+    },
+    {
+      "title": "Figure Pendant",
+      "meta": "Colombia, Tairona · 900–1550 · cast gold",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1998.3/1998.3_print.jpg",
+      "year": 900
+    },
+    {
+      "title": "Human Effigy Pendant",
+      "meta": "after the Tairona style · before 1947 · copper, gold, mercury, traces of iron and silver",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1947.27/1947.27_print.jpg",
+      "year": 900
+    },
+    {
+      "title": "Whistle with an Iguana or Saurian Sculpted on its Surface",
+      "meta": "Colombia · tairona · 1200–1400 · Ceramic and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/466a7b00-0832-16bb-e5ad-42a761a13b16/full/843,/0/default.jpg",
+      "year": 1200,
+      "artist": "Artist unknown"
+    },
+    {
+      "title": "Masked Figurine with Boar Headdress, Possibly an Ocarina (Whistle)",
+      "meta": "Colombia · tairona · 1200–1400 · Ceramic and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/6c5971bb-c88e-1757-c715-6047099c1a49/full/843,/0/default.jpg",
+      "year": 1200,
+      "artist": "Tairona"
+    },
+    {
+      "title": "Masked Figurine Holding a Drum, Possibly an Ocarina (Whistle)",
+      "meta": "Colombia · tairona · 1200–1400 · Ceramic and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/bb5ffb71-79b7-546d-a8a5-23e7107b9135/full/843,/0/default.jpg",
+      "year": 1200,
+      "artist": "Tairona"
+    },
+    {
+      "title": "Pair of Earrings",
+      "meta": "Sierra Nevada de Santa Marta · tairona · 1000–1500 · Gold",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/ff31a58d-5c64-16d1-7f64-c17bc377e1cb/full/843,/0/default.jpg",
+      "year": 1000,
+      "artist": "Artist unknown"
+    },
+    {
+      "title": "Labret in the Form of a Saurian Head",
+      "meta": "Colombia · tairona · 1000–1500 · Gold and copper alloy",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/e792a5c0-4c79-c121-2ac9-3fc81385f5e8/full/843,/0/default.jpg",
+      "year": 1000,
+      "artist": "Artist unknown"
+    },
+    {
+      "title": "Bird Bead",
+      "meta": "Colombia, Muisca style · c. 900–1550 · cast gold",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1949.190.b/1949.190.b_print.jpg",
+      "year": 900
+    },
+    {
+      "title": "Figurine (Tunjo) of a Standing Figure with Crossed Bands Covering Torso",
+      "meta": "Colombia · musica · 1000–1500 · Gold",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/8a9eb1c0-a944-0771-e85a-a103820ff0c7/full/843,/0/default.jpg",
+      "year": 1000,
+      "artist": "Muisca"
+    },
+    {
+      "title": "Figurine (Tunjo) of a Figure Holding Plants and Cup, Wearing a Crown",
+      "meta": "Colombia · musica · 900–1500 · Gold",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/b25d0933-001b-ad23-47f1-ca7071206b2e/full/843,/0/default.jpg",
+      "year": 900,
+      "artist": "Muisca"
+    },
+    {
+      "title": "Animal-Headed Figure Pendant",
+      "meta": "Colombia, Quimbaya or Yotoco style · 1–800 CE · cast gold",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1939.514/1939.514_print.jpg",
+      "year": 1
+    },
+    {
+      "title": "Fragment of an Animal Head",
+      "meta": "Colombia, Quimbaya · 1–800 CE · gold",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1955.360/1955.360_print.jpg",
+      "year": 1
+    },
+    {
+      "title": "Nose Ring",
+      "meta": "Colombia, Quimbaya · before 1550 · gold",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1955.358/1955.358_print.jpg",
+      "year": 1500
+    },
+    {
+      "title": "Bead",
+      "meta": "Colombia · 9th century to 15th century",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2025PF8930/full/735,/0/default.jpg"
+    },
+    {
+      "title": "Ear piece",
+      "meta": "Colombia · 9th century to 15th century",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2006AN3052/full/735,/0/default.jpg"
+    },
+    {
+      "title": "Celt-Shaped Pendant",
+      "meta": "Costa Rica, Southern Nicoya region · c. 300 BCE–600 CE · jadeite",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1972.4/1972.4_print.jpg",
+      "year": -300
+    },
+    {
+      "title": "Bird Pendant (Buzzard or Vulture?)",
+      "meta": "Costa Rica, Atlantic Watershed region · c. 300 BCE–600 CE · jadeite",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1954.148/1954.148_print.jpg",
+      "year": -300
+    },
+    {
+      "title": "Squatting Female Figurine",
+      "meta": "Costa Rica · lower central america · 101–600 · Greenstone",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/d642e33d-624e-c2cd-8126-b3b87263097d/full/843,/0/default.jpg",
+      "year": 101,
+      "artist": "Costa Rica"
+    },
+    {
+      "title": "Vessel in the Form of a Hunchback Figure Carrying a Jar",
+      "meta": "Costa Rica · nicoya · 1200–1500 · Ceramic and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/ca2aecc6-c0ec-5fe8-4234-ef26c9f269bb/full/843,/0/default.jpg",
+      "year": 1200,
+      "artist": "Nicoya"
+    },
+    {
+      "title": "Beaded Necklace with Three Celt Pendants",
+      "meta": "Costa Rica · nicoya · 300–700 · Jade with metal",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/49ef96f5-d336-9f70-4d52-543de14ed624/full/843,/0/default.jpg",
+      "year": 300,
+      "artist": "Nicoya"
+    },
+    {
+      "title": "Vessel Depicting K'awiil (God K) and Itzamna Exchanging Gifts",
+      "meta": "Guatemala · maya · 700–800 · Ceramic and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/3e5e1700-1cef-8ac8-06a9-6dc5cc723e3a/full/843,/0/default.jpg",
+      "year": 700,
+      "artist": "Ceramist unknown"
+    },
+    {
+      "title": "Rattle in the Form of a Mythological Figure",
+      "meta": "Campeche state · maya · 650–800 · Ceramic and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/19ef85bd-27a6-688d-dff8-9ed10026ea85/full/843,/0/default.jpg",
+      "year": 650,
+      "artist": "Late Classic Maya, Jaina style"
+    },
+    {
+      "title": "Mythological Scene Depicting a Deity with a Bundle",
+      "meta": "Guatemala · maya · 658–667 · Ceramic and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/3739f6a2-6218-3294-c2e7-246a40bfc0cf/full/843,/0/default.jpg",
+      "year": 658,
+      "artist": "Made for Ju’n Chakaw Naahb Cha’n"
+    },
+    {
+      "title": "Carved Vessel Depicting a Lord Wearing a Water-Lily Headdress",
+      "meta": "Mexico · maya · 600–800 · Ceramic and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/906098e9-8607-048e-5fc1-d32b38dc6328/full/843,/0/default.jpg",
+      "year": 600,
+      "artist": "Late Classic Maya, Chocholá"
+    },
+    {
+      "title": "Hieroglyphic Panel",
+      "meta": "Guatemala · maya · 650–800 · Limestone",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/4fa712e4-6b0c-154b-7eeb-c4aaea586225/full/843,/0/default.jpg",
+      "year": 650,
+      "artist": "Late Classic Maya"
+    },
+    {
+      "title": "Jar in the Form of a Human Head with Face Painting and Showing Teeth",
+      "meta": "Peruvian North Coast · moche · -100–500 · Ceramic and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/830cbbd2-8761-0edd-1197-67588ff04331/full/843,/0/default.jpg",
+      "year": -100,
+      "artist": "Moche"
+    },
+    {
+      "title": "Handle Spout Vessel in the Form of a Figure Holding Corn Popper and Rolled Mat",
+      "meta": "Peruvian North Coast · moche · -100–500 · Ceramic and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/65b17961-3d89-ff81-a59b-657235527850/full/843,/0/default.jpg",
+      "year": -100,
+      "artist": "Moche"
+    },
+    {
+      "title": "Stirrup Spout Vessel with Fineline Bird Warrior Motifs",
+      "meta": "Peruvian North Coast · moche · -100–500 · Ceramic and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/88ee5691-17a1-8aa9-e4e7-82e68864ac74/full/843,/0/default.jpg",
+      "year": -100,
+      "artist": "Moche"
+    },
+    {
+      "title": "Stirrup Spout Vessel with Fineline Bird Motifs",
+      "meta": "Peruvian North Coast · moche · -100–500 · Ceramic and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/a5dbf750-2d65-6fe7-bc44-a431df0c7971/full/843,/0/default.jpg",
+      "year": -100,
+      "artist": "Moche"
+    },
+    {
+      "title": "Stirrup Spout Vessel with Fineline Deer Hunt Motifs",
+      "meta": "Peruvian North Coast · moche · -100–500 · Ceramic and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/31de3937-e71e-c4f3-c395-ee8f42c7c644/full/843,/0/default.jpg",
+      "year": -100,
+      "artist": "Moche"
+    },
+    {
+      "title": "Fragments (Border)",
+      "meta": "Peru · nazca · -100–200 · Cotton",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/beb9c895-4d71-d087-95e3-f647882dd9d2/full/843,/0/default.jpg",
+      "year": -100,
+      "artist": "Nasca"
+    },
+    {
+      "title": "Double Spout and Bridge Vessel Depicting Costumed Performer with Snake Headdress",
+      "meta": "Peru · nazca · -180–500 · Ceramic and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/465f5b7d-bfff-3a01-8c75-e647c97e6859/full/843,/0/default.jpg",
+      "year": -180,
+      "artist": "Nazca"
+    },
+    {
+      "title": "Bowl Depicting Abstract Plants, Probably Cactus",
+      "meta": "Peruvian South Coast · nazca · -180–500 · Ceramic and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/a90eaab4-fca0-ebdf-1bf9-8a5fb1cffc22/full/843,/0/default.jpg",
+      "year": -180,
+      "artist": "Nazca"
+    },
+    {
+      "title": "Bridge Vessel in the Form of a Pair of Interlocked Fish",
+      "meta": "Peru · nazca · -180–500 · Ceramic and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/0d662ad1-d36d-d7ec-b854-ec83ff4f04a8/full/843,/0/default.jpg",
+      "year": -180,
+      "artist": "Nazca"
+    },
+    {
+      "title": "Tunic Fragment",
+      "meta": "Peru · huari · 600–800 · Cotton and wool (camelid)",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/091293f0-d5d1-1d90-03ea-bdb954ce8b43/full/843,/0/default.jpg",
+      "year": 600,
+      "artist": "Wari"
+    },
+    {
+      "title": "Pair of Beakers Depicting Birds in a Cornfield",
+      "meta": "Ica Valley · inca · 1100–1438 · Gold",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/3972c4af-82a1-b124-3df0-e795a3afdc5b/full/843,/0/default.jpg",
+      "year": 1100,
+      "artist": "Inca"
+    },
+    {
+      "title": "Miniature Jar with Textile Pattern or Abstract Fish Motifs",
+      "meta": "Southern Peru · ica · 1450–1532 · Ceramic and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/3630990c-1c4d-ff54-b9ee-ab8c9ed9a411/full/843,/0/default.jpg",
+      "year": 1450,
+      "artist": "Inca"
+    },
+    {
+      "title": "Ear Ornaments with Ibis",
+      "meta": "Ica Valley · inca · 1200–1450 · Gold with garnet inlay",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/cbe6fe5d-4a7f-c34b-ea63-733d4b4c7661/full/843,/0/default.jpg",
+      "year": 1200,
+      "artist": "Inca"
+    },
+    {
+      "title": "Drinking Vessel in the Form of a Head",
+      "meta": "Peru · inca · 1450–1532 · Ceramic and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/68eff572-4e5c-9fc2-b174-efd84187c7ca/full/843,/0/default.jpg",
+      "year": 1450,
+      "artist": "Inca"
+    },
+    {
+      "title": "Frida Kahlo in her garden",
+      "meta": "Mexico · 1952",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2008BU2959/full/735,/0/default.jpg",
+      "year": 1952,
+      "artist": "Freund, Gisèle"
+    },
+    {
+      "title": "Mexico",
+      "meta": "Mexico · 1975",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2006BG5689/full/735,/0/default.jpg",
+      "year": 1975,
+      "artist": "Friedlander, Lee"
+    },
+    {
+      "title": "Standing Figurine with Missing Leg",
+      "meta": "Guerrero state · olmec · -800–-400 · Jade",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/58220961-441b-d474-1409-9ef5948fa451/full/843,/0/default.jpg",
+      "year": -800,
+      "artist": "Olmec"
+    },
+    {
+      "title": "Polychrome Plate Depicting a Standing Figure with Ornate Speach-Scroll",
+      "meta": "South Central Veracruz · veracruz · 600–900 · Ceramic and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/42ba39d4-564a-6137-aed4-2cbe55818343/full/843,/0/default.jpg",
+      "year": 600,
+      "artist": "Classic Veracruz, Cerro Montoso style"
+    },
+    {
+      "title": "Standing Warrior Figure with Removable Mask and Headdress",
+      "meta": "Veracruz state · classic veracruz · 700–1000 · Ceramic and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/fd5a7a9a-c904-d765-a0ed-622e5c384abc/full/843,/0/default.jpg",
+      "year": 700,
+      "artist": "Classic Veracruz"
+    },
+    {
+      "title": "Standing, \"Smiling\" Figure with Hands Raised",
+      "meta": "Veracruz state · remojadas · 600–900 · Ceramic and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/b44a4e9e-e957-cc97-0b24-82007924eff1/full/843,/0/default.jpg",
+      "year": 600,
+      "artist": "Remojadas"
+    },
+    {
+      "title": "Telescoping basket",
+      "meta": "Northwest Coast, Tlingit, 19th century · 1800's · twined spruce root with grass false embroidery",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1917.488/1917.488_print.jpg",
+      "year": 1800
+    },
+    {
+      "title": "Twined Bark Tray",
+      "meta": "Northwest Coast, Tlingit, late 19th century · late 1800's · twined bark",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1942.338/1942.338_print.jpg",
+      "year": 1875
+    },
+    {
+      "title": "Cooking Basket",
+      "meta": "Northwest Coast, Tlingit, late 19th Century · late 1800s · Spruce root; twined, false embroidery",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1929.264/1929.264_print.jpg",
+      "year": 1875
+    },
+    {
+      "title": "Work Basket",
+      "meta": "Peru · chancay · 1000–1476 · Reed",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/9fa3f68a-d303-eb92-f44e-850477566432/full/843,/0/default.jpg",
+      "year": 1000,
+      "artist": "Possibly Chancay"
+    },
+    {
+      "title": "Blackware Vessel in the Form of a Llama",
+      "meta": "Peruvian North Coast · chimú · 1200–1450 · Ceramic",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/272da1a6-8875-1823-2102-9585d9d5924e/full/843,/0/default.jpg",
+      "year": 1200,
+      "artist": "Chimú"
+    },
+    {
+      "title": "Vessel in the Form of a Gourd",
+      "meta": "Peruvian North Coast · chimú · 1100–1450 · Ceramic",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/c292f321-fea4-b57b-e8d3-c698c4992873/full/843,/0/default.jpg",
+      "year": 1100,
+      "artist": "Chimú"
+    },
+    {
+      "title": "Cup in the Form of a Figure Holding Enlarged Penis",
+      "meta": "Peruvian North Coast · chimú · 1100–1470 · Ceramic",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/14786f5e-87fe-ca1d-3149-78be7490139d/full/843,/0/default.jpg",
+      "year": 1100,
+      "artist": "Chimú"
+    },
+    {
+      "title": "Blackware Stirrup Spout Vessel with a Relief Depicting Warriors with Raised Arms",
+      "meta": "Peruvian North Coast · chimú · 1200–1450 · Ceramic",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/54f50bdf-e0c6-afa3-0f6f-fc94fbb1ab45/full/843,/0/default.jpg",
+      "year": 1200,
+      "artist": "Chimú"
+    },
+    {
+      "title": "Double Vessel with a Foot-Massage Scene",
+      "meta": "Peruvian North Coast · chimú · 1200–1450 · Ceramic",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/c71f2a0b-1da2-a471-a1d2-ef8587b78722/full/843,/0/default.jpg",
+      "year": 1200,
+      "artist": "Chimú"
+    },
+    {
+      "title": "Doll",
+      "meta": "Peru · pre 1533",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2019LX3547/full/735,/0/default.jpg",
+      "year": 1533
+    },
+    {
+      "title": "Effigy Urn",
+      "meta": "Mexico, Zapotec, Monte Albán IIIB style, 20th century · 1900s (Thermoluminescence date, after 1930) · gray pottery",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1990.272/1990.272_print.jpg",
+      "year": 1900
+    },
+    {
+      "title": "Banded Wearing Blanket (Diyugi)",
+      "meta": "America, Native North American, Southwest, Diné (Navajo) or Zuni Pueblo · c. 1880–90 · Wool (handspun and bayeta): tapestry weave",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1921.555/1921.555_print.jpg",
+      "year": 1880
+    },
+    {
+      "title": "Diamond Network Style Rug",
+      "meta": "America, Native North American, Southwest, Navajo, Post-Contact, Transitional Period · c. 1890–1900 · tapestry weave: wool (handspun)",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1937.857/1937.857_print.jpg",
+      "year": 1880
+    },
+    {
+      "title": "Banded Eyedazzler Style Rug",
+      "meta": "America, Native North American, Southwest, Navajo, Post-Contact, Transitional Period · ca. 1890–1900 · tapestry weave: wool (handspun)",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1937.900/1937.900_print.jpg",
+      "year": 1885
+    },
+    {
+      "title": "Rug Banded with \"diamond stripes\"",
+      "meta": "America, Native North American, Southwest, Navajo, Post-Contact, Transitional Period · c. 1890–1900 · tapestry weave: wool (handspun)",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1937.761/1937.761_print.jpg",
+      "year": 1880
+    },
+    {
+      "title": "Horse Headstall",
+      "meta": "New Mexico · navajo · 1870–1880 · Silver and leather",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/4d874844-d5e2-cd44-9fa6-1dcb080d9552/full/843,/0/default.jpg",
+      "year": 1870,
+      "artist": "Artist unknown"
+    },
+    {
+      "title": "Moqui-Style Sarape",
+      "meta": "Navajo · navajo · 1865–1875 · Wool",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/91b81206-993c-d9b4-278a-4be0a1f10f93/full/843,/0/default.jpg",
+      "year": 1865,
+      "artist": "Navajo"
+    },
+    {
+      "title": "Sarape with Serrated Diamond Pattern",
+      "meta": "New Mexico · navajo · 1880–1900 · Wool",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/ecdc2554-f9b1-3d4a-5966-a63a37071dd2/full/843,/0/default.jpg",
+      "year": 1880,
+      "artist": "Navajo"
+    },
+    {
+      "title": "Saddle Blanket",
+      "meta": "America, Native North American,  Plains, Dakota, Lakota(Sioux), 19th century · third quarter of 19th century · velvet, leather, beads, silk, metal, sinew sewn, paha stitch; white cotton lining",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1970.550/1970.550_print.jpg",
+      "year": 1875
+    },
+    {
+      "title": "Vessel with Black-and-White Motifs",
+      "meta": "Pueblo of Acoma · acoma · 1890–1899 · Earthenware and slip",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/33102f83-7408-ae99-63f3-09a331d186e0/full/843,/0/default.jpg",
+      "year": 1890,
+      "artist": "Ceramist unknown"
+    },
+    {
+      "title": "Spoon(?)",
+      "meta": "Peru, North Highlands, Chavín de Huantar(?), Chavín style · c. 500–200 BCE · hammered and cut gold",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1958.187/1958.187_print.jpg",
+      "year": -500
+    },
+    {
+      "title": "Pin Ornament",
+      "meta": "Peru, North Highlands, Chavín de Huantar(?), Chavín style · c. 500–200 BCE · hammered and cut gold",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1958.179/1958.179_print.jpg",
+      "year": -500
+    },
+    {
+      "title": "Small Bottle with Feline",
+      "meta": "Peru, South Coast, Paracas (Cavernas) style (700 BCE–1 CE) · 700–1 BCE · earthenware, resin-based paint",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1949.195/1949.195_print.jpg",
+      "year": -700
+    },
+    {
+      "title": "Figurine Plaque",
+      "meta": "Peru, South Coast, Paracas, with modern etched enhancement(?) · c. 300 BCE–200 CE · hammered and embossed gold-copper alloy",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1940.512/1940.512_print.jpg",
+      "year": -300
+    },
+    {
+      "title": "Double Spout and Bridge Vessel in the Form of a Ridged Gourd",
+      "meta": "Peru · paracas · -650–-150 · Ceramic and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/4ab35b6e-f767-66d2-1ac4-9fdb36dec742/full/843,/0/default.jpg",
+      "year": -650,
+      "artist": "Paracas"
+    },
+    {
+      "title": "Bowl with Fish Motif",
+      "meta": "Ocucaje · paracas · -650–-100 · Ceramic with negative resist painting",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/0c47a1b7-5321-d769-81e4-f6ba0d678007/full/843,/0/default.jpg",
+      "year": -650,
+      "artist": "Paracas"
+    },
+    {
+      "title": "Double Spout and Bridge Vessel Depicting Incised and Painted Abstract Feline Face",
+      "meta": "Peru · paracas · -650–-150 · Ceramic and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/2afecda9-5d41-f4ac-40a3-ebf8e054b491/full/843,/0/default.jpg",
+      "year": -650,
+      "artist": "Paracas"
+    },
+    {
+      "title": "Bird Beads",
+      "meta": "Colombia, Muisca style · c. 900–1550 · cast gold",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1949.190/1949.190_print.jpg",
+      "year": 900
+    },
+    {
+      "title": "Tunjos (Votive Offering Figurine)",
+      "meta": "Colombia, Muisca style · c. 900–1550 · cast gold",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1947.23/1947.23_print.jpg",
+      "year": 900
+    },
+    {
+      "title": "Pendant",
+      "meta": "Colombia · 9th century to 15th century",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2025PF9021/full/735,/0/default.jpg"
+    },
+    {
+      "title": "Beaded Necklace with Bar Pendant",
+      "meta": "Costa Rica · nicoya · 300–700 · Jade",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/2b3fb480-750c-7082-cec4-abb55fc81057/full/843,/0/default.jpg",
+      "year": 300,
+      "artist": "Nicoya"
+    },
+    {
+      "title": "Curly-Tailed Animal Pendant",
+      "meta": "Panama, Initial style · 100–800 CE · gold",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1943.288/1943.288_print.jpg",
+      "year": 100
+    },
+    {
+      "title": "Pectoral (Chest Plaque)",
+      "meta": "Intermediate Region, Panama, Conte style, 5th-10th Century · 400–900 · gold alloy",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1952.459/1952.459_print.jpg",
+      "year": 400
+    },
+    {
+      "title": "Staff Head(?)",
+      "meta": "Colombia or Panama, International style, 5th-8th Century · c. 400–700 · cast gold",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1944.319/1944.319_print.jpg",
+      "year": 400
+    },
+    {
+      "title": "Insect Bell Pendant",
+      "meta": "Isthmian Region (Panama), Coclé, 5th century-12th century · 400–1100 · gold, cast",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2015.12/2015.12_print.jpg",
+      "year": 400
+    },
+    {
+      "title": "Bird Pendant",
+      "meta": "Panama, Veraguas-Chiriquí style, 11th - 16th century · c. 1000–1550 · cast gold",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1956.669/1956.669_print.jpg",
+      "year": 1000
+    },
+    {
+      "title": "Crocodile Pendant",
+      "meta": "Panama, Azuero Peninsula, Parita style, 11th-16th century · 1000–1550 · cast gold, modern greenstone",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1990.160/1990.160_print.jpg",
+      "year": 1000
+    },
+    {
+      "title": "Feline Pendant",
+      "meta": "Isthmian Region, Panama-Costa Rica, Veraguas-Chiriquí style, 11th century-16th century · 1000–1550 · gold, cast",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2015.11/2015.11_print.jpg",
+      "year": 1000
+    },
+    {
+      "title": "Ornament from Sitio Conte: Small Plaque",
+      "meta": "Panama, Conte style, 5th - 10th century · c. 400–500 · hammered gold",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1951.155/1951.155_print.jpg",
+      "year": 400
+    },
+    {
+      "title": "Figural Pendant",
+      "meta": "Panama, Darién or Venado Beach region, Openwork style, 5th-8th Century · 400–700 · cast gold",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1946.80/1946.80_print.jpg",
+      "year": 400
+    },
+    {
+      "title": "Pendant Depicting a Male Figure with Saurian Heads Emerging from Body",
+      "meta": "Panama · veraguas · 1000–1550 · Gold",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/aaa7d2f0-d26e-247b-19ab-c00cb4e84a6b/full/843,/0/default.jpg",
+      "year": 1000,
+      "artist": "Veraguas"
+    },
+    {
+      "title": "Lobster Pendant",
+      "meta": "Costa Rica, Diquís region, 11th-16th century · c. 1000–1500 · cast gold",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1943.290/1943.290_print.jpg",
+      "year": 1000
+    },
+    {
+      "title": "Double Bird-Headed Figure Pendant",
+      "meta": "Costa Rica, Diquís region, 11th-16th century · c. 1000–1500 · cast and hammered gold",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1951.442/1951.442_print.jpg",
+      "year": 1000
+    },
+    {
+      "title": "Bird-Man Pendant",
+      "meta": "Western Panama, or Diquís, Costa Rica, Veraguas-Gran Chiriquí or Diquís Style, 8th-16th Century · c. 700–1550 · cast and hammered gold",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1949.557/1949.557_print.jpg",
+      "year": 700
+    },
+    {
+      "title": "Mask Ornament",
+      "meta": "Southern Costa Rica, (Rio Grande de Térraba, Diquís Region), Diquís Style, 8th-16th Century · c. 700–1550 · hammered and cut gold",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1950.417/1950.417_print.jpg",
+      "year": 700
+    },
+    {
+      "title": "Double-Headed Figure Pendant",
+      "meta": "Western Panama, or Diquís, Costa Rica,  Veraguas-Gran Chiriquí or Diquís Style, 8th-16th Century · c. 700–1550 · cast and hammered gold",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1946.79/1946.79_print.jpg",
+      "year": 700
+    },
+    {
+      "title": "Winged Figure Pendant",
+      "meta": "Southern Costa Rica, (Diquís Region), Diquís Style, 11th-16th century · c. 1000–1550 · cast and hammered gold",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1946.423/1946.423_print.jpg",
+      "year": 1000
+    },
+    {
+      "title": "Deer Eating Corn Pendant",
+      "meta": "Southern Costa Rica, (Diquís Region), Diquís Style, 11th-16th century · c. 1000–1550 · cast gold",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1962.254/1962.254_print.jpg",
+      "year": 1000
+    },
+    {
+      "title": "Plate",
+      "meta": "Panama, Cocle · 400–1000 · pottery",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1952.453/1952.453_print.jpg",
+      "year": 400
+    },
+    {
+      "title": "Pedestal Plate",
+      "meta": "Panama, Coclé, 14th-15th century · 1300s-1400s · earthenware",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1962.248/1962.248_print.jpg",
+      "year": 1300
+    },
+    {
+      "title": "Filagree Pendant in the Form of a Frog or Toad",
+      "meta": "Venado Beach · coclé · 500–1000 · Cast gold",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/6b81fe5c-877f-9951-40ba-4d4db735b71e/full/843,/0/default.jpg",
+      "year": 500,
+      "artist": "Coclé"
+    },
+    {
+      "title": "Double Pendant in the Form of a Mythical Saurian with Tusks",
+      "meta": "Panama · coclé · 750–1250 · Gold with plaster restoration of boar tusks",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/31bcfcfe-6644-f36a-b412-a2055baaeae9/full/843,/0/default.jpg",
+      "year": 750,
+      "artist": "Coclé"
+    },
+    {
+      "title": "Pedestal Bowl Depicting an Anthropomorphic Saurian Figure",
+      "meta": "Veraguas · coclé · 1100–1300 · Ceramic and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/9f51b4bc-16a0-176b-b3f7-b94a28964b92/full/843,/0/default.jpg",
+      "year": 1100,
+      "artist": "Coclé"
+    },
+    {
+      "title": "Pedestal Bowl Depicting Bicephalic Footed Serpent with Headcrest",
+      "meta": "Los Santos province · coclé · 700–1100 · Ceramic and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/40987f60-9c39-1768-0b15-2f5268e9fef8/full/843,/0/default.jpg",
+      "year": 700,
+      "artist": "Coclé"
+    },
+    {
+      "title": "Circular Nose Ornament Incised with Concentric Bands",
+      "meta": "Venado Beach · coclé · 750–1250 · Spondylus shell",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/d0e0a7a2-793f-8dc2-59ae-9e79d188af28/full/843,/0/default.jpg",
+      "year": 750,
+      "artist": "Coclé"
+    },
+    {
+      "title": "Nose Ornament in the Form of a Turtle with C-shaped Body",
+      "meta": "Venado Beach · coclé · 750–1250 · Spondylus shell",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/9c2bef1e-3c46-3055-94e9-4a5faf3cdb4d/full/843,/0/default.jpg",
+      "year": 750,
+      "artist": "Coclé"
+    },
+    {
+      "title": "Pendant in the Form of Four Double-Headed Figures with Long Beaks, Possibly Ducks",
+      "meta": "Panama · coclé · 500–1000 · Cast gold",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/319920da-9865-b0c6-ad6e-db7cc76ccfa0/full/843,/0/default.jpg",
+      "year": 500,
+      "artist": "Coclé"
+    },
+    {
+      "title": "Nose Ornament in the Form of an Long-Nosed Saurian with C-shaped Body",
+      "meta": "Venado Beach · coclé · 750–1250 · Spondylus shell",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/a0f3905b-5dd2-a823-967e-aa9c256c4453/full/843,/0/default.jpg",
+      "year": 750,
+      "artist": "Coclé"
+    },
+    {
+      "title": "Finial with Two Deer",
+      "meta": "Isthmian Region (Colombia), Sinú (Zenú), 5th century-11th century · 400–1000 · gold, cast",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2015.5/2015.5_print.jpg",
+      "year": 400
+    },
+    {
+      "title": "Staff Head",
+      "meta": "Colombia, Sinú style · 400–1000 CE · cast gold",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1947.25/1947.25_print.jpg",
+      "year": 400
+    },
+    {
+      "title": "Finial with Bird (Harpy Eagle with Royal Flycatcher Crest?)",
+      "meta": "Isthmian Region (Colombia), Sinú (Zenú), 5th century-11th century · 400–1000 · gold, cast",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2015.3/2015.3_print.jpg",
+      "year": 400
+    },
+    {
+      "title": "Blackware Vessel with Flaring Rim in the Form of a Seated Figure",
+      "meta": "Ecuador · manteño · 1000–1500 · Ceramic and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/e1152a8c-30d3-0984-0705-d3fc0e15aed2/full/843,/0/default.jpg",
+      "year": 1000,
+      "artist": "Manteño"
+    },
+    {
+      "title": "Necklace with Three Round Pendant Disks",
+      "meta": "Ecuador · pre-inca · 1000–1400 · Gold",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/8f5ad800-9e3d-9f3c-74d1-011785e70f91/full/843,/0/default.jpg",
+      "year": 1000,
+      "artist": "Near Guayaquil, Ecuador"
+    },
+    {
+      "title": "Architectural Vessel",
+      "meta": "Central Andes (Peru), Recuay people · 1–700 CE · ceramic, slip, resist painting",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2020.222/2020.222_print.jpg",
+      "year": 1
+    },
+    {
+      "title": "Mother-and-Child? Vessel",
+      "meta": "Central Andes, North Highlands, Recuay people · 1–700 CE · ceramic, slip, pigment",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2010.210/2010.210_print.jpg",
+      "year": 1
+    },
+    {
+      "title": "Dipper",
+      "meta": "Peru, North Highlands, Recuay · 100 BCE–700 CE · ceramic, slip",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2006.157/2006.157_print.jpg",
+      "year": -100
+    },
+    {
+      "title": "Snuff Tablet",
+      "meta": "Peru, North Highlands, Recuay style · 1–650 CE · wood with gold foil",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1996.303/1996.303_print.jpg",
+      "year": 1
+    },
+    {
+      "title": "Double Cloth",
+      "meta": "Peru, Recuay · 400 BCE–700 CE · wool",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1993.243/1993.243_print.jpg",
+      "year": -400
+    },
+    {
+      "title": "Triple Cloth",
+      "meta": "Peru, Recuay · 400 BCE–700 CE · triple cloth: wool",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1993.242/1993.242_print.jpg",
+      "year": -400
+    },
+    {
+      "title": "Spouted Bottle with Modeled Scene Depicting a Drinking Ceremony or Offering RItual",
+      "meta": "Alti Plano · recuay · 1–700 · Ceramic and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/3213ef72-f40a-4a93-1b24-e7c520e3d3d6/full/843,/0/default.jpg",
+      "year": 1,
+      "artist": "Recuay"
+    },
+    {
+      "title": "Vessel with Reclining Figure and Birds",
+      "meta": "Andes, north coast, Cupisnique style · 2200–200 BCE · Ceramic, pigment (cinnabar?)",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2017.55/2017.55_print.jpg",
+      "year": -2200
+    },
+    {
+      "title": "Vessel with Stirrup Spout",
+      "meta": "Peru, likely modern, inspired by the Cupisnique style · 1900s (thermoluminescence date) · earthenware",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1968.192/1968.192_print.jpg",
+      "year": 1900
+    },
+    {
+      "title": "Plate with Supernatural Being",
+      "meta": "Central Andes, north coast, probably Jequetepeque Valley, Cupisnique people · 900–600 BCE · stone (probably steatite [soapstone])",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2021.131/2021.131_print.jpg",
+      "year": -900
+    },
+    {
+      "title": "Container",
+      "meta": "Peru, North Coast, Cupisnique style · 1200–200 BCE · steatite",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1955.167/1955.167_print.jpg",
+      "year": -1200
+    },
+    {
+      "title": "Cup",
+      "meta": "Peru, North Coast, Cupisnique style · c. 900–600 BCE · steatite",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1954.797/1954.797_print.jpg",
+      "year": -900
+    },
+    {
+      "title": "Bird Ornament",
+      "meta": "North coast of Peru, Cupisnique style · c. 900–600 BCE · shell with stone inlay",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1946.230/1946.230_print.jpg",
+      "year": -900
+    },
+    {
+      "title": "Miniature Stirrup Spout Vessel with Incised Hatched Motif",
+      "meta": "Peruvian North Coast · cupisnique · -1000–-200 · Ceramic",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/5e2aba51-2054-0b5f-fa4b-27521d9eaa92/full/843,/0/default.jpg",
+      "year": -1000,
+      "artist": "Cupisnique"
+    },
+    {
+      "title": "Stirrup Spout Vessel with Raised Appliques Covering the Surface",
+      "meta": "Peruvian North Coast · cupisnique · -1000–-200 · Ceramic",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/ed5e7093-d308-280d-b07a-c9202bbb8949/full/843,/0/default.jpg",
+      "year": -1000,
+      "artist": "Cupisnique"
+    },
+    {
+      "title": "Beaker",
+      "meta": "Peru, North Coast, Sicán · c. 800–1370 · hammered and embossed gold alloy",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1983.189/1983.189_print.jpg",
+      "year": 800
+    },
+    {
+      "title": "Tapestry Fragment",
+      "meta": "Peru, North Coast, Lambayeque (Sicán) people · 700–1370s · camelid fiber and cotton, tapestry weave",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1991.223/1991.223_print.jpg",
+      "year": 700
+    },
+    {
+      "title": "Head Beaker",
+      "meta": "Central Andes (Peru), Lambayeque (Sicán) people, 10th century-12th century · 900–1100 · gold, hammered",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2015.6/2015.6_print.jpg",
+      "year": 900
+    },
+    {
+      "title": "Beaker with Frontal Figures",
+      "meta": "Central Andes (Peru), Lambayeque (Sicán) people, 10th century-12th century · 900–1100 · gold, hammered",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2015.7/2015.7_print.jpg",
+      "year": 900
+    },
+    {
+      "title": "Beaker with Frogs",
+      "meta": "Central Andes (Peru), Lambayeque (Sicán) people, 10th century-12th century · 900–1100 · gold, hammered",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2015.9/2015.9_print.jpg",
+      "year": 900
+    },
+    {
+      "title": "Beaker with Shells",
+      "meta": "Central Andes (Peru), Lambayeque (Sicán) people, 10th century-12th century · 900–1100 · gold, hammered",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2015.8/2015.8_print.jpg",
+      "year": 900
+    },
+    {
+      "title": "Monkey Finial",
+      "meta": "Peru, North Coast, Sicán or Chimú, 9th-15th Century · c. 800–1470 · hammered and embossed gold alloy",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1949.197/1949.197_print.jpg",
+      "year": 800
+    },
+    {
+      "title": "Figural Flask",
+      "meta": "Peru, North Coast, Lambayeque Valley, Sicán or Chimú, 9th-15th Century · c. 800–1470 · hammered and embossed gold alloy",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1956.362/1956.362_print.jpg",
+      "year": 800
+    },
+    {
+      "title": "Macaw",
+      "meta": "Peru, North Coast, Sicán or Chimú, 9th-15th Century · c. 800–1470 · gold alloy",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1945.32/1945.32_print.jpg",
+      "year": 800
+    },
+    {
+      "title": "Lower Border of a Garment",
+      "meta": "Central Andes, North Coast, Chimú or Lambayeque (Sican) People · 1000–1470s · tapestry; wool and cotton",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1954.68/1954.68_print.jpg",
+      "year": 1000
+    },
+    {
+      "title": "Unfinished Cloth",
+      "meta": "Peru, Central Coast, Chancay, Pachacamac, 12th-15th century · c. 1100–1400 · tapestry weave; cotton and wool",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1925.660/1925.660_print.jpg",
+      "year": 1100
+    },
+    {
+      "title": "Textile",
+      "meta": "Peru, Central Coast, Chancay, 12th-15th century · c. 1100–1400 · double cloth",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1992.231.2/1992.231.2_print.jpg",
+      "year": 1100
+    },
+    {
+      "title": "Fragment formed of Four Separate Fabrics Joined",
+      "meta": "Peru, Central Coast, Chancay, 12th-15th century · c. 1100–1400 · two pieces plain cloth, two pieces compound twill; cotton",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1922.390/1922.390_print.jpg",
+      "year": 1100
+    },
+    {
+      "title": "Fragment Composed of Two Fabrics Joined",
+      "meta": "Peru, Central Coast, Chancay, 12th-15th century · c. 1100–1400 · plain compound twill and plain compound tabby; cotton",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1922.389/1922.389_print.jpg",
+      "year": 1100
+    },
+    {
+      "title": "Fragment of a Decorative Border",
+      "meta": "Peru · nazca · -100–200 · Cotton",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/fb2bb3dc-279a-dab4-36da-4d132ae9e79e/full/843,/0/default.jpg",
+      "year": -100,
+      "artist": "Nasca"
+    },
+    {
+      "title": "Border Fragments",
+      "meta": "Peru · nazca · -100–200 · Cotton",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/4e0fc7a7-9c88-22a8-4a55-a31ed527473d/full/843,/0/default.jpg",
+      "year": -100,
+      "artist": "Nasca"
+    },
+    {
+      "title": "Coiled Rattlesnake",
+      "meta": "Central Mexico, Aztec, 13th-16th century · c. 1200–1519 · stone",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1950.410/1950.410_print.jpg",
+      "year": 1200
+    },
+    {
+      "title": "Male Dog",
+      "meta": "West Mexico, Colima, Comala style · 200 BCE–300 CE · earthenware with burnished red slip",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1964.37/1964.37_print.jpg",
+      "year": -200
+    },
+    {
+      "title": "Standing figurine holding an animal (dog?)",
+      "meta": "Mesoamerica, West Mexico, Colima or Jalisco state, possibly Tuxcacueso-Ortices municipality · 300 BCE–300 CE · ceramic and pigment",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2008.21/2008.21_print.jpg",
+      "year": -300
+    },
+    {
+      "title": "Circular Pendant",
+      "meta": "Western Mexico · colima · -200–200 · Spondylus shell",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/43215748-589c-4615-f0cd-2b6ac8505fc6/full/843,/0/default.jpg",
+      "year": -200,
+      "artist": "Colima or Jalisco"
+    },
+    {
+      "title": "Figure of a Dog",
+      "meta": "Colima state · colima · 1–200 · Ceramic and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/f8df8a30-eab8-eb4d-d43a-83672922781f/full/843,/0/default.jpg",
+      "year": 1,
+      "artist": "Colima"
+    },
+    {
+      "title": "Seated Hunchbacked Dwarf",
+      "meta": "Western Mexico · colima · 300–400 · Ceramic and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/41187892-0d0a-bda9-419e-52654d8953d2/full/843,/0/default.jpg",
+      "year": 300,
+      "artist": "Colima"
+    },
+    {
+      "title": "Figure of a Seated Chieftain",
+      "meta": "Colima state · colima · -100–250 · Ceramic and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/998398b4-21e7-782a-221d-c2bc4f25c197/full/843,/0/default.jpg",
+      "year": -100,
+      "artist": "Colima"
+    },
+    {
+      "title": "Vessel in the Form of a Calabash",
+      "meta": "Western Mexico · colima · 1–200 · Ceramic and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/521749c7-5bc3-47fa-89d1-1e280c259418/full/843,/0/default.jpg",
+      "year": 1,
+      "artist": "Colima"
+    },
+    {
+      "title": "Seated Female Figure Holding a Vessel",
+      "meta": "Colima state · colima · 100–400 · Ceramic and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/37eec7d2-bbaa-d25a-1df6-bba0f9ab910a/full/843,/0/default.jpg",
+      "year": 100,
+      "artist": "Artist unknown"
+    },
+    {
+      "title": "Ceremonial Knife",
+      "meta": "Colima · colima · 100–300 · Obsidian",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/d6204967-2757-dd50-c2ff-43fed4dad893/full/843,/0/default.jpg",
+      "year": 100,
+      "artist": "Colima"
+    },
+    {
+      "title": "Ear Spools",
+      "meta": "Western Mexico · colima · -200–200 · Spondylus shell and greenstone",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/8f5d98f1-a160-51aa-ce92-388a12013b29/full/843,/0/default.jpg",
+      "year": -200,
+      "artist": "Colima or Jalisco"
+    },
+    {
+      "title": "Seated Female Figure Holding a Bowl",
+      "meta": "Western Mexico · colima · 100–800 · Ceramic and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/7058d26e-880b-5410-b8bf-ee4b03ad2da1/full/843,/0/default.jpg",
+      "year": 100,
+      "artist": "Colima"
+    },
+    {
+      "title": "Seated Figure Drinking from a Vessel using a Tube",
+      "meta": "Colima state · nayarit · -200–300 · Earthenware and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/9c030104-c57e-b530-e0eb-75a84f9daff0/full/843,/0/default.jpg",
+      "year": -200,
+      "artist": "Colima"
+    },
+    {
+      "title": "Standing Male Figure Holding a Plate",
+      "meta": "Colima state · colima · 100–400 · Ceramic and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/f4ffddaf-8f97-8742-0121-3a22d722fc2c/full/843,/0/default.jpg",
+      "year": 100,
+      "artist": "Artist unknown"
+    },
+    {
+      "title": "Figure of a Seated Dog",
+      "meta": "Colima state · colima · 1–300 · Ceramic and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/f4beae88-9994-bd9f-f4cd-31efb7c9b5da/full/843,/0/default.jpg",
+      "year": 1,
+      "artist": "Colima"
+    },
+    {
+      "title": "Seated Male Figure",
+      "meta": "Mexico, Jalisco, Zacatecas Style · c. 200 CE · earthenware with colored slips",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1990.268/1990.268_print.jpg",
+      "year": 195
+    },
+    {
+      "title": "Storyteller",
+      "meta": "Jalisco state · jalisco · 100–800 · Earthenware and slip",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/c2915980-ee1f-0b74-989c-f235806486b6/full/843,/0/default.jpg",
+      "year": 100,
+      "artist": "Ceramist unknown"
+    },
+    {
+      "title": "Standing Figure of a Mother and Child",
+      "meta": "Jalisco state · jalisco · -100–250 · Ceramic and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/e517e61d-04dd-caad-eaa4-bb69fd8ccca7/full/843,/0/default.jpg",
+      "year": -100,
+      "artist": "Jalisco, Ameca-Etzatlán"
+    },
+    {
+      "title": "Bowl with Abstract and Geometric Designs",
+      "meta": "Mexico · jalisco · 600–900 · Ceramic and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/56cef698-c3bb-5dd8-a442-dfce5b170d7b/full/843,/0/default.jpg",
+      "year": 600,
+      "artist": "Jalisco"
+    },
+    {
+      "title": "Seated Figure with an Elongated Head and Chin Placed on Knee",
+      "meta": "Jalisco state · jalisco · -300–300 · Earthenware and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/a0d44df6-f676-c631-f02e-ed789a863f2d/full/843,/0/default.jpg",
+      "year": -300,
+      "artist": "Jalisco, Ameca style"
+    },
+    {
+      "title": "Seated Maternity Figure",
+      "meta": "Colima state · jalisco · -100–300 · Ceramic and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/eb7d608a-af68-2faf-e870-0cebaefb546e/full/843,/0/default.jpg",
+      "year": -100,
+      "artist": "Jalisco, Ameca style"
+    },
+    {
+      "title": "Standing Male Figure Holding a Ball",
+      "meta": "Jalisco state · jalisco · -100–300 · Ceramic and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/a7a04133-aeff-7878-128f-0d3940f0ea32/full/843,/0/default.jpg",
+      "year": -100,
+      "artist": "Jalisco, Ameca-Etzatlán"
+    },
+    {
+      "title": "Open-Necked Vessel in the Form of a Human Head, Possibly Deceased",
+      "meta": "Jalisco state · jalisco · 100–300 · Earthenware and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/e2c250a5-37ef-ff1f-864e-334d7ab9da8c/full/843,/0/default.jpg",
+      "year": 100,
+      "artist": "Jalisco, Ameca style"
+    },
+    {
+      "title": "Seated Female Figurine with Elongated Head",
+      "meta": "Jalisco state · jalisco · -300–300 · Earthenware and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/26a63a95-b772-6eda-2a2d-6be14458064f/full/843,/0/default.jpg",
+      "year": -300,
+      "artist": "Jalisco, Ameca style"
+    },
+    {
+      "title": "Male Seated Figure",
+      "meta": "Mexico, Nayarit · 100 BCE–300 CE · ceramic",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1998.83.2/1998.83.2_print.jpg",
+      "year": -100
+    },
+    {
+      "title": "Female Seated Figure",
+      "meta": "Mexico, Nayarit · 100 BCE–300 CE · ceramic",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1998.83.1/1998.83.1_print.jpg",
+      "year": -100
+    },
+    {
+      "title": "Head Effigy Bowl",
+      "meta": "Mexico, Region of Tilantongo, District of Tlaxiaco, Nayarit style · 100 BCE–300 CE · pottery with burnished red slip",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1990.199/1990.199_print.jpg",
+      "year": -100
+    },
+    {
+      "title": "Pair of Seated Figures",
+      "meta": "Mexico, Nayarit · 100 BCE–300 CE · ceramic",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1998.83/1998.83_print.jpg",
+      "year": -100
+    },
+    {
+      "title": "Architectural Scene",
+      "meta": "Mesoamerica, West Mexico, Nayarit · 200 BCE–300 CE · ceramic, pigment",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1990.258/1990.258_print.jpg",
+      "year": -200
+    },
+    {
+      "title": "Seated Male Holding Chief’s Baton",
+      "meta": "Mesoamerica, West Mexico, Nayarit · 200 BCE–300 CE · ceramic, pigment",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1952.228/1952.228_print.jpg",
+      "year": -200
+    },
+    {
+      "title": "Emaciated Crouching Figure",
+      "meta": "Mexico, Nayarit, San Sebastian Red Style · c. 100 BCE–300 CE · earthenware with burnished red slip",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1990.261/1990.261_print.jpg",
+      "year": -100
+    },
+    {
+      "title": "Pair of Standing Figures",
+      "meta": "Mexico, Nayarit, Ixtlan del Rio Style · c. 100 BCE–300 CE · earthenware with colored slips",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1990.266/1990.266_print.jpg",
+      "year": -100
+    },
+    {
+      "title": "Seated Male Figure with Backrest",
+      "meta": "Mexico, Nayarit, Chinesco style, Type E · 100 BCE–300 CE · pottery with burnished cream and red slips",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1990.271/1990.271_print.jpg",
+      "year": -100
+    },
+    {
+      "title": "House Model with Ritual Feast",
+      "meta": "Nayarit state · nayarit · -100–300 · Earthenware and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/e65adf9a-cdfd-4ba7-b9e8-86f26967b57e/full/843,/0/default.jpg",
+      "year": -100,
+      "artist": "Nayarit"
+    },
+    {
+      "title": "Model Depicting a Ritual Center",
+      "meta": "Nayarit state · nayarit · 100–800 · Earthenware and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/a70fb7dc-2024-0ca3-989f-b28d0c39c2ea/full/843,/0/default.jpg",
+      "year": 100,
+      "artist": "Ceramist unknown"
+    },
+    {
+      "title": "Model of a Tree-Climbing Ritual",
+      "meta": "Nayarit state · nayarit · 100–800 · Earthenware and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/05204133-8955-913a-6b21-36319d5f4d49/full/843,/0/default.jpg",
+      "year": 100,
+      "artist": "Nayarit"
+    },
+    {
+      "title": "Funerary Cheek-Piercing Ritual",
+      "meta": "Nayarit state · nayarit · -200–300 · Earthenware and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/78b941f8-bdce-6254-300d-860b7c337226/full/843,/0/default.jpg",
+      "year": -200,
+      "artist": "Nayarit"
+    },
+    {
+      "title": "Seated Joined Couple",
+      "meta": "Nayarit state · nayarit · -200–300 · Earthenware and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/fc91428c-57c1-7d30-55f0-b9fe0683f8cb/full/843,/0/default.jpg",
+      "year": -200,
+      "artist": "Nayarit"
+    },
+    {
+      "title": "Figure of a Seated Female",
+      "meta": "Western Mexico · nayarit · -100–500 · Ceramic and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/da18ab28-dcdb-4386-b653-fabb547576c3/full/843,/0/default.jpg",
+      "year": -100,
+      "artist": "Artist unknown"
+    },
+    {
+      "title": "House Model Depicting a Ritual Feast",
+      "meta": "Nayarit state · nayarit · -100–300 · Earthenware and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/7b09a7ac-1f67-b7c3-21c6-22216823f7cf/full/843,/0/default.jpg",
+      "year": -100,
+      "artist": "Nayarit"
+    },
+    {
+      "title": "Seated Figure Playing a Rasp",
+      "meta": "Nayarit state · nayarit · -1–200 · Earthenware and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/e4b9c48f-b0b5-95cd-af48-e04923e59789/full/843,/0/default.jpg",
+      "year": -1,
+      "artist": "Nayarit"
+    },
+    {
+      "title": "Female Figure with Incised Features and Triangular Head",
+      "meta": "Nayarit state · nayarit · -100–300 · Ceramic and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/6efb39c9-ffa5-2efc-528d-626883139afe/full/843,/0/default.jpg",
+      "year": -100,
+      "artist": "Nayarit, Chinesco style"
+    },
+    {
+      "title": "Miniature Seated Figurine with Arms Held Behind the Head",
+      "meta": "Nayarit state · nayarit · -100–300 · Earthenware and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/f62ae548-8306-62fb-6ccd-55b347663408/full/843,/0/default.jpg",
+      "year": -100,
+      "artist": "Nayarit, Chinesco style"
+    },
+    {
+      "title": "Seated Female Figure Holding a Bowl on Her Lap",
+      "meta": "Mexico · nayarit · -100–300 · Ceramic and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/204a583d-9847-51d0-5613-d9fa0c801b6c/full/843,/0/default.jpg",
+      "year": -100,
+      "artist": "Nayarit"
+    },
+    {
+      "title": "Seated Male Figure Leaning Forward with Arms Crossed over Knees",
+      "meta": "Nayarit state · nayarit · 100–300 · Earthenware and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/53e90be2-33e3-a8a8-e3c2-03f3ac8db11e/full/843,/0/default.jpg",
+      "year": 100,
+      "artist": "Nayarit"
+    },
+    {
+      "title": "Seated Female Figurine with Patterned Skirt",
+      "meta": "Nayarit state · nayarit · -100–300 · Earthenware and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/9e72baa8-b8b2-c1f0-4f60-fdef867764d8/full/843,/0/default.jpg",
+      "year": -100,
+      "artist": "Nayarit, Chinesco style"
+    },
+    {
+      "title": "Bottle with Underwater Serpents",
+      "meta": "Arkansas · mississippian · 1300–1500 · Earthenware and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/d1a62af6-0fc8-bceb-c78b-5ea7b5bc3afb/full/843,/0/default.jpg",
+      "year": 1300,
+      "artist": "Mississippian, Nodena red and white"
+    },
+    {
+      "title": "Chunkey Stone",
+      "meta": "Illinois · mississippian · 1200–1400 · Kaolin",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/1069ae3a-5828-6fa2-e13c-9a1bce0765b8/full/843,/0/default.jpg",
+      "year": 1200,
+      "artist": "Mississippian"
+    },
+    {
+      "title": "Pair of Earspools with Eight-Pointed Star Motif",
+      "meta": "Oklahoma · mississippian · 1200–1400 · Stone",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/3682843a-d2d8-98d6-9138-3653b01c761f/full/843,/0/default.jpg",
+      "year": 1200,
+      "artist": "Mississippian"
+    },
+    {
+      "title": "Bowl in the Shape of Underwater Serpent with Upturned Neck and Coiled Tail",
+      "meta": "Arkansas · mississippian · 1000–1400 · Ceramic",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/efb5f853-6bd6-2748-baac-f1915d86f23f/full/843,/0/default.jpg",
+      "year": 1000,
+      "artist": "Mississippian"
+    },
+    {
+      "title": "Basket with Stamped Decoration",
+      "meta": "Native North America, Woodlands, Algonquian or Haudenosaunee (Iroquois), Post-contact Period · early 1800s · ash? strips, pigment",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1978.77/1978.77_print.jpg",
+      "year": 1800
+    },
+    {
+      "title": "Cradle Board",
+      "meta": "America, Native North American, Lakota (Sioux), Post-Contact · c. 1900 · leather, quills, beads",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1937.869/1937.869_print.jpg",
+      "year": 1895
+    },
+    {
+      "title": "Pair of Child's Moccasins",
+      "meta": "Plains · sioux · 1875–1895 · Doe skin sewn with sinew; decorated with beads",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/05d63e68-8d33-9b6e-050c-6f0ed81272c5/full/843,/0/default.jpg",
+      "year": 1875,
+      "artist": "Sioux"
+    },
+    {
+      "title": "Pair of Child's Mocassins",
+      "meta": "Plains · sioux · 1875–1895 · Buffalo rawhide",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/94d010a1-170d-a4bf-67a4-67f1e047031c/full/843,/0/default.jpg",
+      "year": 1875,
+      "artist": "Possibly Sioux"
+    },
+    {
+      "title": "Pair of Moccasins",
+      "meta": "Plains · santee · 1875–1900 · Hide",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/500caafc-e000-f028-6505-2d3a8a6b52aa/full/843,/0/default.jpg",
+      "year": 1875,
+      "artist": "Santee Sioux"
+    },
+    {
+      "title": "Ritual Cache",
+      "meta": "New Mexico · salado · 1300–1400 · Wood",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/6e181602-53e1-26c5-d830-7cdd9f91356a/full/843,/0/default.jpg",
+      "year": 1300,
+      "artist": "Salado branch of the Mogollon"
+    },
+    {
+      "title": "Storage Jar (Olla)",
+      "meta": "Arizona · ancestral pueblo (anasazi) · 1150–1300 · Ceramic and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/2fae224b-5000-2abc-8b6c-35b225139a80/full/843,/0/default.jpg",
+      "year": 1150,
+      "artist": "Ancestral Pueblo"
+    },
+    {
+      "title": "Storage Jar (Olla) with Black, White, and Hathed Linked Scrolls, Triangles, and Stepped Motifs",
+      "meta": "New Mexico · ancestral pueblo (anasazi) · 900–1450 · Ceramic and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/c1feab24-1837-e49d-72ee-c63c1ae8cc50/full/843,/0/default.jpg",
+      "year": 900,
+      "artist": "Ancestral Pueblo"
+    },
+    {
+      "title": "Mug with Interlocking Geometric Pattern with Zigzag Motifs and Crosshatching",
+      "meta": "Southwest · ancestral pueblo (anasazi) · 1100–1275 · Ceramic and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/5a1b1161-9db1-560a-09f5-44e8592e59a0/full/843,/0/default.jpg",
+      "year": 1100,
+      "artist": "Ancestral Pueblo"
+    },
+    {
+      "title": "Jar with Interlocking-Stepped Motifs in Diagonal Pattern",
+      "meta": "Southwest · ancestral pueblo (anasazi) · 900–1450 · Ceramic and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/f4e1239c-790a-799d-56f8-8a77335fba0b/full/843,/0/default.jpg",
+      "year": 900,
+      "artist": "Ancestral Pueblo"
+    },
+    {
+      "title": "Jar with Horned Serpents and Interlocking, Hatched-and-Black Stepped Designs",
+      "meta": "New Mexico · ancestral pueblo (anasazi) · 950–1400 · Ceramic and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/5597db40-0eb3-f4a1-b976-351856d593cc/full/843,/0/default.jpg",
+      "year": 950,
+      "artist": "Ancestral Pueblo"
+    },
+    {
+      "title": "Miniature Bowl with Interior Bird-Wing Motif",
+      "meta": "Southwest · ancestral pueblo (anasazi) · 1250–1400 · Ceramic and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/309b7b63-a41f-b63f-947e-8c03240e93d9/full/843,/0/default.jpg",
+      "year": 1250,
+      "artist": "Ancestral Pueblo"
+    },
+    {
+      "title": "Bowl with Interlocking Zigzag Motif in Four-Part Design on Interior Walls",
+      "meta": "Arizona · ancestral pueblo (anasazi) · 900–1450 · Ceramic and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/0da56419-6fef-4044-8375-f9f69a9742ab/full/843,/0/default.jpg",
+      "year": 900,
+      "artist": "Ancestral Pueblo"
+    },
+    {
+      "title": "Pitcher with Stepped-Interlocking Motifs and Vertical Hatching",
+      "meta": "Arizona · ancestral pueblo (anasazi) · 900–1450 · Ceramic and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/046a7f65-584d-0609-19b7-eb3732bb914b/full/843,/0/default.jpg",
+      "year": 900,
+      "artist": "Ancestral Pueblo"
+    },
+    {
+      "title": "Basket",
+      "meta": "Northwest Coast, Haida, Unassigned · Unassigned, before 1917 · twilled, imbricated",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1917.434.a/1917.434.a_print.jpg",
+      "year": 1850
+    },
+    {
+      "title": "Cover for a Basket",
+      "meta": "Northwest Coast, Haida, Unassigned · Unassigned, before 1917 · twilled",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1917.434.b/1917.434.b_print.jpg",
+      "year": 1850
+    },
+    {
+      "title": "Cigarette or Needle Case",
+      "meta": "Arctic, Aleut, Attu, Post-Contact · c 1875– 1917 (source unknown) · plain twine, wild rye grass with crossed openwork, patterned twined start, intersecting layered spokes, and plaited finish; silk embroidery (catalogue card)",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1917.273.a/1917.273.a_print.jpg",
+      "year": 1875
+    },
+    {
+      "title": "Covered Twined Cylindrical Basket",
+      "meta": "Arctic. Aleut (Attu), late 19th-early 20th century · late 1800s–early 1900s · twined",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1917.515/1917.515_print.jpg",
+      "year": 1895
+    },
+    {
+      "title": "Cover for a Twined Cylindrical Basket",
+      "meta": "Arctic, Aleut (Attu), late 19th-early 20th century · late 1800s–early 1900s · twined",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1917.515.b/1917.515.b_print.jpg",
+      "year": 1895
+    },
+    {
+      "title": "Twined Cylindrical Basket",
+      "meta": "Arctic. Aleut (Attu), late 19th-early 20th century · 1890 · twined",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1917.515.a/1917.515.a_print.jpg",
+      "year": 1890
     }
   ]
 }

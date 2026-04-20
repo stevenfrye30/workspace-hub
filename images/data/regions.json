@@ -16,31 +16,36 @@
       "slug": "mesopotamia-persia",
       "title": "Mesopotamia & Persia",
       "blurb": "Ishtar Gate, Hammurabi, Lamassu, Persepolis.",
-      "continent": "Near East & Mediterranean"
+      "continent": "Near East & Mediterranean",
+      "hero": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Berl%C3%ADn%2C_Museo_de_P%C3%A9rgamo_05.jpg/960px-Berl%C3%ADn%2C_Museo_de_P%C3%A9rgamo_05.jpg"
     },
     {
       "slug": "mediterranean",
       "title": "Mediterranean",
       "blurb": "Parthenon, Venus de Milo, Laocoön, Pompeii.",
-      "continent": "Near East & Mediterranean"
+      "continent": "Near East & Mediterranean",
+      "hero": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/The_Parthenon_in_Athens.jpg/960px-The_Parthenon_in_Athens.jpg"
     },
     {
       "slug": "europe",
       "title": "Europe",
       "blurb": "Kells, Chartres, Sistine Chapel, Rembrandt, Van Gogh.",
-      "continent": "Europe & Islamic World"
+      "continent": "Europe & Islamic World",
+      "hero": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg/960px-Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg"
     },
     {
       "slug": "islamic-world",
       "title": "Islamic World",
       "blurb": "Alhambra, Dome of the Rock, Córdoba, Isfahan.",
-      "continent": "Europe & Islamic World"
+      "continent": "Europe & Islamic World",
+      "hero": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Dawn_Charles_V_Palace_Alhambra_Granada_Andalusia_Spain.jpg/960px-Dawn_Charles_V_Palace_Alhambra_Granada_Andalusia_Spain.jpg"
     },
     {
       "slug": "south-asia",
       "title": "South Asia",
       "blurb": "Taj Mahal, Ajanta, Khajuraho, Chola bronze, Sanchi.",
-      "continent": "Asia & Pacific"
+      "continent": "Asia & Pacific",
+      "hero": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Ajanta_%2863%29.jpg/960px-Ajanta_%2863%29.jpg"
     },
     {
       "slug": "east-asia",
@@ -52,13 +57,15 @@
       "slug": "southeast-asia-oceania",
       "title": "Southeast Asia & Oceania",
       "blurb": "Angkor Wat, Borobudur, Bagan, Moai, Aboriginal rock art.",
-      "continent": "Asia & Pacific"
+      "continent": "Asia & Pacific",
+      "hero": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Buddhist_monks_in_front_of_the_Angkor_Wat.jpg/960px-Buddhist_monks_in_front_of_the_Angkor_Wat.jpg"
     },
     {
       "slug": "americas",
       "title": "Americas",
       "blurb": "Teotihuacan, Palenque, Sun Stone, Machu Picchu, Nazca.",
-      "continent": "Americas"
+      "continent": "Americas",
+      "hero": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Chichen_Itza_3.jpg/960px-Chichen_Itza_3.jpg"
     }
   ]
 }

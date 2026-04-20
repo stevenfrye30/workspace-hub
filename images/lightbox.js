@@ -10,10 +10,14 @@
     <button class="lb-close" aria-label="Close">\u2715</button>
     <button class="lb-prev" aria-label="Previous">\u2039</button>
     <button class="lb-next" aria-label="Next">\u203A</button>
-    <figure>
-      <img class="lb-img" alt="">
-      <figcaption class="lb-cap"></figcaption>
-    </figure>
+    <div class="lb-scroll">
+      <div class="lb-scroll-inner">
+        <figure>
+          <img class="lb-img" alt="">
+          <figcaption class="lb-cap"></figcaption>
+        </figure>
+      </div>
+    </div>
   `;
   document.body.appendChild(overlay);
 
@@ -63,6 +67,7 @@
     const visibleIdx = visible.indexOf(w);
     countEl.textContent = visibleIdx >= 0 ? `${visibleIdx + 1} / ${visible.length}` : '';
     overlay.hidden = false;
+    overlay.querySelector('.lb-scroll').scrollTop = 0;
     document.body.style.overflow = 'hidden';
   }
 
@@ -88,7 +93,10 @@
   overlay.querySelector('.lb-close').addEventListener('click', close);
   overlay.querySelector('.lb-prev').addEventListener('click', e => { e.stopPropagation(); step(-1); });
   overlay.querySelector('.lb-next').addEventListener('click', e => { e.stopPropagation(); step(1); });
-  overlay.addEventListener('click', e => { if (e.target === overlay || e.target.tagName === 'FIGURE') close(); });
+  overlay.addEventListener('click', e => {
+    const t = e.target;
+    if (t === overlay || t.classList.contains('lb-scroll') || t.classList.contains('lb-scroll-inner') || t.tagName === 'FIGURE') close();
+  });
   document.addEventListener('keydown', e => {
     if (overlay.hidden) return;
     if (e.key === 'Escape') close();

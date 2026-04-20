@@ -694,6 +694,43 @@ def build_timeline(meta: dict) -> int:
 # Landing page
 # ---------------------------------------------------------------------------
 
+TILE_TPL = """  <a class="region-tile" href="regions/{slug}.html">
+    <img class="tile-img" src="{image}" alt="" loading="lazy">
+    <div class="tile-overlay">
+      <div class="tile-title">{title}</div>
+      <div class="tile-blurb">{blurb}</div>
+    </div>
+  </a>
+"""
+
+
+def _region_hero_image(region: dict) -> str:
+    """Return the image URL for a region's landing tile.
+    Prefers an explicit `hero` field in regions.json (a path or URL); falls
+    back to the first work in the region's data file."""
+    hero = region.get("hero")
+    if hero:
+        return hero
+    data = json.loads((DATA / f"{region['slug']}.json").read_text(encoding="utf-8"))
+    works = data.get("works") or []
+    return works[0]["image"] if works else ""
+
+
+def build_region_tiles(regions: list[dict]) -> str:
+    tiles = []
+    for r in regions:
+        image = _region_hero_image(r)
+        if not image:
+            continue
+        tiles.append(TILE_TPL.format(
+            slug=r["slug"],
+            image=h_attr(image),
+            title=h(r["title"]),
+            blurb=h(r["blurb"]),
+        ))
+    return '<div class="region-tiles">\n' + "".join(tiles).rstrip() + '\n  </div>'
+
+
 INDEX_TPL = """<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -714,7 +751,7 @@ INDEX_TPL = """<!DOCTYPE html>
   </header>
 
   <h2 class="section">By region</h2>
-@@REGION_GROUPS@@
+  @@REGION_TILES@@
 
   <h2 class="section">By artist <span class="count">featured makers &mdash; see all @@ARTIST_COUNT@@ &rarr;</span></h2>
   <div class="card-grid">
@@ -744,30 +781,7 @@ CARD_MORE_TPL = """    <a class="card card-more" href="{href}">
 
 
 def build_index(meta: dict, counts: dict[str, int], artists: dict[str, list[dict]]) -> None:
-    # Regions grouped by continent, preserving regions.json order within each group.
-    groups: dict[str, list[dict]] = {}
-    group_order: list[str] = []
-    for r in meta["regions"]:
-        c = r.get("continent", "Other")
-        if c not in groups:
-            groups[c] = []
-            group_order.append(c)
-        groups[c].append(r)
-
-    region_groups_html = ""
-    for continent in group_order:
-        cards = "".join(
-            CARD_TPL.format(
-                href=f"regions/{r['slug']}.html",
-                title=h(r["title"]),
-                blurb=h(r["blurb"]),
-            )
-            for r in groups[continent]
-        ).rstrip()
-        region_groups_html += (
-            f'  <h3 class="continent">{h(continent)}</h3>\n'
-            f'  <div class="card-grid">\n{cards}\n  </div>\n'
-        )
+    region_tiles_html = build_region_tiles(meta["regions"])
 
     # Featured artists: those with >= 2 works, sorted by count desc then surname.
     featured = sorted(
@@ -793,7 +807,7 @@ def build_index(meta: dict, counts: dict[str, int], artists: dict[str, list[dict
     html_out = (
         INDEX_TPL
         .replace("@@NAV@@", make_nav("regions"))
-        .replace("@@REGION_GROUPS@@", region_groups_html.rstrip())
+        .replace("@@REGION_TILES@@", region_tiles_html)
         .replace("@@ARTIST_CARDS@@", artist_cards)
         .replace("@@TOTAL_COUNT@@", str(total))
         .replace("@@REGION_COUNT@@", str(len(meta["regions"])))

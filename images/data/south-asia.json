@@ -523,6 +523,4015 @@
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/LotusDelhi.jpg/960px-LotusDelhi.jpg",
       "artist": "Fariborz Sahba",
       "year": 1986
+    },
+    {
+      "title": "Didarganj Yakshi",
+      "meta": "Mauryan · c. 3rd c. BCE · Bihar",
+      "desc": "A monumental polished sandstone female figure with a fly-whisk. Found buried by the Ganges; her glossy Mauryan polish and voluptuous poise are thought to anticipate centuries of Indian sculpture.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Didarganj_Yakshi_statue_in_the_Bihar_Museum.jpg/960px-Didarganj_Yakshi_statue_in_the_Bihar_Museum.jpg",
+      "year": -250
+    },
+    {
+      "title": "Dancing Girl of Mohenjo-daro",
+      "meta": "Indus Valley · c. 2500 BCE",
+      "desc": "A small bronze, four and a half inches tall, a slouched teenage girl with bangles up one arm. The oldest lost-wax bronze from the subcontinent — and still the confident, nameless star of the Indus.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Dancing_girl_of_Mohenjo-daro.jpg/960px-Dancing_girl_of_Mohenjo-daro.jpg",
+      "year": -2500
+    },
+    {
+      "title": "Bani Thani",
+      "meta": "Kishangarh miniature · c. 1750",
+      "desc": "The elongated profile of a poetess in the court of Raja Sawant Singh — arched brows, fishlike eye, pursed lip. A regional style turned into Rajasthan's most distinctive visual signature.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/1/10/4_Radha_%28Bani_Thani%29%2C_Kishangarh%2C_ca._1750%2C_National_Museum_New_Delhi.jpg",
+      "year": 1750
+    },
+    {
+      "title": "Ruwanwelisaya",
+      "meta": "Anuradhapura · 2nd c. BCE · Sri Lanka",
+      "desc": "A vast white-domed stupa built by King Dutugamunu — once 103 meters, restored again and again over two millennia. The bell-shape that became the standard template for Sinhalese dagobas.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/SL_Anuradhapura_asv2020-01_img11_Ruwanwelisaya_Stupa.jpg/960px-SL_Anuradhapura_asv2020-01_img11_Ruwanwelisaya_Stupa.jpg",
+      "year": -140
+    },
+    {
+      "title": "Dambulla Cave Temple",
+      "meta": "Sri Lankan Buddhist · 1st c. BCE onward",
+      "desc": "Five caves hollowed under a granite overhang, packed with over 150 Buddha figures and ceilings painted with repeating Buddha rows. A rock-cut monastery continuously used for 2,000 years.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Dambulla-buddhastupa.jpg/960px-Dambulla-buddhastupa.jpg",
+      "year": -100
+    },
+    {
+      "title": "Bharhut Stupa Reliefs",
+      "meta": "Early Buddhist · 2nd c. BCE · India",
+      "desc": "Carved sandstone panels from the railing of a lost stupa — jataka tales, yakshas, royal processions. Before figural Buddhas existed, the Buddha appears as a footprint, a throne, or an umbrella.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/f/f6/Bharhut_stupa_original_layout.jpg",
+      "year": -150
+    },
+    {
+      "title": "Sarnath Gupta Buddha",
+      "meta": "Gupta · 5th c. CE",
+      "desc": "Seated sandstone Buddha preaching the first sermon, hands in dharmachakra mudra, a halo with delicate carving behind his head. The Gupta \"Sarnath style\" became the template for every Buddha to follow — from Southeast Asia to Japan.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Buddha_preaching_his_First_Sermon_%28Sarnath%29.jpg",
+      "year": 475
+    },
+    {
+      "title": "Udayagiri Varaha Relief",
+      "meta": "Gupta · c. 400 CE · India",
+      "desc": "A colossal rock-cut panel of Varaha, Vishnu as a man-boar, lifting the earth goddess from the cosmic sea. One of the earliest great Hindu narrative reliefs — imperial propaganda as myth.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Varahavtar_Panel.jpg/1280px-Varahavtar_Panel.jpg",
+      "year": 400
+    },
+    {
+      "title": "Bagh Caves",
+      "meta": "Buddhist · 5th–7th c. CE · Madhya Pradesh",
+      "desc": "A row of rock-cut monasteries near the Narmada, once painted throughout — a sibling to Ajanta. The frescoes were removed to the Gwalior Museum in 1982 to preserve them.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Buddhist_Caves_No.1_to_7_8.JPG/1280px-Buddhist_Caves_No.1_to_7_8.JPG",
+      "year": 500
+    },
+    {
+      "title": "Descent of the Ganges",
+      "meta": "Pallava · 7th c. CE · Mahabalipuram",
+      "desc": "A 27-meter granite relief — elephants, ascetics, gods, gandharvas — with a natural fissure down the middle flooded during rains to become the sacred river itself. The largest open-air relief of the ancient world.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Descent_of_the_Ganges_01.jpg/1280px-Descent_of_the_Ganges_01.jpg",
+      "year": 650
+    },
+    {
+      "title": "Chennakeshava Temple, Belur",
+      "meta": "Hoysala · 1117 · Karnataka",
+      "desc": "A Hoysala masterwork covered in a continuous band of relief — madanikas, elephants, musicians — carved from soapstone so soft the sculptors could almost draw on it.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/The_Courtyard_of_Chennakesava_Temple_-_Belur.jpg/1280px-The_Courtyard_of_Chennakesava_Temple_-_Belur.jpg",
+      "year": 1117
+    },
+    {
+      "title": "Lakshmana Temple, Khajuraho",
+      "meta": "Chandela · 954 CE · Madhya Pradesh",
+      "desc": "The earliest of Khajuraho's western group — tower-peaks ascending like the Himalayas, and bands of exterior relief that have made the site world-famous for reasons other than ascetic.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Khajuraho-Lakshmana_temple.JPG",
+      "year": 954
+    },
+    {
+      "title": "Charminar",
+      "meta": "Qutb Shahi · 1591 · Hyderabad",
+      "desc": "Four monumental minarets at the heart of old Hyderabad, crossing four broad avenues at their base — an arch-plus-minaret quartet supposedly built to mark the end of a plague.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Charminar_Hyderabad_1.jpg/1280px-Charminar_Hyderabad_1.jpg",
+      "year": 1591
+    },
+    {
+      "title": "Kangra Painting",
+      "meta": "Pahari miniature · 18th c. · Himalayan foothills",
+      "desc": "Cool greens and misty mountains, Krishna and Radha, lovers in garden pavilions. The Kangra school of Rajput painting is the visual corollary of Hindi love poetry.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Attributed_to_Khushala%2C_Indian%2C_active_late_18th_century_-_The_Gods_Sing_and_Dance_for_Shiva_and_Parvati_-_Google_Art_Project.jpg/1280px-Attributed_to_Khushala%2C_Indian%2C_active_late_18th_century_-_The_Gods_Sing_and_Dance_for_Shiva_and_Parvati_-_Google_Art_Project.jpg",
+      "year": 1790
+    },
+    {
+      "title": "Basholi Painting",
+      "meta": "Pahari miniature · c. 1730",
+      "desc": "Bulging eyes, hot red backgrounds, jewel-like beetle-wing-case insets for emeralds — the Basholi school is Rajput painting at its most fierce and stylized.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/6/64/Ganesha_Basohli_miniature_circa_1730_Dubost_p73.jpg",
+      "year": 1730
+    },
+    {
+      "title": "Company Painting",
+      "meta": "Colonial Indian · late 18th–19th c.",
+      "desc": "Indian artists painting Indian subjects in a part-Mughal, part-European watercolour style for British patrons of the East India Company — trades, castes, temples, flora catalogued for colonial eyes.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Painting_of_a_woman_and_two_attendants%2C_Company_School%2C_ca.1820.jpg",
+      "year": 1820
+    },
+    {
+      "title": "Lankathilaka Vihara",
+      "meta": "Gampola · 14th c. · Sri Lanka",
+      "desc": "A small Buddhist temple on a rock, its whitewashed walls still holding murals. Partly Hindu in plan, partly Buddhist in image — a Sri Lankan hybrid of both traditions.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Lankathilaka_Vhihara_-_Le_temple.JPG/1280px-Lankathilaka_Vhihara_-_Le_temple.JPG",
+      "year": 1350
+    },
+    {
+      "title": "Thangka of Green Tara",
+      "meta": "Tibetan Buddhist · 13th c. onward",
+      "desc": "The green-skinned female bodhisattva of swift compassion, one foot extended to step into action. Thangkas were painted for meditation — a portable cosmos on cloth.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Old_Green_Tara.JPG/1280px-Old_Green_Tara.JPG",
+      "year": 1500
+    },
+    {
+      "title": "Tabo Monastery Murals",
+      "meta": "Tibetan Buddhist · 996 CE onward · Spiti, India",
+      "desc": "A mud-walled monastery in a cold desert valley, its dim interior packed with painted mandalas and stucco bodhisattvas. Perhaps the oldest continuously functioning Buddhist monastery in the Himalayas.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Tabo_Monjastery_Entrance.jpg/1280px-Tabo_Monjastery_Entrance.jpg",
+      "year": 996
+    },
+    {
+      "title": "Alchi Monastery",
+      "meta": "Tibetan Buddhist · 11th–13th c. · Ladakh",
+      "desc": "Six temples on the Indus riverbank, their interiors covered in Kashmir-style murals unlike anywhere else in Tibet — sensuous, courtly, entirely different from the iconic Buddhism of later centuries.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Alchi.jpg/1280px-Alchi.jpg",
+      "year": 1100
+    },
+    {
+      "title": "Gyantse Kumbum",
+      "meta": "Tibetan Buddhist · 1427 · Tibet",
+      "desc": "A nine-storey stupa with 75 chapels spiralling up it — each chapel a different deity in a full pantheon. A three-dimensional mandala you walk through.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Pango_Chorten%2C_Kumbum_Stupa%2C_Gyantse%2C_Tibet.jpg/1280px-Pango_Chorten%2C_Kumbum_Stupa%2C_Gyantse%2C_Tibet.jpg",
+      "year": 1427
+    },
+    {
+      "title": "Vitthala Temple Stone Chariot",
+      "meta": "Vijayanagara · 16th c. · Hampi",
+      "desc": "A stone chariot with stone wheels that are said to have actually rotated. Built as the shrine for Vitthala's vahana, Garuda, in the empire's last great capital.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/9/94/Vitthala_Temple_Chariot%2C_Hampi%2C_Karnataka.jpg",
+      "year": 1520
+    },
+    {
+      "title": "Jahangir in Darbar",
+      "meta": "Mughal miniature · c. 1620",
+      "desc": "A crowded court of the Mughal emperor in audience — every noble identified by a tiny inscription, each face individual. The Jahangir-nama was a painted autobiography.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Jahangir_in_Darbar.jpg/1280px-Jahangir_in_Darbar.jpg",
+      "year": 1620
+    },
+    {
+      "title": "Martand Sun Temple",
+      "meta": "Karkota Kashmir · 8th c. CE",
+      "desc": "An early Kashmiri Sun temple on a plateau above the Vale of Kashmir — columns of grey limestone, roof long gone. Destroyed by Sultan Sikandar in the 15th century; the ruins are still astonishing.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Martand_Sun_Temple_Central_shrine_%286133772365%29.jpg/1280px-Martand_Sun_Temple_Central_shrine_%286133772365%29.jpg",
+      "year": 725
+    },
+    {
+      "title": "Hanuman Conversing",
+      "meta": "Chola · 11th c. · Tamil Nadu",
+      "desc": "A bronze Hanuman, monkey general of the Ramayana, standing in animated mid-speech — hand raised, tail curled up. Chola temple bronzes were paraded in festivals; weight and lost-wax craft for a god who moved.",
+      "image": "https://images.metmuseum.org/CRDImages/as/original/DT5250.jpg",
+      "year": 1050
+    },
+    {
+      "title": "Great Indian Fruit Bat",
+      "meta": "Company School · Bhawani Das · c. 1780",
+      "desc": "An Indian court painter working for British naturalists delivered this bat — wing fully splayed, every vein inked — with a scientific accuracy European artists couldn't match.",
+      "image": "https://images.metmuseum.org/CRDImages/is/original/DP167067.jpg",
+      "artist": "Bhawani Das",
+      "year": 1780
+    },
+    {
+      "title": "Shah Jahan on a Terrace",
+      "meta": "Mughal · Chitarman · 1628",
+      "desc": "The Mughal emperor stands in profile on a palace terrace, holding a pendant set with his own portrait. Painted the year he succeeded to the throne — political self-presentation at imperial scale.",
+      "image": "https://images.metmuseum.org/CRDImages/is/original/DP246547.jpg",
+      "artist": "Chitarman",
+      "year": 1628
+    },
+    {
+      "title": "Krishna Lifts Mount Govardhan",
+      "meta": "Mughal · c. 1590",
+      "desc": "Krishna holds the mountain over his village like an umbrella against Indra's deluge. A Mughal-style Harivamsa, commissioned by Akbar — Hindu myth painted in the royal Islamic atelier.",
+      "image": "https://images.metmuseum.org/CRDImages/is/original/DP231327.jpg",
+      "year": 1590
+    },
+    {
+      "title": "Indra Worships Ganesha",
+      "meta": "Pahari (Kangra) · c. 1780",
+      "desc": "A Gita Govinda folio — Indra, king of gods, bowing to the elephant-headed Ganesha. Soft Kangra washes, a rare theme in which the greatest god kneels to a smaller one.",
+      "image": "https://images.metmuseum.org/CRDImages/as/original/DP372795.jpg",
+      "year": 1780
+    },
+    {
+      "title": "The Court of Ravana",
+      "meta": "Mughal Ramayana · c. 1605",
+      "desc": "A crowded throne room of the demon king in Lanka — demon attendants, musicians, intrigue. From a manuscript commissioned by a Mughal noble to translate Valmiki's Sanskrit into Persian-style painting.",
+      "image": "https://images.metmuseum.org/CRDImages/is/original/DP107192.jpg",
+      "year": 1605
+    },
+    {
+      "title": "Rosette of Shah Jahan",
+      "meta": "Mughal · c. 1645",
+      "desc": "An illuminated rosette bearing Shah Jahan's titles in Persian — the emperor as \"Second Lord of the Conjunction,\" claimant to Timur's universal empire. Opening page of his imperial album.",
+      "image": "https://images.metmuseum.org/CRDImages/is/original/DP240657.jpg",
+      "year": 1645
+    },
+    {
+      "title": "Mathura Railing Pillar",
+      "meta": "Kushan · 2nd c. CE · India",
+      "desc": "A red sandstone pillar from a stupa railing — yakshis (tree-spirits) at their erotic fullest, drinkers and musicians around them. Mathura sculpture is carved to be walked around; every side shows someone.",
+      "image": "https://openaccess-cdn.clevelandart.org/1977.34/1977.34_print.jpg",
+      "year": 150
+    },
+    {
+      "title": "Winged Atlas-Hercules",
+      "meta": "Gandhara · 2nd–3rd c. CE · Pakistan",
+      "desc": "A schist Hercules with wings, kneeling to support a ceiling — Greek myth holding up a Buddhist stupa. The Gandhara hybrid, born of Alexander's successors and the Kushans.",
+      "image": "https://openaccess-cdn.clevelandart.org/2011.136/2011.136_print.jpg",
+      "year": 200
+    },
+    {
+      "title": "Gandhara Reliquary Box",
+      "meta": "Late Kushan · 2nd–4th c. CE · Swat Valley",
+      "desc": "A bronze reliquary found with Buddhist bone relics inside — small portable architecture, in the shape of a tiny cylindrical stupa, hidden in the heart of a larger one.",
+      "image": "https://openaccess-cdn.clevelandart.org/1976.71/1976.71_print.jpg",
+      "year": 300
+    },
+    {
+      "title": "Kashmiri Ivory Temptation",
+      "meta": "Kashmiri Buddhist · 8th c.",
+      "desc": "A carved ivory panel showing the Buddha meditating while Mara's army hurls weapons that turn to flowers. Kashmiri ivories traveled across the Himalayan trade routes — this one made its way to Tibet.",
+      "image": "https://openaccess-cdn.clevelandart.org/1971.18/1971.18_print.jpg",
+      "year": 750
+    },
+    {
+      "title": "Pala Earth-Witnessing Buddha",
+      "meta": "Pala · 9th c. · Bihar",
+      "desc": "A black schist Buddha touching the earth to witness his enlightenment, flanked by bodhisattvas. Pala sculpture traveled with pilgrims to Tibet, Nepal, and Burma — and re-seeded the form.",
+      "image": "https://openaccess-cdn.clevelandart.org/1935.146/1935.146_print.jpg",
+      "year": 850
+    },
+    {
+      "title": "Ravana Battles Jatayu",
+      "meta": "Kishangarh · 1744 · Rajasthan",
+      "desc": "A painted folio from a Jain story — the demon king Ravana fights the great vulture Jatayu, defeating him by throwing stones into his mouth. Kishangarh style at its most dramatic and particular.",
+      "image": "https://openaccess-cdn.clevelandart.org/1968.108.a/1968.108.a_print.jpg",
+      "year": 1744
+    },
+    {
+      "title": "Mathura Crowned Bodhisattva",
+      "meta": "Kushan · 3rd c. CE · Mathura",
+      "desc": "A red sandstone bodhisattva with a jeweled crown and necklace, the body slightly sway-hipped. Mathura's was the first Indian art to give the Buddha a humanoid form.",
+      "image": "https://images.metmuseum.org/CRDImages/as/original/DP701395.jpg",
+      "year": 250
+    },
+    {
+      "title": "Nalanda Earth-Witnessing Buddha",
+      "meta": "Pala · late 10th–11th c. · Nalanda",
+      "desc": "A black schist stele — Buddha seated in bhumisparsha mudra, Avalokiteshvara and Maitreya standing beside him. The Pala style that defined Himalayan Buddhist art for centuries.",
+      "image": "https://images.metmuseum.org/CRDImages/as/original/6 DP310502r3_61A.jpg",
+      "year": 1000
+    },
+    {
+      "title": "Nepali Krishna Storms Naraka",
+      "meta": "Nepali · c. 1775 · Kathmandu",
+      "desc": "A Bhagavata Purana folio — Krishna and Satyabhama besiege the citadel of the demon king Naraka. Bright Newari pigments in a compressed perspective.",
+      "image": "https://openaccess-cdn.clevelandart.org/2022.45/2022.45_print.jpg",
+      "year": 1775
+    },
+    {
+      "title": "Eleven-Headed Avalokiteshvara",
+      "meta": "Western Himalayan · c. 1000 · Kashmir",
+      "desc": "A brass Avalokiteshvara with eleven heads stacked in three tiers — each head watches a different direction, seeing the suffering of all beings. Silver and copper inlay for eyes, lips, markings.",
+      "image": "https://openaccess-cdn.clevelandart.org/1975.101/1975.101_print.jpg",
+      "year": 1000
+    },
+    {
+      "title": "Ritual Flaying Knife",
+      "meta": "Sino-Tibetan · c. 1410 · Derge",
+      "desc": "A tantric ritual knife (kartika) from the early Ming court — used symbolically to flay the ego, not any body. Gilt copper, with Yama's attributes on the handle.",
+      "image": "https://openaccess-cdn.clevelandart.org/1978.9.3/1978.9.3_print.jpg",
+      "year": 1410
+    },
+    {
+      "title": "Green Tara (Aniko)",
+      "meta": "Central Tibet · Aniko · c. 1260",
+      "desc": "Attributed to Aniko, the Nepali prodigy who led the Yuan court's Buddhist ateliers. Green Tara extends her right foot, one hand offering the varada mudra — the compassionate bodhisattva of swift response.",
+      "image": "https://openaccess-cdn.clevelandart.org/1970.156/1970.156_print.jpg",
+      "artist": "Aniko",
+      "year": 1260
+    },
+    {
+      "title": "Deccan Prince on Composite Elephant",
+      "meta": "Deccan · Golconda · c. 1590",
+      "desc": "A courtly prince rides an elephant whose body is a tangle of smaller animals — the composite beast trope in Islamic painting. Golconda, not Mughal, shows a distinctive Persianate coloration.",
+      "image": "https://openaccess-cdn.clevelandart.org/2013.282/2013.282_print.jpg",
+      "year": 1590
+    },
+    {
+      "title": "Rasikapriya: Shatha Nayaka",
+      "meta": "Rajasthani · c. 1680 · Northwestern India",
+      "desc": "A folio from the Rasikapriya of Keshavdas — Krishna and Radha quarreling. \"Shatha Nayaka\" is the lover-type who denies his affair. Rajput painting illustrated types of lovers and their moods.",
+      "image": "https://openaccess-cdn.clevelandart.org/2018.158/2018.158_print.jpg",
+      "year": 1680
+    },
+    {
+      "title": "Rasikapriya: Abhisarika Nayika",
+      "meta": "Rajasthani · c. 1615 · Northwestern India",
+      "desc": "A heroine (abhisarika) braves the dark and the snakes to meet her lover — defined in the Rasikapriya as one of eight classical love-types. Rajput painters painted every one.",
+      "image": "https://openaccess-cdn.clevelandart.org/2018.166/2018.166_print.jpg",
+      "year": 1615
+    },
+    {
+      "title": "Jain Ascetic (Basavana)",
+      "meta": "Mughal · Basavana · c. 1600",
+      "desc": "A Mughal court painter's study of a naked Digambara Jain ascetic — Emperor Akbar's interest in all religions meant his ateliers painted sages of every tradition in fine-line detail.",
+      "image": "https://openaccess-cdn.clevelandart.org/1967.244/1967.244_print.jpg",
+      "artist": "Basavana",
+      "year": 1600
+    },
+    {
+      "title": "Jain Manuscript Cover",
+      "meta": "Gujarati · c. 1800 · Western India",
+      "desc": "An embroidered silk cover for a palm-leaf Jain manuscript — the inner text a Kalpasutra, the outer cover a protective textile. Jain libraries preserved manuscripts for centuries this way.",
+      "image": "https://openaccess-cdn.clevelandart.org/1925.494/1925.494_print.jpg",
+      "year": 1800
+    },
+    {
+      "title": "Shiva and Parvati",
+      "meta": "South India, Tamil Nadu, Chola period (900–1200s)) · c. 950–60 · bronze",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1961.94/1961.94_print.jpg",
+      "year": 950
+    },
+    {
+      "title": "Nataraja, Shiva as the Lord of Dance",
+      "meta": "South India, Tamil Nadu, Chola period (900-1200s) · 1000s · Bronze",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1930.331/1930.331_print.jpg",
+      "year": 1000
+    },
+    {
+      "title": "Monkey General Hanuman",
+      "meta": "Southern India, Chola period (900s–1200s) · c. 1000 · bronze",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1980.26/1980.26_print.jpg",
+      "year": 990
+    },
+    {
+      "title": "Ganesha",
+      "meta": "South India, Medieval period, Chola dynasty(10th-13th century) · c. 1070 · bronze",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1970.62/1970.62_print.jpg",
+      "year": 1060
+    },
+    {
+      "title": "Yoga Narashimha, Vishnu in his Man-Lion Avatar",
+      "meta": "South India, late Chola Period (900-13th Century) · c. 1250 · bronze",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1973.187/1973.187_print.jpg",
+      "year": 1250
+    },
+    {
+      "title": "Trident with Shiva as Half-Woman (Ardhanarishvara)",
+      "meta": "South India, Tamil Nadu, Chola period (900-13th Century) · c. 1050 · bronze",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1969.117/1969.117_print.jpg",
+      "year": 1050
+    },
+    {
+      "title": "Kali",
+      "meta": "South India, Tamil Nadu, Chola period (900-13th century) · 900s–1000s · bronze",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1956.7/1956.7_print.jpg",
+      "year": 900
+    },
+    {
+      "title": "Shiva as Lord of Music",
+      "meta": "South India, Tamil Nadu, Chola period (900-13th century) · c. 1000 · bronze",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1971.117/1971.117_print.jpg",
+      "year": 990
+    },
+    {
+      "title": "Goddess Holding a Lotus",
+      "meta": "South India, Tamil Nadu, Chola period (900-13th Century) · c. 950 · bronze",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1984.2/1984.2_print.jpg",
+      "year": 940
+    },
+    {
+      "title": "Shiva",
+      "meta": "South India, Chola period (900–1200s) · 1200s–1300s · bronze",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1971.226/1971.226_print.jpg",
+      "year": 1200
+    },
+    {
+      "title": "Standing Buddha",
+      "meta": "Pakistan, Gandhara, Kushan period · 150–200 CE · schist",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1972.43/1972.43_print.jpg",
+      "year": 150
+    },
+    {
+      "title": "Siddhartha at the Bodhi Tree",
+      "meta": "Pakistan, Gandhara · 100s–200s CE · schist",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1997.151/1997.151_print.jpg",
+      "year": 100
+    },
+    {
+      "title": "Bodhisattva",
+      "meta": "Pakistan, Gandhara, Kushan period · late 100s CE · schist",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1965.476/1965.476_print.jpg",
+      "year": 175
+    },
+    {
+      "title": "Dancers and Musicians from Phrygia",
+      "meta": "Pakistan, Gandhara, Buner area, early Kushan period · 1–100 CE · schist",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1930.328.1/1930.328.1_print.jpg",
+      "year": 1
+    },
+    {
+      "title": "Scenes from the Life of Buddha",
+      "meta": "Pakistan, Gandhara, Kushan period · 100s CE · schist",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1958.474/1958.474_print.jpg",
+      "year": 100
+    },
+    {
+      "title": "Adoring Attendant from a Buddhist Shrine",
+      "meta": "Afghanistan, Gandhara, Kushan · c. 300s–400s CE · stucco",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1943.395/1943.395_print.jpg",
+      "year": 300
+    },
+    {
+      "title": "Foreigners and Non-Buddhists Drink, Dance, and Play Music, from a Buddhist Stupa Site",
+      "meta": "Pakistan, Gandhara, Buner area, early Kushan period · c. 100 CE · schist",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1930.328/1930.328_print.jpg",
+      "year": 1
+    },
+    {
+      "title": "Bacchanalian Scene",
+      "meta": "Pakistan, Gandhara, Buner area, early Kushan period · 1–100 CE · schist",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1930.328.2/1930.328.2_print.jpg",
+      "year": 1
+    },
+    {
+      "title": "Procession of Non-Buddhists",
+      "meta": "Pakistan, Gandhara, Buner area, early Kushan period · 1–100 CE · schist",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1930.328.3/1930.328.3_print.jpg",
+      "year": 1
+    },
+    {
+      "title": "Bracket with Two Musicians",
+      "meta": "Pakistan, Gandhara, probably Butkara in Swat, Kushan period · 100s CE · schist",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1980.15/1980.15_print.jpg",
+      "year": 100
+    },
+    {
+      "title": "Miniature Stone Reliquary or Toilette Casket",
+      "meta": "Pakistan, Gandhara, probably Sirkap, early Kushan period · 1–100 CE · gray schist",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1977.64/1977.64_print.jpg",
+      "year": 1
+    },
+    {
+      "title": "Plaque with a Male Head",
+      "meta": "Pakistan, Gandhara, Kushan period · 100s CE · gray schist",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1989.346/1989.346_print.jpg",
+      "year": 100
+    },
+    {
+      "title": "Maitreya",
+      "meta": "Pakistan, Gandhara, Kushan period · c. 200s CE · gray schist",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1969.61/1969.61_print.jpg",
+      "year": 200
+    },
+    {
+      "title": "Pendant with Shri",
+      "meta": "Pakistan, Gandhara, Sirkap, Kushan period · c. 100s CE · gold repoussé and carnelian",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1953.14/1953.14_print.jpg",
+      "year": 90
+    },
+    {
+      "title": "Akshobhya: the Buddha of the East",
+      "meta": "Northeast India, Bihar, Kurkihar, Pala period · late 800s · bronze with silver and copper inlay",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1970.10/1970.10_print.jpg",
+      "year": 875
+    },
+    {
+      "title": "One-Faced Linga (Ekamukhalinga)",
+      "meta": "Eastern India, Bihar, Medieval period, Pala dynasty · 600s–700s · chloritic schist",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1973.73/1973.73_print.jpg",
+      "year": 600
+    },
+    {
+      "title": "Female torso",
+      "meta": "Northeastern India, Pala dynasty (730-1197) · 1000s · black chlorite",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2011.146/2011.146_print.jpg",
+      "year": 1000
+    },
+    {
+      "title": "Birth of the Buddha",
+      "meta": "Northeastern India, Bengal, Pala dynasty (730-1197) · 800s · Black chlorite",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1959.349/1959.349_print.jpg",
+      "year": 800
+    },
+    {
+      "title": "Personification of the Discus",
+      "meta": "Northeastern India, Bihar, Aphsad, early Pala period, 7th Century · 670 · chlorite",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1945.367/1945.367_print.jpg",
+      "year": 670
+    },
+    {
+      "title": "Bodhisattva Maitreya: The Future Buddha",
+      "meta": "East India, Bengal, Pala period, 12th century · 1100s · silver inlaid with turquoise, copper, brass and gold; gilt bronze lotus",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1982.48/1982.48_print.jpg",
+      "year": 1100
+    },
+    {
+      "title": "Bodhisattva of Compassion as Lokeshvara the Sky Flyer (Khasarpana)",
+      "meta": "Eastern India, Bihar, Pala dynasty, reign of Ramapala (reign 1078/79–at least 1130) · late 1000s · Kaolin with traces of pigment",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1991.155/1991.155_print.jpg",
+      "year": 1050
+    },
+    {
+      "title": "Standing Manjusri  (Arapacana Form)",
+      "meta": "India, Pala, 12th-13th century · 1100s-1200s · bronze",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1985.189/1985.189_print.jpg",
+      "year": 1100
+    },
+    {
+      "title": "Seated Buddha",
+      "meta": "India, Bengal(?), Pala period, 9th century · 800s · bronze",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1968.249/1968.249_print.jpg",
+      "year": 800
+    },
+    {
+      "title": "Seated Tara",
+      "meta": "India, Bengal, late Pala dynasty, 12th Century · 1100s · bronze",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1989.347/1989.347_print.jpg",
+      "year": 1100
+    },
+    {
+      "title": "Stele with Padmapani",
+      "meta": "India, Nalanda, Pala Period, 10th Century · 900s · black chlorite",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1977.59/1977.59_print.jpg",
+      "year": 900
+    },
+    {
+      "title": "Vishnu Attended by Chakrapurusa and Shankhapurusa",
+      "meta": "East India, Bengal, Pala period, 11th-12th century · 1000s–1100s · bronze with silver inlay",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1964.453/1964.453_print.jpg",
+      "year": 1000
+    },
+    {
+      "title": "Royal Female Donor",
+      "meta": "Nepal · c. 1500 · bronze",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1978.89/1978.89_print.jpg",
+      "year": 1495
+    },
+    {
+      "title": "Bodhisattva of Wisdom (Manjushri)",
+      "meta": "Nepal · 1400s · Gilt bronze with precious and semiprecious stones, gum tempera, and cold gold",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1964.370/1964.370_print.jpg",
+      "year": 1400
+    },
+    {
+      "title": "Goddess Uma",
+      "meta": "Nepal · 1000s · gilt bronze and semiprecious stones",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1982.49/1982.49_print.jpg",
+      "year": 1000
+    },
+    {
+      "title": "Pair of Deity Earrings with Vishnu on Garuda (front) and chepu (monster mask) (back)",
+      "meta": "Nepal, Kathmandu Valley · 1600s or 1700s · Gold set with precious and semi-precious stones",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1915.338/1915.338_print.jpg",
+      "year": 1600
+    },
+    {
+      "title": "Seven Leaves from a Manuscript of the Gandavyuha-sutra (Scripture of the Supreme Array)",
+      "meta": "Nepal · 1000s-1100s · Gum tempera and ink on palm leaves",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1955.49/1955.49_print.jpg",
+      "year": 1000
+    },
+    {
+      "title": "Goddess Vajravarahi",
+      "meta": "Nepal · c. 1040–c. 1310 · unbaked clay and pigment",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1964.103/1964.103_print.jpg",
+      "year": 1030
+    },
+    {
+      "title": "Bodhisattva of Compassion, Avalokiteshvara Padmapani",
+      "meta": "Nepal · 1674 · stone",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1978.24/1978.24_print.jpg",
+      "year": 1674
+    },
+    {
+      "title": "Pendant with Four-armed Green Vishnu on a lotus with Nagas",
+      "meta": "Nepal, Kathmandu Valley · 1600s or 1700s · Gold set with precious and semiprecious stones",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1915.340/1915.340_print.jpg",
+      "year": 1600
+    },
+    {
+      "title": "Earring with Four-Armed Vishnu Riding Garuda with Nagas (serpent divinities)",
+      "meta": "Nepal, Kathmandu Valley · 1600s or 1700s · repousse gold with pearls",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1915.346.2/1915.346.2_print.jpg",
+      "year": 1600
+    },
+    {
+      "title": "Pair of Earrings with Four-Armed Vishnu Riding Garuda with Nagas (serpent divinities)",
+      "meta": "Nepal, Kathmandu Valley · 1600s or 1700s · repousse gold with pearls",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1915.346/1915.346_print.jpg",
+      "year": 1600
+    },
+    {
+      "title": "Bejeweled Buddha Preaching",
+      "meta": "Nepal · 1648 · Gum tempera, ink, and gold on cloth",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1973.69/1973.69_print.jpg",
+      "year": 1648
+    },
+    {
+      "title": "Devi",
+      "meta": "Nepal · 600s–700s · gilt bronze",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1983.153/1983.153_print.jpg",
+      "year": 600
+    },
+    {
+      "title": "Vasudhara, Goddess of Abundance",
+      "meta": "Nepal · 1300s–1400s · gilt bronze and semiprecious stones",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1947.493/1947.493_print.jpg",
+      "year": 1300
+    },
+    {
+      "title": "Portable Shrine",
+      "meta": "Tibet · c. 1500 · wood with mineral pigments and metal",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1968.214/1968.214_print.jpg",
+      "year": 1495
+    },
+    {
+      "title": "Portraits of Two Lineage Masters of the Kagyu Order: Phagmo Drupa (1110–1170) and Tashipel (1142–1210)",
+      "meta": "Central Tibet · c. 1236–1310 · Gum tempera on sized cotton",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1987.146/1987.146_print.jpg",
+      "year": 1236
+    },
+    {
+      "title": "Bodhisattva of Compassion (Avalokiteshvara)",
+      "meta": "Tibet · 1647–48 or 1658 · ivory",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1968.280/1968.280_print.jpg",
+      "artist": "Choying Dorje, the Tenth Black Hat Karmapa",
+      "year": 1647
+    },
+    {
+      "title": "Vase",
+      "meta": "Central Asia (Sogdiana) or Tibet · c. late 600s–early 700s · silver with gilded foil",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1988.67.1/1988.67.1_print.jpg",
+      "year": 680
+    },
+    {
+      "title": "Silver Vessels",
+      "meta": "Central Asia (Sogdiana) or Tibet · c. late 600s–early 700s · Silver with gilded foil",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1988.67/1988.67_print.jpg",
+      "year": 680
+    },
+    {
+      "title": "Portrait of Phagmo Drupa Dorje Gyalpo (1110–1170)",
+      "meta": "Central Tibet · 1200s · gilt bronze with gold, silver, copper, turquoise, lapis, and coral inlay",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1993.160/1993.160_print.jpg",
+      "year": 1200
+    },
+    {
+      "title": "Iconographic Sketchbook",
+      "meta": "Tibet · c. 1500 · ink and watercolor on cotton",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1985.191/1985.191_print.jpg",
+      "year": 1495
+    },
+    {
+      "title": "Iconographic Drawings: Chakrashamvara with Vajravarahi, Hevajra with Nairatmya, and Yamantaka (verso)",
+      "meta": "Tibet · c. 1500 · ink and watercolor on cotton",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1985.191.b/1985.191.b_print.jpg",
+      "year": 1495
+    },
+    {
+      "title": "Tantric Buddha Vairochana as Vajrasattva",
+      "meta": "Central Tibet · c. 1150–1200 · gum tempera, ink, and gold on cloth",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1989.104/1989.104_print.jpg",
+      "year": 1150
+    },
+    {
+      "title": "Rhyton",
+      "meta": "Central Asia (Sogdiana) or Tibet · c. late 600s–early 700s · silver with gilded foil",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1988.67.3/1988.67.3_print.jpg",
+      "year": 680
+    },
+    {
+      "title": "Ritual Drum (damaru)",
+      "meta": "Tibet · c. 1800 · skull bone, cloth, hemp fiber, leather, and skin",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1918.391/1918.391_print.jpg",
+      "year": 1700
+    },
+    {
+      "title": "Iconographic Drawings:  Vaishravana, Yama, Ushnishavijaya, Chunda (?), and Buddha (recto)",
+      "meta": "Tibet · c. 1500 · ink and watercolor on cotton",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1985.191.a/1985.191.a_print.jpg",
+      "year": 1495
+    },
+    {
+      "title": "Thighbone Trumpet",
+      "meta": "Tibet · c. 1800 · bone, leather, and copper alloy",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1918.389/1918.389_print.jpg",
+      "year": 1700
+    },
+    {
+      "title": "Shri Raga, from a Ragamala",
+      "meta": "Northwestern India, Rajasthan, Rajput Kingdom of Mewar · c. 1695 · Gum tempera and gold on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1931.451/1931.451_print.jpg",
+      "year": 1690
+    },
+    {
+      "title": "Maru Ragini, from a Ragamala (Garland of Melodies)",
+      "meta": "Northwestern India, Rajasthan, Rajput Kingdom of Amber or Southwestern India, Deccan · 1650–80 · Gum tempera, ink, and gold on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2018.168/2018.168_print.jpg",
+      "year": 1650
+    },
+    {
+      "title": "Portrait of Rao Shiv Singh Chandrawat",
+      "meta": "Northwestern India, Rajasthan, Marwar, Rajput Kingdom of Jodhpur · c. 1720 · Gum tempera and gold on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2018.196/2018.196_print.jpg",
+      "year": 1710
+    },
+    {
+      "title": "Drawing of a Man’s Head with an Unusual Turban",
+      "meta": "Northwestern India, Rajasthan, Rajput Kingdom of Kishangarh · c. 1780 · gum tempera and gold on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2018.174/2018.174_print.jpg",
+      "year": 1770
+    },
+    {
+      "title": "Two Elephants in Combat",
+      "meta": "Northwestern India, Rajasthan, Rajput Kingdom of Kota · 1700–1730 · ink on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2018.178/2018.178_print.jpg",
+      "year": 1700
+    },
+    {
+      "title": "Maharao Ram Singh II of Kota (r. 1828–66) Hunting Buffalo",
+      "meta": "Northwestern India, Rajasthan, Rajput Kingdom of Kota · 1832 · gum tempera, gold and silver on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2018.180/2018.180_print.jpg",
+      "year": 1832
+    },
+    {
+      "title": "Portrait of Maharaja Rai Singh of Bikaner (reigned 1574–1612)",
+      "meta": "Northwestern India, Rajasthan, Rajput Kingdom of Bikaner · c. 1610 · Gum tempera and gold on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2021.11/2021.11_print.jpg",
+      "year": 1605
+    },
+    {
+      "title": "Maharana Jawan Singh of Mewar (r. 1828–38) Holding a Falcon",
+      "meta": "Northwestern India, Rajasthan, Rajput Kingdom of Mewar · c. 1835 · gum tempera, pearls, silk, and gold on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2018.149/2018.149_print.jpg",
+      "artist": "Ghasi",
+      "year": 1825
+    },
+    {
+      "title": "Raja Ram Chand of Amber (r. 1667–88) Hunting Wild Boar",
+      "meta": "Northwestern India, Rajasthan, Rajput Kingdom of Amber · c. 1670 · gum tempera and gold on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2018.169/2018.169_print.jpg",
+      "year": 1660
+    },
+    {
+      "title": "Royal women shooting from a pavilion",
+      "meta": "Northwestern India, Rajasthan, Rajput Kingdom of Kota · c. 1810 · Gum tempera, ink, and gold on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1955.48/1955.48_print.jpg",
+      "year": 1805
+    },
+    {
+      "title": "Radha’s Confidante Brings Her to Krishna, based on poetry of Bihari (Indian, 1595–1663)",
+      "meta": "Northwestern India, Rajasthan, Rajput Kingdom of Jaipur · c. 1790–1800 · Gum tempera, ink, and gold on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2018.172/2018.172_print.jpg",
+      "year": 1780
+    },
+    {
+      "title": "A Young, Angry Heroine, Folio 28 from a Rasamanjari",
+      "meta": "Northwestern India, Rajasthan, Rajput Kingdom of Mewar · c. 1615–20 · Gum tempera, ink, and gold on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1960.52/1960.52_print.jpg",
+      "year": 1610
+    },
+    {
+      "title": "The Birth of Krishna, from a Sursagar of Surdas (Indian, c. 1480–1580)",
+      "meta": "Northwestern India, Rajasthan, Rajput Kingdom of Mewar · 1705–10 · Gum tempera, ink, and gold on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1984.65/1984.65_print.jpg",
+      "year": 1700
+    },
+    {
+      "title": "Locket",
+      "meta": "Northwestern India, Rajasthan, Rajput Kingdom of Jaipur · 1700s · gold and enamel",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1960.198/1960.198_print.jpg",
+      "year": 1650
+    },
+    {
+      "title": "Sindhu Raga",
+      "meta": "Northwestern India, Rajasthan, Rajput Kingdom of Mewar · c. 1720 · Gum tempera and ink on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2004.110/2004.110_print.jpg",
+      "year": 1715
+    },
+    {
+      "title": "Posthumous portrait of Raja Chhatar Singh of Chamba smoking a hookah with his brother and son",
+      "meta": "Northern India, Pahari kingdoms · c. 1700 · Gum tempera and ink on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1960.47/1960.47_print.jpg",
+      "year": 1696
+    },
+    {
+      "title": "Feast where Vishnu decides he will incarnate as King Dasharatha’s sons, from Chapters 14–15 of the \"Bala Kanda\" (Book of Childhood) of a Ramayana (Rama’s Journey)",
+      "meta": "Northern India, Pahari kingdoms · c. 1810 · Gum tempera and gold on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2018.121/2018.121_print.jpg",
+      "year": 1800
+    },
+    {
+      "title": "Shamsher Sen of Mandi with a youth",
+      "meta": "Northern India, Pahari Kingdom of Mandi · 1760–70 · Gum tempera, ink, and gold on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2012.302/2012.302_print.jpg",
+      "year": 1760
+    },
+    {
+      "title": "A group of women in ecstasy before Madhava, folio 4 from a Madhavanala-Kamakandala",
+      "meta": "Northern India, Pahari kingdoms · c. 1720 · gum tempera and gold on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2018.91/2018.91_print.jpg",
+      "year": 1715
+    },
+    {
+      "title": "Raja Dilip Singh of Guler on a dais",
+      "meta": "Northern India, Pahari kingdoms · c. 1707 · Gum tempera and gold on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1960.49/1960.49_print.jpg",
+      "year": 1703
+    },
+    {
+      "title": "Adoration of young Krishna",
+      "meta": "Northern India, Pahari kingdoms · c. 1720–25 · gum tempera on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2018.97/2018.97_print.jpg",
+      "year": 1715
+    },
+    {
+      "title": "King Vikrama summons Madhava, folio 15 from a Madhavanala-Kamakandala",
+      "meta": "Northern India, Pahari kingdoms · c. 1720 · gum tempera and gold on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2018.92/2018.92_print.jpg",
+      "year": 1715
+    },
+    {
+      "title": "Taking of the toll, Dana-Lila",
+      "meta": "Northern India, Pahari kingdoms · c. 1760 · Gum tempera and gold on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2018.86/2018.86_print.jpg",
+      "year": 1755
+    },
+    {
+      "title": "The heroine who waits anxiously for her absent lover (Utka Nayika)",
+      "meta": "Northern India, Pahari kingdoms · c. 1800 · Gum tempera on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1932.118/1932.118_print.jpg",
+      "year": 1795
+    },
+    {
+      "title": "Krishna celebrates Holi",
+      "meta": "Northern India, Pahari kingdoms · c. 1770 · gum tempera, gold, and silver on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2018.104/2018.104_print.jpg",
+      "year": 1760
+    },
+    {
+      "title": "Heroine with attendant and a pair of deer",
+      "meta": "Northern India, Pahari kingdoms · c. 1710–20 · gum tempera on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2018.108/2018.108_print.jpg",
+      "year": 1705
+    },
+    {
+      "title": "The Heroine Who is Faithfully Loved: Madhya Svadhinapatika Nayika, from a Rasamanjari of Bhanudatta",
+      "meta": "Northern India, Pahari kingdoms · c. 1710 · Gum tempera, ink, and gold on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1967.239/1967.239_print.jpg",
+      "year": 1705
+    },
+    {
+      "title": "Sindhu (Saindhava) Ragaputra of Shri Raga, from a Ragamala",
+      "meta": "Northern India, Pahari kingdoms · c. 1680–90 · gum tempera, ink, and gold on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2018.90/2018.90_print.jpg",
+      "year": 1665
+    },
+    {
+      "title": "Posthumous portrait of Raja Chhatar Singh of Chamba smoking a hookah",
+      "meta": "Northern India, Pahari kingdoms · c. 1700 · Gum tempera and ink on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2018.109/2018.109_print.jpg",
+      "year": 1695
+    },
+    {
+      "title": "King Bana in his court, from an Usha-Aniruddha",
+      "meta": "Northern India, Pahari kingdoms · c. 1760–70 · Gum tempera and ink on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1986.62/1986.62_print.jpg",
+      "year": 1755
+    },
+    {
+      "title": "Falcon on a Perch",
+      "meta": "Northwestern India, Rajasthan, Rajput Kingdom of Amber · c. 1610 · gum tempera on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2018.165/2018.165_print.jpg",
+      "year": 1600
+    },
+    {
+      "title": "An African Lyre Player (recto)",
+      "meta": "India, Deccan, 17th century · c. 1640–60 · Gum tempera, ink, and gold on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2013.289.a/2013.289.a_print.jpg",
+      "year": 1635
+    },
+    {
+      "title": "Portrait of Raja Ram Singh of Amber (r. 1667-1688) with a Deccan Sword (recto); Calligraphy (verso)",
+      "meta": "India, Mughal court, 17th century · c. 1680–1685 · Gum tempera, ink, and gold on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2013.330/2013.330_print.jpg",
+      "year": 1675
+    },
+    {
+      "title": "From Dohras (Songs) 40 and 42 from the Kitab-i Nauras (Book of Nine Essences) of Sultan Ibrahim Adil Shah II of Bijapur (r. 1580–1627); verso: From Dohras (Songs) 40 and 36 from the Kitab-i Nauras of Sultan Ibrahim Adil Shah II",
+      "meta": "India, Bijapur, Deccan · 1618 · ink with two-tone gold on paper, double-sided",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2013.284/2013.284_print.jpg",
+      "artist": "Khalilullah Butshikan",
+      "year": 1617
+    },
+    {
+      "title": "Shvetambara Jain Teacher Giving Instruction",
+      "meta": "Northwestern India, Rajasthan, Rajput Kingdom of Jaipur · c. 1750–60 · gum tempera and gold on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2018.171/2018.171_print.jpg",
+      "artist": "Sahib Ram",
+      "year": 1740
+    },
+    {
+      "title": "Seated Jina Rishabha Enshrined, from a Jain Manuscript: Kalpa-Sutra",
+      "meta": "Western India, Gujarat · c. 1500 · Gum tempera, ink, and gold on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1983.1047/1983.1047_print.jpg",
+      "year": 1450
+    },
+    {
+      "title": "Monk Holding a Flower Venerated by a Lay Disciple: Folio 141 (verso), from a Kalpa-sutra and Story of Kalakacharya",
+      "meta": "Western India, Gujarat · 1287 · Gum tempera and ink on palm leaf",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1971.127.b/1971.127.b_print.jpg",
+      "artist": "Devachandra",
+      "year": 1286
+    },
+    {
+      "title": "Prince Shreyamsa dreams of the coming of Rishabha, from a Panchakalyanaka (Five Auspicious Events)",
+      "meta": "Northwestern India, Rajasthan, Rajput Kingdom of Amber · 1670–80 · Gum tempera, ink, silver, and gold on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2021.12/2021.12_print.jpg",
+      "year": 1670
+    },
+    {
+      "title": "Birth of Mahavira, folio 40 (verso) from a Kalpa-sutra",
+      "meta": "Western India, Gujarat · c. 1400 · gum tempera, ink, and gold on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1976.27.b/1976.27.b_print.jpg",
+      "year": 1395
+    },
+    {
+      "title": "Painting from a Kalpa-sutra: Queen Trishala Reclining",
+      "meta": "Western India, Gujarat · c. 1450–75 · Gum tempera and gold on paper; 18th century gold flecked border",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1925.1340/1925.1340_print.jpg",
+      "year": 1445
+    },
+    {
+      "title": "Folio 167, from a Kalpa-sutra and Story of Kalakacharya: two nuns teaching lay women (recto); genealogical text (verso)",
+      "meta": "Western India, Gujarat, Palanpur (Prahladanapura) · 1278 · Gum tempera and ink on palm leaf",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1971.126/1971.126_print.jpg",
+      "year": 1278
+    },
+    {
+      "title": "Folio 2 from a Parshvanatha Charitra (Life and Stories of Lord Parshva) of Bhavadeva-suri: Monk preaching to a disciple with a lay audience (recto); Text (verso)",
+      "meta": "Western India, Gujarat · c. 1275–1300 · Gum tempera and ink on palm leaf",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1971.125/1971.125_print.jpg",
+      "year": 1270
+    },
+    {
+      "title": "Genealogical text, folio 167 (verso) from a Kalpa-sutra and Story of Kalakacharya",
+      "meta": "Western India, Gujarat, Palanpur (Prahladanapura) · 1278 · Gum tempera and ink on palm leaf",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1971.126.b/1971.126.b_print.jpg",
+      "year": 1278
+    },
+    {
+      "title": "Brahman Rishabhadatta's speech, folio 5 from a Kalpa-sutra",
+      "meta": "Western India, Gujarat · c. 1475–1500 · gum tempera and gold on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1979.23/1979.23_print.jpg",
+      "year": 1450
+    },
+    {
+      "title": "The Lion's Cave with Sthulabhadra and His Sisters, Folio 60 (verso), from a Kalpa-sutra",
+      "meta": "Western India, Gujarat · c. 1450 · Gum tempera, ink, and gold on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1932.119.60.b/1932.119.60.b_print.jpg",
+      "year": 1445
+    },
+    {
+      "title": "Painting from a Kalpa-sutra: Indra Praises the Embryo of Mahavira in the Womb of the Brahman Woman Devananda",
+      "meta": "Western India, Gujarat · c. 1450–75 · Gum tempera and gold on paper; 18th century gold flecked paper border",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1925.1339/1925.1339_print.jpg",
+      "year": 1445
+    },
+    {
+      "title": "Standing Bodhisattva with Human-Figure Necklace",
+      "meta": "Gandhara · South Asian · 199–300 · Phyllite",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/483decb0-fc13-df85-6c68-1d57b6246fc8/full/843,/0/default.jpg",
+      "year": 199,
+      "artist": "Pakistan"
+    },
+    {
+      "title": "Buddha Worshipped by the Gods Indra and Brahma",
+      "meta": "Gandhara · South Asian · -1–101 · Schist",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/ad3ca298-fa5e-9d03-b7f2-44777a4b9119/full/843,/0/default.jpg",
+      "year": -1,
+      "artist": "Pakistan"
+    },
+    {
+      "title": "The Birth and the First Seven Steps of the Buddha",
+      "meta": "Gandhara · South Asian · 101–300 · Phyllite",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/ca68bcec-49f4-b529-4ca8-3a71550f8a87/full/843,/0/default.jpg",
+      "year": 101,
+      "artist": "Pakistan"
+    },
+    {
+      "title": "Stupa Reliquary",
+      "meta": "Gandhara · South Asian · 195–205 · Phyllite",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/d04db4b1-3c68-df81-0b4d-18e54d5527dc/full/843,/0/default.jpg",
+      "year": 195,
+      "artist": "Pakistan"
+    },
+    {
+      "title": "Head of Buddha",
+      "meta": "Gandhara · South Asian · 101–300 · Gray schist",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/2b39dd46-dcff-a15b-cff2-38f6031b2024/full/843,/0/default.jpg",
+      "year": 101,
+      "artist": "Pakistan"
+    },
+    {
+      "title": "A Yakshi Grasping a Tree",
+      "meta": "Gandhara · South Asian · 101–300 · Gray schist",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/9e50b672-5cc8-e573-4e5d-29ab37cad538/full/843,/0/default.jpg",
+      "year": 101,
+      "artist": "Pakistan"
+    },
+    {
+      "title": "Pensive Bodhisattva",
+      "meta": "Gandhara · South Asian · 101–300 · Gray schist",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/01662437-bb10-b88a-771f-c32cbdc96041/full/843,/0/default.jpg",
+      "year": 101,
+      "artist": "Pakistan"
+    },
+    {
+      "title": "Head of a Bodhisattva",
+      "meta": "Gandhara · South Asian · 201–500 · Stucco with traces of red pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/e3565082-f2e9-e27a-1c70-f6411fcfebd2/full/843,/0/default.jpg",
+      "year": 201,
+      "artist": "Afghanistan or Pakistan"
+    },
+    {
+      "title": "Buddha Shakyamuni Meditating in the Indrashala Cave [top] and Buddha Dipankara [bottom]",
+      "meta": "Gandhara · South Asian · 101–300 · Schist",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/3ce47e30-f25e-24b5-51ba-5e355d10107e/full/843,/0/default.jpg",
+      "year": 101,
+      "artist": "Pakistan"
+    },
+    {
+      "title": "Domestic object",
+      "meta": "Gandhara · 2nd century- 3rd Century",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2020MR3031/full/735,/0/default.jpg"
+    },
+    {
+      "title": "Garuda abducting Queen Kakati",
+      "meta": "Gandhara · 3rd century - 4th century",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2006AT8557/full/735,/0/default.jpg"
+    },
+    {
+      "title": "Figure",
+      "meta": "Pakistan · ca. 6th century",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2006AU5142/full/735,/0/default.jpg"
+    },
+    {
+      "title": "Sculpture",
+      "meta": "Gandhara · 1st Century BC - 1st Century AD",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2010EA0653/full/735,/0/default.jpg"
+    },
+    {
+      "title": "Relief",
+      "meta": "Gandhara · probably third quarter of 2nd cantury",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2019ME4458/full/735,/0/default.jpg"
+    },
+    {
+      "title": "Reliquary",
+      "meta": "Gandhara · 2nd century-5th century",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2019ME5921/full/735,/0/default.jpg"
+    },
+    {
+      "title": "Guhyasamaja Manjuvajra, an Esoteric Form of Bodhisattva Manjushri",
+      "meta": "Bihar · Himalayan · 1100–1199 · Brass with silver",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/0c77cb16-87c4-e13c-edb4-2c8f2603bbaa/full/843,/0/default.jpg",
+      "year": 1100,
+      "artist": "India"
+    },
+    {
+      "title": "Buddha Calling the Earth to Witness (Bhumisparshamudra)",
+      "meta": "Eastern India · South Asian · 701–1000 · Bronze",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/54a3966e-5e71-5d71-1a1f-a97c637910b5/full/843,/0/default.jpg",
+      "year": 701,
+      "artist": "India"
+    },
+    {
+      "title": "Goddess Hariti Seated Holding a Child",
+      "meta": "Bihar · South Asian · 901–1100 · Black stone",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/d7cdf255-281a-e45f-f2df-e4073ac5f92c/full/843,/0/default.jpg",
+      "year": 901,
+      "artist": "India"
+    },
+    {
+      "title": "Purneshvari",
+      "meta": "Bihar · 12th century",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2016JK5876/full/735,/0/default.jpg"
+    },
+    {
+      "title": "Padmapani",
+      "meta": "India · 12th Century",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2006BF2850/full/735,/0/default.jpg"
+    },
+    {
+      "title": "Balarama",
+      "meta": "Bihar · about 958 to 964",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2025PG6679/full/735,/0/default.jpg",
+      "year": 958
+    },
+    {
+      "title": "Crowned Buddha Shakyamuni",
+      "meta": "India · 12th Century",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2006BF2257/full/735,/0/default.jpg"
+    },
+    {
+      "title": "Kubjika–Navatman",
+      "meta": "Nepal · 1300s · Gilt bronze with semiprecious stones",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1984.3/1984.3_print.jpg",
+      "year": 1300
+    },
+    {
+      "title": "Vishnu",
+      "meta": "Nepal · 800s · schist",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1980.194/1980.194_print.jpg",
+      "year": 800
+    },
+    {
+      "title": "Avalokitesvara Padmapani:  Bodhisattva of Mercy Bearing a Lotus",
+      "meta": "Nepal · c. 1000s · bronze with gilding, pigment, and semiprecious stones",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1976.3/1976.3_print.jpg",
+      "year": 1000
+    },
+    {
+      "title": "Varahi",
+      "meta": "Nepal · c. 1300s · bronze",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1978.70/1978.70_print.jpg",
+      "year": 1295
+    },
+    {
+      "title": "Tiered Offering Mandala of the Goddess of Wealth (Vasudhara)",
+      "meta": "Nepal · Himalayan · 1801–1900 · Silver repoussé and gilt copper",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/3f5efc6f-52b0-d374-308b-34ca095d8624/full/843,/0/default.jpg",
+      "year": 1801,
+      "artist": "Nepal"
+    },
+    {
+      "title": "Bronze lamp",
+      "meta": "Nepal · early 19th century",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2020MU1582/full/735,/0/default.jpg"
+    },
+    {
+      "title": "Bhairava",
+      "meta": "Nepal · 17th century",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2006AK9827/full/735,/0/default.jpg"
+    },
+    {
+      "title": "Eleven-Headed, Thousand-Armed Bodhisattva of Compassion (Avalokiteshvara)",
+      "meta": "Western Tibet · c. 1500 · Gum tempera and ink on cotton",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1982.147/1982.147_print.jpg",
+      "year": 1495
+    },
+    {
+      "title": "Vajrapani Embroidered Mount with Garuda",
+      "meta": "China and Tibet, Embroidery: China, Yuan dynasty (1279–1368); painting: Tibet · painting 1600s, embroidery c. 1300 · Opaque watercolor, gold, and silver on silk",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1989.11.a/1989.11.a_print.jpg",
+      "year": 1600,
+      "artist": "Choying Dorje, the Tenth Black Hat Karmapa"
+    },
+    {
+      "title": "Vajrapani and Garuda",
+      "meta": "China and Tibet, Embroidery: China, Yuan dynasty (1279–1368); painting: Tibet · painting c. 1650; top and bottom borders c. 1350 · Painting: gum tempera, gold, and silver on silk; lateral borders: silk damask with needleloop embroidery; top and bottom panels: embroidered silk, lead, and silver paper; curtain: silk tabby; dowels: wood, rawhide, and leather",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1989.11/1989.11_print.jpg",
+      "year": 1340,
+      "artist": "Choying Dorje, the Tenth Black Hat Karmapa"
+    },
+    {
+      "title": "Vajrapani\r\nEmbroidered Mount with Garuda",
+      "meta": "China and Tibet, Embroidery: China, Yuan dynasty (1279-1368); painting: Tibet, 17th century · painting 1600s, embroidery c. 1300 · Opaque watercolor, gold, and silver on silk",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1989.11.b/1989.11.b_print.jpg",
+      "year": 1279,
+      "artist": "Choying Dorje, the Tenth Black Hat Karmapa"
+    },
+    {
+      "title": "Painted Banner (Thangka) with the Medicine Buddha (Bhaishajyaguru)",
+      "meta": "Tibet · Himalayan · 1201–1400 · Pigment and gold on cotton",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/541a96f7-faf6-1359-264c-5b4a6226bcf1/full/843,/0/default.jpg",
+      "year": 1201,
+      "artist": "Central Tibet"
+    },
+    {
+      "title": "Painted Banner (Thangka) with Guru Dragpur, a Wrathful Form of Padmasambhava",
+      "meta": "Tibet · Himalayan · 1699–1899 · Pigment on silk",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/f021d551-75a9-9dc4-9a14-19b35be6138e/full/843,/0/default.jpg",
+      "year": 1699,
+      "artist": "Tibet"
+    },
+    {
+      "title": "Painted Banner (Thangka) of Bodhisattva Maitreya Surrounded by his Retinue",
+      "meta": "Tibet · Himalayan · 1501–1600 · Opaque watercolor and gold on cotton",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/bf0508f3-450f-87fd-13e3-1341a78472ae/full/843,/0/default.jpg",
+      "year": 1501,
+      "artist": "Tibet"
+    },
+    {
+      "title": "Painted Banner (Thangka) of Vajrasattva Mandala",
+      "meta": "Tibet · Himalayan · 1399–1499 · Pigment on cloth",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/6e100bed-ddd8-8a2a-0718-76d5c8b6e526/full/843,/0/default.jpg",
+      "year": 1399,
+      "artist": "Tibet"
+    },
+    {
+      "title": "Painted Banner (Thangka) of Sage Guru Padmasambhava Seated Holding a Thunderbolt (Vajra) and Skull Cup (Kapala)",
+      "meta": "Tibet · Himalayan · 1701–1800 · Opaque watercolor with some powdered gold on a woven textile support",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/f5114c43-1716-6d7e-586d-347ddbe6f9a4/full/843,/0/default.jpg",
+      "year": 1701,
+      "artist": "Tibet"
+    },
+    {
+      "title": "Painted Banner (Thangka) of Amitayus Buddha Surrounded by One Hundred Buddhas",
+      "meta": "Tibet · Himalayan · 1801–1900 · Pigment on cloth",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/33146fac-cbeb-cafe-c377-6d33aa5120dd/full/843,/0/default.jpg",
+      "year": 1801,
+      "artist": "Tibet"
+    },
+    {
+      "title": "Thangka",
+      "meta": "Tibet · 18th century",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2021MW8777/full/735,/0/default.jpg"
+    },
+    {
+      "title": "Cloth painting",
+      "meta": "Tibet · about 1450",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2006BG1806/full/735,/0/default.jpg",
+      "year": 1450
+    },
+    {
+      "title": "Tibetan painting",
+      "meta": "Tibet · 14th century",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2006BB2320/full/735,/0/default.jpg"
+    },
+    {
+      "title": "Krishna Watches a Juggler, from a copy of the Seven Hundred Verses (Sat Sai) of Bihari",
+      "meta": "India · South Asian · 1745–1795 · Opaque watercolor and gold on paper",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/be8615b5-15e7-91f5-0157-d4a7f72080fe/full/843,/0/default.jpg",
+      "year": 1745,
+      "artist": "India"
+    },
+    {
+      "title": "Two Rajput Noblemen with a Child",
+      "meta": "India · South Asian · 1700–1800 · Ink",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/5f2eb807-4027-bf11-e71b-166f7a7f799f/full/843,/0/default.jpg",
+      "year": 1700,
+      "artist": "India"
+    },
+    {
+      "title": "Radha",
+      "meta": "Basohli · ca. 1660 - ca. 1670",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2006BE8359/full/735,/0/default.jpg",
+      "year": 1660
+    },
+    {
+      "title": "Painting",
+      "meta": "Basohli · ca. 1660 - ca. 1670",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2013GD5618/full/735,/0/default.jpg",
+      "year": 1660
+    },
+    {
+      "title": "Krishna and Radha",
+      "meta": "Kangra · ca. 1775 - ca. 1780",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2013GD5415/full/735,/0/default.jpg",
+      "year": 1775
+    },
+    {
+      "title": "In Vrindaban",
+      "meta": "India · 1987",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2007BP2405/full/735,/0/default.jpg",
+      "year": 1987,
+      "artist": "Caur, Arpana"
+    },
+    {
+      "title": "Queen Trishala Gives Birth to Mahavira, from a copy of the Kalpasutra",
+      "meta": "India · South Asian · 1475–1495 · Opaque watercolor",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/62cf0eda-cbeb-6f30-3e74-7e6dcbedf3da/full/843,/0/default.jpg",
+      "year": 1475,
+      "artist": "India"
+    },
+    {
+      "title": "Mahavira Gives Away his Possessions, from a copy of the Kalpasutra",
+      "meta": "India · South Asian · 1480–1490 · Opaque watercolor",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/6b92dadf-737c-7083-5e78-39eda11ca9bb/full/843,/0/default.jpg",
+      "year": 1480,
+      "artist": "India"
+    },
+    {
+      "title": "Altarpiece with Twenty-Second Jaina Tirthankara Neminatha Surrounded by Twenty-Three Other Tirthankaras",
+      "meta": "India · South Asian · 1498 · Brass inlaid with silver",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/7d908d91-84bd-74b4-2253-ee685881e70e/full/843,/0/default.jpg",
+      "year": 1498,
+      "artist": "India"
+    },
+    {
+      "title": "Altarpiece with the First Jaina Tirthankara Rishabhanatha Surrounded by Twenty-Three Other Tirthankaras",
+      "meta": "India · South Asian · 1089 · Brass inlaid with copper and silver",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/c249438e-fc7f-bbff-9464-8b6354512685/full/843,/0/default.jpg",
+      "year": 1089,
+      "artist": "India"
+    },
+    {
+      "title": "Section of Monolithic Railing with Bather and Lotus Medallions",
+      "meta": "India, Mathura, Kushan period · c. 150–250 CE · red sandstone",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1943.71/1943.71_print.jpg",
+      "year": 150
+    },
+    {
+      "title": "Gateway Bracket",
+      "meta": "India, Mathura, Kushan period · 150–200 CE · sandstone",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1971.15/1971.15_print.jpg",
+      "year": 150
+    },
+    {
+      "title": "River Goddess Ganga",
+      "meta": "Northern India, Uttar Pradesh, Mathura · c. 700 · sandstone",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1966.119/1966.119_print.jpg",
+      "year": 590
+    },
+    {
+      "title": "Railing Pillar with a Yakshi (Female Nature Divinity)",
+      "meta": "Northern India, Mathura, Kushan period · c. 125–50 CE · red sandstone",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1965.250/1965.250_print.jpg",
+      "year": 100
+    },
+    {
+      "title": "Seated Shakyamuni Buddha",
+      "meta": "Northern India, Uttar Pradesh, Mathura, Kushan period · c. 120 CE · red mottled sandstone",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1970.63/1970.63_print.jpg",
+      "year": 80
+    },
+    {
+      "title": "Nature Divinity (Yakshi)",
+      "meta": "India, Mathura, Kshatrapa period (c. 20 BCE–114 CE) · c. 75 CE · mottled red sandstone",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1968.104/1968.104_print.jpg",
+      "year": 70
+    },
+    {
+      "title": "Male Fertility Divinity, Possibly Shiva",
+      "meta": "Northern India, possibly Mathura, Kushan period · c. 120–200 CE · terracotta",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1986.71/1986.71_print.jpg",
+      "year": 100
+    },
+    {
+      "title": "Yakshi",
+      "meta": "Mathura · South Asian · 99–199 · Red sandstone",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/5ce225c9-3f73-247e-e955-df74b06daa02/full/843,/0/default.jpg",
+      "year": 99,
+      "artist": "India"
+    },
+    {
+      "title": "Dvarapala, Turbaned head, Mathura",
+      "meta": "Mathura · 2nd century",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2006BF2208/full/735,/0/default.jpg"
+    },
+    {
+      "title": "Wrestler Weight  (fragment)",
+      "meta": "Mathura · 2nd century-3rd century",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2006BF2750/full/735,/0/default.jpg"
+    },
+    {
+      "title": "Head of a Buddha",
+      "meta": "Mathura · 2nd century",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2006BF2749/full/735,/0/default.jpg"
+    },
+    {
+      "title": "Shiva Ekamukhalinga",
+      "meta": "Mathura · Early 5th century",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2006AP8779/full/735,/0/default.jpg"
+    },
+    {
+      "title": "Hands and Bowl",
+      "meta": "Mathura · 2nd to 6th century AD",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2006AU3487/full/735,/0/default.jpg"
+    },
+    {
+      "title": "Parshvanatha",
+      "meta": "Mathura · 2nd century",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2006BF1906/full/735,/0/default.jpg"
+    },
+    {
+      "title": "Shalabhanjika",
+      "meta": "Mathura · 2nd century",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2006AP9545/full/735,/0/default.jpg"
+    },
+    {
+      "title": "Four-Armed Sarasvati, Goddess of Learning, Seated in Lotus Position (Padmasana)",
+      "meta": "Karnataka · South Asian · 1201–1300 · Chlorite phyllite",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/62f5680a-19f2-a586-4984-7ecbe57bc398/full/843,/0/default.jpg",
+      "year": 1201,
+      "artist": "India"
+    },
+    {
+      "title": "Durga Mahishasuramardini",
+      "meta": "Karnataka · mid-13th century",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2006AT2029/full/735,/0/default.jpg"
+    },
+    {
+      "title": "Portion of the west face of the Hoysaleshvara Temple",
+      "meta": "India · 1867-1868",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2006AY9160/full/735,/0/default.jpg",
+      "year": 1867,
+      "artist": "Lyon, Edmund David"
+    },
+    {
+      "title": "Green Parrot",
+      "meta": "India, East India Company School · c. 1820 · Gum tempera on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1972.285/1972.285_print.jpg",
+      "year": 1815
+    },
+    {
+      "title": "Juggler",
+      "meta": "India, Company School, Lucknow or Patna, 19th century · c. 1840 · ink and gouache on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1982.119/1982.119_print.jpg",
+      "year": 1835
+    },
+    {
+      "title": "Man Dyeing Cloth",
+      "meta": "India, Company School, Lucknow, 19th century · early 1830s · Gum tempera and ink on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1992.142/1992.142_print.jpg",
+      "year": 1830
+    },
+    {
+      "title": "Hoopoe on a Citrus Tree Branch",
+      "meta": "India, Company school, Calcutta, early 19th Century · c. 1800 · color on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1990.67/1990.67_print.jpg",
+      "year": 1795
+    },
+    {
+      "title": "Weaving and Spinning",
+      "meta": "India, Punjab, probably Amritsar or Lahore, Company school, 19th century · c. 1860 · Gum tempera and ink on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1987.162/1987.162_print.jpg",
+      "year": 1855,
+      "artist": "Kehar Singh"
+    },
+    {
+      "title": "The Mausoleum of Akbar at Secundrabad",
+      "meta": "India, Company School, early 19th century · early 1800s · watercolor on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1983.115/1983.115_print.jpg",
+      "year": 1800
+    },
+    {
+      "title": "A Family of Tartars",
+      "meta": "India, Punjab, probably Lahore, Company School, 19th century · c. 1885 · Gum tempera, ink, and gold on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2011.137/2011.137_print.jpg",
+      "year": 1880
+    },
+    {
+      "title": "A Couple (from the series Costumes and Professions)",
+      "meta": "South India, Tanjore, 19th century · mid-1800s · Gum tempera, ink, and gold on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2001.164/2001.164_print.jpg",
+      "year": 1825
+    },
+    {
+      "title": "Portrait of Hafiz Abd al-Rahim Khan",
+      "meta": "India, Company School, Delhi, 19th century · c.1815–1820 · Gum tempera and gold on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2007.220/2007.220_print.jpg",
+      "year": 1810
+    },
+    {
+      "title": "Four Recruits in White Dhotis, page from the Fraser Album",
+      "meta": "India · South Asian · 1810–1820 · Opaque watercolor on paper",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/42855e11-dd90-3f7f-8038-91cbd1a95166/full/843,/0/default.jpg",
+      "year": 1810,
+      "artist": "India"
+    },
+    {
+      "title": "Shah Inayat Allah of Sind with his Musician Makkhu and his Attendant Shaykh Qiyam al-Din, page from the Fraser Album",
+      "meta": "India · South Asian · 1815–1825 · Opaque watercolor on paper",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/3fbc2de3-cb50-7423-4e40-bfe4845fe71d/full/843,/0/default.jpg",
+      "year": 1815,
+      "artist": "India, Delhi"
+    },
+    {
+      "title": "Villagers Grinding Corn, page from the Fraser Album",
+      "meta": "India · South Asian · 1815–1825 · Opaque watercolor on paper",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/7d18184d-d2e2-3e7a-b263-20dd10cf1c62/full/843,/0/default.jpg",
+      "year": 1815,
+      "artist": "India, Delhi"
+    },
+    {
+      "title": "Purple Heron (Ardea purpurea)",
+      "meta": "India · South Asian · 1775–1825 · Watercolor on watermarked paper",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/c7c3111b-cbb0-b0ce-19b8-f7ee92c8d839/full/843,/0/default.jpg",
+      "year": 1775,
+      "artist": "India"
+    },
+    {
+      "title": "Rama and Sita enthroned (recto), from a Kalighat album",
+      "meta": "Eastern India, Bengal, Kolkata, Kalighat · c. 1890 · Gum tempera, graphite, and ink on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2003.134.a/2003.134.a_print.jpg",
+      "year": 1875
+    },
+    {
+      "title": "Rama and Sita enthroned with Lakshmana and Hanuman attending, from a Kalighat album",
+      "meta": "Eastern India, Bengal, Kolkata, Kalighat · c. 1890 · Gum tempera, graphite, tin, and ink on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2003.152/2003.152_print.jpg",
+      "year": 1875
+    },
+    {
+      "title": "Jatayu hinders Ravana’s chariot, trying to prevent the abduction of Sita (recto), from a Kalighat album",
+      "meta": "Eastern India, Bengal, Kalighat · c. 1890 · Gum tempera, graphite, and tin on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2003.109.a/2003.109.a_print.jpg",
+      "year": 1875
+    },
+    {
+      "title": "Das Avataras, Ten Incarnations of Vishnu (verso), from a Kalighat album",
+      "meta": "Eastern India, Bengal, Kolkata, Kalighat · c. 1890 · Woodcut, hand colored with gum tempera",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2003.114.b/2003.114.b_print.jpg",
+      "year": 1875,
+      "artist": "Shri Gobinda Chandra Roy"
+    },
+    {
+      "title": "Krishna quells the serpent Kaliya (verso), from a Kalighat album",
+      "meta": "Eastern India, Bengal, Kolkata, Kalighat · c. 1890 · Gum tempera, graphite, and ink on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2003.113.b/2003.113.b_print.jpg",
+      "year": 1880
+    },
+    {
+      "title": "Hanuman with Rama and Lakshmana on his shoulders, from a Kalighat album",
+      "meta": "Eastern India, Bengal, Kolkata, Kalighat · c. 1890 · Gum tempera, graphite, ink, and tin on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2003.120/2003.120_print.jpg",
+      "year": 1875
+    },
+    {
+      "title": "Rama and Sita in the royal palace (recto), from a Kalighat album",
+      "meta": "Eastern India, Bengal, Kolkata, Kalighat · c. 1890 · Woodcut, hand colored with gum tempera",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2003.156.a/2003.156.a_print.jpg",
+      "year": 1875,
+      "artist": "Shri Gobinda Chandra Roy"
+    },
+    {
+      "title": "Jatayu hinders Ravana’s chariot trying to prevent Sita’s abduction (recto), from a Kalighat album",
+      "meta": "Eastern India, Bengal, Kolkata, Kalighat · c. 1890 · woodcut",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2003.111.a/2003.111.a_print.jpg",
+      "year": 1875,
+      "artist": "Shri Gobinda Chandra Roy"
+    },
+    {
+      "title": "Maid bringing a hookah to a lady (recto), from a Kalighat album",
+      "meta": "Eastern India, Bengal, Kolkata, Kalighat · c. 1890 · Gum tempera, graphite, ink, and tin on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2003.107.a/2003.107.a_print.jpg",
+      "year": 1875
+    },
+    {
+      "title": "Ganesh",
+      "meta": "Eastern India, Bengal, Kolkata, Kalighat · c. 1890 · Gum tempera, graphite, and tin on paper lined with cloth",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2003.98/2003.98_print.jpg",
+      "year": 1875
+    },
+    {
+      "title": "God Vishnu with Lakshmi and Sarasvati",
+      "meta": "Bengal · South Asian · 901–1100 · Bronze",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/51ab3acb-8c1f-b79b-2c2f-9ef968f694d8/full/843,/0/default.jpg",
+      "year": 901,
+      "artist": "India"
+    },
+    {
+      "title": "Amorous Couple (Mithuna) with Parrot",
+      "meta": "West Bengal · South Asian · -100–-1 · Molded terracotta with red slip",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/f0339d73-e873-2d2e-813f-f58321c469a3/full/843,/0/default.jpg",
+      "year": -100,
+      "artist": "India"
+    },
+    {
+      "title": "The Policeman's bribe",
+      "meta": "West Bengal · 2010",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2013GN4158/full/735,/0/default.jpg",
+      "year": 2010,
+      "artist": "Anwar Chitrakar"
+    },
+    {
+      "title": "Kartik",
+      "meta": "West Bengal · 2000",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2013GN4153/full/735,/0/default.jpg",
+      "year": 2000,
+      "artist": "Chitrakar, Ranjit"
+    },
+    {
+      "title": "A babu and bibi embracing",
+      "meta": "West Bengal · 1995 - 1998",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2013GN4159/full/735,/0/default.jpg",
+      "year": 1995,
+      "artist": "Ranjit  Chitrakar"
+    },
+    {
+      "title": "Work in Progress",
+      "meta": "West Bengal · 2011",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2013GN4151/full/735,/0/default.jpg",
+      "year": 2011,
+      "artist": "Anwar Chitrakar"
+    },
+    {
+      "title": "'Yama the god of death'",
+      "meta": "West Bengal · 2005",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2013GT2596/full/735,/0/default.jpg",
+      "year": 2005,
+      "artist": "Sahajahan Chitrakar"
+    },
+    {
+      "title": "Durga Mahisashuramardini",
+      "meta": "West Bengal · 2009",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2013GN4150/full/735,/0/default.jpg",
+      "year": 2009,
+      "artist": "Uttam Chitrakar"
+    },
+    {
+      "title": "An artist at work",
+      "meta": "West Bengal · 2008",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2013GN4149/full/735,/0/default.jpg",
+      "year": 2008,
+      "artist": "Anwar Chitrakar"
+    },
+    {
+      "title": "Abhisarika",
+      "meta": "West Bengal · 2009",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2013GN4156/full/735,/0/default.jpg",
+      "year": 2009,
+      "artist": "Kalam Patua"
+    },
+    {
+      "title": "Coin of Kushan King Vasudeva I (reverse)",
+      "meta": "India, Mathura, Kushan period · c. 142/145+ · gold",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1999.226.b/1999.226.b_print.jpg",
+      "year": 142
+    },
+    {
+      "title": "Coin of Kushan King Vasudeva I",
+      "meta": "India, Mathura, Kushan period · c. 142/145+ · gold",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1999.226/1999.226_print.jpg",
+      "year": 142
+    },
+    {
+      "title": "Coin of Kushan King Vima Kadphises",
+      "meta": "India, Mathura, Kushan period · 100–200s CE · gold",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1999.225/1999.225_print.jpg",
+      "year": 100
+    },
+    {
+      "title": "Coin of Kushan King Vasudeva I (obverse)",
+      "meta": "India, Mathura, Kushan period · c. 142/145+ · gold",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1999.226.a/1999.226.a_print.jpg",
+      "year": 142
+    },
+    {
+      "title": "Ritual Tank",
+      "meta": "India · 2nd century -4th century",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2021MW5395/full/735,/0/default.jpg"
+    },
+    {
+      "title": "Blessed Lord Buddha",
+      "meta": "Sri Lanka · c. 1825–50 · gum tempera on paper, varnished",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1949.152/1949.152_print.jpg",
+      "year": 1820
+    },
+    {
+      "title": "Buddhist Temple, Kalani",
+      "meta": "Sri Lanka, Kandy · c. 1880 · Albumen print from glass plate negative",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2018.38/2018.38_print.jpg",
+      "year": 1875,
+      "artist": "Scowen & Co."
+    },
+    {
+      "title": "Roman Oil Lamp Found in Sri Lanka",
+      "meta": "Sri Lanka · roman (ancient, style or period) · 1–200 · Bronze",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/5587c5ca-10e1-6207-6f6c-a0471c31b173/full/843,/0/default.jpg",
+      "year": 1,
+      "artist": "Ancient Roman Empire"
+    },
+    {
+      "title": "Buddha Seated in Meditation (Dhyanamudra)",
+      "meta": "Sri Lanka · South Asian · 1701–1800 · Bronze",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/964d6f73-1b5f-4ab4-ae97-f47d82463b20/full/843,/0/default.jpg",
+      "year": 1701,
+      "artist": "Sri Lanka"
+    },
+    {
+      "title": "Buddha Standing with Hand in the Gesture of Reassurance (Abhayamudra) with Radiating Nimbus",
+      "meta": "Sri Lanka · South Asian · 1675–1725 · Ivory",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/f9b7fdd3-6f69-d817-9ff9-0a48d0ba5f9b/full/843,/0/default.jpg",
+      "year": 1675,
+      "artist": "Sri Lanka"
+    },
+    {
+      "title": "Oil Lamp with Christian Crosses",
+      "meta": "Sri Lanka · South Asian · 1501–1700 · Bronze",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/73fcf738-f0f5-1c8c-319d-d1af36a29526/full/843,/0/default.jpg",
+      "year": 1501,
+      "artist": "Sri Lanka"
+    },
+    {
+      "title": "Buddha",
+      "meta": "Sri Lanka · 7th century",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2009CB5411/full/735,/0/default.jpg"
+    },
+    {
+      "title": "Colossal Buddha at Lanktilaka",
+      "meta": "Sri Lanka · 1870-71",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2011EM6205/full/735,/0/default.jpg",
+      "year": 1870,
+      "artist": "Lawton, Joseph"
+    },
+    {
+      "title": "Polonnaruwa. Newly discovered ruins north of Gal Wihare",
+      "meta": "Sri Lanka · 1870-1",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2011EM6208/full/735,/0/default.jpg",
+      "year": 1870,
+      "artist": "Lawton, Joseph"
+    },
+    {
+      "title": "Head of the Buddha",
+      "meta": "Sri Lanka · 6th century-7th century",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2006BF1862/full/735,/0/default.jpg"
+    },
+    {
+      "title": "Anuradhapura. The sacred Bo tree. First flight of steps on the north face leading to the first terrace, with Buddhist priests.",
+      "meta": "Sri Lanka · 1870-1",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2010EM5233/full/735,/0/default.jpg",
+      "year": 1870,
+      "artist": "Lawton, Joseph"
+    },
+    {
+      "title": "Polonnaruwa.The Watadage, Principle entrance from North",
+      "meta": "Sri Lanka · 1870-1",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2011EM6207/full/735,/0/default.jpg",
+      "year": 1870,
+      "artist": "Lawton, Joseph"
+    },
+    {
+      "title": "Anuradhapura- The Abhayagiri Dágoba. View from the west. This Dágoba was built by King Walagam Báhu in the first century before Christ. It is an enormous mass of solid brickwork, 401 feet in diameter at the base, and, although originally much higher, is at the present time about 236 feet in height.",
+      "meta": "Sri Lanka · 1870s",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2011EM5462/full/735,/0/default.jpg",
+      "artist": "Lawton, Joseph"
+    },
+    {
+      "title": "The Infant Krishna Killing the Ogress Putana",
+      "meta": "Kerala · South Asian · 1601–1700 · Wood with traces of red and blue pigments",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/0c7edb98-f34e-4740-49e9-27219cee7853/full/843,/0/default.jpg",
+      "year": 1601,
+      "artist": "India"
+    },
+    {
+      "title": "Chinnamasta",
+      "meta": "India · 1991",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2013GL0890/full/735,/0/default.jpg",
+      "year": 1991,
+      "artist": "Subramanyan, K. G."
+    },
+    {
+      "title": "Gunakali Ragini",
+      "meta": "Northwestern India, Rajasthan, Jaipur · c. 1750 · Gum tempera and gold on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1954.261/1954.261_print.jpg",
+      "year": 1745
+    },
+    {
+      "title": "Jai Singh III of Jaipur (r. 1818–1835) Riding",
+      "meta": "Northwestern India, Rajasthan, Jaipur · c. 1820 · Gum tempera and ink on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1925.1337/1925.1337_print.jpg",
+      "year": 1815
+    },
+    {
+      "title": "Portrait of Maharaja Pratap Singh (1764–1803)",
+      "meta": "Northwestern India, Rajasthan, Jaipur · c. 1793 · Colored ink drawing",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2011.207/2011.207_print.jpg",
+      "year": 1788,
+      "artist": "Sahib Ram"
+    },
+    {
+      "title": "Gaudi Ragini",
+      "meta": "India, Rajasthan, probably Jaipur, 18th century · c. 1700–1725 · Gum tempera, ink, and gold on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1968.109/1968.109_print.jpg",
+      "year": 1695
+    },
+    {
+      "title": "A King Making Love in the Harem",
+      "meta": "Northwestern India, Rajasthan, Rajput Kingdom of Jaipur · c. 1720–30 · gum tempera and gold on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2018.170/2018.170_print.jpg",
+      "year": 1710
+    },
+    {
+      "title": "Krishna and Gopis",
+      "meta": "India, Rajasthan, Jaipur, 19th century · mid 1800s · Gum tempera and gold on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1946.359/1946.359_print.jpg",
+      "year": 1830
+    },
+    {
+      "title": "Kakubha Ragini",
+      "meta": "India, Rajasthan, Probably Jaipur, 18th century · c. 1750 · color on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1971.92/1971.92_print.jpg",
+      "year": 1745
+    },
+    {
+      "title": "Raja Pratap Singh",
+      "meta": "Jaipur · ca. 1790",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2014HC2280/full/735,/0/default.jpg",
+      "year": 1790
+    },
+    {
+      "title": "Maharaja Bishan Singh",
+      "meta": "Jaipur · ca. 1890",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2013GL4205/full/735,/0/default.jpg",
+      "year": 1890
+    },
+    {
+      "title": "Raja Man Singh",
+      "meta": "Jaipur · ca. 1790",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2013GB1510/full/735,/0/default.jpg",
+      "year": 1790
+    },
+    {
+      "title": "Maharaja Bhao Singh",
+      "meta": "Jaipur · ca. 1890",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2013GL4207/full/735,/0/default.jpg",
+      "year": 1890,
+      "artist": "Ram Gopal"
+    },
+    {
+      "title": "Shiva Saint: Manikkavachakar",
+      "meta": "South India, Tamil Nadu, 12th-13th century · 1100s–1200s · bronze",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1967.148/1967.148_print.jpg",
+      "year": 1100
+    },
+    {
+      "title": "Goddess Siddhalakshmi",
+      "meta": "India, Kashmir · 1000s · bronze",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1982.47/1982.47_print.jpg",
+      "year": 1000
+    },
+    {
+      "title": "Shiva and Parvati (Umamaheshvara)",
+      "meta": "India · 19th century",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2006AT1488/full/735,/0/default.jpg"
+    },
+    {
+      "title": "Ayannar or Sasta",
+      "meta": "India · 12th century",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2006BF1896/full/735,/0/default.jpg"
+    },
+    {
+      "title": "Pidari",
+      "meta": "India · 19th Century",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2006AH3114/full/735,/0/default.jpg"
+    },
+    {
+      "title": "Durga",
+      "meta": "India · 19th century",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2006AH3085/full/735,/0/default.jpg"
+    },
+    {
+      "title": "Skanda",
+      "meta": "India · 18th century-19th century",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2017JT9014/full/735,/0/default.jpg"
+    },
+    {
+      "title": "Veneration of the Buddha's Relics",
+      "meta": "Gandhara · 150–250 · Schist",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/49fed8ce-b93d-ab7d-6c05-7d9f49a33333/full/843,/0/default.jpg",
+      "year": 150,
+      "artist": "Pakistan or Afghanistan"
+    },
+    {
+      "title": "Painted Bowl with Fish and Lotus Design",
+      "meta": "Gandhara · South Asian · 401–500 · Terracotta with black pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/82d1cfde-b339-5748-1f0a-f9f268dd2fd9/full/843,/0/default.jpg",
+      "year": 401,
+      "artist": "Pakistan"
+    },
+    {
+      "title": "Painted Bowl with Faunal and Floral Design",
+      "meta": "Gandhara · South Asian · 401–500 · Terracotta with black pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/a757a224-427e-6762-9e52-cb6b81dca407/full/843,/0/default.jpg",
+      "year": 401,
+      "artist": "Pakistan"
+    },
+    {
+      "title": "Oval Cosmetic Box Lid with a Man Being Entertained by a Lyrist",
+      "meta": "Gandhara · South Asian · 401–600 · Gray schist",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/79ca9652-a9ff-3d0a-65e0-2b5c6645f0ec/full/843,/0/default.jpg",
+      "year": 401,
+      "artist": "Pakistan"
+    },
+    {
+      "title": "Spoon",
+      "meta": "Gandhara · 2nd century- 3rd Century",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2020MR3033/full/735,/0/default.jpg"
+    },
+    {
+      "title": "Eight Great Events from the Life of the Buddha",
+      "meta": "Bihar · South Asian · 901–1000 · Phyllite",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/9116ffb8-86b0-402a-5514-39afc5e48eec/full/843,/0/default.jpg",
+      "year": 901,
+      "artist": "India"
+    },
+    {
+      "title": "Buddha Giving the First Sermon (Dharmachakrapravartanamudra)",
+      "meta": "Bihar · South Asian · 995–1005 · Black stone",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/bc731180-243e-bb5a-a416-8c77e3f7934a/full/843,/0/default.jpg",
+      "year": 995,
+      "artist": "India"
+    },
+    {
+      "title": "God Brahma",
+      "meta": "Bihar · South Asian · 800–900 · Basalt",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/75bd335b-c060-2be1-3ca6-f85a096b4309/full/843,/0/default.jpg",
+      "year": 800,
+      "artist": "India"
+    },
+    {
+      "title": "Bodhisattva Simhanada Lokeshvara",
+      "meta": "Bihar · South Asian · 1001–1100 · Basalt",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/9be0b322-9069-e4a2-3516-ec3acd39817e/full/843,/0/default.jpg",
+      "year": 1001,
+      "artist": "India"
+    },
+    {
+      "title": "Bodhisattva Vajrapani",
+      "meta": "Bihar · early 10th century",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2006AU8861/full/735,/0/default.jpg"
+    },
+    {
+      "title": "Durga Slaying the Demon Buffalo",
+      "meta": "Nepal · 1500s · bronze",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1968.268/1968.268_print.jpg",
+      "year": 1500
+    },
+    {
+      "title": "Triumph of the Buddha, Marvijaya",
+      "meta": "Nepal · 1400s · bronze",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1959.255/1959.255_print.jpg",
+      "year": 1400
+    },
+    {
+      "title": "Oil feeder",
+      "meta": "Nepal · 19th century",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2020MU1608/full/735,/0/default.jpg"
+    },
+    {
+      "title": "Handle",
+      "meta": "Nepal · 18th century",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2020MU4071/full/735,/0/default.jpg"
+    },
+    {
+      "title": "Prayer bell",
+      "meta": "Nepal · before 1879",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2021MU6467/full/735,/0/default.jpg",
+      "year": 1879
+    },
+    {
+      "title": "Tsong Khapa, Founder of the Geluk Order",
+      "meta": "Central Tibet · c. 1440–70 · Gum tempera and gold on cotton",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1981.33/1981.33_print.jpg",
+      "year": 1440
+    },
+    {
+      "title": "Guardian Kings:  Dhrtarastra and Virupaksa",
+      "meta": "Sino-Tibet, Yuan dynasty (1271-1368) · 1st half of 1300s · Thangka, ink and color on cotton",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1989.476/1989.476_print.jpg",
+      "year": 1300
+    },
+    {
+      "title": "Painted Banner (Thangka) of Green Tara Surrounded by Twenty Manifestations",
+      "meta": "Tibet · Himalayan · 1701–1800 · Pigment on cloth",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/882f0bbc-b668-7589-343a-bc8e274d219f/full/843,/0/default.jpg",
+      "year": 1701,
+      "artist": "Tibet"
+    },
+    {
+      "title": "Painted Banner (Thangka) of Vajriputra, One of the Sixteen Great Arhats",
+      "meta": "Tibet · Himalayan · 1675–1725 · Pigment and gold on silk and cotton",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/01e93a51-4f67-6493-ed11-966d39820973/full/843,/0/default.jpg",
+      "year": 1675,
+      "artist": "Chinese or Tibetan"
+    },
+    {
+      "title": "Painted Banner (Thangka) from a Set of Seven Portraying the Sixteen Arhats (Elders), Early Disciples of the Historical Buddha Shakyamuni",
+      "meta": "Tibet · Himalayan · 1801–1900 · Pigment on cloth",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/3dcecc81-1b2a-b63c-bb49-ccbe833c999e/full/843,/0/default.jpg",
+      "year": 1801,
+      "artist": "Tibet"
+    },
+    {
+      "title": "Milarepa on Mount Kailash",
+      "meta": "Tibet · Himalayan · 1400–1500 · Pigment and gold on cotton",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/4747ac8d-191c-75ac-3198-f7b551441fe4/full/843,/0/default.jpg",
+      "year": 1400,
+      "artist": "Tibet"
+    },
+    {
+      "title": "Tangka",
+      "meta": "Tibet · 18th century",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2021MW9297/full/735,/0/default.jpg"
+    },
+    {
+      "title": "Tangka painting",
+      "meta": "Tibet · late 17th century",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2006AH0342/full/735,/0/default.jpg"
+    },
+    {
+      "title": "Vishnu and Lakshmi",
+      "meta": "Kangra · ca. 1870",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2013GK4299/full/735,/0/default.jpg",
+      "year": 1870
+    },
+    {
+      "title": "Naga (Serpent Divinity)",
+      "meta": "India, Mathura, Kushan period · 300s CE · sandstone",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1943.661/1943.661_print.jpg",
+      "year": 300
+    },
+    {
+      "title": "Miniature Head of a Bodhisattva",
+      "meta": "India, Mathura, Kushan period · 1–100 CE · red Sikri sandstone",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1989.345/1989.345_print.jpg",
+      "year": 1
+    },
+    {
+      "title": "Head of Jina",
+      "meta": "India, Mathura, Kushan period · c. 150–75 CE · red mottled sandstone",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1962.47/1962.47_print.jpg",
+      "year": 150
+    },
+    {
+      "title": "Attendant Bearing a Fly Whisk (Chauri)",
+      "meta": "Northern India, Uttar Pradesh, Mathura, Kushan period · c. 100–150 CE · red sandstone",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1965.472/1965.472_print.jpg",
+      "year": 100
+    },
+    {
+      "title": "Lion",
+      "meta": "Northern India, Uttar Pradesh, Mathura, Kushan period · 100s–200s CE · sandstone",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1952.514/1952.514_print.jpg",
+      "year": 100
+    },
+    {
+      "title": "Fragment of railing",
+      "meta": "Mathura · 2nd century",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2014HH3448/full/735,/0/default.jpg"
+    },
+    {
+      "title": "Sculpture head of a Bodhisattva",
+      "meta": "Mathura · 2nd Century",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2019ME4371/full/735,/0/default.jpg"
+    },
+    {
+      "title": "Hampi (Vijayanagara): Stone pier with Krishna dancing on the snake.",
+      "meta": "India · 1860s",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2007BM8501/full/735,/0/default.jpg",
+      "artist": "School of Industrial Arts, Madras."
+    },
+    {
+      "title": "Head of a Young Man",
+      "meta": "India, Company School, Sangram Singh seal on reverse, early 19th century · early 1800s · drawing",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2005.72/2005.72_print.jpg",
+      "year": 1800
+    },
+    {
+      "title": "Brahma",
+      "meta": "Eastern India, Bengal, Kolkata, Kalighat · c. 1890 · Gum tempera, graphite, ink, and tin on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2003.148/2003.148_print.jpg",
+      "year": 1875
+    },
+    {
+      "title": "The Goddess Kali (recto), from a Kalighat album",
+      "meta": "Eastern India, Bengal, Kolkata, Kalighat · c. 1890 · Gum tempera, graphite, ink, and tin on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2003.110.a/2003.110.a_print.jpg",
+      "year": 1875
+    },
+    {
+      "title": "Kali Standing on Shiva (verso), from a Kalighat album",
+      "meta": "Eastern India, Bengal, Kolkata, Kalighat · c. 1890 · Gum tempera, graphite, and ink on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2003.110.b/2003.110.b_print.jpg",
+      "year": 1875
+    },
+    {
+      "title": "Sheetaladevi: The Smallpox Goddess (recto), from a Kalighat album",
+      "meta": "Eastern India, Bengal, Kolkata, Kalighat · c. 1890 · Gum tempera, graphite, ink, and tin on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2003.157.a/2003.157.a_print.jpg",
+      "year": 1875
+    },
+    {
+      "title": "Leaf from a Kalighat album: Sheetaladevi: The Smallpox Goddess (recto); Durga (verso)",
+      "meta": "Eastern India, Bengal, Kolkata, Kalighat · c. 1890 · Gum tempera, graphite, ink, and tin on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2003.157/2003.157_print.jpg",
+      "year": 1875
+    },
+    {
+      "title": "Toy Cart with Grimacing Potbellied Dwarf (Yaksha)",
+      "meta": "West Bengal · South Asian · -100–-1 · Terracotta with red slip",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/2b5a4cc6-6291-1059-18e0-fbb6d71aeb2b/full/843,/0/default.jpg",
+      "year": -100,
+      "artist": "India"
+    },
+    {
+      "title": "Toy Cart with Elephant",
+      "meta": "West Bengal · South Asian · -100–101 · Terracotta with red slip",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/a628f00e-ccf7-d719-c8a7-81db81bece67/full/843,/0/default.jpg",
+      "year": -100,
+      "artist": "India"
+    },
+    {
+      "title": "Mihintale- The Ambastala Dágoba",
+      "meta": "Sri Lanka · 1870s",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2011EM5485/full/735,/0/default.jpg",
+      "artist": "Lawton, Joseph"
+    },
+    {
+      "title": "Anuradhapura- The Abhayagiri Dágoba. View from the north, with ruins of a stone bridge, 100 feet in length, constructed with rough stones 15 feet long, placed 5 feet apart and supported on rough stone uprights. The roadway was probably of wood.",
+      "meta": "Sri Lanka · 1870s",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2010EM5214/full/735,/0/default.jpg",
+      "artist": "Lawton, Joseph"
+    },
+    {
+      "title": "Anuradhapura. Lówá-mahapáya, (the Brazen Palace,) with the Ruwanweli Dágoba in the distance.",
+      "meta": "Sri Lanka · 1870s",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2010EM5227/full/735,/0/default.jpg",
+      "artist": "Lawton, Joseph"
+    },
+    {
+      "title": "Anuradhapura. The Thúpáráma Dágoba.",
+      "meta": "Sri Lanka · 1870s",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2010EM5238/full/735,/0/default.jpg",
+      "artist": "Lawton, Joseph"
+    },
+    {
+      "title": "Anuradhapura- Sri-maha Bódhin Wahanse (the sacred Bó Tree). Sculptured moon-stone at the principal entrance, 6 feet 6 inches in diameter. (No. 133)",
+      "meta": "Sri Lanka · 1870s",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2011EM5471/full/735,/0/default.jpg",
+      "artist": "Lawton, Joseph"
+    },
+    {
+      "title": "God Shiva Seated with His Consort Parvati",
+      "meta": "Kerala · South Asian · 1301–1400 · Bronze",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/9a085140-8ae0-5fa7-8210-dea8da69e053/full/843,/0/default.jpg",
+      "year": 1301,
+      "artist": "India"
+    },
+    {
+      "title": "Raja Jai Singh III",
+      "meta": "Jaipur · ca. 1830",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2013GB1402/full/735,/0/default.jpg",
+      "year": 1830,
+      "artist": "Gobinda"
+    },
+    {
+      "title": "Raja Bishan Singh",
+      "meta": "Jaipur · early 19th century",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2013GB1506/full/735,/0/default.jpg"
+    },
+    {
+      "title": "Raja Jagat Singh of Jaipur",
+      "meta": "Jaipur · ca. 1805",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2013GL3766/full/735,/0/default.jpg",
+      "year": 1805
+    },
+    {
+      "title": "Raja Sagat Singh of Jaipur",
+      "meta": "Jaipur · ca. 1800",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2013GL5232/full/735,/0/default.jpg",
+      "year": 1800
+    },
+    {
+      "title": "Fragment of Head of Buddha",
+      "meta": "India, Sarnath, Gupta Period (320-647) · 400s CE · sandstone",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1946.492/1946.492_print.jpg",
+      "year": 400
+    },
+    {
+      "title": "Ringstone",
+      "meta": "India, Maurya period (322–185 BCE) · 200s BCE · steatite",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1977.36/1977.36_print.jpg",
+      "year": -300
+    },
+    {
+      "title": "Libation Cup",
+      "meta": "India, Maurya period (322–185 BCE)–Shunga period (185–78 BCE) · c. 235–185 BCE · bronze, lost wax technique",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2001.2/2001.2_print.jpg",
+      "year": -299
+    },
+    {
+      "title": "Punch-Marked Coin",
+      "meta": "India, Rajasthan, Maurya period (322–185 BCE) · 400–300 BCE · silver",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1967.243/1967.243_print.jpg",
+      "year": -400
+    },
+    {
+      "title": "Male Head, possibly a Yaksha",
+      "meta": "Northeastern India, Bihar, Patna, Bulandibagh · 300s BCE · terracotta",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1986.72/1986.72_print.jpg",
+      "year": -300
+    },
+    {
+      "title": "Coin with Figure of an Archer (reverse)",
+      "meta": "India, Chandragupta II, Gupta Period, late 4th-early 5th century · c. 400 CE · gold",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1977.62.b/1977.62.b_print.jpg",
+      "year": 380
+    },
+    {
+      "title": "Anthropomorph",
+      "meta": "India, Bronze Age · c. 1500–1000 BCE · copper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2004.31/2004.31_print.jpg",
+      "year": -1500
+    },
+    {
+      "title": "Coin of Chandragupta II",
+      "meta": "India, Chandragupta II, Gupta Period, late 4th-early 5th century · c. 400 CE · gold",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1977.62/1977.62_print.jpg",
+      "year": 380
+    },
+    {
+      "title": "Coin with Figure of an Archer (obverse)",
+      "meta": "India, Chandragupta II, Gupta Period, late 4th-early 5th century · c. 400 CE · gold",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1977.62.a/1977.62.a_print.jpg",
+      "year": 380
+    },
+    {
+      "title": "Female Figure, Probably a Nature Divinity (Yakshi)",
+      "meta": "India, Shunga period (185–78 BCE) · c. 75 BCE · terracotta",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1973.24/1973.24_print.jpg",
+      "year": -100
+    },
+    {
+      "title": "Crouching Dwarf Musician",
+      "meta": "India, Shunga period (185–78 BCE) · 200–100 BCE · terracotta",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1983.79/1983.79_print.jpg",
+      "year": -200
+    },
+    {
+      "title": "Section of a Coping Rail",
+      "meta": "India, Madhya Pradesh, Bharhut, Shunga period · c. 150 BCE · sandstone",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1972.366/1972.366_print.jpg",
+      "year": -187
+    },
+    {
+      "title": "Necklace Bead in the Form of a Fish",
+      "meta": "India, Shunga period (185–78 BCE) · 185–72 BCE · gold repoussé with granulation",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1973.39.g/1973.39.g_print.jpg",
+      "year": -185
+    },
+    {
+      "title": "Double-Faced Crossbar from a Railing",
+      "meta": "India, Madhya Pradesh, Bharhut, Shunga period · c. 150 BCE · plum-colored sandstone",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1982.44/1982.44_print.jpg",
+      "year": -200
+    },
+    {
+      "title": "Necklace Beads in the Form of Fish",
+      "meta": "India, Shunga period (185–78 BCE) · 185–72 BCE · gold repoussé with granulation",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1973.39/1973.39_print.jpg",
+      "year": -185
+    },
+    {
+      "title": "Long Shawl with Black Center and Exotic Four-Sided Gallery in Chinoiserie Style",
+      "meta": "India, Kashmir · 1840s · wool; 2/2 twill tapestry (S), double interlocked, pieced, refreshed",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2010.141/2010.141_print.jpg",
+      "year": 1840
+    },
+    {
+      "title": "Photograph",
+      "meta": "India",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2015HP3760/full/735,/0/default.jpg"
+    },
+    {
+      "title": "Buddhist vihara cave, Ajanta",
+      "meta": "Ajanta · January 1862",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2006BF9141/full/735,/0/default.jpg",
+      "year": 1862,
+      "artist": "Simpson, William RI FRGS"
+    },
+    {
+      "title": "Ajanta, General View",
+      "meta": "Ajanta · 19th century",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2009CA5341/full/735,/0/default.jpg",
+      "artist": "Francis Frith & Co."
+    },
+    {
+      "title": "Copy of painting inside the caves of Ajanta (cave 6)",
+      "meta": "Ajanta · 1872-1885",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2006AY0634/full/735,/0/default.jpg",
+      "year": 1872,
+      "artist": "Griffiths, John"
+    },
+    {
+      "title": "Copy of painting inside the caves of Ajanta (Cave 1)",
+      "meta": "Ajanta · 1877-1878",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2017KE2649/full/735,/0/default.jpg",
+      "year": 1877,
+      "artist": "Griffiths, John"
+    },
+    {
+      "title": "Ajanta, Entrance to Cave 19",
+      "meta": "Ajanta · 19th century",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2009CA5342/full/735,/0/default.jpg",
+      "artist": "Francis Frith & Co."
+    },
+    {
+      "title": "Copy of painting in the caves of Ajanta (cave 2)",
+      "meta": "Ajanta · 1881-1883",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2017KE2642/full/735,/0/default.jpg",
+      "year": 1881,
+      "artist": "Griffiths, John"
+    },
+    {
+      "title": "Copy of painting inside the caves of Ajanta (cave 2)",
+      "meta": "Ajanta · 1874-1875",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2006AY0637/full/735,/0/default.jpg",
+      "year": 1874,
+      "artist": "Griffiths, John"
+    },
+    {
+      "title": "Copy of painting in the caves of Ajanta (cave 17)",
+      "meta": "Ajanta · 1881-1883",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2017KE2514/full/735,/0/default.jpg",
+      "year": 1881,
+      "artist": "Griffiths, John"
+    },
+    {
+      "title": "Copy of painting inside the caves of Ajanta (cave 17)",
+      "meta": "Ajanta · 1881-1883",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2006AY0567/full/735,/0/default.jpg",
+      "year": 1881,
+      "artist": "John Griffiths"
+    },
+    {
+      "title": "Copy of painting inside the Ajanta caves (cave 10)",
+      "meta": "Ajanta · 1881-1883",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2006AY0633/full/735,/0/default.jpg",
+      "year": 1881,
+      "artist": "Griffiths, John"
+    },
+    {
+      "title": "Khalias Rock-Hewn Temple, Ellora",
+      "meta": "India · 19th century · 1885–1895 · Gelatin silver print",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/2bf90dcb-a894-3d93-a267-43e8b3752f5c/full/843,/0/default.jpg",
+      "year": 1885,
+      "artist": "Raja Deen Dayal"
+    },
+    {
+      "title": "Kailasanatha Temple, Ellora",
+      "meta": "India · 2 February 1830",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2013GL0930/full/735,/0/default.jpg",
+      "year": 1830,
+      "artist": "Lacy, William Maj. Gen."
+    },
+    {
+      "title": "Front of the Indra Sabha Cave at Ellora",
+      "meta": "India · 6 February 1830",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2013GL0954/full/735,/0/default.jpg",
+      "year": 1830,
+      "artist": "Lacy, William Maj. Gen."
+    },
+    {
+      "title": "Bombay.  Caves of Ellora",
+      "meta": "Ellora · 1850s to 1870s",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2008BW0311/full/735,/0/default.jpg",
+      "artist": "Francis Frith"
+    },
+    {
+      "title": "Caves of Ellora.  Bombay",
+      "meta": "Ellora · 1850s to 1870s",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2008BW0308/full/735,/0/default.jpg",
+      "artist": "Francis Frith"
+    },
+    {
+      "title": "Excavated Temple at Ellora",
+      "meta": "India · 1826",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2006AJ6640/full/735,/0/default.jpg",
+      "year": 1826,
+      "artist": "Grindlay, Robert Melville (Captain)"
+    },
+    {
+      "title": "Rameshwar cave, Ellora",
+      "meta": "Ellora · 1862",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2022NC9720/full/735,/0/default.jpg",
+      "year": 1862,
+      "artist": "Simpson, William RI FRGS"
+    },
+    {
+      "title": "The Great Stupa at Sanchi",
+      "meta": "India · 1861-2",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2009BX5338/full/735,/0/default.jpg",
+      "year": 1861,
+      "artist": "Waterhouse, James John (Major General)"
+    },
+    {
+      "title": "Sanchi - Front view of Eastern Gateway",
+      "meta": "Sanchi · 1861-2",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2009BY6830/full/735,/0/default.jpg",
+      "year": 1861,
+      "artist": "Waterhouse, James John (Major General)"
+    },
+    {
+      "title": "The Sanchi Tope",
+      "meta": "India · 1870-1874",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2007BM8039/full/735,/0/default.jpg",
+      "year": 1870
+    },
+    {
+      "title": "Transporting of Materials from Jabbalpur to Sanchi",
+      "meta": "India · 1870-1874",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2008BV5834/full/735,/0/default.jpg",
+      "year": 1870
+    },
+    {
+      "title": "Relic casket",
+      "meta": "Sanchi · ca. 200-100 BC",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2006AP1041/full/735,/0/default.jpg",
+      "year": -200
+    },
+    {
+      "title": "Buddha's Previous Life as a Woodpecker:  Javasakunda Jataka",
+      "meta": "Southern India, Andhra Pradesh, possibly Amaravati, Satavahana period (100s BC-AD 200s) · c. 175–225 CE · limestone",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1970.350/1970.350_print.jpg",
+      "year": 175
+    },
+    {
+      "title": "Worshippers at a sacred tree",
+      "meta": "Southern India, Andhra Pradesh, possibly Chandavaram · about 50 BCE to 50 CE · limestone",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1970.43/1970.43_print.jpg",
+      "year": -100
+    },
+    {
+      "title": "Miniature Votive Stupa",
+      "meta": "Eastern India, Bihar · c. 1000s · bronze with inlay of semiprecious stones",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1982.132/1982.132_print.jpg",
+      "year": 1000
+    },
+    {
+      "title": "Portrait of Raja Jagat Singh of Nurpur (reigned 1618–46)",
+      "meta": "Mughal India, Court of Jahangir (reigned 1605 - 27), possibly Lahore · probably 1619 · Gum tempera and gold on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2013.324/2013.324_print.jpg",
+      "year": 1618,
+      "artist": "Bichitr"
+    },
+    {
+      "title": "Portrait of Murad Bakhsh (1624–61)",
+      "meta": "Mughal India, court of Shah Jahan (reigned 1628–58) · c. 1635; borders c. 1700s · gum tempera and gold on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2013.327/2013.327_print.jpg",
+      "year": 1630,
+      "artist": "Balchand"
+    },
+    {
+      "title": "Page from the Panj Ganj (Five Treasures) of Abd al-Rahman Jami (Persian, 1414–1492), with two Persian masnavis (narrative poems): Yusuf va Zulaykha (Joseph and Zulaykha) and Subhat al-abrar (Rosary of the Righteous)",
+      "meta": "Northern India, Mughal, early 17th century · Text c. 1500–1520; painting, borders, and illuminations added 1603–7\nText copied by Sultan-Ali Mashhadi (Persian, active early 1500s) for Badi al-Zaman Mirza, ruler of Herat\nPainted insets and borders by Mushfiq (Indian, active 1580s–early 1600s)\nText copied in Herat \nPainting, borders, and illuminations made in the Deccan for Mughal minister Abd al-Rahim the Khan Khanan · Gum tempera, ink, and gold on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2013.315.2/2013.315.2_print.jpg",
+      "year": 1520,
+      "artist": "Mushfiq"
+    },
+    {
+      "title": "The Parrot Addresses Khujasta at the Beginning of the Seventh Night, from a Tuti-nama (Tales of a Parrot)",
+      "meta": "Mughal India, court of Akbar (reigned 1556–1605) · c. 1560 · gum tempera, ink, and gold on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1962.279.43.a/1962.279.43.a_print.jpg",
+      "year": 1555
+    },
+    {
+      "title": "Zulaykha in her palace and as an old woman with Joseph, from a Panj Ganj (Five Treasures) of Abd al-Rahman Jami (Persian, 1414–1492); verso from a Panj Ganj of Abd al-Rahman Jami (Persian, 1414–1492), with two masnavis: Yusuf va Zulaykha (Joseph and Zulaykha) and Khirad-nama-i Iskandari (Alexander’s Book of Wisdom)",
+      "meta": "Western Afghanistan, Herat (text); Mughal India (paintings) · Text copied by Sultan-Ali Mashhadi (Persian, 1453–1520) for Badi al-Zaman Mirza of Herat\nPainting, borders, and illumination by Mushfiq (Indian, active 1580s–early 1600s); Text copied in Herat; Painting, borders, and illuminations made in the Deccan for Mughal minister Abd al-Rahim the Khan Khanan · Gum tempera, ink, and gold on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2013.315.1/2013.315.1_print.jpg",
+      "year": 1603,
+      "artist": "Mushfiq"
+    },
+    {
+      "title": "Still Life: Bouquet of Flowers Emerging from the Grass",
+      "meta": "Northwestern India, Rajasthan, Rajput Kingdom of Bundi · c. 1750 · gum tempera on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2018.161/2018.161_print.jpg",
+      "year": 1740
+    },
+    {
+      "title": "Page from a Panj Ganj (Five Treasures) of Abd al-Rahman Jami (Persian, 1414–1492), with two Persian\nmasnavis: Yusuf va Zulaykha (Joseph and Zulaykha) and Subhat al-abrar (Rosary of the Righteous) (verso)",
+      "meta": "Northern India, Mughal, early 17th century · 1520–1607 · Gum tempera, ink, and gold on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2013.315.2.b/2013.315.2.b_print.jpg",
+      "year": 1520,
+      "artist": "Mushfiq"
+    },
+    {
+      "title": "Folio B: Folio from the \"Five Treasures\" (Panj Ganj) of Jami (recto)",
+      "meta": "Northern India, Mughal, early 17th century · 1520–1607 · Gum tempera, ink, and gold on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2013.315.2.a/2013.315.2.a_print.jpg",
+      "year": 1520,
+      "artist": "Mushfiq"
+    },
+    {
+      "title": "Maharana Bhim Singh in Procession",
+      "meta": "India · South Asian · 1815–1825 · Opaque watercolor and gold on paper",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/9f08b895-4960-4bc6-5871-dc9bfab4c655/full/843,/0/default.jpg",
+      "year": 1815,
+      "artist": "India"
+    },
+    {
+      "title": "Portrait Miniature of Captain W. S. Dawe of the Indian Infantry",
+      "meta": "India · 1787",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2006AG1617/full/735,/0/default.jpg",
+      "year": 1787,
+      "artist": "Smart, John"
+    },
+    {
+      "title": "Portrait Miniature of Edward Raphael (d.1791)",
+      "meta": "India · 1789",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2006AP6297/full/735,/0/default.jpg",
+      "year": 1789,
+      "artist": "John Smart"
+    },
+    {
+      "title": "Portrait Miniature of Hyder Beg Khan, the Minister to the Nawab of A Wadh, Asaf-Au-Daula",
+      "meta": "India · 1786",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2006AG1382/full/735,/0/default.jpg",
+      "year": 1786,
+      "artist": "Humphry, Ozias (RA)"
+    },
+    {
+      "title": "Lovers on a Terrace: Ramakali Ragini of Hindol, from a Bundi Ragamala",
+      "meta": "Northwestern India, Rajasthan, Rajput Kingdom of Bundi · c. 1610 · gum tempera and gold on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2018.156/2018.156_print.jpg",
+      "year": 1600
+    },
+    {
+      "title": "Sultan Ibrahim ibn Adham of Balkh Visited by Angels",
+      "meta": "Northwestern India, Rajasthan, Rajput Kingdom of Bundi · c. 1740 · gum tempera and gold on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2018.160/2018.160_print.jpg",
+      "year": 1730
+    },
+    {
+      "title": "A page from a Punishment series: Punishment for murder",
+      "meta": "Northwestern India, Rajasthan, Rajput Kingdom of Bundi · c. 1740 · gum tempera and gold on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2018.162/2018.162_print.jpg",
+      "year": 1735
+    },
+    {
+      "title": "Krishna watches the milkmaids  circumambulating a sacred tree: The month of Jyestha (May–June), from a Barahmasa (The Twelve Months)",
+      "meta": "Northwestern India, Rajasthan, Rajput Kingdom of Bundi · c. 1760 · gum tempera on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2018.163/2018.163_print.jpg",
+      "year": 1750
+    },
+    {
+      "title": "Woman Addressing a Peacock: Gujari Ragini of Megh, from a Ragamala",
+      "meta": "Northwestern India, Rajasthan, Rajput Kingdom of Bundi or Raghogarh · c. 1680 · gum tempera and gold on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2018.159/2018.159_print.jpg",
+      "year": 1670
+    },
+    {
+      "title": "Lover's Tryst",
+      "meta": "India, Rajasthan, Bundi Style, later half 18th century · 1750–1800 · Gum tempera and gold on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1960.54/1960.54_print.jpg",
+      "year": 1750
+    },
+    {
+      "title": "Todi Ragini, from a Ragamala Series",
+      "meta": "Northwestern India, Rajasthan, Bundi or Uniara, 18th century · c. 1750–75 · Gum tempera and gold on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2012.297/2012.297_print.jpg",
+      "year": 1745
+    },
+    {
+      "title": "Krishna Fluting",
+      "meta": "Northwestern India, Rajasthan, Rajput Kingdom of Bundi · c. 1675–1700 · Gum tempera on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2018.157/2018.157_print.jpg",
+      "year": 1665
+    },
+    {
+      "title": "Pair of Painted Doors",
+      "meta": "India, Bundi, 19th century · c. 1820 · color on wood",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1977.60/1977.60_print.jpg",
+      "year": 1815
+    },
+    {
+      "title": "Lovers Embracing (Raga Malkaus)",
+      "meta": "India, Rajasthan, Bundi, 18th century · c. 1760 · Gum tempera, ink, and gold on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1968.107/1968.107_print.jpg",
+      "year": 1755
+    },
+    {
+      "title": "Radha and Krishna in the Rain",
+      "meta": "India, Rajasthan, Bundi school, 18th century · c. 1780 · Gum tempera, ink, and gold on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1988.120/1988.120_print.jpg",
+      "year": 1775
+    },
+    {
+      "title": "Painted Door",
+      "meta": "Northwestern India, Rajasthan, possibly Rajput kingdom of Bundi · c. 1820 · color on wood",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1977.60.1/1977.60.1_print.jpg",
+      "year": 1815
+    },
+    {
+      "title": "Raja Ajit Singh of Bundi",
+      "meta": "Bundi · ca. 1780",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2013GB1645/full/735,/0/default.jpg",
+      "year": 1780
+    },
+    {
+      "title": "Rao Budh Singh of Bundi",
+      "meta": "Bundi · ca. 1743",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2013GL0622/full/735,/0/default.jpg",
+      "year": 1743
+    },
+    {
+      "title": "Raja Bishan Singh of Bundi",
+      "meta": "Bundi · ca. 1820",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2013GB1623/full/735,/0/default.jpg",
+      "year": 1820
+    },
+    {
+      "title": "Rao Umed Singh of Bundi",
+      "meta": "Bundi · ca. 1790",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2013GB1629/full/735,/0/default.jpg",
+      "year": 1790
+    },
+    {
+      "title": "A man hurling stones at a mango tree.",
+      "meta": "Bundi · ca. 1850",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2013GB1619/full/735,/0/default.jpg",
+      "year": 1850
+    },
+    {
+      "title": "Drawing",
+      "meta": "Bundi · ca. 1860-1890",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2021NB4263/full/735,/0/default.jpg",
+      "year": 1860,
+      "artist": "Frederick William Alexander De Fabeck"
+    },
+    {
+      "title": "Sohini",
+      "meta": "Bundi · ca. 1850",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2013GB1636/full/735,/0/default.jpg",
+      "year": 1850
+    },
+    {
+      "title": "Maharao Chattar Sal (reigned 1758–64) of Kota in a Palanquin",
+      "meta": "Northwestern India, Rajasthan, Kota · c. 1760 · Gum tempera and gold on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1989.344/1989.344_print.jpg",
+      "year": 1755
+    },
+    {
+      "title": "Maharao Kishor Singh II of Kota (r. 1819–28) Worshiping Krishna as Brij Rajji",
+      "meta": "Northwestern India, Rajasthan, Rajput Kingdom of Kota · c. 1825 · Gum tempera, silver, and gold on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1978.71/1978.71_print.jpg",
+      "year": 1820
+    },
+    {
+      "title": "Maharao Ram Singh II of Kota (r. 1828–66) Worships Brij Nathji as the Bridegroom",
+      "meta": "Northwestern India, Rajasthan, Rajput Kingdom of Kota · c. 1830s · gum tempera and gold on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2018.181/2018.181_print.jpg",
+      "year": 1810
+    },
+    {
+      "title": "Maharaja Chattarsol of Kota Shooting Lions",
+      "meta": "Northwest India, Rajasthan, Rajput Kingdom of Kota · c. 1860 · Gum tempera, ink, and gold on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2011.150/2011.150_print.jpg",
+      "year": 1855
+    },
+    {
+      "title": "Umed Singh of Kota Hunting Lions",
+      "meta": "India, Rajasthan, Kota, 18th century · c. 1785–1790 · brush drawing with slight color on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1964.51/1964.51_print.jpg",
+      "year": 1780
+    },
+    {
+      "title": "Tiger Hunt of Ram Singh II",
+      "meta": "Northwestern India, Rajasthan, Rajput kingdom of Kota, court of Ram Singh II (reigned 1826–66) · c. 1830–40 · Gum tempera, ink, and gold on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1991.168/1991.168_print.jpg",
+      "year": 1825
+    },
+    {
+      "title": "Krishna and Consort on a Palace Balcony with Musicians: Vukharo Ragaputra of Bhairav, from the “Boston Ragamala”",
+      "meta": "Northwestern India, Rajasthan, Rajput Kingdom of Kota · 1770–75 · gum tempera, ink, silver, and gold on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2018.179/2018.179_print.jpg",
+      "year": 1770
+    },
+    {
+      "title": "Woman Longing for Her Lover: Verati Ragini of Dipak, from a Ragamala",
+      "meta": "Northwestern India, Rajasthan, Rajput Kingdom of Kota · 1650–60 · gum tempera, ink, gold, and silver on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2018.176/2018.176_print.jpg",
+      "year": 1650
+    },
+    {
+      "title": "Krishna and the Gopis Gather for Rasamandala",
+      "meta": "Northwestern India, Rajasthan, Rajput Kingdom of Kota · c. 1720–30 · Gum tempera, ink, and gold on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1960.45/1960.45_print.jpg",
+      "year": 1715
+    },
+    {
+      "title": "Tiger Hunt of Raja Ram Singh II",
+      "meta": "Northwestern India, Rajasthan, Rajput Kingdom of Kota · c. 1830–1840 · Gum tempera, gold, and silver on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2011.139/2011.139_print.jpg",
+      "year": 1825
+    },
+    {
+      "title": "Sri Nathaji",
+      "meta": "Northwestern India, Rajasthan, Rajput Kingdom of Kota · c. 1900 · Gum tempera on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2001.162/2001.162_print.jpg",
+      "year": 1890
+    },
+    {
+      "title": "Worship of Dvaraka Nathji at Kankroli",
+      "meta": "Northwestern India, Rajasthan, Rajput Kingdom of Kota · c. 1880 · Gum tempera and gold on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2001.161/2001.161_print.jpg",
+      "year": 1875
+    },
+    {
+      "title": "Raja Durjan Sal of Kota",
+      "meta": "Kota · 1778",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2009BY1324/full/735,/0/default.jpg",
+      "year": 1778
+    },
+    {
+      "title": "Maharao Umed Singh of Kota hunting at night",
+      "meta": "Kota · ca. 1790",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2006AP4893/full/735,/0/default.jpg",
+      "year": 1790
+    },
+    {
+      "title": "Maharao Umed Singh of Kota",
+      "meta": "Kota · 1771",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2006AH4455/full/735,/0/default.jpg",
+      "year": 1771
+    },
+    {
+      "title": "Maharao Ram Singh of Kota",
+      "meta": "Kota · ca. 1840",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2013GB2011/full/735,/0/default.jpg",
+      "year": 1840
+    },
+    {
+      "title": "Maharao Umed Singh",
+      "meta": "Kota · 1770",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2014HC2265/full/735,/0/default.jpg",
+      "year": 1770
+    },
+    {
+      "title": "Radha and Krishna",
+      "meta": "Kota · ca. 1760",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2014HC2432/full/735,/0/default.jpg",
+      "year": 1760
+    },
+    {
+      "title": "Maharao Ram Singh II of Kota",
+      "meta": "Kota · ca. 1850",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2013GB1948/full/735,/0/default.jpg",
+      "year": 1850
+    },
+    {
+      "title": "The Ferry at Kotah",
+      "meta": "India · ca. 1874",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2021NB4126/full/735,/0/default.jpg",
+      "year": 1874,
+      "artist": "Frederick William Alexander De Fabeck"
+    },
+    {
+      "title": "Maharao Durjan Sal of Kota",
+      "meta": "Kota · 1742",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2013GB2013/full/735,/0/default.jpg",
+      "year": 1742
+    },
+    {
+      "title": "Maharao Chhatar Sal",
+      "meta": "Kota · ca. 1870",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2014GY3027/full/735,/0/default.jpg",
+      "year": 1870
+    },
+    {
+      "title": "Maharao Ram Singh II",
+      "meta": "Kota · ca. 1840",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2013GB1801/full/735,/0/default.jpg",
+      "year": 1840
+    },
+    {
+      "title": "Maharao Ram Singh II of Kota and Maharaja Takhat Singh of Jodhpur",
+      "meta": "Kota · 1856",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2013GB1799/full/735,/0/default.jpg",
+      "year": 1856
+    },
+    {
+      "title": "Raja Sansar Chand attacking Kangra Fort",
+      "meta": "Northern India, Pahari kingdom of Kangra · after 1782 · Gum tempera, ink, and gold on cotton cloth",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2018.120/2018.120_print.jpg",
+      "year": 1782
+    },
+    {
+      "title": "Raja Sansar Chand of Kangra and courtiers",
+      "meta": "Northern India, Pahari kingdoms · c. 1783 · gum tempera and gold on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1986.63/1986.63_print.jpg",
+      "year": 1775
+    },
+    {
+      "title": "Rama, Sita, and Lakshmana in the forest",
+      "meta": "Northern India, Pahari Region, Himachal Pradesh, Rajput Kingdom of Kangra, Court of Aniruddh Chand (reigned 1823–1833) · c. 1830 · Gum tempera, ink, and gold on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1989.332/1989.332_print.jpg",
+      "year": 1825
+    },
+    {
+      "title": "Krishna Lifting Mount Govardhan",
+      "meta": "Northern India, Himachal Pradesh, Pahari Kingdom of Kangra · c. 1780–90 · gum tempera and gold on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2001.45/2001.45_print.jpg",
+      "year": 1775
+    },
+    {
+      "title": "Divine couple seated in a lotus blossom",
+      "meta": "Northern India, Pahari Region, Himachal Pradesh, Rajput Kingdom of Kangra · early 1800s · Gum tempera and gold on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1997.118/1997.118_print.jpg",
+      "year": 1800
+    },
+    {
+      "title": "The birth of Rama and his brothers, from Chapter 17 of the Bala Kanda (Book of Childhood) of the Adhyatma Ramayana (Rama's Journey of the Supreme Spirit) from the Brahmanda Purana (Ancient Scripture of the Cosmic Egg)",
+      "meta": "Northern India, Pahari Region, Himachal Pradesh, Rajput Kingdom of Kangra, Court of Aniruddh Chand (reigned 1823–33) · c. 1820–30 · Gum tempera, ink, and gold on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1953.13/1953.13_print.jpg",
+      "year": 1820
+    },
+    {
+      "title": "Virahini Nayika, Love-Torn Heroine",
+      "meta": "India, Pahari Hills, Kangra school, late 18th-early 19th Century · c. 1800 · Gum tempera, ink, and gold on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1989.335/1989.335_print.jpg",
+      "year": 1795
+    },
+    {
+      "title": "Couple Playing Chaupar on a Terrace",
+      "meta": "India, Pahari, Kangra school, late 18th Century · c. 1790–1800 · drawing with red ochre underdrawing",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1936.683/1936.683_print.jpg",
+      "year": 1785
+    },
+    {
+      "title": "Raja Ghamand Chand",
+      "meta": "Kangra · ca. 1770",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2013GK4307/full/735,/0/default.jpg",
+      "year": 1770
+    },
+    {
+      "title": "Raja Sansar Chand and Fateh Chand",
+      "meta": "Kangra · ca. 1786",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2013GD5409/full/735,/0/default.jpg",
+      "year": 1786
+    },
+    {
+      "title": "Raja Tegh Chand",
+      "meta": "Kangra · ca. 1770 - ca. 1775",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2013GK4320/full/735,/0/default.jpg",
+      "year": 1770
+    },
+    {
+      "title": "Krishna",
+      "meta": "Kangra · ca. 1820 - ca. 1825",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2013GD5479/full/735,/0/default.jpg",
+      "year": 1820
+    },
+    {
+      "title": "Usha viewing the portrait of Aniruddha",
+      "meta": "Kangra · ca. 1820",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2013GD5520/full/735,/0/default.jpg",
+      "year": 1820
+    },
+    {
+      "title": "Markandeya Viewing Krishna in the Cosmic Ocean",
+      "meta": "Northern India, Jammu and Kashmir, Pahari Kingdom of Basohli · c. 1680 · Gum tempera on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1967.241/1967.241_print.jpg",
+      "year": 1675
+    },
+    {
+      "title": "Pradyumna and Samvara fight with maces, from the \"Large Basohli Bhagavata Purana\"",
+      "meta": "Northern India, Pahari kingdoms · c. 1760–65 · Gum tempera, ink, and gold on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1960.184/1960.184_print.jpg",
+      "year": 1755
+    },
+    {
+      "title": "King Muchukunda Enters the Realm of Mount Gandhamadana to Attain Salvation, from the “Fifth Basohli Bhagavata Purana”",
+      "meta": "Northern India, Pahari kingdoms · c. 1760–70 · Gum tempera, ink, and gold on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2018.83/2018.83_print.jpg",
+      "year": 1760,
+      "artist": "Fattu"
+    },
+    {
+      "title": "An amorous couple, probably Raja Mahendra Pal of Basohli with a favorite queen",
+      "meta": "Northern India, Pahari kingdoms · c. 1810 · Gum tempera and gold on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2018.84/2018.84_print.jpg",
+      "year": 1805
+    },
+    {
+      "title": "Dipak Raga, One of the Thirty-Six Melodies (Ragamala): Personifying Love",
+      "meta": "Northern India, Himachal Pradesh, Pahari kingdom of Basohli · c. 1690 · Gum tempera and ink on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1990.13/1990.13_print.jpg",
+      "year": 1690
+    },
+    {
+      "title": "Akrura and Kritavarma flee Dvaraka, page from the \"Large Basohli Bhagavata Purana\"",
+      "meta": "Northern India, Pahari kingdoms · c. 1760–65 · Gum tempera and ink on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1971.94/1971.94_print.jpg",
+      "year": 1755
+    },
+    {
+      "title": "Sanehi Ragini, from the “Second Basohli\" Ragamala",
+      "meta": "Northern India, Pahari kingdoms · c. 1690–95 · gum tempera, ink, and gold on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2018.82/2018.82_print.jpg",
+      "year": 1685
+    },
+    {
+      "title": "Rama and Lakshman",
+      "meta": "Basohli · ca. 1660- ca. 1670",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2013GD5545/full/735,/0/default.jpg",
+      "year": 1660
+    },
+    {
+      "title": "Sambara",
+      "meta": "Basohli · ca. 1760 - ca. 1765",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2006BF4830/full/735,/0/default.jpg",
+      "year": 1760
+    },
+    {
+      "title": "Kaliya",
+      "meta": "Basohli · ca. 1760 - ca. 1765",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2013GT1617/full/735,/0/default.jpg",
+      "year": 1760
+    },
+    {
+      "title": "Krishna and Balarama",
+      "meta": "Basohli · ca. 1760 - ca. 1765",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2013GT1616/full/735,/0/default.jpg",
+      "year": 1760
+    },
+    {
+      "title": "Bhupali Ragini",
+      "meta": "Basohli · ca. 1680 - ca. 1685",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2013GD5527/full/735,/0/default.jpg",
+      "year": 1680
+    },
+    {
+      "title": "Raja Bikram Singh of Guler smoking a hookah",
+      "meta": "Northern India, Pahari kingdoms, Himachal Pradesh · c. 1678–90 · gum tempera, ink, and gold on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2018.89/2018.89_print.jpg",
+      "year": 1678
+    },
+    {
+      "title": "Two Elephants Fighting in a Courtyard Before Muhammad Shah",
+      "meta": "Northern India, Himachal Pradesh, Guler · c. 1730–40 · Gum tempera, ink, and gold on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2005.1.a/2005.1.a_print.jpg",
+      "year": 1725,
+      "artist": "Nainsukh"
+    },
+    {
+      "title": "Vishnu Battles Madhu and Kaitabha, from a Markandeya Purana",
+      "meta": "Northern India, Pahari kingdoms · c. 1760 · Gum tempera on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1974.46/1974.46_print.jpg",
+      "year": 1755
+    },
+    {
+      "title": "Raja Bhup Singh",
+      "meta": "Guler · ca. 1795 - ca. 1800",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2006AJ6480/full/735,/0/default.jpg",
+      "year": 1795
+    },
+    {
+      "title": "Raja Prakash Chand and Raja Sansar Chand",
+      "meta": "Guler · ca. 1780",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2013GD5526/full/735,/0/default.jpg",
+      "year": 1780
+    },
+    {
+      "title": "Abhisarika Nayika",
+      "meta": "Guler · ca. 1760",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2014HC2435/full/735,/0/default.jpg",
+      "year": 1760
+    },
+    {
+      "title": "Mian Jai Singh",
+      "meta": "Guler · ca. 1845 - ca. 1850",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2013GD5494/full/735,/0/default.jpg",
+      "year": 1845
+    },
+    {
+      "title": "Kali, Durga, Chanda and Munda",
+      "meta": "Guler · ca.1800 - ca. 1820",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2013GD5568/full/735,/0/default.jpg",
+      "year": 1800
+    },
+    {
+      "title": "Base for Portrait of Phagmo Drupa Dorje Gyalpo (1110–1170)",
+      "meta": "Central Tibet · 1200s · gilt bronze, inlaid with gold, silver, copper, turquoise, lapis and coral",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1993.160.b/1993.160.b_print.jpg",
+      "year": 1200
+    },
+    {
+      "title": "Supports with Addorsed Figures",
+      "meta": "Tibet, Densatil Monastery, 15th century · 1400s · gilt bronze",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2011.144/2011.144_print.jpg",
+      "year": 1400
+    },
+    {
+      "title": "Vajravarahi",
+      "meta": "Tibet · 1300s · gilt bronze with turquoise inlay",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1982.50/1982.50_print.jpg",
+      "year": 1300
+    },
+    {
+      "title": "Votive initiation card (tsakali) with preaching Buddha Shakyamuni",
+      "meta": "Western Tibet, Tholing Monastery · 1000s · Gum tempera, ink, and gold on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2000.67/2000.67_print.jpg",
+      "year": 1000
+    },
+    {
+      "title": "Portrait of the Seventh Dalai Lama",
+      "meta": "Tibet · Himalayan · 1800–1900 · Gilt bronze",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/46cf1867-acb9-f170-aeb4-665d55ebb3cc/full/843,/0/default.jpg",
+      "year": 1800,
+      "artist": "Tibet"
+    },
+    {
+      "title": "Portrait of Lama Tsongkhapa",
+      "meta": "Tibet · Himalayan · 1799–1899 · Gold",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/bc8261fc-78cf-3107-dc73-b4da43fae0e1/full/843,/0/default.jpg",
+      "year": 1799,
+      "artist": "Tibet or Mongolia"
+    },
+    {
+      "title": "Achala/Manjusri",
+      "meta": "Tibet · 13th century-14th century",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2011EM6867/full/735,/0/default.jpg"
+    },
+    {
+      "title": "Vasya Vajravarahi",
+      "meta": "Tibet · 16th century",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2006AH0218/full/735,/0/default.jpg"
+    },
+    {
+      "title": "Bodhisattva Padmapani",
+      "meta": "Tibet · 13th century",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2006BC5291/full/735,/0/default.jpg"
+    },
+    {
+      "title": "The Abbott rJe btsun grags pa rGyal mtshan",
+      "meta": "Tibet · 16th century",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2017JV6474/full/735,/0/default.jpg"
+    },
+    {
+      "title": "Twenty-three Deity Nairatma Mandala",
+      "meta": "Central Tibet, Sakya-affiliated monastery, 14th century · c. 1375 · Gum tempera, ink, and gold on cloth",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1993.4/1993.4_print.jpg",
+      "year": 1370
+    },
+    {
+      "title": "Bodhisattva Vajraraksha",
+      "meta": "Western Tibet · c. 900s · silver",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1989.363/1989.363_print.jpg",
+      "year": 900
+    },
+    {
+      "title": "Mandala",
+      "meta": "Tibet · early 1700s · color on canvas",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1915.316/1915.316_print.jpg",
+      "year": 1700
+    },
+    {
+      "title": "Mandala of Vajrasattva",
+      "meta": "Tibet · ca. 16th century",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2011EV3177/full/735,/0/default.jpg"
+    },
+    {
+      "title": "Vairocana",
+      "meta": "Tibet · 14th century",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2006AK9838/full/735,/0/default.jpg"
+    },
+    {
+      "title": "The Bodhisattvas Maitreya and Manjusri",
+      "meta": "Tibet · ca. 16th century",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2021MW9529/full/735,/0/default.jpg"
+    },
+    {
+      "title": "Sword",
+      "meta": "India, Bhutan · 1800s · iron with gilt and leather",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1916.733/1916.733_print.jpg",
+      "year": 1750
+    },
+    {
+      "title": "Scabbard for Sword",
+      "meta": "India, Bhutan · 1800s · iron with gilt and leather",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1916.733.b/1916.733.b_print.jpg",
+      "year": 1750
+    },
+    {
+      "title": "Fragment of an Altar Cloth",
+      "meta": "Bhutan · East Asian · 1701–1800 · 289 small squares of silk",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/606e3bd1-9a0e-13a6-bdd6-b252d9454bff/full/843,/0/default.jpg",
+      "year": 1701,
+      "artist": "Bhutan"
+    },
+    {
+      "title": "Tribal Bracelet",
+      "meta": "Bhutan · Himalayan · 1833–1866 · Silver",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/71c38485-ce61-b8fc-cd4a-bce221fe39b9/full/843,/0/default.jpg",
+      "year": 1833,
+      "artist": "Bhutan"
+    },
+    {
+      "title": "View from Murichon looking northward up the channel of the Teenchoo on the road to Tacissudon, Bhutan",
+      "meta": "Bhutan · ca. 1783-1806",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2007BM7800/full/735,/0/default.jpg",
+      "year": 1783,
+      "artist": "Samuel Davis"
+    },
+    {
+      "title": "Pair of shoulder pins",
+      "meta": "Bhutan · early 19th century",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2006AH2006/full/735,/0/default.jpg"
+    },
+    {
+      "title": "Robe",
+      "meta": "Bhutan · ca. 1910",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2006AM4831/full/735,/0/default.jpg",
+      "year": 1910
+    },
+    {
+      "title": "Hand cloth",
+      "meta": "Bhutan · ca. 1900",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2006AM4833/full/735,/0/default.jpg",
+      "year": 1900
+    },
+    {
+      "title": "Ring",
+      "meta": "Bhutan · 20th century",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2021MW3175/full/735,/0/default.jpg"
+    },
+    {
+      "title": "Hat",
+      "meta": "Bhutan · ca. 1998",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2014HB1315/full/735,/0/default.jpg",
+      "year": 1998
+    },
+    {
+      "title": "Necklace",
+      "meta": "Bhutan · 20th century",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2021MW3186/full/735,/0/default.jpg"
+    },
+    {
+      "title": "Ceremonial cloth",
+      "meta": "Bhutan · ca. 1900",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2021MW2320/full/735,/0/default.jpg",
+      "year": 1900
+    },
+    {
+      "title": "Amulet box and necklace",
+      "meta": "Bhutan · early 20th century",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2020MN6091/full/735,/0/default.jpg"
+    },
+    {
+      "title": "Kira",
+      "meta": "Bhutan · 1970-2000",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2021NA4865/full/735,/0/default.jpg",
+      "year": 1970
+    },
+    {
+      "title": "Brooch",
+      "meta": "Bhutan · early 20th century",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2006AG5540/full/735,/0/default.jpg"
+    },
+    {
+      "title": "Waistcloth",
+      "meta": "Bhutan · ca. 1855",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2006AM4832/full/735,/0/default.jpg",
+      "year": 1855
+    },
+    {
+      "title": "Earring with Vishnu Riding Garuda",
+      "meta": "Nepal, Kathmandu Valley · 1600s or 1700s · Gold set with precious and semiprecious stones",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1915.342.1/1915.342.1_print.jpg",
+      "year": 1600
+    },
+    {
+      "title": "Folio 1 (recto), from a Manuscript of the Perfection of Wisdom in Eight Thousand Lines (Ashtasahasrika Prajnaparamita-sutra)",
+      "meta": "Eastern India, Bihar, Vikramashila Monastery. Paper: Nepal, Kathmandu · Sunday, September 14, 1119 (year 239 of the Newar Samvat in the month of Ashvina) · Palm leaf backed with yellow paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1938.301.1.a/1938.301.1.a_print.jpg",
+      "year": 1119
+    },
+    {
+      "title": "Forehead Pendant with Sun God Surya in a Chariot with Attendants",
+      "meta": "Nepal, Kathmandu Valley · 1600s or 1700s · gold set with jewels and semi-precious stones",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1915.337/1915.337_print.jpg",
+      "year": 1600
+    },
+    {
+      "title": "End of the Perfection of Wisdom in Eight Thousand Lines; Haribhadra’s final remarks; beginning of colophon, folio 187 (verso), from a Manuscript of the Perfection of Wisdom in Eight Thousand Lines (Ashtasahasrika Prajnaparamita-sutra)",
+      "meta": "Eastern India, Bihar, Vikramashila Monastery. Painting: Nepal, Kathmandu · Sunday, September 14, 1119 (year 239 of the Newar Samvat in the month of Ashvina) · Gum tempera and ink on palm leaf",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1938.301.187.b/1938.301.187.b_print.jpg",
+      "year": 1119
+    },
+    {
+      "title": "Study of Nepalese",
+      "meta": "Nepal · ca. 20th century",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2025PH3328/full/735,/0/default.jpg",
+      "artist": "Bunzl, George"
+    },
+    {
+      "title": "Buddha Shakyamuni",
+      "meta": "Nepal · 16th century",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2016JK6917/full/735,/0/default.jpg"
+    },
+    {
+      "title": "Bodhisattva Avalokitesvara",
+      "meta": "Nepal · 18th century",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2006BC5295/full/735,/0/default.jpg"
+    },
+    {
+      "title": "Durga slaying Mahisa",
+      "meta": "Nepal · 9th century-10th century",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2006AV1433/full/735,/0/default.jpg"
+    },
+    {
+      "title": "Torana with Garuda attacking a Naga and a Nagini",
+      "meta": "Nepal · 1550-1600",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2006AU5314/full/735,/0/default.jpg",
+      "year": 1550
+    },
+    {
+      "title": "Earring",
+      "meta": "Nepal · ca. 18th century",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2020MM5777/full/735,/0/default.jpg"
+    },
+    {
+      "title": "Jacket",
+      "meta": "Nepal · 19th century",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2006BC6597/full/735,/0/default.jpg"
+    },
+    {
+      "title": "Container",
+      "meta": "Nepal · 19th century",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2020MU4065/full/735,/0/default.jpg"
+    },
+    {
+      "title": "Rumal with Rama and Krishna scenes",
+      "meta": "Northern India, Pahari Kingdom of Chamba · 1700s · Silk and silver wire on cotton; embroidery",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1996.349/1996.349_print.jpg",
+      "year": 1700
+    },
+    {
+      "title": "A saddled horse",
+      "meta": "Northern India, Pahari kingdoms · c. 1750 · Gum tempera on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1968.106/1968.106_print.jpg",
+      "year": 1745
+    },
+    {
+      "title": "Shurpanakha demands vengeance, from the \"Shangri\" Ramayana",
+      "meta": "Northern India, Pahari kingdoms · c. 1700 · Gum tempera, ink, and gold on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2018.107/2018.107_print.jpg",
+      "year": 1680
+    },
+    {
+      "title": "Eight Lines of Musical Poetry of the Jajner Nauras (Rag Bhairav) of Ibrahim Adil Shah of Bijapur (verso)",
+      "meta": "Southwestern India, Karnataka, Bijapur, 17th century · late 1600s · Gum tempera, ink, and gold on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2013.330.b/2013.330.b_print.jpg",
+      "year": 1680
+    },
+    {
+      "title": "Dagger with Tiger-Head Pommel",
+      "meta": "Northern India · South Asian · 1701–1900 · Steel blade; hilt of quartz (?) underlaid with red resin and inset in the kundan technique",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/33ce359a-34b1-b6f8-36a2-70331d0a72b4/full/843,/0/default.jpg",
+      "year": 1701,
+      "artist": "India"
+    },
+    {
+      "title": "Deccani bullock cart",
+      "meta": "Deccan · July 1850",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2007BM6779/full/735,/0/default.jpg",
+      "year": 1850,
+      "artist": "Carpenter, William"
+    },
+    {
+      "title": "Textile fragment",
+      "meta": "South-east India · mid 17th century",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2006BF4410/full/735,/0/default.jpg"
+    },
+    {
+      "title": "Jehovah",
+      "meta": "Deccan · ca. 1760",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2013GD6823/full/735,/0/default.jpg",
+      "year": 1760
+    },
+    {
+      "title": "Hanuman, standing",
+      "meta": "Deccan · 1825-1875",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2012FE5206/full/735,/0/default.jpg",
+      "year": 1825
+    },
+    {
+      "title": "Hanuman",
+      "meta": "Deccan · 1825-1875",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2012FE5207/full/735,/0/default.jpg",
+      "year": 1825
+    },
+    {
+      "title": "Maharawat Udai Singh",
+      "meta": "Jaipur · ca. 1890",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2013GL4201/full/735,/0/default.jpg",
+      "year": 1890
+    },
+    {
+      "title": "Prithwi Raj Chauhan",
+      "meta": "Jaipur · ca. 1890",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2013GL4210/full/735,/0/default.jpg",
+      "year": 1890,
+      "artist": "Ram Gopal"
+    },
+    {
+      "title": "Knuckle-pad cover",
+      "meta": "Jaipur · ca. 1700",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2018KT1579/full/735,/0/default.jpg",
+      "year": 1700
+    },
+    {
+      "title": "Tent hanging",
+      "meta": "Jaipur · 18th century",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2006AT0490/full/735,/0/default.jpg"
+    },
+    {
+      "title": "Portrait of a Seated Man",
+      "meta": "India, Sikh, 19th century · c. 1830–1850 · ink on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1968.43/1968.43_print.jpg",
+      "year": 1825
+    },
+    {
+      "title": "Taus",
+      "meta": "India, Punjab · c. 1800 · Polychromed wood, parchment, bone or ivory, gut, and metal strings; frets: bronze",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1918.361/1918.361_print.jpg",
+      "year": 1750
+    },
+    {
+      "title": "Detachment of Bhopal Battalion at Indore",
+      "meta": "India · 1886 · albumen print",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2016.266.32/2016.266.32_print.jpg",
+      "year": 1886,
+      "artist": "Raja Deen Dayal"
+    },
+    {
+      "title": "Sikh marriage procession",
+      "meta": "Punjab (India) · ca. 1860",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2011EU1023/full/735,/0/default.jpg",
+      "year": 1860
+    },
+    {
+      "title": "Sikh making a comb",
+      "meta": "Punjab (India) · 1870",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2006AF8625/full/735,/0/default.jpg",
+      "year": 1870,
+      "artist": "Lockwood Kipling, John"
+    },
+    {
+      "title": "Taj Mahal: Sikh tourists",
+      "meta": "India · 1967",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2025PH1059/full/735,/0/default.jpg",
+      "year": 1967,
+      "artist": "Burrows, Larry"
+    },
+    {
+      "title": "Stone sculptures in a Shiva temple",
+      "meta": "Northern India, Pahari kingdoms · c. 1710 · gum tempera and ink on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2018.112/2018.112_print.jpg",
+      "year": 1700
+    },
+    {
+      "title": "Brahma-Shiva",
+      "meta": "South India, Tamil Nadu, Chola dynasty, late 10th - early 11th century · late 900s–1000s · granite",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/2007.155/2007.155_print.jpg",
+      "year": 975
+    },
+    {
+      "title": "Mother Goddess",
+      "meta": "Northwestern India, Rajasthan, Udaipur District · c. 600 · schist",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1970.12/1970.12_print.jpg",
+      "year": 500
+    },
+    {
+      "title": "Female Tree Deity with Attendant",
+      "meta": "Northwestern India, Rajasthan, Sikar, Harshagiri, 10th century · c. 973 · sandstone",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1967.202/1967.202_print.jpg",
+      "year": 968
+    },
+    {
+      "title": "The Raja’s son vows to sever his head and offer it to the image if he is united with the princess he has seen in the temple, from a Tuti-nama (Tales of a Parrot): Thirty-fourth Night",
+      "meta": "Mughal India, court of Akbar (reigned 1556–1605) · c. 1560 · gum tempera, ink, and gold on paper",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1962.279.227.a/1962.279.227.a_print.jpg",
+      "year": 1555
+    },
+    {
+      "title": "Lovers (Mithuna)",
+      "meta": "Northwestern India, Rajasthan, Sikar, Harshagiri, Pratihara Dynasty, 10th Century · c. 973 · sandstonewith limestone wash",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1962.165/1962.165_print.jpg",
+      "year": 968
+    },
+    {
+      "title": "Durga Mahisasuramardini",
+      "meta": "India · mid 7th century",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2006BF2731/full/735,/0/default.jpg"
+    },
+    {
+      "title": "Shiva as Slayer of the Elephant Demon",
+      "meta": "South India, Tamil Nadu, early Chola Period, 11th century · 1000s · granite",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1962.164/1962.164_print.jpg",
+      "year": 1000
+    },
+    {
+      "title": "Vajrapani",
+      "meta": "India, Kashmir · 700s · bronze with silver overlay and gum tempera",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1971.14/1971.14_print.jpg",
+      "year": 700
+    },
+    {
+      "title": "Padmapani Lokeshvara Seated on the Rock",
+      "meta": "India, Kashmir · 700s · bronze with silver overlay",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1971.20/1971.20_print.jpg",
+      "year": 700
+    },
+    {
+      "title": "Descent of the Buddha from Tusita Heaven",
+      "meta": "Kashmir · 8th century",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2006AU8879/full/735,/0/default.jpg"
+    },
+    {
+      "title": "Monk bearing offerings",
+      "meta": "Afghanistan, Hadda, probably Tape Shotor · c. 300 CE · stucco",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1967.41/1967.41_print.jpg",
+      "year": 200
+    },
+    {
+      "title": "Head of Bodhisattva Avalokiteshvara",
+      "meta": "Afghanistan or Pakistan, Gandhara, Kushan period · 300s–400s CE · stucco with traces of paint",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1985.31/1985.31_print.jpg",
+      "year": 300
+    },
+    {
+      "title": "Male Atlantean figure",
+      "meta": "Afghanistan, Hadda · c. 300 CE · stucco",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1969.64/1969.64_print.jpg",
+      "year": 200
+    },
+    {
+      "title": "Layman bearing offerings",
+      "meta": "Afghanistan, Hadda, probably Tape Shotor · c. 300 CE · stucco with mother-of-pearl inlay",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1967.40/1967.40_print.jpg",
+      "year": 200
+    },
+    {
+      "title": "Head of a Female Deity",
+      "meta": "Gandhara · South Asian · 301–500 · Stucco with traces of pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/6aca4df8-355c-6b79-a53d-7e1ee849ec6c/full/843,/0/default.jpg",
+      "year": 301,
+      "artist": "Afghanistan or Pakistan"
+    },
+    {
+      "title": "Stucco sculpture",
+      "meta": "Gandhara · 4th century - 5th century",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2019ME8305/full/735,/0/default.jpg"
+    },
+    {
+      "title": "Male attendant",
+      "meta": "Gandhara · 4th century-5th century",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2006AH0879/full/735,/0/default.jpg"
+    },
+    {
+      "title": "A Bodhisattva (possibly Maitreya)",
+      "meta": "Pakistan · 2nd century-4th century",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2019ME5772/full/735,/0/default.jpg"
+    },
+    {
+      "title": "Low Relief",
+      "meta": "Gandhara · 3rd century to 5th Century",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2019ME5764/full/735,/0/default.jpg"
+    },
+    {
+      "title": "male head",
+      "meta": "Afghanistan · 4th century - 5th Century",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2019ME7938/full/735,/0/default.jpg"
+    },
+    {
+      "title": "Pha kaetta",
+      "meta": "Sri Lanka · 18th century",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2020MP8331/full/735,/0/default.jpg"
+    },
+    {
+      "title": "Gandharva",
+      "meta": "Odisha · ca. 11th century",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2006AK9805/full/735,/0/default.jpg"
     }
   ]
 }
