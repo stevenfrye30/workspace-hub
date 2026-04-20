@@ -441,6 +441,130 @@
       "desc": "Multi-color woodblock prints developed by Suzuki Harunobu in 1765 — the first polychrome ukiyo-e. Enabled Utamaro, Hokusai, Hiroshige to work in full color.",
       "image": "https://upload.wikimedia.org/wikipedia/commons/3/34/Nishikie.jpg",
       "year": 1765
+    },
+    {
+      "title": "Nymph of the Luo River",
+      "meta": "Gu Kaizhi (attr.) · c. 400 CE · Song copy at the Palace Museum, Beijing",
+      "desc": "A handscroll illustrating Cao Zhi's poem about his unrequited love for a river nymph. Figures float on waves rendered in iron-wire line, backgrounds compressed into pictographic mountains — an early statement of the Chinese approach to narrative through suggestion.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/d/dd/Goddess_of_luo_shui_%28part%291.jpg",
+      "year": 400,
+      "artist": "attr. Gu Kaizhi"
+    },
+    {
+      "title": "A Thousand Li of Rivers and Mountains",
+      "meta": "Wang Ximeng · 1113 · Palace Museum, Beijing",
+      "desc": "An 11.9-meter Song handscroll painted in mineral blue and green by a student of eighteen who died shortly after. Hardly exhibited even in China because of the fragility of its malachite and azurite pigments.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/8/8e/A_Thousand_Li_of_Rivers_and_Mountains_part.jpg",
+      "year": 1113,
+      "artist": "Wang Ximeng"
+    },
+    {
+      "title": "Emperor Taizong Receiving the Tibetan Envoy",
+      "meta": "Yan Liben · 641 CE · Palace Museum, Beijing",
+      "desc": "The Tang emperor receives Lu Dongzan, envoy of Tibetan King Songtsen Gampo, who came to arrange the royal marriage that would seal East Asian diplomacy for centuries. Yan Liben was court painter and prime minister simultaneously.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Emperor_Taizong_Receiving_the_Tibetan_Envoy%28Bunian_Tu%29.jpg/960px-Emperor_Taizong_Receiving_the_Tibetan_Envoy%28Bunian_Tu%29.jpg",
+      "year": 641,
+      "artist": "Yan Liben"
+    },
+    {
+      "title": "Night Revels of Han Xizai",
+      "meta": "Gu Hongzhong · c. 970 CE · Palace Museum, Beijing",
+      "desc": "A Southern Tang minister who suspects he is being watched throws louder and louder parties; the emperor sends Gu Hongzhong to spy, who records five scenes of the ensuing orgy. The surviving Song copy is one of the finest figural handscrolls in Chinese art.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Gu_Hongzhong%27s_Night_Revels_1_edit_%28cropped2%29_%28cropped%29_%28cropped%29.jpg/960px-Gu_Hongzhong%27s_Night_Revels_1_edit_%28cropped2%29_%28cropped%29_%28cropped%29.jpg",
+      "year": 970,
+      "artist": "Gu Hongzhong"
+    },
+    {
+      "title": "Dwelling in the Fuchun Mountains",
+      "meta": "Huang Gongwang · 1350 · split between Taipei and Hangzhou",
+      "desc": "A Yuan-dynasty masterpiece painted for a Daoist friend, its 6.9-meter scroll burned in two in 1650 by a distraught collector trying to take it with him to the afterlife. The two surviving halves were reunited for one exhibition in 2011 after 360 years apart.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Dwelling_in_the_Fuchun_Mountains_%28first_half%29.JPG/960px-Dwelling_in_the_Fuchun_Mountains_%28first_half%29.JPG",
+      "year": 1350,
+      "artist": "Huang Gongwang"
+    },
+    {
+      "title": "Shōsōin Repository",
+      "meta": "Nara period · 756 CE · Nara, Japan",
+      "desc": "A log-cabin-style storehouse of Tōdai-ji that has preserved nine thousand personal belongings of Emperor Shōmu — lutes, masks, glass bowls from Sasanian Persia, a rhinoceros-horn comb — under near-perfect humidity for 1,300 years.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Shoso-in.jpg/960px-Shoso-in.jpg",
+      "year": 756
+    },
+    {
+      "title": "Phoenix Hall of Byōdō-in",
+      "meta": "Heian · 1053 · Uji, Japan",
+      "desc": "Fujiwara no Yorimichi built the hall as an earthly image of Amida's Western Paradise, floating above a pond on narrow wings like a descending bird. Its central image of Amida is the only surviving work of the master sculptor Jōchō.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Phoenix_Hall%2C_Byodo-in%2C_November_2016_-01.jpg/960px-Phoenix_Hall%2C_Byodo-in%2C_November_2016_-01.jpg",
+      "year": 1053
+    },
+    {
+      "title": "Ginkaku-ji (Silver Pavilion)",
+      "meta": "Muromachi · 1482 · Kyoto",
+      "desc": "Ashikaga Yoshimasa's retirement villa, intended but never actually clad in silver foil. Its ascetic gray-wood restraint and the adjacent sand garden — Moon-Viewing Platform and Sea of Silver Sand — crystallized the Higashiyama aesthetic of Japanese tea culture.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Ginkakuji_Kyoto03-r.jpg/960px-Ginkakuji_Kyoto03-r.jpg",
+      "year": 1482
+    },
+    {
+      "title": "Nishi Hongan-ji",
+      "meta": "Jōdo Shinshū · 1591 · Kyoto",
+      "desc": "Head temple of the Jōdo Shinshū Buddhist sect. The Momoyama-period audience hall Shiroshoin is decorated with lavish painted wooden ceilings and gold-leaf panels commissioned by Toyotomi Hideyoshi — among the most opulent surviving interiors of the age.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/170216_Nishi_Honganji_Kyoto_Japan03s4.jpg/960px-170216_Nishi_Honganji_Kyoto_Japan03s4.jpg",
+      "year": 1591
+    },
+    {
+      "title": "Shugakuin Imperial Villa",
+      "meta": "Edo period · 1659 · Kyoto",
+      "desc": "Emperor Go-Mizunoo retired here to design tiered gardens climbing the foothills of Mount Hiei. The upper villa's dammed pond reflects borrowed scenery of the surrounding mountains — the purest surviving example of Japanese shakkei landscape design.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Shugaku-in_Imperial_Villa_-_Upper_Garden_pond.JPG/960px-Shugaku-in_Imperial_Villa_-_Upper_Garden_pond.JPG",
+      "year": 1659
+    },
+    {
+      "title": "Chōjū-jinbutsu-giga",
+      "meta": "late Heian–Kamakura · 12th–13th century · Kōzan-ji",
+      "desc": "Four picture scrolls showing rabbits, monkeys, and frogs at human pastimes — sumo, archery, a Buddhist funeral. Often called Japan's first manga, the energetic ink line and biting satire of clergy are unparalleled in medieval East Asian art.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Chouju_sumo2.jpg",
+      "year": 1180
+    },
+    {
+      "title": "Heiji Monogatari Emaki",
+      "meta": "Kamakura · late 13th century · MFA Boston and Tokyo National Museum",
+      "desc": "Handscrolls illustrating the 1159 Heiji Disturbance, a coup attempt that left much of Kyoto burning. The burning-palace scroll unrolls into perhaps the greatest battle scene in Japanese art, smoke curling above warriors climbing a wheeled carriage.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Heiji_Monogatari_Emaki_-_Sanjo_scroll_part_5_-_v2.jpg/960px-Heiji_Monogatari_Emaki_-_Sanjo_scroll_part_5_-_v2.jpg",
+      "year": 1280
+    },
+    {
+      "title": "Itsukushima Shrine",
+      "meta": "Shinto · 1168 · Miyajima, Japan",
+      "desc": "A vermilion Shinto complex on stilts in a tidal bay, with its O-torii gate standing in the water at high tide. The whole island has been considered sacred for so long that births and deaths are forbidden there.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Itsukushima_Shrine_Torii_Gate_%2813890465459%29.jpg/960px-Itsukushima_Shrine_Torii_Gate_%2813890465459%29.jpg",
+      "year": 1168
+    },
+    {
+      "title": "Jongmyo Shrine",
+      "meta": "Joseon · 1395 · Seoul",
+      "desc": "The Confucian royal ancestral shrine of the Joseon dynasty, a 101-meter wooden hall whose austere horizontal roofline is the longest of its kind in East Asia. Twice-yearly rites performed here preserve court music banned in revolutionary China and Vietnam.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Jeongjeon%2C_Jongmyo_%28Autumn%2C_2012%29.jpg/960px-Jeongjeon%2C_Jongmyo_%28Autumn%2C_2012%29.jpg",
+      "year": 1395
+    },
+    {
+      "title": "Hwaseong Fortress",
+      "meta": "Joseon · 1796 · Suwon, Korea",
+      "desc": "Jeongjo built this 5.7-kilometer wall to honor his executed father; the young scholar Jeong Yak-yong designed an innovative pulley-based crane to place each granite block. A complete construction manual recording every worker's wages survives from 1801.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Hwaseong_Fortress%2C_Suwon%2C_Gyeonggi-do%2C_Republic_of_Korea_%282%29.jpg/960px-Hwaseong_Fortress%2C_Suwon%2C_Gyeonggi-do%2C_Republic_of_Korea_%282%29.jpg",
+      "year": 1796
+    },
+    {
+      "title": "Moon Jar",
+      "meta": "Joseon white porcelain · 17th–18th century · Korea",
+      "desc": "Large round jars fired in two halves and joined at the equator, allowing subtle asymmetries to soften each moon-shaped silhouette. Modern Korean painters including Kim Whanki built entire careers around the jar's quiet poise.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/%EB%B0%B1%EC%9E%90_%EB%8B%AC%ED%95%AD%EC%95%84%EB%A6%AC%28309%ED%98%B8%29.jpg/960px-%EB%B0%B1%EC%9E%90_%EB%8B%AC%ED%95%AD%EC%95%84%EB%A6%AC%28309%ED%98%B8%29.jpg",
+      "year": 1700
+    },
+    {
+      "title": "Buncheong Ware",
+      "meta": "Early Joseon · 15th–16th century · Korea",
+      "desc": "Stoneware coated in a pale slip and then incised, stamped, or brushed with freely drawn fish, birds, and peonies. Its looseness horrified the Chinese-influenced court but enchanted Japanese tea masters, who smuggled kilns full of it home in the 1590s.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/%EB%B6%84%EC%B2%AD%EC%82%AC%EA%B8%B0_%EC%83%81%EA%B0%90%EC%9A%B4%EB%A3%A1%EB%AC%B8_%ED%95%AD%EC%95%84%EB%A6%AC.jpg/960px-%EB%B6%84%EC%B2%AD%EC%82%AC%EA%B8%B0_%EC%83%81%EA%B0%90%EC%9A%B4%EB%A3%A1%EB%AC%B8_%ED%95%AD%EC%95%84%EB%A6%AC.jpg",
+      "year": 1500
     }
   ]
 }

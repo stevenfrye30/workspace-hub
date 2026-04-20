@@ -347,6 +347,132 @@
       "desc": "Kingdom that ruled the Peruvian coast before the Inca conquered it. Its capital Chan Chan is the largest adobe city ever built; gold, silver, and feather work survive in elite tombs.",
       "image": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Photomontage_Chimu_Culture.jpg",
       "year": 1200
+    },
+    {
+      "title": "El Castillo, Chichen Itzá",
+      "meta": "Maya-Toltec · c. 900–1200 CE · Yucatán",
+      "desc": "A step pyramid whose 91 steps on each of four sides plus the temple platform equal 365. On the spring and autumn equinoxes, the sun throws a serpent-shaped shadow slithering down the balustrade toward carved snake heads at the base.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Chichen_Itza_3.jpg/960px-Chichen_Itza_3.jpg",
+      "year": 1000
+    },
+    {
+      "title": "El Caracol",
+      "meta": "Maya-Toltec · c. 900 CE · Chichen Itzá",
+      "desc": "A round astronomical observatory whose upper windows align with the extreme positions of Venus — a planet so important to the Maya that their calendars track it to the day. The ruined tower earned its name ('the snail') from its internal spiral staircase.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Panorama_atop_Caracol.png/960px-Panorama_atop_Caracol.png",
+      "year": 900
+    },
+    {
+      "title": "Pyramid of the Sun",
+      "meta": "Teotihuacan · c. 200 CE · Mexico",
+      "desc": "The third-largest pyramid in the world by volume, built over a natural cave that was probably the origin myth's portal to the underworld. The builders of Teotihuacan are unknown — the city had fallen five centuries before the Aztec arrived to rename it.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/2020-02-11_Teotihuacan_la_Avenida_de_los_Muertos_y_la_Pir%C3%A1mide_del_Sol.jpg/960px-2020-02-11_Teotihuacan_la_Avenida_de_los_Muertos_y_la_Pir%C3%A1mide_del_Sol.jpg",
+      "year": 200
+    },
+    {
+      "title": "Pyramid of the Moon",
+      "meta": "Teotihuacan · c. 200 CE · Mexico",
+      "desc": "Smaller than the Pyramid of the Sun but terminating the Avenue of the Dead in its shadow of Cerro Gordo. Archaeologists tunneling into it have found successive burial caches with jade figurines, obsidian blades, and sacrificed wolves.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Piramide_de_la_Luna_072006.jpg/960px-Piramide_de_la_Luna_072006.jpg",
+      "year": 200
+    },
+    {
+      "title": "Tula",
+      "meta": "Toltec · c. 900–1150 CE · Hidalgo, Mexico",
+      "desc": "Capital of the Toltec — probably the 'Tollan' the Aztec considered their civilized predecessors. Colossal warrior atlantes 4.6 meters tall, bristling with atlatl spear-throwers and pectorals of stylized butterflies, still stand atop Pyramid B.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/TulaSite81.JPG/960px-TulaSite81.JPG",
+      "year": 1000
+    },
+    {
+      "title": "El Tajín",
+      "meta": "Classic Veracruz · c. 600–1200 CE · Mexico",
+      "desc": "Its 'Pyramid of the Niches' has exactly 365 recessed square niches, one for each day of the solar year. Seventeen ball courts punctuate the site — carved with scenes of ritual decapitation that followed the game's conclusion.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/El_Taj%C3%ADn_1.jpg/960px-El_Taj%C3%ADn_1.jpg",
+      "year": 900
+    },
+    {
+      "title": "Tulum",
+      "meta": "Late Post-classic Maya · c. 1200–1500 CE · Yucatán",
+      "desc": "A small Maya port perched on twelve-meter cliffs above the Caribbean, walled on three landward sides. The Temple of the Descending God shows an inverted deity plunging head-first — probably the bee god so central to Yucatán cosmology.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Tulum_2.jpg/960px-Tulum_2.jpg",
+      "year": 1300
+    },
+    {
+      "title": "Uxmal",
+      "meta": "Puuc Maya · c. 850 CE · Yucatán",
+      "desc": "Puuc-style architecture at its best, with mosaic façades of thousands of perfectly cut limestone panels forming rain god masks. The Pyramid of the Magician has uniquely rounded sides and the locals say it was raised in a single night by a dwarf.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/e/e5/Uxmal_Pyramid_of_the_Magician.jpg",
+      "year": 850
+    },
+    {
+      "title": "Mitla",
+      "meta": "Late Zapotec · 1200–1500 CE · Oaxaca",
+      "desc": "Religious capital of the Zapotec after the fall of Monte Albán, whose façades are veneered in thousands of perfectly fitted stone mosaic pieces forming grecas — geometric frets without a single repeating unit in some panels.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/12-05oaxaca076.jpg/960px-12-05oaxaca076.jpg",
+      "year": 1400
+    },
+    {
+      "title": "Xochicalco",
+      "meta": "Epi-classic · c. 650–900 CE · Morelos, Mexico",
+      "desc": "A fortified mountaintop city that hosted what may have been an international calendar congress, depicted on the Pyramid of the Feathered Serpent's beautifully carved reliefs. An underground observatory tracks the sun through a vertical shaft at zenith passage.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Mexico_xochicalco_pyramids.JPG/960px-Mexico_xochicalco_pyramids.JPG",
+      "year": 800
+    },
+    {
+      "title": "Templo Mayor",
+      "meta": "Aztec · 1325–1521 · Tenochtitlan",
+      "desc": "Dual pyramid of Huitzilopochtli and Tlaloc, discovered beneath downtown Mexico City in 1978 when utility workers struck the Coyolxauhqui Stone. Seven construction phases climb one over the other inside the exposed ruin.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Templo_Mayor_50.jpg/960px-Templo_Mayor_50.jpg",
+      "year": 1487
+    },
+    {
+      "title": "Caral",
+      "meta": "Norte Chico · c. 2600 BCE · Peru",
+      "desc": "A city of six pyramids and sunken plazas older than the pyramids of Giza. Without pottery, ceramics, or writing, its builders sustained a monumental civilization on irrigation and anchovy fishing from Peru's central coast.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Mayor_Pyramid_and_circular_enclosure._Caral%2C_Peru.jpg/960px-Mayor_Pyramid_and_circular_enclosure._Caral%2C_Peru.jpg",
+      "year": -2600
+    },
+    {
+      "title": "Raimondi Stele",
+      "meta": "Chavín · c. 500 BCE · Peru",
+      "desc": "A two-meter granite slab carved with the Staff God, his elaborate headdress readable in more than one direction — right-side up he is a fanged deity, upside down a different snarling face emerges from the headdress. The ambiguity is programmatic.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Estela_Raimondi.JPG/960px-Estela_Raimondi.JPG",
+      "year": -500
+    },
+    {
+      "title": "Huaca de la Luna",
+      "meta": "Moche · c. 100–800 CE · Peru",
+      "desc": "A staggered adobe pyramid rebuilt in six successive phases, each burying the previous in a deliberate act of renewal. Inner walls were painted with giant Ai Apaec decapitator gods in red, white, yellow, and black — pigments that survived because each phase sealed the previous art beneath fresh bricks.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/2/21/Huaca_de_la_Luna_jt02.jpg",
+      "year": 500
+    },
+    {
+      "title": "Kuelap",
+      "meta": "Chachapoya · 6th–16th century · Peru",
+      "desc": "A cloud-forest citadel enclosed by twenty-meter limestone walls, sheltering over 400 round stone houses on a ridge 3,000 meters above sea level. The Chachapoya held out longer than the Inca against Spanish conquest thanks to sheer isolation.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Kuelap_-_Ao%C3%BBt_2007_-_05.jpg/960px-Kuelap_-_Ao%C3%BBt_2007_-_05.jpg",
+      "year": 1000
+    },
+    {
+      "title": "Coricancha",
+      "meta": "Inca · c. 1200–1500 · Cuzco",
+      "desc": "The Inca 'Golden Enclosure,' a Sun temple whose walls were once sheathed in gold plate stripped by the Spanish for ransom. The surviving trapezoidal masonry — so precise the joints cannot be penetrated by a knife blade — now supports the colonial Church of Santo Domingo.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Coricancha%2C_Cusco%2C_Per%C3%BA%2C_2015-07-31%2C_DD_68.JPG/960px-Coricancha%2C_Cusco%2C_Per%C3%BA%2C_2015-07-31%2C_DD_68.JPG",
+      "year": 1450
+    },
+    {
+      "title": "Pueblo Bonito",
+      "meta": "Ancestral Puebloan · 9th–12th century · Chaco Canyon",
+      "desc": "A 'great house' of six hundred rooms and forty ceremonial kivas arranged in a half-D around a central plaza. Its T-shaped doors align with lunar standstills; ancient roads radiate outward across the San Juan Basin for hundreds of kilometers.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/8/80/Pueblo_Bonito_Aerial.JPG",
+      "year": 1050
+    },
+    {
+      "title": "Moundville",
+      "meta": "Mississippian · 1000–1450 CE · Alabama",
+      "desc": "A 300-acre ceremonial center with twenty-nine earthen platform mounds around a plaza, once home to about a thousand people. Moundville engravers produced copper plates of the Birdman and hand-and-eye motifs that defined the Southeastern Ceremonial Complex.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/5/53/Moundville_aerial_HRoe_2020.jpg",
+      "year": 1300
     }
   ]
 }

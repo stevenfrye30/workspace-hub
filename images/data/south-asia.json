@@ -380,6 +380,126 @@
       "desc": "A hundred-meter cliff-top fort in the Blue City of Jodhpur. Its walls still bear handprints of the widows of maharajas who threw themselves on the pyre in the medieval practice of sati.",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Mehrangarh_Fort_sanhita.jpg/960px-Mehrangarh_Fort_sanhita.jpg",
       "year": 1460
+    },
+    {
+      "title": "Hoysaleswara Temple",
+      "meta": "Hoysala · 1150 · Halebidu, Karnataka",
+      "desc": "Carved from chloritic schist, which hardens after quarrying, enabling the Hoysala sculptors to cut almost impossibly thin details. Elephants, musicians, and gods wrap the plinth in horizontal registers that add up to miles of relief never repeating itself.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Hoysaleshwara_temple_in_Monsoon.JPG/960px-Hoysaleshwara_temple_in_Monsoon.JPG",
+      "year": 1150
+    },
+    {
+      "title": "Chennakeshava Temple, Somanathapura",
+      "meta": "Hoysala · 1268 · Karnataka",
+      "desc": "A star-plan temple with three shrines on a single platform, surrounded by a cloistered courtyard. Every surface is carved: gods in scalloped niches, musicians in frothing bands, a frieze of marching elephants at ground level supporting the whole weight of the building.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Le_temple_de_Chennakesava_%28Somanathapura%2C_Inde%29_%2814465165685%29.jpg/960px-Le_temple_de_Chennakesava_%28Somanathapura%2C_Inde%29_%2814465165685%29.jpg",
+      "year": 1268
+    },
+    {
+      "title": "Kailasa Temple, Ellora",
+      "meta": "Rashtrakuta · c. 760 CE · Maharashtra",
+      "desc": "The largest monolithic sculpture on earth — a full Dravida-style temple carved top-down from a single basalt cliff, freeing perhaps two hundred thousand tonnes of rock. Krishna I's masons worked to a plan no draft of which survives; many believe none existed.",
+      "image": "https://upload.wikimedia.org/wikipedia/en/f/fc/Kailash_temple_%28Ellora_cave_no_15%29_at_Verul.png",
+      "year": 760
+    },
+    {
+      "title": "Virupaksha Temple, Hampi",
+      "meta": "Vijayanagara · 7th century onward · Karnataka",
+      "desc": "The only temple in Hampi still in continuous worship after the sack of 1565. Its nine-tiered gopura pours down layers of painted deities; in the courtyard a pinhole in the outer wall projects the gopura inverted onto the opposite wall — a Vijayanagara camera obscura.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Complex_of_Virupaksha_Temple%2C_Hampi_%2804%29.jpg/960px-Complex_of_Virupaksha_Temple%2C_Hampi_%2804%29.jpg",
+      "year": 1510
+    },
+    {
+      "title": "Airavatesvara Temple",
+      "meta": "Chola · 1166 · Darasuram, Tamil Nadu",
+      "desc": "Rajaraja II's jewel-box Shiva temple, its front mandapa shaped like a chariot pulled by stone horses. The plinth is carved with musicians, dancers, and — charmingly — optical-illusion animals: a bull that doubles as an elephant depending on which end you start from.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/A_different_view_of_Airavatesvara_Temple.jpg/960px-A_different_view_of_Airavatesvara_Temple.jpg",
+      "year": 1166
+    },
+    {
+      "title": "Gangaikonda Cholapuram",
+      "meta": "Chola · 1025 · Tamil Nadu",
+      "desc": "Rajendra Chola built this temple to commemorate his invasion of the Gangetic plain, bringing back a pot of Ganges water poured into the sanctum. The vimana is a softer, more feminine echo of his father's Brihadeeswarar at Thanjavur.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/GangaiKonda_Cholapuram%28Front_View%29.JPG/960px-GangaiKonda_Cholapuram%28Front_View%29.JPG",
+      "year": 1025
+    },
+    {
+      "title": "Chola Bronzes",
+      "meta": "Chola dynasty · 9th–13th century · Tamil Nadu",
+      "desc": "Hollow-cast bronze icons of Shiva, Vishnu, and their consorts, produced by the lost-wax method for temple processions. The dynasty's patronage pushed Indian metal sculpture to its aesthetic high point — even today casters in Swamimalai work to thousand-year-old Chola templates.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Le_temple_de_Brihadishwara_%28Tanjore%2C_Inde%29_%2814354574611%29.jpg/960px-Le_temple_de_Brihadishwara_%28Tanjore%2C_Inde%29_%2814354574611%29.jpg",
+      "year": 1000
+    },
+    {
+      "title": "Dashavatara Temple, Deogarh",
+      "meta": "Gupta · c. 500 CE · Uttar Pradesh",
+      "desc": "One of the earliest surviving Hindu stone temples, a compact cube topped by a now-damaged tower. Its relief panels — Vishnu asleep on Ananta, Nara-Narayana, the rescue of the elephant king Gajendra — are foundational images of Hindu narrative art.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Deogarh01.jpg/960px-Deogarh01.jpg",
+      "year": 500
+    },
+    {
+      "title": "Gommateshwara Statue at Shravanabelagola",
+      "meta": "Ganga dynasty · 983 CE · Karnataka",
+      "desc": "A 17-meter monolithic nude of the Jain ascetic Bahubali, absorbed in meditation so deep that vines have grown up his legs. Every twelve years, pilgrims anoint the figure with milk, turmeric, and sandalwood in the Mahamastakabhisheka festival.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Gommateshwara%2C_Shravanabelagola.jpg/960px-Gommateshwara%2C_Shravanabelagola.jpg",
+      "year": 983,
+      "artist": "Aristanemi"
+    },
+    {
+      "title": "Paro Taktsang (Tiger's Nest Monastery)",
+      "meta": "Bhutan · 1692 · Paro",
+      "desc": "Perched on a cliff 900 meters above the Paro valley, on the ledge where Guru Rinpoche was said to have meditated for three years, three months, three weeks, three days, and three hours. A 1998 fire destroyed most of it; the rebuild faithfully repeats the original timber joinery.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Paro_Taktsang%2C_Bhutan_%28edited%29.jpg/960px-Paro_Taktsang%2C_Bhutan_%28edited%29.jpg",
+      "year": 1692
+    },
+    {
+      "title": "Punakha Dzong",
+      "meta": "Bhutan · 1637 · Punakha",
+      "desc": "Bhutan's second dzong, built at the confluence of two rivers and still the winter home of the monastic body. Its five-story central utse leans out over the water; inside, eighteenth-century murals of the Buddha's life glow in whale-oil lamplight.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Punakha_Dzong%2C_Bhutan_02.jpg/960px-Punakha_Dzong%2C_Bhutan_02.jpg",
+      "year": 1637
+    },
+    {
+      "title": "Boudhanath Stupa",
+      "meta": "Newar/Tibetan Buddhist · 15th century · Kathmandu",
+      "desc": "One of the largest stupas in Asia, thirty-six meters across, its dome topped by the painted eyes of the Buddha watching in four directions. Circumambulated daily by Tibetan refugees, pilgrims, and locals — prayer-wheel grooves are worn smooth into the granite.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Boudhanath_stupa_%2C_Kathmandu%2C_Nepal.jpg/960px-Boudhanath_stupa_%2C_Kathmandu%2C_Nepal.jpg",
+      "year": 1500
+    },
+    {
+      "title": "Swayambhunath",
+      "meta": "Newar · c. 500 CE · Kathmandu",
+      "desc": "The 'monkey temple' atop a hill in the Kathmandu Valley, reached by 365 steps flanked by polychrome Buddhas. A 2015 earthquake split several subsidiary shrines; the main stupa, its painted eyes impassive, rode out the shaking.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Swayambhunath_2018.jpg/960px-Swayambhunath_2018.jpg",
+      "year": 500
+    },
+    {
+      "title": "Patan Durbar Square",
+      "meta": "Malla dynasty · 17th century · Lalitpur, Nepal",
+      "desc": "The royal plaza of the Malla kings of Patan, edged with Newar pagodas and a stone Krishna Mandir carved in imitation of north Indian shikharas. Several temples collapsed in 2015 and have been reconstructed with timber dowels rather than steel.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/8/89/Patan_durbar_square.jpg",
+      "year": 1670
+    },
+    {
+      "title": "Jokhang Temple",
+      "meta": "Tibetan Buddhist · 642 CE · Lhasa",
+      "desc": "Tibet's holiest temple, founded by King Songtsen Gampo to house the Jowo Shakyamuni statue brought by his Tang Chinese wife. Pilgrims complete three prostrations every few steps around the Barkhor circuit outside; the flagstones are polished to a mirror.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Jokhang_Temple_in_Tibet.jpg",
+      "year": 642
+    },
+    {
+      "title": "Samye Monastery",
+      "meta": "Tibetan Buddhist · 779 CE · U-Tsang",
+      "desc": "The first monastery built in Tibet, laid out as a three-dimensional mandala with the central temple representing Mount Meru and four chapels for the cosmic continents. Its founder Trisong Detsen imported Indian masters to ordain the first seven Tibetan monks.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/5/57/A_grand_view_of_Samye.jpg",
+      "year": 779
+    },
+    {
+      "title": "Thangka Painting",
+      "meta": "Tibetan Buddhist · c. 11th century onward · Himalayan region",
+      "desc": "Scroll paintings on cotton or silk, bordered with brocade, depicting deities in complex mandalic geometries for visualization practice. Pigments are ground from powdered turquoise, cinnabar, and malachite — gold highlights are burnished with a dog's tooth.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Buddha_Vairocana_-_Google_Art_Project.jpg/960px-Buddha_Vairocana_-_Google_Art_Project.jpg",
+      "year": 1400
     }
   ]
 }

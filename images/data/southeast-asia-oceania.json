@@ -332,6 +332,125 @@
       "desc": "The royal temple of the Lao kingdom. Its sim has a sweeping tiered roof that nearly touches the ground; interior walls are covered in gilded-black lacquer tell-tales.",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Temple_Wat_Xieng_Thong_-_Luang_Prabang_-_Laos.jpg/960px-Temple_Wat_Xieng_Thong_-_Luang_Prabang_-_Laos.jpg",
       "year": 1560
+    },
+    {
+      "title": "Bulul",
+      "meta": "Ifugao · 19th century · northern Luzon, Philippines",
+      "desc": "Carved wooden rice-granary guardians placed in pairs on sacks of grain and anointed annually with pig's blood and rice wine. Ifugao priests chant lineages of ancestors while invoking each Bulul; the more darkened with offerings, the more powerful.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Ifugao_sculpture_Louvre_70-1999-4-1.jpg/960px-Ifugao_sculpture_Louvre_70-1999-4-1.jpg",
+      "year": 1880
+    },
+    {
+      "title": "Okir Carving",
+      "meta": "Maranao · 18th century onward · Mindanao, Philippines",
+      "desc": "Curvilinear vegetal ornament and geometric naga motifs carved into wooden house beams, brass betel boxes, and the okir frontispiece of the Torogan. The tradition survives Spanish and American colonial pressure as a distinct non-Christian Filipino art.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Mindanao_Bangsamoro_Islamic_Art_-_24815385009.jpg/960px-Mindanao_Bangsamoro_Islamic_Art_-_24815385009.jpg",
+      "year": 1850
+    },
+    {
+      "title": "Torogan House",
+      "meta": "Maranao · 19th century · Lanao, Philippines",
+      "desc": "An enormous elevated wooden house for the sultan's family, its floor held aloft by two-meter carved tree trunks whose projecting panolong prows evoke ships. Inside, one single gigantic room divides only by textile hangings and movable panels.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Maranao_Torogan_%28c._1908_-_1924%29%2C_Philippines.jpg/960px-Maranao_Torogan_%28c._1908_-_1924%29%2C_Philippines.jpg",
+      "year": 1870
+    },
+    {
+      "title": "Vigan",
+      "meta": "Spanish colonial · 16th–19th century · Ilocos Sur, Philippines",
+      "desc": "A coastal trading town laid out on a grid before the 1572 Spanish conquest, blending Chinese, Ilocano, and Iberian elements into a distinct Philippine colonial vernacular. Calle Crisologo's cobbled streets and bahay-na-bato mansions survived Allied bombing because a Japanese general refused to burn it.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Allan_Jay_Quesada_-_Vigan_Cathedral_001.jpg/960px-Allan_Jay_Quesada_-_Vigan_Cathedral_001.jpg",
+      "year": 1750
+    },
+    {
+      "title": "Paoay Church",
+      "meta": "Spanish colonial · 1710 · Ilocos Norte, Philippines",
+      "desc": "An 'earthquake Baroque' church with enormous coralline buttresses that curve outward like flying sleepers, bracing it against the region's seismic activity. Its bell tower stands detached in case of collapse.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Paoay_Church_and_Bell_Tower.jpg/960px-Paoay_Church_and_Bell_Tower.jpg",
+      "year": 1710
+    },
+    {
+      "title": "Manunggul Jar",
+      "meta": "Late Neolithic · c. 890–710 BCE · Palawan, Philippines",
+      "desc": "A secondary burial jar whose lid is crowned by two figures in a soul boat: one dead, one paddling, arms crossed, eyes closed. Among the most important prehistoric objects in Southeast Asia, it appears on the Philippine 1,000-peso note.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Manunggul_Jar.jpg/960px-Manunggul_Jar.jpg",
+      "year": -800
+    },
+    {
+      "title": "Kūkaʻilimoku",
+      "meta": "Hawaiian · 18th–early 19th century · Hawaiʻi",
+      "desc": "Feathered figures of the war god of Kamehameha I, their faces sheathed in tens of thousands of red and yellow bird feathers meticulously tied to a wicker armature. Grimacing pearl-shell eyes and dog-tooth mouths dramatize the god's ferocity.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Kuka%27ilimoku.jpg/960px-Kuka%27ilimoku.jpg",
+      "year": 1800
+    },
+    {
+      "title": "Ahu and Moai of Easter Island",
+      "meta": "Rapa Nui · c. 1250–1500 CE · Rapa Nui",
+      "desc": "Ceremonial stone platforms on which the moai stood, facing inland over the village. A typical ahu runs 100 meters along the coast; some incorporate basalt pillars and red scoria pukao 'topknots' rolled from a separate quarry.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Easter_Island_5.jpg/960px-Easter_Island_5.jpg",
+      "year": 1400
+    },
+    {
+      "title": "Marae",
+      "meta": "Polynesian · pre-European contact · central and eastern Pacific",
+      "desc": "Open-air rectangular ceremonial courtyards paved in coral rubble, with upright stone backrests for chiefs and priests. From Tahiti to Hawaii to Aotearoa, the marae was the meeting ground of cosmology, law, and genealogical recitation.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Marae%2C_Raiatea_2.jpg/960px-Marae%2C_Raiatea_2.jpg",
+      "year": 1500
+    },
+    {
+      "title": "Tapa Cloth",
+      "meta": "Polynesian bark cloth · pre-European to present · Fiji/Tonga/Samoa",
+      "desc": "Non-woven fabric beaten from paper-mulberry bark and stamped, painted, or smoked with fine geometric patterns. Each region of Polynesia developed its own grammar; Fijian gatu vakaviti like this one are made for weddings and funeral exchanges.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Wedding_Tapa_%28Gatu_Vakaviti%29_LACMA_M.2010.160.jpg/960px-Wedding_Tapa_%28Gatu_Vakaviti%29_LACMA_M.2010.160.jpg",
+      "year": 1900
+    },
+    {
+      "title": "Malanggan Carvings",
+      "meta": "New Ireland · 19th–20th century · Papua New Guinea",
+      "desc": "Painted wooden figures made for a single memorial ceremony and then deliberately allowed to rot or be sold off. European museums hold hundreds of examples; the meaning of each belonged solely to the man who commissioned it and died with the performance.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Malanggan-Masken_Berlin-Dahlem.jpg/960px-Malanggan-Masken_Berlin-Dahlem.jpg",
+      "year": 1900
+    },
+    {
+      "title": "Abelam Baba Mask",
+      "meta": "Abelam · 20th century · Sepik, Papua New Guinea",
+      "desc": "Spirit masks used in yam-harvest ceremonies celebrating the long ceremonial yams that Abelam men cultivate for years. The masks top painted ceremonial houses up to thirty meters tall, decorated with rows of ancestor faces in red, black, and white.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/e/e8/The_Childrens_Museum_of_Indianapolis_-_Yam_harvest_ceremony_spirit_mask_baba.jpg",
+      "year": 1950
+    },
+    {
+      "title": "Wat Arun",
+      "meta": "Rattanakosin · 1809 · Bangkok",
+      "desc": "The 'Temple of Dawn' across the Chao Phraya from Bangkok, its central prang encrusted with broken Chinese porcelain imported as ship ballast. Its five towers form a stone mandala of Mount Meru that Rama II rebuilt from a smaller Ayutthaya-era shrine.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/%E0%B9%80%E0%B8%88%E0%B8%94%E0%B8%B5%E0%B8%A2%E0%B9%8C%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%98%E0%B8%B2%E0%B8%99%E0%B8%97%E0%B8%A3%E0%B8%87%E0%B8%9B%E0%B8%A3%E0%B8%B2%E0%B8%87%E0%B8%84%E0%B9%8C%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%AD%E0%B8%A3%E0%B8%B8%E0%B8%932.jpg/960px-%E0%B9%80%E0%B8%88%E0%B8%94%E0%B8%B5%E0%B8%A2%E0%B9%8C%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%98%E0%B8%B2%E0%B8%99%E0%B8%97%E0%B8%A3%E0%B8%87%E0%B8%9B%E0%B8%A3%E0%B8%B2%E0%B8%87%E0%B8%84%E0%B9%8C%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%AD%E0%B8%A3%E0%B8%B8%E0%B8%932.jpg",
+      "year": 1809
+    },
+    {
+      "title": "Wat Pho",
+      "meta": "Rattanakosin · 1788 · Bangkok",
+      "desc": "Home of the 46-meter gold-leafed Reclining Buddha and Thailand's first public university, where medical texts were carved into marble plaques around the courtyard. Traditional Thai massage is still taught in an attached school founded in 1955.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%9E%E0%B8%B8%E0%B8%97%E0%B8%98%E0%B9%84%E0%B8%AA%E0%B8%A2%E0%B8%B2%E0%B8%AA%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B9%80%E0%B8%8A%E0%B8%95%E0%B8%B8%E0%B8%9E%E0%B8%99.jpg/960px-%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%9E%E0%B8%B8%E0%B8%97%E0%B8%98%E0%B9%84%E0%B8%AA%E0%B8%A2%E0%B8%B2%E0%B8%AA%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B9%80%E0%B8%8A%E0%B8%95%E0%B8%B8%E0%B8%9E%E0%B8%99.jpg",
+      "year": 1788
+    },
+    {
+      "title": "Wat Phra That Doi Suthep",
+      "meta": "Lanna · 1383 · Chiang Mai",
+      "desc": "A mountaintop temple reached by a staircase of 306 steps flanked by mosaic-tiled nagas. Legend says King Nu Naone chose the site by tying a Buddha relic to a white elephant and following where it fell; it collapsed here and died.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Wat_Phra_That_Doi_Suthep_-_Chiang_Mai.jpg/960px-Wat_Phra_That_Doi_Suthep_-_Chiang_Mai.jpg",
+      "year": 1383
+    },
+    {
+      "title": "Shwezigon Pagoda",
+      "meta": "Pagan dynasty · 1102 · Bagan, Myanmar",
+      "desc": "A gilded cylindrical stupa that set the template for every later Burmese pagoda. King Anawrahta enshrined here the tooth of the Buddha brought from Sri Lanka — placed by an albino white elephant he released to choose the holy site.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Shwezigon.jpg/960px-Shwezigon.jpg",
+      "year": 1102
+    },
+    {
+      "title": "Sukhothai Historical Park",
+      "meta": "Sukhothai Kingdom · 13th–14th century · Thailand",
+      "desc": "Capital of the first Thai kingdom, whose 'walking Buddhas' introduced a uniquely flowing and androgynous figural type. The open ruins of Wat Si Chum still frame a 15-meter seated Buddha peering out from a narrow gap between high walls.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Wat_srichum_03.jpg/960px-Wat_srichum_03.jpg",
+      "year": 1300
     }
   ]
 }

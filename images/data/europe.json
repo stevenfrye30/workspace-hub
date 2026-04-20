@@ -653,6 +653,174 @@
       "image": "https://upload.wikimedia.org/wikipedia/commons/a/a7/Matissedance.jpg",
       "artist": "Henri Matisse",
       "year": 1910
+    },
+    {
+      "title": "The Ecstasy of Saint Teresa",
+      "meta": "Gian Lorenzo Bernini · 1652 · Cornaro Chapel, Rome",
+      "desc": "The Carmelite mystic swoons in midair as a smiling angel lifts a gold-tipped arrow above her heart. Bernini turned the entire chapel into a theater: the Cornaro patrons watch from opera-box side panels, a hidden window rains gilded light down on the marble.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Ecstasy_of_St._Teresa_HDR.jpg/960px-Ecstasy_of_St._Teresa_HDR.jpg",
+      "year": 1652,
+      "artist": "Gian Lorenzo Bernini"
+    },
+    {
+      "title": "Apollo and Daphne",
+      "meta": "Gian Lorenzo Bernini · 1625 · Galleria Borghese",
+      "desc": "Bernini caught the instant Daphne's fingers sprout leaves and her feet root into bark, her scream frozen just as Apollo's hand grazes her ribcage. He was twenty-six when he finished it and already the most technically audacious sculptor in Rome.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Apollo_and_Daphne_%28Bernini%29_%28cropped%29.jpg/960px-Apollo_and_Daphne_%28Bernini%29_%28cropped%29.jpg",
+      "year": 1625,
+      "artist": "Gian Lorenzo Bernini"
+    },
+    {
+      "title": "The Rape of Proserpina",
+      "meta": "Gian Lorenzo Bernini · 1622 · Galleria Borghese",
+      "desc": "Pluto's fingertips sink visibly into Proserpina's thigh — marble impersonating flesh. Bernini was twenty-three; the group stunned Rome into realizing that Baroque sculpture had outrun the limits of Hellenistic virtuosity.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Rape_of_Prosepina_September_2015-3a.jpg/960px-Rape_of_Prosepina_September_2015-3a.jpg",
+      "year": 1622,
+      "artist": "Gian Lorenzo Bernini"
+    },
+    {
+      "title": "Fountain of the Four Rivers",
+      "meta": "Gian Lorenzo Bernini · 1651 · Piazza Navona, Rome",
+      "desc": "Allegories of the Nile, Ganges, Danube, and Río de la Plata lounge around a hollowed travertine crag supporting an Egyptian obelisk. The Nile covers his face because, according to legend, the source of the river was still unknown — or because he can't bear to look at Borromini's church opposite.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Obelisco_Fontana_dei_Fiumi_Piazza_Navona_Roma.jpg/960px-Obelisco_Fontana_dei_Fiumi_Piazza_Navona_Roma.jpg",
+      "year": 1651,
+      "artist": "Gian Lorenzo Bernini"
+    },
+    {
+      "title": "The Death of Socrates",
+      "meta": "Jacques-Louis David · 1787 · Metropolitan Museum of Art",
+      "desc": "Socrates reaches for the hemlock while lecturing his grieving disciples on immortality, one finger stabbing heavenward. David painted it on the eve of the Revolution; Reynolds called it the greatest modern history painting.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/David_-_The_Death_of_Socrates.jpg/960px-David_-_The_Death_of_Socrates.jpg",
+      "year": 1787,
+      "artist": "Jacques-Louis David"
+    },
+    {
+      "title": "Oath of the Horatii",
+      "meta": "Jacques-Louis David · 1784 · Musée du Louvre",
+      "desc": "Three brothers swear on their father's swords to die for Rome while their women collapse in a curve of grief. Commissioned by Louis XVI and unveiled five years before the Revolution, the painting defined Neoclassical moral rigor for a generation.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Le_Serment_des_Horaces_-_Jacques-Louis_David_-_Mus%C3%A9e_du_Louvre_Peintures_INV_3692_%3B_MR_1432.jpg/960px-Le_Serment_des_Horaces_-_Jacques-Louis_David_-_Mus%C3%A9e_du_Louvre_Peintures_INV_3692_%3B_MR_1432.jpg",
+      "year": 1784,
+      "artist": "Jacques-Louis David"
+    },
+    {
+      "title": "Napoleon Crossing the Alps",
+      "meta": "Jacques-Louis David · 1801 · Château de Malmaison",
+      "desc": "David invented the cinematic pose — rearing horse, windswept cape, outstretched finger — that the actual crossing lacked. Napoleon, who had used a mule, told David to paint him 'calm on a fiery horse' and handed him five replicas to produce.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/David_-_Napoleon_crossing_the_Alps_-_Malmaison2.jpg/960px-David_-_Napoleon_crossing_the_Alps_-_Malmaison2.jpg",
+      "year": 1801,
+      "artist": "Jacques-Louis David"
+    },
+    {
+      "title": "The Swing",
+      "meta": "Jean-Honoré Fragonard · 1767 · Wallace Collection",
+      "desc": "A young woman kicks off her slipper while her hidden lover peeks up her billowing dress — the jilted bishop pushing the swing behind her. The Baron de Saint-Julien commissioned it explicitly to stage this visual joke at his mistress's expense.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/The_Swing_%28P430%29.jpg/960px-The_Swing_%28P430%29.jpg",
+      "year": 1767,
+      "artist": "Jean-Honoré Fragonard"
+    },
+    {
+      "title": "Pilgrimage to Cythera",
+      "meta": "Antoine Watteau · 1717 · Musée du Louvre",
+      "desc": "Watteau's reception piece for the Académie: couples linger and depart from the island of love, a gilded barge waiting, cupids swirling overhead. The genre he invented — the fête galante — gave eighteenth-century painting its register of wistful pleasure.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/L%27Embarquement_pour_Cyth%C3%A8re%2C_by_Antoine_Watteau%2C_from_C2RMF_retouched.jpg/960px-L%27Embarquement_pour_Cyth%C3%A8re%2C_by_Antoine_Watteau%2C_from_C2RMF_retouched.jpg",
+      "year": 1717,
+      "artist": "Antoine Watteau"
+    },
+    {
+      "title": "The Garden of Love",
+      "meta": "Peter Paul Rubens · 1633 · Museo del Prado",
+      "desc": "A riotous outdoor party Rubens painted after his second marriage — his young wife Hélène Fourment appears three times among the guests. Cupids tug couples together while a fountain with the Three Graces soaks the scene in divinely sanctioned pleasure.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/El_Jard%C3%ADn_del_Amor_%28Rubens%29.jpg/960px-El_Jard%C3%ADn_del_Amor_%28Rubens%29.jpg",
+      "year": 1633,
+      "artist": "Peter Paul Rubens"
+    },
+    {
+      "title": "Samson and Delilah (Rubens)",
+      "meta": "Peter Paul Rubens · 1610 · National Gallery, London",
+      "desc": "Delilah watches tenderly while a Philistine crops Samson's hair as he sleeps on her lap. The candlelit nocturne and coiled composition mark Rubens's first mature statement after returning from Italy, still vibrating with Caravaggio.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Samson_and_Delilah_by_Rubens.jpg/960px-Samson_and_Delilah_by_Rubens.jpg",
+      "year": 1610,
+      "artist": "Peter Paul Rubens"
+    },
+    {
+      "title": "Dance at Le Moulin de la Galette",
+      "meta": "Pierre-Auguste Renoir · 1876 · Musée d'Orsay",
+      "desc": "A Sunday afternoon at the Montmartre dance hall, sunlight filtering through acacia leaves onto the dancers in dapples Renoir invented a new vocabulary of color to paint. His friends posed for it over several months.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Renoir%2C_Pierre-Auguste_-_Dance_at_Le_Moulin_de_la_Galette%2C_1876.jpg/960px-Renoir%2C_Pierre-Auguste_-_Dance_at_Le_Moulin_de_la_Galette%2C_1876.jpg",
+      "year": 1876,
+      "artist": "Pierre-Auguste Renoir"
+    },
+    {
+      "title": "Luncheon of the Boating Party",
+      "meta": "Pierre-Auguste Renoir · 1881 · The Phillips Collection",
+      "desc": "Renoir's friends — among them his future wife Aline, caressing a little dog — laze on a restaurant terrace overlooking the Seine. It is impressionism at its most convivial: no protest, no weather, just a warm afternoon extended indefinitely.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Pierre-Auguste_Renoir_-_Luncheon_of_the_Boating_Party_-_Google_Art_Project.jpg/960px-Pierre-Auguste_Renoir_-_Luncheon_of_the_Boating_Party_-_Google_Art_Project.jpg",
+      "year": 1881,
+      "artist": "Pierre-Auguste Renoir"
+    },
+    {
+      "title": "The Sleeping Gypsy",
+      "meta": "Henri Rousseau · 1897 · Museum of Modern Art",
+      "desc": "A dark-robed traveler sleeps beside her mandolin while a lion sniffs her face under a flat full moon. Rousseau, a self-taught customs clerk, offered to sell it to his hometown mayor for 200 francs; he was politely declined.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/La_Boh%C3%A9mienne_endormie.jpg/960px-La_Boh%C3%A9mienne_endormie.jpg",
+      "year": 1897,
+      "artist": "Henri Rousseau"
+    },
+    {
+      "title": "The Dream (Rousseau)",
+      "meta": "Henri Rousseau · 1910 · Museum of Modern Art",
+      "desc": "Rousseau's final completed work: a nude Yadwigha reclines on a Second Empire sofa that floats through a moonlit jungle of invented foliage, a snake charmer piping behind. He insisted the sofa's incongruity was perfectly explained by the word 'dream.'",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Henri_Rousseau_-_Le_R%C3%AAve_-_Google_Art_Project.jpg/960px-Henri_Rousseau_-_Le_R%C3%AAve_-_Google_Art_Project.jpg",
+      "year": 1910,
+      "artist": "Henri Rousseau"
+    },
+    {
+      "title": "The Red Studio",
+      "meta": "Henri Matisse · 1911 · Museum of Modern Art",
+      "desc": "Matisse soaked his Issy studio in uniform Venetian red, leaving his own paintings as the only color notes on the wall. He had begun with green and blue underneath; the radical decision to cover everything in a single pigment recast what a painting could be.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/L%27Atelier_rouge%2C_par_Henri_Matisse.jpg/960px-L%27Atelier_rouge%2C_par_Henri_Matisse.jpg",
+      "year": 1911,
+      "artist": "Henri Matisse"
+    },
+    {
+      "title": "Senecio",
+      "meta": "Paul Klee · 1922 · Kunstmuseum Basel",
+      "desc": "A geometrically segmented face painted in ochres and pinks, the eyes slightly mismatched so it never quite looks back. Klee claimed the title 'Old Man' (Senecio in Latin); the image belongs somewhere between clown, sun god, and child's drawing.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Paul_Klee%2C_1922%2C_Senecio%2C_oil_on_gauze%2C_40.3_%C3%97_37.4_cm%2C_Kunstmuseum_Basel.jpg/960px-Paul_Klee%2C_1922%2C_Senecio%2C_oil_on_gauze%2C_40.3_%C3%97_37.4_cm%2C_Kunstmuseum_Basel.jpg",
+      "year": 1922,
+      "artist": "Paul Klee"
+    },
+    {
+      "title": "The Elephant Celebes",
+      "meta": "Max Ernst · 1921 · Tate Modern",
+      "desc": "A giant metallic elephant based on a photograph of a Sudanese corn bin looms over a headless mannequin beside a mysterious fish-stalk. Ernst's breakthrough Surrealist work, painted before André Breton had even coined the term.",
+      "image": "https://upload.wikimedia.org/wikipedia/en/2/2b/The_Elephant_Celebes.jpg",
+      "year": 1921,
+      "artist": "Max Ernst"
+    },
+    {
+      "title": "Broadway Boogie Woogie",
+      "meta": "Piet Mondrian · 1943 · Museum of Modern Art",
+      "desc": "Mondrian's last completed painting, made after he fled wartime Europe for New York. The jittering yellow grid mimics Manhattan's street plan and the jazz he had fallen in love with; black bars are banished for the first time in decades.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Piet_Mondrian%2C_1942_-_Broadway_Boogie_Woogie.jpg/960px-Piet_Mondrian%2C_1942_-_Broadway_Boogie_Woogie.jpg",
+      "year": 1943,
+      "artist": "Piet Mondrian"
+    },
+    {
+      "title": "Nighthawks",
+      "meta": "Edward Hopper · 1942 · Art Institute of Chicago",
+      "desc": "Four figures in a late-night Greenwich Avenue diner, insulated by its curved glass from the empty street outside. Painted weeks after Pearl Harbor, it fixed the look of twentieth-century American loneliness.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Nighthawks_by_Edward_Hopper_1942.jpg/960px-Nighthawks_by_Edward_Hopper_1942.jpg",
+      "year": 1942,
+      "artist": "Edward Hopper"
+    },
+    {
+      "title": "American Gothic",
+      "meta": "Grant Wood · 1930 · Art Institute of Chicago",
+      "desc": "Wood's sister Nan and his dentist Byron McKeeby posed as a farmer and his daughter in front of a white-board Iowa house. Meant by Wood as a gentle tribute, the image has been parodied perhaps more than any other American painting.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Grant_Wood_-_American_Gothic_-_Google_Art_Project.jpg/960px-Grant_Wood_-_American_Gothic_-_Google_Art_Project.jpg",
+      "year": 1930,
+      "artist": "Grant Wood"
     }
   ]
 }

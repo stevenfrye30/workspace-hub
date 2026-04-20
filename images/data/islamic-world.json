@@ -381,6 +381,127 @@
       "desc": "The private royal chapel on the east side of Naqsh-e Jahan Square. No minarets, no courtyard — just a single domed hall whose tilework, buff and turquoise, changes color with the sun.",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Sheikh_Lotfallah_Esfahan.JPG/960px-Sheikh_Lotfallah_Esfahan.JPG",
       "year": 1615
+    },
+    {
+      "title": "Koutoubia Mosque",
+      "meta": "Almohad · 1195 · Marrakech",
+      "desc": "A seventy-seven-meter minaret whose proportions became the model for Rabat's Hassan Tower and Seville's Giralda. Its red sandstone is visible from every part of old Marrakech; Almohad law forbade taller buildings within sight.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Marokko0112_%28retouched%29.jpg/960px-Marokko0112_%28retouched%29.jpg",
+      "year": 1195
+    },
+    {
+      "title": "Great Mosque of Tlemcen",
+      "meta": "Almoravid · 1136 · Algeria",
+      "desc": "An Almoravid foundation whose carved plaster muqarnas dome and minbar count among the most elaborate surviving examples of North African Berber craftsmanship. Its minaret was added under the Zayyanids two centuries later.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Grande_mosqu%C3%A9e_et_d%C3%A9pendance_Minaret_de_la_Mosqu%C3%A9e_003.jpg/960px-Grande_mosqu%C3%A9e_et_d%C3%A9pendance_Minaret_de_la_Mosqu%C3%A9e_003.jpg",
+      "year": 1136
+    },
+    {
+      "title": "Hassan Tower",
+      "meta": "Almohad · 1195 · Rabat",
+      "desc": "An unfinished minaret meant to top the largest mosque in the western Islamic world — the caliph Yaqub al-Mansur died and work halted at forty-four meters, half its intended height. Rows of stumpy columns still mark where the prayer hall would have stood.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Hassan_Tower%2C_Rabat%2C_Marocco_%28%D8%B5%D9%88%D9%85%D8%B9%D8%A9_%D8%AD%D8%B3%D8%A7%D9%86_%29.jpg/960px-Hassan_Tower%2C_Rabat%2C_Marocco_%28%D8%B5%D9%88%D9%85%D8%B9%D8%A9_%D8%AD%D8%B3%D8%A7%D9%86_%29.jpg",
+      "year": 1195
+    },
+    {
+      "title": "Saadian Tombs",
+      "meta": "Saadian · 1578 · Marrakech",
+      "desc": "Lost behind a high wall after the Alaouite sultan Moulay Ismail sealed their entrance, then rediscovered from aerial photos in 1917. The Hall of Twelve Columns — gilded muqarnas vaults over sixty-six princely graves in white Carrara marble — is among the finest interiors in Morocco.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Saadian_Tombs_1044-HDR.jpg/960px-Saadian_Tombs_1044-HDR.jpg",
+      "year": 1578
+    },
+    {
+      "title": "Mausoleum of Moulay Ismail",
+      "meta": "Alaouite · late 17th century · Meknes",
+      "desc": "Burial place of the sultan who built seven hundred palaces and commanded an army of black guards numbering 150,000. The sanctuary is one of the few in Morocco non-Muslims may enter; its painted cedar ceiling and tilework glitter around four clocks presented by Louis XIV.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/%D0%9C%D0%B0%D0%B2%D0%B7%D0%BE%D0%BB%D0%B5%D0%B9_%D0%9C%D1%83%D1%81%D1%8B_%D0%98%D0%B7%D0%BC%D0%B0%D0%B8%D0%BB%D0%B0.jpg/960px-%D0%9C%D0%B0%D0%B2%D0%B7%D0%BE%D0%BB%D0%B5%D0%B9_%D0%9C%D1%83%D1%81%D1%8B_%D0%98%D0%B7%D0%BC%D0%B0%D0%B8%D0%BB%D0%B0.jpg",
+      "year": 1703
+    },
+    {
+      "title": "Bahia Palace",
+      "meta": "Late Alaouite · 1866–1900 · Marrakech",
+      "desc": "A palace for the grand vizier Ahmed ben Moussa and his four wives, its 150 rooms arranged around courtyards of green tilework, painted cedar ceilings, and carved plaster. The name means 'the brilliant' — a name intended to impress visitors upon arrival.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Bahia_Palace_large_court.jpg/960px-Bahia_Palace_large_court.jpg",
+      "year": 1890
+    },
+    {
+      "title": "Ben Youssef Madrasa",
+      "meta": "Saadian · 1565 · Marrakech",
+      "desc": "Once the largest Quranic college in North Africa, housing up to 900 students in tiny cells around a central courtyard. Cedar, marble, and zellij tilework interlock in concentric geometric schemes calibrated for the hours of daylight prayer.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Coranic_School_%28106589859%29.jpeg/960px-Coranic_School_%28106589859%29.jpeg",
+      "year": 1565
+    },
+    {
+      "title": "Al-Attarine Madrasa",
+      "meta": "Marinid · 1325 · Fez",
+      "desc": "A tiny college next to the spice market whose four walls are totally covered in carved plaster, cedar, and zellij. Every square inch repays close looking: calligraphic friezes in Kufic and Thuluth, muqarnas capitals, and a delicately fountained courtyard only seven meters across.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Al-Attarine_Madrasa_DSCF3633_%28R_Prazeres%29.jpg/960px-Al-Attarine_Madrasa_DSCF3633_%28R_Prazeres%29.jpg",
+      "year": 1325
+    },
+    {
+      "title": "Tiled Kiosk",
+      "meta": "Ottoman · 1472 · Topkapı, Istanbul",
+      "desc": "Mehmed II's pavilion inside the first courtyard of Topkapı, used for watching polo matches. Its façade of star-and-hexagon tiles in cuerda seca and its blue-and-white mosaic entrance are direct echoes of Persian and Central Asian craft recruited to the new Ottoman capital.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/%C3%87inili_K%C3%B6sk._Estambul.jpg/960px-%C3%87inili_K%C3%B6sk._Estambul.jpg",
+      "year": 1472
+    },
+    {
+      "title": "Rüstem Pasha Mosque",
+      "meta": "Ottoman · 1563 · Istanbul",
+      "desc": "Sinan designed this compact mosque for the grand vizier Rüstem Pasha above a row of shops, hiding the prayer hall on a raised platform. It is clad inside and out in the most lavish İznik tiles Sinan ever deployed — flowers bloom on every surface.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/f/f5/Rustem_Pasha_Mosque.JPG",
+      "year": 1563,
+      "artist": "Mimar Sinan"
+    },
+    {
+      "title": "Şehzade Mosque",
+      "meta": "Ottoman · 1548 · Istanbul",
+      "desc": "Sinan's first imperial commission, built for Suleiman the Magnificent in memory of his eldest son Şehzade Mehmed. The architect later dismissed it as an apprentice work — in fact it established the centralized four-semi-dome plan he would perfect at Selimiye.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Sehzade_camisi.jpg/960px-Sehzade_camisi.jpg",
+      "year": 1548,
+      "artist": "Mimar Sinan"
+    },
+    {
+      "title": "Eyüp Sultan Mosque",
+      "meta": "Ottoman · 1458 (rebuilt 1800) · Istanbul",
+      "desc": "Built where the companion of Muhammad, Abu Ayyub al-Ansari, was said to have died during the 7th-century Arab siege of Constantinople. Ottoman sultans were girded with the sword of Osman at his tomb; the courtyard is still a pilgrimage site across the Sunni world.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/%C4%B0stanbul_5999.jpg/960px-%C4%B0stanbul_5999.jpg",
+      "year": 1458
+    },
+    {
+      "title": "Badshahi Mosque",
+      "meta": "Mughal · 1673 · Lahore",
+      "desc": "Aurangzeb's great imperial mosque, faced with red sandstone and inlaid with white marble. Its courtyard holds 100,000 worshippers; for 313 years it was the largest mosque in the world.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Badshahi_Mosque_front_picture.jpg/960px-Badshahi_Mosque_front_picture.jpg",
+      "year": 1673
+    },
+    {
+      "title": "Wazir Khan Mosque",
+      "meta": "Mughal · 1641 · Lahore",
+      "desc": "A small neighborhood mosque entirely encrusted in Persian kashikari tilework whose floral panels are unmatched in subcontinental Islamic art. Commissioned by Shah Jahan's governor of Punjab, it is the premier showcase of seventeenth-century Mughal ceramic craft.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Wazir_Khan_Mosque_by_Moiz.jpg/960px-Wazir_Khan_Mosque_by_Moiz.jpg",
+      "year": 1641
+    },
+    {
+      "title": "Tomb of Bibi Jawindi",
+      "meta": "Delhi Sultanate · 1493 · Uch Sharif, Pakistan",
+      "desc": "An octagonal blue-tiled tomb whose eastern half collapsed in a nineteenth-century flood. What survives — Multani-style glazed brickwork in lapis, turquoise, and white on red — is among the finest examples of pre-Mughal funerary architecture in the subcontinent.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Tomb_of_Bibi_Jiwindi.jpg/960px-Tomb_of_Bibi_Jiwindi.jpg",
+      "year": 1493
+    },
+    {
+      "title": "Shah Jahan Mosque, Thatta",
+      "meta": "Mughal · 1647 · Sindh, Pakistan",
+      "desc": "Shah Jahan built this mosque in thanks for the town's shelter after a revolt. Ninety-three domes and thirty-three arches are said to amplify the imam's voice so the entire congregation can hear without microphones — a feat of Mughal acoustical engineering.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Shah_jahan_mosque_-Thatta_1_%28asad_aman%29.jpg",
+      "year": 1647
+    },
+    {
+      "title": "Sidi Saiyyed Mosque Screens",
+      "meta": "Gujarat Sultanate · 1573 · Ahmedabad",
+      "desc": "Ten pierced-stone jali windows of the tree-of-life pattern — a tamarind tree winding through palm fronds — rank among the most reproduced motifs of Indo-Islamic art. The Indian Institute of Management Ahmedabad adopted it as a logo.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Sidi_Saiyyed_Mosque%2C_Ahmedabad.jpg/960px-Sidi_Saiyyed_Mosque%2C_Ahmedabad.jpg",
+      "year": 1573
     }
   ]
 }
