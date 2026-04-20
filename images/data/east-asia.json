@@ -565,6 +565,27 @@
       "desc": "Stoneware coated in a pale slip and then incised, stamped, or brushed with freely drawn fish, birds, and peonies. Its looseness horrified the Chinese-influenced court but enchanted Japanese tea masters, who smuggled kilns full of it home in the 1590s.",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/%EB%B6%84%EC%B2%AD%EC%82%AC%EA%B8%B0_%EC%83%81%EA%B0%90%EC%9A%B4%EB%A3%A1%EB%AC%B8_%ED%95%AD%EC%95%84%EB%A6%AC.jpg/960px-%EB%B6%84%EC%B2%AD%EC%82%AC%EA%B8%B0_%EC%83%81%EA%B0%90%EC%9A%B4%EB%A3%A1%EB%AC%B8_%ED%95%AD%EC%95%84%EB%A6%AC.jpg",
       "year": 1500
+    },
+    {
+      "title": "Kyoto Imperial Palace",
+      "meta": "Heian → Edo · 794–1868 · Kyoto",
+      "desc": "The residence of the emperor of Japan from 794 until 1869. Repeatedly burned and rebuilt; the current compound follows the Heian original, walled off in parkland in central Kyoto.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Kyoto-gosho_Kenreimon_%28open%29.JPG/960px-Kyoto-gosho_Kenreimon_%28open%29.JPG",
+      "year": 794
+    },
+    {
+      "title": "Nijō Castle",
+      "meta": "Edo Japan · 1603 · Kyoto",
+      "desc": "Residence of the Tokugawa shoguns during visits to Kyoto. Its \"nightingale\" floors squeak deliberately underfoot — designed to warn of intruders. The shogunate fell within its walls in 1868.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/NinomaruPalace.jpg/960px-NinomaruPalace.jpg",
+      "year": 1603
+    },
+    {
+      "title": "Jogyesa",
+      "meta": "Korean Seon Buddhist · founded 1395 · Seoul",
+      "desc": "The head temple of the Jogye Order — the principal Korean Buddhist school. An old pagoda tree in the courtyard is 450 years old; lanterns hang from it by the thousands at Buddha's birthday.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Jogyesa_Temple_%281509839597%29.jpg/960px-Jogyesa_Temple_%281509839597%29.jpg",
+      "year": 1395
     }
   ]
 }

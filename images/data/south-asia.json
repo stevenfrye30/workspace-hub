@@ -500,6 +500,29 @@
       "desc": "Scroll paintings on cotton or silk, bordered with brocade, depicting deities in complex mandalic geometries for visualization practice. Pigments are ground from powdered turquoise, cinnabar, and malachite — gold highlights are burnished with a dog's tooth.",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Buddha_Vairocana_-_Google_Art_Project.jpg/960px-Buddha_Vairocana_-_Google_Art_Project.jpg",
       "year": 1400
+    },
+    {
+      "title": "Lotus Mahal",
+      "meta": "Vijayanagara · 16th c. · Hampi",
+      "desc": "A pavilion in the zenana quarter with lotus-shaped scalloped arches. Architectural hybrid: Hindu temple superstructure atop Islamic multifoil arches — courtly syncretism in stone.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Flat_elevation_of_Lotus_Mahal%2C_Hampi_%28Closeup%29.jpg/960px-Flat_elevation_of_Lotus_Mahal%2C_Hampi_%28Closeup%29.jpg",
+      "year": 1550
+    },
+    {
+      "title": "Rock Garden of Chandigarh",
+      "meta": "Outsider · Nek Chand · 1957 onward · India",
+      "desc": "A secret sculpture park a road inspector built on the sly from broken bangles, electric switches, ceramic shards, and urban trash. Discovered by authorities in 1975; preserved on public demand.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Chandigarh_Rock_Garden_4.jpg/960px-Chandigarh_Rock_Garden_4.jpg",
+      "artist": "Nek Chand",
+      "year": 1957
+    },
+    {
+      "title": "Lotus Temple",
+      "meta": "Modernist Bahá'í · Fariborz Sahba · 1986 · Delhi",
+      "desc": "A Bahá'í House of Worship in 27 free-standing white marble petals arranged in three clusters — one of the most visited buildings in the world.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/LotusDelhi.jpg/960px-LotusDelhi.jpg",
+      "artist": "Fariborz Sahba",
+      "year": 1986
     }
   ]
 }

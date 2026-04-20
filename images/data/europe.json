@@ -821,6 +821,30 @@
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Grant_Wood_-_American_Gothic_-_Google_Art_Project.jpg/960px-Grant_Wood_-_American_Gothic_-_Google_Art_Project.jpg",
       "year": 1930,
       "artist": "Grant Wood"
+    },
+    {
+      "title": "Vertumnus",
+      "meta": "Mannerism · 1591",
+      "desc": "Portrait of Emperor Rudolf II as Vertumnus, god of seasons — his face built from pears, grapes, squash, grain. Arcimboldo's joke on Habsburg dignity; the emperor loved it.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Vertumnus_%C3%A5rstidernas_gud_m%C3%A5lad_av_Giuseppe_Arcimboldo_1591_-_Skoklosters_slott_-_91503.jpg/960px-Vertumnus_%C3%A5rstidernas_gud_m%C3%A5lad_av_Giuseppe_Arcimboldo_1591_-_Skoklosters_slott_-_91503.jpg",
+      "artist": "Giuseppe Arcimboldo",
+      "year": 1591
+    },
+    {
+      "title": "The Cardsharps",
+      "meta": "Baroque · c. 1594",
+      "desc": "An early Caravaggio: a boy is cheated at cards by a pair of accomplices — one palming a card behind his back, the other reading his hand over his shoulder. A career-making genre scene.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Caravaggio_%28Michelangelo_Merisi%29_-_The_Cardsharps_-_Google_Art_Project.jpg/960px-Caravaggio_%28Michelangelo_Merisi%29_-_The_Cardsharps_-_Google_Art_Project.jpg",
+      "artist": "Caravaggio",
+      "year": 1594
+    },
+    {
+      "title": "The Milkmaid of Bordeaux",
+      "meta": "Late Goya · c. 1827",
+      "desc": "Goya's last canvas, painted at 81 in exile in Bordeaux. A young woman looking down over her shoulder — loose, almost proto-Impressionist brushwork. Bequeathed to his last companion.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Goya_MilkMaid.jpg/960px-Goya_MilkMaid.jpg",
+      "artist": "Francisco Goya",
+      "year": 1827
     }
   ]
 }

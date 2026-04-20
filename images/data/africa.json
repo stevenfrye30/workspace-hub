@@ -430,6 +430,48 @@
       "desc": "A stone city of terraced platforms retained by decorative chevron and checker patterns in dry-laid granite. Successor to Great Zimbabwe, Khami traded Ming porcelain and Portuguese beads with the east African coast before being burned in the seventeenth century.",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/ZW_Khami_Ruins.JPG/960px-ZW_Khami_Ruins.JPG",
       "year": 1500
+    },
+    {
+      "title": "Elmina Castle",
+      "meta": "Portuguese colonial · 1482 · Ghana",
+      "desc": "Whitewashed on a rock above the Gulf of Guinea — the oldest European building in sub-Saharan Africa. Started as a trading post for gold, became a holding point for the Atlantic slave trade.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Elmina_Castle_-_Ghana.jpg/960px-Elmina_Castle_-_Ghana.jpg",
+      "year": 1482
+    },
+    {
+      "title": "Herero Dress",
+      "meta": "Herero · late 19th c. onward · Namibia",
+      "desc": "Floor-length Victorian gowns adopted from 19th-century German missionaries — kept, inverted, made defiantly Herero. The horned headdress honors cattle; the silhouette accuses a colonial past.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/7/71/Herero_women.jpg",
+      "year": 1900
+    },
+    {
+      "title": "Great Mosque of Touba",
+      "meta": "Mouride · 1963 · Senegal",
+      "desc": "Founded by the Sufi saint Amadou Bamba; the current mosque completed in the 1960s. Five minarets and a green dome; a gathering of millions every year at the Magal pilgrimage.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Touba_%28senegal%29_2006.JPG/960px-Touba_%28senegal%29_2006.JPG",
+      "year": 1963
+    },
+    {
+      "title": "Mbuti Bark Cloth",
+      "meta": "Mbuti · traditional · Ituri Rainforest",
+      "desc": "Beaten fig-bark cloth painted by women with dots, curves, and grids in charcoal, juice, and mud. Every panel is an individual composition — one of Africa's most abstract traditional visual idioms.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/f/f6/Bambuti.jpg",
+      "year": 1930
+    },
+    {
+      "title": "Timbuktu Manuscripts",
+      "meta": "West African Islamic · 13th c. onward · Mali",
+      "desc": "Hundreds of thousands of hand-copied manuscripts on astronomy, law, medicine, poetry. Families smuggled them out of Timbuktu in 2013 as jihadists approached, hiding them in cellars and metal chests.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Timbuktu-manuscripts-astronomy-mathematics.jpg/960px-Timbuktu-manuscripts-astronomy-mathematics.jpg",
+      "year": 1400
+    },
+    {
+      "title": "Ethiopian Illuminated Bible",
+      "meta": "Ethiopian Orthodox · 15th c. onward",
+      "desc": "Ge'ez-language bibles painted on parchment with bold figural interior pages — a distinctly Ethiopian Christian visual tradition that ran continuously from late antiquity to the 20th century.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Ethiopic_genesis_%28ch._29%2C_v._11-16%29%2C_15th_century_%28The_S.S._Teacher%27s_Edition-The_Holy_Bible_-_Plate_XII%2C_1%29.jpg",
+      "year": 1450
     }
   ]
 }
