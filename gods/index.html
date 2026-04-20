@@ -665,9 +665,21 @@ main p { line-height:1.7; }
 
 .timeline {
   background:var(--panel); border:1px solid var(--line); border-radius:10px;
-  padding:22px 26px 28px; margin-top:16px; overflow-x:auto;
+  padding:22px 26px 28px; margin-top:16px; overflow-x:hidden;
 }
 .timeline-rows { position:relative; }
+.tl-bar.trunc-left::before,
+.tl-peak.trunc-left::before {
+  content:'‹'; position:absolute; left:-9px; top:50%; transform:translateY(-52%);
+  color:var(--gold); font-size:13px; font-weight:bold; line-height:1;
+  text-shadow:0 0 4px rgba(0,0,0,0.4);
+}
+.tl-bar.trunc-right::after,
+.tl-peak.trunc-right::after {
+  content:'›'; position:absolute; right:-9px; top:50%; transform:translateY(-52%);
+  color:var(--gold); font-size:13px; font-weight:bold; line-height:1;
+  text-shadow:0 0 4px rgba(0,0,0,0.4);
+}
 
 .tl-group-head {
   position:relative; display:flex; align-items:baseline; gap:12px;
@@ -2720,9 +2732,14 @@ function renderTimeline() {
   const rowsContainer = document.getElementById('timelineRows');
   const minYear = -5000, maxYear = 2100;
   const range = maxYear - minYear;
-  const labelWidth = 190;
-  const chartWidth = 1150;
+  const parentWidth = rowsContainer.parentElement.clientWidth;
+  // inner width of .timeline padding = 26px each side
+  const availableWidth = Math.max(320, parentWidth - 52);
+  const labelWidth = availableWidth < 640 ? 120 : (availableWidth < 900 ? 150 : 180);
+  const chartWidth = availableWidth - labelWidth - 10;
+  const chartRight = labelWidth + chartWidth;
   const xOf = y => labelWidth + ((y - minYear) / range) * chartWidth;
+  const clampX = x => Math.max(labelWidth, Math.min(chartRight, x));
 
   // Historical era bands
   const eras = [
@@ -2758,15 +2775,21 @@ function renderTimeline() {
     : PANTHEON_GROUPS;
 
   const renderRow = p => {
-    const x = xOf(p.active_from);
-    const w = Math.max(4, xOf(p.active_to) - x);
-    const px = xOf(p.peak_from || p.active_from);
-    const pw = Math.max(2, xOf(p.peak_to || p.active_to) - px);
+    const rawFrom = xOf(p.active_from);
+    const rawTo = xOf(p.active_to);
+    const x = clampX(rawFrom);
+    const w = Math.max(4, clampX(rawTo) - x);
+    const barTrunc = (rawFrom < labelWidth ? ' trunc-left' : '') + (rawTo > chartRight ? ' trunc-right' : '');
+    const rawPFrom = xOf(p.peak_from || p.active_from);
+    const rawPTo = xOf(p.peak_to || p.active_to);
+    const px = clampX(rawPFrom);
+    const pw = Math.max(2, clampX(rawPTo) - px);
+    const peakTrunc = (rawPFrom < labelWidth ? ' trunc-left' : '') + (rawPTo > chartRight ? ' trunc-right' : '');
     return `
       <div class="timeline-row" data-pid="${p.id}" title="${escapeAttr(p.name + ' · ' + p.region + ' · ' + fmtYears(p.active_from, p.active_to))}">
-        <div class="tl-label">${p.name}</div>
-        <div class="tl-bar" style="left:${x}px; width:${w}px; background:${p.color};"></div>
-        <div class="tl-peak" style="left:${px}px; width:${pw}px; background:${p.color};"></div>
+        <div class="tl-label" style="width:${labelWidth - 10}px;">${p.name}</div>
+        <div class="tl-bar${barTrunc}" style="left:${x}px; width:${w}px; background:${p.color};"></div>
+        <div class="tl-peak${peakTrunc}" style="left:${px}px; width:${pw}px; background:${p.color};"></div>
       </div>
     `;
   };
@@ -2784,7 +2807,7 @@ function renderTimeline() {
     `;
   }).join('');
 
-  rowsContainer.style.width = (labelWidth + chartWidth + 20) + 'px';
+  rowsContainer.style.width = '100%';
   rowsContainer.style.paddingTop = '28px';
   rowsContainer.innerHTML = `
     <div style="position:absolute; left:${labelWidth}px; top:-4px; width:${chartWidth}px; height:18px; pointer-events:none;">${eraBands}</div>
@@ -2799,6 +2822,18 @@ function renderTimeline() {
       loadTree(pid);
     });
   });
+
+  if (!window._timelineResizeAttached) {
+    window._timelineResizeAttached = true;
+    let t;
+    window.addEventListener('resize', () => {
+      clearTimeout(t);
+      t = setTimeout(() => {
+        const tab = document.getElementById('tab-timeline');
+        if (tab && tab.classList.contains('active')) renderTimeline();
+      }, 150);
+    });
+  }
 }
 
 /* ---------- Archetypes tab ---------- */
