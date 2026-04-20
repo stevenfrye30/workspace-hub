@@ -697,6 +697,7 @@ def build_timeline(meta: dict) -> int:
 TILE_TPL = """  <a class="region-tile" href="regions/{slug}.html">
     <img class="tile-img" src="{image}" alt="" loading="lazy">
     <div class="tile-overlay">
+      <div class="tile-count">{count} works</div>
       <div class="tile-title">{title}</div>
       <div class="tile-blurb">{blurb}</div>
     </div>
@@ -716,7 +717,7 @@ def _region_hero_image(region: dict) -> str:
     return works[0]["image"] if works else ""
 
 
-def build_region_tiles(regions: list[dict]) -> str:
+def build_region_tiles(regions: list[dict], counts: dict[str, int]) -> str:
     tiles = []
     for r in regions:
         image = _region_hero_image(r)
@@ -727,6 +728,7 @@ def build_region_tiles(regions: list[dict]) -> str:
             image=h_attr(image),
             title=h(r["title"]),
             blurb=h(r["blurb"]),
+            count=counts.get(r["slug"], 0),
         ))
     return '<div class="region-tiles">\n' + "".join(tiles).rstrip() + '\n  </div>'
 
@@ -845,7 +847,7 @@ def _primary_region_for_artists(meta: dict) -> dict[str, tuple[str, str]]:
 
 
 def build_index(meta: dict, counts: dict[str, int], artists: dict[str, list[dict]]) -> None:
-    region_tiles_html = build_region_tiles(meta["regions"])
+    region_tiles_html = build_region_tiles(meta["regions"], counts)
 
     # Primary region per artist.
     artist_region = _primary_region_for_artists(meta)
