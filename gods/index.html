@@ -299,7 +299,14 @@ main p { line-height:1.7; }
   overflow:hidden; position:relative;
   box-shadow:0 4px 14px rgba(0,0,0,0.35);
 }
-.god-image img { width:100%; height:100%; object-fit:cover; display:block; }
+.god-image img {
+  width:100%; height:100%; object-fit:cover;
+  object-position:center 20%; /* keep faces visible — most god portraits have heads near the top */
+  display:block; transition:transform .25s ease;
+}
+.god-image { cursor:zoom-in; }
+.god-image:hover { border-color:var(--gold); }
+.god-image:hover img { transform:scale(1.04); }
 .god-image.loading { background:linear-gradient(135deg, var(--panel) 0%, var(--panel2) 100%); }
 .god-image.loading::after {
   content:''; position:absolute; inset:0;
@@ -601,6 +608,38 @@ select:focus:not(:focus-visible),
   overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;
 }
 
+/* Image lightbox */
+.img-lightbox-bg {
+  display:none; position:fixed; inset:0; z-index:200;
+  background:rgba(0,0,0,0.92); backdrop-filter:blur(4px);
+  align-items:center; justify-content:center; padding:40px 24px;
+  cursor:zoom-out;
+}
+.img-lightbox-bg.open { display:flex; animation:fadeIn .2s ease; }
+.img-lightbox {
+  display:flex; flex-direction:column; align-items:center; gap:14px;
+  max-width:92vw; max-height:92vh; position:relative;
+  cursor:default;
+}
+.img-lightbox img {
+  max-width:100%; max-height:calc(92vh - 100px);
+  object-fit:contain; border:2px solid var(--gold); border-radius:4px;
+  box-shadow:0 0 0 1px var(--gold-faint), 0 20px 60px rgba(0,0,0,0.7);
+  display:block; background:#0d0f22;
+}
+.img-lightbox-caption {
+  color:var(--ink); font-size:14px; text-align:center;
+  font-style:italic; max-width:500px; line-height:1.5;
+}
+.img-lightbox-caption .attr { color:var(--muted); font-size:11px; display:block; margin-top:3px; letter-spacing:1px; }
+.img-lightbox-close {
+  position:fixed; top:18px; right:24px; z-index:201;
+  background:none; border:0; color:var(--ink);
+  font-size:34px; cursor:pointer; line-height:1; opacity:0.65;
+  transition:opacity .15s, transform .15s;
+}
+.img-lightbox-close:hover { opacity:1; transform:rotate(90deg); }
+
 /* Initial loading state */
 #loading {
   position:fixed; inset:0; display:flex; flex-direction:column;
@@ -777,6 +816,14 @@ select:focus:not(:focus-visible),
 </section>
 
 </main>
+
+<div class="img-lightbox-bg" id="imgLightboxBg" role="dialog" aria-modal="true" aria-label="Enlarged image">
+  <button class="img-lightbox-close" id="imgLightboxClose" aria-label="Close enlarged image">×</button>
+  <div class="img-lightbox" id="imgLightbox">
+    <img id="imgLightboxImg" src="" alt="">
+    <div class="img-lightbox-caption" id="imgLightboxCaption"></div>
+  </div>
+</div>
 
 <div class="modal-bg" id="modalBg" role="dialog" aria-modal="true" aria-labelledby="modalContent">
   <div class="modal" id="modal">
@@ -1110,7 +1157,55 @@ function wireHashRouter() {
 function wireModal() {
   document.getElementById('modalClose').addEventListener('click', closeModal);
   document.getElementById('modalBg').addEventListener('click', e => { if (e.target.id === 'modalBg') closeModal(); });
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+  // Image lightbox
+  document.getElementById('imgLightboxClose').addEventListener('click', closeImgLightbox);
+  document.getElementById('imgLightboxBg').addEventListener('click', e => {
+    // Click anywhere outside the image/caption block closes it
+    if (!e.target.closest('#imgLightbox')) closeImgLightbox();
+  });
+
+  // Open lightbox on any god image click (use delegation so newly-rendered images work)
+  document.addEventListener('click', e => {
+    const godImg = e.target.closest('.god-image');
+    if (!godImg) return;
+    const img = godImg.querySelector('img');
+    if (!img || !img.src) return;
+    const gid = godImg.dataset.gid;
+    const g = gid ? GODS_BY_ID[gid] : null;
+    openImgLightbox(img.src, img.alt || (g && g.name) || '', g);
+  });
+
+  // Esc closes lightbox first, then modal
+  document.addEventListener('keydown', e => {
+    if (e.key !== 'Escape') return;
+    if (document.getElementById('imgLightboxBg').classList.contains('open')) {
+      closeImgLightbox();
+    } else {
+      closeModal();
+    }
+  });
+}
+
+function openImgLightbox(url, alt, g) {
+  const bg = document.getElementById('imgLightboxBg');
+  const img = document.getElementById('imgLightboxImg');
+  const cap = document.getElementById('imgLightboxCaption');
+  img.src = url;
+  img.alt = alt;
+  if (g) {
+    const p = PANTHEONS_BY_ID[g.pantheon];
+    cap.innerHTML = `<strong>${g.name}</strong>${p ? ' · ' + p.name : ''}<span class="attr">Image via Wikipedia / Wikimedia Commons</span>`;
+  } else {
+    cap.innerHTML = `${alt}<span class="attr">Image via Wikipedia / Wikimedia Commons</span>`;
+  }
+  bg.classList.add('open');
+}
+function closeImgLightbox() {
+  const bg = document.getElementById('imgLightboxBg');
+  bg.classList.remove('open');
+  // Clear src after animation so we don't keep the image loaded
+  setTimeout(() => { document.getElementById('imgLightboxImg').src = ''; }, 200);
 }
 
 // Keyboard shortcuts
