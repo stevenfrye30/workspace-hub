@@ -1386,6 +1386,7 @@ function selectTab(tabId, { skipHash = false } = {}) {
   btn.setAttribute('aria-selected', 'true');
   btn.setAttribute('tabindex', '0');
   panel.classList.add('active');
+  if (tabId === 'timeline') renderTimeline();
   if (!skipHash) updateHash('tab/' + tabId);
 }
 
@@ -2732,8 +2733,11 @@ function renderTimeline() {
   const rowsContainer = document.getElementById('timelineRows');
   const minYear = -5000, maxYear = 2100;
   const range = maxYear - minYear;
-  const parentWidth = rowsContainer.parentElement.clientWidth;
-  // inner width of .timeline padding = 26px each side
+  // Fall back to <main>/viewport when the tab is display:none (clientWidth=0 during init)
+  const mainEl = document.querySelector('main');
+  const mainContent = mainEl ? mainEl.clientWidth - 56 : (window.innerWidth - 56);
+  const parentWidth = rowsContainer.parentElement.clientWidth || mainContent;
+  // inner width of .timeline = parent minus its 26px horizontal padding
   const availableWidth = Math.max(320, parentWidth - 52);
   const labelWidth = availableWidth < 640 ? 120 : (availableWidth < 900 ? 150 : 180);
   const chartWidth = availableWidth - labelWidth - 10;
