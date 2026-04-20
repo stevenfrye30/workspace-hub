@@ -353,6 +353,34 @@
       "desc": "\"The Baby Taj\" — the first Mughal tomb clad entirely in white marble and inlaid with pietra dura. Built by Nur Jahan for her father; the stylistic prototype for the Taj Mahal eight years later.",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/I%27tim%C4%81d-ud-Daulah%2C_Agra.jpg/960px-I%27tim%C4%81d-ud-Daulah%2C_Agra.jpg",
       "year": 1625
+    },
+    {
+      "title": "Agra Fort",
+      "meta": "Mughal · 1565–1573 · Uttar Pradesh",
+      "desc": "Red sandstone fort rebuilt by Akbar, later inner palaces added by Shah Jahan. Imprisoned here by his own son Aurangzeb, Shah Jahan could see the Taj Mahal across the river until his death.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Agra_03-2016_10_Agra_Fort.jpg/960px-Agra_03-2016_10_Agra_Fort.jpg",
+      "year": 1570
+    },
+    {
+      "title": "Ali Qapu",
+      "meta": "Safavid · early 17th c. · Isfahan",
+      "desc": "Six-story royal pavilion overlooking Naqsh-e Jahan Square. Its upper music room has plaster cut into silhouettes of jars and vases — both ornament and acoustic resonator.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/%C4%80l%C4%AB_Q%C4%81p%C5%AB_in_golden_time.jpg/960px-%C4%80l%C4%AB_Q%C4%81p%C5%AB_in_golden_time.jpg",
+      "year": 1600
+    },
+    {
+      "title": "Chehel Sotoun",
+      "meta": "Safavid · 1647 · Isfahan",
+      "desc": "A pavilion of \"forty columns\" — twenty real wooden ones plus their reflections in the long rectangular pool. Interior halls are painted with the Shah's battles and banquets.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Chehel_Sotoon.jpg/960px-Chehel_Sotoon.jpg",
+      "year": 1647
+    },
+    {
+      "title": "Sheikh Lotfollah Mosque",
+      "meta": "Safavid · 1603–1619 · Isfahan",
+      "desc": "The private royal chapel on the east side of Naqsh-e Jahan Square. No minarets, no courtyard — just a single domed hall whose tilework, buff and turquoise, changes color with the sun.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Sheikh_Lotfallah_Esfahan.JPG/960px-Sheikh_Lotfallah_Esfahan.JPG",
+      "year": 1615
     }
   ]
 }

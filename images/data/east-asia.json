@@ -387,6 +387,60 @@
       "desc": "81,258 woodblocks of the Buddhist canon carved to petition the gods to repel the Mongols. The blocks still print; stored in a 15th-century hall that manages its own humidity.",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Tripitaka_Koreana_02.jpg/960px-Tripitaka_Koreana_02.jpg",
       "year": 1240
+    },
+    {
+      "title": "Streams and Mountains with a Clear Distant View",
+      "meta": "Southern Song · Xia Gui · early 13th c.",
+      "desc": "A long ink handscroll in the \"one-corner\" style — only a fraction of the silk is painted, leaving vast voids for the viewer to read as mist and distance. A founding image of Chinese minimalism.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Xia_Gui%2C_Streams_and_Mountains_with_a_Clear_Distant_View%2C_detail.jpg/960px-Xia_Gui%2C_Streams_and_Mountains_with_a_Clear_Distant_View%2C_detail.jpg",
+      "artist": "Xia Gui",
+      "year": 1210
+    },
+    {
+      "title": "Spring Outing of the Tang Court",
+      "meta": "Tang Dynasty · attributed to Zhang Xuan · 8th c.",
+      "desc": "A later copy of a lost Zhang Xuan handscroll: the imperial court rides out on a spring morning in a tight file of horses. The women in the vanguard seem to pull the viewer along.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Spring_Outing_of_the_Tang_Court.jpg/960px-Spring_Outing_of_the_Tang_Court.jpg",
+      "artist": "Zhang Xuan",
+      "year": 750
+    },
+    {
+      "title": "Ink Landscape (Self-Portrait)",
+      "meta": "Qing · Shitao · late 17th c.",
+      "desc": "Shitao paints himself sitting on a rock, brush poised, surrounded by hills he is still deciding to render. A Ming prince turned Buddhist monk; his theoretical writings on painting are still studied.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Shitao-autoportrait.jpg/960px-Shitao-autoportrait.jpg",
+      "artist": "Shitao",
+      "year": 1690
+    },
+    {
+      "title": "Qiu Ying Paintings",
+      "meta": "Ming · Qiu Ying · 1494–1552",
+      "desc": "One of the \"Four Masters of the Ming Dynasty.\" Rose from lacquer-worker to court painter. His handscrolls of palace scenes and mountain recluses are among the most copied in Chinese art history.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Qiu_Ying_-_%E4%BB%87%E8%8B%B1%EF%BC%881494-1552%29.jpg/960px-Qiu_Ying_-_%E4%BB%87%E8%8B%B1%EF%BC%881494-1552%29.jpg",
+      "artist": "Qiu Ying",
+      "year": 1530
+    },
+    {
+      "title": "Tale of Genji Scroll",
+      "meta": "Late Heian · early 12th c. · Japan",
+      "desc": "The oldest illustrated version of Murasaki Shikibu's Genji. The \"blown-off roof\" perspective looks down into private chambers; faces are reduced to lines, clothing is everything.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Genji_emaki_azumaya.jpg/960px-Genji_emaki_azumaya.jpg",
+      "year": 1120
+    },
+    {
+      "title": "Huang Quan Bird Painting",
+      "meta": "Five Dynasties · Huang Quan · c. 950 CE",
+      "desc": "Meticulously observed birds, insects, and turtles. Huang Quan was a palace painter in Sichuan; his \"sketches from life\" became the model for Northern Song nature painting.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Huang-Quan-Xie-sheng-zhen-qin-tu.jpg/960px-Huang-Quan-Xie-sheng-zhen-qin-tu.jpg",
+      "artist": "Huang Quan",
+      "year": 950
+    },
+    {
+      "title": "Nishiki-e (Brocade Prints)",
+      "meta": "Edo Japan · 1765 onward",
+      "desc": "Multi-color woodblock prints developed by Suzuki Harunobu in 1765 — the first polychrome ukiyo-e. Enabled Utamaro, Hokusai, Hiroshige to work in full color.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/3/34/Nishikie.jpg",
+      "year": 1765
     }
   ]
 }

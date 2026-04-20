@@ -317,6 +317,41 @@
       "desc": "Eleven meters of carved granite, 83 tons. Moved from downtown Cairo to the Grand Egyptian Museum in a 2006 road spectacle so large they had to raise bridges.",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Grand_Egyptian_Museum_2019-11-07d.jpg/960px-Grand_Egyptian_Museum_2019-11-07d.jpg",
       "year": -1250
+    },
+    {
+      "title": "Gayer-Anderson Cat",
+      "meta": "Late Period · c. 600 BCE",
+      "desc": "A hollow-cast bronze cat in the form of the goddess Bastet, with gold earrings and nose ring. Slightly battered but uncannily alive — one of the most reproduced pieces in the British Museum.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/British_Museum_Egypt_101-black.jpg/960px-British_Museum_Egypt_101-black.jpg",
+      "year": -600
+    },
+    {
+      "title": "Deir el-Medina",
+      "meta": "New Kingdom · c. 1550–1080 BCE",
+      "desc": "The workers' village for those who built the royal tombs. Its own tombs are painted with a precision surprising for common craftsmen — because the craftsmen were the painters of the Valley of the Kings.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Deir_el-Medina%2C_Luxor%2C_Egipto%2C_2022-04-03%2C_DD_18.jpg/960px-Deir_el-Medina%2C_Luxor%2C_Egipto%2C_2022-04-03%2C_DD_18.jpg",
+      "year": -1400
+    },
+    {
+      "title": "Temple of Hibis",
+      "meta": "Late Period · 6th c. BCE · Kharga Oasis",
+      "desc": "The largest surviving temple of the Persian period in Egypt. Carved in sandstone in the middle of a desert oasis; its roof blocks depict 700 Egyptian deities.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/7/77/HibisComplete.jpg",
+      "year": -520
+    },
+    {
+      "title": "Memphis (Egypt)",
+      "meta": "Early Dynastic onward · c. 3100 BCE · Lower Egypt",
+      "desc": "The first capital of unified Egypt, sacred to Ptah. What survives today is ruins in a palm grove — a colossal reclining statue of Ramesses II, sphinxes, embalmed Apis bulls.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Memphis200401.JPG/960px-Memphis200401.JPG",
+      "year": -3100
+    },
+    {
+      "title": "Temple of Amun at Jebel Barkal",
+      "meta": "Kushite · c. 1450 BCE onward · Sudan",
+      "desc": "Built by Thutmose III below a sandstone butte the Nubians believed Amun lived inside. Reused by Kushite pharaohs who conquered Egypt from here in the 25th Dynasty.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Amun_Tempel_Barkal_SW.jpg/960px-Amun_Tempel_Barkal_SW.jpg",
+      "year": -1450
     }
   ]
 }

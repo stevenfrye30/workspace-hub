@@ -615,6 +615,44 @@
       "desc": "A Byzantine five-nave cathedral at the heart of Kyivan Rus. Its mosaics of the Virgin Orans (\"Indestructible Wall\") are said to have protected the city through a thousand years of war.",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/80-391-0151_Kyiv_St.Sophia%27s_Cathedral_RB_18_2_%28cropped%29.jpg/960px-80-391-0151_Kyiv_St.Sophia%27s_Cathedral_RB_18_2_%28cropped%29.jpg",
       "year": 1037
+    },
+    {
+      "title": "Bacchus",
+      "meta": "Baroque · c. 1596 · Florence",
+      "desc": "Caravaggio's boyish, tipsy Bacchus — fingernails dirty, a decaying fruit basket in the foreground. Lost for three centuries, rediscovered in a Uffizi storeroom in 1913.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Baco%2C_por_Caravaggio.jpg/960px-Baco%2C_por_Caravaggio.jpg",
+      "artist": "Caravaggio",
+      "year": 1596
+    },
+    {
+      "title": "The Gleaners",
+      "meta": "Realism · 1857",
+      "desc": "Three peasant women stoop to pick up leftover grain after the harvest. The wealthy hated it — it looked like socialism. Millet painted rural labor as dignified, not picturesque.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Jean-Fran%C3%A7ois_Millet_-_Gleaners_-_Google_Art_Project_2.jpg/960px-Jean-Fran%C3%A7ois_Millet_-_Gleaners_-_Google_Art_Project_2.jpg",
+      "artist": "Jean-François Millet",
+      "year": 1857
+    },
+    {
+      "title": "Westminster Abbey",
+      "meta": "English Gothic · 1245 onward · London",
+      "desc": "Coronation church of English monarchs since 1066; also a vast, crowded graveyard — Newton, Darwin, Stephen Hawking. Poets' Corner adds Chaucer, Dickens, T. S. Eliot.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Westminster_Abbey_St_Peter.jpg/960px-Westminster_Abbey_St_Peter.jpg",
+      "year": 1245
+    },
+    {
+      "title": "Reims Cathedral",
+      "meta": "High Gothic · 1211–1275 · France",
+      "desc": "Coronation church of the kings of France. Shelled for five years in World War I; its sculptures, including the famous Smiling Angel, shattered and then were painstakingly reassembled.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Exterior_view_of_the_west_facade_of_Notre-Dame_Cathedral_in_Reims.jpg/960px-Exterior_view_of_the_west_facade_of_Notre-Dame_Cathedral_in_Reims.jpg",
+      "year": 1245
+    },
+    {
+      "title": "The Dance",
+      "meta": "Fauvism · 1909–1910",
+      "desc": "Five red figures hold hands in a frenzied ring against blue sky and green earth. Matisse called the composition \"the highest point of the story\" — the first great Modernist painting of pure color.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/a/a7/Matissedance.jpg",
+      "artist": "Henri Matisse",
+      "year": 1910
     }
   ]
 }

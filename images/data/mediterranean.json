@@ -380,6 +380,48 @@
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Eufronio%2C_cratere_modellato_da_euxitheos_con_morte_di_sarpedone%2C_520-510_ac_ca.%2C_dalla_necropoli_di_greppe_sant%27angelo_01.jpg/960px-Eufronio%2C_cratere_modellato_da_euxitheos_con_morte_di_sarpedone%2C_520-510_ac_ca.%2C_dalla_necropoli_di_greppe_sant%27angelo_01.jpg",
       "artist": "Euphronios",
       "year": -515
+    },
+    {
+      "title": "Temple of Aphaia",
+      "meta": "Late Archaic Greek · c. 500 BCE · Aegina",
+      "desc": "A limestone temple whose pedimental sculptures, now in Munich, capture the hinge between Archaic stiffness and Classical naturalism — look at the east and west together to see a style changing.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Aegina_-_Temple_of_Aphaia_03.jpg/960px-Aegina_-_Temple_of_Aphaia_03.jpg",
+      "year": -500
+    },
+    {
+      "title": "Temple of Poseidon at Sounion",
+      "meta": "Classical Greek · c. 440 BCE · Attica",
+      "desc": "White marble columns on a cape where the sea drops 60 meters away on three sides. Byron carved his name into one of the columns in 1810.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Greece_Cape_Sounion_BW_2017-10-09_10-12-43.jpg/960px-Greece_Cape_Sounion_BW_2017-10-09_10-12-43.jpg",
+      "year": -440
+    },
+    {
+      "title": "Temple of Zeus at Olympia",
+      "meta": "Classical Greek · c. 470 BCE",
+      "desc": "Once held the chryselephantine Zeus — one of the Seven Wonders of the ancient world, carved by Phidias. The temple fell in an earthquake; the Zeus was hauled to Constantinople and burned.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Olympia-ZeusTempelRestoration.jpg/960px-Olympia-ZeusTempelRestoration.jpg",
+      "year": -470
+    },
+    {
+      "title": "Hagia Triada Sarcophagus",
+      "meta": "Late Minoan · c. 1400 BCE · Crete",
+      "desc": "A painted limestone sarcophagus showing funeral rites on all four sides — a bull sacrifice, women carrying pails of blood, the deceased receiving offerings. Our clearest window onto Minoan ritual.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Sarcophagus_archmus_Heraklion.jpg/960px-Sarcophagus_archmus_Heraklion.jpg",
+      "year": -1400
+    },
+    {
+      "title": "Roman Forum",
+      "meta": "Roman Republic → Imperial · 7th c. BCE – 4th c. CE",
+      "desc": "The civic heart of ancient Rome — law courts, speaker's platforms, temples, triumphal arches, all crammed into a low strip between the Palatine and Capitoline hills.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Foro_Romano_Musei_Capitolini_Roma.jpg/960px-Foro_Romano_Musei_Capitolini_Roma.jpg",
+      "year": -500
+    },
+    {
+      "title": "Obelisk of Theodosius",
+      "meta": "Egyptian carved 15th c. BCE, re-erected 390 CE · Istanbul",
+      "desc": "An Egyptian obelisk Thutmose III set up at Karnak; Theodosius hauled it to Constantinople and planted it on a marble base carved with Byzantine court scenes. Two monuments in one.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Obelisk_of_Theodosius_I.jpg/960px-Obelisk_of_Theodosius_I.jpg",
+      "year": -1450
     }
   ]
 }

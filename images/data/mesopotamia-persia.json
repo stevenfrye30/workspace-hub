@@ -303,6 +303,20 @@
       "desc": "A cast bronze figure in a high conical headdress. The lost Hittite pantheon ran to thousands of names — only a handful survive in objects like this one.",
       "image": "https://upload.wikimedia.org/wikipedia/commons/c/c1/HittiteSeatedDeityAnatolia13thCenturyBCE.jpg",
       "year": -1250
+    },
+    {
+      "title": "Kish Tablet",
+      "meta": "Early Sumerian · c. 3200 BCE",
+      "desc": "A small limestone tablet from Kish covered in proto-cuneiform signs — possibly the earliest known writing. Accounts of barley, fish, and a threshing sled.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Tableta_con_trillo.png",
+      "year": -3200
+    },
+    {
+      "title": "Sumerian Libation Plaque",
+      "meta": "Early Dynastic · c. 2500 BCE · Ur",
+      "desc": "A perforated stone plaque once hung in a temple. The top register shows a naked priest pouring an offering to a seated god; the lower register, worshipers bringing livestock.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Wall_plaque_showing_libation_scene_from_Ur%2C_Iraq%2C_2500_BCE._British_Museum_%28adjusted_for_perspective%29.jpg/960px-Wall_plaque_showing_libation_scene_from_Ur%2C_Iraq%2C_2500_BCE._British_Museum_%28adjusted_for_perspective%29.jpg",
+      "year": -2500
     }
   ]
 }

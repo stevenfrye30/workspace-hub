@@ -338,6 +338,48 @@
       "desc": "Solid brick stupa marking the spot of the Buddha's first sermon. Its upper band of geometric floral carving is some of the finest Gupta ornament anywhere.",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Dhamek_Stupa%2C_Sarnath.jpg/960px-Dhamek_Stupa%2C_Sarnath.jpg",
       "year": 500
+    },
+    {
+      "title": "Modhera Sun Temple",
+      "meta": "Chaulukya dynasty · 1026 · Gujarat",
+      "desc": "Temple to Surya oriented so the first rays of the equinox sun strike the inner sanctum. A cistern called Ramakunda in front holds over a hundred miniature shrines along its steps.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Surya_mandhir.jpg/960px-Surya_mandhir.jpg",
+      "year": 1026
+    },
+    {
+      "title": "Chand Baori",
+      "meta": "Gurjara-Pratihara · 9th c. · Rajasthan",
+      "desc": "A thirteen-story stepwell carved with 3,500 narrow steps into dizzying geometric patterns down its walls. One of the oldest and deepest stepwells in India.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Chand_Baori_perspective_panorama_%28July_2022%29.jpg/960px-Chand_Baori_perspective_panorama_%28July_2022%29.jpg",
+      "year": 850
+    },
+    {
+      "title": "Somnath Temple",
+      "meta": "Chaulukya → rebuilt 1951 · Gujarat",
+      "desc": "A Hindu pilgrimage site destroyed and rebuilt seven times — plundered most famously by Mahmud of Ghazni in 1025. The current temple was built after Indian independence, at the sea's edge.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Somanath_mandir_%28cropped%29.jpg/960px-Somanath_mandir_%28cropped%29.jpg",
+      "year": 1951
+    },
+    {
+      "title": "Rani ki Vav",
+      "meta": "Chaulukya dynasty · 11th c. · Gujarat",
+      "desc": "A subterranean stepwell dug by Queen Udayamati for her husband. Seven levels down, 500 sculptures of Vishnu avatars and apsaras. Silted over by the Saraswati; rediscovered in the 1980s.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Rani_ki_vav_02.jpg/960px-Rani_ki_vav_02.jpg",
+      "year": 1080
+    },
+    {
+      "title": "Mysore Palace",
+      "meta": "Indo-Saracenic · 1912 · Karnataka",
+      "desc": "The current incarnation — fourth to stand on the site — is a wedding cake of Hindu, Mughal, Rajput, and Gothic elements. Lit up nightly by nearly a hundred thousand bulbs.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Mysore_Palace_Morning.jpg/960px-Mysore_Palace_Morning.jpg",
+      "year": 1912
+    },
+    {
+      "title": "Mehrangarh Fort",
+      "meta": "Rathore dynasty · 1459 onward · Jodhpur",
+      "desc": "A hundred-meter cliff-top fort in the Blue City of Jodhpur. Its walls still bear handprints of the widows of maharajas who threw themselves on the pyre in the medieval practice of sati.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Mehrangarh_Fort_sanhita.jpg/960px-Mehrangarh_Fort_sanhita.jpg",
+      "year": 1460
     }
   ]
 }
