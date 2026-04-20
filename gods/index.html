@@ -256,7 +256,8 @@ main p { line-height:1.7; }
 
 .focus-card {
   background:var(--panel2); border:1px solid var(--line); border-radius:8px;
-  padding:12px 16px; cursor:pointer; text-align:left; position:relative;
+  padding:10px 14px 10px 14px; cursor:pointer; text-align:left; position:relative;
+  display:flex; gap:10px; align-items:center;
   transition:border-color .2s, transform .2s, box-shadow .2s, background .2s;
 }
 .focus-card::before {
@@ -267,9 +268,47 @@ main p { line-height:1.7; }
   border-color:var(--gold-soft); transform:translateY(-2px);
   box-shadow:0 6px 16px rgba(0,0,0,0.4); background:linear-gradient(180deg, var(--panel2), var(--panel));
 }
-.focus-card .fname { font-size:14px; color:var(--ink); font-weight:bold; letter-spacing:0.3px; }
-.focus-card .fmeta { font-size:11px; color:var(--muted); margin-top:3px; font-style:italic; }
-.focus-card .fdom { font-size:11px; color:var(--gold); margin-top:4px; }
+.focus-card-text { flex:1; min-width:0; overflow:hidden; }
+.focus-card .fname { font-size:14px; color:var(--ink); font-weight:bold; letter-spacing:0.3px; overflow:hidden; text-overflow:ellipsis; }
+.focus-card .fmeta { font-size:11px; color:var(--muted); margin-top:2px; font-style:italic; }
+.focus-card .fdom { font-size:11px; color:var(--gold); margin-top:3px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+
+/* Tiny image variant for inside relative cards */
+.god-image.tiny, .god-glyph.tiny {
+  width:36px; height:36px; flex-shrink:0;
+  border-radius:5px;
+  box-shadow:0 2px 6px rgba(0,0,0,0.3);
+  cursor:inherit; /* inherit pointer from parent card, no zoom-in */
+}
+.god-glyph.tiny { font-size:18px; }
+.god-image.tiny .god-image-caption { display:none; }
+.god-image.tiny img { object-position:center 15%; }
+.focus-card .god-image.tiny:hover img { transform:none; } /* no zoom on tiny */
+
+/* Co-parent grouping for children */
+.coparent-group { margin-top:12px; }
+.coparent-group:first-child { margin-top:0; }
+.coparent-heading {
+  display:flex; align-items:center; gap:8px;
+  padding:8px 4px 4px;
+  color:var(--muted); font-size:12px; letter-spacing:1.5px; font-variant:small-caps;
+  font-style:normal;
+}
+.coparent-heading strong { color:var(--gold); font-weight:bold; letter-spacing:0.3px; font-variant:normal; }
+.coparent-heading::before, .coparent-heading::after {
+  content:''; flex:1; height:1px;
+  background:linear-gradient(90deg, transparent, var(--gold-faint));
+}
+.coparent-heading::after { background:linear-gradient(90deg, var(--gold-faint), transparent); }
+.coparent-heading.clickable { cursor:pointer; transition:color .15s; }
+.coparent-heading.clickable:hover strong { color:var(--ink); }
+.coparent-heading .thumb {
+  width:24px; height:24px; border-radius:50%; overflow:hidden;
+  flex-shrink:0; background:var(--panel); border:1px solid var(--gold-faint);
+  display:inline-flex; align-items:center; justify-content:center;
+}
+.coparent-heading .thumb img { width:100%; height:100%; object-fit:cover; object-position:center 15%; }
+.coparent-heading .thumb .glyph { font-size:13px; color:var(--gold); }
 .focus-card.missing {
   opacity:0.5; cursor:default; font-style:italic;
   background:var(--panel); border-style:dashed;
@@ -917,23 +956,25 @@ function godImageHtml(g, size = 'focus') {
   const altText = (g.domains && g.domains.length)
     ? `${g.name} — depiction from Wikipedia`
     : `${g.name} — depiction`;
+  const sizeClass = size === 'tiny' ? ' tiny' : '';
   if (cached && cached.url) {
-    return `<div class="god-image" data-gid="${g.id}">
-      <img src="${cached.url}" alt="${escapeAttr(altText)}" onerror="this.parentElement.outerHTML = godGlyphHtml(GODS_BY_ID['${g.id}'])">
+    return `<div class="god-image${sizeClass}" data-gid="${g.id}">
+      <img src="${cached.url}" alt="${escapeAttr(altText)}" onerror="this.parentElement.outerHTML = godGlyphHtml(GODS_BY_ID['${g.id}'], false, '${size}')">
       <div class="god-image-caption" aria-hidden="true">Wikipedia</div>
     </div>`;
   }
   if (cached && cached.url === null) {
-    return godGlyphHtml(g);
+    return godGlyphHtml(g, false, size);
   }
   scheduleImageFetch(g);
-  return godGlyphHtml(g, true);
+  return godGlyphHtml(g, true, size);
 }
 
-function godGlyphHtml(g, pending = false) {
+function godGlyphHtml(g, pending = false, size = 'focus') {
   const glyph = glyphForGod(g);
+  const sizeClass = size === 'tiny' ? ' tiny' : '';
   const dataAttr = pending ? `data-pending-gid="${g.id}"` : '';
-  return `<div class="god-glyph" ${dataAttr} title="${pending ? 'Looking up image…' : 'No image available'}">${glyph}</div>`;
+  return `<div class="god-glyph${sizeClass}" ${dataAttr} title="${pending ? 'Looking up image…' : 'No image available'}">${glyph}</div>`;
 }
 
 function scheduleImageFetch(g) {
@@ -946,8 +987,10 @@ function scheduleImageFetch(g) {
     // Replace any pending glyphs for this god currently in the DOM
     document.querySelectorAll(`[data-pending-gid="${g.id}"]`).forEach(el => {
       if (url) {
-        el.outerHTML = `<div class="god-image" data-gid="${g.id}">
-          <img src="${url}" alt="${g.name}" onerror="this.parentElement.outerHTML = godGlyphHtml(GODS_BY_ID['${g.id}'])">
+        const isTiny = el.classList.contains('tiny');
+        const sizeClass = isTiny ? ' tiny' : '';
+        el.outerHTML = `<div class="god-image${sizeClass}" data-gid="${g.id}">
+          <img src="${url}" alt="${g.name}" onerror="this.parentElement.outerHTML = godGlyphHtml(GODS_BY_ID['${g.id}'], false, '${isTiny ? 'tiny' : 'focus'}')">
           <div class="god-image-caption">Wikipedia</div>
         </div>`;
       } else {
@@ -1165,10 +1208,11 @@ function wireModal() {
     if (!e.target.closest('#imgLightbox')) closeImgLightbox();
   });
 
-  // Open lightbox on any god image click (use delegation so newly-rendered images work)
+  // Open lightbox on any god image click (use delegation so newly-rendered images work).
+  // Skip tiny images — they're inside cards that already navigate on click.
   document.addEventListener('click', e => {
     const godImg = e.target.closest('.god-image');
-    if (!godImg) return;
+    if (!godImg || godImg.classList.contains('tiny')) return;
     const img = godImg.querySelector('img');
     if (!img || !img.src) return;
     const gid = godImg.dataset.gid;
@@ -1513,11 +1557,7 @@ function renderFocusView(g) {
   const consortCards = (g.consorts || []).map(id => relCard(id, 'side')).join('') || emptyNote('No consorts recorded');
 
   const childrenIds = g.children || [];
-  const CHILD_LIMIT = 24;
-  const shownChildren = childrenIds.slice(0, CHILD_LIMIT);
-  const childCards = shownChildren.map(id => relCard(id, 'grid')).join('') || emptyNote('No children recorded');
-  const childHint = childrenIds.length > CHILD_LIMIT
-    ? `<div class="focus-more-hint">+ ${childrenIds.length - CHILD_LIMIT} more children not shown (see Details)</div>` : '';
+  const childrenHtml = renderChildrenGrouped(g, childrenIds);
 
   const parallelChips = (g.parallels || []).map(id => {
     const pg = GODS_BY_ID[id];
@@ -1561,8 +1601,7 @@ function renderFocusView(g) {
     </div>
 
     <div class="focus-section-label">Children${childrenIds.length ? ` (${childrenIds.length})` : ''}</div>
-    <div class="focus-children">${childCards}</div>
-    ${childHint}
+    ${childrenHtml}
 
     ${parallelChips ? `
       <div class="focus-section-label">Cross-Cultural Parallels</div>
@@ -1579,22 +1618,114 @@ function relCard(id, size) {
   const g = GODS_BY_ID[id];
   if (!g) {
     return `<div class="focus-card missing" title="Not yet catalogued" aria-label="${escapeAttr(formatStubName(id))} — not yet catalogued">
-      <div class="fname">${formatStubName(id)}</div>
-      <div class="fmeta">not yet catalogued</div>
+      <div class="god-glyph tiny" title="Not yet catalogued">?</div>
+      <div class="focus-card-text">
+        <div class="fname">${formatStubName(id)}</div>
+        <div class="fmeta">not yet catalogued</div>
+      </div>
     </div>`;
   }
   const p = PANTHEONS_BY_ID[g.pantheon];
   const doms = (g.domains || []).slice(0, 2).map(d => d.replace(/-/g,' ')).join(' · ');
   const meta = `${(g.category||'').replace(/-/g,' ')}${genderSymbol(g.gender)}`;
   return `<div class="focus-card" style="--pantheon-color:${p ? p.color : 'var(--gold)'}" onclick="setFocus('${id}')" role="button" tabindex="0" aria-label="Open ${escapeAttr(g.name)}">
-    <div class="fname">${g.name}</div>
-    <div class="fmeta">${meta}</div>
-    ${doms ? `<div class="fdom">${doms}</div>` : ''}
+    ${godImageHtml(g, 'tiny')}
+    <div class="focus-card-text">
+      <div class="fname">${g.name}</div>
+      <div class="fmeta">${meta}</div>
+      ${doms ? `<div class="fdom">${doms}</div>` : ''}
+    </div>
   </div>`;
 }
 
 function emptyNote(text) {
   return `<div class="focus-empty">${text}</div>`;
+}
+
+function renderChildrenGrouped(focus, childrenIds) {
+  if (!childrenIds.length) return emptyNote('No children recorded');
+
+  const CHILD_LIMIT_TOTAL = 48;
+  const UNKNOWN = '__unknown__';
+
+  // Partition by which OTHER parent the child shares (or unknown)
+  const groups = new Map();
+  childrenIds.forEach(cid => {
+    const child = GODS_BY_ID[cid];
+    let coparentId = UNKNOWN;
+    if (child && Array.isArray(child.parents) && child.parents.length) {
+      const others = child.parents.filter(pid => pid !== focus.id);
+      if (others.length) coparentId = others[0];
+    }
+    if (!groups.has(coparentId)) groups.set(coparentId, []);
+    groups.get(coparentId).push(cid);
+  });
+
+  // Decide whether to show groupings: only if there's more than one distinct co-parent
+  // (or one known co-parent AND an unknown pile)
+  const knownCoparents = [...groups.keys()].filter(k => k !== UNKNOWN);
+  const showGrouping = knownCoparents.length >= 2
+    || (knownCoparents.length === 1 && groups.has(UNKNOWN) && groups.get(UNKNOWN).length > 0);
+
+  if (!showGrouping) {
+    // Flat render, same as before
+    const shown = childrenIds.slice(0, CHILD_LIMIT_TOTAL);
+    const cards = shown.map(id => relCard(id, 'grid')).join('');
+    const hint = childrenIds.length > CHILD_LIMIT_TOTAL
+      ? `<div class="focus-more-hint">+ ${childrenIds.length - CHILD_LIMIT_TOTAL} more not shown</div>` : '';
+    return `<div class="focus-children">${cards}</div>${hint}`;
+  }
+
+  // Grouped render: order by count (descending), unknown last
+  const ordered = [...groups.entries()].sort((a, b) => {
+    if (a[0] === UNKNOWN) return 1;
+    if (b[0] === UNKNOWN) return -1;
+    return b[1].length - a[1].length;
+  });
+
+  let remaining = CHILD_LIMIT_TOTAL;
+  const groupHtml = ordered.map(([coparentId, kids]) => {
+    if (remaining <= 0) return '';
+    const shownKids = kids.slice(0, remaining);
+    remaining -= shownKids.length;
+
+    let heading;
+    if (coparentId === UNKNOWN) {
+      heading = `<div class="coparent-heading"><strong>other / unknown</strong></div>`;
+    } else {
+      const coparent = GODS_BY_ID[coparentId];
+      if (coparent) {
+        heading = `<div class="coparent-heading clickable" role="button" tabindex="0" onclick="setFocus('${coparentId}')" aria-label="Focus on ${escapeAttr(coparent.name)}">
+          <span class="thumb">${coparentThumbInner(coparent)}</span>
+          with <strong>${coparent.name}</strong>
+        </div>`;
+      } else {
+        heading = `<div class="coparent-heading"><span class="thumb"><span class="glyph">?</span></span>with <strong>${formatStubName(coparentId)}</strong></div>`;
+      }
+    }
+    return `
+      <div class="coparent-group">
+        ${heading}
+        <div class="focus-children">${shownKids.map(id => relCard(id, 'grid')).join('')}</div>
+      </div>
+    `;
+  }).join('');
+
+  const totalShown = CHILD_LIMIT_TOTAL - remaining;
+  const hint = childrenIds.length > totalShown
+    ? `<div class="focus-more-hint">+ ${childrenIds.length - totalShown} more not shown</div>` : '';
+  return groupHtml + hint;
+}
+
+// Inline thumbnail markup (tiny, circle) for the coparent heading.
+// Uses the cache synchronously; otherwise shows a glyph (no fetch kicked off
+// here — the actual child cards below will trigger fetches that also benefit this).
+function coparentThumbInner(g) {
+  const cached = WIKI_IMAGE_CACHE.get(g.id);
+  if (cached && cached.url) {
+    return `<img src="${cached.url}" alt="" aria-hidden="true">`;
+  }
+  return `<span class="glyph" aria-hidden="true">${glyphForGod(g)}</span>`;
 }
 
 function genderSymbol(gender) {
