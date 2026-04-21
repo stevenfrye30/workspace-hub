@@ -77,8 +77,13 @@ h3.era:first-of-type { margin-top: 4px; }
 .region-footer .arrow { color: var(--muted); margin: 0 6px; }
 
 /* All-works filter + sort */
-.filter-controls { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 24px; flex-wrap: wrap; }
+.filter-controls { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 12px; flex-wrap: wrap; }
+.filter-controls:last-of-type { margin-bottom: 24px; }
 .filter-chips { display: flex; flex-wrap: wrap; gap: 6px; flex: 1; min-width: 0; }
+.load-more-wrap { text-align: center; margin: 30px 0 0; }
+.load-more-btn { background: var(--card); border: 1px solid var(--border); color: var(--active); padding: 12px 28px; font-size: 14px; font-family: Georgia, serif; cursor: pointer; letter-spacing: 0.03em; transition: border-color 0.15s, color 0.15s; }
+.load-more-btn:hover { border-color: var(--active); }
+.load-more-btn[hidden] { display: none; }
 .era-chip { background: var(--card); border: 1px solid var(--border); color: var(--muted); padding: 6px 11px; font-size: 12px; cursor: pointer; font-family: Georgia, serif; transition: border-color 0.15s, color 0.15s; }
 .era-chip:hover { color: var(--fg); }
 .era-chip.active { border-color: var(--active); color: var(--active); }

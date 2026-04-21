@@ -15,6 +15,7 @@ import sys
 import time
 import urllib.parse
 import urllib.request
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -22,6 +23,7 @@ DATA = HERE / "data"
 CMA = "https://openaccess-api.clevelandart.org/api/artworks"
 AIC = "https://api.artic.edu/api/v1/artworks/search"
 VAM = "https://api.vam.ac.uk/v2/objects/search"
+MET = "https://collectionapi.metmuseum.org/public/collection/v1"
 UA = {"User-Agent": "images-gallery/1.0"}
 
 
@@ -223,6 +225,74 @@ def vam_search(q, limit):
     return out
 
 
+# ---------- Metropolitan Museum of Art ----------
+
+def met_normalize(obj):
+    if not obj.get("isPublicDomain"):
+        return None
+    image = obj.get("primaryImageSmall") or obj.get("primaryImage") or ""
+    if not image:
+        return None
+    title = (obj.get("title") or "").strip()
+    if not title:
+        return None
+    artist = (obj.get("artistDisplayName") or "").strip()
+    if artist.lower() in ("", "unknown", "anonymous"):
+        artist = ""
+    date_disp = (obj.get("objectDate") or "").strip()
+    culture = (obj.get("culture") or obj.get("period") or "").strip()
+    medium = (obj.get("medium") or "").strip().split(";")[0].strip()
+    dept = (obj.get("department") or "").strip()
+
+    meta_bits = [b for b in (culture, date_disp, medium) if b]
+    meta = " · ".join(meta_bits)
+    entry = {
+        "title": title,
+        "meta": meta,
+        "desc": "",
+        "image": image,
+        "_culture": (culture + " " + dept + " " + (obj.get("country") or "")).lower(),
+    }
+    year = obj.get("objectBeginDate")
+    if (not isinstance(year, int)) or year == 0:
+        year = obj.get("objectEndDate")
+    if isinstance(year, int) and year != 0:
+        entry["year"] = year
+    if artist:
+        entry["artist"] = artist
+    return entry
+
+
+def met_search(q, limit):
+    try:
+        params = {"q": q, "hasImages": "true"}
+        url = f"{MET}/search?{urllib.parse.urlencode(params)}"
+        resp = get(url, timeout=30)
+    except Exception as e:
+        print(f"  MET search ERR {q!r}: {e}", file=sys.stderr)
+        return []
+    ids = (resp.get("objectIDs") or [])[:limit]
+    if not ids:
+        return []
+
+    def fetch_one(oid):
+        try:
+            return get(f"{MET}/objects/{oid}", timeout=20)
+        except Exception:
+            return None
+
+    with ThreadPoolExecutor(max_workers=10) as ex:
+        objs = list(ex.map(fetch_one, ids))
+    out = []
+    for o in objs:
+        if not o:
+            continue
+        e = met_normalize(o)
+        if e:
+            out.append(e)
+    return out
+
+
 # ---------- Query plan ----------
 
 # (query, culture_needles, sources)
@@ -230,6 +300,8 @@ def vam_search(q, limit):
 # item's "_culture" field (culture, place_of_origin, style, etc.) or the item
 # is dropped. sources: subset of {"cma","aic","vam"}. Empty = all.
 ALL = ("cma", "aic", "vam")
+ALL_PLUS_MET = ("cma", "aic", "vam", "met")
+MET_ONLY = ("met",)
 CMA_ONLY = ("cma",)
 
 PLAN: dict[str, list[tuple[str, list[str], tuple[str, ...]]]] = {
@@ -1134,7 +1206,7 @@ def culture_match(c, needles):
     return any(n in c for n in needles)
 
 
-def run_region(region, queries, limit_per_query, sleep_between):
+def run_region(region, queries, limit_per_query, sleep_between, force_sources=None):
     path = DATA / f"{region}.json"
     data = json.loads(path.read_text(encoding="utf-8"))
     existing_titles = {w["title"].lower() for w in data["works"]}
@@ -1146,6 +1218,8 @@ def run_region(region, queries, limit_per_query, sleep_between):
     skipped_dupes = 0
 
     for q, needles, sources in queries:
+        if force_sources:
+            sources = force_sources
         hits: list[dict] = []
         if "cma" in sources:
             hits += cma_search(q, limit_per_query)
@@ -1153,6 +1227,8 @@ def run_region(region, queries, limit_per_query, sleep_between):
             hits += aic_search(q, limit_per_query)
         if "vam" in sources:
             hits += vam_search(q, limit_per_query)
+        if "met" in sources:
+            hits += met_search(q, limit_per_query)
 
         for h in hits:
             cult = h.pop("_culture", "")
@@ -1185,7 +1261,13 @@ def main():
     ap.add_argument("regions", nargs="*")
     ap.add_argument("--limit", type=int, default=20, help="per-query per-source limit")
     ap.add_argument("--sleep", type=float, default=0.0, help="sleep between queries")
+    ap.add_argument("--source", choices=["cma", "aic", "vam", "met", "all"], default=None,
+                    help="Override sources per query. 'met' runs Met only.")
     args = ap.parse_args()
+
+    force_sources = None
+    if args.source and args.source != "all":
+        force_sources = (args.source,)
 
     regions = args.regions or list(PLAN.keys())
     total = 0
@@ -1193,7 +1275,7 @@ def main():
         if region not in PLAN:
             print(f"  no plan for {region!r}", file=sys.stderr)
             continue
-        total += run_region(region, PLAN[region], args.limit, args.sleep)
+        total += run_region(region, PLAN[region], args.limit, args.sleep, force_sources)
     print(f"\nAdded {total} works total.")
 
 
