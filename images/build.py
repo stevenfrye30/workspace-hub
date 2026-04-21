@@ -1050,7 +1050,7 @@ TITLE_HINTS = [
 ]
 
 
-def infer_category(meta: str, title: str = "") -> str:
+def infer_category(meta: str, title: str = "", artist: str = "") -> str:
     m = meta.lower()
     for cat, needles in CATEGORY_RULES:
         if any(n in m for n in needles):
@@ -1059,6 +1059,23 @@ def infer_category(meta: str, title: str = "") -> str:
     for cat, needles in TITLE_HINTS:
         if any(n in t for n in needles):
             return cat
+    # Regional fallbacks for Mughal/Rajput/Pahari/Deccan — almost always painting/manuscript
+    if any(k in m for k in ("mughal", "rajput", "pahari", "kangra", "basohli",
+                              "deccani", "bundi", "jaipur miniature", "bikaner")):
+        return "painting"
+    # Kashmir shawls / textile hubs
+    if "kashmir" in m:
+        return "textile"
+    # Spanish colonial / Florentine paper art context without medium usually means painting
+    if ("florence" in m or "impressionism" in m or "post-impressionism" in m or
+        "expressionism" in m or "realism" in m or "romantic" in m or
+        "neoclassical" in m or "fauvism" in m or "cubism" in m or
+        "pre-raphaelite" in m or "symbolism" in m or "mannerism" in m):
+        return "painting"
+    # If the work carries a recognized artist and nothing else matched, assume painting
+    # (artist-attributed works without medium keywords are overwhelmingly paintings).
+    if artist and artist.strip():
+        return "painting"
     return "other"
 
 
@@ -1087,7 +1104,7 @@ def build_all_works(meta: dict) -> int:
         data = json.loads((DATA / f"{r['slug']}.json").read_text(encoding="utf-8"))
         for w in data["works"]:
             year = w.get("year", 0)
-            cat = infer_category(w.get("meta", ""), w.get("title", ""))
+            cat = infer_category(w.get("meta", ""), w.get("title", ""), w.get("artist", ""))
             search_tokens = [w.get("title", ""), w.get("meta", ""), w.get("desc", ""),
                               w.get("artist", ""), r["title"]]
             s = normalize_search(" ".join(t for t in search_tokens if t))

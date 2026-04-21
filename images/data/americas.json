@@ -985,7 +985,7 @@
       "year": 600
     },
     {
-      "title": "Ornament",
+      "title": "Maya Ornament",
       "meta": "Mexico or Central America, Maya · 250–550 CE · jadeite",
       "desc": "",
       "image": "https://openaccess-cdn.clevelandart.org/1972.3/1972.3_print.jpg",
@@ -1090,7 +1090,7 @@
       "year": -100
     },
     {
-      "title": "Female Figure",
+      "title": "Nasca Female Figure",
       "meta": "Peru, South Coast, Nasca · 100 BCE–700 CE · earthenware with colored slips",
       "desc": "",
       "image": "https://openaccess-cdn.clevelandart.org/1997.184/1997.184_print.jpg",
@@ -1132,7 +1132,7 @@
       "year": 100
     },
     {
-      "title": "Mask",
+      "title": "Nasca Mask",
       "meta": "Peru, South Coast, Nasca · 100 BCE–700 CE · hammered gold alloy",
       "desc": "",
       "image": "https://openaccess-cdn.clevelandart.org/1957.26/1957.26_print.jpg",
@@ -1272,7 +1272,7 @@
       "year": 1400
     },
     {
-      "title": "Fragment",
+      "title": "Inca Fragment",
       "meta": "Peru, Inca, 1400-1532 AD · 1400–1532 · pottery",
       "desc": "",
       "image": "https://openaccess-cdn.clevelandart.org/1921.1717/1921.1717_print.jpg",
@@ -1342,7 +1342,7 @@
       "year": 1200
     },
     {
-      "title": "Figurine",
+      "title": "Aztec Figurine",
       "meta": "Mexico, Aztec · 1325–1521 · pottery",
       "desc": "",
       "image": "https://openaccess-cdn.clevelandart.org/1921.1699/1921.1699_print.jpg",
@@ -1363,7 +1363,7 @@
       "year": -1200
     },
     {
-      "title": "Seated Figure",
+      "title": "Olmec Seated Figure",
       "meta": "Mesoamerica, Mexico, Olmec · c. 900–300 BCE · albitite",
       "desc": "",
       "image": "https://openaccess-cdn.clevelandart.org/1941.390/1941.390_print.jpg",
@@ -1398,7 +1398,7 @@
       "year": -1200
     },
     {
-      "title": "Standing Figure",
+      "title": "Olmec Standing Figure",
       "meta": "Mesoamerica, Mexico, Olmec · c. 900–400 BCE · serpentine",
       "desc": "",
       "image": "https://openaccess-cdn.clevelandart.org/1990.219/1990.219_print.jpg",
@@ -1433,7 +1433,7 @@
       "year": -900
     },
     {
-      "title": "Head",
+      "title": "Olmec Head",
       "meta": "Mesoamerica, Mexico, Olmec · 1200–300 BCE · stone",
       "desc": "",
       "image": "https://openaccess-cdn.clevelandart.org/1953.369/1953.369_print.jpg",
@@ -1489,7 +1489,7 @@
       "year": 600
     },
     {
-      "title": "Bowl",
+      "title": "Veracruz Bowl",
       "meta": "Mexico, South-central Veracruz · c. 500–1000 · molded, carved, and burnished pottery",
       "desc": "",
       "image": "https://openaccess-cdn.clevelandart.org/1990.251/1990.251_print.jpg",
@@ -1503,7 +1503,7 @@
       "year": 500
     },
     {
-      "title": "Spoon",
+      "title": "Tlingit Spoon",
       "meta": "Native North America, Northwest Coast, Alaska, Tlingit · late 1800s–early 1900s · horn, copper",
       "desc": "",
       "image": "https://openaccess-cdn.clevelandart.org/1924.175/1924.175_print.jpg",
@@ -1643,7 +1643,7 @@
       "year": 1000
     },
     {
-      "title": "Tunic",
+      "title": "Chimú Tunic",
       "meta": "Peru, Chimú or Chimú-Inka, 12th-16th century · 1100–1532 · white cotton; plain weave with supplementary weft brocading",
       "desc": "",
       "image": "https://openaccess-cdn.clevelandart.org/2011.111.1/2011.111.1_print.jpg",
@@ -2060,7 +2060,7 @@
       "year": 900
     },
     {
-      "title": "Hat",
+      "title": "Wari Hat",
       "meta": "Peru · huari · 600–900 · Wool (camelid)",
       "desc": "",
       "image": "https://www.artic.edu/iiif/2/bb23dce6-bea2-6ece-5fe2-2a4bbd20b539/full/843,/0/default.jpg",
@@ -2247,7 +2247,7 @@
       "image": "https://framemark.vam.ac.uk/collections/2019MC2882/full/735,/0/default.jpg"
     },
     {
-      "title": "Figure",
+      "title": "Mexican Figure",
       "meta": "Mexico · 15th century-early 16th century?",
       "desc": "",
       "image": "https://framemark.vam.ac.uk/collections/2010DR2516/full/735,/0/default.jpg"
@@ -2349,7 +2349,7 @@
       "artist": "Classic Veracruz"
     },
     {
-      "title": "Box",
+      "title": "Mexican Box",
       "meta": "Mexico · 1700-1750",
       "desc": "",
       "image": "https://framemark.vam.ac.uk/collections/2013GV1991/full/735,/0/default.jpg",
@@ -4073,7 +4073,7 @@
       "year": -1200
     },
     {
-      "title": "Cup",
+      "title": "Cupisnique Cup",
       "meta": "Peru, North Coast, Cupisnique style · c. 900–600 BCE · steatite",
       "desc": "",
       "image": "https://openaccess-cdn.clevelandart.org/1954.797/1954.797_print.jpg",
@@ -4180,7 +4180,7 @@
       "year": 1100
     },
     {
-      "title": "Textile",
+      "title": "Chancay Textile",
       "meta": "Peru, Central Coast, Chancay, 12th-15th century · c. 1100–1400 · double cloth",
       "desc": "",
       "image": "https://openaccess-cdn.clevelandart.org/1992.231.2/1992.231.2_print.jpg",
@@ -4714,7 +4714,7 @@
       "artist": "Ancestral Pueblo"
     },
     {
-      "title": "Basket",
+      "title": "Haida Basket",
       "meta": "Northwest Coast, Haida, Unassigned · Unassigned, before 1917 · twilled, imbricated",
       "desc": "",
       "image": "https://openaccess-cdn.clevelandart.org/1917.434.a/1917.434.a_print.jpg",
@@ -5289,7 +5289,7 @@
       "year": 400
     },
     {
-      "title": "Headdress",
+      "title": "Teotihuacan Headdress",
       "meta": "Mexico, Teotihuacan · 1–750 CE · pottery",
       "desc": "",
       "image": "https://openaccess-cdn.clevelandart.org/1921.1698/1921.1698_print.jpg",
@@ -6125,14 +6125,14 @@
       "artist": "Talavera poblana"
     },
     {
-      "title": "Tile",
+      "title": "Talavera Tile",
       "meta": "Talavera · 1860-1889",
       "desc": "",
       "image": "https://framemark.vam.ac.uk/collections/2016HY8984/full/735,/0/default.jpg",
       "year": 1860
     },
     {
-      "title": "Dish",
+      "title": "Talavera Dish",
       "meta": "Talavera · ca. 1700",
       "desc": "",
       "image": "https://framemark.vam.ac.uk/collections/2006AU7913/full/735,/0/default.jpg",
