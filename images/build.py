@@ -489,16 +489,119 @@ ARTISTS_DIR_TPL = """<!DOCTYPE html>
   <header class="page-header">
     <div>
       <h1>By Artist</h1>
-      <div class="subtitle">@@COUNT@@ named makers. Click a name to see all of their works. Anonymous and collective works live in the regional views.</div>
+      <div class="subtitle">@@COUNT@@ named makers. Anonymous and collective works live in the regional views.</div>
     </div>
   </header>
-  <div class="card-grid">
+  <div class="all-search">
+    <input type="text" id="a-search" placeholder="Search artist name&hellip;" autocomplete="off" autofocus>
+    <div class="result-count" id="a-count">@@COUNT@@ artists</div>
+  </div>
+  <div class="filter-controls">
+    <div class="filter-chips" id="a-region-chips">
+@@REGION_CHIPS@@
+    </div>
+  </div>
+  <div class="filter-controls">
+    <div class="filter-chips" id="a-century-chips">
+@@CENTURY_CHIPS@@
+    </div>
+    <div class="sort-toggle">
+      <button class="sort-btn active" data-sort="count">By work count</button>
+      <button class="sort-btn" data-sort="alpha">A–Z</button>
+    </div>
+  </div>
+  <div class="card-grid" id="a-grid">
 @@CARDS@@
   </div>
+  <div class="no-results" id="a-empty">No artists match that filter.</div>
+  <div class="load-more-wrap">
+    <button id="a-load-more" class="load-more-btn" hidden>Show more &darr;</button>
+  </div>
   <footer class="page-footer">
-    Images via <a href="https://commons.wikimedia.org/" target="_blank" rel="noopener">Wikimedia Commons</a>. Click any image to open it and see its source.
+    Images via <a href="https://commons.wikimedia.org/" target="_blank" rel="noopener">Wikimedia Commons</a>.
   </footer>
 </div>
+<script>
+(function() {
+  const PAGE_SIZE = 300;
+  const grid = document.getElementById('a-grid');
+  const allCards = Array.from(grid.querySelectorAll('.card'));
+  const search = document.getElementById('a-search');
+  const countLabel = document.getElementById('a-count');
+  const empty = document.getElementById('a-empty');
+  const loadMore = document.getElementById('a-load-more');
+
+  const total = allCards.length;
+  let filtered = allCards.slice();
+  let rendered = 0;
+  let state = { q: '', region: 'all', century: 'all', sort: 'count' };
+
+  function normalize(s) {
+    return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  }
+  function cmpAlpha(a, b) { return (a.dataset.sortkey || '').localeCompare(b.dataset.sortkey || ''); }
+  function cmpCount(a, b) { return (+b.dataset.count) - (+a.dataset.count) || cmpAlpha(a, b); }
+
+  function apply() {
+    const q = state.q;
+    filtered = allCards.filter(c => {
+      if (q && !c.dataset.search.includes(q)) return false;
+      if (state.region !== 'all' && c.dataset.region !== state.region) return false;
+      if (state.century !== 'all' && c.dataset.century !== state.century) return false;
+      return true;
+    });
+    filtered.sort(state.sort === 'alpha' ? cmpAlpha : cmpCount);
+    grid.innerHTML = '';
+    rendered = 0;
+    renderBatch();
+    const filtering = state.q || state.region !== 'all' || state.century !== 'all';
+    countLabel.textContent = filtering
+      ? (filtered.length.toLocaleString() + ' of ' + total.toLocaleString() + ' artists')
+      : (total.toLocaleString() + ' artists');
+    empty.style.display = filtered.length === 0 ? 'block' : 'none';
+  }
+
+  function renderBatch() {
+    const next = filtered.slice(rendered, rendered + PAGE_SIZE);
+    if (next.length === 0) { loadMore.hidden = true; return; }
+    const frag = document.createDocumentFragment();
+    next.forEach(c => frag.appendChild(c));
+    grid.appendChild(frag);
+    rendered += next.length;
+    loadMore.hidden = rendered >= filtered.length;
+  }
+
+  loadMore.addEventListener('click', renderBatch);
+  search.addEventListener('input', () => { state.q = normalize(search.value.trim()); apply(); });
+
+  document.querySelectorAll('#a-region-chips .era-chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      document.querySelectorAll('#a-region-chips .era-chip').forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      state.region = chip.dataset.region;
+      apply();
+    });
+  });
+  document.querySelectorAll('#a-century-chips .era-chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      document.querySelectorAll('#a-century-chips .era-chip').forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      state.century = chip.dataset.century;
+      apply();
+    });
+  });
+  document.querySelectorAll('.sort-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.sort-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      state.sort = btn.dataset.sort;
+      apply();
+    });
+  });
+
+  apply();
+})();
+</script>
 </body>
 </html>
 """
@@ -550,7 +653,8 @@ def collect_artists(meta: dict) -> dict[str, list[dict]]:
     return artists
 
 
-def build_artists(artists: dict[str, list[dict]]) -> tuple[int, int]:
+def build_artists(artists: dict[str, list[dict]], meta: dict | None = None) -> tuple[int, int]:
+    from collections import Counter
     artists_out = HERE / "artists"
     artists_out.mkdir(exist_ok=True)
     nav_top = make_nav("artists")
@@ -560,6 +664,8 @@ def build_artists(artists: dict[str, list[dict]]) -> tuple[int, int]:
             ARTISTS_DIR_TPL
             .replace("@@NAV@@", nav_top)
             .replace("@@COUNT@@", "0")
+            .replace("@@REGION_CHIPS@@", "")
+            .replace("@@CENTURY_CHIPS@@", "")
             .replace("@@CARDS@@", '    <p class="intro">No artist-tagged works yet.</p>')
         )
         (HERE / "artists.html").write_text(html_out, encoding="utf-8")
@@ -568,22 +674,110 @@ def build_artists(artists: dict[str, list[dict]]) -> tuple[int, int]:
     names = sorted(artists.keys(), key=artist_sort_key)
     total_works = 0
 
-    # Directory page: one card per artist, linking to artists/<slug>.html.
+    # Compute primary region + primary century per artist.
+    artist_region: dict[str, tuple[str, str]] = {}
+    artist_century: dict[str, str] = {}
+    region_counts: Counter = Counter()
+    century_counts: Counter = Counter()
+    regions_meta = (meta or {}).get("regions", [])
+    region_slugs = {r["slug"] for r in regions_meta}
+
+    # Use artist → region counter derived from works directly (already in artists dict).
+    # But we need region slug per work. Re-derive from scratch via meta:
+    if meta:
+        region_titles = {r["slug"]: r["title"] for r in regions_meta}
+        per_artist_region: dict[str, Counter] = {}
+        for r in regions_meta:
+            data = json.loads((DATA / f"{r['slug']}.json").read_text(encoding="utf-8"))
+            for w in data["works"]:
+                n = w.get("artist")
+                if n:
+                    per_artist_region.setdefault(n, Counter())[r["slug"]] += 1
+        for n in names:
+            ctr = per_artist_region.get(n, Counter())
+            if ctr:
+                top_slug = ctr.most_common(1)[0][0]
+                artist_region[n] = (top_slug, region_titles[top_slug])
+            else:
+                artist_region[n] = ("", "")
+
+    def century_bucket(year: int) -> tuple[str, str]:
+        if year == 0:
+            return ("unk", "Unknown")
+        if year < 1500:
+            return ("pre1500", "Before 1500")
+        if year < 1600:
+            return ("1500s", "1500s")
+        if year < 1700:
+            return ("1600s", "1600s")
+        if year < 1800:
+            return ("1700s", "1700s")
+        if year < 1900:
+            return ("1800s", "1800s")
+        if year < 2000:
+            return ("1900s", "1900s")
+        return ("2000s", "2000s")
+
+    CENTURY_ORDER = [("pre1500", "Before 1500"), ("1500s", "1500s"), ("1600s", "1600s"),
+                     ("1700s", "1700s"), ("1800s", "1800s"), ("1900s", "1900s"),
+                     ("2000s", "2000s"), ("unk", "Unknown")]
+
+    for n in names:
+        years = [w.get("year", 0) for w in artists[n] if isinstance(w.get("year"), int) and w.get("year") != 0]
+        median_year = sorted(years)[len(years) // 2] if years else 0
+        slug, label = century_bucket(median_year)
+        artist_century[n] = slug
+        century_counts[slug] += 1
+        region_slug, _ = artist_region.get(n, ("", ""))
+        if region_slug:
+            region_counts[region_slug] += 1
+
+    # Region chips (in regions.json order).
+    region_chips_html = [f'      <button class="era-chip active" data-region="all">All regions<span class="c">{len(names):,}</span></button>']
+    for r in regions_meta:
+        cnt = region_counts.get(r["slug"], 0)
+        if cnt == 0:
+            continue
+        region_chips_html.append(
+            f'      <button class="era-chip" data-region="{r["slug"]}">{h(r["title"])}<span class="c">{cnt:,}</span></button>'
+        )
+
+    # Century chips.
+    century_chips_html = [f'      <button class="era-chip active" data-century="all">All periods<span class="c">{len(names):,}</span></button>']
+    for sl, label in CENTURY_ORDER:
+        cnt = century_counts.get(sl, 0)
+        if cnt == 0:
+            continue
+        century_chips_html.append(
+            f'      <button class="era-chip" data-century="{sl}">{label}<span class="c">{cnt:,}</span></button>'
+        )
+
+    # Directory cards with data attributes for JS filtering.
     cards = []
     for name in names:
         slug = slugify(name)
         count = len(artists[name])
         noun = "work" if count == 1 else "works"
+        region_slug, _ = artist_region.get(name, ("", ""))
+        cent = artist_century.get(name, "unk")
+        search_key = normalize_search(name)
+        sort_key = artist_sort_key(name)[0]
         cards.append(
-            f'    <a class="card" href="artists/{slug}.html">\n'
+            f'    <a class="card" href="artists/{slug}.html"'
+            f' data-region="{region_slug}" data-century="{cent}"'
+            f' data-search="{h_attr(search_key)}" data-sortkey="{h_attr(sort_key)}"'
+            f' data-count="{count}">\n'
             f'      <div class="t">{h(name)}</div>\n'
             f'      <div class="d">{count} {noun}</div>\n'
             f'    </a>'
         )
+
     dir_html = (
         ARTISTS_DIR_TPL
         .replace("@@NAV@@", nav_top)
-        .replace("@@COUNT@@", str(len(names)))
+        .replace("@@COUNT@@", f"{len(names):,}")
+        .replace("@@REGION_CHIPS@@", "\n".join(region_chips_html))
+        .replace("@@CENTURY_CHIPS@@", "\n".join(century_chips_html))
         .replace("@@CARDS@@", "\n".join(cards))
     )
     (HERE / "artists.html").write_text(dir_html, encoding="utf-8")
@@ -1452,7 +1646,7 @@ def main() -> None:
         counts[slug] = build_region(slug, data, (prev, next_))
         print(f"  {slug}: {counts[slug]} works")
     artists = collect_artists(meta)
-    n_artists, n_artist_works = build_artists(artists)
+    n_artists, n_artist_works = build_artists(artists, meta)
     total_all = build_all_works(meta)
     build_timeline(meta)
     build_index(meta, counts, artists)
