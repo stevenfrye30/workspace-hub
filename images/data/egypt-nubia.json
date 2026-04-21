@@ -3911,6 +3911,525 @@
       "image": "https://www.artic.edu/iiif/2/2150b9ea-3689-13cf-8355-277eb4521a43/full/843,/0/default.jpg",
       "year": -1070,
       "artist": "Egyptian"
+    },
+    {
+      "title": "Talatat: Men Hoeing the Earth",
+      "meta": "Egypt, Karnak, New Kingdom (1540–1069 BCE), Dynasty 18, reign of Akhenaten (1351–1334 BCE) · c. 1353–1347 BCE · painted sandstone",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1959.187/1959.187_print.jpg",
+      "year": -1353
+    },
+    {
+      "title": "Ring: Gazelle Eating Thicket",
+      "meta": "Egypt, New Kingdom (1540–1069 BCE), Dynasty 18, reign of Amenhotep III (1390–1352 BCE)–reign of Akhenaten (1351–1334 BCE) · 1391–1353 BCE · polychrome faience (yellow and purple)",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1992.51/1992.51_print.jpg",
+      "year": -1391
+    },
+    {
+      "title": "Hathor Jar",
+      "meta": "Egypt, probably Malqata, New Kingdom (1540–1069 BCE), Dynasty 18, reign of Amenhotep III (1390–1352 BCE)–reign of Akhenaten (1351–1334 BCE) · 1391–1337 BCE · Nile silt ware",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1914.640/1914.640_print.jpg",
+      "year": -1391
+    },
+    {
+      "title": "Inscribed Doorjamb with Praise to the Aten",
+      "meta": "Egypt, New Kingdom (1540–1069 BCE), Dynasty 18, reign of Akhenaten (1351–1334 BCE) · 1353–1337 BCE · limestone, originally painted",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1921.1179/1921.1179_print.jpg",
+      "year": -1353
+    },
+    {
+      "title": "Ribbed Bowl (Tazza)",
+      "meta": "Egypt, New Kingdom (1540–1069 BCE), Dynasty 18, reign of Amenhotep III (1390–1352 BCE)–reign of Akhenaten (1351–1334 BCE) · 1391–1337 BCE · travertine",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1914.625/1914.625_print.jpg",
+      "year": -1391
+    },
+    {
+      "title": "Ring: Neferkheperure-Waenre (Akhenaten)",
+      "meta": "Egypt · amarna period · -1352–-1336 · Faience",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/8d577a27-ac5b-2f99-b9a4-84e5a9a5401d/full/843,/0/default.jpg",
+      "year": -1352,
+      "artist": "Egyptian"
+    },
+    {
+      "title": "Amulet: Cartouche with Prenomen of Akhenaten",
+      "meta": "Egypt · amarna period · -1352–-1336 · Faience",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/41c97cba-7ba4-f2b8-d71d-016949eb498d/full/843,/0/default.jpg",
+      "year": -1352,
+      "artist": "Egyptian"
+    },
+    {
+      "title": "Taweret Amulet",
+      "meta": "Egypt · egyptian · -1336 · Mosaic glass",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/66d8c857-a7eb-b887-3d45-45eca984ba11/full/843,/0/default.jpg",
+      "year": -1336,
+      "artist": "Egyptian"
+    },
+    {
+      "title": "Ring: Neferkheprure-Waenre (Akhenaton)",
+      "meta": "Egypt · eighteenth dynasty · -1352–-1336 · Faience",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/b3d319a2-a981-45b0-2fe5-4ee3ae476bfc/full/843,/0/default.jpg",
+      "year": -1352,
+      "artist": "Egyptian"
+    },
+    {
+      "title": "Finger Ring: Neferkheprure-Wanre (Akhenaton)",
+      "meta": "Egypt · eighteenth dynasty · -1352–-1336 · Carnelian",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/e43f830a-b47a-fd08-9417-e1f5ac748f22/full/843,/0/default.jpg",
+      "year": -1352,
+      "artist": "Egyptian"
+    },
+    {
+      "title": "Amulet: Double Cartouche of King Akhenaton",
+      "meta": "Egypt · amarna period · -1352–-1336 · Faience",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/cda8629b-d6fe-75a1-86a3-7d8fea0fee71/full/843,/0/default.jpg",
+      "year": -1352,
+      "artist": "Egyptian"
+    },
+    {
+      "title": "Ring: Akhenaton",
+      "meta": "Egypt · amarna period · -1352–-1336 · Faience",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/a7759e2f-7072-71fe-30b9-383c18c3cea4/full/843,/0/default.jpg",
+      "year": -1352,
+      "artist": "Egyptian"
+    },
+    {
+      "title": "Mummy Linen",
+      "meta": "Egypt, New Kingdom (1540–1069 BCE), Dynasty 18 · 1540–1296 BCE · linen: plain weave",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1921.1026/1921.1026_print.jpg",
+      "year": -1540
+    },
+    {
+      "title": "Cowroid: Ankhsenamun",
+      "meta": "Egypt · new kingdom · -1336–-1327 · Faience",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/11d0935b-c64a-a0ab-2e16-d9a9f08c72e2/full/843,/0/default.jpg",
+      "year": -1336,
+      "artist": "Egyptian"
+    },
+    {
+      "title": "Scarab: Ankhesenamun",
+      "meta": "Egypt · new kingdom · -1336–-1327 · Faience",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/9c4df845-a94f-316a-c40c-409595c04e23/full/843,/0/default.jpg",
+      "year": -1336,
+      "artist": "Egyptian"
+    },
+    {
+      "title": "Woven linen",
+      "meta": "Egypt · ca. 1325 BC",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2017KA1739/full/735,/0/default.jpg",
+      "year": -1325
+    },
+    {
+      "title": "Shawabty of Djehutymose",
+      "meta": "Egypt, New Kingdom (1540–1069 BCE), Dynasty 19, reign of Ramesses II (1279–1213 BCE) · 1279–1213 BCE · polychrome faience",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1914.589/1914.589_print.jpg",
+      "year": -1279
+    },
+    {
+      "title": "Scarab Ring",
+      "meta": "Egypt, New Kingdom (1540–1069 BCE), Dynasty 19, reign of Ramesses II (1279–1213 BCE) · 1279–1213 BCE · green glazed steatite",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1914.742/1914.742_print.jpg",
+      "year": -1279
+    },
+    {
+      "title": "Ring: Usermaatre-Setepenre (Ramesses II)",
+      "meta": "Egypt · nineteenth dynasty · -1279–-1213 · Faience",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/99448ed3-9d8d-4a22-61af-3f512897981d/full/843,/0/default.jpg",
+      "year": -1279,
+      "artist": "Egyptian"
+    },
+    {
+      "title": "Ring: Ramesses (II), Beloved of Amun",
+      "meta": "Egypt · nineteenth dynasty · -1279–-1213 · Faience",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/c1f4ca07-01cf-e4b1-5b05-048d34198da3/full/843,/0/default.jpg",
+      "year": -1279,
+      "artist": "Egyptian"
+    },
+    {
+      "title": "Rosette from the Temple of Ramesses III",
+      "meta": "Egypt · new kingdom · -1186–-1069 · Faience",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/fdf8a265-45f5-879b-938f-ada3a62d81af/full/843,/0/default.jpg",
+      "year": -1186,
+      "artist": "Egyptian"
+    },
+    {
+      "title": "Ring: Ramesses-mry-Amun?",
+      "meta": "Egypt · nineteenth dynasty · -1147–-1143 · Faience",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/f7047824-03ef-21d1-0c01-d82a16d91234/full/843,/0/default.jpg",
+      "year": -1147,
+      "artist": "Egyptian"
+    },
+    {
+      "title": "Ring: Menphetyre (Ramesses I)",
+      "meta": "Egypt · nineteenth dynasty · -1295–-1186 · Faience",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/e36d8527-100b-f3de-5804-4d637431e78b/full/843,/0/default.jpg",
+      "year": -1295,
+      "artist": "Egyptian"
+    },
+    {
+      "title": "Scarab: Usermaatra Setepenra (Ramesses II)",
+      "meta": "Egypt · new kingdom · -1279–-1213 · Faience",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/9d3825ad-764c-c616-41d3-ec0ac3d4fc73/full/843,/0/default.jpg",
+      "year": -1279,
+      "artist": "Egyptian"
+    },
+    {
+      "title": "Scarab: The God Ptah with Name of Usermaatra Setepenra (Ramesses II)",
+      "meta": "Egypt · new kingdom · -1279–-1213 · Glazed steatite",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/fac43f18-2dda-9807-c25a-ad7cf49e0397/full/843,/0/default.jpg",
+      "year": -1279,
+      "artist": "Egyptian"
+    },
+    {
+      "title": "Scarab: The God Ptah with a Standing King and the Name of Usermaatra Setepenra (Ramesses II)",
+      "meta": "Egypt · new kingdom · -1279–-1213 · Glazed steatite",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/a7794e0f-4f6d-e8e2-5bc9-1aeb2428aac2/full/843,/0/default.jpg",
+      "year": -1279,
+      "artist": "Egyptian"
+    },
+    {
+      "title": "Stela (Commemorative Stone) Depicting the Funeral of Ramose",
+      "meta": "Egypt · new kingdom · -1279–-1213 · Sandstone and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/f76363ce-9fa3-d4da-da8d-c45c16b822aa/full/843,/0/default.jpg",
+      "year": -1279,
+      "artist": "Egyptian; Probably Armant or Thebes"
+    },
+    {
+      "title": "Scarab Depicting Ptah",
+      "meta": "Egypt · new kingdom · -1279–-1213 · Glazed steatite",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/55da7829-792b-aa5a-0e6e-c0225806dcb1/full/843,/0/default.jpg",
+      "year": -1279,
+      "artist": "Egyptian"
+    },
+    {
+      "title": "Stereoscopic photograph of the Colossal Statue of Ramesses in Thebes",
+      "meta": "Egypt · late 1850s",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2020MN3895/full/735,/0/default.jpg",
+      "artist": "Francis Frith"
+    },
+    {
+      "title": "Excavation of the Great Temple of Ramesses II at Abu Simbel",
+      "meta": "Egypt · 1818-1819",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2008BV6262/full/735,/0/default.jpg",
+      "year": 1818,
+      "artist": "Linant de Bellefonds, Louis Maurice Adolphe (Bey and Pasha)"
+    },
+    {
+      "title": "Luxor: the West Bank, with the Temple of Ramesses III at Madinat Habu; looking east towards the Nile",
+      "meta": "Egypt · 1840-1850",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2008BU4842/full/735,/0/default.jpg",
+      "year": 1840,
+      "artist": "Schranz, Antonio or Anton (Jr)"
+    },
+    {
+      "title": "The Temple Courtyard of Ramses II.",
+      "meta": "Egypt · 24 December 1913",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2021MX0249/full/735,/0/default.jpg",
+      "year": 1913,
+      "artist": "Paneth, F.A."
+    },
+    {
+      "title": "Head of Queen Hatshepsut (?)",
+      "meta": "Egypt, New Kingdom (1540–1069 BCE), Dynasty 18, reign of Hatshepsut (c. 1479–1458 BCE) · c. 1479–1457 BCE · graywacke",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1917.976/1917.976_print.jpg",
+      "year": -1479
+    },
+    {
+      "title": "Relief of Hatshepsut or Tuthmosis III",
+      "meta": "Egypt, said to be from Thebes, Deir el-Bahari, Egypt, New Kingdom (1540–1069 BCE), Dynasty 18, reign of Hatshepsut (c. 1479–1458 BCE)–reign of Tuthmosis III (1479–1425 BCE) · 1479–1425 BCE · painted limestone",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1920.1995/1920.1995_print.jpg",
+      "year": -1479
+    },
+    {
+      "title": "Marsh Bowl Fragment",
+      "meta": "Egypt, New Kingdom (1540–1069 BCE), Dynasty 18, reign of Hatshepsut (c. 1479–1458  BCE) or reign of Tuthmosis III (1479–1425 BCE) · 1479–1429 BCE · blue faience with purple decoration",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1914.613/1914.613_print.jpg",
+      "year": -1479
+    },
+    {
+      "title": "Marsh Bowl",
+      "meta": "Egypt, New Kingdom (1540–1069 BCE), Dynasty 18, reign of Hatshepsut (c. 1479–1458  BCE) or reign of Tuthmosis III (1479–1425 BCE) · 1540–1350 BCE · blue faience with purple decoration",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1914.614/1914.614_print.jpg",
+      "year": -1540
+    },
+    {
+      "title": "Scarab: Maatkara (Hatshepsut)",
+      "meta": "Egypt · new kingdom · -1473–-1458 · Steatite",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/e14ee7e7-0ba6-1460-fc99-92d3da7d508a/full/843,/0/default.jpg",
+      "year": -1473,
+      "artist": "Egyptian"
+    },
+    {
+      "title": "Plaque: Sphinx with Cartouche/Maatkare Flanked by Feathers",
+      "meta": "Egypt · new kingdom · -1473–-1458 · Glazed steatite",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/5136002b-9923-71a5-ce26-4b9acdb0b022/full/843,/0/default.jpg",
+      "year": -1473,
+      "artist": "Egyptian"
+    },
+    {
+      "title": "The Temple of Hatshepsoo at Thebes",
+      "meta": "Egypt · 1905-1912",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2008BU4888/full/735,/0/default.jpg",
+      "year": 1905,
+      "artist": "Tyndale, Walter Frederick Roofe (RI)"
+    },
+    {
+      "title": "Stele of the High Priest of Ptah, Shedsunefertem",
+      "meta": "Egypt, Third Intermediate (1069–715 BCE), Dynasty 22, reign of Shosheng I (943–922 BCE) · 945–924 BCE · limestone, originally painted and gilded",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1914.669/1914.669_print.jpg",
+      "year": -945
+    },
+    {
+      "title": "Statuette of Sekhmet",
+      "meta": "Egypt, Late period (715–332 BCE), Dynasty 26 or later · 664–525 BCE · bronze, figure solid cast, obelisk hollow cast",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1940.669/1940.669_print.jpg",
+      "year": -664
+    },
+    {
+      "title": "Statuette of Wadjet or Sekhmet",
+      "meta": "Egypt · late period (egyptian) · -664–-525 · Copper alloy",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/cf41d5df-430e-b7d5-b08b-799eb5023b65/full/843,/0/default.jpg",
+      "year": -664,
+      "artist": "Egyptian"
+    },
+    {
+      "title": "Amulet of the Goddess Sekhmet",
+      "meta": "Egypt · egyptian · -1050–-664 · Faience",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/9772eb34-65db-121a-6016-c34cba8b2826/full/843,/0/default.jpg",
+      "year": -1050,
+      "artist": "Egyptian"
+    },
+    {
+      "title": "Ring: Aegis of Sekhmet/Bastet",
+      "meta": "Egypt · egyptian · -1550–-664 · Faience",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/6e75f634-777d-2898-d739-ddd72b41c496/full/843,/0/default.jpg",
+      "year": -1550,
+      "artist": "Egyptian"
+    },
+    {
+      "title": "Amulet of the Seated Goddess Sekhmet",
+      "meta": "Egypt · egyptian · -1050–-664 · Ceramic",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/99d428e4-4087-dab6-fda1-237ef26ac66f/full/843,/0/default.jpg",
+      "year": -1050,
+      "artist": "Egyptian"
+    },
+    {
+      "title": "Amulet of the Goddess Bastet",
+      "meta": "Egypt · third intermediate period · -1070–-656 · Faience",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/2c1caa43-96e9-c767-7b68-07eece35fde5/full/843,/0/default.jpg",
+      "year": -1070,
+      "artist": "Egyptian"
+    },
+    {
+      "title": "Pectoral Amulet of the Goddess Bastet",
+      "meta": "Egypt · late period (egyptian) · -664–-343 · Faience",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/916720bb-dbd1-28f7-8464-390b353146b7/full/843,/0/default.jpg",
+      "year": -664,
+      "artist": "Egyptian"
+    },
+    {
+      "title": "Amulet of a Seated Cat (the Goddess Bastet)",
+      "meta": "Egypt · egyptian · -1069–-332 · Faience",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/6a8ec777-3642-9411-aedd-c2a9150ab185/full/843,/0/default.jpg",
+      "year": -1069,
+      "artist": "Egyptian"
+    },
+    {
+      "title": "Amulet of the Goddess Bastet as a Seated Cat",
+      "meta": "Egypt · egyptian · -664–-30 · Faience",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/c351bf07-ae9e-1bf9-733c-c1ea80629924/full/843,/0/default.jpg",
+      "year": -664,
+      "artist": "Egyptian"
+    },
+    {
+      "title": "Amulet of a Lion-headed Walking Goddess, possibly Bastet",
+      "meta": "Egypt · egyptian · -1069–-664 · Faience",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/21983840-1cdd-7932-cf39-d4b3b2ee4ea2/full/843,/0/default.jpg",
+      "year": -1069,
+      "artist": "Egyptian"
+    },
+    {
+      "title": "Coffin of Nesykhonsu",
+      "meta": "Egypt, Thebes, Third Intermediate (1069–715 BCE), Dynasties 21–22 · c. 976–889 BCE · gessoed and painted sycamore fig",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1914.714/1914.714_print.jpg",
+      "year": -976
+    },
+    {
+      "title": "Amulet of Anubis",
+      "meta": "Egypt, Late period (715–332 BCE), Dynasties 27–31 · 525–332 BCE · turquoise faience",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1916.652/1916.652_print.jpg",
+      "year": -525
+    },
+    {
+      "title": "Fragments of Egyptian Mummy Wrappings fround in Senbi Coffin",
+      "meta": "Egypt, Middle Kingdom (2040–1648 BCE) · c. 1918–1859 BCE · linen; plain weave",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1914.716.f/1914.716.f_print.jpg",
+      "year": -1918
+    },
+    {
+      "title": "Amulet of the God Anubis",
+      "meta": "Egypt · third intermediate period · -1070–-656 · Faience",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/ff8e8a69-a6e4-566e-e67c-8a1f2ce9a16b/full/843,/0/default.jpg",
+      "year": -1070,
+      "artist": "Egyptian"
+    },
+    {
+      "title": "Anubis",
+      "meta": "Egypt · ca. 2081 BC-ca. 1756 BC",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2018LC8513/full/735,/0/default.jpg",
+      "year": -2081
+    },
+    {
+      "title": "Pectoral plate",
+      "meta": "Egypt · c. 1550 BC - c. 1077 BC",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2017KN0911/full/735,/0/default.jpg",
+      "year": -1550
+    },
+    {
+      "title": "Chair or Bed Leg with the God Bes",
+      "meta": "Egypt, New Kingdom (1540–1069 BCE), Dynasty 18 · 1540–1296 BCE · tamarisk",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1982.42/1982.42_print.jpg",
+      "year": -1540
+    },
+    {
+      "title": "Statuette of Bes",
+      "meta": "Egypt, Late period (715–332 BCE), Dynasty 27 or later · 525–30 BCE · bronze, solid cast",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1976.10/1976.10_print.jpg",
+      "year": -525
+    },
+    {
+      "title": "Bes Lamp",
+      "meta": "Egypt, Greco-Roman period (332 BCE–395 CE) · 100 BCE–100 CE · Nile silt clay",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1987.1017/1987.1017_print.jpg",
+      "year": -100
+    },
+    {
+      "title": "Bes Head Amulet",
+      "meta": "Egypt, Third Intermediate (1069–715 BCE) or later · 1069–715 BCE · turquoise blue faience",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1914.737/1914.737_print.jpg",
+      "year": -1069
+    },
+    {
+      "title": "Sherd",
+      "meta": "Egypt · 11th century-12th century",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2006AT6438/full/735,/0/default.jpg"
+    },
+    {
+      "title": "Temple Relief of a Deity",
+      "meta": "Egypt, Late period (715–332 BCE), Dynasty 30–Greco-Roman period (332 BCE–395 CE), Ptolemaic dynasty (305–30 BCE) · 360–246 BCE · limestone",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1972.45/1972.45_print.jpg",
+      "year": -360
+    },
+    {
+      "title": "Men Bearing Tomb Equipment",
+      "meta": "Egypt, Late period (715–332 BCE), Dynasties 25–26 · c. 667–647 BCE · limestone",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1951.284/1951.284_print.jpg",
+      "year": -667
+    },
+    {
+      "title": "Plaque Depicting a Ram",
+      "meta": "Egypt · ptolemaic · -332–-30 · Limestone",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/4b2a4e8f-3160-0e00-06a0-d0014a94254f/full/843,/0/default.jpg",
+      "year": -332,
+      "artist": "Egyptian"
+    },
+    {
+      "title": "Statuette of Hathor",
+      "meta": "Egypt, Late period (715–332 BCE), Dynasty 26 or later · 664–30 BCE OR 664–330 BCE · bronze, solid cast",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1942.773/1942.773_print.jpg",
+      "year": -664
+    },
+    {
+      "title": "Statuette of the God Osiris",
+      "meta": "Egypt · third intermediate period · -1069–-332 · Bronze",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/ff403772-e407-a595-ffbc-e18e59ed0f86/full/843,/0/default.jpg",
+      "year": -1069,
+      "artist": "Egyptian; Bubastis, Egypt"
+    },
+    {
+      "title": "Statuette",
+      "meta": "Egypt · c.100-200",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2022NG6805/full/735,/0/default.jpg",
+      "year": 100
+    },
+    {
+      "title": "Coffin of Nesykhonsu (lid)",
+      "meta": "Egypt, Third Intermediate (1069–715 BCE), Dynasties 21–22 · c. 976–889 BCE · gessoed and painted sycamore fig",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1914.714.b/1914.714.b_print.jpg",
+      "year": -976
+    },
+    {
+      "title": "Scarab",
+      "meta": "Egypt, Haraga, Wadi I, no number, Second Intermediate period (1648–1540 BCE) · 1648–1540 BCE · turquoise-glazed steatite",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1915.20/1915.20_print.jpg",
+      "year": -1648
     }
   ]
 }
