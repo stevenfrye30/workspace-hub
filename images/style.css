@@ -115,8 +115,12 @@ body.home .subtitle { font-size: 13px; }
 body.home .home-search { margin: 0 0 14px; }
 body.home .home-search input { padding: 10px 14px; font-size: 14px; }
 body.home h2.section { margin: 4px 0 8px; }
-body.home .region-tiles { margin: 0; flex: 0 0 auto; }
-body.home .page-footer { margin-top: auto; padding-top: 10px; font-size: 11px; }
+body.home .region-tiles { margin: 0; flex: 1 1 auto; min-height: 0; grid-template-rows: repeat(2, 1fr); gap: 12px; }
+body.home .region-tile { aspect-ratio: auto; }
+body.home .region-tile .tile-title { font-size: 22px; }
+body.home .region-tile .tile-blurb { font-size: 13px; -webkit-line-clamp: 3; }
+body.home .region-tile .tile-count { font-size: 12px; }
+body.home .page-footer { margin-top: 10px; padding-top: 10px; font-size: 11px; flex-shrink: 0; }
 
 /* All-works search */
 .all-search { margin-bottom: 16px; }
