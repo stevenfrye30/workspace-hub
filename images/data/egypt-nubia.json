@@ -3230,6 +3230,687 @@
       "image": "https://www.artic.edu/iiif/2/5687dbc2-5d89-8a8e-99cc-0d0896e609c6/full/843,/0/default.jpg",
       "year": -332,
       "artist": "Egyptian; possibly Athribis or Buto, Egypt"
+    },
+    {
+      "title": "Curtain Fragment with Galloping Horse",
+      "meta": "Egypt, Antinoë, Byzantine period · 500s CE · plain weave (tabby) with inwoven slit-tapestry weave; wool",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1948.27/1948.27_print.jpg",
+      "year": 500
+    },
+    {
+      "title": "Decorated Band from a Tunic or Curtain",
+      "meta": "Egypt, late Byzantine or early Islamic period, 7th Century · 600s · tapestry weave with supplementary weft wrapping; undyed linen and dyed wool",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1960.275/1960.275_print.jpg",
+      "year": 600
+    },
+    {
+      "title": "Ornamental Square from a Tunic",
+      "meta": "Egypt, Byzantine period · 400s CE · Linen, undyed; wool, dyed; tapestry weave with supplementary weft wrapping",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1916.1980/1916.1980_print.jpg",
+      "year": 400
+    },
+    {
+      "title": "Two Figures Framed by a Jeweled Border",
+      "meta": "Byzantine Empire (Egypt) · 450–550 CE · wool, linen, and dye",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1979.58/1979.58_print.jpg",
+      "year": 450
+    },
+    {
+      "title": "Ornamental Shoulder Bands from a Tunic",
+      "meta": "Egypt, Byzantine period · 500s · tapestry weave with supplementary weft wrapping; undyed linen and dyed wool",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1926.145/1926.145_print.jpg",
+      "year": 500
+    },
+    {
+      "title": "Silk Sleeve Decoration with Hunters",
+      "meta": "Egypt or Syria, Umayyad period (661–750) or Abbasid period (750–1258) · 700s · Silk: complementary weft-faced twill with inner warps (samit)",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1947.193/1947.193_print.jpg",
+      "year": 700
+    },
+    {
+      "title": "Fragment of a Band or Border",
+      "meta": "Egypt, Umayyad period (661–750) or Abbasid period (750–1258) · late 600s–800s · Wool and linen: tapestry weave",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1982.110/1982.110_print.jpg",
+      "year": 661
+    },
+    {
+      "title": "Lions from a Tunic",
+      "meta": "Egypt, Islamic Abbasid period, 8th - 9th Century · c. 800's · tapestry weave with supplementary weft wrapping; undyed linen and dyed wool",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1982.83.a/1982.83.a_print.jpg",
+      "year": 750
+    },
+    {
+      "title": "Roundel from a Blanket or Cover",
+      "meta": "Egypt, Byzantine period · 300s–400s CE · tapestry weave with supplementary weft wrapping; undyed linen and dyed wool",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1926.141/1926.141_print.jpg",
+      "year": 300
+    },
+    {
+      "title": "Tombstone",
+      "meta": "Egypt · 6th century to 8th century",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2019LX1682/full/735,/0/default.jpg"
+    },
+    {
+      "title": "Nereid and Triton",
+      "meta": "Egypt · 3rd-4th century",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2006AD1002/full/735,/0/default.jpg"
+    },
+    {
+      "title": "Wall Fragment from a Tomb Depicting Three Offering Bearers",
+      "meta": "Egypt · old kingdom · -2495–-2345 · Limestone",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/4c486011-07a5-81ac-e203-f9101d850e6f/full/843,/0/default.jpg",
+      "year": -2495,
+      "artist": "Egyptian"
+    },
+    {
+      "title": "Rosettes for Wig Decoration",
+      "meta": "Egypt, Middle Kingdom (2040–1648 BCE), Dynasty 12 · 1980–1801 BCE · silver",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1914.795.m/1914.795.m_print.jpg",
+      "year": -1980
+    },
+    {
+      "title": "Pyxis with Lid",
+      "meta": "Egypt, Middle Kingdom (2040–1648 BCE)–New Kingdom (1540–1069 BCE) · c. 1901–1525 BCE · turquoise faience with black decoration",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1914.609.a/1914.609.a_print.jpg",
+      "year": -1901
+    },
+    {
+      "title": "Shawabty",
+      "meta": "Egypt, Middle Kingdom (2040–1648 BCE), Dynasties 12–13 · c. 1859–1648 BCE · hematite",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1980.42/1980.42_print.jpg",
+      "year": -1859
+    },
+    {
+      "title": "Scarab: Inscription",
+      "meta": "Egypt · middle kingdom · -2055–-1650 · Steatite",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/45c920e2-6d27-0197-4982-f593d6dab05c/full/843,/0/default.jpg",
+      "year": -2055,
+      "artist": "Egyptian"
+    },
+    {
+      "title": "Ring with Ankh (Symbol for Life)",
+      "meta": "Egypt · middle kingdom · -1991–-1784 · Carnelian",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/bcfe119d-07e1-ca7a-a657-4656ae6be672/full/843,/0/default.jpg",
+      "year": -1991,
+      "artist": "Egyptian"
+    },
+    {
+      "title": "Pendant with the Cartouche of Kheperkare (Senwosret I)",
+      "meta": "Egypt · twelfth dynasty · -1956–-1911 · Shell",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/46a4505d-8014-60ec-6ad9-9740dae31bfa/full/843,/0/default.jpg",
+      "year": -1956,
+      "artist": "Egyptian"
+    },
+    {
+      "title": "Scarab of Senebtifi",
+      "meta": "Egypt · middle kingdom · -1870–-1773 · Glazed steatite",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/e2c22ad5-5506-4110-58c0-bf512d0b8a74/full/843,/0/default.jpg",
+      "year": -1870,
+      "artist": "Egyptian"
+    },
+    {
+      "title": "Weight in the Form of a Hippopotamus Head",
+      "meta": "Egypt, New Kingdom (1540–1069 BCE), Dynasty 18 · c. 1540–1296 BCE · hematite",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1992.114/1992.114_print.jpg",
+      "year": -1540
+    },
+    {
+      "title": "Trial Piece Worked on Both Sides",
+      "meta": "Egypt, probably Thebes, New Kingdom (1540–1069 BCE), Dynasty 18, reign of Amenhotep III (1390–1352 BCE) · c. 1391–1353 BCE · limestone",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1920.1975.a/1920.1975.a_print.jpg",
+      "year": -1391
+    },
+    {
+      "title": "Wild Bull Hunt Scarab of Amenhotep III",
+      "meta": "Egypt, New Kingdom (1540–1069 BCE), Dynasty 18, reign of Amenhotep III (1390–1352 BCE) · c. 1391–1353 BCE · steatite",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1984.36/1984.36_print.jpg",
+      "year": -1391
+    },
+    {
+      "title": "Statue of Minemheb",
+      "meta": "Egypt, New Kingdom (1540–1069 BCE), Dynasty 18, reign of Amenhotep III (1390–1352 BCE) · c. 1391–1353 BCE · granodiorite",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1996.28/1996.28_print.jpg",
+      "year": -1391
+    },
+    {
+      "title": "Amphora",
+      "meta": "Egypt · new kingdom · -1550–-1295 · Ceramic",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/87ada7ed-3188-7653-e728-fc96352b6a8a/full/843,/0/default.jpg",
+      "year": -1550,
+      "artist": "Egyptian"
+    },
+    {
+      "title": "Winged Pectoral Scarab",
+      "meta": "Egypt, Late period (715–332 BCE), Dynasty 26 · 664–525 BCE · deep turquoise faience",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1914.766/1914.766_print.jpg",
+      "year": -664
+    },
+    {
+      "title": "Amulet of Thoth",
+      "meta": "Egypt · third intermediate period · -332–-30 · Faience",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/eb421671-1fbc-d2bc-267f-6e77d76863d1/full/843,/0/default.jpg",
+      "year": -332,
+      "artist": "Egyptian"
+    },
+    {
+      "title": "Amulet of Pataikos",
+      "meta": "Egypt · third intermediate period · -1070–-656 · Faience",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/b56716ac-17f4-5323-4a52-e465eb2231be/full/843,/0/default.jpg",
+      "year": -1070,
+      "artist": "Egyptian"
+    },
+    {
+      "title": "Amulet of Mut and Khonsu",
+      "meta": "Egypt · third intermediate period · -1069–-664 · Faience",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/bf78023e-d653-0925-30b9-dde18a421986/full/843,/0/default.jpg",
+      "year": -1069,
+      "artist": "Egyptian"
+    },
+    {
+      "title": "Amulet of a Necklace Counter Weight",
+      "meta": "Egypt · third intermediate period · -1070–-656 · Faience",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/320ede24-3089-5550-1a24-dffbfac41dba/full/843,/0/default.jpg",
+      "year": -1070,
+      "artist": "Egyptian"
+    },
+    {
+      "title": "Amulet of a Cobra",
+      "meta": "Egypt · third intermediate period · -1070–-656 · Faience",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/84a2a8b0-b965-ee9f-2711-64df2d7aa1c7/full/843,/0/default.jpg",
+      "year": -1070,
+      "artist": "Egyptian"
+    },
+    {
+      "title": "Shabti of Tjenet-ipet",
+      "meta": "Egypt · twenty-first dynasty · -1069–-945 · Faience",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/216b1297-9d75-81be-6e56-0f04454fd9da/full/843,/0/default.jpg",
+      "year": -1069,
+      "artist": "Egyptian; Thebes, Deir el-Bahri"
+    },
+    {
+      "title": "Overseer Shabti of Isetemkheb",
+      "meta": "Egypt · third intermediate period · -1069–-945 · Faience",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/de9c1d59-7f6a-bbc0-e3ab-b5a8cf05299f/full/843,/0/default.jpg",
+      "year": -1069,
+      "artist": "Egyptian; Thebes, Deir el-Bahri"
+    },
+    {
+      "title": "Overseer Shabti of Tjenet-ipet",
+      "meta": "Egypt · twenty-first dynasty · -1069–-945 · Faience",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/3d712e5f-c34c-e675-4dd0-370e69bb0986/full/843,/0/default.jpg",
+      "year": -1069,
+      "artist": "Egyptian; Thebes, Deir el-Bahri"
+    },
+    {
+      "title": "Naophorous Statue of the Finance Officer and Overseer of Fields, Horwedja",
+      "meta": "Egypt, Late period (715–332 BCE), Dynasty 27, reign of Darius I (522–486 BCE) · 521–486 BCE · graywacke",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1920.1978/1920.1978_print.jpg",
+      "year": -521
+    },
+    {
+      "title": "Small Head of a Man",
+      "meta": "Egypt, Late period (715–332 BCE), Dynasties 25–26 · c. 667–647 BCE · limestone",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1951.285/1951.285_print.jpg",
+      "year": -667
+    },
+    {
+      "title": "Two Boats with Female Mourners",
+      "meta": "Egypt, Late period (715–332 BCE), Dynasties 25–26 · c. 667–647 BCE · limestone",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1951.282/1951.282_print.jpg",
+      "year": -667
+    },
+    {
+      "title": "Oinochoe (Pitcher)",
+      "meta": "Eastern Mediterranean Region · late period (egyptian) · -450–-325 · Glass",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/0f41e451-cc27-0852-64c8-dfa96f956520/full/843,/0/default.jpg",
+      "year": -450,
+      "artist": "Eastern Mediterranean or Italian"
+    },
+    {
+      "title": "Double-Sided Plaque Amulet",
+      "meta": "Egypt, Third Intermediate (1069–715 BCE) · 1069–715 BCE · green-glazed steatite",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1914.741/1914.741_print.jpg",
+      "year": -1069
+    },
+    {
+      "title": "Seal Amulet",
+      "meta": "Egypt, First Intermediate period (2123–2040 BCE) · 2123–2040 BCE · bone",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1914.686/1914.686_print.jpg",
+      "year": -2123
+    },
+    {
+      "title": "Necklace with amulet cases",
+      "meta": "Egypt · 1839-1869",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2012FT4154/full/735,/0/default.jpg",
+      "year": 1839
+    },
+    {
+      "title": "Statuette of Re-Horakhty",
+      "meta": "Egypt · third intermediate period · -1069–-664 · Copper alloy with gilding",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/f4e6d05f-6211-e858-8f94-a93e42f5f3a1/full/843,/0/default.jpg",
+      "year": -1069,
+      "artist": "Egyptian"
+    },
+    {
+      "title": "Record drawing of Egyptian mural decoration",
+      "meta": "Egypt · c. 1840s",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2014HC4334/full/735,/0/default.jpg",
+      "artist": "Bonomi, Joseph"
+    },
+    {
+      "title": "Pair of shoes",
+      "meta": "Egypt · ca. 1550BC - 1070BC",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2015HK1321/full/735,/0/default.jpg"
+    },
+    {
+      "title": "Shoe",
+      "meta": "Egypt · ca. 300-700",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2015HV4598/full/735,/0/default.jpg",
+      "year": 300
+    },
+    {
+      "title": "Statuette of Kneeling King",
+      "meta": "Egypt, Greco-Roman period (332 BCE–395 CE), Ptolemaic dynasty (305–30 BCE) · 304–30 BCE · bronze, solid cast",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1914.575/1914.575_print.jpg",
+      "year": -305
+    },
+    {
+      "title": "Shrew",
+      "meta": "Egypt, Greco-Roman period (332 BCE–395 CE), Ptolemaic dynasty (305–30 BCE) · 305–30 BCE · bronze, solid cast",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1964.358/1964.358_print.jpg",
+      "year": -305
+    },
+    {
+      "title": "Lepidotus Fish",
+      "meta": "Egypt, Greco-Roman period (332 BCE–395 CE), Ptolemaic dynasty (305–30 BCE) · 305–30 BCE · bronze, hollow cast",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1914.576/1914.576_print.jpg",
+      "year": -305
+    },
+    {
+      "title": "Box (Pyxis) in the Form of a Composite Capital (lid)",
+      "meta": "Egypt, Greco-Roman period (332 BCE–395 CE), Ptolemaic dynasty (305–30 BCE) · 305–30 BCE · pale robin's-egg blue faience",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1987.127.b/1987.127.b_print.jpg",
+      "year": -305
+    },
+    {
+      "title": "Boxer",
+      "meta": "Greece, Greco-Roman Period, late Ptolemaic Dynasty · 100–30 BCE · bronze. solid cast, with copper inlays",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1985.137/1985.137_print.jpg",
+      "year": -100
+    },
+    {
+      "title": "Votive Head of a King",
+      "meta": "Egypt, Greco-Roman period (332 BCE–395 CE), reign of Ptolemy II Philadelphus (285–246 BCE) · 305–246 BCE · limestone",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1920.1999/1920.1999_print.jpg",
+      "year": -305
+    },
+    {
+      "title": "Box (Pyxis) in the Form of a Composite Capital",
+      "meta": "Egypt, Greco-Roman period (332 BCE–395 CE), Ptolemaic dynasty (305–30 BCE) · 305–30 BCE · pale robin's-egg blue faience",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1987.127.a/1987.127.a_print.jpg",
+      "year": -305
+    },
+    {
+      "title": "Tetradrachm (Coin) Portraying Emperor Antiochos VIII Grypos",
+      "meta": "Syria · ptolemaic · -104–-96 · Silver",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/2b238bd0-defe-b883-9491-d1235029d398/full/843,/0/default.jpg",
+      "year": -104,
+      "artist": "Greek, minted in Syria"
+    },
+    {
+      "title": "Coin Portraying King Ptolemy of Cyprus",
+      "meta": "Cyprus · ptolemaic · -68–-67 · Silver",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/792ee0b8-d6e9-c171-7212-da00858e63ef/full/843,/0/default.jpg",
+      "year": -68,
+      "artist": "Greek, Ptolemaic"
+    },
+    {
+      "title": "Tetradrachm (Coin) Portraying Ptolemy I Soter",
+      "meta": "Egypt · ptolemaic · -305–-284 · Silver",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/ceca7e2d-6cd1-666d-3558-bf8221cd9ec0/full/843,/0/default.jpg",
+      "year": -305,
+      "artist": "Greek, Ptolemaic"
+    },
+    {
+      "title": "Double-sided Plaque Depicting a Lion and Birds",
+      "meta": "Egypt · ptolemaic · -332–-30 · Limestone and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/d2c198cd-de11-dde8-c9de-07e26b50261e/full/843,/0/default.jpg",
+      "year": -332,
+      "artist": "Egyptian"
+    },
+    {
+      "title": "Tetradrachm (Coin) Portraying Ptolemy I",
+      "meta": "Cyprus · ptolemaic · -176–-175 · Silver",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/ebe79898-9cf6-6017-1173-caf52ac7439d/full/843,/0/default.jpg",
+      "year": -176,
+      "artist": "Greek, Ptolemaic"
+    },
+    {
+      "title": "Tetradrachm (Coin) Portraying King Ptolemy I",
+      "meta": "Egypt · ptolemaic · -53–-52 · Silver",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/29fbe43c-b9a2-d7dd-09df-346c1b2d028c/full/843,/0/default.jpg",
+      "year": -53,
+      "artist": "Greek, Ptolemaic; minted in Egypt"
+    },
+    {
+      "title": "Relief Plaque Depicting the God Horus as a Falcon",
+      "meta": "Egypt · ptolemaic · -664–-30 · Limestone",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/16c043ac-a482-4545-434e-cd6d1fdd1dea/full/843,/0/default.jpg",
+      "year": -664,
+      "artist": "Egyptian"
+    },
+    {
+      "title": "Pendant of the dwarf god Bes",
+      "meta": "Egypt · 600BC-100BC",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2006AC7057/full/735,/0/default.jpg"
+    },
+    {
+      "title": "Mummified Man",
+      "meta": "Egypt · ptolemaic · -200–-30 · Linen",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/91e5f025-c6ca-7b99-bbf3-047e2cb7991f/full/843,/0/default.jpg",
+      "year": -200,
+      "artist": "Egyptian"
+    },
+    {
+      "title": "Amulet of a Falcon-Headed God",
+      "meta": "Egypt · late period (egyptian) · -780–-343 · Glass",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/ee2b37ee-5876-3531-ccc1-96b941c74843/full/843,/0/default.jpg",
+      "year": -780,
+      "artist": "Egyptian"
+    },
+    {
+      "title": "Coffin of Wenuhotep",
+      "meta": "Egypt · late period (egyptian) · -675–-600 · Wood",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/18cd0669-70d2-1715-3858-a432657cb577/full/843,/0/default.jpg",
+      "year": -675,
+      "artist": "Egyptian"
+    },
+    {
+      "title": "Kohl Container",
+      "meta": "Egypt, New Kingdom (1540–1069 BCE), Dynasty 18 · 1540–1296 BCE · wood",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1914.671/1914.671_print.jpg",
+      "year": -1540
+    },
+    {
+      "title": "Kohl Tube",
+      "meta": "Egypt, Greco-Roman period (332 BCE–395 CE), Ptolemaic dynasty (305–30 BCE)–Roman empire (30 BCE–395 CE) · 305 BCE–395 CE · brass with blue enamel decoration",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1974.89/1974.89_print.jpg",
+      "year": -305
+    },
+    {
+      "title": "Kohl Tube (lid)",
+      "meta": "Egypt, Greco-Roman period (332 BCE–395 CE), Ptolemaic dynasty (305–30 BCE)–Roman empire (30 BCE–395 CE) · 305 BCE–395 CE · brass with blue enamel decoration",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1974.89.b/1974.89.b_print.jpg",
+      "year": -305
+    },
+    {
+      "title": "Mirror with Falcons",
+      "meta": "Egypt, New Kingdom (1540–1069 BCE), Dynasty 18 · 1540–1296 BCE · mirror of copper, handle of tin-bronze",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1914.675/1914.675_print.jpg",
+      "year": -1540
+    },
+    {
+      "title": "Tray with Pond Scene",
+      "meta": "Egypt, New Kingdom (1540–1069 BCE), Dynasty 18 · 1540–1296 BCE · steatite",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1914.538/1914.538_print.jpg",
+      "year": -1540
+    },
+    {
+      "title": "Jewelry of Senbi",
+      "meta": "Egypt, Middle Kingdom (2040–1648 BCE) · 1980–1801 BCE · blue-to-turquoise faience",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1914.716.e/1914.716.e_print.jpg",
+      "year": -1980
+    },
+    {
+      "title": "Openwork Ring",
+      "meta": "Egypt · greco-roman (egyptian) · 1–100 · Gold",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/78e91f32-0be2-6822-bd5a-fb0b0a8a7073/full/843,/0/default.jpg",
+      "year": 1,
+      "artist": "Greco-Roman, said to be found in Egypt"
+    },
+    {
+      "title": "Mentuemhat in Ecclesiastical Dress",
+      "meta": "Egypt, Late period (715–332 BCE), Dynasties 25–26 · c. 667–647 BCE · limestone",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1951.280/1951.280_print.jpg",
+      "year": -667
+    },
+    {
+      "title": "Covered Box and Shawabtys of Ditamenpaankh",
+      "meta": "Egypt, Late period (715–332 BCE), Dynasty 25 · 715–656 BCE · terracotta",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1914.718/1914.718_print.jpg",
+      "year": -720
+    },
+    {
+      "title": "Chair leg",
+      "meta": "Egypt · 1550–1070 BC",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2021NB4265/full/735,/0/default.jpg",
+      "year": -1550
+    },
+    {
+      "title": "Fishtail Knife",
+      "meta": "Egypt, Predynastic (5000–2950 BCE), Naqada Ia–IIa (3900–3300 BCE) · 4500–4000 BCE · dark brown- to dark green-colored flint",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1914.673/1914.673_print.jpg",
+      "year": -4500
+    },
+    {
+      "title": "Wavy-Handled Jar",
+      "meta": "Egypt, Predynastic (5000–2950 BCE), Naqada IIa (3650–3300 BCE) or later · 4000–3000 BCE · marl clay ware",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1920.1984/1920.1984_print.jpg",
+      "year": -4000
+    },
+    {
+      "title": "Decorated Jar with Rope Pattern",
+      "meta": "Egypt, Predynastic (5000–2950 BCE), Naqada IId (3650–3300 BCE) · 4000–3000 BCE · marl clay",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1920.1986/1920.1986_print.jpg",
+      "year": -4000
+    },
+    {
+      "title": "Rhomboidal Palette",
+      "meta": "Egypt, Predynastic (5000–2950 BCE), Naqada I (3900–3500 BCE) · 4000–3500 BCE · graywacke",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1914.668/1914.668_print.jpg",
+      "year": -4000
+    },
+    {
+      "title": "Storage Jar",
+      "meta": "Egypt, Predynastic (5000–2950 BCE), Naqada III (3200–3000 BCE) jar, with modern painted decoration · 3100–2950 BCE · marl clay ware",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1920.1985/1920.1985_print.jpg",
+      "year": -3100
+    },
+    {
+      "title": "Ripple-Flaked Knife",
+      "meta": "Egypt, Haraga, cemetery G, tomb 413, excavated in 1914, Predynastic (5000–2950 BCE), Naqada IIc–IIId (3650–3000 BCE) · 4000–3000 BCE · flint",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1915.30/1915.30_print.jpg",
+      "year": -4000
+    },
+    {
+      "title": "Decorated Ware Jar",
+      "meta": "Egypt · predynastic · -3800–-3300 · Ceramic and pigment",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/3ce15c9c-eb75-6278-87e9-ea985db7f1c7/full/843,/0/default.jpg",
+      "year": -3800,
+      "artist": "Egyptian"
+    },
+    {
+      "title": "Canopic Jar with Lid (lid)",
+      "meta": "Egypt, New Kingdom (1540–1069 BCE), Dynasty 18 · 1540–1296 BCE · limestone",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1914.630.b/1914.630.b_print.jpg",
+      "year": -1540
+    },
+    {
+      "title": "Statuette of Sobek",
+      "meta": "Egypt · late period (egyptian) · -664–-332 · Copper alloy",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/4dfee0c6-8ae5-8e22-2ac4-9defc8cdc39d/full/843,/0/default.jpg",
+      "year": -664,
+      "artist": "Egyptian"
+    },
+    {
+      "title": "Statuette of Osiris-Iah",
+      "meta": "Egypt · late period (egyptian) · -664–-332 · Copper alloy",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/f9d0a9c2-50e2-0881-3a3b-271f877dd29d/full/843,/0/default.jpg",
+      "year": -664,
+      "artist": "Egyptian"
+    },
+    {
+      "title": "Statuette of a Jackal",
+      "meta": "Egypt · late period (egyptian) · -664–-525 · Copper alloy",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/85cbe520-4a3c-6ce8-6233-d6cd7163af74/full/843,/0/default.jpg",
+      "year": -664,
+      "artist": "Egyptian"
+    },
+    {
+      "title": "Eye of Horus Amulet",
+      "meta": "Egypt, Third Intermediate (1069–715 BCE), Dynasties 22–25 · 945–715 BCE · turquoise faience",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1914.757/1914.757_print.jpg",
+      "year": -945
+    },
+    {
+      "title": "Son of Horus: Imsety",
+      "meta": "Egypt, Third Intermediate (1069–715 BCE), Dynasties 21–22 · 1000–900 BCE · honey-colored wax with dark amber varnish",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1914.695/1914.695_print.jpg",
+      "year": -1000
+    },
+    {
+      "title": "Four Eyes of the God Horus (Wedjat) Amulet",
+      "meta": "Egypt · third intermediate period · -1070–-656 · Faience",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/6e1c1f90-ad98-cf5a-7291-3391c4589b02/full/843,/0/default.jpg",
+      "year": -1070,
+      "artist": "Egyptian"
+    },
+    {
+      "title": "Views On The Nile From Cairo To The Second Cataract",
+      "meta": "Egypt · 1843",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2026PP1641/full/735,/0/default.jpg",
+      "year": 1843,
+      "artist": "Jules Goury"
+    },
+    {
+      "title": "Long-Necked Flask with Strap Handle",
+      "meta": "Egypt, New Kingdom (1540–1069 BCE), Dynasty 18, reign of Amenhotep III (1390–1352 BCE) or later · 1391–1353 BCE · glass",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1914.539/1914.539_print.jpg",
+      "year": -1391
+    },
+    {
+      "title": "Group of Beads",
+      "meta": "Egypt, Greco-Roman period (332 BCE–395 CE), Roman empire (30 BCE–395 CE) · 200–300 CE · glass",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1915.21/1915.21_print.jpg",
+      "year": 100
+    },
+    {
+      "title": "Necklace with Lotus Pendants",
+      "meta": "Egypt, elements of various periods, but arrangement is modern · 20th Century · blue faience and glass",
+      "desc": "",
+      "image": "https://openaccess-cdn.clevelandart.org/1916.651/1916.651_print.jpg",
+      "year": 1900
+    },
+    {
+      "title": "Inlay",
+      "meta": "Egypt · 305BC - 30 BC",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2021MV9191/full/735,/0/default.jpg"
+    },
+    {
+      "title": "Else Paneth and guide with Egyptian monuments",
+      "meta": "Egypt · ca.1913",
+      "desc": "",
+      "image": "https://framemark.vam.ac.uk/collections/2026PN4508/full/735,/0/default.jpg",
+      "year": 1913,
+      "artist": "Paneth, F.A."
+    },
+    {
+      "title": "Amulet of the Feathers of Amon",
+      "meta": "Egypt · third intermediate period · -1070–-656 · Granite",
+      "desc": "",
+      "image": "https://www.artic.edu/iiif/2/2150b9ea-3689-13cf-8355-277eb4521a43/full/843,/0/default.jpg",
+      "year": -1070,
+      "artist": "Egyptian"
     }
   ]
 }
