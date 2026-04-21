@@ -1,0 +1,2064 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mirror</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg:#f6f1e6; --panel:#fffdf7; --panel2:#efe8d8;
+    --ink:#2a2620; --dim:#7a6f5e; --line:rgba(42,38,32,.12);
+    --accent:#8a6a3e; --accent2:#5b7a55; --warn:#a85a3a;
+    --shadow:0 1px 2px rgba(42,38,32,.05);
+  }
+  body.theme-dark {
+    --bg:#1c1e24; --panel:#24262e; --panel2:#2d3039;
+    --ink:#e8e4dc; --dim:#8a8478; --line:rgba(232,228,220,.1);
+    --accent:#c89b60; --accent2:#8fb080; --warn:#d87a5a;
+    --shadow:0 1px 2px rgba(0,0,0,.25);
+  }
+  html, body { background: var(--bg); color: var(--ink); }
+  body { font-family: Georgia, 'Iowan Old Style', serif; line-height: 1.55; min-height: 100vh; }
+
+  /* Top nav */
+  .topnav { background: var(--panel); border-bottom: 1px solid var(--line);
+            padding: 10px 18px; display: flex; align-items: center; gap: 14px;
+            flex-wrap: wrap; position: sticky; top: 0; z-index: 50; }
+  .topnav .brand { font-size: 1.15rem; font-weight: 600; color: var(--accent);
+                   letter-spacing: 0.08em; text-transform: lowercase; margin-right: 10px; }
+  .topnav .brand::before { content: "⌾ "; opacity: 0.7; }
+  .topnav .tabs { display: flex; gap: 4px; flex-wrap: wrap; }
+  .tab-btn { background: transparent; color: var(--dim); border: 1px solid transparent;
+             padding: 6px 14px; border-radius: 16px; font-family: inherit; font-size: 0.88rem;
+             cursor: pointer; transition: color .12s, border-color .12s, background .12s; }
+  .tab-btn:hover { color: var(--ink); }
+  .tab-btn.active { color: var(--accent); border-color: var(--line);
+                    background: var(--panel2); font-weight: 600; }
+  .spacer { flex: 1; }
+  .mini-btn { background: var(--panel2); color: var(--ink); border: 1px solid var(--line);
+              padding: 5px 12px; border-radius: 14px; font-family: inherit; font-size: 0.78rem;
+              cursor: pointer; }
+  .mini-btn:hover { border-color: var(--accent); }
+  .mini-btn.danger:hover { border-color: var(--warn); color: var(--warn); }
+
+  /* Views */
+  .view { display: none; max-width: 1080px; margin: 0 auto; padding: 32px 24px 120px; }
+  .view.active { display: block; }
+  .view h1 { font-size: 1.7rem; font-weight: 600; margin-bottom: 6px; letter-spacing: 0.005em; }
+  .view .lede { color: var(--dim); font-style: italic; font-size: 0.96rem;
+                margin-bottom: 30px; max-width: 580px; }
+  .section { margin-bottom: 40px; }
+  .section-head { display: flex; align-items: baseline; justify-content: space-between;
+                  margin-bottom: 12px; border-bottom: 1px solid var(--line); padding-bottom: 6px; }
+  .section-head h2 { font-size: 0.78rem; font-weight: 600; text-transform: uppercase;
+                     letter-spacing: 0.14em; color: var(--dim); }
+  .section-head .act { font-size: 0.76rem; color: var(--dim); }
+
+  /* Cards */
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 6px;
+          padding: 16px 18px; box-shadow: var(--shadow); margin-bottom: 10px; }
+  .card.mini { padding: 10px 14px; }
+  .card .meta { font-size: 0.74rem; color: var(--dim); margin-bottom: 4px;
+                text-transform: uppercase; letter-spacing: 0.08em; }
+  .card .body { font-size: 0.94rem; }
+  .card .row { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+  .card .tiny { font-size: 0.72rem; color: var(--dim); }
+
+  /* Forms */
+  .form { display: flex; gap: 8px; flex-wrap: wrap; align-items: center;
+          padding: 12px 14px; background: var(--panel2); border: 1px solid var(--line);
+          border-radius: 6px; margin-bottom: 16px; }
+  .form label { font-size: 0.76rem; color: var(--dim); display: flex; flex-direction: column; gap: 3px; }
+  input, select, textarea {
+    background: var(--panel); color: var(--ink); border: 1px solid var(--line);
+    font-family: inherit; font-size: 0.9rem; padding: 6px 10px; border-radius: 4px; outline: none;
+  }
+  input:focus, select:focus, textarea:focus { border-color: var(--accent); }
+  textarea { resize: vertical; min-height: 60px; width: 100%; }
+  input[type="number"] { width: 90px; }
+  input[type="date"] { width: 140px; }
+  input.grow { flex: 1; min-width: 160px; }
+  button.primary { background: var(--accent); color: #fff; border: 0; padding: 7px 16px;
+                   border-radius: 4px; font-family: inherit; font-size: 0.88rem; cursor: pointer; }
+  button.primary:hover { filter: brightness(1.05); }
+  button.ghost { background: transparent; color: var(--dim); border: 1px solid var(--line);
+                 padding: 5px 10px; border-radius: 4px; font-family: inherit; font-size: 0.78rem;
+                 cursor: pointer; }
+  button.ghost:hover { color: var(--ink); border-color: var(--accent); }
+  button.x { background: transparent; border: 0; color: var(--dim); cursor: pointer;
+             font-size: 0.85rem; padding: 2px 6px; }
+  button.x:hover { color: var(--warn); }
+
+  /* Lists */
+  ul.clean { list-style: none; }
+  .chip { display: inline-block; background: var(--panel2); color: var(--ink);
+          border: 1px solid var(--line); padding: 3px 9px; border-radius: 10px;
+          font-size: 0.78rem; margin: 2px 4px 2px 0; }
+  .chip.accent { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+  /* Body room specific */
+  .nutrient-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+                   gap: 8px; margin-top: 10px; }
+  .nut { background: var(--panel); border: 1px solid var(--line); padding: 8px 10px;
+         border-radius: 4px; }
+  .nut .k { font-size: 0.68rem; color: var(--dim); text-transform: uppercase; letter-spacing: 0.08em; }
+  .nut .v { font-size: 1.1rem; font-weight: 600; color: var(--accent); font-family: ui-monospace, monospace; }
+  .nut .u { font-size: 0.7rem; color: var(--dim); margin-left: 2px; font-family: ui-monospace, monospace; }
+  .range-tabs { display: flex; gap: 4px; margin-bottom: 10px; }
+  .range-tabs .mini-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+  /* Today hero tiles */
+  .today-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+                gap: 10px; margin-top: 8px; }
+  .today-tile { background: var(--panel); border: 1px solid var(--line); border-left: 3px solid var(--accent);
+                padding: 12px 14px; border-radius: 4px; }
+  .today-tile .k { font-size: 0.72rem; color: var(--dim); text-transform: uppercase; letter-spacing: 0.08em; }
+  .today-tile .v { font-size: 1.7rem; font-weight: 600; color: var(--accent); font-family: ui-monospace, monospace;
+                   line-height: 1.2; margin-top: 2px; }
+  .today-tile .u { font-size: 0.78rem; color: var(--dim); margin-left: 3px; font-family: ui-monospace, monospace; }
+  .today-tile .target { font-size: 0.74rem; color: var(--dim); margin-top: 2px; }
+
+  /* Recent foods chips & portion buttons */
+  .chip-row { display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0 10px; align-items: center; }
+  .chip-row .lbl { font-size: 0.7rem; color: var(--dim); text-transform: uppercase;
+                   letter-spacing: 0.08em; margin-right: 4px; }
+  .chip-row .chip { background: var(--panel); border: 1px solid var(--line); border-radius: 14px;
+                    padding: 4px 11px; font-size: 0.82rem; cursor: pointer; color: var(--ink);
+                    font-family: inherit; }
+  .chip-row .chip:hover { border-color: var(--accent); color: var(--accent); }
+  .chip-row .chip.portion { border-radius: 4px; }
+
+  /* Food search */
+  .search-results { max-height: 220px; overflow-y: auto; background: var(--panel);
+                    border: 1px solid var(--line); border-radius: 4px; margin-top: 4px; }
+  .search-results .r { padding: 6px 10px; cursor: pointer; border-bottom: 1px solid var(--line);
+                       font-size: 0.88rem; }
+  .search-results .r:hover { background: var(--panel2); color: var(--accent); }
+  .search-results .r .c { font-size: 0.72rem; color: var(--dim); }
+
+  /* Log table */
+  table.log { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+  table.log th, table.log td { text-align: left; padding: 6px 10px;
+                               border-bottom: 1px solid var(--line); }
+  table.log th { font-size: 0.74rem; color: var(--dim); font-weight: 600;
+                 text-transform: uppercase; letter-spacing: 0.08em; }
+  table.log td.num { font-family: ui-monospace, monospace; text-align: right; }
+  table.log tr:hover td { background: var(--panel2); }
+
+  /* Welcome empty state */
+  .empty { color: var(--dim); font-style: italic; padding: 30px 10px; text-align: center;
+           font-size: 0.9rem; }
+
+  /* Two column layouts */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  @media (max-width: 780px) { .two-col { grid-template-columns: 1fr; } }
+
+  /* Person card */
+  .person { background: var(--panel); border: 1px solid var(--line); border-radius: 6px;
+            padding: 12px 14px; margin-bottom: 10px; }
+  .person .head { display: flex; justify-content: space-between; align-items: baseline;
+                  margin-bottom: 6px; }
+  .person .nm { font-size: 1.05rem; font-weight: 600; }
+  .person .rel { font-size: 0.78rem; color: var(--dim); }
+  .person .line { font-size: 0.82rem; color: var(--dim); margin: 2px 0; }
+  .person .overdue { color: var(--warn); font-weight: 600; }
+  .tier-badge { font-size: 0.7rem; padding: 2px 7px; border-radius: 8px; background: var(--panel2);
+                color: var(--dim); border: 1px solid var(--line); }
+  .tier-badge.t1 { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .tier-badge.t2 { background: var(--accent2); color: #fff; border-color: var(--accent2); }
+
+  /* Money progress */
+  .bar { height: 8px; background: var(--panel2); border-radius: 4px; overflow: hidden;
+         margin-top: 4px; position: relative; }
+  .bar .fill { height: 100%; background: var(--accent); transition: width .2s; }
+  .bar .fill.over { background: var(--warn); }
+
+  /* Mood dots */
+  .dot-row { display: flex; gap: 3px; }
+  .dot-row button { width: 26px; height: 26px; border-radius: 50%; border: 1px solid var(--line);
+                    background: var(--panel); cursor: pointer; font-size: 0.78rem;
+                    font-family: inherit; color: var(--dim); }
+  .dot-row button.on { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+  /* Quote/prompt */
+  .prompt { background: var(--panel); border-left: 3px solid var(--accent); padding: 12px 16px;
+            font-style: italic; color: var(--ink); margin-bottom: 10px; border-radius: 0 4px 4px 0; }
+
+  /* Reflect / insights */
+  .insight-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 10px; }
+  .insight { background: var(--panel); border: 1px solid var(--line); border-left: 3px solid var(--accent);
+             border-radius: 4px; padding: 12px 14px; box-shadow: var(--shadow); }
+  .insight.warn { border-left-color: var(--warn); }
+  .insight.good { border-left-color: var(--accent2); }
+  .insight.muted { border-left-color: var(--dim); opacity: 0.85; }
+  .insight .k { font-size: 0.72rem; color: var(--dim); text-transform: uppercase;
+                letter-spacing: 0.08em; margin-bottom: 4px; }
+  .insight .v { font-size: 1.45rem; font-weight: 600; color: var(--ink); line-height: 1.1; }
+  .insight .v.accent { color: var(--accent); }
+  .insight .v.warn { color: var(--warn); }
+  .insight .u { font-size: 0.78rem; color: var(--dim); font-weight: 400; margin-left: 3px; }
+  .insight .p { font-size: 0.82rem; color: var(--dim); margin-top: 5px; line-height: 1.4; }
+  .insight .p strong { color: var(--ink); }
+  .compare { display: flex; gap: 10px; align-items: baseline; }
+  .compare .now { font-size: 1.4rem; font-weight: 600; color: var(--accent); }
+  .compare .prev { font-size: 0.85rem; color: var(--dim); }
+  .delta.up { color: var(--accent2); }
+  .delta.down { color: var(--warn); }
+  .delta.flat { color: var(--dim); }
+  .reflect-empty { color: var(--dim); font-style: italic; padding: 20px;
+                   background: var(--panel); border: 1px dashed var(--line); border-radius: 4px;
+                   text-align: center; }
+
+  footer.foot { text-align: center; color: var(--dim); font-size: 0.78rem; padding: 20px;
+                border-top: 1px solid var(--line); margin-top: 40px; }
+  footer.foot a { color: var(--accent); }
+</style>
+</head>
+<body>
+
+<nav class="topnav">
+  <span class="brand">mirror</span>
+  <div class="tabs">
+    <button class="tab-btn active" data-tab="identity">Identity</button>
+    <button class="tab-btn" data-tab="body">Body</button>
+    <button class="tab-btn" data-tab="mind">Mind</button>
+    <button class="tab-btn" data-tab="money">Money</button>
+    <button class="tab-btn" data-tab="relationships">Relationships</button>
+    <button class="tab-btn" data-tab="reflect">Reflect</button>
+  </div>
+  <span class="spacer"></span>
+  <button class="mini-btn" id="themeBtn" title="Toggle theme">☾</button>
+  <button class="mini-btn" id="exportBtn" title="Export data as JSON">Export</button>
+  <button class="mini-btn" id="importBtn" title="Import data from JSON">Import</button>
+  <input type="file" id="importFile" accept="application/json" style="display:none">
+  <button class="mini-btn danger" id="resetBtn" title="Erase all data">Reset</button>
+</nav>
+
+<!-- ============== IDENTITY ============== -->
+<section class="view active" id="view-identity">
+  <h1>Identity</h1>
+  <div class="lede">Who you are when no one is watching, what you're trying to become, and how you're actually feeling today.</div>
+
+  <div class="section">
+    <div class="section-head"><h2>Values</h2><span class="act tiny">The handful you want to be measured by.</span></div>
+    <div class="form">
+      <input type="text" id="valueInput" placeholder="A value (e.g. honesty, curiosity, care)" class="grow">
+      <button class="primary" id="valueAdd">Add</button>
+    </div>
+    <div id="valueList"></div>
+  </div>
+
+  <div class="section">
+    <div class="section-head"><h2>Current season</h2></div>
+    <div class="card">
+      <div class="meta">What is this chapter of life about?</div>
+      <textarea id="seasonText" placeholder="e.g. Moving to Milwaukee. Learning to slow down. Building Mirror."></textarea>
+      <div style="margin-top:8px"><button class="ghost" id="seasonSave">Save</button>
+        <span class="tiny" id="seasonSaved"></span></div>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div class="section">
+      <div class="section-head"><h2>Today's pulse</h2><span class="act tiny" id="pulseToday"></span></div>
+      <div class="card">
+        <div class="meta">Mood</div>
+        <div class="dot-row" id="moodRow"></div>
+        <div class="meta" style="margin-top:10px">Energy</div>
+        <div class="dot-row" id="energyRow"></div>
+        <div style="margin-top:10px"><input type="text" id="pulseNote" placeholder="One line about today (optional)" class="grow"></div>
+        <div style="margin-top:10px"><button class="primary" id="pulseSave">Log today</button></div>
+      </div>
+      <div id="pulseHistory"></div>
+    </div>
+
+    <div class="section">
+      <div class="section-head"><h2>Reflections</h2></div>
+      <div class="form">
+        <select id="refPeriod">
+          <option value="week">Weekly</option>
+          <option value="month">Monthly</option>
+          <option value="year">Yearly</option>
+        </select>
+        <input type="date" id="refDate">
+      </div>
+      <div class="prompt" id="refPrompt">Pick a period to see a prompt.</div>
+      <textarea id="refAnswer" placeholder="Write freely."></textarea>
+      <div style="margin-top:8px"><button class="primary" id="refSave">Save reflection</button></div>
+      <div id="refList" style="margin-top:16px"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== BODY ============== -->
+<section class="view" id="view-body">
+  <h1>Body</h1>
+  <div class="lede">What you take in and how your body is doing. Food draws from your NutriLens library.</div>
+
+  <div class="section">
+    <div class="section-head"><h2>Today</h2><span class="act tiny" id="todayDateLabel"></span></div>
+    <div class="today-grid" id="todaySummary"></div>
+  </div>
+
+  <div class="section">
+    <div class="section-head">
+      <h2>Nutrient overview</h2>
+      <div class="range-tabs">
+        <button class="mini-btn active" data-range="day">Day</button>
+        <button class="mini-btn" data-range="week">Week</button>
+        <button class="mini-btn" data-range="month">Month</button>
+        <button class="mini-btn" data-range="year">Year</button>
+      </div>
+    </div>
+    <div id="nutrientSummary" class="nutrient-grid"></div>
+    <div class="tiny" id="nutrientNote" style="margin-top:8px;color:var(--dim)"></div>
+  </div>
+
+  <div class="section">
+    <div class="section-head"><h2>Log food</h2><span class="act tiny" id="foodLoadStatus">loading library…</span></div>
+    <div id="recentFoods" class="chip-row" style="display:none"></div>
+    <div class="form">
+      <label>Date<input type="date" id="foodDate"></label>
+      <label style="flex:1;min-width:220px">Food
+        <input type="text" id="foodSearch" placeholder="Search food (e.g. egg, oats)" class="grow" autocomplete="off">
+      </label>
+      <label>Grams<input type="number" id="foodGrams" min="1" step="1" placeholder="100"></label>
+      <button class="primary" id="foodAdd" disabled>Add</button>
+    </div>
+    <div id="foodResults" class="search-results" style="display:none"></div>
+    <div id="foodSelected" class="tiny" style="color:var(--dim);margin:4px 0 8px"></div>
+    <div id="foodPortions" class="chip-row" style="display:none"></div>
+    <table class="log" id="foodLog"><thead><tr><th>Date</th><th>Food</th><th class="num">Grams</th><th class="num">kcal</th><th></th></tr></thead><tbody></tbody></table>
+  </div>
+
+  <div class="two-col">
+    <div class="section">
+      <div class="section-head"><h2>Water</h2></div>
+      <div class="form">
+        <label>Date<input type="date" id="waterDate"></label>
+        <label>Ounces<input type="number" id="waterOz" min="1" step="1"></label>
+        <button class="primary" id="waterAdd">Add</button>
+      </div>
+      <div id="waterLog"></div>
+    </div>
+
+    <div class="section">
+      <div class="section-head"><h2>Sleep</h2></div>
+      <div class="form">
+        <label>Date<input type="date" id="sleepDate"></label>
+        <label>Hours<input type="number" id="sleepHours" min="0" max="24" step="0.25"></label>
+        <label>Quality (1–5)<input type="number" id="sleepQuality" min="1" max="5" step="1"></label>
+        <button class="primary" id="sleepAdd">Add</button>
+      </div>
+      <div id="sleepLog"></div>
+    </div>
+
+    <div class="section">
+      <div class="section-head"><h2>Exercise</h2></div>
+      <div class="form">
+        <label>Date<input type="date" id="exDate"></label>
+        <label>Type<input type="text" id="exType" placeholder="run, lift, walk"></label>
+        <label>Minutes<input type="number" id="exMinutes" min="1" step="1"></label>
+        <button class="primary" id="exAdd">Add</button>
+      </div>
+      <div id="exLog"></div>
+    </div>
+
+    <div class="section">
+      <div class="section-head"><h2>Symptoms / notes</h2></div>
+      <div class="form">
+        <label>Date<input type="date" id="symDate"></label>
+        <input type="text" id="symNote" class="grow" placeholder="headache, stomach, low mood, etc.">
+        <button class="primary" id="symAdd">Add</button>
+      </div>
+      <div id="symLog"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== MIND ============== -->
+<section class="view" id="view-mind">
+  <h1>Mind</h1>
+  <div class="lede">What you're reading, thinking about, and still wondering. The shape of your attention.</div>
+
+  <div class="section">
+    <div class="section-head">
+      <h2>Books</h2>
+      <div class="range-tabs">
+        <button class="mini-btn active" data-bookfilter="all">All</button>
+        <button class="mini-btn" data-bookfilter="reading">Reading</button>
+        <button class="mini-btn" data-bookfilter="finished">Finished</button>
+        <button class="mini-btn" data-bookfilter="want">Want</button>
+        <button class="mini-btn" data-bookfilter="abandoned">Abandoned</button>
+      </div>
+    </div>
+    <div class="form">
+      <input type="text" id="bkTitle" placeholder="Title" class="grow">
+      <input type="text" id="bkAuthor" placeholder="Author">
+      <select id="bkStatus">
+        <option value="want">Want to read</option>
+        <option value="reading" selected>Reading</option>
+        <option value="finished">Finished</option>
+        <option value="abandoned">Abandoned</option>
+      </select>
+      <button class="primary" id="bkAdd">Add book</button>
+    </div>
+    <div id="bookList"></div>
+  </div>
+
+  <div class="two-col">
+    <div class="section">
+      <div class="section-head"><h2>Ideas</h2><span class="act tiny">Thoughts worth keeping.</span></div>
+      <div class="form">
+        <label>Date<input type="date" id="idDate"></label>
+        <input type="text" id="idText" class="grow" placeholder="The idea, in one line">
+        <input type="text" id="idSource" placeholder="source (book, person, self)">
+        <button class="primary" id="idAdd">Add</button>
+      </div>
+      <div id="ideaList"></div>
+    </div>
+
+    <div class="section">
+      <div class="section-head"><h2>Open questions</h2><span class="act tiny">Things you're holding.</span></div>
+      <div class="form">
+        <input type="text" id="qText" class="grow" placeholder="What are you wondering?">
+        <button class="primary" id="qAdd">Add</button>
+      </div>
+      <div id="questionList"></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-head"><h2>Quotes</h2><span class="act tiny">Verbatim keeps.</span></div>
+    <div class="form">
+      <textarea id="quText" placeholder="The quote" style="flex:1;min-width:260px"></textarea>
+      <div style="display:flex;flex-direction:column;gap:6px">
+        <input type="text" id="quSource" placeholder="source">
+        <input type="text" id="quWhy" placeholder="why it stuck (optional)">
+        <button class="primary" id="quAdd">Add quote</button>
+      </div>
+    </div>
+    <div id="quoteList"></div>
+  </div>
+</section>
+
+<!-- ============== MONEY ============== -->
+<section class="view" id="view-money">
+  <h1>Money</h1>
+  <div class="lede">What's coming in, going out, and where you're headed.</div>
+
+  <div class="section">
+    <div class="section-head">
+      <h2>Budget — this month</h2>
+      <div class="range-tabs">
+        <button class="mini-btn" id="monthPrev">◂</button>
+        <span class="mini-btn" id="monthLabel" style="cursor:default"></span>
+        <button class="mini-btn" id="monthNext">▸</button>
+      </div>
+    </div>
+    <div class="form">
+      <input type="text" id="catName" placeholder="Category (rent, food, etc.)" class="grow">
+      <input type="number" id="catPlanned" placeholder="Planned $" min="0" step="1">
+      <button class="primary" id="catAdd">Add category</button>
+    </div>
+    <div id="budgetList"></div>
+  </div>
+
+  <div class="section">
+    <div class="section-head"><h2>Expenses</h2></div>
+    <div class="form">
+      <label>Date<input type="date" id="expDate"></label>
+      <label>Amount<input type="number" id="expAmount" min="0" step="0.01"></label>
+      <label>Category<select id="expCat"></select></label>
+      <input type="text" id="expNote" class="grow" placeholder="note (optional)">
+      <button class="primary" id="expAdd">Add</button>
+    </div>
+    <table class="log" id="expLog"><thead><tr><th>Date</th><th>Category</th><th>Note</th><th class="num">Amount</th><th></th></tr></thead><tbody></tbody></table>
+  </div>
+
+  <div class="two-col">
+    <div class="section">
+      <div class="section-head"><h2>Subscriptions</h2><span class="act tiny" id="subTotal"></span></div>
+      <div class="form">
+        <input type="text" id="subName" class="grow" placeholder="Netflix, Spotify…">
+        <input type="number" id="subAmount" min="0" step="0.01" placeholder="amount">
+        <select id="subCadence">
+          <option value="monthly">Monthly</option>
+          <option value="yearly">Yearly</option>
+        </select>
+        <button class="primary" id="subAdd">Add</button>
+      </div>
+      <div id="subList"></div>
+    </div>
+
+    <div class="section">
+      <div class="section-head"><h2>Net worth</h2></div>
+      <div class="form">
+        <label>Date<input type="date" id="nwDate"></label>
+        <label>Assets<input type="number" id="nwAssets" min="0" step="1"></label>
+        <label>Liabilities<input type="number" id="nwLiab" min="0" step="1"></label>
+        <button class="primary" id="nwAdd">Snapshot</button>
+      </div>
+      <div id="nwLog"></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-head"><h2>Goals</h2></div>
+    <div class="form">
+      <input type="text" id="goalName" class="grow" placeholder="Emergency fund, trip, etc.">
+      <input type="number" id="goalTarget" min="0" step="1" placeholder="target $">
+      <input type="date" id="goalBy">
+      <button class="primary" id="goalAdd">Add goal</button>
+    </div>
+    <div id="goalList"></div>
+  </div>
+</section>
+
+<!-- ============== RELATIONSHIPS ============== -->
+<section class="view" id="view-relationships">
+  <h1>Relationships</h1>
+  <div class="lede">The people who make up your life. Who matters, what you promised, who you haven't talked to in too long.</div>
+
+  <div class="section">
+    <div class="section-head"><h2>People</h2><span class="act tiny" id="overdueNote"></span></div>
+    <div class="form">
+      <input type="text" id="pName" class="grow" placeholder="Name">
+      <input type="text" id="pRel" placeholder="relation (mom, friend, coworker)">
+      <label>Birthday<input type="date" id="pBday"></label>
+      <select id="pTier">
+        <option value="1">Tier 1 — core</option>
+        <option value="2">Tier 2 — close</option>
+        <option value="3" selected>Tier 3 — warm</option>
+      </select>
+      <button class="primary" id="pAdd">Add person</button>
+    </div>
+    <div id="peopleList"></div>
+  </div>
+
+  <div class="two-col">
+    <div class="section">
+      <div class="section-head"><h2>Follow-ups</h2><span class="act tiny">What you promised someone.</span></div>
+      <div class="form">
+        <select id="fuPerson" class="grow"></select>
+        <input type="text" id="fuWhat" class="grow" placeholder="what you said you'd do">
+        <input type="date" id="fuDue">
+        <button class="primary" id="fuAdd">Add</button>
+      </div>
+      <div id="fuList"></div>
+    </div>
+
+    <div class="section">
+      <div class="section-head"><h2>Gift ideas</h2></div>
+      <div class="form">
+        <select id="giPerson" class="grow"></select>
+        <input type="text" id="giIdea" class="grow" placeholder="idea">
+        <input type="text" id="giOccasion" placeholder="occasion (birthday, xmas)">
+        <button class="primary" id="giAdd">Add</button>
+      </div>
+      <div id="giList"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== REFLECT ============== -->
+<section class="view" id="view-reflect">
+  <h1>Reflect</h1>
+  <div class="lede">Where your rooms speak to each other. What the data says about the person you're actually being.</div>
+
+  <div class="section">
+    <div class="section-head"><h2>Today</h2><span class="act tiny" id="reflectDateLabel"></span></div>
+    <div id="reflectToday" class="insight-grid"></div>
+  </div>
+
+  <div class="section">
+    <div class="section-head"><h2>Patterns</h2><span class="act tiny">Last 30 days — how parts of you connect.</span></div>
+    <div id="reflectPatterns" class="insight-grid"></div>
+  </div>
+
+  <div class="section">
+    <div class="section-head"><h2>Alignment</h2><span class="act tiny">Where your attention and resources actually go.</span></div>
+    <div id="reflectAlignment" class="insight-grid"></div>
+  </div>
+
+  <div class="section">
+    <div class="section-head"><h2>Attention</h2><span class="act tiny">Things you said matter that aren't being tended.</span></div>
+    <div id="reflectAttention"></div>
+  </div>
+
+  <div class="section">
+    <div class="section-head"><h2>This week vs. last</h2></div>
+    <div id="reflectTrend" class="insight-grid"></div>
+  </div>
+
+  <div class="section" id="reflectCloser"></div>
+</section>
+
+<footer class="foot">
+  Mirror · local-first · your data lives only in this browser unless you export it · <a href="../">back to workspace</a>
+</footer>
+
+<script>
+/* =============================================================
+   Mirror — local-first personal "self" app
+   ============================================================= */
+
+const STORAGE_KEY = 'mirror_v1';
+const FOODS_URL = '../nutrilens/foods.json';
+
+const defaultState = () => ({
+  identity: { values: [], season: '', reflections: [], pulse: [] },
+  body:     { food: [], water: [], sleep: [], exercise: [], symptoms: [] },
+  mind:     { books: [], ideas: [], questions: [], quotes: [] },
+  money:    { categories: [], expenses: [], subscriptions: [], netWorth: [], goals: [] },
+  relationships: { people: [], followUps: [], giftIdeas: [] }
+});
+
+let state = loadState();
+let foodsIndex = null; // { byId: Map, list: [] }
+
+function loadState() {
+  try {
+    const s = JSON.parse(localStorage.getItem(STORAGE_KEY));
+    if (!s) return defaultState();
+    const d = defaultState();
+    // shallow merge to handle schema growth
+    for (const k of Object.keys(d)) s[k] = Object.assign(d[k], s[k] || {});
+    return s;
+  } catch { return defaultState(); }
+}
+function saveState() { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); }
+function uid() { return Date.now().toString(36) + Math.random().toString(36).slice(2,7); }
+const todayStr = () => new Date().toISOString().slice(0,10);
+function fmt$(n){ return (n<0?'-':'') + '$' + Math.abs(Number(n||0)).toFixed(2); }
+function fmtDate(s){ if(!s) return ''; const d = new Date(s+'T00:00'); return d.toLocaleDateString(undefined,{month:'short',day:'numeric',year:'numeric'}); }
+function daysBetween(a,b){ return Math.round((new Date(b)-new Date(a))/86400000); }
+
+/* ----- Theme ----- */
+if (localStorage.getItem('mirror_theme') === 'dark') document.body.classList.add('theme-dark');
+document.getElementById('themeBtn').onclick = () => {
+  document.body.classList.toggle('theme-dark');
+  localStorage.setItem('mirror_theme', document.body.classList.contains('theme-dark') ? 'dark' : 'light');
+};
+
+/* ----- Tabs ----- */
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.onclick = () => {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+    document.getElementById('view-' + btn.dataset.tab).classList.add('active');
+    if (btn.dataset.tab === 'reflect') renderReflect();
+  };
+});
+
+/* ----- Export / Import / Reset ----- */
+document.getElementById('exportBtn').onclick = () => {
+  const blob = new Blob([JSON.stringify(state, null, 2)], {type:'application/json'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = `mirror-${todayStr()}.json`;
+  document.body.appendChild(a); a.click(); a.remove();
+  URL.revokeObjectURL(url);
+};
+document.getElementById('importBtn').onclick = () => document.getElementById('importFile').click();
+document.getElementById('importFile').onchange = (e) => {
+  const f = e.target.files[0]; if (!f) return;
+  const reader = new FileReader();
+  reader.onload = () => {
+    try {
+      const obj = JSON.parse(reader.result);
+      if (!obj.identity || !obj.body) throw new Error('Not a Mirror export');
+      if (!confirm('Replace current data with imported file? This overwrites everything.')) return;
+      state = obj; saveState(); renderAll();
+    } catch (err) { alert('Import failed: ' + err.message); }
+  };
+  reader.readAsText(f);
+};
+document.getElementById('resetBtn').onclick = () => {
+  if (!confirm('Erase ALL Mirror data in this browser? This cannot be undone (unless you exported).')) return;
+  if (!confirm('Really sure? Everything goes.')) return;
+  state = defaultState(); saveState(); renderAll();
+};
+
+/* =============================================================
+   IDENTITY
+   ============================================================= */
+
+function renderValues() {
+  const el = document.getElementById('valueList');
+  if (!state.identity.values.length) {
+    el.innerHTML = '<div class="empty">No values yet. Add 3–7 words that describe the person you want to be.</div>';
+    return;
+  }
+  el.innerHTML = state.identity.values.map(v =>
+    `<span class="chip accent">${escapeHtml(v)} <button class="x" data-v="${escapeHtml(v)}" style="color:#fff;opacity:.75">×</button></span>`
+  ).join('');
+  el.querySelectorAll('button.x').forEach(b => b.onclick = () => {
+    state.identity.values = state.identity.values.filter(x => x !== b.dataset.v);
+    saveState(); renderValues();
+  });
+}
+document.getElementById('valueAdd').onclick = () => {
+  const i = document.getElementById('valueInput');
+  const v = i.value.trim(); if (!v) return;
+  if (!state.identity.values.includes(v)) state.identity.values.push(v);
+  i.value=''; saveState(); renderValues();
+};
+document.getElementById('valueInput').addEventListener('keydown', e => { if (e.key==='Enter') document.getElementById('valueAdd').click(); });
+
+/* Season */
+function renderSeason() { document.getElementById('seasonText').value = state.identity.season || ''; }
+document.getElementById('seasonSave').onclick = () => {
+  state.identity.season = document.getElementById('seasonText').value;
+  saveState();
+  const s = document.getElementById('seasonSaved');
+  s.textContent = 'saved ' + new Date().toLocaleTimeString();
+  setTimeout(()=>s.textContent='', 2500);
+};
+
+/* Pulse */
+let pulseDraft = { mood: 0, energy: 0 };
+function buildDots(row, key) {
+  row.innerHTML = '';
+  for (let i=1; i<=5; i++) {
+    const b = document.createElement('button');
+    b.textContent = i; b.onclick = () => { pulseDraft[key] = i; buildDots(row, key); };
+    if (pulseDraft[key] === i) b.classList.add('on');
+    row.appendChild(b);
+  }
+}
+function renderPulse() {
+  const today = todayStr();
+  const todayLog = state.identity.pulse.find(p => p.date === today);
+  if (todayLog) { pulseDraft.mood = todayLog.mood; pulseDraft.energy = todayLog.energy;
+                  document.getElementById('pulseNote').value = todayLog.note || '';
+                  document.getElementById('pulseToday').textContent = 'already logged today'; }
+  else document.getElementById('pulseToday').textContent = '';
+  buildDots(document.getElementById('moodRow'), 'mood');
+  buildDots(document.getElementById('energyRow'), 'energy');
+
+  const hist = state.identity.pulse.slice(-14).reverse();
+  const el = document.getElementById('pulseHistory');
+  if (!hist.length) { el.innerHTML = ''; return; }
+  el.innerHTML = '<div class="section-head" style="margin-top:18px"><h2>Recent</h2></div>' +
+    hist.map(p => `<div class="card mini"><div class="row"><span>${fmtDate(p.date)}</span>
+      <span class="tiny">mood ${p.mood} · energy ${p.energy}</span></div>
+      ${p.note ? `<div class="tiny" style="margin-top:4px">${escapeHtml(p.note)}</div>`:''}</div>`).join('');
+}
+document.getElementById('pulseSave').onclick = () => {
+  if (!pulseDraft.mood || !pulseDraft.energy) { alert('Pick a mood and energy level.'); return; }
+  const today = todayStr();
+  const note = document.getElementById('pulseNote').value.trim();
+  const existing = state.identity.pulse.find(p => p.date === today);
+  if (existing) { existing.mood = pulseDraft.mood; existing.energy = pulseDraft.energy; existing.note = note; }
+  else state.identity.pulse.push({ date: today, mood: pulseDraft.mood, energy: pulseDraft.energy, note });
+  saveState(); renderPulse();
+};
+
+/* Reflections */
+const REFLECTION_PROMPTS = {
+  week: [
+    "What mattered this week, and what merely happened?",
+    "Where did you spend energy that didn't align with your values?",
+    "Who made you feel most like yourself this week?",
+    "What did you learn that you don't want to forget?",
+    "What would you tell yourself at the start of the week?"
+  ],
+  month: [
+    "What changed this month — in you, not around you?",
+    "If you had to name this month in three words, what are they?",
+    "What did you start, stop, or keep doing?",
+    "What worry dissolved on its own?",
+    "Where did you grow without noticing?"
+  ],
+  year: [
+    "What will you remember a decade from now?",
+    "Who did you become this year?",
+    "What did this year demand of you that you didn't expect?",
+    "What did you outgrow?",
+    "What beliefs did you revise?"
+  ]
+};
+function promptFor(period, dateStr) {
+  const list = REFLECTION_PROMPTS[period];
+  const seed = (dateStr || todayStr()).split('-').reduce((a,b)=>a+parseInt(b),0);
+  return list[seed % list.length];
+}
+function renderReflections() {
+  const period = document.getElementById('refPeriod').value;
+  const date = document.getElementById('refDate').value || todayStr();
+  document.getElementById('refPrompt').textContent = promptFor(period, date);
+  const list = state.identity.reflections.slice().reverse();
+  document.getElementById('refList').innerHTML = list.length ? list.map(r =>
+    `<div class="card"><div class="meta">${r.period} · ${fmtDate(r.date)}</div>
+      <div class="tiny" style="font-style:italic;margin-bottom:6px">${escapeHtml(r.prompt)}</div>
+      <div class="body">${escapeHtml(r.answer).replace(/\n/g,'<br>')}</div>
+      <div style="margin-top:6px"><button class="ghost" data-id="${r.id}">delete</button></div></div>`
+  ).join('') : '<div class="empty">No reflections yet.</div>';
+  document.getElementById('refList').querySelectorAll('button.ghost').forEach(b => b.onclick = () => {
+    if (!confirm('Delete this reflection?')) return;
+    state.identity.reflections = state.identity.reflections.filter(x => x.id !== b.dataset.id);
+    saveState(); renderReflections();
+  });
+}
+document.getElementById('refPeriod').onchange = renderReflections;
+document.getElementById('refDate').onchange = renderReflections;
+document.getElementById('refSave').onclick = () => {
+  const answer = document.getElementById('refAnswer').value.trim();
+  if (!answer) { alert('Write something first.'); return; }
+  const period = document.getElementById('refPeriod').value;
+  const date = document.getElementById('refDate').value || todayStr();
+  state.identity.reflections.push({
+    id: uid(), period, date, prompt: promptFor(period, date), answer, createdAt: Date.now()
+  });
+  saveState();
+  document.getElementById('refAnswer').value = '';
+  renderReflections();
+};
+
+/* =============================================================
+   BODY
+   ============================================================= */
+
+async function loadFoods() {
+  try {
+    const res = await fetch(FOODS_URL);
+    const data = await res.json();
+    const list = data.foods.map(f => ({
+      id: f.id, name: f.name, category: f.category, portions: f.portions || [], n: f
+    }));
+    foodsIndex = { list, byId: new Map(list.map(f => [f.id, f])) };
+    document.getElementById('foodLoadStatus').textContent = `${list.length} foods loaded`;
+  } catch (e) {
+    document.getElementById('foodLoadStatus').textContent = 'could not load foods.json (works only when served — use a local server or GitHub Pages)';
+  }
+}
+
+let selectedFood = null;
+function selectFood(f) {
+  selectedFood = f;
+  document.getElementById('foodSearch').value = f.name;
+  document.getElementById('foodSelected').textContent = `${f.name} — ${f.category}`;
+  document.getElementById('foodResults').style.display = 'none';
+  document.getElementById('foodAdd').disabled = false;
+  renderPortions(f);
+  document.getElementById('foodGrams').focus();
+}
+function renderFoodResults(q) {
+  const box = document.getElementById('foodResults');
+  if (!foodsIndex || !q || q.length < 2) { box.style.display='none'; return; }
+  const Q = q.toLowerCase();
+  const results = foodsIndex.list.filter(f => f.name.toLowerCase().includes(Q)).slice(0, 40);
+  if (!results.length) { box.innerHTML = '<div class="r tiny">no matches</div>'; box.style.display='block'; return; }
+  box.innerHTML = results.map(f =>
+    `<div class="r" data-id="${f.id}">${escapeHtml(f.name)}<div class="c">${escapeHtml(f.category)}</div></div>`
+  ).join('');
+  box.style.display='block';
+  box.querySelectorAll('.r').forEach(r => r.onclick = () => {
+    selectFood(foodsIndex.byId.get(Number(r.dataset.id)));
+  });
+}
+function renderPortions(f) {
+  const el = document.getElementById('foodPortions');
+  const portions = (f.portions || []).slice(0, 8);
+  if (!portions.length) { el.style.display = 'none'; el.innerHTML = ''; return; }
+  el.style.display = 'flex';
+  el.innerHTML = '<span class="lbl">Portion</span>' +
+    portions.map(p => `<button type="button" class="chip portion" data-g="${p.grams}">${escapeHtml(p.label)} · ${p.grams}g</button>`).join('');
+  el.querySelectorAll('.chip.portion').forEach(b => b.onclick = () => {
+    document.getElementById('foodGrams').value = b.dataset.g;
+    document.getElementById('foodGrams').focus();
+  });
+}
+function renderRecentFoods() {
+  const el = document.getElementById('recentFoods');
+  if (!foodsIndex) { el.style.display = 'none'; return; }
+  const seen = new Set();
+  const recent = [];
+  for (let i = state.body.food.length - 1; i >= 0 && recent.length < 8; i--) {
+    const id = state.body.food[i].foodId;
+    if (seen.has(id)) continue;
+    seen.add(id);
+    const f = foodsIndex.byId.get(id);
+    if (f) recent.push(f);
+  }
+  if (!recent.length) { el.style.display = 'none'; return; }
+  el.style.display = 'flex';
+  el.innerHTML = '<span class="lbl">Recent</span>' + recent.map(f => {
+    const short = f.name.length > 36 ? f.name.slice(0, 34) + '…' : f.name;
+    return `<button type="button" class="chip" data-id="${f.id}" title="${escapeHtml(f.name)}">${escapeHtml(short)}</button>`;
+  }).join('');
+  el.querySelectorAll('.chip').forEach(c => c.onclick = () => {
+    selectFood(foodsIndex.byId.get(Number(c.dataset.id)));
+  });
+}
+document.getElementById('foodSearch').addEventListener('input', e => {
+  selectedFood = null;
+  document.getElementById('foodSelected').textContent = '';
+  document.getElementById('foodAdd').disabled = true;
+  document.getElementById('foodPortions').style.display = 'none';
+  renderFoodResults(e.target.value);
+});
+document.getElementById('foodAdd').onclick = () => {
+  const grams = Number(document.getElementById('foodGrams').value);
+  const date = document.getElementById('foodDate').value || todayStr();
+  if (!selectedFood || !grams) return;
+  state.body.food.push({
+    id: uid(), date, foodId: selectedFood.id, foodName: selectedFood.name,
+    category: selectedFood.category, grams
+  });
+  saveState();
+  document.getElementById('foodSearch').value='';
+  document.getElementById('foodGrams').value='';
+  document.getElementById('foodSelected').textContent='';
+  document.getElementById('foodPortions').style.display = 'none';
+  selectedFood = null;
+  document.getElementById('foodAdd').disabled = true;
+  renderFoodLog(); renderNutrients(); renderToday(); renderRecentFoods();
+};
+
+function renderFoodLog() {
+  const tbody = document.querySelector('#foodLog tbody');
+  const rows = state.body.food.slice().sort((a,b)=>b.date.localeCompare(a.date)).slice(0, 50);
+  if (!rows.length) { tbody.innerHTML = '<tr><td colspan="5" class="empty">No food logged yet.</td></tr>'; return; }
+  tbody.innerHTML = rows.map(r => {
+    const f = foodsIndex?.byId.get(r.foodId);
+    const kcal = f ? ((f.n.kcal || 0) * r.grams / 100).toFixed(0) : '—';
+    return `<tr><td>${fmtDate(r.date)}</td><td>${escapeHtml(r.foodName)}</td>
+      <td class="num">${r.grams}</td><td class="num">${kcal}</td>
+      <td><button class="x" data-id="${r.id}">×</button></td></tr>`;
+  }).join('');
+  tbody.querySelectorAll('button.x').forEach(b => b.onclick = () => {
+    state.body.food = state.body.food.filter(x => x.id !== b.dataset.id);
+    saveState(); renderFoodLog(); renderNutrients(); renderToday(); renderRecentFoods();
+  });
+}
+
+const TODAY_TARGETS = { kcal: 2200, protein_g: 80, water_oz: 64 };
+function renderToday() {
+  const el = document.getElementById('todaySummary');
+  const today = todayStr();
+  document.getElementById('todayDateLabel').textContent = fmtDate(today);
+  let kcal = 0, protein = 0, entries = 0;
+  for (const e of state.body.food) {
+    if (e.date !== today) continue;
+    entries++;
+    const f = foodsIndex?.byId.get(e.foodId);
+    if (!f) continue;
+    const factor = e.grams / 100;
+    kcal += (f.n.kcal || 0) * factor;
+    protein += (f.n.protein_g || 0) * factor;
+  }
+  const water = state.body.water.filter(w => w.date === today).reduce((s,w) => s + Number(w.oz||0), 0);
+  const tile = (label, value, unit, target) => {
+    const pct = target ? Math.min(100, (value/target)*100) : 0;
+    const v = value < 10 ? value.toFixed(1) : Math.round(value);
+    return `<div class="today-tile">
+      <div class="k">${label}</div>
+      <div class="v">${v}<span class="u">${unit}</span></div>
+      ${target ? `<div class="target">of ${target} ${unit}</div><div class="bar"><div class="fill" style="width:${pct}%"></div></div>` : ''}
+    </div>`;
+  };
+  el.innerHTML =
+    tile('kcal', kcal, 'kcal', TODAY_TARGETS.kcal) +
+    tile('protein', protein, 'g', TODAY_TARGETS.protein_g) +
+    tile('water', water, 'oz', TODAY_TARGETS.water_oz) +
+    `<div class="today-tile"><div class="k">entries</div><div class="v">${entries}</div><div class="target">food items today</div></div>`;
+}
+
+const NUTRIENT_FIELDS = [
+  ['kcal','kcal','kcal'], ['protein_g','protein','g'], ['fat_g','fat','g'], ['carbs_g','carbs','g'],
+  ['fiber_g','fiber','g'], ['sugar_g','sugar','g'], ['water_g','water','g'],
+  ['calcium_mg','calcium','mg'], ['iron_mg','iron','mg'], ['magnesium_mg','magnesium','mg'],
+  ['potassium_mg','potassium','mg'], ['sodium_mg','sodium','mg'], ['zinc_mg','zinc','mg'],
+  ['vit_c_mg','vit C','mg'], ['vit_d_ug','vit D','µg'], ['vit_b12_ug','vit B12','µg'],
+  ['vit_a_rae_ug','vit A','µg'], ['folate_ug','folate','µg'], ['cholesterol_mg','cholesterol','mg'],
+  ['sfa_g','sat fat','g'], ['omega3_ala_g','omega-3 ALA','g']
+];
+let currentRange = 'day';
+document.querySelectorAll('.range-tabs .mini-btn[data-range]').forEach(b => b.onclick = () => {
+  document.querySelectorAll('.range-tabs .mini-btn[data-range]').forEach(x => x.classList.remove('active'));
+  b.classList.add('active'); currentRange = b.dataset.range; renderNutrients();
+});
+function rangeCutoff(range) {
+  const n = new Date();
+  if (range==='day') return todayStr();
+  const d = new Date(n);
+  if (range==='week') d.setDate(d.getDate()-6);
+  if (range==='month') d.setMonth(d.getMonth()-1);
+  if (range==='year') d.setFullYear(d.getFullYear()-1);
+  return d.toISOString().slice(0,10);
+}
+function renderNutrients() {
+  const el = document.getElementById('nutrientSummary');
+  if (!foodsIndex) { el.innerHTML='<div class="empty">Food library hasn\'t loaded yet.</div>'; return; }
+  const cutoff = rangeCutoff(currentRange);
+  const entries = state.body.food.filter(r => currentRange==='day' ? r.date===cutoff : r.date >= cutoff);
+  if (!entries.length) { el.innerHTML = '<div class="empty">Nothing logged in this range.</div>';
+    document.getElementById('nutrientNote').textContent=''; return; }
+  const tot = {};
+  for (const e of entries) {
+    const f = foodsIndex.byId.get(e.foodId);
+    if (!f) continue;
+    const factor = e.grams / 100;
+    for (const [k] of NUTRIENT_FIELDS) tot[k] = (tot[k]||0) + (f.n[k]||0) * factor;
+  }
+  el.innerHTML = NUTRIENT_FIELDS.map(([k,label,unit]) => {
+    const v = tot[k] || 0;
+    const disp = v < 10 ? v.toFixed(2) : v < 100 ? v.toFixed(1) : v.toFixed(0);
+    return `<div class="nut"><div class="k">${label}</div><div class="v">${disp}<span class="u">${unit}</span></div></div>`;
+  }).join('');
+  const rangeLabel = { day:'today', week:'last 7 days', month:'last 30 days', year:'last 365 days' }[currentRange];
+  document.getElementById('nutrientNote').textContent = `${entries.length} food entries · ${rangeLabel}`;
+}
+
+/* Water, sleep, exercise, symptoms — simple lists */
+function simpleLog(key, containerId, renderRow) {
+  const el = document.getElementById(containerId);
+  const rows = state.body[key].slice().sort((a,b)=>b.date.localeCompare(a.date)).slice(0, 20);
+  if (!rows.length) { el.innerHTML = '<div class="empty">Nothing logged yet.</div>'; return; }
+  el.innerHTML = rows.map(r => `<div class="card mini"><div class="row">
+    <span>${fmtDate(r.date)} — ${renderRow(r)}</span>
+    <button class="x" data-id="${r.id}">×</button></div></div>`).join('');
+  el.querySelectorAll('button.x').forEach(b => b.onclick = () => {
+    state.body[key] = state.body[key].filter(x => x.id !== b.dataset.id);
+    saveState(); simpleLog(key, containerId, renderRow);
+    if (key === 'water') renderToday();
+  });
+}
+document.getElementById('waterAdd').onclick = () => {
+  const oz = Number(document.getElementById('waterOz').value);
+  const date = document.getElementById('waterDate').value || todayStr();
+  if (!oz) return;
+  state.body.water.push({ id: uid(), date, oz });
+  saveState(); document.getElementById('waterOz').value='';
+  simpleLog('water','waterLog', r => `${r.oz} oz`);
+  renderToday();
+};
+document.getElementById('sleepAdd').onclick = () => {
+  const hours = Number(document.getElementById('sleepHours').value);
+  const quality = Number(document.getElementById('sleepQuality').value);
+  const date = document.getElementById('sleepDate').value || todayStr();
+  if (!hours) return;
+  state.body.sleep.push({ id: uid(), date, hours, quality });
+  saveState();
+  document.getElementById('sleepHours').value=''; document.getElementById('sleepQuality').value='';
+  simpleLog('sleep','sleepLog', r => `${r.hours}h · quality ${r.quality||'–'}`);
+};
+document.getElementById('exAdd').onclick = () => {
+  const type = document.getElementById('exType').value.trim();
+  const minutes = Number(document.getElementById('exMinutes').value);
+  const date = document.getElementById('exDate').value || todayStr();
+  if (!type || !minutes) return;
+  state.body.exercise.push({ id: uid(), date, type, minutes });
+  saveState();
+  document.getElementById('exType').value=''; document.getElementById('exMinutes').value='';
+  simpleLog('exercise','exLog', r => `${r.type} · ${r.minutes} min`);
+};
+document.getElementById('symAdd').onclick = () => {
+  const note = document.getElementById('symNote').value.trim();
+  const date = document.getElementById('symDate').value || todayStr();
+  if (!note) return;
+  state.body.symptoms.push({ id: uid(), date, note });
+  saveState(); document.getElementById('symNote').value='';
+  simpleLog('symptoms','symLog', r => escapeHtml(r.note));
+};
+
+/* =============================================================
+   MONEY
+   ============================================================= */
+
+let budgetMonth = todayStr().slice(0,7); // YYYY-MM
+function monthLabel(m) { const [y,mo] = m.split('-'); return new Date(Number(y), Number(mo)-1, 1).toLocaleDateString(undefined,{month:'long',year:'numeric'}); }
+document.getElementById('monthPrev').onclick = () => { budgetMonth = shiftMonth(budgetMonth,-1); renderBudget(); };
+document.getElementById('monthNext').onclick = () => { budgetMonth = shiftMonth(budgetMonth, 1); renderBudget(); };
+function shiftMonth(m, d) { const [y,mo] = m.split('-').map(Number); const nd = new Date(y, mo-1+d, 1); return nd.toISOString().slice(0,7); }
+
+function catPlannedFor(catId, month) {
+  const c = state.money.categories.find(x => x.id === catId);
+  if (!c) return 0;
+  const override = (c.monthOverrides || {})[month];
+  return override !== undefined ? override : (c.planned || 0);
+}
+function renderBudget() {
+  document.getElementById('monthLabel').textContent = monthLabel(budgetMonth);
+  const el = document.getElementById('budgetList');
+  if (!state.money.categories.length) { el.innerHTML = '<div class="empty">No budget categories yet.</div>'; refreshExpenseCatSelect(); return; }
+  const spend = {};
+  state.money.expenses.forEach(e => {
+    if (e.date.slice(0,7) !== budgetMonth) return;
+    spend[e.categoryId] = (spend[e.categoryId] || 0) + Number(e.amount);
+  });
+  el.innerHTML = state.money.categories.map(c => {
+    const planned = catPlannedFor(c.id, budgetMonth);
+    const spent = spend[c.id] || 0;
+    const pct = planned ? Math.min(100, (spent/planned)*100) : 0;
+    const over = planned && spent > planned;
+    return `<div class="card mini">
+      <div class="row">
+        <strong>${escapeHtml(c.name)}</strong>
+        <span class="tiny">${fmt$(spent)} / ${fmt$(planned)} ${over?'<span class="overdue" style="color:var(--warn)">over</span>':''}</span>
+      </div>
+      <div class="bar"><div class="fill ${over?'over':''}" style="width:${pct}%"></div></div>
+      <div class="row" style="margin-top:6px">
+        <button class="ghost" data-edit="${c.id}">edit plan</button>
+        <button class="x" data-del="${c.id}">×</button>
+      </div>
+    </div>`;
+  }).join('');
+  el.querySelectorAll('[data-del]').forEach(b => b.onclick = () => {
+    if (!confirm('Delete this category? Expenses tagged to it stay.')) return;
+    state.money.categories = state.money.categories.filter(c => c.id !== b.dataset.del);
+    saveState(); renderBudget(); refreshExpenseCatSelect(); renderExpenses();
+  });
+  el.querySelectorAll('[data-edit]').forEach(b => b.onclick = () => {
+    const c = state.money.categories.find(x => x.id === b.dataset.edit);
+    const cur = catPlannedFor(c.id, budgetMonth);
+    const v = prompt(`Planned $ for ${c.name} in ${monthLabel(budgetMonth)}:`, cur);
+    if (v===null) return;
+    c.monthOverrides = c.monthOverrides || {};
+    c.monthOverrides[budgetMonth] = Number(v) || 0;
+    saveState(); renderBudget();
+  });
+  refreshExpenseCatSelect();
+}
+document.getElementById('catAdd').onclick = () => {
+  const name = document.getElementById('catName').value.trim();
+  const planned = Number(document.getElementById('catPlanned').value) || 0;
+  if (!name) return;
+  state.money.categories.push({ id: uid(), name, planned });
+  saveState();
+  document.getElementById('catName').value=''; document.getElementById('catPlanned').value='';
+  renderBudget();
+};
+
+function refreshExpenseCatSelect() {
+  const sel = document.getElementById('expCat');
+  const prev = sel.value;
+  sel.innerHTML = state.money.categories.map(c => `<option value="${c.id}">${escapeHtml(c.name)}</option>`).join('') || '<option value="">(add category first)</option>';
+  if (prev) sel.value = prev;
+}
+document.getElementById('expAdd').onclick = () => {
+  const amount = Number(document.getElementById('expAmount').value);
+  const categoryId = document.getElementById('expCat').value;
+  const date = document.getElementById('expDate').value || todayStr();
+  const note = document.getElementById('expNote').value.trim();
+  if (!amount || !categoryId) { alert('Amount and category required.'); return; }
+  state.money.expenses.push({ id: uid(), date, amount, categoryId, note });
+  saveState();
+  document.getElementById('expAmount').value=''; document.getElementById('expNote').value='';
+  renderExpenses(); renderBudget();
+};
+function renderExpenses() {
+  const tbody = document.querySelector('#expLog tbody');
+  const rows = state.money.expenses.slice().sort((a,b)=>b.date.localeCompare(a.date)).slice(0, 50);
+  if (!rows.length) { tbody.innerHTML = '<tr><td colspan="5" class="empty">No expenses logged.</td></tr>'; return; }
+  tbody.innerHTML = rows.map(r => {
+    const c = state.money.categories.find(x => x.id === r.categoryId);
+    return `<tr><td>${fmtDate(r.date)}</td><td>${c?escapeHtml(c.name):'<em>gone</em>'}</td>
+      <td>${escapeHtml(r.note||'')}</td>
+      <td class="num">${fmt$(r.amount)}</td>
+      <td><button class="x" data-id="${r.id}">×</button></td></tr>`;
+  }).join('');
+  tbody.querySelectorAll('button.x').forEach(b => b.onclick = () => {
+    state.money.expenses = state.money.expenses.filter(x => x.id !== b.dataset.id);
+    saveState(); renderExpenses(); renderBudget();
+  });
+}
+
+document.getElementById('subAdd').onclick = () => {
+  const name = document.getElementById('subName').value.trim();
+  const amount = Number(document.getElementById('subAmount').value);
+  const cadence = document.getElementById('subCadence').value;
+  if (!name || !amount) return;
+  state.money.subscriptions.push({ id: uid(), name, amount, cadence });
+  saveState();
+  document.getElementById('subName').value=''; document.getElementById('subAmount').value='';
+  renderSubs();
+};
+function renderSubs() {
+  const el = document.getElementById('subList');
+  if (!state.money.subscriptions.length) { el.innerHTML = '<div class="empty">No subscriptions tracked.</div>';
+    document.getElementById('subTotal').textContent=''; return; }
+  let monthly = 0;
+  state.money.subscriptions.forEach(s => { monthly += s.cadence==='yearly' ? s.amount/12 : s.amount; });
+  document.getElementById('subTotal').textContent = `~${fmt$(monthly)} / mo · ${fmt$(monthly*12)} / yr`;
+  el.innerHTML = state.money.subscriptions.map(s =>
+    `<div class="card mini"><div class="row">
+      <span><strong>${escapeHtml(s.name)}</strong> <span class="tiny">${s.cadence}</span></span>
+      <span>${fmt$(s.amount)} <button class="x" data-id="${s.id}">×</button></span>
+    </div></div>`).join('');
+  el.querySelectorAll('button.x').forEach(b => b.onclick = () => {
+    state.money.subscriptions = state.money.subscriptions.filter(x => x.id !== b.dataset.id);
+    saveState(); renderSubs();
+  });
+}
+
+document.getElementById('nwAdd').onclick = () => {
+  const assets = Number(document.getElementById('nwAssets').value);
+  const liabilities = Number(document.getElementById('nwLiab').value);
+  const date = document.getElementById('nwDate').value || todayStr();
+  if (!assets && !liabilities) return;
+  state.money.netWorth.push({ id: uid(), date, assets, liabilities });
+  saveState();
+  document.getElementById('nwAssets').value=''; document.getElementById('nwLiab').value='';
+  renderNetWorth();
+};
+function renderNetWorth() {
+  const el = document.getElementById('nwLog');
+  const rows = state.money.netWorth.slice().sort((a,b)=>b.date.localeCompare(a.date)).slice(0, 12);
+  if (!rows.length) { el.innerHTML = '<div class="empty">No snapshots yet.</div>'; return; }
+  el.innerHTML = rows.map(r => {
+    const net = (r.assets||0) - (r.liabilities||0);
+    return `<div class="card mini"><div class="row">
+      <span>${fmtDate(r.date)}</span>
+      <span>${fmt$(net)} <span class="tiny">(${fmt$(r.assets)} − ${fmt$(r.liabilities)})</span>
+      <button class="x" data-id="${r.id}">×</button></span></div></div>`;
+  }).join('');
+  el.querySelectorAll('button.x').forEach(b => b.onclick = () => {
+    state.money.netWorth = state.money.netWorth.filter(x => x.id !== b.dataset.id);
+    saveState(); renderNetWorth();
+  });
+}
+
+document.getElementById('goalAdd').onclick = () => {
+  const name = document.getElementById('goalName').value.trim();
+  const target = Number(document.getElementById('goalTarget').value);
+  const by = document.getElementById('goalBy').value;
+  if (!name || !target) return;
+  state.money.goals.push({ id: uid(), name, target, by, saved: 0 });
+  saveState();
+  document.getElementById('goalName').value=''; document.getElementById('goalTarget').value='';
+  document.getElementById('goalBy').value='';
+  renderGoals();
+};
+function renderGoals() {
+  const el = document.getElementById('goalList');
+  if (!state.money.goals.length) { el.innerHTML = '<div class="empty">No goals set.</div>'; return; }
+  el.innerHTML = state.money.goals.map(g => {
+    const pct = g.target ? Math.min(100, (g.saved||0)/g.target*100) : 0;
+    const dd = g.by ? daysBetween(todayStr(), g.by) : null;
+    return `<div class="card mini">
+      <div class="row"><strong>${escapeHtml(g.name)}</strong>
+        <span class="tiny">${fmt$(g.saved||0)} / ${fmt$(g.target)} ${g.by ? `· by ${fmtDate(g.by)} (${dd>=0? dd+' days' : 'past'})` : ''}</span></div>
+      <div class="bar"><div class="fill" style="width:${pct}%"></div></div>
+      <div class="row" style="margin-top:6px">
+        <button class="ghost" data-save="${g.id}">add progress</button>
+        <button class="x" data-del="${g.id}">×</button>
+      </div></div>`;
+  }).join('');
+  el.querySelectorAll('[data-save]').forEach(b => b.onclick = () => {
+    const g = state.money.goals.find(x => x.id === b.dataset.save);
+    const v = prompt(`Add progress to "${g.name}" (current ${fmt$(g.saved||0)})`, '0');
+    if (v===null) return;
+    g.saved = (g.saved||0) + (Number(v)||0);
+    saveState(); renderGoals();
+  });
+  el.querySelectorAll('[data-del]').forEach(b => b.onclick = () => {
+    if (!confirm('Delete this goal?')) return;
+    state.money.goals = state.money.goals.filter(x => x.id !== b.dataset.del);
+    saveState(); renderGoals();
+  });
+}
+
+/* =============================================================
+   RELATIONSHIPS
+   ============================================================= */
+
+document.getElementById('pAdd').onclick = () => {
+  const name = document.getElementById('pName').value.trim();
+  const relation = document.getElementById('pRel').value.trim();
+  const birthday = document.getElementById('pBday').value;
+  const tier = Number(document.getElementById('pTier').value);
+  if (!name) return;
+  state.relationships.people.push({
+    id: uid(), name, relation, birthday, tier,
+    lastContact: todayStr(), notes: ''
+  });
+  saveState();
+  document.getElementById('pName').value=''; document.getElementById('pRel').value='';
+  document.getElementById('pBday').value='';
+  renderPeople(); refreshPersonSelects();
+};
+function daysUntilBirthday(b) {
+  if (!b) return null;
+  const today = new Date(todayStr());
+  const bd = new Date(b);
+  const this_year = new Date(today.getFullYear(), bd.getMonth(), bd.getDate());
+  const next = this_year < today ? new Date(today.getFullYear()+1, bd.getMonth(), bd.getDate()) : this_year;
+  return Math.round((next - today) / 86400000);
+}
+function contactThreshold(tier) { return tier===1?14 : tier===2?45 : 120; }
+function renderPeople() {
+  const el = document.getElementById('peopleList');
+  const people = state.relationships.people.slice().sort((a,b) => (a.tier-b.tier) || a.name.localeCompare(b.name));
+  if (!people.length) { el.innerHTML = '<div class="empty">No people yet. Add the ones who matter.</div>';
+    document.getElementById('overdueNote').textContent=''; return; }
+  let overdueCount = 0;
+  el.innerHTML = people.map(p => {
+    const since = daysBetween(p.lastContact, todayStr());
+    const overdue = since > contactThreshold(p.tier);
+    if (overdue) overdueCount++;
+    const bdDays = daysUntilBirthday(p.birthday);
+    return `<div class="person">
+      <div class="head">
+        <div><span class="nm">${escapeHtml(p.name)}</span>
+          ${p.relation ? `<span class="rel"> · ${escapeHtml(p.relation)}</span>`:''}</div>
+        <span class="tier-badge t${p.tier}">tier ${p.tier}</span>
+      </div>
+      <div class="line ${overdue?'overdue':''}">last contact: ${fmtDate(p.lastContact)} (${since} days ago)</div>
+      ${p.birthday ? `<div class="line">birthday: ${fmtDate(p.birthday)}${bdDays!==null?` · ${bdDays} days`:''}</div>`:''}
+      ${p.notes ? `<div class="line" style="color:var(--ink)">${escapeHtml(p.notes)}</div>`:''}
+      <div style="margin-top:8px;display:flex;gap:6px;flex-wrap:wrap">
+        <button class="ghost" data-contact="${p.id}">mark contacted today</button>
+        <button class="ghost" data-notes="${p.id}">edit notes</button>
+        <button class="ghost" data-tier="${p.id}">change tier</button>
+        <button class="x" data-del="${p.id}">×</button>
+      </div>
+    </div>`;
+  }).join('');
+  document.getElementById('overdueNote').textContent = overdueCount ? `${overdueCount} overdue` : '';
+  el.querySelectorAll('[data-contact]').forEach(b => b.onclick = () => {
+    const p = state.relationships.people.find(x => x.id === b.dataset.contact);
+    p.lastContact = todayStr(); saveState(); renderPeople();
+  });
+  el.querySelectorAll('[data-notes]').forEach(b => b.onclick = () => {
+    const p = state.relationships.people.find(x => x.id === b.dataset.notes);
+    const v = prompt(`Notes for ${p.name}:`, p.notes || '');
+    if (v===null) return; p.notes = v; saveState(); renderPeople();
+  });
+  el.querySelectorAll('[data-tier]').forEach(b => b.onclick = () => {
+    const p = state.relationships.people.find(x => x.id === b.dataset.tier);
+    const v = prompt(`Tier (1 core, 2 close, 3 warm) for ${p.name}:`, p.tier);
+    if (v===null) return; const n = Number(v); if (n>=1 && n<=3) p.tier = n;
+    saveState(); renderPeople();
+  });
+  el.querySelectorAll('[data-del]').forEach(b => b.onclick = () => {
+    const p = state.relationships.people.find(x => x.id === b.dataset.del);
+    if (!confirm(`Delete ${p.name}? This also removes their follow-ups and gift ideas.`)) return;
+    state.relationships.people = state.relationships.people.filter(x => x.id !== b.dataset.del);
+    state.relationships.followUps = state.relationships.followUps.filter(x => x.personId !== b.dataset.del);
+    state.relationships.giftIdeas = state.relationships.giftIdeas.filter(x => x.personId !== b.dataset.del);
+    saveState(); renderPeople(); refreshPersonSelects(); renderFollowUps(); renderGiftIdeas();
+  });
+}
+function refreshPersonSelects() {
+  const opts = state.relationships.people.map(p => `<option value="${p.id}">${escapeHtml(p.name)}</option>`).join('') || '<option value="">(add a person first)</option>';
+  document.getElementById('fuPerson').innerHTML = opts;
+  document.getElementById('giPerson').innerHTML = opts;
+}
+document.getElementById('fuAdd').onclick = () => {
+  const personId = document.getElementById('fuPerson').value;
+  const what = document.getElementById('fuWhat').value.trim();
+  const due = document.getElementById('fuDue').value;
+  if (!personId || !what) return;
+  state.relationships.followUps.push({ id: uid(), personId, what, due, done: false });
+  saveState();
+  document.getElementById('fuWhat').value=''; document.getElementById('fuDue').value='';
+  renderFollowUps();
+};
+function renderFollowUps() {
+  const el = document.getElementById('fuList');
+  const rows = state.relationships.followUps.slice().sort((a,b) => (a.done - b.done) || (a.due||'').localeCompare(b.due||''));
+  if (!rows.length) { el.innerHTML = '<div class="empty">Nothing promised.</div>'; return; }
+  el.innerHTML = rows.map(r => {
+    const p = state.relationships.people.find(x => x.id === r.personId);
+    const overdue = r.due && r.due < todayStr() && !r.done;
+    return `<div class="card mini ${r.done?'':''}">
+      <div class="row">
+        <span style="${r.done?'text-decoration:line-through;color:var(--dim)':''}">
+          <strong>${p?escapeHtml(p.name):'(gone)'}</strong> — ${escapeHtml(r.what)}
+          ${r.due?`<span class="tiny ${overdue?'overdue':''}" style="${overdue?'color:var(--warn)':''}"> · due ${fmtDate(r.due)}</span>`:''}
+        </span>
+        <span>
+          <button class="ghost" data-done="${r.id}">${r.done?'undo':'done'}</button>
+          <button class="x" data-del="${r.id}">×</button>
+        </span>
+      </div></div>`;
+  }).join('');
+  el.querySelectorAll('[data-done]').forEach(b => b.onclick = () => {
+    const r = state.relationships.followUps.find(x => x.id === b.dataset.done);
+    r.done = !r.done; saveState(); renderFollowUps();
+  });
+  el.querySelectorAll('[data-del]').forEach(b => b.onclick = () => {
+    state.relationships.followUps = state.relationships.followUps.filter(x => x.id !== b.dataset.del);
+    saveState(); renderFollowUps();
+  });
+}
+document.getElementById('giAdd').onclick = () => {
+  const personId = document.getElementById('giPerson').value;
+  const idea = document.getElementById('giIdea').value.trim();
+  const occasion = document.getElementById('giOccasion').value.trim();
+  if (!personId || !idea) return;
+  state.relationships.giftIdeas.push({ id: uid(), personId, idea, occasion });
+  saveState();
+  document.getElementById('giIdea').value=''; document.getElementById('giOccasion').value='';
+  renderGiftIdeas();
+};
+function renderGiftIdeas() {
+  const el = document.getElementById('giList');
+  const rows = state.relationships.giftIdeas.slice().reverse();
+  if (!rows.length) { el.innerHTML = '<div class="empty">No gift ideas saved.</div>'; return; }
+  el.innerHTML = rows.map(r => {
+    const p = state.relationships.people.find(x => x.id === r.personId);
+    return `<div class="card mini"><div class="row">
+      <span><strong>${p?escapeHtml(p.name):'(gone)'}</strong> — ${escapeHtml(r.idea)}
+        ${r.occasion?`<span class="tiny"> · ${escapeHtml(r.occasion)}</span>`:''}</span>
+      <button class="x" data-id="${r.id}">×</button></div></div>`;
+  }).join('');
+  el.querySelectorAll('button.x').forEach(b => b.onclick = () => {
+    state.relationships.giftIdeas = state.relationships.giftIdeas.filter(x => x.id !== b.dataset.id);
+    saveState(); renderGiftIdeas();
+  });
+}
+
+/* =============================================================
+   MIND — books, ideas, questions, quotes
+   ============================================================= */
+
+let bookFilter = 'all';
+document.querySelectorAll('[data-bookfilter]').forEach(b => b.onclick = () => {
+  document.querySelectorAll('[data-bookfilter]').forEach(x => x.classList.remove('active'));
+  b.classList.add('active'); bookFilter = b.dataset.bookfilter; renderBooks();
+});
+
+document.getElementById('bkAdd').onclick = () => {
+  const title = document.getElementById('bkTitle').value.trim();
+  const author = document.getElementById('bkAuthor').value.trim();
+  const status = document.getElementById('bkStatus').value;
+  if (!title) return;
+  const now = todayStr();
+  state.mind.books.push({
+    id: uid(), title, author, status,
+    started: status === 'reading' ? now : '',
+    finished: status === 'finished' ? now : '',
+    rating: 0, takeaways: '', tags: []
+  });
+  saveState();
+  document.getElementById('bkTitle').value=''; document.getElementById('bkAuthor').value='';
+  renderBooks();
+};
+
+function renderBooks() {
+  const el = document.getElementById('bookList');
+  let rows = state.mind.books.slice();
+  if (bookFilter !== 'all') rows = rows.filter(b => b.status === bookFilter);
+  rows.sort((a,b) => {
+    const order = { reading: 0, want: 1, finished: 2, abandoned: 3 };
+    return (order[a.status] - order[b.status]) ||
+           (b.finished||'').localeCompare(a.finished||'') ||
+           a.title.localeCompare(b.title);
+  });
+  if (!rows.length) { el.innerHTML = '<div class="empty">No books in this shelf.</div>'; return; }
+  el.innerHTML = rows.map(b => {
+    const stars = b.rating ? '★'.repeat(b.rating) + '☆'.repeat(5-b.rating) : '';
+    const statusColor = b.status === 'reading' ? 'var(--accent)' : b.status === 'finished' ? 'var(--accent2)' : 'var(--dim)';
+    return `<div class="person"><div class="head">
+      <div><span class="nm">${escapeHtml(b.title)}</span>
+        ${b.author?`<span class="rel"> · ${escapeHtml(b.author)}</span>`:''}</div>
+      <span class="tier-badge" style="background:${statusColor};color:#fff;border-color:${statusColor}">${b.status}</span>
+      </div>
+      ${b.started?`<div class="line">started ${fmtDate(b.started)}${b.finished?` · finished ${fmtDate(b.finished)}`:''}</div>`:''}
+      ${stars?`<div class="line" style="color:var(--accent)">${stars}</div>`:''}
+      ${b.takeaways?`<div class="line" style="color:var(--ink);white-space:pre-wrap">${escapeHtml(b.takeaways)}</div>`:''}
+      <div style="margin-top:8px;display:flex;gap:6px;flex-wrap:wrap">
+        <button class="ghost" data-bkstatus="${b.id}">change status</button>
+        <button class="ghost" data-bkrate="${b.id}">rate</button>
+        <button class="ghost" data-bkwrite="${b.id}">takeaways</button>
+        <button class="x" data-bkdel="${b.id}">×</button>
+      </div></div>`;
+  }).join('');
+  el.querySelectorAll('[data-bkstatus]').forEach(btn => btn.onclick = () => {
+    const b = state.mind.books.find(x => x.id === btn.dataset.bkstatus);
+    const v = prompt('Status: want / reading / finished / abandoned', b.status);
+    if (!v || !['want','reading','finished','abandoned'].includes(v.trim())) return;
+    b.status = v.trim();
+    if (b.status === 'reading' && !b.started) b.started = todayStr();
+    if (b.status === 'finished' && !b.finished) b.finished = todayStr();
+    saveState(); renderBooks();
+  });
+  el.querySelectorAll('[data-bkrate]').forEach(btn => btn.onclick = () => {
+    const b = state.mind.books.find(x => x.id === btn.dataset.bkrate);
+    const v = prompt('Rating 1–5 (0 to clear):', b.rating || 0);
+    if (v === null) return;
+    const n = Number(v); if (n >= 0 && n <= 5) b.rating = Math.floor(n);
+    saveState(); renderBooks();
+  });
+  el.querySelectorAll('[data-bkwrite]').forEach(btn => btn.onclick = () => {
+    const b = state.mind.books.find(x => x.id === btn.dataset.bkwrite);
+    const v = prompt(`Takeaways for "${b.title}" — what would you tell a friend?`, b.takeaways || '');
+    if (v === null) return; b.takeaways = v; saveState(); renderBooks();
+  });
+  el.querySelectorAll('[data-bkdel]').forEach(btn => btn.onclick = () => {
+    const b = state.mind.books.find(x => x.id === btn.dataset.bkdel);
+    if (!confirm(`Delete "${b.title}"?`)) return;
+    state.mind.books = state.mind.books.filter(x => x.id !== btn.dataset.bkdel);
+    saveState(); renderBooks();
+  });
+}
+
+/* Ideas */
+document.getElementById('idAdd').onclick = () => {
+  const text = document.getElementById('idText').value.trim();
+  const source = document.getElementById('idSource').value.trim();
+  const date = document.getElementById('idDate').value || todayStr();
+  if (!text) return;
+  state.mind.ideas.push({ id: uid(), date, text, source });
+  saveState();
+  document.getElementById('idText').value=''; document.getElementById('idSource').value='';
+  renderIdeas();
+};
+function renderIdeas() {
+  const el = document.getElementById('ideaList');
+  const rows = state.mind.ideas.slice().sort((a,b)=>b.date.localeCompare(a.date)).slice(0, 30);
+  if (!rows.length) { el.innerHTML = '<div class="empty">No ideas captured yet.</div>'; return; }
+  el.innerHTML = rows.map(r => `<div class="card mini">
+    <div class="meta">${fmtDate(r.date)}${r.source?` · ${escapeHtml(r.source)}`:''}</div>
+    <div class="body">${escapeHtml(r.text)}</div>
+    <div style="margin-top:4px"><button class="x" data-ididel="${r.id}">×</button></div></div>`).join('');
+  el.querySelectorAll('[data-ididel]').forEach(b => b.onclick = () => {
+    state.mind.ideas = state.mind.ideas.filter(x => x.id !== b.dataset.ididel);
+    saveState(); renderIdeas();
+  });
+}
+
+/* Questions */
+document.getElementById('qAdd').onclick = () => {
+  const q = document.getElementById('qText').value.trim();
+  if (!q) return;
+  state.mind.questions.push({ id: uid(), date: todayStr(), q, status: 'open', note: '' });
+  saveState();
+  document.getElementById('qText').value='';
+  renderQuestions();
+};
+function renderQuestions() {
+  const el = document.getElementById('questionList');
+  const rows = state.mind.questions.slice().sort((a,b) => {
+    const order = { open: 0, explored: 1, answered: 2 };
+    return (order[a.status] - order[b.status]) || b.date.localeCompare(a.date);
+  });
+  if (!rows.length) { el.innerHTML = '<div class="empty">No open questions.</div>'; return; }
+  el.innerHTML = rows.map(r => {
+    const cls = r.status === 'open' ? 'warn' : r.status === 'explored' ? 'muted' : 'good';
+    return `<div class="card mini" style="border-left:3px solid var(--${cls==='warn'?'warn':cls==='good'?'accent2':'dim'})">
+      <div class="meta">${fmtDate(r.date)} · ${r.status}</div>
+      <div class="body">${escapeHtml(r.q)}</div>
+      ${r.note?`<div class="tiny" style="margin-top:4px;white-space:pre-wrap">${escapeHtml(r.note)}</div>`:''}
+      <div style="margin-top:6px;display:flex;gap:4px;flex-wrap:wrap">
+        <button class="ghost" data-qadv="${r.id}">advance</button>
+        <button class="ghost" data-qnote="${r.id}">note</button>
+        <button class="x" data-qdel="${r.id}">×</button>
+      </div></div>`;
+  }).join('');
+  el.querySelectorAll('[data-qadv]').forEach(b => b.onclick = () => {
+    const r = state.mind.questions.find(x => x.id === b.dataset.qadv);
+    const next = { open: 'explored', explored: 'answered', answered: 'open' };
+    r.status = next[r.status]; saveState(); renderQuestions();
+  });
+  el.querySelectorAll('[data-qnote]').forEach(b => b.onclick = () => {
+    const r = state.mind.questions.find(x => x.id === b.dataset.qnote);
+    const v = prompt('Notes on this question:', r.note || '');
+    if (v === null) return; r.note = v; saveState(); renderQuestions();
+  });
+  el.querySelectorAll('[data-qdel]').forEach(b => b.onclick = () => {
+    state.mind.questions = state.mind.questions.filter(x => x.id !== b.dataset.qdel);
+    saveState(); renderQuestions();
+  });
+}
+
+/* Quotes */
+document.getElementById('quAdd').onclick = () => {
+  const text = document.getElementById('quText').value.trim();
+  const source = document.getElementById('quSource').value.trim();
+  const why = document.getElementById('quWhy').value.trim();
+  if (!text) return;
+  state.mind.quotes.push({ id: uid(), date: todayStr(), text, source, why });
+  saveState();
+  document.getElementById('quText').value=''; document.getElementById('quSource').value='';
+  document.getElementById('quWhy').value='';
+  renderQuotes();
+};
+function renderQuotes() {
+  const el = document.getElementById('quoteList');
+  const rows = state.mind.quotes.slice().sort((a,b)=>b.date.localeCompare(a.date));
+  if (!rows.length) { el.innerHTML = '<div class="empty">No quotes kept.</div>'; return; }
+  el.innerHTML = rows.map(r => `<div class="card">
+    <div class="prompt" style="margin:0 0 6px 0">${escapeHtml(r.text).replace(/\n/g,'<br>')}</div>
+    <div class="tiny">— ${r.source?escapeHtml(r.source):'unknown'} · ${fmtDate(r.date)}</div>
+    ${r.why?`<div class="tiny" style="margin-top:4px;font-style:italic">${escapeHtml(r.why)}</div>`:''}
+    <div style="margin-top:6px"><button class="x" data-qudel="${r.id}">×</button></div></div>`).join('');
+  el.querySelectorAll('[data-qudel]').forEach(b => b.onclick = () => {
+    state.mind.quotes = state.mind.quotes.filter(x => x.id !== b.dataset.qudel);
+    saveState(); renderQuotes();
+  });
+}
+
+/* =============================================================
+   REFLECT — cross-room insights
+   ============================================================= */
+
+function shiftDate(d, days) {
+  const nd = new Date(d + 'T00:00'); nd.setDate(nd.getDate() + days);
+  return nd.toISOString().slice(0,10);
+}
+function daysInRange(nDays) {
+  const out = []; let d = todayStr();
+  for (let i = 0; i < nDays; i++) { out.push(d); d = shiftDate(d, -1); }
+  return out;
+}
+function sumKcalForDate(dateStr) {
+  if (!foodsIndex) return null;
+  let k = 0;
+  for (const e of state.body.food) {
+    if (e.date !== dateStr) continue;
+    const f = foodsIndex.byId.get(e.foodId);
+    if (f) k += (f.n.kcal || 0) * e.grams / 100;
+  }
+  return k;
+}
+function sumNutrientForDate(dateStr, key) {
+  if (!foodsIndex) return null;
+  let v = 0;
+  for (const e of state.body.food) {
+    if (e.date !== dateStr) continue;
+    const f = foodsIndex.byId.get(e.foodId);
+    if (f) v += (f.n[key] || 0) * e.grams / 100;
+  }
+  return v;
+}
+function avg(arr) { return arr.length ? arr.reduce((a,b)=>a+b,0)/arr.length : null; }
+
+/* Today snapshot */
+function renderReflectToday() {
+  const el = document.getElementById('reflectToday');
+  const today = todayStr();
+  document.getElementById('reflectDateLabel').textContent = fmtDate(today);
+  const cards = [];
+
+  // Pulse
+  const pulse = state.identity.pulse.find(p => p.date === today);
+  if (pulse) {
+    cards.push(`<div class="insight good"><div class="k">Pulse</div>
+      <div class="v accent">${pulse.mood}<span class="u">mood</span> · ${pulse.energy}<span class="u">energy</span></div>
+      ${pulse.note?`<div class="p">"${escapeHtml(pulse.note)}"</div>`:''}</div>`);
+  } else {
+    cards.push(`<div class="insight muted"><div class="k">Pulse</div>
+      <div class="v">—</div><div class="p">Not logged today. Identity → Today's pulse.</div></div>`);
+  }
+
+  // kcal today
+  const kcal = sumKcalForDate(today);
+  if (kcal !== null && kcal > 0) {
+    const prot = sumNutrientForDate(today, 'protein_g');
+    cards.push(`<div class="insight"><div class="k">Food today</div>
+      <div class="v accent">${kcal.toFixed(0)}<span class="u">kcal</span></div>
+      <div class="p"><strong>${prot.toFixed(0)}g</strong> protein logged</div></div>`);
+  } else {
+    cards.push(`<div class="insight muted"><div class="k">Food today</div>
+      <div class="v">—</div><div class="p">Nothing logged.</div></div>`);
+  }
+
+  // Water today
+  const waterOz = state.body.water.filter(w => w.date === today).reduce((a,b)=>a+b.oz, 0);
+  if (waterOz) {
+    cards.push(`<div class="insight"><div class="k">Water</div>
+      <div class="v accent">${waterOz}<span class="u">oz</span></div></div>`);
+  }
+
+  // Last night's sleep (entry dated today = last night)
+  const sleep = state.body.sleep.find(s => s.date === today);
+  if (sleep) {
+    cards.push(`<div class="insight ${sleep.hours>=7?'good':'warn'}"><div class="k">Last sleep</div>
+      <div class="v">${sleep.hours}<span class="u">h</span>${sleep.quality?` · q${sleep.quality}`:''}</div></div>`);
+  }
+
+  // Overdue follow-ups
+  const overdueFu = state.relationships.followUps.filter(f => !f.done && f.due && f.due < today);
+  if (overdueFu.length) {
+    cards.push(`<div class="insight warn"><div class="k">Overdue follow-ups</div>
+      <div class="v warn">${overdueFu.length}</div>
+      <div class="p">${escapeHtml(overdueFu.slice(0,2).map(f => {
+        const p = state.relationships.people.find(x => x.id === f.personId);
+        return `${p?p.name:'?'} — ${f.what}`;
+      }).join(' · '))}</div></div>`);
+  }
+
+  // Upcoming birthday in 14 days
+  const upcoming = state.relationships.people
+    .map(p => ({ p, d: daysUntilBirthday(p.birthday) }))
+    .filter(x => x.d !== null && x.d <= 14)
+    .sort((a,b) => a.d - b.d);
+  if (upcoming.length) {
+    const u = upcoming[0];
+    cards.push(`<div class="insight good"><div class="k">Upcoming birthday</div>
+      <div class="v accent">${escapeHtml(u.p.name)}</div>
+      <div class="p">in <strong>${u.d} days</strong>${upcoming.length>1?` · +${upcoming.length-1} more`:''}</div></div>`);
+  }
+
+  // Overdue tier-1 people
+  const overdueTier1 = state.relationships.people.filter(p =>
+    p.tier === 1 && daysBetween(p.lastContact, today) > contactThreshold(1)
+  );
+  if (overdueTier1.length) {
+    cards.push(`<div class="insight warn"><div class="k">Tier-1 overdue</div>
+      <div class="v warn">${overdueTier1.length}</div>
+      <div class="p">Haven't contacted: ${escapeHtml(overdueTier1.slice(0,3).map(p=>p.name).join(', '))}</div></div>`);
+  }
+
+  // Currently reading
+  const reading = state.mind.books.filter(b => b.status === 'reading');
+  if (reading.length) {
+    cards.push(`<div class="insight"><div class="k">Currently reading</div>
+      <div class="v accent" style="font-size:1rem;font-weight:500;line-height:1.3">${reading.slice(0,3).map(b => escapeHtml(b.title)).join('<br>')}</div>
+      ${reading.length>3?`<div class="p">+${reading.length-3} more</div>`:''}</div>`);
+  }
+
+  el.innerHTML = cards.join('') || '<div class="reflect-empty">Log something in the other rooms and it will start showing up here.</div>';
+}
+
+/* Patterns — last 30 days */
+function renderReflectPatterns() {
+  const el = document.getElementById('reflectPatterns');
+  const cards = [];
+  const range = daysInRange(30);
+  const pulseByDate = new Map(state.identity.pulse.map(p => [p.date, p]));
+  const sleepByDate = new Map(state.body.sleep.map(s => [s.date, s]));
+  const exerciseDays = new Set(state.body.exercise.map(e => e.date));
+
+  // Sleep ↔ energy
+  const sleepSplit = { high: [], low: [] };
+  for (const d of range) {
+    const p = pulseByDate.get(d); const s = sleepByDate.get(d);
+    if (!p || !s) continue;
+    (s.hours >= 7 ? sleepSplit.high : sleepSplit.low).push(p.energy);
+  }
+  if (sleepSplit.high.length >= 3 && sleepSplit.low.length >= 3) {
+    const hi = avg(sleepSplit.high), lo = avg(sleepSplit.low);
+    const diff = hi - lo;
+    const cls = diff >= 0.5 ? 'good' : diff <= -0.5 ? 'warn' : 'muted';
+    cards.push(`<div class="insight ${cls}"><div class="k">Sleep → energy</div>
+      <div class="v">${hi.toFixed(1)} <span class="u">vs</span> ${lo.toFixed(1)}</div>
+      <div class="p">Energy on nights ≥7h vs. &lt;7h. ${sleepSplit.high.length}/${sleepSplit.low.length} days sampled.</div></div>`);
+  }
+
+  // Exercise ↔ mood
+  const exSplit = { yes: [], no: [] };
+  for (const d of range) {
+    const p = pulseByDate.get(d); if (!p) continue;
+    (exerciseDays.has(d) ? exSplit.yes : exSplit.no).push(p.mood);
+  }
+  if (exSplit.yes.length >= 3 && exSplit.no.length >= 3) {
+    const y = avg(exSplit.yes), n = avg(exSplit.no);
+    const diff = y - n;
+    const cls = diff >= 0.3 ? 'good' : diff <= -0.3 ? 'warn' : 'muted';
+    cards.push(`<div class="insight ${cls}"><div class="k">Exercise → mood</div>
+      <div class="v">${y.toFixed(1)} <span class="u">vs</span> ${n.toFixed(1)}</div>
+      <div class="p">Mood on exercise days vs. off days.</div></div>`);
+  }
+
+  // Protein ↔ mood (needs foodsIndex)
+  if (foodsIndex) {
+    const proteinSplit = { high: [], low: [] };
+    for (const d of range) {
+      const p = pulseByDate.get(d); if (!p) continue;
+      const prot = sumNutrientForDate(d, 'protein_g');
+      if (prot === null || prot === 0) continue;
+      (prot >= 60 ? proteinSplit.high : proteinSplit.low).push(p.mood);
+    }
+    if (proteinSplit.high.length >= 3 && proteinSplit.low.length >= 3) {
+      const hi = avg(proteinSplit.high), lo = avg(proteinSplit.low);
+      const diff = hi - lo;
+      const cls = diff >= 0.3 ? 'good' : diff <= -0.3 ? 'warn' : 'muted';
+      cards.push(`<div class="insight ${cls}"><div class="k">Protein → mood</div>
+        <div class="v">${hi.toFixed(1)} <span class="u">vs</span> ${lo.toFixed(1)}</div>
+        <div class="p">Mood on days ≥60g protein vs. below.</div></div>`);
+    }
+  }
+
+  // Best / worst day of week
+  const dow = [[],[],[],[],[],[],[]];
+  const dowNames = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  state.identity.pulse.forEach(p => {
+    const d = new Date(p.date+'T00:00').getDay();
+    dow[d].push((p.mood + p.energy) / 2);
+  });
+  const dowScored = dow.map((arr, i) => ({ day: dowNames[i], avg: avg(arr), n: arr.length }))
+                       .filter(x => x.n >= 2);
+  if (dowScored.length >= 3) {
+    dowScored.sort((a,b) => b.avg - a.avg);
+    const best = dowScored[0], worst = dowScored[dowScored.length-1];
+    cards.push(`<div class="insight"><div class="k">Weekday pattern</div>
+      <div class="v accent">${best.day}<span class="u">best</span></div>
+      <div class="p"><strong>${best.day}</strong> avg ${best.avg.toFixed(1)} · <strong>${worst.day}</strong> avg ${worst.avg.toFixed(1)}</div></div>`);
+  }
+
+  // Coverage
+  const pulseCount = range.filter(d => pulseByDate.has(d)).length;
+  const foodCount = range.filter(d => state.body.food.some(f => f.date === d)).length;
+  cards.push(`<div class="insight muted"><div class="k">Coverage</div>
+    <div class="v">${pulseCount}<span class="u">/30 pulse</span></div>
+    <div class="p"><strong>${foodCount}/30</strong> days with food logged.</div></div>`);
+
+  if (cards.length <= 1) {
+    el.innerHTML = '<div class="reflect-empty">Patterns need ~2 weeks of pulse + logs to show up. Keep going.</div>';
+  } else {
+    el.innerHTML = cards.join('');
+  }
+}
+
+/* Alignment */
+function renderReflectAlignment() {
+  const el = document.getElementById('reflectAlignment');
+  const cards = [];
+  const thisMonth = todayStr().slice(0,7);
+
+  // Top spending category
+  const monthExp = state.money.expenses.filter(e => e.date.slice(0,7) === thisMonth);
+  if (monthExp.length) {
+    const byCat = {};
+    monthExp.forEach(e => { byCat[e.categoryId] = (byCat[e.categoryId]||0) + Number(e.amount); });
+    const total = monthExp.reduce((a,b)=>a+Number(b.amount),0);
+    const entries = Object.entries(byCat).sort((a,b) => b[1]-a[1]);
+    const [topCatId, topAmt] = entries[0];
+    const topCat = state.money.categories.find(c => c.id === topCatId);
+    const pct = total ? (topAmt/total*100).toFixed(0) : 0;
+    cards.push(`<div class="insight"><div class="k">Top spend this month</div>
+      <div class="v accent">${topCat ? escapeHtml(topCat.name) : '—'}</div>
+      <div class="p">${fmt$(topAmt)} · <strong>${pct}%</strong> of ${fmt$(total)} total</div></div>`);
+  }
+
+  // Subscription drain
+  if (state.money.subscriptions.length) {
+    let monthly = 0;
+    state.money.subscriptions.forEach(s => { monthly += s.cadence==='yearly' ? s.amount/12 : s.amount; });
+    cards.push(`<div class="insight"><div class="k">Subscription drain</div>
+      <div class="v accent">${fmt$(monthly)}<span class="u">/mo</span></div>
+      <div class="p"><strong>${fmt$(monthly*12)}</strong> per year across ${state.money.subscriptions.length} services</div></div>`);
+  }
+
+  // Tier-1 contact health
+  const tier1 = state.relationships.people.filter(p => p.tier === 1);
+  if (tier1.length) {
+    const today = todayStr();
+    const inContact = tier1.filter(p => daysBetween(p.lastContact, today) <= contactThreshold(1)).length;
+    const pct = Math.round(inContact/tier1.length*100);
+    const cls = pct >= 75 ? 'good' : pct >= 50 ? 'muted' : 'warn';
+    cards.push(`<div class="insight ${cls}"><div class="k">Tier-1 contact health</div>
+      <div class="v ${pct<50?'warn':'accent'}">${inContact}<span class="u">/ ${tier1.length}</span></div>
+      <div class="p">Core people reached in the last ${contactThreshold(1)} days (${pct}%).</div></div>`);
+  }
+
+  // Values stated
+  if (state.identity.values.length) {
+    cards.push(`<div class="insight muted"><div class="k">Values you named</div>
+      <div class="v" style="font-size:0.95rem;font-weight:500;line-height:1.4">${state.identity.values.map(escapeHtml).join(' · ')}</div>
+      <div class="p">Ask yourself: did this week serve these?</div></div>`);
+  }
+
+  // Goal progress
+  const goals = state.money.goals.filter(g => g.target);
+  if (goals.length) {
+    const totalTarget = goals.reduce((a,g) => a+g.target, 0);
+    const totalSaved = goals.reduce((a,g) => a+(g.saved||0), 0);
+    const pct = Math.round(totalSaved/totalTarget*100);
+    cards.push(`<div class="insight"><div class="k">Goal progress</div>
+      <div class="v accent">${pct}<span class="u">%</span></div>
+      <div class="p">${fmt$(totalSaved)} of ${fmt$(totalTarget)} across ${goals.length} goal${goals.length>1?'s':''}</div></div>`);
+  }
+
+  // Books finished this year
+  const year = todayStr().slice(0,4);
+  const finishedYear = state.mind.books.filter(b => b.status === 'finished' && b.finished && b.finished.startsWith(year));
+  if (state.mind.books.length) {
+    cards.push(`<div class="insight"><div class="k">Books this year</div>
+      <div class="v accent">${finishedYear.length}</div>
+      <div class="p"><strong>${state.mind.books.filter(b=>b.status==='reading').length}</strong> currently reading · <strong>${state.mind.books.filter(b=>b.status==='want').length}</strong> want</div></div>`);
+  }
+
+  // Open questions held
+  const openQ = state.mind.questions.filter(q => q.status === 'open');
+  if (openQ.length) {
+    cards.push(`<div class="insight muted"><div class="k">Open questions</div>
+      <div class="v">${openQ.length}</div>
+      <div class="p">You're holding <strong>${openQ.length}</strong> unresolved question${openQ.length>1?'s':''}. Oldest: <em>${escapeHtml(openQ.sort((a,b)=>a.date.localeCompare(b.date))[0].q.slice(0,60))}</em></div></div>`);
+  }
+
+  if (!cards.length) {
+    el.innerHTML = '<div class="reflect-empty">Add values, budget categories, or people to see alignment.</div>';
+  } else {
+    el.innerHTML = cards.join('');
+  }
+}
+
+/* Attention — neglect signals */
+function renderReflectAttention() {
+  const el = document.getElementById('reflectAttention');
+  const items = [];
+  const today = todayStr();
+
+  // Overdue tier-1
+  const overdue1 = state.relationships.people.filter(p =>
+    p.tier === 1 && daysBetween(p.lastContact, today) > contactThreshold(1)
+  );
+  overdue1.forEach(p => {
+    items.push({ msg: `<strong>${escapeHtml(p.name)}</strong> — no contact for ${daysBetween(p.lastContact, today)} days`,
+                 cls: 'warn' });
+  });
+
+  // Days since last reflection
+  if (state.identity.reflections.length) {
+    const last = state.identity.reflections.slice().sort((a,b)=>b.date.localeCompare(a.date))[0];
+    const days = daysBetween(last.date, today);
+    if (days > 14) items.push({ msg: `Last reflection written <strong>${days} days ago</strong>. What's shifted since?`, cls: 'warn' });
+  } else {
+    items.push({ msg: `No reflections written yet. The prompt in Identity is waiting.`, cls: 'muted' });
+  }
+
+  // Days since last pulse
+  if (state.identity.pulse.length) {
+    const last = state.identity.pulse.slice().sort((a,b)=>b.date.localeCompare(a.date))[0];
+    const days = daysBetween(last.date, today);
+    if (days > 3) items.push({ msg: `No mood/energy logged in <strong>${days} days</strong>.`, cls: 'muted' });
+  }
+
+  // Days since last food
+  if (state.body.food.length) {
+    const last = state.body.food.slice().sort((a,b)=>b.date.localeCompare(a.date))[0];
+    const days = daysBetween(last.date, today);
+    if (days > 2) items.push({ msg: `Food last logged <strong>${days} days ago</strong>.`, cls: 'muted' });
+  }
+
+  // Goals with no progress
+  state.money.goals.forEach(g => {
+    if (g.target && (g.saved||0) < g.target && g.by && g.by < today) {
+      items.push({ msg: `Goal <strong>${escapeHtml(g.name)}</strong> deadline passed (${fmtDate(g.by)}) — ${fmt$(g.saved||0)}/${fmt$(g.target)}`, cls: 'warn' });
+    }
+  });
+
+  // Open follow-ups due or overdue
+  const dueFu = state.relationships.followUps.filter(f => !f.done && f.due && f.due <= today);
+  dueFu.forEach(f => {
+    const p = state.relationships.people.find(x => x.id === f.personId);
+    const days = daysBetween(f.due, today);
+    items.push({ msg: `Promised <strong>${p?escapeHtml(p.name):'?'}</strong>: ${escapeHtml(f.what)} ${days>0?`(${days} days past due)`:'(due today)'}`, cls: 'warn' });
+  });
+
+  if (!items.length) {
+    el.innerHTML = '<div class="insight good"><div class="k">Nothing neglected</div><div class="p">Your rooms look tended to. Good.</div></div>';
+    return;
+  }
+  el.innerHTML = items.map(i =>
+    `<div class="card mini" style="border-left:3px solid var(--${i.cls==='warn'?'warn':'dim'})">
+      <div class="body">${i.msg}</div></div>`
+  ).join('');
+}
+
+/* This week vs. last week trend */
+function renderReflectTrend() {
+  const el = document.getElementById('reflectTrend');
+  const today = todayStr();
+  const thisWeek = daysInRange(7);
+  const lastWeek = []; let d = shiftDate(today, -7);
+  for (let i = 0; i < 7; i++) { lastWeek.push(d); d = shiftDate(d, -1); }
+
+  const metrics = [];
+
+  // Mood
+  const moodNow = avg(thisWeek.map(d => state.identity.pulse.find(p => p.date === d)?.mood).filter(Boolean));
+  const moodPrev = avg(lastWeek.map(d => state.identity.pulse.find(p => p.date === d)?.mood).filter(Boolean));
+  if (moodNow !== null && moodPrev !== null) metrics.push({ k: 'Mood avg', now: moodNow, prev: moodPrev, digits: 1 });
+
+  // Energy
+  const enNow = avg(thisWeek.map(d => state.identity.pulse.find(p => p.date === d)?.energy).filter(Boolean));
+  const enPrev = avg(lastWeek.map(d => state.identity.pulse.find(p => p.date === d)?.energy).filter(Boolean));
+  if (enNow !== null && enPrev !== null) metrics.push({ k: 'Energy avg', now: enNow, prev: enPrev, digits: 1 });
+
+  // Sleep
+  const slNow = avg(thisWeek.map(d => state.body.sleep.find(s => s.date === d)?.hours).filter(Boolean));
+  const slPrev = avg(lastWeek.map(d => state.body.sleep.find(s => s.date === d)?.hours).filter(Boolean));
+  if (slNow !== null && slPrev !== null) metrics.push({ k: 'Sleep hrs', now: slNow, prev: slPrev, digits: 1, unit: 'h' });
+
+  // Exercise minutes/week
+  const exNow = thisWeek.reduce((a,d) => a + state.body.exercise.filter(e => e.date === d).reduce((x,y)=>x+y.minutes,0), 0);
+  const exPrev = lastWeek.reduce((a,d) => a + state.body.exercise.filter(e => e.date === d).reduce((x,y)=>x+y.minutes,0), 0);
+  if (exNow || exPrev) metrics.push({ k: 'Exercise', now: exNow, prev: exPrev, digits: 0, unit: 'min' });
+
+  // kcal/day
+  if (foodsIndex) {
+    const kcalNow = avg(thisWeek.map(d => sumKcalForDate(d)).filter(v => v>0));
+    const kcalPrev = avg(lastWeek.map(d => sumKcalForDate(d)).filter(v => v>0));
+    if (kcalNow !== null && kcalPrev !== null) metrics.push({ k: 'kcal/day', now: kcalNow, prev: kcalPrev, digits: 0 });
+  }
+
+  // Money spent this week
+  const moneyNow = state.money.expenses.filter(e => thisWeek.includes(e.date)).reduce((a,b)=>a+Number(b.amount),0);
+  const moneyPrev = state.money.expenses.filter(e => lastWeek.includes(e.date)).reduce((a,b)=>a+Number(b.amount),0);
+  if (moneyNow || moneyPrev) metrics.push({ k: 'Spending', now: moneyNow, prev: moneyPrev, digits: 2, unit: '$', isMoney: true });
+
+  if (!metrics.length) {
+    el.innerHTML = '<div class="reflect-empty">Need two weeks of data to compare.</div>';
+    return;
+  }
+
+  el.innerHTML = metrics.map(m => {
+    const delta = m.now - m.prev;
+    const pct = m.prev ? (delta/m.prev*100) : 0;
+    const flat = Math.abs(pct) < 5;
+    const cls = flat ? 'flat' : delta > 0 ? 'up' : 'down';
+    const arrow = flat ? '≈' : delta > 0 ? '↑' : '↓';
+    const nowTxt = m.isMoney ? fmt$(m.now) : m.now.toFixed(m.digits) + (m.unit && !m.isMoney ? m.unit : '');
+    const prevTxt = m.isMoney ? fmt$(m.prev) : m.prev.toFixed(m.digits) + (m.unit && !m.isMoney ? m.unit : '');
+    return `<div class="insight"><div class="k">${m.k}</div>
+      <div class="compare"><span class="now">${nowTxt}</span><span class="delta ${cls}">${arrow} ${Math.abs(pct).toFixed(0)}%</span></div>
+      <div class="p">last week: <strong>${prevTxt}</strong></div></div>`;
+  }).join('');
+}
+
+function renderReflectCloser() {
+  const el = document.getElementById('reflectCloser');
+  if (!state.mind.quotes.length) { el.innerHTML = ''; return; }
+  const q = state.mind.quotes[Math.floor(Math.random() * state.mind.quotes.length)];
+  el.innerHTML = `<div class="prompt" style="font-size:1rem;line-height:1.5">
+    ${escapeHtml(q.text).replace(/\n/g,'<br>')}
+    <div class="tiny" style="font-style:normal;margin-top:8px;color:var(--dim)">— ${q.source?escapeHtml(q.source):'kept by you'}</div></div>`;
+}
+
+function renderReflect() {
+  renderReflectToday();
+  renderReflectPatterns();
+  renderReflectAlignment();
+  renderReflectAttention();
+  renderReflectTrend();
+  renderReflectCloser();
+}
+
+/* =============================================================
+   UTIL
+   ============================================================= */
+function escapeHtml(s){ return String(s||'').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+
+function renderAll() {
+  renderValues(); renderSeason(); renderPulse(); renderReflections();
+  renderFoodLog(); renderNutrients();
+  simpleLog('water','waterLog', r => `${r.oz} oz`);
+  simpleLog('sleep','sleepLog', r => `${r.hours}h · quality ${r.quality||'–'}`);
+  simpleLog('exercise','exLog', r => `${r.type} · ${r.minutes} min`);
+  simpleLog('symptoms','symLog', r => escapeHtml(r.note));
+  renderBudget(); renderExpenses(); renderSubs(); renderNetWorth(); renderGoals();
+  renderPeople(); refreshPersonSelects(); renderFollowUps(); renderGiftIdeas();
+  renderBooks(); renderIdeas(); renderQuestions(); renderQuotes();
+}
+
+/* Default date fields to today */
+['foodDate','waterDate','sleepDate','exDate','symDate','expDate','nwDate','refDate','idDate'].forEach(id => {
+  const el = document.getElementById(id); if (el) el.value = todayStr();
+});
+
+loadFoods().then(() => { renderFoodLog(); renderNutrients(); renderToday(); renderRecentFoods(); });
+renderToday();
+renderAll();
+</script>
+</body>
+</html>
