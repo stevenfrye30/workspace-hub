@@ -11,29 +11,44 @@
     --border:#32445c; --chrome:#2a3a4f; --active:#d4a24c; --tint:#263447;
     --card:#243347;
   }
+  html, body { height: 100%; }
   body { font-family: Georgia, serif; background: var(--bg); color: var(--fg);
-         line-height: 1.55; min-height: 100vh; }
-  .page { max-width: 1080px; margin: 0 auto; padding: 56px 28px 100px; }
-  header { border-bottom: 1px solid var(--border); padding-bottom: 24px; margin-bottom: 36px; }
-  h1 { font-size: 32px; font-weight: 600; letter-spacing: 0.01em; margin-bottom: 8px; }
-  .subtitle { color: var(--muted); font-style: italic; font-size: 16px; }
-  h2 { font-size: 14px; font-weight: 600; text-transform: uppercase;
-       letter-spacing: 0.12em; color: var(--muted);
-       margin: 36px 0 14px; }
-  .grid { display: grid; gap: 14px;
-          grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+         line-height: 1.45; }
+  .page { max-width: 1240px; margin: 0 auto; padding: 20px 24px;
+          min-height: 100%; display: flex; flex-direction: column; }
+  header { border-bottom: 1px solid var(--border); padding-bottom: 12px; margin-bottom: 16px; }
+  h1 { font-size: 24px; font-weight: 600; letter-spacing: 0.01em; margin-bottom: 2px; }
+  .subtitle { color: var(--muted); font-style: italic; font-size: 13px; }
+
+  .sections { flex: 1; display: grid; gap: 18px;
+              grid-template-columns: repeat(5, 1fr); align-content: start; }
+  .section h2 { font-size: 11px; font-weight: 600; text-transform: uppercase;
+                letter-spacing: 0.12em; color: var(--muted); margin: 0 0 8px; }
+  .grid { display: flex; flex-direction: column; gap: 8px; }
   .card { display: block; background: var(--card); border: 1px solid var(--border);
-          padding: 18px 20px; text-decoration: none; color: inherit;
+          padding: 10px 12px; text-decoration: none; color: inherit;
           transition: border-color 0.15s, transform 0.15s; }
   .card:hover { border-color: var(--active); transform: translateY(-1px); }
-  .card .t { font-size: 17px; font-weight: 600; color: var(--active);
-             margin-bottom: 4px; }
-  .card .d { font-size: 13px; color: var(--muted); line-height: 1.45; }
+  .card .t { font-size: 14px; font-weight: 600; color: var(--active); margin-bottom: 2px; }
+  .card .d { font-size: 11.5px; color: var(--muted); line-height: 1.35;
+             display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;
+             overflow: hidden; }
   .card.featured { background: var(--tint); }
-  footer { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--border);
-           font-size: 13px; color: var(--muted); }
+
+  footer { margin-top: 16px; padding-top: 10px; border-top: 1px solid var(--border);
+           font-size: 12px; color: var(--muted); }
   footer a { color: var(--active); text-decoration: none; }
   footer a:hover { text-decoration: underline; }
+
+  @media (max-width: 1100px) {
+    .sections { grid-template-columns: repeat(3, 1fr); }
+  }
+  @media (max-width: 700px) {
+    .sections { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 460px) {
+    .sections { grid-template-columns: 1fr; }
+  }
 </style>
 </head>
 <body>
@@ -43,72 +58,84 @@
     <div class="subtitle">A collection of reading tools, language primers, and reference dashboards.</div>
   </header>
 
-  <h2>Reading &amp; Scholarship</h2>
-  <div class="grid">
-    <a class="card featured" href="https://stevenfrye30.github.io/digital-archive/">
-      <div class="t">Digital Archive →</div>
-      <div class="d">1,100+ public-domain and Creative Commons texts, side-by-side translations, full-text search.</div>
-    </a>
-    <a class="card" href="philosophy/">
-      <div class="t">Philosophy</div>
-      <div class="d">Chronological map of philosophers and their works.</div>
-    </a>
-    <a class="card" href="gods/">
-      <div class="t">Gods</div>
-      <div class="d">Cross-cultural temporal map of the divine — family trees across 27 pantheons, archetypes, and deified humans.</div>
-    </a>
-  </div>
+  <div class="sections">
+    <div class="section">
+      <h2>Reading &amp; Scholarship</h2>
+      <div class="grid">
+        <a class="card featured" href="https://stevenfrye30.github.io/digital-archive/" title="1,100+ public-domain and Creative Commons texts, side-by-side translations, full-text search.">
+          <div class="t">Digital Archive →</div>
+          <div class="d">1,100+ public-domain and Creative Commons texts, side-by-side translations, full-text search.</div>
+        </a>
+        <a class="card" href="philosophy/" title="Chronological map of philosophers and their works.">
+          <div class="t">Philosophy</div>
+          <div class="d">Chronological map of philosophers and their works.</div>
+        </a>
+        <a class="card" href="gods/" title="Cross-cultural temporal map of the divine — family trees across 27 pantheons, archetypes, and deified humans.">
+          <div class="t">Gods</div>
+          <div class="d">Cross-cultural temporal map of the divine — family trees across 27 pantheons.</div>
+        </a>
+      </div>
+    </div>
 
-  <h2>Language</h2>
-  <div class="grid">
-    <a class="card" href="languages/">
-      <div class="t">Languages</div>
-      <div class="d">Hub for six tools — Scripts (81 writing systems), language family tree and world map, Script Evolution, Phonetic Center, Loanwords, and Sound.</div>
-    </a>
-    <a class="card" href="images/">
-      <div class="t">Art</div>
-      <div class="d">Art, architecture, and visual reference — digital museum walks.</div>
-    </a>
-  </div>
+    <div class="section">
+      <h2>Language</h2>
+      <div class="grid">
+        <a class="card" href="languages/" title="Hub for six tools — Scripts (81 writing systems), language family tree and world map, Script Evolution, Phonetic Center, Loanwords, and Sound.">
+          <div class="t">Languages</div>
+          <div class="d">Hub for six tools — Scripts, family tree, Script Evolution, Phonetics, Loanwords, Sound.</div>
+        </a>
+        <a class="card" href="images/" title="Art, architecture, and visual reference — digital museum walks.">
+          <div class="t">Art</div>
+          <div class="d">Art, architecture, and visual reference — digital museum walks.</div>
+        </a>
+      </div>
+    </div>
 
-  <h2>Geography</h2>
-  <div class="grid">
-    <a class="card" href="flags/">
-      <div class="t">Flags</div>
-      <div class="d">197 countries — browse flags, quiz yourself, and locate on a map.</div>
-    </a>
-    <a class="card featured" href="milwaukee/">
-      <div class="t">Milwaukee →</div>
-      <div class="d">Moving guide, interactive city map, orientation notes, move logistics, and an engagement hub for my two-year stay.</div>
-    </a>
-  </div>
+    <div class="section">
+      <h2>Geography</h2>
+      <div class="grid">
+        <a class="card" href="flags/" title="197 countries — browse flags, quiz yourself, and locate on a map.">
+          <div class="t">Flags</div>
+          <div class="d">197 countries — browse flags, quiz yourself, and locate on a map.</div>
+        </a>
+        <a class="card featured" href="milwaukee/" title="Moving guide, interactive city map, orientation notes, move logistics, and an engagement hub for my two-year stay.">
+          <div class="t">Milwaukee →</div>
+          <div class="d">Moving guide, interactive city map, orientation notes, and an engagement hub.</div>
+        </a>
+      </div>
+    </div>
 
-  <h2>Science &amp; Reference</h2>
-  <div class="grid">
-    <a class="card featured" href="science/">
-      <div class="t">Science →</div>
-      <div class="d">Tutoring center with flashcards and multiple-choice, searchable 2,039-term glossary, 14 topic clusters. Five years of college coursework distilled.</div>
-    </a>
-    <a class="card" href="cosmos/">
-      <div class="t">Cosmos</div>
-      <div class="d">Scale-by-scale tour of the universe.</div>
-    </a>
-    <a class="card" href="nutrilens/">
-      <div class="t">NutriLens</div>
-      <div class="d">USDA food nutrition lookup, offline-ready.</div>
-    </a>
-  </div>
+    <div class="section">
+      <h2>Science &amp; Reference</h2>
+      <div class="grid">
+        <a class="card featured" href="science/" title="Tutoring center with flashcards and multiple-choice, searchable 2,039-term glossary, 14 topic clusters. Five years of college coursework distilled.">
+          <div class="t">Science →</div>
+          <div class="d">Flashcards, MCQ, 2,039-term glossary, 14 topic clusters. Five years of coursework.</div>
+        </a>
+        <a class="card" href="cosmos/" title="Scale-by-scale tour of the universe.">
+          <div class="t">Cosmos</div>
+          <div class="d">Scale-by-scale tour of the universe.</div>
+        </a>
+        <a class="card" href="nutrilens/" title="USDA food nutrition lookup, offline-ready.">
+          <div class="t">NutriLens</div>
+          <div class="d">USDA food nutrition lookup, offline-ready.</div>
+        </a>
+      </div>
+    </div>
 
-  <h2>Play</h2>
-  <div class="grid">
-    <a class="card featured" href="mirror/">
-      <div class="t">Mirror →</div>
-      <div class="d">A quiet, local-first place to know yourself — values, reflections, body, money, and the people who matter. Nutrition powered by NutriLens.</div>
-    </a>
-    <a class="card" href="emoji-games/">
-      <div class="t">EmojiLand</div>
-      <div class="d">Browse the full emoji library and play casual games — Zombie Survival, Nuggets, and more.</div>
-    </a>
+    <div class="section">
+      <h2>Play</h2>
+      <div class="grid">
+        <a class="card featured" href="mirror/" title="A quiet, local-first place to know yourself — values, reflections, body, money, and the people who matter. Nutrition powered by NutriLens.">
+          <div class="t">Mirror →</div>
+          <div class="d">Local-first self-knowledge — values, body, money, people. Nutrition via NutriLens.</div>
+        </a>
+        <a class="card" href="emoji-games/" title="Browse the full emoji library and play casual games — Zombie Survival, Nuggets, and more.">
+          <div class="t">EmojiLand</div>
+          <div class="d">Full emoji library plus casual games — Zombie Survival, Nuggets, and more.</div>
+        </a>
+      </div>
+    </div>
   </div>
 
   <footer>
