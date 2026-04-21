@@ -105,6 +105,19 @@ h3.era:first-of-type { margin-top: 4px; }
 .home-search input::placeholder { color: var(--muted); font-style: italic; }
 .home-search input:focus { outline: none; border-color: var(--active); }
 
+/* Home page — lock to viewport, no scroll in any direction. */
+body.home { height: 100vh; overflow: hidden; display: flex; flex-direction: column; }
+body.home .top-nav { flex-shrink: 0; position: static; }
+body.home .page { flex: 1 1 auto; min-height: 0; padding: 18px 28px 14px; display: flex; flex-direction: column; overflow: hidden; }
+body.home .page-header { margin-bottom: 10px; padding-bottom: 8px; }
+body.home h1 { font-size: 26px; }
+body.home .subtitle { font-size: 13px; }
+body.home .home-search { margin: 0 0 14px; }
+body.home .home-search input { padding: 10px 14px; font-size: 14px; }
+body.home h2.section { margin: 4px 0 8px; }
+body.home .region-tiles { margin: 0; flex: 0 0 auto; }
+body.home .page-footer { margin-top: auto; padding-top: 10px; font-size: 11px; }
+
 /* All-works search */
 .all-search { margin-bottom: 16px; }
 .all-search input { width: 100%; padding: 14px 16px; background: var(--card); border: 1px solid var(--border); color: var(--fg); font-size: 15px; font-family: Georgia, serif; }
