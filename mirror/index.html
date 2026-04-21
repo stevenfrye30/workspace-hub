@@ -119,6 +119,22 @@
   .today-tile .u { font-size: 0.78rem; color: var(--dim); margin-left: 3px; font-family: ui-monospace, monospace; }
   .today-tile .target { font-size: 0.74rem; color: var(--dim); margin-top: 2px; }
 
+  /* Trend chart */
+  .trend-chart svg { width: 100%; height: 180px; display: block; background: var(--panel);
+                     border: 1px solid var(--line); border-radius: 4px; }
+  .trend-chart .axis { fill: var(--dim); font-size: 10px; font-family: ui-monospace, monospace; }
+  .trend-chart .grid { stroke: var(--line); stroke-width: 1; }
+  .trend-chart .target-line { stroke: var(--dim); stroke-width: 1; stroke-dasharray: 4 3; }
+  .trend-chart .ln-kcal { stroke: var(--accent); stroke-width: 2; fill: none; }
+  .trend-chart .ln-protein { stroke: var(--accent2); stroke-width: 2; fill: none; }
+  .trend-chart .pt-kcal { fill: var(--accent); }
+  .trend-chart .pt-protein { fill: var(--accent2); }
+  .trend-legend { display: flex; gap: 14px; margin-top: 6px; align-items: center; color: var(--dim); }
+  .trend-legend .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%;
+                       margin-right: 4px; vertical-align: middle; }
+  .trend-empty { color: var(--dim); font-style: italic; padding: 50px 10px; text-align: center;
+                 font-size: 0.85rem; background: var(--panel); border: 1px solid var(--line); border-radius: 4px; }
+
   /* Recent foods chips & portion buttons */
   .chip-row { display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0 10px; align-items: center; }
   .chip-row .lbl { font-size: 0.7rem; color: var(--dim); text-transform: uppercase;
@@ -128,6 +144,14 @@
                     font-family: inherit; }
   .chip-row .chip:hover { border-color: var(--accent); color: var(--accent); }
   .chip-row .chip.portion { border-radius: 4px; }
+  .chip-row .chip .pin { margin-left: 6px; color: var(--dim); cursor: pointer;
+                         padding: 0 2px; font-size: 0.9rem; line-height: 1; }
+  .chip-row .chip .pin:hover { color: var(--accent); }
+  .chip-row .chip .pin.on { color: var(--accent); }
+  table.log .pin-btn { background: none; border: none; color: var(--dim); cursor: pointer;
+                       font-size: 0.95rem; padding: 0 4px; font-family: inherit; }
+  table.log .pin-btn:hover { color: var(--accent); }
+  table.log .pin-btn.on { color: var(--accent); }
 
   /* Food search */
   .search-results { max-height: 220px; overflow-y: auto; background: var(--panel);
@@ -297,8 +321,37 @@
   <div class="lede">What you take in and how your body is doing. Food draws from your NutriLens library.</div>
 
   <div class="section">
-    <div class="section-head"><h2>Today</h2><span class="act tiny" id="todayDateLabel"></span></div>
+    <div class="section-head">
+      <h2>Today</h2>
+      <span style="display:flex;gap:12px;align-items:center">
+        <span class="act tiny" id="todayDateLabel"></span>
+        <button class="mini-btn" id="targetsEditBtn" title="Edit daily targets">✎ targets</button>
+      </span>
+    </div>
     <div class="today-grid" id="todaySummary"></div>
+    <div id="targetsForm" class="form" style="display:none;margin-top:10px">
+      <label>kcal<input type="number" id="tgtKcal" min="500" step="50"></label>
+      <label>protein g<input type="number" id="tgtProtein" min="10" step="5"></label>
+      <label>water oz<input type="number" id="tgtWater" min="8" step="8"></label>
+      <button class="primary" id="targetsSave">Save</button>
+      <button class="ghost" id="targetsCancel">Cancel</button>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-head">
+      <h2>Trend</h2>
+      <div class="range-tabs">
+        <button class="mini-btn active" data-trend="7">7d</button>
+        <button class="mini-btn" data-trend="30">30d</button>
+      </div>
+    </div>
+    <div id="trendChart" class="trend-chart"></div>
+    <div class="trend-legend tiny">
+      <span><span class="dot" style="background:var(--accent)"></span>kcal</span>
+      <span><span class="dot" style="background:var(--accent2)"></span>protein</span>
+      <span style="color:var(--dim)">— dashed = 100% of target</span>
+    </div>
   </div>
 
   <div class="section">
@@ -316,7 +369,13 @@
   </div>
 
   <div class="section">
-    <div class="section-head"><h2>Log food</h2><span class="act tiny" id="foodLoadStatus">loading library…</span></div>
+    <div class="section-head"><h2>Log food</h2>
+      <span style="display:flex;gap:12px;align-items:center">
+        <span class="act tiny" id="foodLoadStatus">loading library…</span>
+        <button class="mini-btn" id="foodExportBtn" title="Download food log as CSV">Export CSV</button>
+      </span>
+    </div>
+    <div id="pinnedFoods" class="chip-row" style="display:none"></div>
     <div id="recentFoods" class="chip-row" style="display:none"></div>
     <div class="form">
       <label>Date<input type="date" id="foodDate"></label>
@@ -607,13 +666,15 @@
 const STORAGE_KEY = 'mirror_v1';
 const FOODS_URL = '../nutrilens/foods.json';
 
+const DEFAULT_TARGETS = { kcal: 2200, protein_g: 80, water_oz: 64 };
 const defaultState = () => ({
   identity: { values: [], season: '', reflections: [], pulse: [] },
-  body:     { food: [], water: [], sleep: [], exercise: [], symptoms: [] },
+  body:     { food: [], water: [], sleep: [], exercise: [], symptoms: [], targets: { ...DEFAULT_TARGETS }, favoriteFoods: [] },
   mind:     { books: [], ideas: [], questions: [], quotes: [] },
   money:    { categories: [], expenses: [], subscriptions: [], netWorth: [], goals: [] },
   relationships: { people: [], followUps: [], giftIdeas: [] }
 });
+function getTargets() { return Object.assign({}, DEFAULT_TARGETS, state.body.targets || {}); }
 
 let state = loadState();
 let foodsIndex = null; // { byId: Map, list: [] }
@@ -872,10 +933,44 @@ function renderPortions(f) {
     document.getElementById('foodGrams').focus();
   });
 }
+function isPinned(id) { return (state.body.favoriteFoods || []).includes(id); }
+function togglePin(id) {
+  const list = state.body.favoriteFoods = state.body.favoriteFoods || [];
+  const i = list.indexOf(id);
+  if (i >= 0) list.splice(i, 1); else list.push(id);
+  saveState();
+  renderPinnedFoods(); renderRecentFoods(); renderFoodLog();
+}
+function chipHtml(f) {
+  const short = f.name.length > 36 ? f.name.slice(0, 34) + '…' : f.name;
+  const pinned = isPinned(f.id);
+  return `<span class="chip" data-id="${f.id}" title="${escapeHtml(f.name)}">
+    <span class="pick" data-pick="${f.id}">${escapeHtml(short)}</span>
+    <span class="pin${pinned ? ' on' : ''}" data-pin="${f.id}" title="${pinned ? 'Unpin' : 'Pin'}">${pinned ? '★' : '☆'}</span>
+  </span>`;
+}
+function wireChipRow(el) {
+  el.querySelectorAll('[data-pin]').forEach(x => x.onclick = e => {
+    e.stopPropagation();
+    togglePin(Number(x.dataset.pin));
+  });
+  el.querySelectorAll('[data-pick]').forEach(x => x.onclick = () => {
+    selectFood(foodsIndex.byId.get(Number(x.dataset.pick)));
+  });
+}
+function renderPinnedFoods() {
+  const el = document.getElementById('pinnedFoods');
+  if (!foodsIndex) { el.style.display = 'none'; return; }
+  const pinned = (state.body.favoriteFoods || []).map(id => foodsIndex.byId.get(id)).filter(Boolean);
+  if (!pinned.length) { el.style.display = 'none'; el.innerHTML = ''; return; }
+  el.style.display = 'flex';
+  el.innerHTML = '<span class="lbl">Pinned</span>' + pinned.map(chipHtml).join('');
+  wireChipRow(el);
+}
 function renderRecentFoods() {
   const el = document.getElementById('recentFoods');
   if (!foodsIndex) { el.style.display = 'none'; return; }
-  const seen = new Set();
+  const seen = new Set((state.body.favoriteFoods || []));
   const recent = [];
   for (let i = state.body.food.length - 1; i >= 0 && recent.length < 8; i--) {
     const id = state.body.food[i].foodId;
@@ -884,15 +979,10 @@ function renderRecentFoods() {
     const f = foodsIndex.byId.get(id);
     if (f) recent.push(f);
   }
-  if (!recent.length) { el.style.display = 'none'; return; }
+  if (!recent.length) { el.style.display = 'none'; el.innerHTML = ''; return; }
   el.style.display = 'flex';
-  el.innerHTML = '<span class="lbl">Recent</span>' + recent.map(f => {
-    const short = f.name.length > 36 ? f.name.slice(0, 34) + '…' : f.name;
-    return `<button type="button" class="chip" data-id="${f.id}" title="${escapeHtml(f.name)}">${escapeHtml(short)}</button>`;
-  }).join('');
-  el.querySelectorAll('.chip').forEach(c => c.onclick = () => {
-    selectFood(foodsIndex.byId.get(Number(c.dataset.id)));
-  });
+  el.innerHTML = '<span class="lbl">Recent</span>' + recent.map(chipHtml).join('');
+  wireChipRow(el);
 }
 document.getElementById('foodSearch').addEventListener('input', e => {
   selectedFood = null;
@@ -916,7 +1006,7 @@ document.getElementById('foodAdd').onclick = () => {
   document.getElementById('foodPortions').style.display = 'none';
   selectedFood = null;
   document.getElementById('foodAdd').disabled = true;
-  renderFoodLog(); renderNutrients(); renderToday(); renderRecentFoods();
+  renderFoodLog(); renderNutrients(); renderToday(); renderTrend(); renderRecentFoods(); renderPinnedFoods();
 };
 
 function renderFoodLog() {
@@ -926,17 +1016,21 @@ function renderFoodLog() {
   tbody.innerHTML = rows.map(r => {
     const f = foodsIndex?.byId.get(r.foodId);
     const kcal = f ? ((f.n.kcal || 0) * r.grams / 100).toFixed(0) : '—';
+    const pinned = isPinned(r.foodId);
     return `<tr><td>${fmtDate(r.date)}</td><td>${escapeHtml(r.foodName)}</td>
       <td class="num">${r.grams}</td><td class="num">${kcal}</td>
-      <td><button class="x" data-id="${r.id}">×</button></td></tr>`;
+      <td style="white-space:nowrap">
+        <button class="pin-btn${pinned ? ' on' : ''}" data-pin="${r.foodId}" title="${pinned ? 'Unpin' : 'Pin this food'}">${pinned ? '★' : '☆'}</button>
+        <button class="x" data-id="${r.id}">×</button>
+      </td></tr>`;
   }).join('');
   tbody.querySelectorAll('button.x').forEach(b => b.onclick = () => {
     state.body.food = state.body.food.filter(x => x.id !== b.dataset.id);
-    saveState(); renderFoodLog(); renderNutrients(); renderToday(); renderRecentFoods();
+    saveState(); renderFoodLog(); renderNutrients(); renderToday(); renderTrend(); renderRecentFoods(); renderPinnedFoods();
   });
+  tbody.querySelectorAll('button.pin-btn').forEach(b => b.onclick = () => togglePin(Number(b.dataset.pin)));
 }
 
-const TODAY_TARGETS = { kcal: 2200, protein_g: 80, water_oz: 64 };
 function renderToday() {
   const el = document.getElementById('todaySummary');
   const today = todayStr();
@@ -952,6 +1046,7 @@ function renderToday() {
     protein += (f.n.protein_g || 0) * factor;
   }
   const water = state.body.water.filter(w => w.date === today).reduce((s,w) => s + Number(w.oz||0), 0);
+  const T = getTargets();
   const tile = (label, value, unit, target) => {
     const pct = target ? Math.min(100, (value/target)*100) : 0;
     const v = value < 10 ? value.toFixed(1) : Math.round(value);
@@ -962,10 +1057,136 @@ function renderToday() {
     </div>`;
   };
   el.innerHTML =
-    tile('kcal', kcal, 'kcal', TODAY_TARGETS.kcal) +
-    tile('protein', protein, 'g', TODAY_TARGETS.protein_g) +
-    tile('water', water, 'oz', TODAY_TARGETS.water_oz) +
+    tile('kcal', kcal, 'kcal', T.kcal) +
+    tile('protein', protein, 'g', T.protein_g) +
+    tile('water', water, 'oz', T.water_oz) +
     `<div class="today-tile"><div class="k">entries</div><div class="v">${entries}</div><div class="target">food items today</div></div>`;
+}
+document.getElementById('targetsEditBtn').onclick = () => {
+  const t = getTargets();
+  document.getElementById('tgtKcal').value = t.kcal;
+  document.getElementById('tgtProtein').value = t.protein_g;
+  document.getElementById('tgtWater').value = t.water_oz;
+  document.getElementById('targetsForm').style.display = 'flex';
+};
+document.getElementById('targetsCancel').onclick = () => {
+  document.getElementById('targetsForm').style.display = 'none';
+};
+document.getElementById('targetsSave').onclick = () => {
+  state.body.targets = {
+    kcal: Number(document.getElementById('tgtKcal').value) || DEFAULT_TARGETS.kcal,
+    protein_g: Number(document.getElementById('tgtProtein').value) || DEFAULT_TARGETS.protein_g,
+    water_oz: Number(document.getElementById('tgtWater').value) || DEFAULT_TARGETS.water_oz,
+  };
+  saveState();
+  document.getElementById('targetsForm').style.display = 'none';
+  renderToday(); renderTrend();
+};
+
+document.getElementById('foodExportBtn').onclick = () => {
+  const rows = state.body.food.slice().sort((a,b) => a.date.localeCompare(b.date));
+  if (!rows.length) { alert('No food logged yet.'); return; }
+  const cols = ['date','food','category','grams','kcal','protein_g','fat_g','carbs_g','fiber_g'];
+  const csvCell = v => {
+    const s = String(v ?? '');
+    return /[",\n]/.test(s) ? `"${s.replace(/"/g,'""')}"` : s;
+  };
+  const body = rows.map(r => {
+    const f = foodsIndex?.byId.get(r.foodId);
+    const factor = r.grams / 100;
+    const nut = k => f ? ((f.n[k] || 0) * factor).toFixed(1) : '';
+    return [r.date, r.foodName, r.category || '', r.grams, nut('kcal'), nut('protein_g'), nut('fat_g'), nut('carbs_g'), nut('fiber_g')]
+      .map(csvCell).join(',');
+  });
+  const csv = cols.join(',') + '\n' + body.join('\n') + '\n';
+  const blob = new Blob([csv], { type: 'text/csv;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = `mirror-food-log-${todayStr()}.csv`;
+  document.body.appendChild(a); a.click(); a.remove();
+  URL.revokeObjectURL(url);
+};
+
+let trendDays = 7;
+document.querySelectorAll('.range-tabs .mini-btn[data-trend]').forEach(b => b.onclick = () => {
+  document.querySelectorAll('.range-tabs .mini-btn[data-trend]').forEach(x => x.classList.remove('active'));
+  b.classList.add('active');
+  trendDays = Number(b.dataset.trend);
+  renderTrend();
+});
+function renderTrend() {
+  const host = document.getElementById('trendChart');
+  if (!host) return;
+  if (!foodsIndex) { host.innerHTML = '<div class="trend-empty">Food library hasn\'t loaded yet.</div>'; return; }
+
+  const T = getTargets();
+  const today = new Date(todayStr() + 'T00:00');
+  const days = [];
+  for (let i = trendDays - 1; i >= 0; i--) {
+    const d = new Date(today); d.setDate(d.getDate() - i);
+    days.push(d.toISOString().slice(0,10));
+  }
+  const totals = Object.fromEntries(days.map(d => [d, { kcal: 0, protein: 0 }]));
+  for (const e of state.body.food) {
+    if (!(e.date in totals)) continue;
+    const f = foodsIndex.byId.get(e.foodId);
+    if (!f) continue;
+    const factor = e.grams / 100;
+    totals[e.date].kcal += (f.n.kcal || 0) * factor;
+    totals[e.date].protein += (f.n.protein_g || 0) * factor;
+  }
+
+  const hasAny = days.some(d => totals[d].kcal > 0 || totals[d].protein > 0);
+  if (!hasAny) {
+    host.innerHTML = `<div class="trend-empty">No food logged in the last ${trendDays} days yet.</div>`;
+    return;
+  }
+
+  const W = 800, H = 180, PL = 36, PR = 14, PT = 14, PB = 26;
+  const innerW = W - PL - PR, innerH = H - PT - PB;
+  const maxPct = Math.max(1.2, ...days.flatMap(d => [totals[d].kcal / T.kcal, totals[d].protein / T.protein_g])) * 1.05;
+
+  const x = i => PL + (trendDays === 1 ? innerW/2 : (i / (trendDays - 1)) * innerW);
+  const y = pct => PT + (1 - pct / maxPct) * innerH;
+
+  const ptsKcal = days.map((d,i) => `${x(i).toFixed(1)},${y(totals[d].kcal / T.kcal).toFixed(1)}`).join(' ');
+  const ptsProt = days.map((d,i) => `${x(i).toFixed(1)},${y(totals[d].protein / T.protein_g).toFixed(1)}`).join(' ');
+
+  const yTarget = y(1);
+  const yTicks = [0, 0.5, 1, 1.5].filter(t => t <= maxPct).map(t => {
+    const yy = y(t);
+    return `<line class="grid" x1="${PL}" y1="${yy}" x2="${W-PR}" y2="${yy}" />
+            <text class="axis" x="${PL-4}" y="${yy+3}" text-anchor="end">${(t*100).toFixed(0)}%</text>`;
+  }).join('');
+
+  const showEvery = trendDays <= 7 ? 1 : Math.ceil(trendDays / 7);
+  const xLabels = days.map((d,i) => {
+    if (i % showEvery !== 0 && i !== days.length - 1) return '';
+    const dd = new Date(d + 'T00:00');
+    const lab = trendDays <= 7
+      ? dd.toLocaleDateString(undefined,{weekday:'short'})
+      : `${dd.getMonth()+1}/${dd.getDate()}`;
+    return `<text class="axis" x="${x(i)}" y="${H-8}" text-anchor="middle">${lab}</text>`;
+  }).join('');
+
+  const dots = (cls, key) => days.map((d,i) => {
+    const v = totals[d][key];
+    const target = key === 'kcal' ? T.kcal : T.protein_g;
+    const yy = y(v / target);
+    const tooltip = `${d}: ${Math.round(v)} ${key === 'kcal' ? 'kcal' : 'g protein'}`;
+    return `<circle class="${cls}" cx="${x(i).toFixed(1)}" cy="${yy.toFixed(1)}" r="3"><title>${tooltip}</title></circle>`;
+  }).join('');
+
+  host.innerHTML = `
+    <svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none">
+      ${yTicks}
+      <line class="target-line" x1="${PL}" y1="${yTarget}" x2="${W-PR}" y2="${yTarget}" />
+      <polyline class="ln-kcal" points="${ptsKcal}" />
+      <polyline class="ln-protein" points="${ptsProt}" />
+      ${dots('pt-kcal','kcal')}
+      ${dots('pt-protein','protein')}
+      ${xLabels}
+    </svg>`;
 }
 
 const NUTRIENT_FIELDS = [
@@ -2056,7 +2277,7 @@ function renderAll() {
   const el = document.getElementById(id); if (el) el.value = todayStr();
 });
 
-loadFoods().then(() => { renderFoodLog(); renderNutrients(); renderToday(); renderRecentFoods(); });
+loadFoods().then(() => { renderFoodLog(); renderNutrients(); renderToday(); renderTrend(); renderRecentFoods(); renderPinnedFoods(); });
 renderToday();
 renderAll();
 </script>
