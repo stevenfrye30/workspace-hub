@@ -108,7 +108,7 @@ h3.era:first-of-type { margin-top: 4px; }
 /* Home page — lock to viewport, no scroll in any direction. */
 body.home { height: 100vh; overflow: hidden; display: flex; flex-direction: column; }
 body.home .top-nav { flex-shrink: 0; position: static; }
-body.home .page { flex: 1 1 auto; min-height: 0; padding: 18px 28px 14px; display: flex; flex-direction: column; overflow: hidden; }
+body.home .page { flex: 1 1 auto; min-height: 0; max-width: none; padding: 18px 20px 14px; display: flex; flex-direction: column; overflow: hidden; }
 body.home .page-header { margin-bottom: 10px; padding-bottom: 8px; }
 body.home h1 { font-size: 26px; }
 body.home .subtitle { font-size: 13px; }
