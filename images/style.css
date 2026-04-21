@@ -99,6 +99,12 @@ h3.era:first-of-type { margin-top: 4px; }
 .tl-era-title .tl-era-count { color: var(--muted); font-size: 13px; font-style: italic; font-weight: normal; }
 .work.tl-entry .tl-year { background: var(--nav-bg); color: var(--active); font-family: Georgia, serif; font-size: 15px; font-weight: 600; padding: 8px 14px; border-bottom: 1px solid var(--border); letter-spacing: 0.03em; }
 
+/* Home-page single search (posts to all.html?q=) */
+.home-search { margin: 0 0 22px; }
+.home-search input { width: 100%; padding: 14px 16px; background: var(--card); border: 1px solid var(--border); color: var(--fg); font-size: 15px; font-family: Georgia, serif; }
+.home-search input::placeholder { color: var(--muted); font-style: italic; }
+.home-search input:focus { outline: none; border-color: var(--active); }
+
 /* All-works search */
 .all-search { margin-bottom: 16px; }
 .all-search input { width: 100%; padding: 14px 16px; background: var(--card); border: 1px solid var(--border); color: var(--fg); font-size: 15px; font-family: Georgia, serif; }

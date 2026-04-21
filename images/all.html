@@ -216,6 +216,13 @@
     });
   });
 
+  // Prefill from ?q= URL param (used by home-page search form).
+  const urlQ = new URLSearchParams(location.search).get('q');
+  if (urlQ) {
+    input.value = urlQ;
+    state.q = normalize(urlQ.trim());
+  }
+
   // Fetch data.
   fetch('works.json').then(r => r.json()).then(data => {
     allWorks = data.map((w, i) => { w.i = i; return w; });
