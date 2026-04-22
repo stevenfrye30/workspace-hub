@@ -4,137 +4,526 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Steven Frye — Workspace</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
   :root {
-    --bg:#dcc9a5; --bg-2:#cbb892;
-    --fg:#3a2a18; --muted:#6b5638;
-    --border-soft:#a48f6a;
-    --card-top:#5d4128; --card-bot:#47301b;
-    --card-top-hover:#6e4f33; --card-bot-hover:#553a22;
-    --feat-top:#6f3a22; --feat-bot:#562818;
-    --feat-top-hover:#7e4528; --feat-bot-hover:#60301c;
-    --card-border:#332015; --card-border-hover:#1f1309;
-    --feat-border:#3d1e12;
-    --card-title:#f0c882; --card-desc:#d4c4a8;
-    --feat-title:#f3cf8e; --feat-accent:#e8a862;
-    --active:#8a4820;
+    --parch-1:#dcc9a2; --parch-2:#cdb98b; --parch-3:#b89f6c;
+    --ivory-1:#f6ecd1; --ivory-2:#ecdcb7;
+    --ivory-h1:#fbf3de; --ivory-h2:#f0e2c0;
+    --hero-1:#f8eccd; --hero-2:#eed7a6;
+    --hero-h1:#fbf2d8; --hero-h2:#f2dcae;
+    --ink:#382714; --ink-2:#563e20; --ink-muted:#7a5d34; --ink-soft:#9a8154;
+    --gold:#a26a22; --gold-bright:#c68a3a; --gold-glow:rgba(198,138,58,0.35);
+    --border:#b89260; --border-strong:#8a5d2a;
+    --rule:rgba(138,93,42,0.32);
   }
+
+  html { scroll-behavior: smooth; }
   html, body { height: 100%; }
-  body { font-family: Georgia, serif; color: var(--fg);
-         line-height: 1.55;
-         background:
-           radial-gradient(ellipse at 12% 0%, rgba(255,238,195,0.55), transparent 55%),
-           radial-gradient(ellipse at 88% 100%, rgba(140,155,110,0.12), transparent 60%),
-           linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
-         background-attachment: fixed; }
-  .page { max-width: 1240px; margin: 0 auto; padding: 28px 28px 22px;
-          min-height: 100%; display: flex; flex-direction: column; }
-  header { border-bottom: 1px solid var(--border-soft); padding-bottom: 16px; margin-bottom: 22px; }
-  h1 { font-size: 26px; font-weight: 600; letter-spacing: 0.01em; margin-bottom: 4px;
-       color: #3a2616; }
-  .subtitle { color: #6b5638; font-style: italic; font-size: 13.5px; }
+  body {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 17px; line-height: 1.6;
+    color: var(--ink);
+    background:
+      radial-gradient(ellipse 60% 40% at 50% -5%, rgba(255,240,205,0.55), transparent 70%),
+      radial-gradient(ellipse 50% 50% at 85% 100%, rgba(140,155,110,0.10), transparent 70%),
+      linear-gradient(180deg, var(--parch-1) 0%, var(--parch-2) 55%, var(--parch-3) 100%);
+    background-attachment: fixed;
+    min-height: 100%;
+    position: relative;
+    -webkit-font-smoothing: antialiased;
+  }
 
-  .sections { flex: 1; display: grid; gap: 22px;
-              grid-template-columns: repeat(5, 1fr); align-content: start; }
-  .section h2 { font-size: 11px; font-weight: 600; text-transform: uppercase;
-                letter-spacing: 0.14em; color: #6b5638; margin: 0 0 10px; }
-  .grid { display: flex; flex-direction: column; gap: 12px; }
+  body::before {
+    content: ""; position: fixed; inset: 0;
+    pointer-events: none; z-index: 1;
+    opacity: 0.38; mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' seed='9' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.24 0 0 0 0 0.17 0 0 0 0 0.08 0 0 0 0.32 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  }
 
-  .card { position: relative; display: block; overflow: hidden;
-          background: linear-gradient(160deg, var(--card-top) 0%, var(--card-bot) 100%);
-          border: 1px solid var(--card-border);
-          border-radius: 12px;
-          padding: 15px 17px;
-          text-decoration: none; color: inherit;
-          box-shadow:
-            0 2px 4px rgba(60,35,15,0.22),
-            0 6px 14px rgba(60,35,15,0.16),
-            inset 0 1px 0 rgba(255,215,155,0.18);
-          transition: transform 0.22s ease, box-shadow 0.22s ease,
-                      border-color 0.22s ease, background 0.22s ease; }
-  .card::before { content: ""; position: absolute; inset: 0; border-radius: 12px;
-                  pointer-events: none;
-                  background: radial-gradient(ellipse at 50% -20%,
-                              rgba(255,200,130,0.18), transparent 60%);
-                  opacity: 0; transition: opacity 0.22s ease; }
-  .card:hover { transform: translateY(-3px);
-                border-color: var(--card-border-hover);
-                background: linear-gradient(160deg, var(--card-top-hover) 0%, var(--card-bot-hover) 100%);
-                box-shadow:
-                  0 5px 10px rgba(60,35,15,0.30),
-                  0 12px 24px rgba(60,35,15,0.22),
-                  0 0 0 1px rgba(90,50,20,0.30),
-                  inset 0 1px 0 rgba(255,215,155,0.26); }
-  .card:hover::before { opacity: 1; }
-  .card:active { transform: translateY(-1px);
-                 box-shadow: 0 3px 8px rgba(60,35,15,0.26),
-                             inset 0 1px 0 rgba(255,215,155,0.18); }
-  .card .t { font-size: 15px; font-weight: 700; color: var(--card-title);
-             margin-bottom: 4px; letter-spacing: 0.005em; }
-  .card .d { font-size: 12px; color: var(--card-desc); line-height: 1.5;
-             display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;
-             overflow: hidden; }
+  body::after {
+    content: ""; position: fixed; inset: 0;
+    pointer-events: none; z-index: 2;
+    background: radial-gradient(ellipse at 50% 50%, transparent 50%, rgba(55,35,12,0.32) 100%);
+  }
 
-  .card.featured { background: linear-gradient(160deg, var(--feat-top) 0%, var(--feat-bot) 100%);
-                   border-color: var(--feat-border);
-                   padding-left: 20px;
-                   box-shadow:
-                     0 3px 8px rgba(60,25,10,0.30),
-                     0 10px 22px rgba(60,25,10,0.22),
-                     0 0 22px rgba(232,168,98,0.18),
-                     inset 0 1px 0 rgba(255,200,130,0.22); }
-  .card.featured::after { content: ""; position: absolute; left: 0; top: 10%; bottom: 10%;
-                          width: 3px; border-radius: 0 3px 3px 0;
-                          background: linear-gradient(180deg,
-                                      var(--feat-accent),
-                                      #7a3a12);
-                          box-shadow: 0 0 8px rgba(176,96,53,0.45); }
-  .card.featured:hover { background: linear-gradient(160deg, var(--feat-top-hover) 0%, var(--feat-bot-hover) 100%); }
-  .card.featured .t { color: var(--feat-title); }
-  .card.featured .d { color: #6b4b2a; }
-  .card.featured .t .arrow { display: inline-block; margin-left: 2px;
-                             transition: transform 0.22s ease; }
-  .card.featured:hover .t .arrow { transform: translateX(4px); }
+  .page {
+    max-width: 1280px; margin: 0 auto;
+    padding: 48px 36px 32px;
+    position: relative; z-index: 5;
+    display: flex; flex-direction: column;
+    min-height: 100%;
+  }
 
-  footer { margin-top: 22px; padding-top: 14px; border-top: 1px solid var(--border-soft);
-           font-size: 12px; color: #6b5638; }
-  footer a { color: var(--active); text-decoration: none; }
-  footer a:hover { text-decoration: underline; }
+  /* ===== HEADER ===== */
+  header.masthead {
+    text-align: center;
+    padding: 4px 0 22px;
+    opacity: 0; transform: translateY(6px);
+    animation: enter 0.8s ease 0.05s forwards;
+  }
+  .crest {
+    width: 52px; height: 52px;
+    margin: 0 auto 12px;
+    color: var(--gold);
+    filter: drop-shadow(0 1px 2px rgba(80,48,16,0.25));
+  }
+  .crest svg { width: 100%; height: 100%; display: block; }
+
+  h1.title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 500;
+    font-size: 58px;
+    letter-spacing: 0.045em;
+    color: var(--ink);
+    line-height: 1.05;
+    margin-bottom: 6px;
+  }
+  .subtitle {
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: 16px;
+    color: var(--ink-muted);
+    letter-spacing: 0.04em;
+  }
+
+  .divider {
+    display: flex; align-items: center; justify-content: center;
+    gap: 16px; margin: 22px auto 16px;
+    max-width: 520px;
+  }
+  .divider .line {
+    flex: 1; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border-strong), transparent);
+    opacity: 0.6;
+  }
+  .divider .ornament {
+    color: var(--gold); font-size: 16px;
+    letter-spacing: 0.6em; padding-right: 0;
+    opacity: 0.8;
+  }
+
+  .quote-panel {
+    max-width: 640px; margin: 0 auto;
+    text-align: center;
+    font-style: italic; font-size: 15px;
+    color: var(--ink-muted);
+    line-height: 1.55; letter-spacing: 0.01em;
+    position: relative; min-height: 3.2em;
+  }
+  .quote-panel .q {
+    position: absolute; inset: 0;
+    opacity: 0; transition: opacity 0.8s ease;
+  }
+  .quote-panel .q.active { opacity: 1; }
+  .quote-panel .attr {
+    display: block; margin-top: 4px;
+    font-style: normal; font-size: 11px;
+    color: var(--ink-soft);
+    letter-spacing: 0.22em; text-transform: uppercase;
+  }
+
+  /* ===== HERO (Digital Archive) ===== */
+  .hero-wrap {
+    margin: 32px 0 32px;
+    opacity: 0; transform: translateY(8px);
+    animation: enter 0.8s ease 0.18s forwards;
+  }
+  .hero {
+    position: relative; display: block; overflow: hidden;
+    background: linear-gradient(165deg, var(--hero-1) 0%, var(--hero-2) 100%);
+    border: 1px solid var(--border-strong);
+    border-radius: 14px;
+    padding: 32px 40px 30px 44px;
+    text-decoration: none; color: var(--ink);
+    box-shadow:
+      0 3px 8px rgba(55,32,10,0.22),
+      0 16px 38px rgba(55,32,10,0.16),
+      inset 0 1px 0 rgba(255,242,200,0.75),
+      inset 0 0 80px rgba(255,220,160,0.12);
+    transition: transform 0.45s cubic-bezier(.2,.7,.3,1),
+                box-shadow 0.35s ease,
+                background 0.35s ease;
+  }
+  .hero::before {
+    content: ""; position: absolute; left: 0; top: 12%; bottom: 12%;
+    width: 4px; border-radius: 0 3px 3px 0;
+    background: linear-gradient(180deg, var(--gold-bright), var(--gold));
+    box-shadow: 0 0 12px var(--gold-glow);
+  }
+  .hero .cursor-glow {
+    position: absolute; inset: 0; pointer-events: none;
+    background: radial-gradient(280px circle at var(--mx, 50%) var(--my, -20%), rgba(255,220,150,0.22), transparent 55%);
+    opacity: 0; transition: opacity 0.35s ease;
+  }
+  .hero:hover .cursor-glow { opacity: 1; }
+  .hero:hover {
+    background: linear-gradient(165deg, var(--hero-h1) 0%, var(--hero-h2) 100%);
+    box-shadow:
+      0 6px 14px rgba(55,32,10,0.26),
+      0 24px 52px rgba(55,32,10,0.22),
+      inset 0 1px 0 rgba(255,242,200,0.85);
+  }
+  .hero .eyebrow {
+    font-size: 11px; letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 10px;
+  }
+  .hero .t {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 40px; font-weight: 500;
+    color: var(--ink); letter-spacing: 0.015em;
+    line-height: 1.1; margin-bottom: 10px;
+  }
+  .hero .t .arrow {
+    display: inline-block; color: var(--gold);
+    margin-left: 8px; font-weight: 400;
+    transition: transform 0.3s ease;
+  }
+  .hero:hover .t .arrow { transform: translateX(7px); }
+  .hero .d {
+    font-size: 17px; color: var(--ink-2);
+    line-height: 1.55; max-width: 720px;
+  }
+  .hero .watermark {
+    position: absolute; right: -22px; bottom: -30px;
+    width: 220px; height: 220px;
+    color: var(--ink); opacity: 0.05;
+    pointer-events: none;
+  }
+  .hero .watermark svg { width: 100%; height: 100%; }
+
+  /* ===== SECTIONS ===== */
+  .sections {
+    flex: 1;
+    display: grid; gap: 28px 22px;
+    grid-template-columns: repeat(5, 1fr); align-content: start;
+  }
+  .section {
+    opacity: 0; transform: translateY(8px);
+    animation: enter 0.7s ease forwards;
+  }
+  .section:nth-child(1) { animation-delay: 0.28s; }
+  .section:nth-child(2) { animation-delay: 0.36s; }
+  .section:nth-child(3) { animation-delay: 0.44s; }
+  .section:nth-child(4) { animation-delay: 0.52s; }
+  .section:nth-child(5) { animation-delay: 0.60s; }
+
+  .section h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 12.5px; font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.28em;
+    color: var(--ink-muted);
+    margin: 0 0 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .grid { display: flex; flex-direction: column; gap: 14px; }
+
+  /* ===== CARDS ===== */
+  .card {
+    position: relative; display: block; overflow: hidden;
+    background: linear-gradient(165deg, var(--ivory-1) 0%, var(--ivory-2) 100%);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 15px 16px 14px 17px;
+    min-height: 110px;
+    text-decoration: none; color: var(--ink);
+    box-shadow:
+      0 2px 5px rgba(60,38,14,0.18),
+      0 8px 18px rgba(60,38,14,0.10),
+      inset 0 1px 0 rgba(255,245,210,0.8);
+    transition: transform 0.45s cubic-bezier(.2,.7,.3,1),
+                box-shadow 0.35s ease,
+                border-color 0.25s ease,
+                background 0.3s ease;
+    will-change: transform;
+  }
+  .card .cursor-glow {
+    position: absolute; inset: 0; pointer-events: none;
+    background: radial-gradient(200px circle at var(--mx, 50%) var(--my, -20%), rgba(255,215,145,0.28), transparent 55%);
+    opacity: 0; transition: opacity 0.35s ease;
+  }
+  .card:hover .cursor-glow { opacity: 1; }
+
+  .card:hover {
+    border-color: var(--border-strong);
+    background: linear-gradient(165deg, var(--ivory-h1) 0%, var(--ivory-h2) 100%);
+    box-shadow:
+      0 5px 12px rgba(60,38,14,0.22),
+      0 20px 40px rgba(60,38,14,0.18),
+      0 0 0 1px rgba(162,106,34,0.28),
+      inset 0 1px 0 rgba(255,245,210,0.9);
+    transition: transform 0.15s ease-out,
+                box-shadow 0.35s ease,
+                border-color 0.25s ease,
+                background 0.3s ease;
+  }
+  .card:active { transform: translateY(-1px) !important; }
+
+  .card .t {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px; font-weight: 600;
+    color: var(--ink);
+    letter-spacing: 0.01em;
+    line-height: 1.15;
+    position: relative;
+    display: inline-block;
+    padding-right: 2px;
+  }
+  .card .t::after {
+    content: ""; position: absolute;
+    left: 0; bottom: -2px;
+    height: 1px; width: 0;
+    background: var(--gold-bright);
+    transition: width 0.4s ease;
+  }
+  .card:hover .t::after { width: 100%; }
+  .card .d {
+    font-family: 'EB Garamond', serif;
+    font-size: 13.5px;
+    color: var(--ink-muted);
+    line-height: 1.5;
+    margin-top: 7px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .card .emblem {
+    position: absolute; top: 14px; right: 14px;
+    width: 19px; height: 19px;
+    color: var(--gold); opacity: 0.72;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  .card .emblem svg { width: 100%; height: 100%; display: block; }
+  .card:hover .emblem { opacity: 0.95; transform: scale(1.08); }
+
+  .card .watermark {
+    position: absolute; right: -14px; bottom: -18px;
+    width: 96px; height: 96px;
+    color: var(--ink); opacity: 0.055;
+    pointer-events: none;
+    transition: opacity 0.35s ease, transform 0.35s ease;
+  }
+  .card .watermark svg { width: 100%; height: 100%; }
+  .card:hover .watermark { opacity: 0.09; transform: rotate(-4deg); }
+
+  .card .d { padding-right: 6px; }
+  .card .t { max-width: calc(100% - 28px); }
+
+  /* Featured variant (secondary anchor cards within sections) */
+  .card.featured {
+    background: linear-gradient(165deg, var(--hero-1) 0%, var(--hero-2) 100%);
+    border-color: var(--border-strong);
+    padding-left: 19px;
+  }
+  .card.featured::after {
+    content: ""; position: absolute;
+    left: 0; top: 10%; bottom: 10%;
+    width: 3px; border-radius: 0 3px 3px 0;
+    background: linear-gradient(180deg, var(--gold-bright), var(--gold));
+    box-shadow: 0 0 8px var(--gold-glow);
+  }
+  .card.featured:hover {
+    background: linear-gradient(165deg, var(--hero-h1) 0%, var(--hero-h2) 100%);
+  }
+  .card .t .arrow {
+    display: none;
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    margin-top: 40px; padding-top: 18px;
+    border-top: 1px solid var(--rule);
+    font-size: 13px; color: var(--ink-muted);
+    text-align: center;
+    opacity: 0; animation: enter 0.8s ease 0.7s forwards;
+  }
+  footer a { color: var(--gold); text-decoration: none; }
+  footer a:hover { color: var(--gold-bright); text-decoration: underline; }
+
+  @keyframes enter {
+    to { opacity: 1; transform: translateY(0); }
+  }
 
   @media (max-width: 1100px) {
-    .sections { grid-template-columns: repeat(3, 1fr); }
+    .sections { grid-template-columns: repeat(3, 1fr); gap: 24px 18px; }
+    .hero { padding: 28px 28px 26px 32px; }
+    .hero .t { font-size: 34px; }
+    h1.title { font-size: 48px; }
   }
   @media (max-width: 700px) {
+    .page { padding: 32px 20px 24px; }
     .sections { grid-template-columns: repeat(2, 1fr); }
+    .hero .t { font-size: 28px; }
+    h1.title { font-size: 38px; }
   }
   @media (max-width: 460px) {
     .sections { grid-template-columns: 1fr; }
   }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+  }
 </style>
 </head>
 <body>
+
+<!-- Emblem library -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <symbol id="e-book" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M10 5 L10 17"/>
+    <path d="M10 5 Q7 3.2 2.5 3.5 L2.5 15.5 Q7 15.2 10 17"/>
+    <path d="M10 5 Q13 3.2 17.5 3.5 L17.5 15.5 Q13 15.2 10 17"/>
+  </symbol>
+  <symbol id="e-column" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3 17 L17 17"/>
+    <path d="M4 16 L16 16"/>
+    <path d="M5 14 L15 14"/>
+    <path d="M6.5 14 L6.5 5"/>
+    <path d="M10 14 L10 5"/>
+    <path d="M13.5 14 L13.5 5"/>
+    <path d="M5 5 L15 5"/>
+    <path d="M4 4 L16 4"/>
+    <path d="M3.5 3 L16.5 3"/>
+  </symbol>
+  <symbol id="e-star" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1" stroke-linejoin="round">
+    <path d="M10 1 L11.4 8.6 L19 10 L11.4 11.4 L10 19 L8.6 11.4 L1 10 L8.6 8.6 Z" fill="currentColor" fill-opacity="0.25"/>
+    <path d="M3.5 3.5 L16.5 16.5" stroke-opacity="0.5"/>
+    <path d="M16.5 3.5 L3.5 16.5" stroke-opacity="0.5"/>
+  </symbol>
+  <symbol id="e-quill" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M17 3 Q13 8 9 12 Q6 14 4 16" />
+    <path d="M17 3 Q15 8 11 11 Q8 13 6 14 L4.5 15.5 L4 17 L5.5 16.5 Z" fill="currentColor" fill-opacity="0.28"/>
+    <path d="M7 13 Q10 11 14 7" stroke-opacity="0.5"/>
+  </symbol>
+  <symbol id="e-frame" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round">
+    <rect x="2.5" y="2.5" width="15" height="15" rx="0.5"/>
+    <rect x="4.5" y="4.5" width="11" height="11" rx="0.3" stroke-opacity="0.5"/>
+    <path d="M7 12 L10 8 L13 12" stroke-opacity="0.6"/>
+    <circle cx="8" cy="7" r="0.8" fill="currentColor" fill-opacity="0.6"/>
+  </symbol>
+  <symbol id="e-flag" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M5 2 L5 18"/>
+    <path d="M5 3 L16 3 L12.5 7.5 L16 12 L5 12 Z" fill="currentColor" fill-opacity="0.28"/>
+  </symbol>
+  <symbol id="e-compass" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1" stroke-linejoin="round">
+    <circle cx="10" cy="10" r="8.5"/>
+    <circle cx="10" cy="10" r="6" stroke-opacity="0.45"/>
+    <path d="M10 2 L11.5 10 L10 18 L8.5 10 Z" fill="currentColor" fill-opacity="0.7"/>
+    <path d="M2 10 L10 8.5 L18 10 L10 11.5 Z" fill="currentColor" fill-opacity="0.4"/>
+    <circle cx="10" cy="10" r="0.9" fill="currentColor"/>
+  </symbol>
+  <symbol id="e-atom" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="0.95" stroke-linejoin="round">
+    <ellipse cx="10" cy="10" rx="8" ry="3"/>
+    <ellipse cx="10" cy="10" rx="8" ry="3" transform="rotate(60 10 10)"/>
+    <ellipse cx="10" cy="10" rx="8" ry="3" transform="rotate(120 10 10)"/>
+    <circle cx="10" cy="10" r="1.4" fill="currentColor"/>
+  </symbol>
+  <symbol id="e-orbit" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1" stroke-linejoin="round">
+    <circle cx="10" cy="10" r="8.5" stroke-opacity="0.5"/>
+    <circle cx="10" cy="10" r="5" stroke-opacity="0.8"/>
+    <circle cx="10" cy="10" r="2.2" fill="currentColor" fill-opacity="0.8"/>
+    <circle cx="17" cy="10" r="1.1" fill="currentColor"/>
+    <circle cx="3.5" cy="10" r="0.7" fill="currentColor" fill-opacity="0.7"/>
+  </symbol>
+  <symbol id="e-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M16 3 Q17 12 10 16 Q5 18 3 16 Q2 13 4 10 Q8 4 15 3 Q16 3 16 3 Z" fill="currentColor" fill-opacity="0.24"/>
+    <path d="M16 3 Q8 8 3 17" stroke-opacity="0.85"/>
+  </symbol>
+  <symbol id="e-mirror" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+    <ellipse cx="10" cy="8" rx="5.5" ry="6"/>
+    <path d="M10 14 L10 18"/>
+    <path d="M7 18 L13 18"/>
+    <path d="M7.5 5 Q9 3.5 11.5 4" stroke-opacity="0.45"/>
+  </symbol>
+  <symbol id="e-face" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round">
+    <circle cx="10" cy="10" r="8"/>
+    <circle cx="7.5" cy="8.5" r="0.8" fill="currentColor"/>
+    <circle cx="12.5" cy="8.5" r="0.8" fill="currentColor"/>
+    <path d="M6.8 12 Q10 14.5 13.2 12" fill="none"/>
+  </symbol>
+  <symbol id="e-crest" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round">
+    <circle cx="24" cy="24" r="20.5" stroke-width="0.8"/>
+    <circle cx="24" cy="24" r="14" stroke-width="0.6" stroke-opacity="0.6"/>
+    <path d="M24 4 L26.5 24 L24 44 L21.5 24 Z" fill="currentColor" fill-opacity="0.88"/>
+    <path d="M4 24 L24 21.5 L44 24 L24 26.5 Z" fill="currentColor" fill-opacity="0.55"/>
+    <path d="M10 10 L24 22 L38 38 L26 24 Z" fill="currentColor" fill-opacity="0.32"/>
+    <path d="M38 10 L26 22 L10 38 L22 24 Z" fill="currentColor" fill-opacity="0.32"/>
+    <circle cx="24" cy="24" r="1.8" fill="currentColor"/>
+  </symbol>
+</svg>
+
 <div class="page">
-  <header>
-    <h1>Workspace</h1>
-    <div class="subtitle">A collection of reading tools, language primers, and reference dashboards.</div>
+
+  <header class="masthead">
+    <div class="crest"><svg><use href="#e-crest"/></svg></div>
+    <h1 class="title">Workspace</h1>
+    <div class="subtitle">A private intellectual operating system.</div>
+    <div class="divider">
+      <div class="line"></div>
+      <div class="ornament">❦ ❦ ❦</div>
+      <div class="line"></div>
+    </div>
+    <div class="quote-panel" aria-live="polite">
+      <div class="q active">
+        "A room without books is like a body without a soul."
+        <span class="attr">Cicero</span>
+      </div>
+      <div class="q">
+        "The true university of these days is a collection of books."
+        <span class="attr">Thomas Carlyle</span>
+      </div>
+      <div class="q">
+        "Study is the bane of childhood, the oil of youth, the indulgence of adulthood, and a restorative in old age."
+        <span class="attr">Walter Savage Landor</span>
+      </div>
+      <div class="q">
+        "We read to know we are not alone."
+        <span class="attr">C. S. Lewis</span>
+      </div>
+      <div class="q">
+        "Classics are books which exert a peculiar influence both when they refuse to be eradicated from the mind and when they conceal themselves in the folds of memory."
+        <span class="attr">Italo Calvino</span>
+      </div>
+    </div>
   </header>
 
+  <!-- HERO -->
+  <div class="hero-wrap">
+    <a class="hero" href="https://stevenfrye30.github.io/digital-archive/" title="1,100+ public-domain and Creative Commons texts, side-by-side translations, full-text search.">
+      <div class="cursor-glow"></div>
+      <div class="eyebrow">The Archive</div>
+      <div class="t">Digital Archive <span class="arrow">→</span></div>
+      <div class="d">1,100+ public-domain and Creative Commons texts — scripture, philosophy, classics, and poetry — with side-by-side translations and full-text search. The foundational library of the workspace.</div>
+      <div class="watermark"><svg><use href="#e-book"/></svg></div>
+    </a>
+  </div>
+
   <div class="sections">
+
     <div class="section">
       <h2>Reading &amp; Scholarship</h2>
       <div class="grid">
-        <a class="card featured" href="https://stevenfrye30.github.io/digital-archive/" title="1,100+ public-domain and Creative Commons texts, side-by-side translations, full-text search.">
-          <div class="t">Digital Archive <span class="arrow">→</span></div>
-          <div class="d">1,100+ public-domain and Creative Commons texts, side-by-side translations, full-text search.</div>
-        </a>
         <a class="card" href="philosophy/" title="Chronological map of philosophers and their works.">
+          <div class="cursor-glow"></div>
+          <span class="emblem"><svg><use href="#e-column"/></svg></span>
           <div class="t">Philosophy</div>
           <div class="d">Chronological map of philosophers and their works.</div>
+          <div class="watermark"><svg><use href="#e-column"/></svg></div>
         </a>
         <a class="card" href="gods/" title="Cross-cultural temporal map of the divine — family trees across 27 pantheons, archetypes, and deified humans.">
+          <div class="cursor-glow"></div>
+          <span class="emblem"><svg><use href="#e-star"/></svg></span>
           <div class="t">Gods</div>
           <div class="d">Cross-cultural temporal map of the divine — family trees across 27 pantheons.</div>
+          <div class="watermark"><svg><use href="#e-star"/></svg></div>
         </a>
       </div>
     </div>
@@ -143,12 +532,18 @@
       <h2>Language</h2>
       <div class="grid">
         <a class="card" href="languages/" title="Hub for six tools — Scripts (81 writing systems), language family tree and world map, Script Evolution, Phonetic Center, Loanwords, and Sound.">
+          <div class="cursor-glow"></div>
+          <span class="emblem"><svg><use href="#e-quill"/></svg></span>
           <div class="t">Languages</div>
-          <div class="d">Hub for six tools — Scripts, family tree, Script Evolution, Phonetics, Loanwords, Sound.</div>
+          <div class="d">Six tools — Scripts, family tree, Script Evolution, Phonetics, Loanwords, Sound.</div>
+          <div class="watermark"><svg><use href="#e-quill"/></svg></div>
         </a>
         <a class="card" href="images/" title="Art, architecture, and visual reference — digital museum walks.">
+          <div class="cursor-glow"></div>
+          <span class="emblem"><svg><use href="#e-frame"/></svg></span>
           <div class="t">Art</div>
           <div class="d">Art, architecture, and visual reference — digital museum walks.</div>
+          <div class="watermark"><svg><use href="#e-frame"/></svg></div>
         </a>
       </div>
     </div>
@@ -157,12 +552,18 @@
       <h2>Geography</h2>
       <div class="grid">
         <a class="card" href="flags/" title="197 countries — browse flags, quiz yourself, and locate on a map.">
+          <div class="cursor-glow"></div>
+          <span class="emblem"><svg><use href="#e-flag"/></svg></span>
           <div class="t">Flags</div>
-          <div class="d">197 countries — browse flags, quiz yourself, and locate on a map.</div>
+          <div class="d">197 countries — browse, quiz yourself, and locate on a map.</div>
+          <div class="watermark"><svg><use href="#e-flag"/></svg></div>
         </a>
         <a class="card featured" href="milwaukee/" title="Moving guide, interactive city map, orientation notes, move logistics, and an engagement hub for my two-year stay.">
-          <div class="t">Milwaukee <span class="arrow">→</span></div>
-          <div class="d">Moving guide, interactive city map, orientation notes, and an engagement hub.</div>
+          <div class="cursor-glow"></div>
+          <span class="emblem"><svg><use href="#e-compass"/></svg></span>
+          <div class="t">Milwaukee</div>
+          <div class="d">Moving guide, city map, orientation notes, and a two-year engagement hub.</div>
+          <div class="watermark"><svg><use href="#e-compass"/></svg></div>
         </a>
       </div>
     </div>
@@ -171,16 +572,25 @@
       <h2>Science &amp; Reference</h2>
       <div class="grid">
         <a class="card featured" href="science/" title="Tutoring center with flashcards and multiple-choice, searchable 2,039-term glossary, 14 topic clusters. Five years of college coursework distilled.">
-          <div class="t">Science <span class="arrow">→</span></div>
+          <div class="cursor-glow"></div>
+          <span class="emblem"><svg><use href="#e-atom"/></svg></span>
+          <div class="t">Science</div>
           <div class="d">Flashcards, MCQ, 2,039-term glossary, 14 topic clusters. Five years of coursework.</div>
+          <div class="watermark"><svg><use href="#e-atom"/></svg></div>
         </a>
         <a class="card" href="cosmos/" title="Scale-by-scale tour of the universe.">
+          <div class="cursor-glow"></div>
+          <span class="emblem"><svg><use href="#e-orbit"/></svg></span>
           <div class="t">Cosmos</div>
           <div class="d">Scale-by-scale tour of the universe.</div>
+          <div class="watermark"><svg><use href="#e-orbit"/></svg></div>
         </a>
         <a class="card" href="nutrilens/" title="USDA food nutrition lookup, offline-ready.">
+          <div class="cursor-glow"></div>
+          <span class="emblem"><svg><use href="#e-leaf"/></svg></span>
           <div class="t">NutriLens</div>
           <div class="d">USDA food nutrition lookup, offline-ready.</div>
+          <div class="watermark"><svg><use href="#e-leaf"/></svg></div>
         </a>
       </div>
     </div>
@@ -189,21 +599,72 @@
       <h2>Play</h2>
       <div class="grid">
         <a class="card featured" href="mirror/" title="A quiet, local-first place to know yourself — values, reflections, body, money, and the people who matter. Nutrition powered by NutriLens.">
-          <div class="t">Mirror <span class="arrow">→</span></div>
+          <div class="cursor-glow"></div>
+          <span class="emblem"><svg><use href="#e-mirror"/></svg></span>
+          <div class="t">Mirror</div>
           <div class="d">Local-first self-knowledge — values, body, money, people. Nutrition via NutriLens.</div>
+          <div class="watermark"><svg><use href="#e-mirror"/></svg></div>
         </a>
         <a class="card" href="emoji-games/" title="Browse the full emoji library and play casual games — Zombie Survival, Nuggets, and more.">
+          <div class="cursor-glow"></div>
+          <span class="emblem"><svg><use href="#e-face"/></svg></span>
           <div class="t">EmojiLand</div>
           <div class="d">Full emoji library plus casual games — Zombie Survival, Nuggets, and more.</div>
+          <div class="watermark"><svg><use href="#e-face"/></svg></div>
         </a>
       </div>
     </div>
+
   </div>
 
   <footer>
     Source code on <a href="https://github.com/stevenfrye30/workspace-hub">GitHub</a>.
-    Built entirely from public-domain and CC-licensed material where applicable.
+    Built entirely from public-domain and Creative Commons material where applicable.
   </footer>
 </div>
+
+<script>
+(function(){
+  // --- Rotating quotes ---
+  const quotes = document.querySelectorAll('.quote-panel .q');
+  if (quotes.length > 1) {
+    let qi = 0;
+    setInterval(function(){
+      quotes[qi].classList.remove('active');
+      qi = (qi + 1) % quotes.length;
+      quotes[qi].classList.add('active');
+    }, 7500);
+  }
+
+  // --- Cursor-tracking glow + subtle tilt ---
+  var fineHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!fineHover || reduceMotion) return;
+
+  var tiltCards = document.querySelectorAll('.card, .hero');
+  tiltCards.forEach(function(card){
+    var raf = 0;
+    var lastX = 50, lastY = 50;
+    function apply() {
+      raf = 0;
+      card.style.setProperty('--mx', lastX + '%');
+      card.style.setProperty('--my', lastY + '%');
+      var rx = ((lastY/100) - 0.5) * -1.6;
+      var ry = ((lastX/100) - 0.5) *  1.6;
+      card.style.transform = 'perspective(900px) translateY(-3px) rotateX(' + rx + 'deg) rotateY(' + ry + 'deg)';
+    }
+    card.addEventListener('mousemove', function(e){
+      var r = card.getBoundingClientRect();
+      lastX = ((e.clientX - r.left) / r.width) * 100;
+      lastY = ((e.clientY - r.top) / r.height) * 100;
+      if (!raf) raf = requestAnimationFrame(apply);
+    });
+    card.addEventListener('mouseleave', function(){
+      if (raf) { cancelAnimationFrame(raf); raf = 0; }
+      card.style.transform = '';
+    });
+  });
+})();
+</script>
 </body>
 </html>
