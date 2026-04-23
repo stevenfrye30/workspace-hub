@@ -1,0 +1,2992 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Gods — A Cross-Cultural Temporal Map</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="A cross-cultural temporal map of the divine — 1,000 figures across 57 traditions, from Proto-Indo-European reconstructions to living religions. Family trees, timelines, archetypes, and notable mentions.">
+<meta property="og:title" content="Gods — A Cross-Cultural Temporal Map">
+<meta property="og:description" content="1,000 deities, spirits, and deified humans across 57 traditions — interactive family trees, a 7,000-year timeline, cross-cultural archetypes, and notable mentions.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%230a0b1a' stroke='%23e5c158' stroke-width='2'/%3E%3Ctext x='32' y='44' font-family='Georgia' font-size='38' fill='%23e5c158' text-anchor='middle'%3E%E2%98%89%3C/text%3E%3C/svg%3E">
+<style>
+:root {
+  --bg:#0a0b1a; --panel:#141829; --panel2:#1d2238; --ink:#e8ddc3; --muted:#8a91b0;
+  --gold:#e5c158; --gold-deep:#b8901f; --blood:#a03040; --blood-deep:#701828;
+  --violet:#7a5ea8; --cyan:#5c9bc7; --silver:#c5c9d9;
+  --line:#2a2f4a; --gold-soft:rgba(229,193,88,0.4); --gold-faint:rgba(229,193,88,0.1);
+  --star-tint:rgba(197,201,217,0.04);
+}
+* { box-sizing:border-box; }
+html, body { margin:0; padding:0; }
+body {
+  font-family: 'Iowan Old Style', Georgia, 'Hoefler Text', serif;
+  background:var(--bg);
+  background-image:
+    radial-gradient(ellipse at 15% 10%, rgba(122,94,168,0.10), transparent 55%),
+    radial-gradient(ellipse at 85% 85%, rgba(160,48,64,0.08), transparent 55%),
+    radial-gradient(1px 1px at 20% 30%, var(--star-tint), transparent 50%),
+    radial-gradient(1px 1px at 70% 80%, var(--star-tint), transparent 50%),
+    radial-gradient(1px 1px at 40% 70%, var(--star-tint), transparent 50%);
+  color:var(--ink); line-height:1.6; min-height:100vh;
+}
+header {
+  padding:30px 28px 22px; text-align:center;
+  background:linear-gradient(180deg, #0e1024 0%, #0a0b1a 100%);
+  border-bottom:3px double var(--gold-soft); position:relative;
+}
+header::before, header::after {
+  content:''; position:absolute; left:28px; right:28px; height:1px;
+  background:linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+header::before { top:8px; }
+header::after  { bottom:-1px; opacity:0.45; }
+header h1 {
+  margin:0; font-size:32px; letter-spacing:8px; font-weight:normal;
+  color:var(--gold); font-variant:small-caps;
+  text-shadow:0 1px 0 #000, 0 0 28px rgba(229,193,88,0.18);
+}
+header h1::before { content:'☾'; color:var(--silver); margin-right:22px; font-size:0.9em; opacity:0.9; }
+header h1::after  { content:'☉'; color:var(--gold); margin-left:22px; font-size:0.9em; opacity:0.9; }
+header p {
+  margin:8px 0 0; color:var(--muted); font-style:italic; font-size:13px; letter-spacing:1.2px;
+}
+header p::before { content:'❋  '; color:var(--gold-deep); font-style:normal; }
+header p::after  { content:'  ❋'; color:var(--gold-deep); font-style:normal; }
+nav {
+  display:flex; gap:6px; padding:12px 28px; background:#07081a;
+  border-bottom:1px solid var(--line); flex-wrap:wrap;
+  justify-content:center;
+}
+nav button {
+  background:linear-gradient(180deg, var(--panel), var(--panel2));
+  border:1px solid var(--line); color:var(--muted);
+  padding:9px 18px; font-family:inherit; font-size:12px; letter-spacing:2px;
+  cursor:pointer; text-transform:uppercase; white-space:nowrap;
+  border-radius:14px / 50%;
+  transition: color .15s, border-color .15s, background .15s;
+}
+nav button:hover { color:var(--gold); border-color:var(--gold-soft); }
+nav button.active {
+  color:#0a0b1a;
+  background:linear-gradient(180deg, var(--gold), var(--gold-deep));
+  border-color:var(--gold); font-weight:bold;
+}
+main { padding:26px 28px; max-width:1400px; margin:0 auto; }
+.tab { display:none; }
+.tab.active { display:block; }
+h2 {
+  color:var(--gold); font-weight:normal; letter-spacing:3px; font-variant:small-caps;
+  font-size:24px; margin-top:0; padding-bottom:12px; position:relative;
+}
+h2::after {
+  content:''; position:absolute; left:0; right:0; bottom:4px; height:2px;
+  background:linear-gradient(90deg, var(--gold) 0%, var(--gold) 28%, transparent 28.5%, transparent 30%, var(--gold-deep) 30.5%, var(--gold-deep) 100%);
+  opacity:0.5;
+}
+h3 { color:var(--cyan); font-weight:normal; margin-top:24px; margin-bottom:10px; letter-spacing:0.8px; font-size:17px; }
+p { margin:10px 0; }
+main p { line-height:1.7; }
+
+.intro { color:var(--muted); font-style:italic; margin-bottom:24px; line-height:1.7; }
+
+.grid { display:grid; gap:16px; }
+.grid-pantheons { grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); }
+
+/* Pantheon view toggle + sort */
+.pantheon-view-controls {
+  display:flex; gap:12px; align-items:center; flex-wrap:wrap;
+  padding:10px 14px; margin-bottom:20px;
+  background:var(--panel); border:1px solid var(--line); border-radius:8px;
+}
+.pantheon-view-controls label {
+  color:var(--muted); font-size:11px; letter-spacing:1.6px;
+  font-variant:small-caps; font-weight:bold;
+}
+.view-toggle { display:flex; gap:4px; }
+.view-toggle button {
+  background:var(--panel2); border:1px solid var(--line); color:var(--muted);
+  padding:7px 14px; border-radius:6px; cursor:pointer;
+  font-family:inherit; font-size:11px; letter-spacing:1.2px;
+  font-variant:small-caps; transition:all .15s;
+}
+.view-toggle button.active {
+  color:var(--bg); background:linear-gradient(180deg, var(--gold), var(--gold-deep));
+  border-color:var(--gold); font-weight:bold;
+}
+.view-toggle button:hover:not(.active) { color:var(--gold); border-color:var(--gold-soft); }
+.pantheon-view-controls select {
+  background:var(--panel2); color:var(--ink); border:1px solid var(--line);
+  padding:7px 10px; border-radius:6px; font-family:inherit; font-size:12px;
+}
+.pantheon-view-controls .total-count {
+  color:var(--muted); font-size:12px; font-style:italic; margin-left:auto;
+}
+
+/* Grouped pantheons overview */
+.pantheon-group { margin-bottom:32px; }
+.pantheon-group-head {
+  display:flex; align-items:baseline; gap:14px;
+  padding:10px 2px 10px; margin-bottom:12px;
+  border-bottom:1px solid var(--line);
+  cursor:pointer;
+  transition:border-color .15s;
+}
+.pantheon-group-head:hover { border-bottom-color:var(--gold-soft); }
+.pantheon-group-head .toggle-icon {
+  color:var(--gold); font-size:9px; letter-spacing:0; margin-right:8px;
+  transition:transform .2s; display:inline-block;
+  width:10px; text-align:center; vertical-align:middle;
+  opacity:0.75;
+}
+.pantheon-group-head:hover .toggle-icon { opacity:1; }
+.pantheon-group.collapsed .toggle-icon { transform:rotate(-90deg); }
+.pantheon-group.collapsed .pantheon-group-grid,
+.pantheon-group.collapsed .pantheon-compact-list { display:none; }
+.pantheon-group.collapsed .pantheon-group-head { margin-bottom:6px; }
+
+/* Compact list row — used in list + era modes */
+.pantheon-compact-list {
+  display:flex; flex-direction:column; gap:3px;
+  margin-bottom:4px;
+}
+.pantheon-row {
+  display:flex; align-items:center; gap:14px;
+  padding:9px 12px 9px 16px; border-radius:6px;
+  border:1px solid var(--line); background:var(--panel);
+  cursor:pointer; position:relative; overflow:hidden;
+  transition:border-color .15s, background .15s, transform .1s;
+}
+.pantheon-row::before {
+  content:''; position:absolute; left:0; top:0; bottom:0; width:3px;
+  background:var(--pantheon-color, var(--gold));
+}
+.pantheon-row:hover {
+  border-color:var(--gold-soft); background:linear-gradient(180deg, var(--panel), var(--panel2));
+  transform:translateX(2px);
+}
+.pantheon-row .pr-name {
+  color:var(--gold); font-size:14px; font-weight:normal; flex-shrink:0;
+  min-width:170px; letter-spacing:0.2px;
+}
+.pantheon-row .pr-region {
+  color:var(--cyan); font-size:11px; font-style:italic;
+  min-width:120px; flex-shrink:0;
+  overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+}
+.pantheon-row .pr-span {
+  color:var(--muted); font-size:10px; font-variant:small-caps; letter-spacing:1.3px;
+  min-width:140px; flex-shrink:0;
+}
+.pantheon-row .pr-count {
+  color:var(--gold-deep); font-size:10px; font-variant:small-caps; letter-spacing:1.2px;
+  background:var(--panel2); padding:1px 8px; border-radius:10px;
+  border:1px solid var(--line); white-space:nowrap; font-weight:bold;
+  flex-shrink:0;
+}
+.pantheon-row .pr-desc {
+  color:var(--ink); font-size:11.5px; opacity:0.72; flex:1;
+  overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+}
+@media (max-width: 840px) {
+  .pantheon-row { flex-wrap:wrap; gap:6px 12px; }
+  .pantheon-row .pr-desc { flex-basis:100%; white-space:normal; }
+  .pantheon-row .pr-region, .pantheon-row .pr-span { min-width:0; }
+}
+.pantheon-group-head h3 {
+  margin:0; color:var(--gold); font-weight:normal; letter-spacing:2.5px;
+  font-variant:small-caps; font-size:16px;
+}
+.pantheon-group-head .group-count {
+  color:var(--muted); font-size:12px; font-style:italic; letter-spacing:0.5px;
+}
+.pantheon-group-head .group-era {
+  color:var(--cyan); font-size:11px; font-variant:small-caps; letter-spacing:1.5px; margin-left:auto;
+}
+
+.pantheon-group-grid {
+  display:grid; gap:10px;
+  grid-template-columns:repeat(auto-fill, minmax(230px, 1fr));
+}
+
+.pantheon-card {
+  background:var(--panel); border:1px solid var(--line); border-radius:8px;
+  padding:12px 14px 11px 17px; cursor:pointer; position:relative; overflow:hidden;
+  transition:border-color .2s, transform .15s, box-shadow .2s, background .2s;
+  min-height:0;
+}
+.pantheon-card::before {
+  content:''; position:absolute; left:0; top:0; bottom:0; width:4px;
+  background:var(--pantheon-color, var(--gold));
+}
+.pantheon-card:hover {
+  border-color:var(--gold-soft); transform:translateY(-2px);
+  box-shadow:0 6px 18px rgba(0,0,0,0.4), 0 0 0 1px var(--gold-faint);
+  background:linear-gradient(180deg, var(--panel), var(--panel2));
+}
+.pantheon-card .card-head {
+  display:flex; align-items:baseline; gap:8px; justify-content:space-between;
+  margin-bottom:2px;
+}
+.pantheon-card h4 {
+  margin:0; color:var(--gold); font-size:15px; font-weight:normal;
+  letter-spacing:0.3px; line-height:1.25;
+}
+.pantheon-card .count-chip {
+  color:var(--gold-deep); font-size:10px; font-variant:small-caps; letter-spacing:1.2px;
+  background:var(--panel2); padding:1px 8px; border-radius:10px;
+  border:1px solid var(--line); white-space:nowrap; font-weight:bold;
+}
+.pantheon-card .region {
+  color:var(--cyan); font-size:11px; font-style:italic; margin:1px 0 3px;
+  overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+}
+.pantheon-card .span {
+  color:var(--muted); font-size:10px; font-variant:small-caps; letter-spacing:1.3px;
+  margin-bottom:5px;
+}
+.pantheon-card .desc {
+  color:var(--ink); font-size:12px; line-height:1.45;
+  display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical;
+  overflow:hidden; opacity:0.82;
+}
+
+.filters { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:20px; align-items:center; }
+.filters input, .filters select {
+  background:var(--panel2); color:var(--ink); border:1px solid var(--line);
+  padding:9px 14px; border-radius:6px; font-family:inherit; font-size:13px;
+  transition:border-color .2s, box-shadow .2s;
+}
+.filters input:focus, .filters select:focus {
+  outline:none; border-color:var(--gold); box-shadow:0 0 0 3px var(--gold-faint);
+}
+.filters input { min-width:220px; }
+.filters .count { color:var(--muted); font-size:12px; font-style:italic; margin-left:auto; }
+
+.god-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:12px; }
+
+/* Notable Mentions */
+.mentions-group { margin-bottom:26px; }
+.mentions-group-head {
+  display:flex; align-items:baseline; gap:12px;
+  padding:8px 2px 8px; margin-bottom:8px; border-bottom:1px solid var(--line);
+}
+.mentions-group-head h3 {
+  margin:0; color:var(--gold); font-weight:normal; letter-spacing:2px;
+  font-variant:small-caps; font-size:14px;
+}
+.mentions-group-head .mg-count { color:var(--muted); font-size:11px; font-style:italic; }
+.mentions-list { display:flex; flex-direction:column; gap:5px; }
+.mention-item {
+  padding:6px 10px; border-radius:5px; display:flex; gap:10px;
+  align-items:baseline; font-size:13px; line-height:1.5;
+  border-left:2px solid transparent;
+}
+.mention-item:hover { background:rgba(229,193,88,0.03); border-left-color:var(--gold-soft); }
+.mention-item .mn-name { color:var(--gold); font-weight:bold; flex-shrink:0; min-width:160px; }
+.mention-item .mn-note { color:var(--ink); opacity:0.85; }
+.god-card {
+  background:var(--panel); border:1px solid var(--line); border-radius:8px;
+  padding:12px 16px; cursor:pointer; outline:none; position:relative;
+  transition:border-color .2s, transform .2s, box-shadow .25s, background .2s;
+}
+.god-card::before {
+  content:''; position:absolute; left:0; top:0; bottom:0; width:3px; border-radius:8px 0 0 8px;
+  background:var(--pantheon-color, var(--gold));
+}
+.god-card:hover, .god-card:focus {
+  border-color:var(--gold-soft); transform:translateY(-2px);
+  box-shadow:0 6px 18px rgba(0,0,0,0.4);
+  background:linear-gradient(180deg, var(--panel), var(--panel2));
+}
+.god-card .name { font-size:15px; color:var(--ink); font-weight:bold; letter-spacing:0.3px; }
+.god-card .pantheon { color:var(--gold); font-size:11px; font-variant:small-caps; letter-spacing:1.2px; margin-top:2px; }
+.god-card .cat { color:var(--cyan); font-size:11px; margin-top:2px; font-style:italic; }
+.god-card .domains { color:var(--muted); font-size:11px; margin-top:6px; }
+
+.focus-container {
+  background:var(--panel); border:1px solid var(--line); border-radius:10px;
+  margin-top:16px; position:relative;
+}
+.focus-controls { padding:14px 18px; display:flex; flex-wrap:wrap; gap:10px; align-items:center; border-bottom:1px solid var(--line); }
+.focus-controls label { color:var(--muted); font-size:11px; letter-spacing:1.8px; font-variant:small-caps; font-weight:bold; }
+.focus-controls select { min-width:200px; }
+.focus-controls button {
+  background:var(--panel2); border:1px solid var(--line); color:var(--ink);
+  padding:8px 14px; border-radius:6px; cursor:pointer; font-family:inherit; font-size:12px;
+  letter-spacing:1px; font-variant:small-caps; transition:all .15s;
+}
+.focus-controls button:hover:not(:disabled) { border-color:var(--gold-soft); color:var(--gold); }
+.focus-controls button:disabled { opacity:0.4; cursor:not-allowed; }
+.focus-controls .count { color:var(--muted); font-size:12px; margin-left:auto; font-style:italic; }
+
+.focus-view { padding:28px 22px 22px; }
+.focus-section-label {
+  text-align:center; font-variant:small-caps; letter-spacing:3px;
+  color:var(--gold-deep); font-size:11px; font-weight:bold;
+  margin:20px 0 12px; position:relative;
+}
+.focus-section-label::before, .focus-section-label::after {
+  content:''; position:absolute; top:50%; width:30%; height:1px;
+  background:linear-gradient(90deg, transparent, var(--line));
+}
+.focus-section-label::before { left:0; background:linear-gradient(90deg, transparent, var(--line)); }
+.focus-section-label::after  { right:0; background:linear-gradient(90deg, var(--line), transparent); }
+
+.focus-row { display:flex; flex-wrap:wrap; gap:10px; justify-content:center; }
+.focus-row.small-row { gap:6px; }
+.focus-main-row {
+  display:grid; grid-template-columns: 1fr minmax(260px, 360px) 1fr;
+  gap:24px; align-items:start; margin-top:8px;
+}
+.focus-side { min-width:0; }
+.focus-side h4 {
+  margin:0 0 10px; font-variant:small-caps; letter-spacing:2px;
+  color:var(--cyan); font-size:12px; font-weight:normal; text-align:center;
+}
+.focus-side-list { display:flex; flex-direction:column; gap:8px; }
+
+.focus-card {
+  background:var(--panel2); border:1px solid var(--line); border-radius:8px;
+  padding:10px 14px 10px 14px; cursor:pointer; text-align:left; position:relative;
+  display:flex; gap:10px; align-items:center;
+  transition:border-color .2s, transform .2s, box-shadow .2s, background .2s;
+}
+.focus-card::before {
+  content:''; position:absolute; left:0; top:0; bottom:0; width:3px;
+  background:var(--pantheon-color, var(--gold)); border-radius:8px 0 0 8px;
+}
+.focus-card:hover {
+  border-color:var(--gold-soft); transform:translateY(-2px);
+  box-shadow:0 6px 16px rgba(0,0,0,0.4); background:linear-gradient(180deg, var(--panel2), var(--panel));
+}
+.focus-card-text { flex:1; min-width:0; overflow:hidden; }
+.focus-card .fname { font-size:14px; color:var(--ink); font-weight:bold; letter-spacing:0.3px; overflow:hidden; text-overflow:ellipsis; }
+.focus-card .fmeta { font-size:11px; color:var(--muted); margin-top:2px; font-style:italic; }
+.focus-card .fdom { font-size:11px; color:var(--gold); margin-top:3px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+
+/* Tiny image variant for inside relative cards */
+.god-image.tiny, .god-glyph.tiny {
+  width:36px; height:36px; flex-shrink:0;
+  border-radius:5px;
+  box-shadow:0 2px 6px rgba(0,0,0,0.3);
+  cursor:inherit; /* inherit pointer from parent card, no zoom-in */
+}
+.god-glyph.tiny { font-size:18px; }
+.god-image.tiny .god-image-caption { display:none; }
+.god-image.tiny img { object-position:center 15%; }
+.focus-card .god-image.tiny:hover img { transform:none; } /* no zoom on tiny */
+
+/* Co-parent grouping for children */
+.coparent-group { margin-top:12px; }
+.coparent-group:first-child { margin-top:0; }
+.coparent-heading {
+  display:flex; align-items:center; gap:8px;
+  padding:8px 4px 4px;
+  color:var(--muted); font-size:12px; letter-spacing:1.5px; font-variant:small-caps;
+  font-style:normal;
+}
+.coparent-heading strong { color:var(--gold); font-weight:bold; letter-spacing:0.3px; font-variant:normal; }
+.coparent-heading::before, .coparent-heading::after {
+  content:''; flex:1; height:1px;
+  background:linear-gradient(90deg, transparent, var(--gold-faint));
+}
+.coparent-heading::after { background:linear-gradient(90deg, var(--gold-faint), transparent); }
+.coparent-heading.clickable { cursor:pointer; transition:color .15s; }
+.coparent-heading.clickable:hover strong { color:var(--ink); }
+.coparent-heading .thumb {
+  width:24px; height:24px; border-radius:50%; overflow:hidden;
+  flex-shrink:0; background:var(--panel); border:1px solid var(--gold-faint);
+  display:inline-flex; align-items:center; justify-content:center;
+}
+.coparent-heading .thumb img { width:100%; height:100%; object-fit:cover; object-position:center 15%; }
+.coparent-heading .thumb .glyph { font-size:13px; color:var(--gold); }
+.focus-card.missing {
+  opacity:0.5; cursor:default; font-style:italic;
+  background:var(--panel); border-style:dashed;
+}
+.focus-card.missing:hover { transform:none; border-color:var(--line); box-shadow:none; background:var(--panel); }
+.focus-card.missing .fname { color:var(--muted); font-weight:normal; }
+.focus-card.missing .fmeta { color:var(--muted); }
+
+.focus-center-card {
+  background:linear-gradient(180deg, var(--tint) 0%, var(--panel2) 100%);
+  border:2px solid var(--gold); border-radius:12px;
+  padding:24px 26px; position:relative; overflow:hidden;
+  box-shadow:0 0 0 1px var(--gold-faint), 0 12px 32px rgba(0,0,0,0.4);
+}
+.focus-center-card::before {
+  content:''; position:absolute; left:0; top:0; bottom:0; width:4px;
+  background:var(--pantheon-color, var(--gold));
+}
+.focus-center-card .focus-header {
+  display:flex; gap:16px; align-items:flex-start; margin-bottom:12px;
+}
+.focus-center-card .focus-header-text { flex:1; min-width:0; }
+.god-image, .god-glyph {
+  flex-shrink:0; width:96px; height:96px; border-radius:8px;
+  background:var(--panel); border:1px solid var(--gold-soft);
+  display:flex; align-items:center; justify-content:center;
+  overflow:hidden; position:relative;
+  box-shadow:0 4px 14px rgba(0,0,0,0.35);
+}
+.god-image img {
+  width:100%; height:100%; object-fit:cover;
+  object-position:center 20%; /* keep faces visible — most god portraits have heads near the top */
+  display:block; transition:transform .25s ease;
+}
+.god-image { cursor:zoom-in; }
+.god-image:hover { border-color:var(--gold); }
+.god-image:hover img { transform:scale(1.04); }
+.god-image.loading { background:linear-gradient(135deg, var(--panel) 0%, var(--panel2) 100%); }
+.god-image.loading::after {
+  content:''; position:absolute; inset:0;
+  background:linear-gradient(90deg, transparent 0%, rgba(229,193,88,0.1) 50%, transparent 100%);
+  animation:shimmer 1.4s infinite;
+}
+@keyframes shimmer {
+  0% { transform:translateX(-100%); }
+  100% { transform:translateX(100%); }
+}
+.god-glyph {
+  color:var(--gold); font-size:44px; line-height:1;
+  background:radial-gradient(circle at center, var(--tint) 0%, var(--panel) 70%);
+  text-shadow:0 0 12px rgba(229,193,88,0.25);
+  font-family:'Iowan Old Style', Georgia, serif;
+}
+.god-image-caption {
+  position:absolute; bottom:0; left:0; right:0;
+  background:linear-gradient(180deg, transparent, rgba(0,0,0,0.8));
+  color:var(--muted); font-size:9px; padding:12px 4px 3px;
+  text-align:center; font-style:italic; opacity:0; transition:opacity .2s;
+}
+.god-image:hover .god-image-caption { opacity:1; }
+.focus-center-card .fpantheon {
+  color:var(--gold-deep); font-size:11px; font-variant:small-caps; letter-spacing:2px; font-weight:bold;
+  margin-bottom:6px;
+}
+.focus-center-card .fname-main {
+  font-size:26px; color:var(--gold); font-weight:normal; margin:0 0 4px;
+  letter-spacing:0.3px;
+}
+.focus-center-card .fepithets { color:var(--cyan); font-size:13px; font-style:italic; margin:4px 0 12px; }
+.focus-center-card .fdomains { display:flex; flex-wrap:wrap; gap:5px; margin:8px 0 12px; }
+.focus-center-card .fdom-tag { background:var(--panel); border:1px solid var(--line); color:var(--ink); padding:3px 10px; border-radius:10px; font-size:11px; }
+.focus-center-card .fcat { color:var(--muted); font-size:11px; font-variant:small-caps; letter-spacing:1.5px; margin-bottom:10px; }
+.focus-center-card .fdesc { color:var(--ink); font-size:13px; line-height:1.55; }
+.focus-center-card .fdetails-btn {
+  margin-top:14px; background:none; border:1px solid var(--gold-soft); color:var(--gold);
+  padding:6px 14px; border-radius:16px; cursor:pointer; font-family:inherit; font-size:11px;
+  letter-spacing:1.2px; font-variant:small-caps; transition:all .15s;
+}
+.focus-center-card .fdetails-btn:hover { background:var(--gold); color:var(--bg); }
+
+.focus-empty { text-align:center; color:var(--muted); font-style:italic; padding:14px; font-size:12px; }
+.focus-more-hint { text-align:center; color:var(--muted); font-size:11px; font-style:italic; margin-top:6px; }
+
+.focus-children { display:grid; grid-template-columns:repeat(auto-fill,minmax(160px,1fr)); gap:10px; }
+.focus-parallels { display:flex; flex-wrap:wrap; gap:6px; justify-content:center; }
+
+/* Grandparents row — compact chips above Parents */
+.focus-section-label.grandparents-label { color:var(--muted); margin:6px 0 8px; font-size:10px; }
+.focus-row.grandparents-row { gap:5px; margin-bottom:4px; }
+.grandparent-chip {
+  background:var(--panel2); border:1px solid var(--line); color:var(--muted);
+  padding:3px 10px; border-radius:11px; font-size:11px; cursor:pointer;
+  letter-spacing:0.2px; font-style:italic;
+  transition:all .15s;
+}
+.grandparent-chip:hover { border-color:var(--gold-soft); color:var(--gold); background:rgba(229,193,88,0.05); }
+.grandparent-chip.missing { opacity:0.45; cursor:default; }
+.grandparent-chip.missing:hover { border-color:var(--line); color:var(--muted); background:var(--panel2); }
+
+/* Side-list cap: hide beyond cap; expand button reveals rest */
+.focus-card.side-hidden { display:none; }
+.side-expand-btn {
+  background:transparent; border:1px dashed var(--line); color:var(--muted);
+  padding:7px 12px; border-radius:6px; cursor:pointer; font-family:inherit; font-size:11px;
+  letter-spacing:1px; font-variant:small-caps; margin-top:4px;
+  transition:all .15s;
+}
+.side-expand-btn:hover { color:var(--gold); border-color:var(--gold-soft); background:rgba(229,193,88,0.04); }
+.focus-parallel-chip {
+  background:var(--panel2); border:1px solid var(--line); color:var(--ink);
+  padding:5px 13px; border-radius:14px; font-size:12px; cursor:pointer;
+  transition:all .2s;
+}
+.focus-parallel-chip:hover { border-color:var(--gold); color:var(--gold); transform:translateY(-1px); }
+.focus-parallel-chip .pan { color:var(--muted); font-size:10px; font-style:italic; margin-left:5px; }
+.focus-parallel-chip.missing { opacity:0.4; cursor:default; }
+.focus-parallel-chip.missing:hover { border-color:var(--line); color:var(--muted); transform:none; }
+
+.gender-symbol { font-size:12px; margin-left:5px; opacity:0.7; }
+
+/* Full-tree category filter strip */
+.focus-filters {
+  display:flex; gap:10px; align-items:center; flex-wrap:wrap;
+  padding:10px 18px; border-bottom:1px solid var(--line);
+  background:#0d0f22;
+}
+.focus-filters > label {
+  color:var(--muted); font-size:11px; letter-spacing:1.8px;
+  font-variant:small-caps; font-weight:bold;
+}
+.category-filter-chips { display:flex; gap:5px; flex-wrap:wrap; }
+.cat-chip {
+  background:var(--panel2); border:1px solid var(--line); color:var(--muted);
+  padding:4px 11px; border-radius:12px; cursor:pointer;
+  font-family:inherit; font-size:11px; letter-spacing:1px;
+  font-variant:small-caps; transition:all .15s;
+  text-transform:lowercase;
+}
+.cat-chip.active {
+  color:var(--bg); background:linear-gradient(180deg, var(--gold), var(--gold-deep));
+  border-color:var(--gold); font-weight:bold;
+}
+.cat-chip:hover:not(.active) { color:var(--gold); border-color:var(--gold-soft); }
+.cat-filter-presets { display:flex; gap:4px; margin-left:auto; }
+.cat-preset-btn {
+  background:transparent; border:1px dashed var(--line); color:var(--muted);
+  padding:4px 10px; border-radius:6px; cursor:pointer;
+  font-family:inherit; font-size:10px; letter-spacing:1px;
+  font-variant:small-caps; transition:all .15s;
+}
+.cat-preset-btn:hover { color:var(--gold); border-color:var(--gold-soft); background:rgba(229,193,88,0.04); }
+.cat-filter-count { color:var(--muted); font-size:11px; font-style:italic; flex-basis:100%; text-align:right; }
+
+/* Overall pantheon tree */
+.tree-view-toggle { display:flex; gap:6px; margin-left:10px; }
+.tree-view-toggle button {
+  background:var(--panel2); border:1px solid var(--line); color:var(--muted);
+  padding:8px 12px; border-radius:6px; cursor:pointer; font-family:inherit; font-size:11px;
+  letter-spacing:1.2px; font-variant:small-caps; transition:all .15s;
+}
+.tree-view-toggle button.active {
+  color:var(--bg); background:linear-gradient(180deg, var(--gold), var(--gold-deep));
+  border-color:var(--gold); font-weight:bold;
+}
+.tree-view-toggle button:hover:not(.active) { color:var(--gold); border-color:var(--gold-soft); }
+
+.full-tree-container {
+  overflow:auto; padding:24px 20px 30px; position:relative;
+  background:#0d0f22; border-radius:0 0 10px 10px; max-height:80vh;
+}
+.full-tree-inner { position:relative; min-height:400px; }
+.full-tree-svg { position:absolute; inset:0; pointer-events:none; z-index:0; }
+.full-tree-gen {
+  position:relative; display:flex; flex-wrap:nowrap; gap:14px;
+  margin-bottom:36px; z-index:1; align-items:flex-start;
+}
+.full-tree-gen-label {
+  position:absolute; left:-6px; top:4px; transform:translateX(-100%);
+  color:var(--muted); font-size:10px; font-variant:small-caps; letter-spacing:1.5px;
+  padding-right:14px; white-space:nowrap; opacity:0.8;
+}
+.full-tree-node {
+  background:var(--panel); border:1px solid var(--line); border-radius:6px;
+  padding:7px 11px; cursor:pointer; position:relative; flex-shrink:0;
+  min-width:120px; max-width:170px; text-align:center;
+  transition:border-color .15s, transform .15s, box-shadow .15s, opacity .2s, filter .2s;
+  z-index:1;
+}
+
+/* Couple-grouped nuclei in full tree */
+.family-block {
+  display:flex; align-items:center; gap:2px; flex-shrink:0;
+  padding:2px; border-radius:8px;
+  transition:background .2s, box-shadow .2s;
+}
+.family-block.couple {
+  padding:3px 4px;
+  background:rgba(160,48,64,0.05);
+  border:1px dashed rgba(160,48,64,0.22);
+}
+.family-block.couple:hover { background:rgba(160,48,64,0.09); }
+.couple-link {
+  color:var(--blood); font-size:13px; opacity:0.75;
+  padding:0 3px; user-select:none; letter-spacing:0;
+  flex-shrink:0;
+}
+
+/* Lineage highlight: fade non-related, emphasize ancestry chain */
+.full-tree-inner.lineage-active .full-tree-node { opacity:0.18; filter:saturate(0.35); }
+.full-tree-inner.lineage-active .family-block.couple { opacity:0.4; }
+.full-tree-inner.lineage-active .full-tree-node.lineage-hit {
+  opacity:1; filter:none;
+}
+.full-tree-inner.lineage-active .full-tree-node.lineage-self {
+  opacity:1; filter:none;
+  box-shadow:0 0 0 2px var(--gold), 0 0 24px rgba(229,193,88,0.35);
+  border-color:var(--gold);
+}
+.full-tree-inner.lineage-active .family-block.couple.lineage-family-hit {
+  opacity:1;
+}
+.full-tree-node::before {
+  content:''; position:absolute; left:0; top:0; bottom:0; width:3px;
+  background:var(--pantheon-color, var(--gold)); border-radius:6px 0 0 6px;
+}
+.full-tree-node:hover {
+  border-color:var(--gold); transform:translateY(-1px);
+  box-shadow:0 4px 14px rgba(0,0,0,0.4);
+}
+.full-tree-node.focused {
+  border-color:var(--gold); box-shadow:0 0 0 1px var(--gold),0 0 20px rgba(229,193,88,0.2);
+  background:var(--tint);
+}
+.full-tree-node .tn-name { font-size:12px; color:var(--ink); font-weight:bold; }
+.full-tree-node .tn-meta { font-size:10px; color:var(--muted); margin-top:2px; font-style:italic; }
+
+.full-tree-legend {
+  display:flex; gap:14px; flex-wrap:wrap; font-size:11px; color:var(--muted);
+  padding:10px 18px; border-top:1px solid var(--line); background:#0a0c1e;
+  border-radius:0 0 10px 10px;
+}
+.tl-line { display:inline-block; width:18px; height:2px; vertical-align:middle; margin-right:5px; }
+
+@media (max-width: 840px) {
+  .focus-main-row { grid-template-columns:1fr; }
+  .focus-side h4 { margin-top:20px; }
+  .archetype-grid { grid-template-columns:1fr; }
+  .pantheon-group-grid { grid-template-columns:repeat(auto-fill, minmax(180px, 1fr)); }
+  .focus-center-card { padding:18px 20px; }
+  .focus-center-card .fname-main { font-size:22px; }
+  .focus-view { padding:18px 14px 16px; }
+  .focus-controls { padding:12px 14px; gap:8px; }
+  .focus-controls label { font-size:10px; }
+  .focus-controls select { min-width:160px; font-size:12px; padding:7px 10px; }
+  .focus-controls .count { font-size:11px; }
+  nav button { padding:8px 14px; letter-spacing:1.5px; }
+  .modal { padding:22px 22px; }
+  .modal-head .god-image, .modal-head .god-glyph { width:100px; height:100px; }
+  .modal-head .god-glyph { font-size:44px; }
+}
+
+.timeline {
+  background:var(--panel); border:1px solid var(--line); border-radius:10px;
+  padding:22px 26px 28px; margin-top:16px; overflow-x:hidden;
+}
+.timeline-rows { position:relative; }
+.tl-bar.trunc-left::before,
+.tl-peak.trunc-left::before {
+  content:'‹'; position:absolute; left:-9px; top:50%; transform:translateY(-52%);
+  color:var(--gold); font-size:13px; font-weight:bold; line-height:1;
+  text-shadow:0 0 4px rgba(0,0,0,0.4);
+}
+.tl-bar.trunc-right::after,
+.tl-peak.trunc-right::after {
+  content:'›'; position:absolute; right:-9px; top:50%; transform:translateY(-52%);
+  color:var(--gold); font-size:13px; font-weight:bold; line-height:1;
+  text-shadow:0 0 4px rgba(0,0,0,0.4);
+}
+
+.tl-group-head {
+  position:relative; display:flex; align-items:baseline; gap:12px;
+  padding:18px 0 6px; margin-top:8px;
+  border-bottom:1px solid rgba(229,193,88,0.12);
+}
+.tl-group-head:first-child { padding-top:4px; }
+.tl-group-head .tl-group-name {
+  color:var(--gold); font-variant:small-caps; letter-spacing:2.5px;
+  font-size:12px; font-weight:bold;
+}
+.tl-group-head .tl-group-count { color:var(--muted); font-size:11px; font-style:italic; }
+
+.timeline-row {
+  position:relative; height:28px; margin:4px 0; cursor:pointer;
+  transition:background .15s;
+}
+.timeline-row:hover { background:rgba(229,193,88,0.04); border-radius:4px; }
+.timeline-row:hover .tl-bar { filter:brightness(1.25); box-shadow:0 0 18px rgba(229,193,88,0.15); }
+.timeline-row:hover .tl-label { color:var(--gold); }
+
+.tl-label {
+  position:absolute; left:0; top:6px; width:180px;
+  font-size:12px; color:var(--ink); text-align:right; padding-right:14px;
+  overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+  transition:color .15s;
+}
+.tl-bar {
+  position:absolute; top:8px; height:12px; border-radius:2px;
+  opacity:0.7;
+  background-image:linear-gradient(180deg, rgba(255,255,255,0.12) 0%, rgba(0,0,0,0.12) 100%);
+  transition:filter .2s, box-shadow .2s;
+}
+.tl-peak {
+  position:absolute; top:6px; height:16px; border-radius:3px;
+  opacity:1;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,0.2);
+  background-image:linear-gradient(180deg, rgba(255,255,255,0.25) 0%, rgba(0,0,0,0.1) 100%);
+}
+
+.tl-gridline {
+  position:absolute; top:0; bottom:0; width:1px; background:rgba(197,201,217,0.04);
+  pointer-events:none;
+}
+.tl-gridline.bce-ce { background:rgba(229,193,88,0.28); width:1px; }
+.tl-gridline.major { background:rgba(197,201,217,0.07); }
+
+.tl-year-label {
+  position:absolute; top:-16px; font-size:10px; color:var(--muted);
+  transform:translateX(-50%); font-variant:small-caps; letter-spacing:1px;
+  white-space:nowrap; pointer-events:none;
+}
+.tl-year-label.bce-ce { color:var(--gold); font-weight:bold; letter-spacing:1.5px; }
+
+.tl-era-band {
+  position:absolute; top:0; height:18px;
+  background:rgba(197,201,217,0.03); border-bottom:1px dashed rgba(197,201,217,0.08);
+  pointer-events:none; z-index:0;
+}
+.tl-era-label {
+  position:absolute; top:2px; color:var(--muted); font-size:9px;
+  font-variant:small-caps; letter-spacing:1.5px;
+  text-align:center; opacity:0.7; pointer-events:none;
+}
+
+/* Archetypes — jump nav + 2-col grid */
+.archetype-nav {
+  display:flex; flex-wrap:wrap; gap:5px;
+  padding:12px 14px; margin-bottom:22px;
+  background:var(--panel); border:1px solid var(--line); border-radius:8px;
+}
+.archetype-nav a {
+  color:var(--muted); font-size:11px; letter-spacing:1.2px; font-variant:small-caps;
+  padding:4px 10px; border-radius:12px; border:1px solid transparent;
+  text-decoration:none; cursor:pointer; transition:all .15s;
+  white-space:nowrap;
+}
+.archetype-nav a:hover { color:var(--gold); border-color:var(--gold-soft); background:rgba(229,193,88,0.05); }
+
+.archetype-grid {
+  display:grid; grid-template-columns:repeat(auto-fill, minmax(380px, 1fr));
+  gap:12px;
+}
+.archetype-card {
+  background:var(--panel); border:1px solid var(--line); border-radius:8px;
+  padding:14px 16px; transition:border-color .2s, background .2s;
+  scroll-margin-top:12px;
+}
+.archetype-card:hover { border-color:var(--gold-soft); background:linear-gradient(180deg, var(--panel), var(--panel2)); }
+.archetype-card h3 {
+  margin:0 0 4px; color:var(--gold); font-size:15px; font-weight:normal;
+  letter-spacing:0.5px; font-variant:small-caps;
+}
+.archetype-card .desc {
+  color:var(--ink); margin:0 0 10px; font-size:12.5px; line-height:1.5;
+  opacity:0.85;
+}
+.archetype-examples { display:flex; flex-wrap:wrap; gap:4px; }
+.arch-chip {
+  background:var(--panel2); border:1px solid var(--line); color:var(--ink);
+  padding:2px 9px; border-radius:11px; font-size:11px; cursor:pointer;
+  transition:all .15s; line-height:1.5; display:inline-flex; align-items:baseline; gap:4px;
+}
+.arch-chip:hover { border-color:var(--gold); color:var(--gold); background:rgba(229,193,88,0.06); }
+.arch-chip .p { color:var(--muted); font-size:9px; font-style:italic; letter-spacing:0.5px; }
+
+.modal-bg { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.85); backdrop-filter:blur(2px); z-index:100; align-items:center; justify-content:center; padding:24px; }
+.modal-bg.open { display:flex; animation:fadeIn .25s ease; }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+.modal { background:var(--panel); border:1px solid var(--gold-soft); border-radius:12px; max-width:720px; width:100%; max-height:88vh; overflow-y:auto; padding:28px 34px; box-shadow:0 24px 60px rgba(0,0,0,0.6), 0 0 0 1px var(--gold-faint); position:relative; }
+.modal h2 { color:var(--gold); margin-top:0; padding-bottom:12px; font-size:22px; }
+.modal-head {
+  display:flex; gap:20px; align-items:flex-start; margin-bottom:10px;
+}
+.modal-head-text { flex:1; min-width:0; }
+.modal-head .god-image, .modal-head .god-glyph {
+  width:130px; height:130px;
+}
+.modal-head .god-glyph { font-size:56px; }
+.modal .close { position:absolute; right:20px; top:16px; background:none; border:0; color:var(--muted); font-size:28px; cursor:pointer; line-height:1; transition:color .2s, transform .2s; }
+.modal .close:hover { color:var(--gold); transform:rotate(90deg); }
+.modal .pantheon-label { color:var(--gold-deep); font-size:12px; font-variant:small-caps; letter-spacing:2px; margin-bottom:4px; }
+.modal .epithets { color:var(--cyan); font-size:13px; font-style:italic; margin-top:4px; margin-bottom:14px; }
+.modal .desc { line-height:1.7; margin:14px 0; font-size:15px; }
+.modal .section-label { color:var(--gold-deep); font-size:11px; text-transform:uppercase; letter-spacing:1.8px; margin:18px 0 6px; font-weight:bold; }
+.modal .domains { display:flex; flex-wrap:wrap; gap:6px; }
+.modal .domain-tag { background:var(--panel2); border:1px solid var(--line); color:var(--ink); padding:3px 10px; border-radius:11px; font-size:12px; }
+.modal .rel-row { margin:4px 0; font-size:14px; }
+.modal .rel-row .rel-label { color:var(--muted); display:inline-block; min-width:100px; font-variant:small-caps; letter-spacing:1px; font-size:12px; }
+.modal a.god-link, .modal span.god-link {
+  color:var(--gold); cursor:pointer; border-bottom:1px dotted var(--gold);
+  transition:color .2s, border-color .2s;
+}
+.modal .god-link:hover { color:var(--ink); border-bottom-color:var(--ink); }
+.modal .god-link.missing { color:var(--muted); cursor:default; border-bottom:1px dotted var(--muted); opacity:0.6; }
+
+.empty { color:var(--muted); font-style:italic; padding:40px; text-align:center; }
+
+footer { text-align:center; color:var(--muted); font-size:12px; padding:28px 20px 40px; border-top:1px solid var(--line); margin-top:40px; letter-spacing:1px; }
+footer a { color:var(--gold); text-decoration:none; }
+
+/* Accessibility: visible keyboard focus */
+a:focus-visible, button:focus-visible, select:focus-visible,
+input:focus-visible, [tabindex]:focus-visible,
+.pantheon-card:focus-visible, .focus-card:focus-visible,
+.arch-chip:focus-visible, .full-tree-node:focus-visible,
+.tab-btn:focus-visible, .god-card:focus-visible {
+  outline:2px solid var(--gold);
+  outline-offset:2px;
+  border-radius:4px;
+}
+.tab-btn:focus-visible { outline-offset:1px; }
+/* Don't show outline on mouse clicks (webkit default), only on keyboard */
+button:focus:not(:focus-visible),
+select:focus:not(:focus-visible),
+.pantheon-card:focus:not(:focus-visible) { outline:none; }
+.visually-hidden {
+  position:absolute; width:1px; height:1px; padding:0; margin:-1px;
+  overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;
+}
+
+/* Image lightbox */
+.img-lightbox-bg {
+  display:none; position:fixed; inset:0; z-index:200;
+  background:rgba(0,0,0,0.92); backdrop-filter:blur(4px);
+  align-items:center; justify-content:center; padding:40px 24px;
+  cursor:zoom-out;
+}
+.img-lightbox-bg.open { display:flex; animation:fadeIn .2s ease; }
+.img-lightbox {
+  display:flex; flex-direction:column; align-items:center; gap:14px;
+  max-width:92vw; max-height:92vh; position:relative;
+  cursor:default;
+}
+.img-lightbox img {
+  max-width:100%; max-height:calc(92vh - 100px);
+  object-fit:contain; border:2px solid var(--gold); border-radius:4px;
+  box-shadow:0 0 0 1px var(--gold-faint), 0 20px 60px rgba(0,0,0,0.7);
+  display:block; background:#0d0f22;
+}
+.img-lightbox-caption {
+  color:var(--ink); font-size:14px; text-align:center;
+  font-style:italic; max-width:500px; line-height:1.5;
+}
+.img-lightbox-caption .attr { color:var(--muted); font-size:11px; display:block; margin-top:3px; letter-spacing:1px; }
+.img-lightbox-close {
+  position:fixed; top:18px; right:24px; z-index:201;
+  background:none; border:0; color:var(--ink);
+  font-size:34px; cursor:pointer; line-height:1; opacity:0.65;
+  transition:opacity .15s, transform .15s;
+}
+.img-lightbox-close:hover { opacity:1; transform:rotate(90deg); }
+
+/* Initial loading state */
+#loading {
+  position:fixed; inset:0; display:flex; flex-direction:column;
+  align-items:center; justify-content:center; gap:18px;
+  background:var(--bg); z-index:1000;
+  color:var(--muted); font-style:italic; letter-spacing:1.5px;
+  font-variant:small-caps; font-size:13px;
+}
+#loading .spinner {
+  width:44px; height:44px; border-radius:50%;
+  border:2px solid var(--line); border-top-color:var(--gold);
+  animation:spin 0.9s linear infinite;
+}
+#loading.error .spinner { display:none; }
+#loading .err-msg { color:var(--blood); max-width:360px; text-align:center; line-height:1.6; }
+#loading.fade-out { opacity:0; pointer-events:none; transition:opacity .35s ease; }
+@keyframes spin { to { transform:rotate(360deg); } }
+
+@media (max-width: 700px) {
+  header h1 { font-size:22px; letter-spacing:4px; }
+  header h1::before, header h1::after { margin:0 10px; }
+  header p { font-size:11px; letter-spacing:0.8px; }
+  main { padding:16px 12px; }
+  h2 { font-size:18px; letter-spacing:2px; }
+  .filters input { min-width:0; width:100%; }
+  .tl-label { width:110px; font-size:10px; padding-right:8px; }
+  .pantheon-group-grid { grid-template-columns:1fr; }
+  .focus-center-card .focus-header { flex-direction:column; gap:12px; align-items:flex-start; }
+  .god-image, .god-glyph { width:80px; height:80px; }
+  .god-glyph { font-size:36px; }
+  .focus-children { grid-template-columns:repeat(auto-fill, minmax(130px, 1fr)); }
+  .pantheon-card { padding:10px 12px 10px 15px; }
+  .pantheon-card h4 { font-size:14px; }
+  .archetype-nav { padding:10px 12px; gap:4px; }
+  .archetype-nav a { font-size:10px; padding:3px 8px; letter-spacing:1px; }
+  .modal { padding:20px 18px; max-height:92vh; }
+  .modal-head { flex-direction:column; gap:14px; align-items:flex-start; }
+  .modal h2 { font-size:20px; }
+  .god-grid { grid-template-columns:repeat(auto-fill, minmax(160px, 1fr)); }
+  nav { padding:8px 14px; gap:4px; }
+  nav button { padding:7px 12px; font-size:11px; letter-spacing:1px; }
+  .pantheon-group-head { flex-wrap:wrap; gap:6px; }
+  .pantheon-group-head .group-era { margin-left:0; }
+
+  /* New-UI mobile tweaks */
+  .pantheon-view-controls { padding:8px 10px; gap:8px; }
+  .pantheon-view-controls label { font-size:10px; letter-spacing:1px; }
+  .view-toggle button { padding:6px 10px; font-size:10px; letter-spacing:1px; }
+  .pantheon-view-controls select { padding:6px 8px; font-size:11px; }
+  .pantheon-view-controls .total-count { width:100%; margin-left:0; text-align:right; }
+  #pantheonCollapseAll { padding:6px 10px !important; font-size:10px !important; }
+
+  .pantheon-row { flex-wrap:wrap; gap:4px 10px; padding:8px 10px 8px 14px; }
+  .pantheon-row .pr-name { font-size:13px; min-width:0; flex-basis:100%; }
+  .pantheon-row .pr-region, .pantheon-row .pr-span { min-width:0; font-size:10px; }
+  .pantheon-row .pr-desc { flex-basis:100%; white-space:normal; font-size:11px; }
+  .pantheon-row .pr-count { font-size:9px; }
+
+  /* Full tree: compress family-blocks so couples fit */
+  .full-tree-node { min-width:96px; max-width:140px; padding:6px 8px; }
+  .full-tree-node .tn-name { font-size:11px; }
+  .full-tree-node .tn-meta { font-size:9px; }
+  .family-block.couple { padding:2px 3px; }
+  .couple-link { font-size:11px; padding:0 2px; }
+  .full-tree-gen { gap:10px; margin-bottom:28px; }
+
+  /* Focus view: tighten grandparents + expand button */
+  .grandparent-chip { font-size:10px; padding:2px 8px; }
+  .side-expand-btn { padding:6px 10px; font-size:10px; letter-spacing:0.5px; }
+}
+</style>
+</head>
+<body>
+<div id="loading" role="status" aria-live="polite">
+  <div class="spinner" aria-hidden="true"></div>
+  <div id="loadingMsg">Summoning the gods…</div>
+</div>
+<header>
+  <h1>GODS</h1>
+  <p>A cross-cultural temporal map of the divine</p>
+</header>
+
+<nav role="tablist" aria-label="Main sections">
+  <button class="tab-btn active" data-tab="overview" role="tab" aria-selected="true" aria-controls="tab-overview">Pantheons</button>
+  <button class="tab-btn" data-tab="trees" role="tab" aria-selected="false" aria-controls="tab-trees">Family Trees</button>
+  <button class="tab-btn" data-tab="timeline" role="tab" aria-selected="false" aria-controls="tab-timeline">Timeline</button>
+  <button class="tab-btn" data-tab="archetypes" role="tab" aria-selected="false" aria-controls="tab-archetypes">Archetypes</button>
+  <button class="tab-btn" data-tab="deified" role="tab" aria-selected="false" aria-controls="tab-deified">Deified Humans</button>
+  <button class="tab-btn" data-tab="browse" role="tab" aria-selected="false" aria-controls="tab-browse">Browse All</button>
+  <button class="tab-btn" data-tab="mentions" role="tab" aria-selected="false" aria-controls="tab-mentions">Notable Mentions</button>
+</nav>
+
+<main>
+
+<section id="tab-overview" class="tab active" role="tabpanel" aria-labelledby="tab-btn-overview">
+  <h2>Pantheons</h2>
+  <p class="intro">
+    Dozens of traditions spanning sixty thousand years — from Aboriginal Australian Dreamings and the
+    reconstructed sky-fathers of the Proto-Indo-European steppe to living religions. Click a pantheon to
+    open its family tree. Abrahamic traditions and deified humans are catalogued separately: Christianity,
+    Judaism, and Islam are monotheistic (not pantheons); their catalogues list angels, prophets, and opposing
+    figures for cross-cultural comparison.
+  </p>
+  <div class="pantheon-view-controls">
+    <label>View</label>
+    <div class="view-toggle" id="pantheonViewToggle" role="tablist" aria-label="Pantheon view mode">
+      <button data-view="grouped" class="active" role="tab" aria-selected="true">Grouped</button>
+      <button data-view="list" role="tab" aria-selected="false">Compact</button>
+      <button data-view="era" role="tab" aria-selected="false">By era</button>
+    </div>
+    <label for="pantheonSort">Sort within</label>
+    <select id="pantheonSort" title="Sort order within each group">
+      <option value="era">Era (earliest first)</option>
+      <option value="size">Size (most figures)</option>
+      <option value="alpha">Alphabetical</option>
+    </select>
+    <button id="pantheonCollapseAll" class="view-toggle" style="padding:7px 14px; background:var(--panel2); border:1px solid var(--line); color:var(--muted); border-radius:6px; font-family:inherit; font-size:11px; letter-spacing:1.2px; font-variant:small-caps; cursor:pointer;" title="Collapse or expand all groups">Collapse all</button>
+    <span class="total-count" id="pantheonTotalCount"></span>
+  </div>
+  <div id="pantheonGroups"></div>
+</section>
+
+<section id="tab-trees" class="tab" role="tabpanel">
+  <h2>Family Trees</h2>
+  <p class="intro">
+    One figure at a time — parents above, siblings and consorts to the sides, children below, cross-cultural
+    parallels at the bottom. Click any connected figure to make them the new focus. Use Back to retrace.
+  </p>
+  <div class="focus-container">
+    <div class="focus-controls">
+      <label>Pantheon</label>
+      <select id="treeSelect"></select>
+      <label>Figure</label>
+      <select id="focusSelect"></select>
+      <button id="focusBack" disabled>← Back</button>
+      <div class="tree-view-toggle">
+        <button id="viewFocusBtn" class="active">Focus</button>
+        <button id="viewFullBtn">Full tree</button>
+      </div>
+      <span class="count" id="treeCount"></span>
+    </div>
+    <div class="focus-filters" id="fullTreeFilters" style="display:none;">
+      <label>Show</label>
+      <div class="category-filter-chips" id="catFilterChips">
+        <button type="button" data-cat="primordial" class="cat-chip active" aria-pressed="true">Primordial</button>
+        <button type="button" data-cat="titan" class="cat-chip active" aria-pressed="true">Titan</button>
+        <button type="button" data-cat="major" class="cat-chip active" aria-pressed="true">Major</button>
+        <button type="button" data-cat="minor" class="cat-chip active" aria-pressed="true">Minor</button>
+        <button type="button" data-cat="hero" class="cat-chip active" aria-pressed="true">Hero</button>
+        <button type="button" data-cat="monster" class="cat-chip active" aria-pressed="true">Monster</button>
+        <button type="button" data-cat="deified-human" class="cat-chip active" aria-pressed="true">Deified</button>
+        <button type="button" data-cat="abrahamic" class="cat-chip active" aria-pressed="true">Abrahamic</button>
+      </div>
+      <div class="cat-filter-presets">
+        <button type="button" class="cat-preset-btn" data-preset="majors-only" title="Show only major & primordial figures">Majors only</button>
+        <button type="button" class="cat-preset-btn" data-preset="gods-only" title="Hide heroes, monsters, deified humans">Gods only</button>
+        <button type="button" class="cat-preset-btn" id="catFilterReset" title="Reset to show all">Reset</button>
+      </div>
+      <span class="cat-filter-count" id="catFilterCount"></span>
+    </div>
+    <div class="focus-view" id="focusView"></div>
+    <div class="full-tree-container" id="fullTreeView" style="display:none;">
+      <div class="full-tree-inner" id="fullTreeInner"></div>
+    </div>
+    <div class="full-tree-legend" id="fullTreeLegend" style="display:none;">
+      <span><span class="tl-line" style="background:var(--gold);"></span> parent → child</span>
+      <span><span class="tl-line" style="background:var(--blood); border-top:1px dashed var(--blood);"></span> consort</span>
+      <span style="margin-left:auto; font-style:italic;">Click any figure to return to Focus view.</span>
+    </div>
+  </div>
+</section>
+
+<section id="tab-timeline" class="tab" role="tabpanel">
+  <h2>Temporal Map</h2>
+  <p class="intro">
+    Each bar shows a tradition's active span; the darker inner bar marks its peak of influence.
+    BCE ↔ CE boundary in gold. Traditions still practiced today extend to the right edge.
+    Click a row to open its family tree.
+  </p>
+  <div class="timeline">
+    <div id="timelineRows" class="timeline-rows"></div>
+  </div>
+</section>
+
+<section id="tab-archetypes" class="tab" role="tabpanel">
+  <h2>Cross-Cultural Archetypes</h2>
+  <p class="intro">
+    Many roles — sky-father, storm-serpent-slayer, dying-and-rising god, trickster — recur with striking consistency across
+    unrelated cultures. Some reflect shared Indo-European inheritance (Zeus ≈ Jupiter ≈ Indra from *Dyēus Phter); others are
+    independent convergences on universal human experiences. Click any example to open that god.
+  </p>
+  <nav class="archetype-nav" id="archetypeNav"></nav>
+  <div id="archetypeList" class="archetype-grid"></div>
+</section>
+
+<section id="tab-deified" class="tab" role="tabpanel">
+  <h2>Deified Humans</h2>
+  <p class="intro">
+    Historical persons elevated to divine status — whether by state decree, posthumous cult, or folk veneration.
+    Rome institutionalized it with the imperial cult; East Asia routinely enshrined sage-kings, generals, and scholars;
+    Egypt deified the architect Imhotep two millennia after his death. The line between "great ancestor" and "god" is porous.
+  </p>
+  <div id="deifiedGrid" class="god-grid"></div>
+</section>
+
+<section id="tab-mentions" class="tab" role="tabpanel">
+  <h2>Notable Mentions</h2>
+  <p class="intro">
+    Figures worth knowing but not included in the main thousand — secondary heroes, regional deities,
+    already-mentioned-in-descriptions characters, and alternate names of catalogued figures. One-line
+    context only; no family trees.
+  </p>
+  <div id="mentionsList"></div>
+</section>
+
+<section id="tab-browse" class="tab" role="tabpanel">
+  <h2>Browse All Gods</h2>
+  <div class="filters">
+    <input type="text" id="searchInput" placeholder="Search by name, domain, or description…">
+    <select id="pantheonFilter"><option value="">All pantheons</option></select>
+    <select id="categoryFilter">
+      <option value="">All categories</option>
+      <option value="major">Major</option>
+      <option value="minor">Minor</option>
+      <option value="primordial">Primordial</option>
+      <option value="titan">Titan</option>
+      <option value="hero">Hero / demigod</option>
+      <option value="monster">Monster</option>
+      <option value="deified-human">Deified human</option>
+      <option value="abrahamic">Abrahamic</option>
+    </select>
+    <span class="count" id="browseCount"></span>
+  </div>
+  <div id="browseGrid" class="god-grid"></div>
+</section>
+
+</main>
+
+<div class="img-lightbox-bg" id="imgLightboxBg" role="dialog" aria-modal="true" aria-label="Enlarged image">
+  <button class="img-lightbox-close" id="imgLightboxClose" aria-label="Close enlarged image">×</button>
+  <div class="img-lightbox" id="imgLightbox">
+    <img id="imgLightboxImg" src="" alt="">
+    <div class="img-lightbox-caption" id="imgLightboxCaption"></div>
+  </div>
+</div>
+
+<div class="modal-bg" id="modalBg" role="dialog" aria-modal="true" aria-labelledby="modalContent">
+  <div class="modal" id="modal">
+    <button class="close" id="modalClose" aria-label="Close details">×</button>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+<footer>
+  Data is a seed — living, incomplete, and meant to grow. Corrections and additions welcome.
+</footer>
+
+<script>
+let DATA = null;
+let GODS_BY_ID = {};
+let PANTHEONS_BY_ID = {};
+
+/* ---------- God image (Wikipedia + glyph fallback) ---------- */
+const WIKI_IMAGE_CACHE = new Map(); // godId -> { url: string|null, loading: boolean }
+const WIKI_LS_KEY = 'gods-wiki-images-v1';
+const WIKI_LS_TTL_MS = 30 * 24 * 60 * 60 * 1000; // 30 days
+
+// Load persistent cache from localStorage (skip expired entries)
+(function loadPersistentCache() {
+  try {
+    const raw = localStorage.getItem(WIKI_LS_KEY);
+    if (!raw) return;
+    const parsed = JSON.parse(raw);
+    const now = Date.now();
+    for (const id in parsed) {
+      const entry = parsed[id];
+      if (entry && (now - (entry.t || 0)) < WIKI_LS_TTL_MS) {
+        WIKI_IMAGE_CACHE.set(id, { url: entry.u, loading: false });
+      }
+    }
+  } catch (e) { /* corrupt cache — ignore */ }
+})();
+
+let lsSaveTimer = null;
+function schedulePersistCache() {
+  // Debounce writes so we don't hammer localStorage on bursts of fetches
+  if (lsSaveTimer) return;
+  lsSaveTimer = setTimeout(() => {
+    lsSaveTimer = null;
+    try {
+      const out = {};
+      WIKI_IMAGE_CACHE.forEach((v, k) => {
+        if (!v.loading) out[k] = { u: v.url, t: v.t || Date.now() };
+      });
+      localStorage.setItem(WIKI_LS_KEY, JSON.stringify(out));
+    } catch (e) { /* quota exceeded — drop silently */ }
+  }, 800);
+}
+
+// Domain → symbolic glyph (used when Wikipedia has no image)
+const DOMAIN_GLYPHS = [
+  { match:/sky|heaven|thunder|storm|lightning/, glyph:'\u26A1' },   // ⚡
+  { match:/sun|solar|dawn/, glyph:'\u2600' },                        // ☀
+  { match:/moon/, glyph:'\u263E' },                                  // ☾
+  { match:/war|battle|warrior/, glyph:'\u2694' },                    // ⚔
+  { match:/love|beauty|desire|sex/, glyph:'\u2764' },                // ❤
+  { match:/death|underworld|dead|grave/, glyph:'\u2620' },           // ☠
+  { match:/fire|flame|forge|smith/, glyph:'\u2692' },                // ⚒
+  { match:/sea|ocean|water|river/, glyph:'\u2248' },                 // ≈
+  { match:/serpent|dragon|snake/, glyph:'\u07D7' },                  // ߗ
+  { match:/earth|fertility|harvest|agriculture|grain/, glyph:'\u2698' }, // ⚘
+  { match:/wisdom|writing|knowledge|scribe/, glyph:'\u270E' },       // ✎
+  { match:/trickster|messenger|crossroads/, glyph:'\u2726' },        // ✦
+  { match:/creation|creator|primordial|void/, glyph:'\u2734' },      // ✴
+  { match:/moon|night/, glyph:'\u263D' },                            // ☽
+  { match:/hunt|forest|wild/, glyph:'\u2727' },                      // ✧
+];
+
+function glyphForGod(g) {
+  const domains = (g.domains || []).join(' ').toLowerCase();
+  for (const entry of DOMAIN_GLYPHS) {
+    if (entry.match.test(domains)) return entry.glyph;
+  }
+  // Category-based fallback
+  if (g.category === 'primordial' || g.category === 'titan') return '\u2734';
+  if (g.category === 'monster') return '\u07D7';
+  if (g.category === 'hero') return '\u2605';
+  if (g.category === 'abrahamic') return '\u2721'; // ✡ Star of David (fine for Abrahamic broadly, but neutral alt)
+  return '\u2736'; // ✶ generic six-pointed
+}
+
+// Build the <div> for a god's image slot. If cached, render immediately;
+// otherwise show glyph + fire async fetch that will replace when ready.
+function godImageHtml(g, size = 'focus') {
+  const cached = WIKI_IMAGE_CACHE.get(g.id);
+  const altText = (g.domains && g.domains.length)
+    ? `${g.name} — depiction from Wikipedia`
+    : `${g.name} — depiction`;
+  const sizeClass = size === 'tiny' ? ' tiny' : '';
+  if (cached && cached.url) {
+    return `<div class="god-image${sizeClass}" data-gid="${g.id}">
+      <img src="${cached.url}" alt="${escapeAttr(altText)}" onerror="this.parentElement.outerHTML = godGlyphHtml(GODS_BY_ID['${g.id}'], false, '${size}')">
+      <div class="god-image-caption" aria-hidden="true">Wikipedia</div>
+    </div>`;
+  }
+  if (cached && cached.url === null) {
+    return godGlyphHtml(g, false, size);
+  }
+  scheduleImageFetch(g);
+  return godGlyphHtml(g, true, size);
+}
+
+function godGlyphHtml(g, pending = false, size = 'focus') {
+  const glyph = glyphForGod(g);
+  const sizeClass = size === 'tiny' ? ' tiny' : '';
+  const dataAttr = pending ? `data-pending-gid="${g.id}"` : '';
+  return `<div class="god-glyph${sizeClass}" ${dataAttr} title="${pending ? 'Looking up image…' : 'No image available'}">${glyph}</div>`;
+}
+
+function scheduleImageFetch(g) {
+  const prior = WIKI_IMAGE_CACHE.get(g.id);
+  if (prior && prior.loading) return;
+  WIKI_IMAGE_CACHE.set(g.id, { url: null, loading: true });
+  fetchWikipediaImage(g).then(url => {
+    WIKI_IMAGE_CACHE.set(g.id, { url, loading: false, t: Date.now() });
+    schedulePersistCache();
+    // Replace any pending glyphs for this god currently in the DOM
+    document.querySelectorAll(`[data-pending-gid="${g.id}"]`).forEach(el => {
+      if (url) {
+        const isTiny = el.classList.contains('tiny');
+        const sizeClass = isTiny ? ' tiny' : '';
+        el.outerHTML = `<div class="god-image${sizeClass}" data-gid="${g.id}">
+          <img src="${url}" alt="${g.name}" onerror="this.parentElement.outerHTML = godGlyphHtml(GODS_BY_ID['${g.id}'], false, '${isTiny ? 'tiny' : 'focus'}')">
+          <div class="god-image-caption">Wikipedia</div>
+        </div>`;
+      } else {
+        el.removeAttribute('data-pending-gid');
+        el.setAttribute('title', 'No image available');
+      }
+    });
+  }).catch(() => {
+    WIKI_IMAGE_CACHE.set(g.id, { url: null, loading: false, t: Date.now() });
+    schedulePersistCache();
+  });
+}
+
+// Try the god's name first; if no image, try pantheon-qualified variants
+async function fetchWikipediaImage(g) {
+  const candidates = wikipediaTitleCandidates(g);
+  for (const title of candidates) {
+    const url = await fetchPageImage(title);
+    if (url) return url;
+  }
+  return null;
+}
+
+function wikipediaTitleCandidates(g) {
+  const candidates = [];
+  // Authored override wins
+  if (g.wiki_title) candidates.push(g.wiki_title);
+
+  const raw = g.name;
+  const noParen = raw.replace(/\s*\([^)]*\)\s*$/, '').trim();
+  if (raw !== noParen && !candidates.includes(raw)) candidates.push(raw);
+  if (!candidates.includes(noParen)) candidates.push(noParen);
+  if (noParen.includes('/')) {
+    noParen.split('/').forEach(p => {
+      const t = p.trim();
+      if (t && !candidates.includes(t)) candidates.push(t);
+    });
+  }
+  // Pantheon-qualified fallback for ambiguous cases (Rama (Hindu mythology), etc.)
+  const p = PANTHEONS_BY_ID[g.pantheon];
+  if (p && !noParen.includes('(')) {
+    const qualified = `${noParen} (${p.name.split(' ')[0]} mythology)`;
+    if (!candidates.includes(qualified)) candidates.push(qualified);
+  }
+  return candidates;
+}
+
+async function fetchPageImage(title) {
+  const url = 'https://en.wikipedia.org/w/api.php'
+    + '?action=query&format=json&prop=pageimages&pithumbsize=300'
+    + '&titles=' + encodeURIComponent(title)
+    + '&origin=*';
+  try {
+    const resp = await fetch(url, { method:'GET' });
+    if (!resp.ok) return null;
+    const data = await resp.json();
+    const pages = data?.query?.pages || {};
+    for (const key in pages) {
+      const page = pages[key];
+      if (page.thumbnail && page.thumbnail.source) return page.thumbnail.source;
+    }
+    return null;
+  } catch (e) {
+    return null;
+  }
+}
+
+
+fetch('data.json')
+  .then(r => {
+    if (!r.ok) throw new Error(`HTTP ${r.status} loading data.json`);
+    return r.json();
+  })
+  .then(d => {
+    DATA = d;
+    init();
+    const el = document.getElementById('loading');
+    if (el) {
+      el.classList.add('fade-out');
+      setTimeout(() => el.remove(), 400);
+    }
+  })
+  .catch(err => {
+    const el = document.getElementById('loading');
+    if (el) {
+      el.classList.add('error');
+      el.innerHTML = `<div class="err-msg">Could not load the pantheon. (${(err && err.message) || err})<br><br>If you're viewing a local copy, serve it via an HTTP server — browsers block fetch() on file:// URLs.</div>`;
+    }
+    console.error('data.json load failed:', err);
+  });
+
+function init() {
+  DATA.pantheons.forEach(p => PANTHEONS_BY_ID[p.id] = p);
+  DATA.gods.forEach(g => GODS_BY_ID[g.id] = g);
+
+  wirePantheonViewControls();
+  wireCategoryFilter();
+  renderPantheonGrid();
+  renderTreeSelect();
+  renderTimeline();
+  renderArchetypes();
+  renderDeified();
+  renderMentions();
+  renderBrowseFilters();
+  renderBrowse();
+  wireTabs();
+  wireModal();
+  wireBrowse();
+  wireHashRouter();
+
+  // Initialize Family Trees tab to Zeus (won't update hash since skipHash)
+  if (DATA.pantheons.length) {
+    loadTree(DATA.pantheons.find(p => p.id === 'greek')?.id || DATA.pantheons[0].id, { skipHash: true });
+  }
+
+  // If URL has a hash, honor it; otherwise default to Pantheons tab
+  if (location.hash) applyHashFromURL();
+  else selectTab('overview', { skipHash: true });
+}
+
+function wireTabs() {
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => selectTab(btn.dataset.tab));
+  });
+}
+
+function selectTab(tabId, { skipHash = false } = {}) {
+  const btn = document.querySelector(`[data-tab="${tabId}"]`);
+  const panel = document.getElementById('tab-' + tabId);
+  if (!btn || !panel) return;
+  document.querySelectorAll('.tab-btn').forEach(b => {
+    b.classList.remove('active');
+    b.setAttribute('aria-selected', 'false');
+    b.setAttribute('tabindex', '-1');
+  });
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  btn.setAttribute('aria-selected', 'true');
+  btn.setAttribute('tabindex', '0');
+  panel.classList.add('active');
+  if (tabId === 'timeline') renderTimeline();
+  if (!skipHash) updateHash('tab/' + tabId);
+}
+
+/* ---------- URL hash router ---------- */
+let suppressHashUpdate = false;
+
+function updateHash(newFragment) {
+  if (suppressHashUpdate) return;
+  const target = '#' + newFragment;
+  if (location.hash === target) return;
+  // Use history.pushState so no 'jump' from anchor behavior, and back-button works
+  history.pushState(null, '', target);
+}
+
+function applyHashFromURL() {
+  const h = location.hash.replace(/^#/, '');
+  if (!h) { selectTab('overview', { skipHash: true }); return; }
+
+  const parts = h.split('/');
+  const type = parts[0];
+  const id = parts.slice(1).join('/');
+
+  switch (type) {
+    case 'tab':
+      if (document.getElementById('tab-' + id)) selectTab(id, { skipHash: true });
+      else selectTab('overview', { skipHash: true });
+      break;
+    case 'god':
+      if (GODS_BY_ID[id]) {
+        selectTab('trees', { skipHash: true });
+        setFocus(id, false, { skipHash: true });
+      } else {
+        selectTab('overview', { skipHash: true });
+      }
+      break;
+    case 'pantheon':
+      if (PANTHEONS_BY_ID[id]) {
+        selectTab('trees', { skipHash: true });
+        loadTree(id, { skipHash: true });
+      } else {
+        selectTab('overview', { skipHash: true });
+      }
+      break;
+    case 'archetype':
+      selectTab('archetypes', { skipHash: true });
+      if (DATA.archetypes.find(a => a.id === id)) {
+        // Slight delay so the tab is displayed before scrolling
+        setTimeout(() => jumpToArchetype(id), 30);
+      }
+      break;
+    default:
+      selectTab('overview', { skipHash: true });
+  }
+}
+
+function wireHashRouter() {
+  window.addEventListener('popstate', () => {
+    suppressHashUpdate = true;
+    applyHashFromURL();
+    suppressHashUpdate = false;
+  });
+  window.addEventListener('hashchange', () => {
+    suppressHashUpdate = true;
+    applyHashFromURL();
+    suppressHashUpdate = false;
+  });
+}
+
+function wireModal() {
+  document.getElementById('modalClose').addEventListener('click', closeModal);
+  document.getElementById('modalBg').addEventListener('click', e => { if (e.target.id === 'modalBg') closeModal(); });
+
+  // Image lightbox
+  document.getElementById('imgLightboxClose').addEventListener('click', closeImgLightbox);
+  document.getElementById('imgLightboxBg').addEventListener('click', e => {
+    // Click anywhere outside the image/caption block closes it
+    if (!e.target.closest('#imgLightbox')) closeImgLightbox();
+  });
+
+  // Open lightbox on any god image click (use delegation so newly-rendered images work).
+  // Skip tiny images — they're inside cards that already navigate on click.
+  document.addEventListener('click', e => {
+    const godImg = e.target.closest('.god-image');
+    if (!godImg || godImg.classList.contains('tiny')) return;
+    const img = godImg.querySelector('img');
+    if (!img || !img.src) return;
+    const gid = godImg.dataset.gid;
+    const g = gid ? GODS_BY_ID[gid] : null;
+    openImgLightbox(img.src, img.alt || (g && g.name) || '', g);
+  });
+
+  // Esc closes lightbox first, then modal
+  document.addEventListener('keydown', e => {
+    if (e.key !== 'Escape') return;
+    if (document.getElementById('imgLightboxBg').classList.contains('open')) {
+      closeImgLightbox();
+    } else {
+      closeModal();
+    }
+  });
+}
+
+function openImgLightbox(url, alt, g) {
+  const bg = document.getElementById('imgLightboxBg');
+  const img = document.getElementById('imgLightboxImg');
+  const cap = document.getElementById('imgLightboxCaption');
+  img.src = url;
+  img.alt = alt;
+  if (g) {
+    const p = PANTHEONS_BY_ID[g.pantheon];
+    cap.innerHTML = `<strong>${g.name}</strong>${p ? ' · ' + p.name : ''}<span class="attr">Image via Wikipedia / Wikimedia Commons</span>`;
+  } else {
+    cap.innerHTML = `${alt}<span class="attr">Image via Wikipedia / Wikimedia Commons</span>`;
+  }
+  bg.classList.add('open');
+}
+function closeImgLightbox() {
+  const bg = document.getElementById('imgLightboxBg');
+  bg.classList.remove('open');
+  // Clear src after animation so we don't keep the image loaded
+  setTimeout(() => { document.getElementById('imgLightboxImg').src = ''; }, 200);
+}
+
+// Keyboard shortcuts
+document.addEventListener('keydown', e => {
+  const t = e.target;
+  const inEditable = t && t.matches && t.matches('input, textarea, select, [contenteditable]');
+
+  // Enter/Space on role=button elements triggers click
+  if ((e.key === 'Enter' || e.key === ' ') && t instanceof HTMLElement
+      && t.getAttribute('role') === 'button'
+      && !t.matches('button, a, input, select, textarea')) {
+    e.preventDefault();
+    t.click();
+    return;
+  }
+
+  // Below shortcuts only when not typing in a field
+  if (inEditable) return;
+
+  // "/" focuses the search input (if on browse tab, switch and focus)
+  if (e.key === '/' && !e.ctrlKey && !e.metaKey) {
+    e.preventDefault();
+    selectTab('browse');
+    const inp = document.getElementById('searchInput');
+    if (inp) { inp.focus(); inp.select(); }
+    return;
+  }
+
+  // Arrow keys on the tablist cycle through tabs when focus is on a tab button
+  if ((e.key === 'ArrowLeft' || e.key === 'ArrowRight')
+      && t instanceof HTMLElement && t.classList.contains('tab-btn')) {
+    e.preventDefault();
+    const tabs = Array.from(document.querySelectorAll('.tab-btn'));
+    const idx = tabs.indexOf(t);
+    if (idx < 0) return;
+    const next = e.key === 'ArrowRight'
+      ? tabs[(idx + 1) % tabs.length]
+      : tabs[(idx - 1 + tabs.length) % tabs.length];
+    next.focus();
+    selectTab(next.dataset.tab);
+  }
+});
+function closeModal() { document.getElementById('modalBg').classList.remove('open'); }
+
+function openGod(id) {
+  const g = GODS_BY_ID[id];
+  if (!g) return;
+  const p = PANTHEONS_BY_ID[g.pantheon];
+  const parents = (g.parents || []).map(renderGodLink).filter(Boolean);
+  const consorts = (g.consorts || []).map(renderGodLink).filter(Boolean);
+  const children = (g.children || []).map(renderGodLink).filter(Boolean);
+  const siblings = (g.siblings || []).map(renderGodLink).filter(Boolean);
+  const parallels = (g.parallels || []).map(renderGodLink).filter(Boolean);
+
+  const rel = [];
+  if (parents.length) rel.push(`<div class="rel-row"><span class="rel-label">Parents</span>${parents.join(', ')}</div>`);
+  if (consorts.length) rel.push(`<div class="rel-row"><span class="rel-label">Consorts</span>${consorts.join(', ')}</div>`);
+  if (children.length) rel.push(`<div class="rel-row"><span class="rel-label">Children</span>${children.join(', ')}</div>`);
+  if (siblings.length) rel.push(`<div class="rel-row"><span class="rel-label">Siblings</span>${siblings.join(', ')}</div>`);
+  if (parallels.length) rel.push(`<div class="rel-row"><span class="rel-label">Parallels</span>${parallels.join(', ')}</div>`);
+
+  const archetype = g.archetype ? (DATA.archetypes.find(a => a.id === g.archetype)?.name || g.archetype) : null;
+
+  document.getElementById('modalContent').innerHTML = `
+    <div class="modal-head">
+      <div class="modal-head-text">
+        <div class="pantheon-label">${p ? p.name : g.pantheon}</div>
+        <h2>${g.name}</h2>
+        ${g.epithets && g.epithets.length ? `<div class="epithets">"${g.epithets.join(' · ')}"</div>` : ''}
+      </div>
+      ${godImageHtml(g)}
+    </div>
+    <div class="desc">${g.description || ''}</div>
+    ${g.domains && g.domains.length ? `
+      <div class="section-label">Domains</div>
+      <div class="domains">${g.domains.map(d => `<span class="domain-tag">${d.replace(/-/g, ' ')}</span>`).join('')}</div>
+    ` : ''}
+    ${archetype ? `<div class="section-label" style="margin-top:14px;">Archetype</div><div style="color:var(--ink); font-size:14px;">${archetype}</div>` : ''}
+    ${rel.length ? `<div class="section-label" style="margin-top:18px;">Relations</div>${rel.join('')}` : ''}
+    <div class="section-label" style="margin-top:18px;">Category</div>
+    <div style="color:var(--ink); font-size:14px; text-transform:capitalize;">${(g.category || '').replace(/-/g, ' ')} · ${g.gender === 'M' ? 'masculine' : g.gender === 'F' ? 'feminine' : 'non-gendered / other'}</div>
+  `;
+  document.getElementById('modalBg').classList.add('open');
+  document.getElementById('modal').scrollTop = 0;
+}
+
+function renderGodLink(id) {
+  const g = GODS_BY_ID[id];
+  if (g) return `<span class="god-link" onclick="openGod('${id}')">${g.name}</span>`;
+  // Missing relation — show stub name derived from id
+  return `<span class="god-link missing" title="Not yet catalogued">${formatStubName(id)}</span>`;
+}
+function formatStubName(id) {
+  return id.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+}
+
+/* ---------- Pantheons tab ---------- */
+const PANTHEON_GROUPS = [
+  { id:'mediterranean', name:'Ancient Mediterranean & Classical',
+    ids:['pie','greek','roman','etruscan','thracian'] },
+  { id:'near-east', name:'Ancient Near East & North Africa',
+    ids:['egyptian','mesopotamian','canaanite','hittite','zoroastrian','arabian'] },
+  { id:'europe', name:'Pagan Europe',
+    ids:['norse','celtic-irish','celtic-welsh','slavic','baltic','finnish','sami','armenian'] },
+  { id:'asia', name:'Asia',
+    ids:['hindu','chinese','japanese','korean','vietnamese','tagalog','tibetan-bon','tengri','ainu'] },
+  { id:'africa', name:'Sub-Saharan Africa',
+    ids:['yoruba','akan','fon','zulu'] },
+  { id:'americas', name:'Indigenous Americas',
+    ids:['aztec','mayan','inca','taino','lakota','navajo','iroquois','pacific-nw','guarani','mapuche'] },
+  { id:'arctic-oceania', name:'Arctic & Oceania',
+    ids:['inuit','aboriginal','polynesian'] },
+  { id:'abrahamic', name:'Abrahamic & Adjacent',
+    ids:['judaism','christianity','islam','sikh','bahai','rastafari','kabbalistic','gnostic','manichaean'] },
+  { id:'diaspora', name:'Diaspora & Syncretic',
+    ids:['haitian-vodou','caodai'] },
+  { id:'human', name:'Elevated Humans',
+    ids:['deified-humans'] },
+];
+
+let pantheonViewMode = 'grouped'; // 'grouped' | 'list' | 'era'
+let pantheonSortMode = 'era'; // 'era' | 'size' | 'alpha'
+const collapsedPantheonGroups = new Set();
+
+function pantheonCounts() {
+  const counts = {};
+  DATA.gods.forEach(g => counts[g.pantheon] = (counts[g.pantheon] || 0) + 1);
+  return counts;
+}
+
+function sortPantheons(list, counts) {
+  const arr = list.slice();
+  if (pantheonSortMode === 'size') arr.sort((a,b) => (counts[b.id]||0) - (counts[a.id]||0) || a.name.localeCompare(b.name));
+  else if (pantheonSortMode === 'alpha') arr.sort((a,b) => a.name.localeCompare(b.name));
+  else arr.sort((a,b) => a.active_from - b.active_from);
+  return arr;
+}
+
+function allPantheonGroups() {
+  const grouped = new Set(PANTHEON_GROUPS.flatMap(g => g.ids));
+  const orphans = DATA.pantheons.filter(p => !grouped.has(p.id)).map(p => p.id);
+  return orphans.length
+    ? [...PANTHEON_GROUPS, { id:'other', name:'Other', ids:orphans }]
+    : PANTHEON_GROUPS;
+}
+
+function renderPantheonGrid() {
+  const counts = pantheonCounts();
+  const totalTrads = DATA.pantheons.length;
+  const totalFigs = Object.values(counts).reduce((s,n) => s+n, 0);
+  const totalEl = document.getElementById('pantheonTotalCount');
+  if (totalEl) totalEl.textContent = `${totalTrads} traditions · ${totalFigs} figures`;
+
+  if (pantheonViewMode === 'era') renderPantheonEraList(counts);
+  else if (pantheonViewMode === 'list') renderPantheonGroupedList(counts);
+  else renderPantheonGroupedCards(counts);
+
+  wirePantheonClicks();
+  wirePantheonGroupCollapse();
+  updateCollapseAllButtonLabel();
+}
+
+function renderPantheonGroupedCards(counts) {
+  const html = allPantheonGroups().map(grp => {
+    const members = sortPantheons(grp.ids.map(id => PANTHEONS_BY_ID[id]).filter(Boolean), counts);
+    if (!members.length) return '';
+    const totalFigures = members.reduce((s,p) => s + (counts[p.id] || 0), 0);
+    const era = groupEraLabel(members);
+    const collapsed = collapsedPantheonGroups.has(grp.id) ? ' collapsed' : '';
+    const cards = members.map(p => {
+      const n = counts[p.id] || 0;
+      return `
+        <div class="pantheon-card" style="--pantheon-color:${p.color}" data-pid="${p.id}" title="${escapeAttr(p.description)}" role="button" tabindex="0" aria-label="Open ${escapeAttr(p.name)} family tree">
+          <div class="card-head">
+            <h4>${p.name}</h4>
+            <span class="count-chip">${n}</span>
+          </div>
+          <div class="region">${p.region}</div>
+          <div class="span">${fmtYears(p.active_from, p.active_to)}</div>
+          <div class="desc">${p.description}</div>
+        </div>
+      `;
+    }).join('');
+    return `
+      <section class="pantheon-group${collapsed}" data-gid="${grp.id}">
+        <div class="pantheon-group-head" role="button" tabindex="0" aria-expanded="${collapsed ? 'false' : 'true'}">
+          <h3><span class="toggle-icon" aria-hidden="true">▾</span>${grp.name}</h3>
+          <span class="group-count">${members.length} tradition${members.length === 1 ? '' : 's'} · ${totalFigures} figure${totalFigures === 1 ? '' : 's'}</span>
+          <span class="group-era">${era}</span>
+        </div>
+        <div class="pantheon-group-grid">${cards}</div>
+      </section>
+    `;
+  }).join('');
+  document.getElementById('pantheonGroups').innerHTML = html;
+}
+
+function pantheonRowHtml(p, count) {
+  return `
+    <div class="pantheon-row" style="--pantheon-color:${p.color}" data-pid="${p.id}" role="button" tabindex="0" aria-label="Open ${escapeAttr(p.name)} family tree" title="${escapeAttr(p.description)}">
+      <span class="pr-name">${p.name}</span>
+      <span class="pr-region">${p.region}</span>
+      <span class="pr-span">${fmtYears(p.active_from, p.active_to)}</span>
+      <span class="pr-count">${count} figure${count === 1 ? '' : 's'}</span>
+      <span class="pr-desc">${p.description}</span>
+    </div>
+  `;
+}
+
+function renderPantheonGroupedList(counts) {
+  const html = allPantheonGroups().map(grp => {
+    const members = sortPantheons(grp.ids.map(id => PANTHEONS_BY_ID[id]).filter(Boolean), counts);
+    if (!members.length) return '';
+    const totalFigures = members.reduce((s,p) => s + (counts[p.id] || 0), 0);
+    const era = groupEraLabel(members);
+    const collapsed = collapsedPantheonGroups.has(grp.id) ? ' collapsed' : '';
+    const rows = members.map(p => pantheonRowHtml(p, counts[p.id] || 0)).join('');
+    return `
+      <section class="pantheon-group${collapsed}" data-gid="${grp.id}">
+        <div class="pantheon-group-head" role="button" tabindex="0" aria-expanded="${collapsed ? 'false' : 'true'}">
+          <h3><span class="toggle-icon" aria-hidden="true">▾</span>${grp.name}</h3>
+          <span class="group-count">${members.length} tradition${members.length === 1 ? '' : 's'} · ${totalFigures} figure${totalFigures === 1 ? '' : 's'}</span>
+          <span class="group-era">${era}</span>
+        </div>
+        <div class="pantheon-compact-list">${rows}</div>
+      </section>
+    `;
+  }).join('');
+  document.getElementById('pantheonGroups').innerHTML = html;
+}
+
+function renderPantheonEraList(counts) {
+  // Flat list, always sorted by active_from (ignores sort dropdown — it's era-ordered by definition)
+  const all = DATA.pantheons.slice().sort((a,b) => a.active_from - b.active_from || a.name.localeCompare(b.name));
+
+  // Era buckets based on earliest active_from
+  const eraBuckets = [
+    { id:'prehistoric', name:'Prehistoric & Neolithic', max:-3300 },
+    { id:'bronze',       name:'Bronze Age',             max:-1200 },
+    { id:'iron',         name:'Iron Age',                max:-500 },
+    { id:'classical',    name:'Classical Antiquity',    max:500 },
+    { id:'medieval',     name:'Medieval & Early Modern',max:1500 },
+    { id:'modern',       name:'Modern & Contemporary',  max:9999 },
+  ];
+  const bucketOf = (y) => eraBuckets.find(b => y <= b.max) || eraBuckets[eraBuckets.length - 1];
+
+  const byBucket = new Map();
+  all.forEach(p => {
+    const b = bucketOf(p.active_from);
+    if (!byBucket.has(b.id)) byBucket.set(b.id, { meta:b, members:[] });
+    byBucket.get(b.id).members.push(p);
+  });
+
+  const html = eraBuckets.map(b => {
+    const entry = byBucket.get(b.id);
+    if (!entry || !entry.members.length) return '';
+    const totalFigures = entry.members.reduce((s,p) => s + (counts[p.id] || 0), 0);
+    const from = Math.min(...entry.members.map(p => p.active_from));
+    const to = Math.max(...entry.members.map(p => p.active_to));
+    const collapsed = collapsedPantheonGroups.has('era-' + b.id) ? ' collapsed' : '';
+    const rows = entry.members.map(p => pantheonRowHtml(p, counts[p.id] || 0)).join('');
+    return `
+      <section class="pantheon-group${collapsed}" data-gid="era-${b.id}">
+        <div class="pantheon-group-head" role="button" tabindex="0" aria-expanded="${collapsed ? 'false' : 'true'}">
+          <h3><span class="toggle-icon" aria-hidden="true">▾</span>${b.name}</h3>
+          <span class="group-count">${entry.members.length} tradition${entry.members.length === 1 ? '' : 's'} · ${totalFigures} figure${totalFigures === 1 ? '' : 's'}</span>
+          <span class="group-era">${fmtYear(from)} – ${fmtYear(to)}</span>
+        </div>
+        <div class="pantheon-compact-list">${rows}</div>
+      </section>
+    `;
+  }).join('');
+  document.getElementById('pantheonGroups').innerHTML = html;
+}
+
+function wirePantheonClicks() {
+  document.querySelectorAll('#pantheonGroups .pantheon-card, #pantheonGroups .pantheon-row').forEach(el => {
+    el.addEventListener('click', () => {
+      const pid = el.dataset.pid;
+      selectTab('trees', { skipHash: true });
+      loadTree(pid);
+    });
+  });
+}
+
+function wirePantheonGroupCollapse() {
+  document.querySelectorAll('#pantheonGroups .pantheon-group-head').forEach(head => {
+    head.addEventListener('click', () => {
+      const section = head.closest('.pantheon-group');
+      if (!section) return;
+      const gid = section.dataset.gid;
+      if (collapsedPantheonGroups.has(gid)) {
+        collapsedPantheonGroups.delete(gid);
+        section.classList.remove('collapsed');
+        head.setAttribute('aria-expanded', 'true');
+      } else {
+        collapsedPantheonGroups.add(gid);
+        section.classList.add('collapsed');
+        head.setAttribute('aria-expanded', 'false');
+      }
+      updateCollapseAllButtonLabel();
+    });
+    head.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); head.click(); }
+    });
+  });
+}
+
+function updateCollapseAllButtonLabel() {
+  const btn = document.getElementById('pantheonCollapseAll');
+  if (!btn) return;
+  const sections = document.querySelectorAll('#pantheonGroups .pantheon-group');
+  if (!sections.length) return;
+  const anyOpen = Array.from(sections).some(s => !s.classList.contains('collapsed'));
+  btn.textContent = anyOpen ? 'Collapse all' : 'Expand all';
+}
+
+function wirePantheonViewControls() {
+  document.querySelectorAll('#pantheonViewToggle button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const mode = btn.dataset.view;
+      if (mode === pantheonViewMode) return;
+      pantheonViewMode = mode;
+      document.querySelectorAll('#pantheonViewToggle button').forEach(b => {
+        const active = b.dataset.view === mode;
+        b.classList.toggle('active', active);
+        b.setAttribute('aria-selected', active ? 'true' : 'false');
+      });
+      // Toggle relevance of the within-group sort for era view (it's era-ordered by definition)
+      const sortSel = document.getElementById('pantheonSort');
+      if (sortSel) sortSel.disabled = mode === 'era';
+      renderPantheonGrid();
+    });
+  });
+  const sortSel = document.getElementById('pantheonSort');
+  if (sortSel) {
+    sortSel.addEventListener('change', e => {
+      pantheonSortMode = e.target.value;
+      renderPantheonGrid();
+    });
+  }
+  const collapseBtn = document.getElementById('pantheonCollapseAll');
+  if (collapseBtn) {
+    collapseBtn.addEventListener('click', () => {
+      const sections = document.querySelectorAll('#pantheonGroups .pantheon-group');
+      const anyOpen = Array.from(sections).some(s => !s.classList.contains('collapsed'));
+      sections.forEach(s => {
+        const gid = s.dataset.gid;
+        if (anyOpen) {
+          collapsedPantheonGroups.add(gid);
+          s.classList.add('collapsed');
+          const head = s.querySelector('.pantheon-group-head');
+          if (head) head.setAttribute('aria-expanded', 'false');
+        } else {
+          collapsedPantheonGroups.delete(gid);
+          s.classList.remove('collapsed');
+          const head = s.querySelector('.pantheon-group-head');
+          if (head) head.setAttribute('aria-expanded', 'true');
+        }
+      });
+      updateCollapseAllButtonLabel();
+    });
+  }
+}
+
+function groupEraLabel(members) {
+  const from = Math.min(...members.map(p => p.active_from));
+  const to = Math.max(...members.map(p => p.active_to));
+  return `${fmtYear(from)} – ${fmtYear(to)}`;
+}
+
+function escapeAttr(s) {
+  return (s || '').replace(/"/g, '&quot;').replace(/</g, '&lt;');
+}
+
+function fmtYear(y) {
+  if (y === undefined || y === null) return '';
+  if (y >= 2020) return 'present';
+  if (y < 0) return `${Math.abs(y)} BCE`;
+  if (y === 0) return '0';
+  return `${y} CE`;
+}
+function fmtYears(from, to) {
+  return `${fmtYear(from)} – ${fmtYear(to)}`;
+}
+
+/* ---------- Family Trees (focus view + full tree) ---------- */
+let focusHistory = [];
+let currentFocusId = null;
+let currentTreeMode = 'focus'; // 'focus' | 'full'
+
+function renderTreeSelect() {
+  const pSel = document.getElementById('treeSelect');
+  pSel.innerHTML = DATA.pantheons.map(p => `<option value="${p.id}">${p.name}</option>`).join('');
+  pSel.value = 'greek';
+  pSel.addEventListener('change', e => {
+    const pid = e.target.value;
+    const gods = DATA.gods.filter(g => g.pantheon === pid);
+    const pick = gods.find(g => g.category === 'major') || gods[0];
+    if (pick) { focusHistory = []; updateBackButton(); setFocus(pick.id, false); }
+  });
+
+  const fSel = document.getElementById('focusSelect');
+  fSel.addEventListener('change', e => setFocus(e.target.value));
+
+  document.getElementById('focusBack').addEventListener('click', () => {
+    if (focusHistory.length > 1) {
+      focusHistory.pop();
+      const prev = focusHistory.pop();
+      setFocus(prev, false);
+    }
+  });
+
+  document.getElementById('viewFocusBtn').addEventListener('click', () => setTreeMode('focus'));
+  document.getElementById('viewFullBtn').addEventListener('click', () => setTreeMode('full'));
+}
+
+function setTreeMode(mode) {
+  currentTreeMode = mode;
+  document.getElementById('viewFocusBtn').classList.toggle('active', mode === 'focus');
+  document.getElementById('viewFullBtn').classList.toggle('active', mode === 'full');
+  document.getElementById('focusView').style.display = mode === 'focus' ? '' : 'none';
+  document.getElementById('fullTreeView').style.display = mode === 'full' ? 'block' : 'none';
+  document.getElementById('fullTreeLegend').style.display = mode === 'full' ? '' : 'none';
+  const filters = document.getElementById('fullTreeFilters');
+  if (filters) filters.style.display = mode === 'full' ? '' : 'none';
+  if (mode === 'full' && currentFocusId) {
+    const g = GODS_BY_ID[currentFocusId];
+    if (g) renderFullTree(g.pantheon);
+  }
+}
+
+// Redraw connectors on resize when full tree is visible (debounced)
+let fullTreeResizeTimer = null;
+window.addEventListener('resize', () => {
+  if (currentTreeMode !== 'full' || !fullTreeState) return;
+  clearTimeout(fullTreeResizeTimer);
+  fullTreeResizeTimer = setTimeout(() => drawFullTreeConnectors(fullTreeState), 120);
+});
+
+function updateBackButton() {
+  document.getElementById('focusBack').disabled = focusHistory.length <= 1;
+}
+
+function loadTree(pantheonId, { skipHash = false } = {}) {
+  // Called from pantheon card or timeline click — set pantheon dropdown then pick major figure
+  const gods = DATA.gods.filter(g => g.pantheon === pantheonId);
+  document.getElementById('treeSelect').value = pantheonId;
+  const pick = gods.find(g => g.category === 'major') || gods[0];
+  if (pick) { focusHistory = []; updateBackButton(); setFocus(pick.id, false, { skipHash }); }
+}
+
+function setFocus(godId, pushHistory = true, { skipHash = false } = {}) {
+  const g = GODS_BY_ID[godId];
+  if (!g) return;
+  if (focusHistory[focusHistory.length - 1] !== godId) {
+    focusHistory.push(godId);
+  }
+  currentFocusId = godId;
+  updateBackButton();
+
+  // Sync pantheon dropdown if different
+  const pSel = document.getElementById('treeSelect');
+  if (pSel.value !== g.pantheon) pSel.value = g.pantheon;
+
+  // Populate focus dropdown with same-pantheon gods
+  const pgods = DATA.gods.filter(x => x.pantheon === g.pantheon);
+  const fSel = document.getElementById('focusSelect');
+  fSel.innerHTML = pgods.map(x => `<option value="${x.id}">${x.name}</option>`).join('');
+  fSel.value = godId;
+
+  document.getElementById('treeCount').textContent = `${pgods.length} in pantheon`;
+
+  // Clicking a god from full tree → flip back to focus
+  if (currentTreeMode === 'full') setTreeMode('focus');
+
+  renderFocusView(g);
+
+  // Keep full tree data current for quick toggle
+  if (currentTreeMode === 'full') renderFullTree(g.pantheon);
+
+  if (!skipHash) updateHash('god/' + godId);
+}
+
+const SIDE_LIST_CAP = 8;
+
+function renderSideCappedList(ids, emptyMsg) {
+  if (!ids || !ids.length) return emptyNote(emptyMsg);
+  if (ids.length <= SIDE_LIST_CAP) return ids.map(id => relCard(id, 'side')).join('');
+  const shown = ids.slice(0, SIDE_LIST_CAP).map(id => relCard(id, 'side')).join('');
+  const hidden = ids.slice(SIDE_LIST_CAP)
+    .map(id => relCard(id, 'side').replace('class="focus-card', 'class="focus-card side-hidden'))
+    .join('');
+  return `${shown}${hidden}<button type="button" class="side-expand-btn" onclick="expandSideList(this)">+ ${ids.length - SIDE_LIST_CAP} more</button>`;
+}
+
+function renderGrandparentsRow(g) {
+  // Collect grandparents via parents' parents (dedup by id, skip self)
+  const seen = new Set([g.id]);
+  const gpIds = [];
+  (g.parents || []).forEach(pid => {
+    const parent = GODS_BY_ID[pid];
+    if (!parent) return;
+    (parent.parents || []).forEach(gpid => {
+      if (seen.has(gpid)) return;
+      seen.add(gpid);
+      gpIds.push(gpid);
+    });
+  });
+  if (!gpIds.length) return '';
+  const chips = gpIds.map(id => {
+    const gp = GODS_BY_ID[id];
+    if (gp) return `<span class="grandparent-chip" onclick="setFocus('${id}')" role="button" tabindex="0" aria-label="Focus on ${escapeAttr(gp.name)}">${gp.name}</span>`;
+    return `<span class="grandparent-chip missing" title="Not yet catalogued">${formatStubName(id)}</span>`;
+  }).join('');
+  return `
+    <div class="focus-section-label grandparents-label">Grandparents</div>
+    <div class="focus-row grandparents-row">${chips}</div>
+  `;
+}
+
+function renderFocusView(g) {
+  const p = PANTHEONS_BY_ID[g.pantheon];
+  const pColor = p ? p.color : 'var(--gold)';
+
+  const grandparentsHtml = renderGrandparentsRow(g);
+  const parentCards = (g.parents || []).map(id => relCard(id, 'small')).join('') || emptyNote('No parents recorded');
+
+  const siblingCards = renderSideCappedList(g.siblings, 'No siblings recorded');
+  const consortCards = renderSideCappedList(g.consorts, 'No consorts recorded');
+
+  const childrenIds = g.children || [];
+  const childrenHtml = renderChildrenGrouped(g, childrenIds);
+
+  const parallelChips = (g.parallels || []).map(id => {
+    const pg = GODS_BY_ID[id];
+    if (!pg) return `<span class="focus-parallel-chip missing" title="Not yet catalogued">${formatStubName(id)}</span>`;
+    const pp = PANTHEONS_BY_ID[pg.pantheon];
+    return `<span class="focus-parallel-chip" onclick="setFocus('${id}')">${pg.name}<span class="pan">${pp ? pp.name : ''}</span></span>`;
+  }).join('');
+
+  const epithets = g.epithets && g.epithets.length ? `<div class="fepithets">"${g.epithets.join(' · ')}"</div>` : '';
+  const domains = (g.domains || []).length
+    ? `<div class="fdomains">${g.domains.map(d => `<span class="fdom-tag">${d.replace(/-/g,' ')}</span>`).join('')}</div>` : '';
+  const catLabel = `${(g.category || '').replace(/-/g,' ')}${genderSymbol(g.gender)}`;
+
+  document.getElementById('focusView').innerHTML = `
+    ${grandparentsHtml}
+    <div class="focus-section-label">Parents</div>
+    <div class="focus-row">${parentCards}</div>
+
+    <div class="focus-main-row" style="margin-top:22px;">
+      <div class="focus-side">
+        <h4>Siblings</h4>
+        <div class="focus-side-list">${siblingCards}</div>
+      </div>
+      <div class="focus-center-card" style="--pantheon-color:${pColor}">
+        <div class="focus-header">
+          <div class="focus-header-text">
+            <div class="fpantheon">${p ? p.name : g.pantheon}</div>
+            <h3 class="fname-main">${g.name}</h3>
+            ${epithets}
+            <div class="fcat">${catLabel}</div>
+          </div>
+          ${godImageHtml(g)}
+        </div>
+        ${domains}
+        <div class="fdesc">${g.description || ''}</div>
+        <button class="fdetails-btn" onclick="openGod('${g.id}')">Full details</button>
+      </div>
+      <div class="focus-side">
+        <h4>Consorts</h4>
+        <div class="focus-side-list">${consortCards}</div>
+      </div>
+    </div>
+
+    <div class="focus-section-label">Children${childrenIds.length ? ` (${childrenIds.length})` : ''}</div>
+    ${childrenHtml}
+
+    ${parallelChips ? `
+      <div class="focus-section-label">Cross-Cultural Parallels</div>
+      <div class="focus-parallels">${parallelChips}</div>
+    ` : ''}
+  `;
+
+  // Scroll the focus-view into top of its container on navigation (but not page jump)
+  const fv = document.getElementById('focusView');
+  fv.scrollTop = 0;
+}
+
+function expandSideList(btn) {
+  const parent = btn.parentElement;
+  if (!parent) return;
+  parent.querySelectorAll('.side-hidden').forEach(el => el.classList.remove('side-hidden'));
+  btn.remove();
+}
+
+function relCard(id, size) {
+  const g = GODS_BY_ID[id];
+  if (!g) {
+    return `<div class="focus-card missing" title="Not yet catalogued" aria-label="${escapeAttr(formatStubName(id))} — not yet catalogued">
+      <div class="god-glyph tiny" title="Not yet catalogued">?</div>
+      <div class="focus-card-text">
+        <div class="fname">${formatStubName(id)}</div>
+        <div class="fmeta">not yet catalogued</div>
+      </div>
+    </div>`;
+  }
+  const p = PANTHEONS_BY_ID[g.pantheon];
+  const doms = (g.domains || []).slice(0, 2).map(d => d.replace(/-/g,' ')).join(' · ');
+  const meta = `${(g.category||'').replace(/-/g,' ')}${genderSymbol(g.gender)}`;
+  return `<div class="focus-card" style="--pantheon-color:${p ? p.color : 'var(--gold)'}" onclick="setFocus('${id}')" role="button" tabindex="0" aria-label="Open ${escapeAttr(g.name)}">
+    ${godImageHtml(g, 'tiny')}
+    <div class="focus-card-text">
+      <div class="fname">${g.name}</div>
+      <div class="fmeta">${meta}</div>
+      ${doms ? `<div class="fdom">${doms}</div>` : ''}
+    </div>
+  </div>`;
+}
+
+function emptyNote(text) {
+  return `<div class="focus-empty">${text}</div>`;
+}
+
+function renderChildrenGrouped(focus, childrenIds) {
+  if (!childrenIds.length) return emptyNote('No children recorded');
+
+  const CHILD_LIMIT_TOTAL = 48;
+  const UNKNOWN = '__unknown__';
+
+  // Partition by which OTHER parent the child shares (or unknown)
+  const groups = new Map();
+  childrenIds.forEach(cid => {
+    const child = GODS_BY_ID[cid];
+    let coparentId = UNKNOWN;
+    if (child && Array.isArray(child.parents) && child.parents.length) {
+      const others = child.parents.filter(pid => pid !== focus.id);
+      if (others.length) coparentId = others[0];
+    }
+    if (!groups.has(coparentId)) groups.set(coparentId, []);
+    groups.get(coparentId).push(cid);
+  });
+
+  // Decide whether to show groupings: only if there's more than one distinct co-parent
+  // (or one known co-parent AND an unknown pile)
+  const knownCoparents = [...groups.keys()].filter(k => k !== UNKNOWN);
+  const showGrouping = knownCoparents.length >= 2
+    || (knownCoparents.length === 1 && groups.has(UNKNOWN) && groups.get(UNKNOWN).length > 0);
+
+  if (!showGrouping) {
+    // Flat render, same as before
+    const shown = childrenIds.slice(0, CHILD_LIMIT_TOTAL);
+    const cards = shown.map(id => relCard(id, 'grid')).join('');
+    const hint = childrenIds.length > CHILD_LIMIT_TOTAL
+      ? `<div class="focus-more-hint">+ ${childrenIds.length - CHILD_LIMIT_TOTAL} more not shown</div>` : '';
+    return `<div class="focus-children">${cards}</div>${hint}`;
+  }
+
+  // Grouped render: order by count (descending), unknown last
+  const ordered = [...groups.entries()].sort((a, b) => {
+    if (a[0] === UNKNOWN) return 1;
+    if (b[0] === UNKNOWN) return -1;
+    return b[1].length - a[1].length;
+  });
+
+  let remaining = CHILD_LIMIT_TOTAL;
+  const groupHtml = ordered.map(([coparentId, kids]) => {
+    if (remaining <= 0) return '';
+    const shownKids = kids.slice(0, remaining);
+    remaining -= shownKids.length;
+
+    let heading;
+    if (coparentId === UNKNOWN) {
+      heading = `<div class="coparent-heading"><strong>other / unknown</strong></div>`;
+    } else {
+      const coparent = GODS_BY_ID[coparentId];
+      if (coparent) {
+        heading = `<div class="coparent-heading clickable" role="button" tabindex="0" onclick="setFocus('${coparentId}')" aria-label="Focus on ${escapeAttr(coparent.name)}">
+          <span class="thumb">${coparentThumbInner(coparent)}</span>
+          with <strong>${coparent.name}</strong>
+        </div>`;
+      } else {
+        heading = `<div class="coparent-heading"><span class="thumb"><span class="glyph">?</span></span>with <strong>${formatStubName(coparentId)}</strong></div>`;
+      }
+    }
+    return `
+      <div class="coparent-group">
+        ${heading}
+        <div class="focus-children">${shownKids.map(id => relCard(id, 'grid')).join('')}</div>
+      </div>
+    `;
+  }).join('');
+
+  const totalShown = CHILD_LIMIT_TOTAL - remaining;
+  const hint = childrenIds.length > totalShown
+    ? `<div class="focus-more-hint">+ ${childrenIds.length - totalShown} more not shown</div>` : '';
+  return groupHtml + hint;
+}
+
+// Inline thumbnail markup (tiny, circle) for the coparent heading.
+// Uses the cache synchronously; otherwise shows a glyph (no fetch kicked off
+// here — the actual child cards below will trigger fetches that also benefit this).
+function coparentThumbInner(g) {
+  const cached = WIKI_IMAGE_CACHE.get(g.id);
+  if (cached && cached.url) {
+    return `<img src="${cached.url}" alt="" aria-hidden="true">`;
+  }
+  return `<span class="glyph" aria-hidden="true">${glyphForGod(g)}</span>`;
+}
+
+function genderSymbol(gender) {
+  if (gender === 'M') return ' <span class="gender-symbol">♂</span>';
+  if (gender === 'F') return ' <span class="gender-symbol">♀</span>';
+  return '';
+}
+
+// State for full tree — kept around so resize + lineage highlight can use it.
+// Cached by pantheon so switching back to an already-built tree is instant.
+let fullTreeState = null; // { pantheonId, pgods, byId, godToNucleus, ancestors, descendants }
+const FULL_TREE_CACHE = new Map();
+
+// Category filter for the full tree. null = no filter (show all).
+// When set, it is a Set of categories to INCLUDE.
+const ALL_CATEGORIES = ['primordial','titan','major','minor','hero','monster','deified-human','abrahamic'];
+let treeCategoryFilter = null;
+
+function categoryAllowed(cat) {
+  if (!treeCategoryFilter) return true;
+  return treeCategoryFilter.has(cat || 'major');
+}
+
+function invalidateFullTreeCache() {
+  FULL_TREE_CACHE.clear();
+  fullTreeState = null;
+}
+
+function updateCatFilterCount() {
+  const el = document.getElementById('catFilterCount');
+  if (!el || !DATA) return;
+  const pid = fullTreeState ? fullTreeState.pantheonId : null;
+  if (!pid) { el.textContent = ''; return; }
+  const total = DATA.gods.filter(g => g.pantheon === pid).length;
+  const shown = DATA.gods.filter(g => g.pantheon === pid && categoryAllowed(g.category)).length;
+  el.textContent = shown === total ? `${total} figures` : `${shown} of ${total} figures shown`;
+}
+
+function setCategoryFilter(setOrNull) {
+  treeCategoryFilter = setOrNull;
+  invalidateFullTreeCache();
+  // Reflect on chips
+  document.querySelectorAll('#catFilterChips .cat-chip').forEach(btn => {
+    const on = !setOrNull || setOrNull.has(btn.dataset.cat);
+    btn.classList.toggle('active', on);
+    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+  });
+  // Re-render current tree if in Full mode
+  if (currentTreeMode === 'full' && currentFocusId) {
+    const g = GODS_BY_ID[currentFocusId];
+    if (g) renderFullTree(g.pantheon);
+  }
+  updateCatFilterCount();
+}
+
+function wireCategoryFilter() {
+  document.querySelectorAll('#catFilterChips .cat-chip').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const cat = btn.dataset.cat;
+      const current = new Set(treeCategoryFilter || ALL_CATEGORIES);
+      if (current.has(cat)) current.delete(cat);
+      else current.add(cat);
+      // Collapse back to "no filter" when all 8 are on
+      const allOn = ALL_CATEGORIES.every(c => current.has(c));
+      setCategoryFilter(allOn ? null : current);
+    });
+  });
+  document.getElementById('catFilterReset').addEventListener('click', () => setCategoryFilter(null));
+  document.querySelectorAll('.cat-preset-btn[data-preset]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const preset = btn.dataset.preset;
+      if (preset === 'majors-only') setCategoryFilter(new Set(['major', 'primordial']));
+      else if (preset === 'gods-only') setCategoryFilter(new Set(['primordial','titan','major','minor','abrahamic']));
+    });
+  });
+}
+
+function renderFullTree(pantheonId) {
+  const p = PANTHEONS_BY_ID[pantheonId];
+  if (!p) return;
+
+  // Fast path: same pantheon already rendered — just re-apply focused highlight
+  if (fullTreeState && fullTreeState.pantheonId === pantheonId) {
+    const inner = document.getElementById('fullTreeInner');
+    if (inner && inner.querySelector('.full-tree-node')) {
+      inner.querySelectorAll('.full-tree-node').forEach(el => {
+        el.classList.toggle('focused', el.dataset.gid === currentFocusId);
+      });
+      updateCatFilterCount();
+      return;
+    }
+  }
+  // Warm cache hit for a different pantheon than currently rendered
+  const cached = FULL_TREE_CACHE.get(pantheonId);
+  if (cached) {
+    fullTreeState = cached;
+    renderFullTreeFromState(cached);
+    updateCatFilterCount();
+    return;
+  }
+  const pgods = DATA.gods.filter(g => g.pantheon === pantheonId && categoryAllowed(g.category));
+  const byId = Object.fromEntries(pgods.map(g => [g.id, g]));
+
+  // Compute generation for each god via longest-path from roots
+  const gen = {};
+  const getGen = (id, visited = new Set()) => {
+    if (gen[id] !== undefined) return gen[id];
+    if (visited.has(id)) return 0;
+    visited.add(id);
+    const g = byId[id];
+    if (!g) return 0;
+    const inPantheonParents = (g.parents || []).filter(pid => byId[pid]);
+    if (inPantheonParents.length === 0) { gen[id] = 0; return 0; }
+    const maxParent = Math.max(...inPantheonParents.map(pid => getGen(pid, visited)));
+    gen[id] = maxParent + 1;
+    return gen[id];
+  };
+  pgods.forEach(g => getGen(g.id));
+
+  // Group gods by generation
+  const byGen = {};
+  pgods.forEach(g => {
+    (byGen[gen[g.id]] = byGen[gen[g.id]] || []).push(g);
+  });
+  const generations = Object.keys(byGen).map(Number).sort((a,b) => a-b);
+
+  const catOrder = {primordial:0, titan:1, major:2, minor:3, hero:4, monster:5, 'deified-human':6, abrahamic:7};
+
+  // --- Build couple-grouped nuclei per generation ---
+  // A nucleus = { primary: id, partner?: id }. A god appears in exactly one nucleus.
+  const godToNucleus = {};       // gid -> nucleus object
+  const nucleiByGen = {};        // genN -> [nucleus, ...]
+  const nucleusIndex = new Map(); // nucleus -> index within its generation
+
+  // Pass 1: initial seeding order within each generation (category then name)
+  const seedOrder = {};
+  for (const gn of generations) {
+    seedOrder[gn] = byGen[gn].slice().sort((a,b) =>
+      (catOrder[a.category]||9) - (catOrder[b.category]||9) || a.name.localeCompare(b.name)
+    );
+  }
+
+  // Pass 2: build nuclei by scoring candidate consort pairs — shared children win.
+  // This ensures Zeus+Hera (many shared children) beats Demeter+Zeus (one shared)
+  // and beats alphabetical ordering (which would otherwise claim Zeus for Demeter).
+  for (const gn of generations) {
+    const godsHere = seedOrder[gn];
+    const seedIdx = new Map(godsHere.map((g, i) => [g.id, i]));
+
+    // Enumerate unique candidate pairs (a.id < b.id)
+    const pairs = [];
+    for (const a of godsHere) {
+      for (const cid of (a.consorts || [])) {
+        const b = byId[cid];
+        if (!b || gen[b.id] !== gn) continue;
+        if (b.id <= a.id) continue;
+        // Score by number of children who list BOTH a and b as parents
+        const aKids = new Set(a.children || []);
+        let score = 0;
+        for (const kid of (b.children || [])) {
+          if (!aKids.has(kid)) continue;
+          const child = byId[kid];
+          if (child && (child.parents || []).includes(a.id) && (child.parents || []).includes(b.id)) {
+            score++;
+          }
+        }
+        // Mutual-first tiebreaker: both list each other first in consorts → 2; one → 1; neither → 0
+        const aFirst = (a.consorts || [])[0] === b.id;
+        const bFirst = (b.consorts || [])[0] === a.id;
+        const mutualScore = (aFirst ? 1 : 0) + (bFirst ? 1 : 0);
+        pairs.push({ a, b, score, mutualScore });
+      }
+    }
+    // Sort: shared-children desc, then mutual-first desc, then combined seed-position asc
+    pairs.sort((p, q) =>
+      q.score - p.score
+      || q.mutualScore - p.mutualScore
+      || (seedIdx.get(p.a.id) + seedIdx.get(p.b.id)) - (seedIdx.get(q.a.id) + seedIdx.get(q.b.id))
+    );
+
+    const claimed = new Set();
+    const nuclei = [];
+    // Greedily claim highest-scoring pairs whose members are still free
+    for (const { a, b } of pairs) {
+      if (claimed.has(a.id) || claimed.has(b.id)) continue;
+      const primary = seedIdx.get(a.id) <= seedIdx.get(b.id) ? a : b;
+      const partner = primary === a ? b : a;
+      claimed.add(primary.id);
+      claimed.add(partner.id);
+      const nucleus = { primary: primary.id, partner: partner.id };
+      nuclei.push(nucleus);
+      godToNucleus[primary.id] = nucleus;
+      godToNucleus[partner.id] = nucleus;
+    }
+    // Solo nuclei for leftover gods, preserving seed order
+    for (const g of godsHere) {
+      if (claimed.has(g.id)) continue;
+      claimed.add(g.id);
+      const nucleus = { primary: g.id };
+      nuclei.push(nucleus);
+      godToNucleus[g.id] = nucleus;
+    }
+    nucleiByGen[gn] = nuclei;
+  }
+
+  // Cluster satellite consorts next to their polyamorous primary.
+  // For Zeus (nucleus with Hera), move Leto/Demeter/Maia/etc. nuclei adjacent to Zeus+Hera
+  // so cross-nucleus consort dashed lines stay short and children group tightly below Zeus.
+  const clusterSatellites = (gn) => {
+    const nuclei = nucleiByGen[gn];
+    for (const g of byGen[gn]) {
+      const myN = godToNucleus[g.id];
+      // Only the primary of each nucleus attracts satellites (avoids duplicate work)
+      if (!myN || myN.primary !== g.id) continue;
+      const satellites = [...new Set(
+        (g.consorts || [])
+          .filter(cid => byId[cid] && gen[cid] === gn)
+          .map(cid => godToNucleus[cid])
+          .filter(n => n && n !== myN)
+      )];
+      if (!satellites.length) continue;
+      for (const sat of satellites) {
+        const satIdx = nuclei.indexOf(sat);
+        if (satIdx < 0) continue;
+        nuclei.splice(satIdx, 1);
+        const myIdx = nuclei.indexOf(myN);
+        nuclei.splice(myIdx + 1, 0, sat);
+      }
+    }
+  };
+
+  // Pass 3: reorder each generation's nuclei (N>0) so children sit under parents,
+  // then cluster satellite consorts. Children in gen N+1 use the post-cluster indices.
+  for (let i = 0; i < generations.length; i++) {
+    const gn = generations[i];
+    if (i > 0) {
+      const prevGn = generations[i - 1];
+      const prevLen = nucleiByGen[prevGn].length;
+      const parentAnchor = (nucleus) => {
+        const primary = byId[nucleus.primary];
+        const partner = nucleus.partner ? byId[nucleus.partner] : null;
+        const ids = new Set();
+        (primary.parents || []).forEach(pid => { if (byId[pid] && gen[pid] === prevGn) ids.add(pid); });
+        if (partner) (partner.parents || []).forEach(pid => { if (byId[pid] && gen[pid] === prevGn) ids.add(pid); });
+        if (!ids.size) return prevLen + 1000;
+        let minIdx = Infinity;
+        ids.forEach(pid => {
+          const pn = godToNucleus[pid];
+          if (pn && nucleusIndex.has(pn)) minIdx = Math.min(minIdx, nucleusIndex.get(pn));
+        });
+        return minIdx === Infinity ? prevLen + 1000 : minIdx;
+      };
+      nucleiByGen[gn].sort((a, b) => {
+        const da = parentAnchor(a), db = parentAnchor(b);
+        if (da !== db) return da - db;
+        const ga = byId[a.primary], gb = byId[b.primary];
+        return (catOrder[ga.category]||9) - (catOrder[gb.category]||9) || ga.name.localeCompare(gb.name);
+      });
+    }
+    clusterSatellites(gn);
+    nucleiByGen[gn].forEach((n, idx) => nucleusIndex.set(n, idx));
+  }
+
+  // Precompute lineage maps (ancestors/descendants) so hover highlight is O(1) lookup.
+  const ancestors = {};
+  const descendants = {};
+  for (const gx of pgods) {
+    const anc = new Set();
+    const stack = [...(gx.parents || [])];
+    while (stack.length) {
+      const pid = stack.pop();
+      if (!byId[pid] || anc.has(pid)) continue;
+      anc.add(pid);
+      (byId[pid].parents || []).forEach(x => { if (byId[x] && !anc.has(x)) stack.push(x); });
+    }
+    ancestors[gx.id] = anc;
+    const desc = new Set();
+    const dstack = [...(gx.children || [])];
+    while (dstack.length) {
+      const cid = dstack.pop();
+      if (!byId[cid] || desc.has(cid)) continue;
+      desc.add(cid);
+      (byId[cid].children || []).forEach(x => { if (byId[x] && !desc.has(x)) dstack.push(x); });
+    }
+    descendants[gx.id] = desc;
+  }
+
+  const state = { pantheonId, p, pgods, byId, generations, nucleiByGen, godToNucleus, ancestors, descendants };
+  FULL_TREE_CACHE.set(pantheonId, state);
+  fullTreeState = state;
+  renderFullTreeFromState(state);
+}
+
+function renderFullTreeFromState(state) {
+  const { p, pgods, byId, generations, nucleiByGen, godToNucleus } = state;
+
+  const nodeHtml = (g) => `
+    <div class="full-tree-node ${g.id === currentFocusId ? 'focused' : ''}"
+         style="--pantheon-color:${p.color}"
+         data-gid="${g.id}"
+         role="button" tabindex="0"
+         aria-label="Focus on ${escapeAttr(g.name)}"
+         title="${escapeAttr((g.domains || []).slice(0,3).join(' · '))}">
+      <div class="tn-name">${g.name}</div>
+      <div class="tn-meta">${(g.category||'').replace(/-/g,' ')}${genderSymbol(g.gender)}</div>
+    </div>
+  `;
+  const nucleusHtml = (n) => {
+    const g1 = byId[n.primary];
+    if (n.partner) {
+      const g2 = byId[n.partner];
+      return `<div class="family-block couple" data-primary="${n.primary}" data-partner="${n.partner}" role="group" aria-label="${escapeAttr(g1.name)} and ${escapeAttr(g2.name)}">
+        ${nodeHtml(g1)}
+        <span class="couple-link" title="consort" aria-hidden="true">&#10022;</span>
+        ${nodeHtml(g2)}
+      </div>`;
+    }
+    return `<div class="family-block" data-primary="${n.primary}">${nodeHtml(g1)}</div>`;
+  };
+
+  const html = generations.map(gn => `
+    <div class="full-tree-gen" data-gen="${gn}">
+      <div class="full-tree-gen-label">Gen ${gn + 1}</div>
+      ${nucleiByGen[gn].map(nucleusHtml).join('')}
+    </div>
+  `).join('');
+
+  const inner = document.getElementById('fullTreeInner');
+  inner.innerHTML = html + '<svg class="full-tree-svg" id="fullTreeSvg"></svg>';
+
+  // Event delegation (single listener on the container) — cheaper than per-node
+  if (!inner.dataset.wired) {
+    inner.addEventListener('click', e => {
+      const node = e.target.closest('.full-tree-node');
+      if (node && inner.contains(node)) setFocus(node.dataset.gid);
+    });
+    inner.addEventListener('mouseover', e => {
+      const node = e.target.closest('.full-tree-node');
+      if (node && inner.contains(node)) highlightLineage(node.dataset.gid);
+    });
+    inner.addEventListener('mouseleave', clearLineageHighlight);
+    inner.addEventListener('focusin', e => {
+      const node = e.target.closest('.full-tree-node');
+      if (node && inner.contains(node)) highlightLineage(node.dataset.gid);
+    });
+    inner.addEventListener('focusout', clearLineageHighlight);
+    inner.dataset.wired = '1';
+  }
+
+  requestAnimationFrame(() => drawFullTreeConnectors(state));
+}
+
+function drawFullTreeConnectors(state) {
+  const { pgods, byId, godToNucleus } = state;
+  const svg = document.getElementById('fullTreeSvg');
+  const inner = document.getElementById('fullTreeInner');
+  if (!svg || !inner) return;
+  const ibox = inner.getBoundingClientRect();
+  svg.setAttribute('width', ibox.width);
+  svg.setAttribute('height', ibox.height);
+  svg.style.width = ibox.width + 'px';
+  svg.style.height = ibox.height + 'px';
+
+  const nodes = {};
+  inner.querySelectorAll('.full-tree-node').forEach(el => {
+    const r = el.getBoundingClientRect();
+    nodes[el.dataset.gid] = {
+      top: r.top - ibox.top,
+      bottom: r.bottom - ibox.top,
+      left: r.left - ibox.left,
+      right: r.right - ibox.left,
+      cx: r.left - ibox.left + r.width / 2,
+      cy: r.top - ibox.top + r.height / 2,
+    };
+  });
+
+  // Anchor point for a nucleus (couple midpoint / single node bottom)
+  const nucleusAnchor = (nucleus, parentIdsInNucleus) => {
+    const primaryR = nodes[nucleus.primary];
+    const partnerR = nucleus.partner ? nodes[nucleus.partner] : null;
+    if (partnerR && parentIdsInNucleus.has(nucleus.primary) && parentIdsInNucleus.has(nucleus.partner)) {
+      return { x: (primaryR.cx + partnerR.cx) / 2, y: Math.max(primaryR.bottom, partnerR.bottom) };
+    }
+    // Only one parent of the child is in this nucleus — anchor on that one
+    if (parentIdsInNucleus.has(nucleus.primary)) return { x: primaryR.cx, y: primaryR.bottom };
+    if (partnerR && parentIdsInNucleus.has(nucleus.partner)) return { x: partnerR.cx, y: partnerR.bottom };
+    return { x: primaryR.cx, y: primaryR.bottom };
+  };
+
+  const lines = [];
+
+  // Parent-nucleus → child lines (gold)
+  pgods.forEach(child => {
+    const childR = nodes[child.id];
+    if (!childR) return;
+    const parentIds = (child.parents || []).filter(pid => byId[pid] && nodes[pid]);
+    if (!parentIds.length) return;
+
+    // Group parents by nucleus (one line per parent-nucleus, not per parent)
+    const byNucleus = new Map();
+    parentIds.forEach(pid => {
+      const n = godToNucleus[pid];
+      if (!n) return;
+      if (!byNucleus.has(n)) byNucleus.set(n, new Set());
+      byNucleus.get(n).add(pid);
+    });
+
+    byNucleus.forEach((pidSet, nucleus) => {
+      const { x: ax, y: ay } = nucleusAnchor(nucleus, pidSet);
+      const bx = childR.cx, by = childR.top;
+      const dataAttrs = `data-parent-primary="${nucleus.primary}"${nucleus.partner ? ` data-parent-partner="${nucleus.partner}"` : ''} data-child="${child.id}"`;
+      if (by > ay) {
+        const dy = by - ay;
+        const cy1 = ay + dy * 0.5;
+        const cy2 = ay + dy * 0.5;
+        lines.push(`<path d="M ${ax} ${ay} C ${ax} ${cy1}, ${bx} ${cy2}, ${bx} ${by}" stroke="#b8901f" stroke-width="1.2" fill="none" opacity="0.55" class="tree-line parent-line" ${dataAttrs}/>`);
+      } else {
+        lines.push(`<line x1="${ax}" y1="${ay}" x2="${bx}" y2="${by}" stroke="#b8901f" stroke-width="1" opacity="0.3" stroke-dasharray="3,3" class="tree-line parent-line" ${dataAttrs}/>`);
+      }
+    });
+  });
+
+  // Cross-nucleus consort lines (rose dashed) — only for consort pairs NOT already couples in the same block
+  const drawnConsorts = new Set();
+  pgods.forEach(g => {
+    (g.consorts || []).forEach(sid => {
+      const sG = byId[sid];
+      if (!sG || !nodes[g.id] || !nodes[sid]) return;
+      const gN = godToNucleus[g.id], sN = godToNucleus[sid];
+      if (gN && sN && gN === sN) return; // already paired inside the same family-block
+      const pair = [g.id, sid].sort().join('|');
+      if (drawnConsorts.has(pair)) return;
+      drawnConsorts.add(pair);
+      const a = nodes[g.id], b = nodes[sid];
+      if (Math.abs(a.cy - b.cy) < 90) {
+        const left = a.cx < b.cx ? a : b;
+        const right = a.cx < b.cx ? b : a;
+        lines.push(`<line x1="${left.right}" y1="${left.cy}" x2="${right.left}" y2="${right.cy}" stroke="#a03040" stroke-width="1" opacity="0.45" stroke-dasharray="4,3" class="tree-line consort-line" data-a="${g.id}" data-b="${sid}"/>`);
+      }
+    });
+  });
+
+  svg.innerHTML = lines.join('');
+}
+
+/* Hover-dim: highlight the hovered god and all their ancestors + descendants */
+function highlightLineage(godId) {
+  if (!fullTreeState || !fullTreeState.byId[godId]) return;
+  // Use precomputed lineage maps — O(1) lookup instead of DFS per hover
+  const anc = fullTreeState.ancestors[godId] || new Set();
+  const desc = fullTreeState.descendants[godId] || new Set();
+  const highlighted = new Set([godId, ...anc, ...desc]);
+
+  const inner = document.getElementById('fullTreeInner');
+  if (!inner) return;
+  inner.classList.add('lineage-active');
+
+  inner.querySelectorAll('.full-tree-node').forEach(el => {
+    const gid = el.dataset.gid;
+    el.classList.toggle('lineage-self', gid === godId);
+    el.classList.toggle('lineage-hit', gid !== godId && highlighted.has(gid));
+  });
+
+  // Couple blocks: full opacity if either member is highlighted (keeps context readable)
+  inner.querySelectorAll('.family-block.couple').forEach(el => {
+    const a = el.dataset.primary, b = el.dataset.partner;
+    el.classList.toggle('lineage-family-hit', highlighted.has(a) || highlighted.has(b));
+  });
+
+  // Dim non-participating lines
+  inner.querySelectorAll('.tree-line').forEach(ln => {
+    let keep = false;
+    if (ln.classList.contains('parent-line')) {
+      const pp = ln.getAttribute('data-parent-primary');
+      const pt = ln.getAttribute('data-parent-partner');
+      const c  = ln.getAttribute('data-child');
+      keep = (highlighted.has(pp) || (pt && highlighted.has(pt))) && highlighted.has(c);
+    } else if (ln.classList.contains('consort-line')) {
+      const a = ln.getAttribute('data-a'), b = ln.getAttribute('data-b');
+      keep = highlighted.has(a) && highlighted.has(b);
+    }
+    if (keep) {
+      ln.setAttribute('data-orig-opacity', ln.getAttribute('opacity'));
+      ln.setAttribute('opacity', '0.95');
+      ln.setAttribute('stroke-width', ln.classList.contains('parent-line') ? '1.8' : '1.4');
+    } else {
+      ln.setAttribute('data-orig-opacity', ln.getAttribute('opacity'));
+      ln.setAttribute('opacity', '0.06');
+    }
+  });
+}
+
+function clearLineageHighlight() {
+  const inner = document.getElementById('fullTreeInner');
+  if (!inner) return;
+  inner.classList.remove('lineage-active');
+  inner.querySelectorAll('.full-tree-node').forEach(el => {
+    el.classList.remove('lineage-self', 'lineage-hit');
+  });
+  inner.querySelectorAll('.family-block.couple').forEach(el => {
+    el.classList.remove('lineage-family-hit');
+  });
+  inner.querySelectorAll('.tree-line').forEach(ln => {
+    const orig = ln.getAttribute('data-orig-opacity');
+    if (orig != null) ln.setAttribute('opacity', orig);
+    ln.removeAttribute('data-orig-opacity');
+    if (ln.classList.contains('parent-line')) ln.setAttribute('stroke-width', '1.2');
+    else if (ln.classList.contains('consort-line')) ln.setAttribute('stroke-width', '1');
+  });
+}
+
+/* ---------- Timeline tab ---------- */
+function renderTimeline() {
+  const rowsContainer = document.getElementById('timelineRows');
+  const minYear = -5000, maxYear = 2100;
+  const range = maxYear - minYear;
+  // Fall back to <main>/viewport when the tab is display:none (clientWidth=0 during init)
+  const mainEl = document.querySelector('main');
+  const mainContent = mainEl ? mainEl.clientWidth - 56 : (window.innerWidth - 56);
+  const parentWidth = rowsContainer.parentElement.clientWidth || mainContent;
+  // inner width of .timeline = parent minus its 26px horizontal padding
+  const availableWidth = Math.max(320, parentWidth - 52);
+  const labelWidth = availableWidth < 640 ? 120 : (availableWidth < 900 ? 150 : 180);
+  const chartWidth = availableWidth - labelWidth - 10;
+  const chartRight = labelWidth + chartWidth;
+  const xOf = y => labelWidth + ((y - minYear) / range) * chartWidth;
+  const clampX = x => Math.max(labelWidth, Math.min(chartRight, x));
+
+  // Historical era bands
+  const eras = [
+    { from:-5000, to:-3300, name:'Neolithic' },
+    { from:-3300, to:-1200, name:'Bronze Age' },
+    { from:-1200, to:-500,  name:'Iron Age' },
+    { from:-500,  to:500,   name:'Classical' },
+    { from:500,   to:1500,  name:'Medieval' },
+    { from:1500,  to:2100,  name:'Modern' },
+  ];
+  const eraBands = eras.map((e,i) => {
+    const x = xOf(e.from);
+    const w = xOf(e.to) - x;
+    return `<div class="tl-era-label" style="left:${x + w/2}px; width:${w}px; top:2px;">${e.name}</div>`;
+  }).join('');
+
+  // Gridlines — every 1000y + BCE/CE line
+  const majorYears = [-5000,-4000,-3000,-2000,-1000,0,1000,2000];
+  const gridlines = majorYears.map(y => {
+    const cls = y === 0 ? 'tl-gridline bce-ce' : 'tl-gridline major';
+    const lblCls = y === 0 ? 'tl-year-label bce-ce' : 'tl-year-label';
+    return `<div class="${cls}" style="left:${xOf(y)}px;"></div>
+            <div class="${lblCls}" style="left:${xOf(y)}px;">${fmtYear(y)}</div>`;
+  }).join('');
+
+  // Render by pantheon group (same groups as Pantheons tab)
+  const byId = {};
+  DATA.pantheons.forEach(p => byId[p.id] = p);
+  const grouped = new Set(PANTHEON_GROUPS.flatMap(g => g.ids));
+  const orphans = DATA.pantheons.filter(p => !grouped.has(p.id)).map(p => p.id);
+  const allGroups = orphans.length
+    ? [...PANTHEON_GROUPS, { id:'other', name:'Other', ids:orphans }]
+    : PANTHEON_GROUPS;
+
+  const renderRow = p => {
+    const rawFrom = xOf(p.active_from);
+    const rawTo = xOf(p.active_to);
+    const x = clampX(rawFrom);
+    const w = Math.max(4, clampX(rawTo) - x);
+    const barTrunc = (rawFrom < labelWidth ? ' trunc-left' : '') + (rawTo > chartRight ? ' trunc-right' : '');
+    const rawPFrom = xOf(p.peak_from || p.active_from);
+    const rawPTo = xOf(p.peak_to || p.active_to);
+    const px = clampX(rawPFrom);
+    const pw = Math.max(2, clampX(rawPTo) - px);
+    const peakTrunc = (rawPFrom < labelWidth ? ' trunc-left' : '') + (rawPTo > chartRight ? ' trunc-right' : '');
+    return `
+      <div class="timeline-row" data-pid="${p.id}" title="${escapeAttr(p.name + ' · ' + p.region + ' · ' + fmtYears(p.active_from, p.active_to))}">
+        <div class="tl-label" style="width:${labelWidth - 10}px;">${p.name}</div>
+        <div class="tl-bar${barTrunc}" style="left:${x}px; width:${w}px; background:${p.color};"></div>
+        <div class="tl-peak${peakTrunc}" style="left:${px}px; width:${pw}px; background:${p.color};"></div>
+      </div>
+    `;
+  };
+
+  const groupedHtml = allGroups.map(grp => {
+    const members = grp.ids.map(id => byId[id]).filter(Boolean)
+      .sort((a,b) => a.active_from - b.active_from);
+    if (!members.length) return '';
+    return `
+      <div class="tl-group-head">
+        <span class="tl-group-name">${grp.name}</span>
+        <span class="tl-group-count">${members.length} tradition${members.length === 1 ? '' : 's'}</span>
+      </div>
+      ${members.map(renderRow).join('')}
+    `;
+  }).join('');
+
+  rowsContainer.style.width = '100%';
+  rowsContainer.style.paddingTop = '28px';
+  rowsContainer.innerHTML = `
+    <div style="position:absolute; left:${labelWidth}px; top:-4px; width:${chartWidth}px; height:18px; pointer-events:none;">${eraBands}</div>
+    ${gridlines}
+    ${groupedHtml}
+  `;
+
+  rowsContainer.querySelectorAll('.timeline-row').forEach(el => {
+    el.addEventListener('click', () => {
+      const pid = el.dataset.pid;
+      selectTab('trees', { skipHash: true });
+      loadTree(pid);
+    });
+  });
+
+  if (!window._timelineResizeAttached) {
+    window._timelineResizeAttached = true;
+    let t;
+    window.addEventListener('resize', () => {
+      clearTimeout(t);
+      t = setTimeout(() => {
+        const tab = document.getElementById('tab-timeline');
+        if (tab && tab.classList.contains('active')) renderTimeline();
+      }, 150);
+    });
+  }
+}
+
+/* ---------- Archetypes tab ---------- */
+function renderArchetypes() {
+  // Jump-nav
+  document.getElementById('archetypeNav').innerHTML = DATA.archetypes.map(a =>
+    `<a href="#arch-${a.id}" onclick="jumpToArchetype('${a.id}'); return false;">${a.name}</a>`
+  ).join('');
+
+  document.getElementById('archetypeList').innerHTML = DATA.archetypes.map(a => `
+    <div class="archetype-card" id="arch-${a.id}">
+      <h3>${a.name} <span style="color:var(--muted);font-size:11px;font-style:italic;font-variant:normal;letter-spacing:0.5px;">· ${(a.examples||[]).filter(id=>GODS_BY_ID[id]).length} gods</span></h3>
+      <div class="desc">${a.description}</div>
+      <div class="archetype-examples">
+        ${(a.examples || []).map(id => {
+          const g = GODS_BY_ID[id];
+          if (g) {
+            const p = PANTHEONS_BY_ID[g.pantheon];
+            return `<span class="arch-chip" onclick="focusFromArchetype('${id}')">${g.name}<span class="p">${p ? p.name : ''}</span></span>`;
+          }
+          return `<span class="arch-chip" style="opacity:0.5;cursor:default;" title="Not yet catalogued">${formatStubName(id)}</span>`;
+        }).join('')}
+      </div>
+    </div>
+  `).join('');
+}
+
+function jumpToArchetype(id) {
+  const el = document.getElementById('arch-' + id);
+  if (el) {
+    el.scrollIntoView({ behavior:'smooth', block:'start' });
+    updateHash('archetype/' + id);
+  }
+}
+
+function focusFromArchetype(godId) {
+  selectTab('trees', { skipHash: true });
+  setFocus(godId); // updates hash to god/<id>
+}
+
+/* ---------- Notable Mentions tab ---------- */
+function renderMentions() {
+  const list = DATA.notable_mentions || [];
+  const el = document.getElementById('mentionsList');
+  if (!list.length) { el.innerHTML = '<div class="empty">No notable mentions yet.</div>'; return; }
+
+  // Group by pantheon, in the same order as PANTHEON_GROUPS
+  const byPantheon = {};
+  list.forEach(m => {
+    (byPantheon[m.pantheon] = byPantheon[m.pantheon] || []).push(m);
+  });
+
+  const orderedIds = PANTHEON_GROUPS.flatMap(g => g.ids);
+  const seen = new Set();
+  const ordered = [];
+  orderedIds.forEach(pid => {
+    if (byPantheon[pid] && !seen.has(pid)) {
+      seen.add(pid);
+      ordered.push(pid);
+    }
+  });
+  // Any pantheons with mentions but not in groups
+  Object.keys(byPantheon).forEach(pid => { if (!seen.has(pid)) ordered.push(pid); });
+
+  el.innerHTML = ordered.map(pid => {
+    const p = PANTHEONS_BY_ID[pid];
+    const items = byPantheon[pid];
+    return `
+      <section class="mentions-group">
+        <div class="mentions-group-head">
+          <h3>${p ? p.name : pid}</h3>
+          <span class="mg-count">${items.length} mention${items.length === 1 ? '' : 's'}</span>
+        </div>
+        <div class="mentions-list">
+          ${items.map(m => `
+            <div class="mention-item">
+              <span class="mn-name">${m.name}</span>
+              <span class="mn-note">${m.note}</span>
+            </div>
+          `).join('')}
+        </div>
+      </section>
+    `;
+  }).join('');
+}
+
+/* ---------- Deified Humans tab ---------- */
+function renderDeified() {
+  const list = DATA.gods.filter(g => g.category === 'deified-human');
+  document.getElementById('deifiedGrid').innerHTML = list.length
+    ? list.map(renderGodCard).join('')
+    : '<div class="empty">No deified humans catalogued yet.</div>';
+  document.querySelectorAll('#deifiedGrid .god-card').forEach(el => {
+    el.addEventListener('click', () => openGod(el.dataset.gid));
+  });
+}
+
+/* ---------- Browse tab ---------- */
+function renderBrowseFilters() {
+  const sel = document.getElementById('pantheonFilter');
+  sel.innerHTML = '<option value="">All pantheons</option>' +
+    DATA.pantheons.map(p => `<option value="${p.id}">${p.name}</option>`).join('');
+}
+
+function renderBrowse() {
+  const q = document.getElementById('searchInput').value.toLowerCase().trim();
+  const pfilter = document.getElementById('pantheonFilter').value;
+  const cfilter = document.getElementById('categoryFilter').value;
+  let list = DATA.gods.slice();
+  if (pfilter) list = list.filter(g => g.pantheon === pfilter);
+  if (cfilter) list = list.filter(g => g.category === cfilter);
+  if (q) {
+    list = list.filter(g => {
+      const hay = [
+        g.name, g.description || '',
+        (g.domains || []).join(' '),
+        (g.epithets || []).join(' '),
+        PANTHEONS_BY_ID[g.pantheon]?.name || ''
+      ].join(' ').toLowerCase();
+      return hay.includes(q);
+    });
+  }
+  document.getElementById('browseCount').textContent = `${list.length} of ${DATA.gods.length}`;
+  document.getElementById('browseGrid').innerHTML = list.length
+    ? list.map(renderGodCard).join('')
+    : '<div class="empty">No matches.</div>';
+  document.querySelectorAll('#browseGrid .god-card').forEach(el => {
+    el.addEventListener('click', () => openGod(el.dataset.gid));
+  });
+}
+
+function renderGodCard(g) {
+  const p = PANTHEONS_BY_ID[g.pantheon];
+  const domains = (g.domains || []).slice(0, 3).map(d => d.replace(/-/g,' ')).join(' · ');
+  return `
+    <div class="god-card" style="--pantheon-color:${p ? p.color : 'var(--gold)'}" data-gid="${g.id}" tabindex="0">
+      <div class="name">${g.name}</div>
+      <div class="pantheon">${p ? p.name : g.pantheon}</div>
+      <div class="cat">${(g.category || '').replace(/-/g,' ')}</div>
+      ${domains ? `<div class="domains">${domains}</div>` : ''}
+    </div>
+  `;
+}
+
+function wireBrowse() {
+  document.getElementById('searchInput').addEventListener('input', renderBrowse);
+  document.getElementById('pantheonFilter').addEventListener('change', renderBrowse);
+  document.getElementById('categoryFilter').addEventListener('change', renderBrowse);
+}
+</script>
+</body>
+</html>

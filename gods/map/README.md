@@ -2,7 +2,7 @@
 
 A cross-cultural temporal map of gods, heroes, and mythic figures.
 
-**Live**: [stevenfrye30.github.io/workspace-hub/gods](https://stevenfrye30.github.io/workspace-hub/gods/)
+**Live**: [stevenfrye30.github.io/workspace-hub/gods/map](https://stevenfrye30.github.io/workspace-hub/gods/map/)
 
 ## What's in it
 
@@ -25,4 +25,4 @@ Top-tier pantheons by catalogued figures: Greek 183 · Hindu/Vedic 84 · Norse 6
 
 ## Data
 
-All content lives in `data.json`. Schema documented in the working folder at `projects/Gods/README.md`.
+All content lives in `data.json`. Schema documented in the working folder at `projects/culture/Gods/README.md`.

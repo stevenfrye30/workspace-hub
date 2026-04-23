@@ -1,0 +1,254 @@
+/* Atlas — shared shell styles.
+   Reused by the homepage and by world pages as they are built.
+   Shell elements (header, nav, footer, brand, worlds-nav) are generic;
+   homepage-specific elements (tagline, intro, world-grid, world-card)
+   may also appear on a future "see all worlds" surface. */
+
+:root {
+  --bg: #faf6ed;
+  --ink: #1f1a14;
+  --ink-soft: #3a322a;
+  --muted: #6e6558;
+  --rule: #d8ccb4;
+  --accent: #6c2e2e;
+
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Inter", system-ui, sans-serif;
+
+  --measure: 34rem;
+  --shell-max: 60rem;
+  --pad-x: 1.5rem;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 18px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+/* Header & nav (shell) */
+
+.atlas-header {
+  border-bottom: 1px solid var(--rule);
+}
+
+.atlas-nav {
+  max-width: var(--shell-max);
+  margin: 0 auto;
+  padding: 1.25rem var(--pad-x);
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.brand {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.005em;
+}
+
+.brand:hover { text-decoration: none; color: var(--accent); }
+
+.worlds-nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1.75rem;
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.worlds-nav a:hover { color: var(--ink); }
+
+/* Main content area */
+
+.atlas-main {
+  max-width: var(--shell-max);
+  margin: 0 auto;
+  padding: 4.5rem var(--pad-x) 6rem;
+}
+
+/* Homepage opening */
+
+.opening {
+  max-width: var(--measure);
+  margin-bottom: 4.5rem;
+}
+
+.tagline {
+  font-family: var(--serif);
+  font-size: 2.25rem;
+  line-height: 1.15;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 0 0 1.25rem;
+}
+
+.intro {
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+/* World page content (rendered from the world's index.md) */
+
+.world-content {
+  max-width: var(--measure);
+}
+
+.world-content > *:first-child { margin-top: 0; }
+
+.world-content h1 {
+  font-family: var(--serif);
+  font-size: 2.25rem;
+  line-height: 1.15;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 0 0 1.5rem;
+}
+
+.world-content h2 {
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 2.75rem 0 0.75rem;
+  letter-spacing: 0.002em;
+}
+
+.world-content h3 {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 2rem 0 0.5rem;
+}
+
+.world-content p {
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  margin: 0 0 1.25rem;
+}
+
+.world-content a {
+  color: var(--accent);
+}
+
+.world-content code {
+  font-family: ui-monospace, Menlo, Consolas, monospace;
+  font-size: 0.92em;
+  background: rgba(0,0,0,0.04);
+  padding: 0.08em 0.35em;
+  border-radius: 2px;
+}
+
+/* Homepage world grid */
+
+.world-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 42rem) {
+  .world-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+@media (min-width: 64rem) {
+  .world-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* World card (reusable) */
+
+.world-card {
+  display: block;
+  padding: 1.75rem 1.6rem;
+  border: 1px solid var(--rule);
+  background: transparent;
+  transition: border-color 140ms ease, transform 140ms ease;
+}
+
+.world-card:hover,
+.world-card:focus-visible {
+  text-decoration: none;
+  border-color: var(--ink);
+  transform: translateY(-1px);
+  outline: none;
+}
+
+.world-card__title {
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+  letter-spacing: 0.002em;
+}
+
+.world-card__summary {
+  font-size: 0.97rem;
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Error / empty states */
+
+.atlas-error {
+  color: var(--muted);
+  font-style: italic;
+  max-width: var(--measure);
+}
+
+/* Footer (shell) */
+
+.atlas-footer {
+  border-top: 1px solid var(--rule);
+  padding: 2.25rem var(--pad-x);
+  text-align: center;
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.atlas-footer p { margin: 0; }
+
+/* Small screens */
+
+@media (max-width: 40rem) {
+  .atlas-nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  .worlds-nav { gap: 1.25rem; flex-wrap: wrap; }
+  .atlas-main { padding-top: 3rem; }
+  .tagline { font-size: 1.8rem; }
+}
