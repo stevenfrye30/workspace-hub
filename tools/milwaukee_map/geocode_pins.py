@@ -54,7 +54,7 @@ def parse_scouted(inner: str):
     expected = len(re.findall(r"\{ type:", body))
     entries = []
     entry_re = re.compile(
-        r"\{ type:'(\w+)', name:(?:%s|%s), note:(?:%s|%s),.*?lat:\s*(-?[\d.]+), lng:\s*(-?[\d.]+)\s*\}" % (QS, QD, QS, QD),
+        r"\{ type:'(\w+)',(?: home:true,)? name:(?:%s|%s), note:(?:%s|%s),.*?lat:\s*(-?[\d.]+), lng:\s*(-?[\d.]+)\s*\}" % (QS, QD, QS, QD),
         re.S)
     for em in entry_re.finditer(body):
         name = em.group(2) if em.group(2) is not None else em.group(3)
